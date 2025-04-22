@@ -43,13 +43,8 @@ const DiaryOfInfluencer = () => {
 
 
   useEffect(() => {
-    const container = verticalScrollRef.current;
-    console.log(container)
-    const scrollUp = window.scrollY;
-    if (!container) return;
-
     const handleScroll = () => {
-      console.log(scrollUp)
+      let scrollUp = window.scrollY;
       const backgroundImage: HTMLElement | null = document.querySelector('.dream-room-bg');
 
       if (backgroundImage) {
