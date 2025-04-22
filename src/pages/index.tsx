@@ -5,7 +5,6 @@ import Image from 'next/image';
 import WideImage from '../assets/images/cover-wide.webp';
 import OverheadImage from '../assets/images/cover-aerial.png';
 import { motion } from 'framer-motion';
-import dynamic from 'next/dynamic';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
