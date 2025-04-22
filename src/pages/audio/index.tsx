@@ -13,6 +13,7 @@ import BenFrank from '../../assets/images/ben-frank.webp';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { Episode } from '@/types';
 
 const episodes = [
   {
@@ -56,9 +57,9 @@ const Audio = () => {
   const horizontalScrollRef = useRef<HTMLDivElement | null>(null);
 
   const handleImageChange = (direction: number) => { // direction is the way the user is travelling
-    const initialImageContainer = document.querySelector('.initial-image-container');
-    const initialImage = document.querySelector('.initial-image');
-    const svgOverlayContainer = document.querySelector('.svg-overlay-container');
+    const initialImageContainer: HTMLElement | null = document.querySelector('.initial-image-container');
+    const initialImage: HTMLElement | null = document.querySelector('.initial-image');
+    const svgOverlayContainer: HTMLElement | null = document.querySelector('.svg-overlay-container');
 
     if (initialImageContainer && svgOverlayContainer && initialImage) {
 
@@ -70,8 +71,8 @@ const Audio = () => {
         initialImage.style.transition = 'transform 0.3s ease-in-out';
 
         requestAnimationFrame(() => {
-          svgOverlayContainer.style.opacity = 0;
-          initialImageContainer.style.opacity = 1;
+          svgOverlayContainer.style.opacity = '0';
+          initialImageContainer.style.opacity = '1';
           initialImage.style.transform = 'scale(1)';
         });
 
@@ -86,10 +87,10 @@ const Audio = () => {
         svgOverlayContainer.style.display = 'block';
 
         initialImage.style.transform = 'scale(2)';
-        initialImageContainer.style.opacity = 0;
+        initialImageContainer.style.opacity = '0';
 
         requestAnimationFrame(() => {
-          svgOverlayContainer.style.opacity = 1;
+          svgOverlayContainer.style.opacity = '1';
         });
 
         setTimeout(() => {
@@ -100,18 +101,18 @@ const Audio = () => {
   }
 
   const handleObjectClick = () => {
-    const scrollContainer = document.querySelector('.scroll-container');
-    const contentContainer = document.querySelector('.content-container');
+    const scrollContainer: HTMLElement | null = document.querySelector('.scroll-container');
+    const contentContainer: HTMLElement | null = document.querySelector('.content-container');
 
     if (scrollContainer && contentContainer) {
       scrollContainer.style.transition = 'opacity 0.5s ease-in-out';
       contentContainer.style.transition = 'opacity 0.25s ease-in-out';
 
       contentContainer.style.display = 'block';
-      scrollContainer.style.opacity = 0;
+      scrollContainer.style.opacity = '0';
 
       requestAnimationFrame(() => {
-        contentContainer.style.opacity = 1;
+        contentContainer.style.opacity = '1';
       });
 
       setTimeout(() => {
@@ -208,8 +209,7 @@ const Audio = () => {
 
     const handleScroll = () => {
       const scrollLeft = container.scrollLeft;
-
-      const backgroundImage = document.querySelector('.content-container-background');
+      const backgroundImage: HTMLElement | null = document.querySelector('.content-container-background');
 
       if (backgroundImage) {
         backgroundImage.style.transform = `translateX(-${scrollLeft * 0.25}px)`;

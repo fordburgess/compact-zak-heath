@@ -11,63 +11,67 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const DreamRoom = () => {
   const handleImageChange = (direction: number) => { // direction is the way the user is travelling
-    const initialImageContainer = document.querySelector('.initial-image-container');
-    const initialImage = document.querySelector('.initial-image');
-    const svgOverlayContainer = document.querySelector('.svg-overlay-container');
+    const initialImageContainer: HTMLElement | null = document.querySelector('.initial-image-container');
+    const initialImage: HTMLElement | null = document.querySelector('.initial-image');
+    const svgOverlayContainer: HTMLElement | null = document.querySelector('.svg-overlay-container');
 
-    if (direction == 0) {
-      initialImageContainer.style.display = 'block';
+    if (initialImageContainer && initialImage && svgOverlayContainer) {
+      if (direction == 0) {
+        initialImageContainer.style.display = 'block';
 
-      svgOverlayContainer.style.transition = 'opacity 0.5s ease-in-out, transform 0.3s ease-in-out';
-      initialImageContainer.style.transition = 'opacity 0.75s ease-in-out';
-      initialImage.style.transition = 'transform 0.3s ease-in-out';
+        svgOverlayContainer.style.transition = 'opacity 0.5s ease-in-out, transform 0.3s ease-in-out';
+        initialImageContainer.style.transition = 'opacity 0.75s ease-in-out';
+        initialImage.style.transition = 'transform 0.3s ease-in-out';
 
-      requestAnimationFrame(() => {
-        svgOverlayContainer.style.opacity = 0;
-        initialImageContainer.style.opacity = 1;
-        initialImage.style.transform = 'scale(1)';
-      });
+        requestAnimationFrame(() => {
+          svgOverlayContainer.style.opacity = '0';
+          initialImageContainer.style.opacity = '1';
+          initialImage.style.transform = 'scale(1)';
+        });
 
-      setTimeout(() => {
-        svgOverlayContainer.style.display = 'none';
-      }, 1000);
-    }
-    else if (direction == 1) {
-      initialImageContainer.style.transition = 'opacity 1.2s ease-in-out'
-      initialImage.style.transition = 'transform 0.3s ease-in-out';
-      svgOverlayContainer.style.transition = 'opacity 0.5s ease-in-out';
-      svgOverlayContainer.style.display = 'block';
+        setTimeout(() => {
+          svgOverlayContainer.style.display = 'none';
+        }, 1000);
+      }
+      else if (direction == 1) {
+        initialImageContainer.style.transition = 'opacity 1.2s ease-in-out'
+        initialImage.style.transition = 'transform 0.3s ease-in-out';
+        svgOverlayContainer.style.transition = 'opacity 0.5s ease-in-out';
+        svgOverlayContainer.style.display = 'block';
 
-      initialImage.style.transform = 'scale(2)';
-      initialImageContainer.style.opacity = 0;
+        initialImage.style.transform = 'scale(2)';
+        initialImageContainer.style.opacity = '0';
 
-      requestAnimationFrame(() => {
-        svgOverlayContainer.style.opacity = 1;
-      });
+        requestAnimationFrame(() => {
+          svgOverlayContainer.style.opacity = '1';
+        });
 
-      setTimeout(() => {
-        initialImageContainer.style.display = 'none';
-      }, 1000);
+        setTimeout(() => {
+          initialImageContainer.style.display = 'none';
+        }, 1000);
+      }
     }
   }
 
   const handleObjectClick = () => {
-    const scrollContainer = document.querySelector('.scroll-container');
-    const contentContainer = document.querySelector('.content-container');
+    const scrollContainer: HTMLElement | null = document.querySelector('.scroll-container');
+    const contentContainer: HTMLElement | null = document.querySelector('.content-container');
 
-    scrollContainer.style.transition = 'opacity 0.5s ease-in-out';
-    contentContainer.style.transition = 'opacity 0.25s ease-in-out';
+    if (scrollContainer && contentContainer) {
+      scrollContainer.style.transition = 'opacity 0.5s ease-in-out';
+      contentContainer.style.transition = 'opacity 0.25s ease-in-out';
 
-    contentContainer.style.display = 'block';
-    scrollContainer.style.opacity = 0;
+      contentContainer.style.display = 'block';
+      scrollContainer.style.opacity = '0';
 
-    requestAnimationFrame(() => {
-      contentContainer.style.opacity = 1;
-    });
+      requestAnimationFrame(() => {
+        contentContainer.style.opacity = '1';
+      });
 
-    setTimeout(() => {
-      scrollContainer.style.display = 'none';
-    }, 1200);
+      setTimeout(() => {
+        scrollContainer.style.display = 'none';
+      }, 1200);
+    }
   }
 
   useEffect(() => {
