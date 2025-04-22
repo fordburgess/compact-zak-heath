@@ -224,8 +224,12 @@ const Services = () => {
         <Image src={ExpandedImage} id='services-content-container-background' alt='content-container'/>
         <div className='services-content-scroll-container' ref={verticalScrollRef}>
           <div className='services-content-info'>
-            <p>Hello</p>
-            <p>Hello 2</p>
+            <h1>My Services</h1>
+            <div className='services-info-section'>
+              <h2>Consulting & Brand Collaboration Inquiries</h2>
+              <p>As a young voice in the beauty industry with firsthand experience navigating content creation, brand partnerships, and beauty business strategy, I offer consulting services for brands and individuals looking to connect with today’s beauty audience. I can give insight into Gen Z consumer behaviour, influencer marketing and digital storytelling through a beauty and fashion lens</p>
+              <p>For consulting opportunities, public speaking, or collaborations, please reach out to me directly at zakheath163@gmail.com</p>
+            </div>
           </div>
         </div>
       </div>

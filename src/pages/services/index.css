@@ -31,14 +31,12 @@
 
 .services-content-info {
   height: 150vh;
-  width: 80%;
-  background-color: rgba(255, 0, 0, 0.593);
+  width: 100%;
+  padding: 100px;
 }
 
-.test-services {
-  position: absolute;
-  top: 0;
-  height: 150vh;
-  width: 90vw;
-  background-color: rgba(255, 0, 0, 0.496);
+.services-content-info h1 {
+  font-size: 5rem;
+  font-weight: 300;
+  font-style: italic;
 }
