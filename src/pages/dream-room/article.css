@@ -27,16 +27,50 @@
   overflow-y: scroll;
   backdrop-filter: blur(10px) brightness(75%);
   box-sizing: border-box;
-  padding: 50px 20px;
+  /* padding: 50px 0; */
   display: flex;
   flex-direction: column;
 }
 
+.padding-enforcer {
+  padding: 0 20px;
+}
+
+.article-title-section {
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
+  position: relative;
+  margin-bottom: 70px;
+  box-sizing: border-box;
+}
+
 .dream-room-title {
+  position: absolute;
+  top: 10%;
+  left: 25%;
   font-size: 2.5rem;
-  line-height: 2.5rem;
   font-weight: 300;
   margin-bottom: 25px;
+  color: #fff;
+}
+
+.dream-room-subtitle {
+  color: #fff;
+  font-weight: 400;
+  position: absolute;
+  bottom: 10%;
+  right: 25%;
+}
+
+.article-intro-image {
+  height: 80%;
+  width: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .article-image-container {
@@ -107,17 +141,25 @@
 
 @media (min-width: 800px) and (max-width: 1200px) {
   .dream-room-article-content {
-    padding: 100px;
+    /* padding: 100px; */
+  }
+
+  .padding-enforcer {
+    padding: 0 100px;
   }
 }
 
 @media (min-width: 1201px) {
   .dream-room-article-content {
-    padding: 150px 300px;
+    /* padding: 100px 0; */
+  }
+
+  .padding-enforcer {
+    padding: 0 300px;
   }
 
   .dream-room-title {
-    font-size: 4rem;
+    font-size: 4.5rem;
     margin-bottom: 50px;
   }
 
