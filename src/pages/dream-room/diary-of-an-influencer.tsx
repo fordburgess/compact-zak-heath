@@ -13,15 +13,73 @@ const DiaryOfInfluencer = () => {
 
 
   useEffect(() => {
-    const scrollUp = window.scrollY;
-    console.log(scrollUp)
+//     const introImage: HTMLElement | null = document.querySelector('.article-intro-image');
+//
+//     if (introImage) {
+//       setTimeout(() => {
+//         introImage.style.opacity = '1';
+//       }, 100);
+//     }
+
     gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to('.article-intro-image', {
+      // y: '-10%',
+      opacity: 1,
+      delay: 1,
+      duration: 1,
+    })
+
+    gsap.to('.dream-room-title', {
+      y: '20%',
+      opacity: 1,
+      duration: 1,
+      // ease: "power1.inOut",
+    })
+
+    // gsap.to('.dream-room-subtitle', {
+    //   y: '20%',
+    //   opacity: 1,
+    //   duration: 1,
+    //   // ease: "power1.inOut",
+    // })
+
+    gsap.to('.dream-room-title', {
+      x: '-100%',
+      // ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: '.article-title-section',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true,
+      }
+    })
+
+    gsap.to('.dream-room-subtitle', {
+      x: '100%',
+      // ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: '.article-title-section',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true,
+      }
+    })
+
+    gsap.to('.article-intro-image', {
+      y: '-20%',
+      scrollTrigger: {
+        trigger: '.article-title-section',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true,
+      }
+    })
 
     gsap.to('.circle-shape-1', {
       opacity: 1,
       x: '20%',
       ease: "power1.inOut",
-      markers: true,
       scrollTrigger: {
         trigger: '.dream-room-transition-container',
         start: 'top bottom',
@@ -79,8 +137,23 @@ const DiaryOfInfluencer = () => {
       <div className='dream-room-article-content' ref={verticalScrollRef}>
         <div className='article-title-section'>
           <Image src={ZakHeathProfile} className='article-intro-image' alt='profile' />
-          <h1 className='dream-room-title'>Diary <br/>Of An<br/>Influencer</h1>
-          <h3 className='dream-room-subtitle'>Contrary to popular belief,<br/>Lorem Ipsum is not simply random text. <br/>It has roots in a piece of classical <br/>Latin literature from 45 BC</h3>
+          <h1
+            className='dream-room-title'
+            // initial={{ x: 50, opacity: 0 }}
+            // animate={{ x: 0, opacity: 1 }}
+            // transition={{ delay: 1, duration: 1 }}
+          >
+            Diary <br/>Of An<br/>Influencer
+          </h1>
+          <div className='title-line-div-1'></div>
+          <motion.p
+            className='dream-room-subtitle'
+            initial={{ x: -50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 1.25, duration: 1 }}
+          >
+            Contrary to popular belief,<br/>Lorem Ipsum is not simply random text. <br/>It has roots in a piece of classical <br/>Latin literature from 45 BC
+          </motion.p>
         </div>
         <div className='padding-enforcer'>
           <p className='dream-room-paragraph-text'>I didn’t grow up rich, but I wouldn’t exactly say I was poor either. In sixth form, I was the boy on free school meals (FSM), always waiting until the end of lunch to avoid the dinner lady shouting that I had run out of credit. She wasn’t exactly the friendliest, so I’d always try and be nice, hoping she’d let me give more food than my credit allowed. It never worked. I grew up in Shakespeare’s town, Stratford-Upon-Avon, a nice town where some kids came to school with Louis Vuitton bags and belts. I saved every penny of my £4.50 an hour job to buy a Gucci belt and a Chanel bronzer, so nobody would ever comprehend I was on FSM. Looking back now, it was normal; many people were, but I brought this facade I learned to create at school online with me. </p>
