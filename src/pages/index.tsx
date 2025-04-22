@@ -1,11 +1,13 @@
 // @ts-nocheck
 import { useState, useEffect } from 'react';
+import '../app/globals.css'
+import Image from 'next/image';
 import WideImage from '../assets/images/cover-wide.webp';
 import OverheadImage from '../assets/images/cover-aerial.png';
 import { motion } from 'framer-motion';
+import dynamic from 'next/dynamic';
 import gsap from 'gsap';
-// import { ScrollTrigger } from 'gsap/ScrollTrigger';
-// gsap.registerPlugin(ScrollTrigger);
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const Home = () => {
   const handleHover = (id: string) => {
@@ -27,12 +29,13 @@ const Home = () => {
     const fillPath = document.getElementById(`${id}-fill`);
     const bgImage = document.getElementById('svg-bg-image');
 
-    if (fillPath && pointerLine && bgImage && infoCircle) {
+    if (fillPath && pointerLine && bgImage && infoCircle && itemVals[id]) {
       fillPath.style.stroke = 'rgba(239, 250, 255, 1)';
       fillPath.style.strokeWidth = '5px';
       fillPath.style.fill = 'rgba(239, 250, 255, 0.25)';
       fillPath.classList.add('glow');
 
+      console.log({id, itemVals})
       pointerLine.setAttribute('d', itemVals[id].pointer);
       pointerLine.style.display = 'block';
       infoCircle.setAttribute('cx', itemVals[id].circleX);
@@ -115,63 +118,65 @@ const Home = () => {
     }
   }
 
-//   useEffect(() => {
-//     gsap.to('.initial-image-container', {
-//       scale: 2,
-//       ease: 'none',
-//       scrollTrigger: {
-//         trigger: ".scroll-container",
-//         start: "top top",
-//         end: "bottom top",
-//         scrub: true
-//       }
-//     })
-//
-//     gsap.to('.title-container', {
-//       z: 1500,
-//       ease: 'none',
-//       scrollTrigger: {
-//         trigger: '.scroll-container',
-//         start: 'top top',
-//         end: 'bottom bottom',
-//         scrub: true,
-//       }
-//     })
-//
-//     gsap.to('.subtitle-container', {
-//       z: 800,
-//       ease: 'none',
-//       scrollTrigger: {
-//         trigger: '.scroll-container',
-//         start: 'top top',
-//         end: 'bottom bottom',
-//         scrub: true,
-//       }
-//     })
-//
-//     gsap.to('.svg-overlay-container', {
-//       scale: 1.5,
-//       ease: 'none',
-//       scrollTrigger: {
-//         trigger: ".scroll-container",
-//         start: "55% top",
-//         end: "bottom bottom",
-//         scrub: true
-//       }
-//     })
-//
-//     ScrollTrigger.create({
-//       trigger: ".scroll-container",
-//       start: "center top", // Adjust as needed
-//       // markers: true,
-//       onEnter: () => {
-//         handleImageChange(1);
-//       },
-//       onLeaveBack: () => {
-//         handleImageChange(0);
-//       }
-//     })
-//   }, [])
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to('.initial-image-container', {
+      scale: 2,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: ".scroll-container",
+        start: "top top",
+        end: "bottom top",
+        scrub: true
+      }
+    })
+
+    gsap.to('.title-container', {
+      z: 1500,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.scroll-container',
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: true,
+      }
+    })
+
+    gsap.to('.subtitle-container', {
+      z: 800,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.scroll-container',
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: true,
+      }
+    })
+
+    gsap.to('.svg-overlay-container', {
+      scale: 1.5,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: ".scroll-container",
+        start: "55% top",
+        end: "bottom bottom",
+        scrub: true
+      }
+    })
+
+    ScrollTrigger.create({
+      trigger: ".scroll-container",
+      start: "center top", // Adjust as needed
+      // markers: true,
+      onEnter: () => {
+        handleImageChange(1);
+      },
+      onLeaveBack: () => {
+        handleImageChange(0);
+      }
+    })
+  }, [])
 
   return (
     <div className='scroll-container'>
@@ -201,12 +206,12 @@ const Home = () => {
         <picture>
           <source media="(min-width: 1024px)" srcSet={WideImage} />
           {/* <source media="(min-width: 640px)" srcSet={WideImageMobile} /> */}
-          <img src={WideImage} className='initial-image' />
+          <Image src={WideImage} className='initial-image' />
         </picture>
       </div>
       <svg className="svg-overlay-container" viewBox="0 0 5120 2880" version="1.1" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
         <g id="svg-bg-image">
-          <image width="100%" height="100%" preserveAspectRatio="xMinYMin meet" xlinkHref={OverheadImage} />
+          <image width="100%" height="100%" preserveAspectRatio="xMinYMin meet" xlinkHref={OverheadImage.src} />
         </g>
         <g id="layer-outline">
           <path id="A-fill" name="A" fill="rgba(0, 0, 0, 0.01)" d="m2878 1374c-36.85-1.812-68.57-3.684-70.49-4.16-2.381-0.5903-3.766-1.652-4.36-3.341-0.5836-1.66 0.5054-13.51 3.304-35.96 3.977-31.9 4.265-36.08 6.084-88.49 1.05-30.25 1.924-60.18 1.941-66.5 0.039-14.06 1.15-18.72 4.79-20.1 3.558-1.353 202.1 6.591 207.6 8.308 7.01 2.173 6.813-1.526 3.609 67.79-1.589 34.38-3.298 74.78-3.798 89.79-0.5003 15.01-1.147 27.52-1.437 27.81-0.9167 0.9166-28.44-1.371-30.63-2.546-1.272-0.681-2.1-2.108-2.1-3.62 0-4.827-6.918-4.459-8.963 0.4765-1.074 2.592-1.596 2.874-4.462 2.409-6.109-0.9914-16.47 6.298-15.09 10.62 0.4199 1.323-0.1672 3.843-1.571 6.742-1.951 4.031-2.113 5.257-1.249 9.473l0.992 4.843-8.577-0.1291c-4.717-0.071-38.73-1.612-75.58-3.424z" />
