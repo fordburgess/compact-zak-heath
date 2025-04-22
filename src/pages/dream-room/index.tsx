@@ -194,11 +194,14 @@ const DreamRoom = () => {
             <h2>CLICK</h2>
             <p>A WAY TO CONTACT ME</p>
           </div>
-          <div className='test-circle' onClick={() => handleObjectClick()}></div>
+          <div className='person-test-circle'></div>
+          <div className='bed-test-circle'></div>
+          <div className='light-test-circle'></div>
         </div>
       </div>
       <div className='content-container'>
         <Image src={ExpandedImage} alt='expanded-image'/>
+        <div className='bed-test-circle'></div>
       </div>
     </>
   )
