@@ -12,42 +12,57 @@ const DiaryOfInfluencer = () => {
 
 
   useEffect(() => {
+    const scrollUp = window.scrollY;
+    console.log(scrollUp)
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.to('.rectangle-shape', {
       x: '200px',
-      ease: "none",
+      ease: "power1.inOut",
       markers: true,
       scrollTrigger: {
-        trigger: '.dream-room-transition-container',
-        start: 'top center',
-        end: 'bottom top',
+        trigger: '.dream-room-article-content',
+        start: 'center bottom',
+        end: 'bottom bottom',
         scrub: true,
       }
-    })
+    });
+
+    // gsap.to('.dream-room-bg', {
+    //   y: '-200px',
+    //   ease: "power1.inOut",
+    //   scrollTrigger: {
+    //     trigger: '.dream-room-article-container',
+    //     start: 'top top',
+    //     end: 'bottom bottom',
+    //     scrub: true,
+    //   }
+    // })
 
   }, [])
 
 
-//   useEffect(() => {
-//     const container = verticalScrollRef.current;
-//     if (!container) return;
-//
-//     const handleScroll = () => {
-//       const scrollUp = container.scrollTop;
-//       const backgroundImage: HTMLElement | null = document.querySelector('.dream-room-bg');
-//
-//       if (backgroundImage) {
-//         backgroundImage.style.transform = `translateY(-${scrollUp * 0.25}px)`;
-//       }
-//     };
-//
-//     container.addEventListener('scroll', handleScroll);
-//
-//     return () => {
-//       container.removeEventListener('scroll', handleScroll);
-//     };
-//   }, []);
+  useEffect(() => {
+    const container = verticalScrollRef.current;
+    console.log(container)
+    const scrollUp = window.scrollY;
+    if (!container) return;
+
+    const handleScroll = () => {
+      console.log(scrollUp)
+      const backgroundImage: HTMLElement | null = document.querySelector('.dream-room-bg');
+
+      if (backgroundImage) {
+        backgroundImage.style.transform = `translateY(-${scrollUp * 0.25}px)`;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <div className='dream-room-article-container'>
@@ -62,13 +77,13 @@ const DiaryOfInfluencer = () => {
         <div className='dream-room-transition-container'>
           <div className='rectangle-shape'></div>
         </div>
-        {/* <p className='dream-room-paragraph-text'>I had just finished my A-Levels. I got my predicted grades, three As and one A*, and I was accepted into Central Saint Martin’s to study Fashion Journalism - after being told from the age of eight that if I wanted a successful career in fashion, I needed to attend this school. I did, and it was exciting because my TikTok career was taking off. I had 150,000 followers and was beginning to make money from branded collaborations; however, I was only charging £200 and I had one collaboration a month. One of these brands also paid me two months late, so I moved to London with £34 and a £30 a week shopping list. I honestly didn’t expect it. I went from filming TikTok videos on a roll of toilet paper, which I had cut two sides out of to use as a phone stand, to investing in quality equipment as my platform grew. </p>
+        <p className='dream-room-paragraph-text'>I had just finished my A-Levels. I got my predicted grades, three As and one A*, and I was accepted into Central Saint Martin’s to study Fashion Journalism - after being told from the age of eight that if I wanted a successful career in fashion, I needed to attend this school. I did, and it was exciting because my TikTok career was taking off. I had 150,000 followers and was beginning to make money from branded collaborations; however, I was only charging £200 and I had one collaboration a month. One of these brands also paid me two months late, so I moved to London with £34 and a £30 a week shopping list. I honestly didn’t expect it. I went from filming TikTok videos on a roll of toilet paper, which I had cut two sides out of to use as a phone stand, to investing in quality equipment as my platform grew. </p>
         <p className='dream-room-paragraph-text'>Some days, I’d gain between 5,000 and 10,000 followers, and in one month, I generated 80 million views. Just imagine 80 million people - it still blows my mind. There were downsides. Being 18 and having an agent who financially took advantage of me was mentally shattering, as I really trusted them, but I lost huge amounts of money! At the time, turning 18 and figuring out “adult” responsibilities like invoices and accountants felt like I was getting thrown into adulthood, as I wasn’t enjoying “uni life” as much as I wanted to. Still, I’m also grateful because what 18-year-old can say they worked with YSL Beauty, Maybelline, NYX, Esteé Lauder, Clarins, Armani Beauty and getting gifted by Tom Ford, Prada, Pat McGrath and more. </p>
         <p className='dream-room-paragraph-text'>I became more experimental online, making food-inspired makeup and contouring my nose with eyelash curlers - that video generated 113 million views on TikTok - but my niche always remained the same: creating natural makeup content for everyone. I realised my influence, so I wanted to help people feel confident with makeup and further educate myself and others. Somebody referred to me at an event as the CEO of natural makeup, so I wrote that in my bios, and I haven’t changed them since. </p>
         <p className='dream-room-paragraph-text'>“You’re still doing it then?” Somebody made that comment at my high school reunion. Four years later, I’m living my 14-year-old dream, and I definitely haven’t figured it out, but I have loved helping people I know with advice about getting into the beauty industry, and therefore, I wanted to share what I have learnt on here. More importantly, I have met so many incredible people, and I want to share some of their stories and how they became beauty icons because I understand this industry is hard to navigate. With no textbooks and handouts from family, I want to tell my younger self that you will do all of this yourself but most importantly, I hope I can inspire you and grow with you in this industry too. </p>
         <div className='article-image-container'>
           <Image src={ZakHeathYoung} className="zak-heath-young" alt='profile' />
-        </div> */}
+        </div>
       </div>
     </div>
   )

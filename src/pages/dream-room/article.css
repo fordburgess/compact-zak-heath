@@ -1,34 +1,35 @@
 .dream-room-article-container {
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
   position: relative;
   /* overflow: hidden; */
 }
 
 .dream-room-bg {
-  height: 300%;
+  height: 300vh;
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   object-fit: cover;
   object-position: center;
+  z-index: -5;
 }
 
 #day-in-my-life-bg {
-  height: 150%;
+  height: 300%;
 }
 
 .dream-room-article-content {
-  position: absolute;
-  top: 0;
+  position: relative;
   width: 100%;
-  backdrop-filter: blur(10px) brightness(75%);
+  top: 0;
+  /* overflow-y: scroll; */
+  /* backdrop-filter: blur(10px) brightness(75%); */
   box-sizing: border-box;
   padding: 50px 20px;
   display: flex;
   flex-direction: column;
-  overflow: scroll;
 }
 
 .dream-room-title {
