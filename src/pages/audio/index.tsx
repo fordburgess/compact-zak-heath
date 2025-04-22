@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import './audio.css'
 import WideImage from '../../assets/images/winter-far.webp';
 import WideImageMobile from '../../assets/images/winter-far-mobile.webp';
 import OverheadImage from '../../assets/images/winter-aerial.webp';
@@ -8,6 +9,7 @@ import ExpandedImage from '../../assets/images/winter-expanded.webp';
 import PatriciaBright from '../../assets/images/patricia-bright-profile.webp';
 import ZakHeath from '../../assets/images/zak-heath-profile.webp';
 import ShakeelMurtaza from '../../assets/images/shakeel-murtaza-profile.webp';
+import BenFrank from '../../assets/images/ben-frank.webp';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -51,44 +53,49 @@ const episodes = [
 ]
 
 const Audio = () => {
+  const horizontalScrollRef = useRef<HTMLDivElement | null>(null);
+
   const handleImageChange = (direction: number) => { // direction is the way the user is travelling
     const initialImageContainer = document.querySelector('.initial-image-container');
     const initialImage = document.querySelector('.initial-image');
     const svgOverlayContainer = document.querySelector('.svg-overlay-container');
 
-    if (direction == 0) {
-      initialImageContainer.style.display = 'block';
+    if (initialImageContainer && svgOverlayContainer && initialImage) {
 
-      svgOverlayContainer.style.transition = 'opacity 0.5s ease-in-out, transform 0.3s ease-in-out';
-      initialImageContainer.style.transition = 'opacity 0.75s ease-in-out';
-      initialImage.style.transition = 'transform 0.3s ease-in-out';
+      if (direction == 0) {
+        initialImageContainer.style.display = 'block';
 
-      requestAnimationFrame(() => {
-        svgOverlayContainer.style.opacity = 0;
-        initialImageContainer.style.opacity = 1;
-        initialImage.style.transform = 'scale(1)';
-      });
+        svgOverlayContainer.style.transition = 'opacity 0.5s ease-in-out, transform 0.3s ease-in-out';
+        initialImageContainer.style.transition = 'opacity 0.75s ease-in-out';
+        initialImage.style.transition = 'transform 0.3s ease-in-out';
 
-      setTimeout(() => {
-        svgOverlayContainer.style.display = 'none';
-      }, 1000);
-    }
-    else if (direction == 1) {
-      initialImageContainer.style.transition = 'opacity 1.2s ease-in-out'
-      initialImage.style.transition = 'transform 0.3s ease-in-out';
-      svgOverlayContainer.style.transition = 'opacity 0.5s ease-in-out';
-      svgOverlayContainer.style.display = 'block';
+        requestAnimationFrame(() => {
+          svgOverlayContainer.style.opacity = 0;
+          initialImageContainer.style.opacity = 1;
+          initialImage.style.transform = 'scale(1)';
+        });
 
-      initialImage.style.transform = 'scale(2)';
-      initialImageContainer.style.opacity = 0;
+        setTimeout(() => {
+          svgOverlayContainer.style.display = 'none';
+        }, 1000);
+      }
+      else if (direction == 1) {
+        initialImageContainer.style.transition = 'opacity 1.2s ease-in-out'
+        initialImage.style.transition = 'transform 0.3s ease-in-out';
+        svgOverlayContainer.style.transition = 'opacity 0.5s ease-in-out';
+        svgOverlayContainer.style.display = 'block';
 
-      requestAnimationFrame(() => {
-        svgOverlayContainer.style.opacity = 1;
-      });
+        initialImage.style.transform = 'scale(2)';
+        initialImageContainer.style.opacity = 0;
 
-      setTimeout(() => {
-        initialImageContainer.style.display = 'none';
-      }, 1000);
+        requestAnimationFrame(() => {
+          svgOverlayContainer.style.opacity = 1;
+        });
+
+        setTimeout(() => {
+          initialImageContainer.style.display = 'none';
+        }, 1000);
+      }
     }
   }
 
@@ -96,19 +103,21 @@ const Audio = () => {
     const scrollContainer = document.querySelector('.scroll-container');
     const contentContainer = document.querySelector('.content-container');
 
-    scrollContainer.style.transition = 'opacity 0.5s ease-in-out';
-    contentContainer.style.transition = 'opacity 0.25s ease-in-out';
+    if (scrollContainer && contentContainer) {
+      scrollContainer.style.transition = 'opacity 0.5s ease-in-out';
+      contentContainer.style.transition = 'opacity 0.25s ease-in-out';
 
-    contentContainer.style.display = 'block';
-    scrollContainer.style.opacity = 0;
+      contentContainer.style.display = 'block';
+      scrollContainer.style.opacity = 0;
 
-    requestAnimationFrame(() => {
-      contentContainer.style.opacity = 1;
-    });
+      requestAnimationFrame(() => {
+        contentContainer.style.opacity = 1;
+      });
 
-    setTimeout(() => {
-      scrollContainer.style.display = 'none';
-    }, 1200);
+      setTimeout(() => {
+        scrollContainer.style.display = 'none';
+      }, 1200);
+    }
   }
 
   useEffect(() => {
@@ -193,6 +202,27 @@ const Audio = () => {
     })
   }, [])
 
+  useEffect(() => {
+    const container = horizontalScrollRef.current;
+    if (!container) return;
+
+    const handleScroll = () => {
+      const scrollLeft = container.scrollLeft;
+
+      const backgroundImage = document.querySelector('.content-container-background');
+
+      if (backgroundImage) {
+        backgroundImage.style.transform = `translateX(-${scrollLeft * 0.25}px)`;
+      }
+    };
+
+    container.addEventListener('scroll', handleScroll);
+
+    return () => {
+      container.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <div className='scroll-container' style={{ }}>
@@ -231,16 +261,16 @@ const Audio = () => {
         </div>
       </div>
       <div className='content-container'>
-        {/* <img className='content-container-background' src={ExpandedImage} /> */}
-        {/* <div className='profile-scroll-container' ref={horizontalScrollRef}>
+        <Image className='content-container-background' src={ExpandedImage} alt='expanded-image-winter'/>
+        <div className='profile-scroll-container' ref={horizontalScrollRef}>
           {
             episodes.map((episode: Episode) => {
               return (
                 <Link
-                  to={`/audio/${episode.id}`}
+                  href={`/audio/${episode.id}`}
                 >
                   <div className='profile-container'>
-                    <img className='profile-image' src={episode.profileImage ? episode.profileImage : BenFrank} alt='pfp'/>
+                    <Image className='profile-image' src={episode.profileImage ? episode.profileImage : BenFrank} alt='pfp'/>
                     <div id='podcast-index-info-container'>
                       <h2 id="podcast-index-title">{episode.title.split(':')[0]}</h2>
                       <p id="podcast-index-job">{episode.job}</p>
@@ -250,7 +280,7 @@ const Audio = () => {
               )
             })
           }
-        </div> */}
+        </div>
       </div>
     </>
   )
