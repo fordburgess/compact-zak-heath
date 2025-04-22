@@ -26,6 +26,15 @@
   }
 }
 
+#audio-content-container-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 200vw;
+  object-fit: cover;
+  object-position: center;
+}
 
 #podcast-index-title {
   font-weight: 300;
