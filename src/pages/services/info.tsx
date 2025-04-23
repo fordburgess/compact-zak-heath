@@ -13,18 +13,19 @@ import TikTok from '../../assets/images/tik-tok.png';
 
 
 const ServicesInfo = () => {
-  const verticalScrollRef = useRef<HTMLImageElement | null>(null);
+  const verticalScrollRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const container = verticalScrollRef.current;
     if (!container) return;
 
     const handleScroll = () => {
-      const scrollLeft = container.scrollTop;
+      const scrollTop = container.scrollTop;
+      console.log(scrollTop)
       const backgroundImage: HTMLElement | null = document.getElementById('services-content-container-background');
 
       if (backgroundImage) {
-        backgroundImage.style.transform = `translateY(-${scrollLeft * 0.25}px)`;
+        backgroundImage.style.transform = `translateY(-${scrollTop * 0.25}px)`;
       }
     };
 
@@ -59,17 +60,6 @@ const ServicesInfo = () => {
       x: '0%',
       ease: "power1.inOut",
       duration: 1
-    })
-
-    gsap.to('.animate-circle-1', {
-      x: '200%',
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: '.services-transition-container',
-        start: 'top bottom',
-        end: 'center 60%',
-        scrub: true,
-      }
     })
 
     gsap.to('.body-1-title', {
@@ -172,17 +162,6 @@ const ServicesInfo = () => {
         scrub: true,
       }
     })
-
-    // gsap.to('.animate-circle-2', {
-    //   x: '10%',
-    //   ease: "power1.inOut",
-    //   scrollTrigger: {
-    //     trigger: '.services-transition-container',
-    //     start: 'top bottom',
-    //     end: 'top top',
-    //     scrub: true,
-    //   }
-    // })
   }, [])
 
   return (
@@ -208,9 +187,6 @@ const ServicesInfo = () => {
           <p className='body-2-text' style={{ marginBottom: '10px' }}>As a young voice in the beauty industry with firsthand experience navigating content creation, brand partnerships, and beauty business strategy, I offer consulting services for brands and individuals looking to connect with today’s beauty audience. I can give insight into Gen Z consumer behaviour, influencer marketing and digital storytelling through a beauty and fashion lens.</p>
           <p className='body-2-text'>For consulting opportunities, public speaking, or collaborations, please reach out to me directly at zakheath163@gmail.com</p>
         </div>
-        {/* <div className='services-transition-container'>
-          <div className='animate-circle-1'></div>
-        </div> */}
         <div className='services-info-body' id="body-3">
           <h3 className='body-3-title'>Consulting & Brand Collaboration Inquiries</h3>
           <p className='body-3-text'>As a young voice in the beauty industry with firsthand experience navigating content creation, brand partnerships, and beauty business strategy, I offer consulting services for brands and individuals looking to connect with today’s beauty audience. I can give insight into Gen Z consumer behaviour, influencer marketing and digital storytelling through a beauty and fashion lens</p>
