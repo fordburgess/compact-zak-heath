@@ -16,23 +16,20 @@ const ServicesInfo = () => {
   const verticalScrollRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const container = verticalScrollRef.current;
-    if (!container) return;
-
     const handleScroll = () => {
-      const scrollTop = container.scrollTop;
+      const scrollTop = window.scrollY;
       console.log(scrollTop)
       const backgroundImage: HTMLElement | null = document.getElementById('services-content-container-background');
 
       if (backgroundImage) {
-        backgroundImage.style.transform = `translateY(-${scrollTop * 0.25}px)`;
+        backgroundImage.style.transform = `translateY(-${scrollTop * 0.5}px)`;
       }
     };
 
-    container.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      container.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -166,7 +163,7 @@ const ServicesInfo = () => {
 
   return (
     <div className='services-info-container'>
-      <Image src={ExpandedImage} id='services-content-container-background' alt='content-container'/>
+      <Image src={ExpandedImage} priority id='services-content-container-background' alt='content-container-bg'/>
       <div className='services-info-content' ref={verticalScrollRef}>
         <div className='services-title-section'>
           <h1 id="services-info-title">My Services</h1>

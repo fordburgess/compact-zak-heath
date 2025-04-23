@@ -1,6 +1,7 @@
 .services-info-container {
   width: 100vw;
   position: relative;
+  /* backdrop-filter: blur(3px); */
 }
 
 #services-content-container-background {
@@ -291,6 +292,8 @@
     padding: 100px 300px;
     box-sizing: border-box;
   }
+
+  /* .services-info-content */
 
   .padding-enforcer {
     padding: 0 300px;
