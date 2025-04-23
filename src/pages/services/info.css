@@ -34,7 +34,7 @@
   /* height: 50vh; */
   width: 100%;
   padding: 100px 40px 0;
-  margin-bottom: 50px;
+  margin-bottom: 120px;
   box-sizing: border-box;
 }
 
@@ -68,18 +68,18 @@
 
 .services-info-body h3 {
   margin-bottom: 10px;
+  opacity: 0;
+  /* transform: translateY(30%); */
 }
 
-.dream-room-title {
-  position: absolute;
+.services-info-body p {
   opacity: 0;
-  top: 10%;
-  left: 14%;
-  font-size: 2.5rem;
-  font-weight: 300;
-  margin-bottom: 25px;
-  color: #fff;
-  z-index: 2;
+  /* transform: translateY(30%); */
+}
+
+#body-1 img {
+  height: 50px;
+  width: 50px;
 }
 
 .title-line-1 {
@@ -101,75 +101,64 @@
   right: 5%;
 }
 
-.dream-room-subtitle {
-  color: #fff;
-  font-size: 1.25rem;
-  font-weight: 400;
-  position: absolute;
-  bottom: 15%;
-  right: 8%;
-  z-index: 2;
-}
-
-.article-intro-image {
-  height: 79%;
-  width: auto;
+#body-5 h3 {
   opacity: 0;
-  border: solid 3px #fff;
-  z-index: 0;
-  /* transform: translateY(-30px); */
-  /* transition: opacity 1s; */
 }
 
-.article-image-container {
-  width: 100%;
-  height: 400px;
+.contact-form {
+  opacity: 0;
+}
+
+#body-5 div {
   display: flex;
-  justify-content: center;
-  margin-bottom: 40px;
+  flex-direction: column;
+  margin-bottom: 10px;
 }
 
-.title-circle-1 {
-  min-height: 400px;
-  max-height: 400px;
-  min-width: 400px;
-  max-width: 400px;
-  position: absolute;
-  top: 8%;
-  left: 8%;
-  border-radius: 50%;
-  background-color: #56565652;
-  backdrop-filter: blur(10px);
-}
-
-.title-rectangle-1 {
-  min-height: 300px;
-  max-height: 300px;
-  min-width: 400px;
-  max-width: 400px;
-  position: absolute;
-  bottom: 2%;
-  right: 12%;
+#body-5 input {
+  padding: 5px 10px;
+  background-color: transparent;
+  border: solid 2px #fff;
   border-radius: 8px;
-  background-color: #56565652;
-  backdrop-filter: blur(10px);
-  z-index: 1;
-}
-
-.dream-room-profile, .zak-heath-young {
-  height: 100%;
-  width: 80%;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 8px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-
-.dream-room-paragraph-text {
-  font-size: 1.25rem;
-  font-weight: 500;
-  margin-bottom: 25px;
   color: #fff;
+  font-size: 1rem;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+#body-5 textarea {
+  padding: 8px 10px;
+  background-color: transparent;
+  border: solid 2px #fff;
+  border-radius: 8px;
+  height: 100px;
+  resize: none;
+  color: #fff;
+  font-family: 'Josefin Sans';
+  font-size: 1rem;
+
+
+  &:focus {
+    outline: none;
+  }
+}
+
+#body-5 label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  font-family: 'Josefin Sans';
+}
+
+#body-5 button {
+  padding: 15px;
+  background-color: #fff;
+  width: 100%;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Josefin Sans';
 }
 
 .services-transition-container {
@@ -288,8 +277,9 @@
 }
 
 @media (min-width: 800px) and (max-width: 1200px) {
-  .dream-room-article-content {
-    /* padding: 100px; */
+  .services-info-container {
+    padding: 80px 150px;
+    box-sizing: border-box;
   }
 
   .padding-enforcer {
@@ -298,25 +288,12 @@
 }
 
 @media (min-width: 1201px) {
-  .dream-room-article-content {
-    /* padding: 100px 0; */
+  .services-info-container {
+    padding: 100px 300px;
+    box-sizing: border-box;
   }
 
   .padding-enforcer {
     padding: 0 300px;
-  }
-
-  .dream-room-title {
-    font-size: 4.5rem;
-    margin-bottom: 50px;
-  }
-
-  .article-image-container {
-    height: 400px;
-    width: 100%;
-  }
-
-  .dream-room-profile {
-    width: 50%;
   }
 }

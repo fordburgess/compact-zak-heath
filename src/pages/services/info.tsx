@@ -6,6 +6,11 @@ import ExpandedImage from '../../assets/images/desert-expanded.webp';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { motion } from 'framer-motion';
+import Instagram from '../../assets/images/instagram.png';
+import Snapchat from '../../assets/images/snapchat.png';
+import Youtube from '../../assets/images/youtube.png';
+import TikTok from '../../assets/images/tik-tok.png';
+
 
 const ServicesInfo = () => {
   const verticalScrollRef = useRef<HTMLImageElement | null>(null);
@@ -67,6 +72,107 @@ const ServicesInfo = () => {
       }
     })
 
+    gsap.to('.body-1-title', {
+      y: -50,
+      opacity: 1,
+      ease: 'power1.inOut',
+      duration: 1,
+    })
+
+    gsap.to('.body-1-text', {
+      y: -50,
+      opacity: 1,
+      ease: 'power1.inOut',
+      duration: 1,
+      delay: 0.5
+    })
+
+    gsap.to('.body-2-title', {
+      y: -50,
+      opacity: 1,
+      ease: 'power1.inOut',
+      delay: 0.75
+    })
+
+    gsap.to('.body-2-text', {
+      y: -50,
+      opacity: 1,
+      ease: 'power1.inOut',
+      delay: 0.75
+    })
+
+    gsap.to('.body-3-title', {
+      y: -50,
+      opacity: 1,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#body-3',
+        start: 'top 80%',
+        end: 'center 40%',
+        scrub: true,
+      }
+    })
+
+    gsap.to('.body-3-text', {
+      y: -50,
+      opacity: 1,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#body-3',
+        start: 'top 80%',
+        end: 'center 40%',
+        scrub: true,
+      }
+    })
+
+    gsap.to('.body-4-title', {
+      y: -50,
+      opacity: 1,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#body-4',
+        start: 'top center',
+        end: 'center 40%',
+        scrub: true,
+      }
+    })
+
+    gsap.to('.body-4-text', {
+      y: -50,
+      opacity: 1,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#body-4',
+        start: 'top center',
+        end: 'center 40%',
+        scrub: true,
+      }
+    })
+
+    gsap.to('.body-5-title', {
+      y: -50,
+      opacity: 1,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#body-5',
+        start: 'top 80%',
+        end: 'center center',
+        scrub: true,
+      }
+    })
+
+    gsap.to('.contact-form', {
+      y: -50,
+      opacity: 1,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#body-5',
+        start: 'top center',
+        end: 'center center',
+        scrub: true,
+      }
+    })
+
     // gsap.to('.animate-circle-2', {
     //   x: '10%',
     //   ease: "power1.inOut",
@@ -88,22 +194,49 @@ const ServicesInfo = () => {
           <div className='services-animate-line' id="animate-line-1"></div>
           <h3 id="services-info-subtitle">Lorem Ipsum Sit Dolor Amet Consamatum Est Julia</h3>
         </div>
-        <div className='services-info-body'>
-          <h3>Consulting & Brand Collaboration Inquiries</h3>
-          <p style={{ marginBottom: '10px' }}>As a young voice in the beauty industry with firsthand experience navigating content creation, brand partnerships, and beauty business strategy, I offer consulting services for brands and individuals looking to connect with today’s beauty audience. I can give insight into Gen Z consumer behaviour, influencer marketing and digital storytelling through a beauty and fashion lens.</p>
-          <p>For consulting opportunities, public speaking, or collaborations, please reach out to me directly at zakheath163@gmail.com</p>
+        <div className='services-info-body' id="body-1">
+          <h3 className='body-1-title'>Socials</h3>
+          <div className='body-1-text' style={{ opacity: 0, width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <Image src={Instagram} alt='instagram' />
+            <Image src={TikTok} alt='tik-tok' />
+            <Image src={Youtube} alt='youtube' />
+            <Image src={Snapchat} alt='snapchat' />
+          </div>
+        </div>
+        <div className='services-info-body' id="body-2">
+          <h3 className='body-2-title'>Consulting & Brand Collaboration Inquiries</h3>
+          <p className='body-2-text' style={{ marginBottom: '10px' }}>As a young voice in the beauty industry with firsthand experience navigating content creation, brand partnerships, and beauty business strategy, I offer consulting services for brands and individuals looking to connect with today’s beauty audience. I can give insight into Gen Z consumer behaviour, influencer marketing and digital storytelling through a beauty and fashion lens.</p>
+          <p className='body-2-text'>For consulting opportunities, public speaking, or collaborations, please reach out to me directly at zakheath163@gmail.com</p>
         </div>
         {/* <div className='services-transition-container'>
           <div className='animate-circle-1'></div>
         </div> */}
-        <div className='services-info-body'>
-          <h3>Consulting & Brand Collaboration Inquiries</h3>
-          <p>As a young voice in the beauty industry with firsthand experience navigating content creation, brand partnerships, and beauty business strategy, I offer consulting services for brands and individuals looking to connect with today’s beauty audience. I can give insight into Gen Z consumer behaviour, influencer marketing and digital storytelling through a beauty and fashion lens</p>
-          <p>For consulting opportunities, public speaking, or collaborations, please reach out to me directly at zakheath163@gmail.com</p>
+        <div className='services-info-body' id="body-3">
+          <h3 className='body-3-title'>Consulting & Brand Collaboration Inquiries</h3>
+          <p className='body-3-text'>As a young voice in the beauty industry with firsthand experience navigating content creation, brand partnerships, and beauty business strategy, I offer consulting services for brands and individuals looking to connect with today’s beauty audience. I can give insight into Gen Z consumer behaviour, influencer marketing and digital storytelling through a beauty and fashion lens</p>
+          <p className='body-3-text'>For consulting opportunities, public speaking, or collaborations, please reach out to me directly at zakheath163@gmail.com</p>
         </div>
-        <div className='services-info-body'>
-          <h3>Brand Partnerships & Representation</h3>
-          <p>For all brand partnerships please get in touch with my agent via zak@thebreakco.com.</p>
+        <div className='services-info-body' id="body-4">
+          <h3 className='body-4-title'>Brand Partnerships & Representation</h3>
+          <p className='body-4-text'>For all brand partnerships please get in touch with my agent via zak@thebreakco.com.</p>
+        </div>
+        <div className='services-info-body' id="body-5">
+          <h3 className='body-5-title'>Contact Me</h3>
+          <form className='contact-form'>
+            <div>
+              <label>Name</label>
+              <input type="text" />
+            </div>
+            <div>
+              <label>Email</label>
+              <input type="text" />
+            </div>
+            <div style={{ marginBottom: '15px' }}>
+              <label>Message</label>
+              <textarea />
+            </div>
+            <button>Send</button>
+          </form>
         </div>
       </div>
     </div>
