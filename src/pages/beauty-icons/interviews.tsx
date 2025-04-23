@@ -74,10 +74,10 @@ const BeautyIconsInterviews = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      console.log(scrollTop)
-      const backgroundImage: HTMLElement | null = document.querySelector('beauty-icons-bg');
+      const backgroundImage: HTMLElement | null = document.querySelector('.beauty-icons-bg');
 
       if (backgroundImage) {
+        console.log(scrollTop)
         backgroundImage.style.transform = `translateY(-${scrollTop * 0.5}px)`;
       }
     };
