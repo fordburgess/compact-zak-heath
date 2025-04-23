@@ -24,6 +24,8 @@
   display: flex;
   flex-direction: column;
   color: #fff;
+  backdrop-filter: blur(3px) brightness(90%);
+  padding-bottom: 150px;
 }
 
 .padding-enforcer {
@@ -278,8 +280,11 @@
 
 @media (min-width: 800px) and (max-width: 1200px) {
   .services-info-container {
-    padding: 80px 150px;
     box-sizing: border-box;
+  }
+
+  .services-info-content {
+    padding: 80px 150px;
   }
 
   .padding-enforcer {
@@ -289,11 +294,12 @@
 
 @media (min-width: 1201px) {
   .services-info-container {
-    padding: 100px 300px;
     box-sizing: border-box;
   }
 
-  /* .services-info-content */
+  .services-info-content {
+    padding: 100px 300px;
+  }
 
   .padding-enforcer {
     padding: 0 300px;

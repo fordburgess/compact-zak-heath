@@ -142,8 +142,8 @@ const ServicesInfo = () => {
       ease: 'power1.inOut',
       scrollTrigger: {
         trigger: '#body-5',
-        start: 'top 80%',
-        end: 'center center',
+        start: 'top bottom',
+        end: 'center 80%',
         scrub: true,
       }
     })
@@ -154,8 +154,8 @@ const ServicesInfo = () => {
       ease: 'power1.inOut',
       scrollTrigger: {
         trigger: '#body-5',
-        start: 'top center',
-        end: 'center center',
+        start: 'top bottom',
+        end: 'center 80%',
         scrub: true,
       }
     })
