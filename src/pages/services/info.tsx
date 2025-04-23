@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import './index.css';
+// import './index.css';
 import './info.css';
 import Image from 'next/image';
 import ExpandedImage from '../../assets/images/desert-expanded.webp';
@@ -57,7 +57,7 @@ const ServicesInfo = () => {
     })
 
     gsap.to('.animate-circle-1', {
-      x: '100%',
+      x: '50%',
       ease: "power1.inOut",
       scrollTrigger: {
         trigger: '.services-transition-container',
@@ -95,7 +95,6 @@ const ServicesInfo = () => {
         </div>
         <div className='services-transition-container'>
           <div className='animate-circle-1'></div>
-          <div className='animate-circle-2'></div>
         </div>
           {/* <div className='services-info-section'>
             <h2>Consulting & Brand Collaboration Inquiries</h2>
