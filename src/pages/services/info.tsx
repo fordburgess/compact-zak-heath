@@ -57,7 +57,7 @@ const ServicesInfo = () => {
     })
 
     gsap.to('.animate-circle-1', {
-      x: '50%',
+      x: '200%',
       ease: "power1.inOut",
       scrollTrigger: {
         trigger: '.services-transition-container',
@@ -93,14 +93,18 @@ const ServicesInfo = () => {
           <p style={{ marginBottom: '10px' }}>As a young voice in the beauty industry with firsthand experience navigating content creation, brand partnerships, and beauty business strategy, I offer consulting services for brands and individuals looking to connect with today’s beauty audience. I can give insight into Gen Z consumer behaviour, influencer marketing and digital storytelling through a beauty and fashion lens.</p>
           <p>For consulting opportunities, public speaking, or collaborations, please reach out to me directly at zakheath163@gmail.com</p>
         </div>
-        <div className='services-transition-container'>
+        {/* <div className='services-transition-container'>
           <div className='animate-circle-1'></div>
+        </div> */}
+        <div className='services-info-body'>
+          <h3>Consulting & Brand Collaboration Inquiries</h3>
+          <p>As a young voice in the beauty industry with firsthand experience navigating content creation, brand partnerships, and beauty business strategy, I offer consulting services for brands and individuals looking to connect with today’s beauty audience. I can give insight into Gen Z consumer behaviour, influencer marketing and digital storytelling through a beauty and fashion lens</p>
+          <p>For consulting opportunities, public speaking, or collaborations, please reach out to me directly at zakheath163@gmail.com</p>
         </div>
-          {/* <div className='services-info-section'>
-            <h2>Consulting & Brand Collaboration Inquiries</h2>
-            <p>As a young voice in the beauty industry with firsthand experience navigating content creation, brand partnerships, and beauty business strategy, I offer consulting services for brands and individuals looking to connect with today’s beauty audience. I can give insight into Gen Z consumer behaviour, influencer marketing and digital storytelling through a beauty and fashion lens</p>
-            <p>For consulting opportunities, public speaking, or collaborations, please reach out to me directly at zakheath163@gmail.com</p>
-          </div> */}
+        <div className='services-info-body'>
+          <h3>Brand Partnerships & Representation</h3>
+          <p>For all brand partnerships please get in touch with my agent via zak@thebreakco.com.</p>
+        </div>
       </div>
     </div>
   )
