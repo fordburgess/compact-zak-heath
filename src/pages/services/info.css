@@ -20,11 +20,10 @@
   top: 0;
   height: 300vh;
   overflow-y: scroll;
-  backdrop-filter: blur(10px) brightness(75%);
   box-sizing: border-box;
-  /* padding: 40px 0; */
   display: flex;
   flex-direction: column;
+  color: #fff;
 }
 
 .padding-enforcer {
@@ -37,6 +36,15 @@
   padding: 100px 40px 0;
   margin-bottom: 50px;
   box-sizing: border-box;
+}
+
+.services-info-body {
+  padding: 0 40px;
+  margin-bottom: 200px;
+}
+
+.services-info-body h3 {
+  margin-bottom: 10px;
 }
 
 .dream-room-title {
