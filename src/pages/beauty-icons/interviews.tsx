@@ -72,6 +72,24 @@ const chunked = chunkArray(interviews, 6);
 const BeautyIconsInterviews = () => {
 
   useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      console.log(scrollTop)
+      const backgroundImage: HTMLElement | null = document.querySelector('beauty-icons-bg');
+
+      if (backgroundImage) {
+        backgroundImage.style.transform = `translateY(-${scrollTop * 0.5}px)`;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.to('#icons-pfp-0', {
