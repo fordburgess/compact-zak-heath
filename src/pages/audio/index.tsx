@@ -261,7 +261,7 @@ const Audio = () => {
         </div>
       </div>
       <div className='content-container'>
-        <Image className='content-container-background' src={ExpandedImage} alt='expanded-image-winter'/>
+        <Image src={ExpandedImage} className='content-container-background' id='audio-content-container-background' alt='expanded-image-winter'/>
         <div className='profile-scroll-container' ref={horizontalScrollRef}>
           {
             episodes.map((episode: Episode) => {

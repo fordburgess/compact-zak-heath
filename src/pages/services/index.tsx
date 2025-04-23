@@ -1,15 +1,17 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import WideImage from '../../assets/images/desert-far.webp';
 import WideImageMobile from '../../assets/images/desert-far-mobile.webp';
 import OverheadImage from '../../assets/images/desert-aerial.webp';
-import ExpandedImage from '../../assets/images/desert-expanded.webp';
 import './index.css';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const Services = () => {
+  const verticalScrollRef = useRef<HTMLDivElement | null>(null);
+
   const handleImageChange = (direction: number) => { // direction is the way the user is travelling
     const initialImageContainer: HTMLElement | null = document.querySelector('.initial-image-container');
     const initialImage: HTMLElement | null = document.querySelector('.initial-image');
@@ -156,6 +158,27 @@ const Services = () => {
     })
   }, [])
 
+  useEffect(() => {
+    const container = verticalScrollRef.current;
+    if (!container) return;
+
+    const handleScroll = () => {
+      const scrollLeft = container.scrollTop;
+      console.log(scrollLeft)
+      const backgroundImage: HTMLElement | null = document.getElementById('services-content-container-background');
+
+      if (backgroundImage) {
+        backgroundImage.style.transform = `translateY(-${scrollLeft * 0.25}px)`;
+      }
+    };
+
+    container.addEventListener('scroll', handleScroll);
+
+    return () => {
+      container.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <div className='scroll-container'>
@@ -194,11 +217,10 @@ const Services = () => {
             <h2>CLICK</h2>
             <p>A WAY TO CONTACT ME</p>
           </div>
-          <div className='test-circle' onClick={() => handleObjectClick()}></div>
+          <Link href='/services/info'>
+            <div className='test-circle' onClick={() => handleObjectClick()}></div>
+          </Link>
         </div>
-      </div>
-      <div className='content-container'>
-        <Image src={ExpandedImage} alt='content-container'/>
       </div>
     </>
   )

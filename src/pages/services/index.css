@@ -1,4 +1,4 @@
-#services-title {
+/* #services-title {
   color: #ffeadb;
   font-size: 5rem;
   font-weight: 300;
@@ -9,3 +9,34 @@
   font-size: 2rem;
   font-weight: 300;
 }
+
+#services-content-container-background {
+  position: absolute;
+  top: 0;
+  height: 200vh;
+  width: 100vw;
+  object-fit: cover;
+  object-position: center;
+}
+
+.services-content-scroll-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  overflow-y: scroll;
+  display: flex;
+  justify-content: center;
+}
+
+.services-content-info {
+  height: 150vh;
+  width: 100%;
+  padding: 100px;
+}
+
+.services-content-info h1 {
+  font-size: 5rem;
+  font-weight: 300;
+  font-style: italic;
+} */

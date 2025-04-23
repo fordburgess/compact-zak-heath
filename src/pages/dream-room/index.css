@@ -9,3 +9,26 @@
   font-size: 2rem;
   font-weight: 300;
 }
+
+.bed-test-circle, .light-test-circle, .person-test-circle {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  background-color: #ffffffa1;
+  border-radius: 50%;
+}
+
+.bed-test-circle {
+  bottom: 40%;
+  left: 40%;
+}
+
+.light-test-circle {
+  top: 40%;
+  right: 50%;
+}
+
+.person-test-circle {
+  top: 50%;
+  right: 45%;
+}
