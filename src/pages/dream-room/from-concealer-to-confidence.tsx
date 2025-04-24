@@ -201,9 +201,9 @@ const FromConcealerToConfidence = () => {
           </div>
           <p className='dream-room-paragraph-text'>At fourteen, before heading to a birthday party, I stared angrily at an extraterrestrial-looking red pimple on my forehead. I froze when my mum called it "gross" and handed me a concealer. "I can't wear this; that's gay," as I was scared of feeling emasculated when I already felt different and had constant churning emotions regarding how people perceived me. But my mum, unfazed, told me to "grow up" and shared a story about my uncle. Matthew, she explained, wore makeup as a working male model in the 90s. He was confident, successful, and unashamed. My mum was so comforting about it, but she also gave the eye like she'd disown me if I didn't grab this concealer from her hand; I gave in and applied the It Cosmetics Bye Bye Undereye on this red bulbous pimple. It was the beginning of something transformative. I felt an immediate sense of relief - both in hiding my insecurity and in feeling an odd, almost spiritual connection to my uncle I had never met because although we weren't blood-related (my mum's siblings were all adopted), I imagined Matthew's confidence on set, his flawless skin under the spotlight, and wondered if makeup gave him the same reassurance it was now giving me. That small act of applying concealer sparked a curiosity I couldn't ignore.</p>
           <div className='dream-room-transition-container' id='fctc-trans-2'>
-            {/* <div className='image-with-caption' style={{ zIndex: -1, }}>
+            <div className='image-with-caption' style={{ zIndex: -1, }}>
               <Image src={ZakHeathUncle} alt='zak-heath-uncle'/>
-            </div> */}
+            </div>
             <div className='fctc-line-2'></div>
           </div>
           <p className='dream-room-paragraph-text' style={{ fontStyle: 'italic', fontFamily: 'Playfair' }}>“I soon encountered the harsh reality of online hate and the infamous keyboard warriors”</p>
