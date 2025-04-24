@@ -136,7 +136,11 @@ const AudioEpisode = () => {
     if (location == 'container') {
       if (drawerOpen && infoDrawer) {
         infoDrawer.classList.remove('active');
-        setDrawerOpen(false);
+
+        setTimeout(() => {
+          setDrawerOpen(false);
+          infoDrawer.style.display = 'none';
+        }, 100);
       }
 
       if (drawer2Open && moreEpisodesDrawer) {
@@ -147,8 +151,12 @@ const AudioEpisode = () => {
 
     if (location == 'drawer-button') {
       if (infoDrawer && !drawerOpen) {
-        infoDrawer.classList.add('active');
-        setDrawerOpen(true);
+        infoDrawer.style.display = 'block';
+
+        setTimeout(() => {
+          infoDrawer.classList.add('active');
+          setDrawerOpen(true);
+        }, 100);
       }
     }
 
