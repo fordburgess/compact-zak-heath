@@ -124,11 +124,11 @@ const Audio = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.to('.initial-image-container', {
+    gsap.to('.initial-image', {
       scale: 2,
       ease: 'none',
       scrollTrigger: {
-        trigger: ".test-scroll",
+        trigger: ".scroll-container",
         start: "top top",
         end: "bottom top",
         scrub: true
@@ -206,7 +206,6 @@ const Audio = () => {
   return (
     <>
       <div className='scroll-container'>
-        <div className='test-scroll'></div>
         <div className='initial-image-container'>
           <div className='title-container'>
             <motion.h1
