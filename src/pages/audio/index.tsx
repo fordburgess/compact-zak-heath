@@ -203,26 +203,6 @@ const Audio = () => {
     })
   }, [])
 
-  useEffect(() => {
-    const container = horizontalScrollRef.current;
-    if (!container) return;
-
-    const handleScroll = () => {
-      const scrollLeft = container.scrollLeft;
-      const backgroundImage: HTMLElement | null = document.querySelector('.content-container-background');
-
-      if (backgroundImage) {
-        backgroundImage.style.transform = `translateX(-${scrollLeft * 0.25}px)`;
-      }
-    };
-
-    container.addEventListener('scroll', handleScroll);
-
-    return () => {
-      container.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
   return (
     <>
       <div className='scroll-container' style={{ }}>
@@ -257,29 +237,9 @@ const Audio = () => {
             <h2>HINT</h2>
             <p>YOU CAN READ BUT YOU CAN'T OPEN</p>
           </div>
-          <div className='test-circle' onClick={() => handleObjectClick()}></div>
-        </div>
-      </div>
-      <div className='content-container'>
-        <Image src={ExpandedImage} className='content-container-background' id='audio-content-container-background' alt='expanded-image-winter'/>
-        <div className='profile-scroll-container' ref={horizontalScrollRef}>
-          {
-            episodes.map((episode: Episode) => {
-              return (
-                <Link
-                  href={`/audio/${episode.id}`}
-                >
-                  <div className='profile-container'>
-                    <Image className='profile-image' src={episode.profileImage ? episode.profileImage : BenFrank} alt='pfp'/>
-                    <div id='podcast-index-info-container'>
-                      <h2 id="podcast-index-title">{episode.title.split(':')[0]}</h2>
-                      <p id="podcast-index-job">{episode.job}</p>
-                    </div>
-                  </div>
-                </Link>
-              )
-            })
-          }
+          <Link href='/audio/episodes'>
+            <div className='test-circle' onClick={() => handleObjectClick()}></div>
+          </Link>
         </div>
       </div>
     </>
