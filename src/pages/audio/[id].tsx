@@ -152,7 +152,7 @@ const AudioEpisode = () => {
       }
     }
 
-    if (location == 'clickable-tab') {
+    if (location == 'clickable-tab' || location == 'more-button') {
       if (moreEpisodesDrawer && !drawer2Open) {
         moreEpisodesDrawer.classList.add('open');
         setDrawer2Open(true);
@@ -220,6 +220,7 @@ const AudioEpisode = () => {
           </div>
         </div>
         <div className='bottom-controls'>
+          <p className="mobile-episodes-drawer-button" onClick={() => handleDrawers('more-button')}>More</p>
           <div className='dot-menu' onClick={() => handleDrawers('drawer-button')}>
             <div></div>
             <div></div>
