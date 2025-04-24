@@ -17,48 +17,63 @@ import BenFrank from '../../assets/images/ben-frank.webp';
 const interviews = [
   {
     pfp: AlessandraSteinherr,
+    name: 'Alessandra Steinherr'
   },
   {
     pfp: AdamReed,
+    name: 'Adam Reed'
   },
   {
-    pfp: PatriciaBright
+    pfp: PatriciaBright,
+    name: 'Patricia Bright'
   },
   {
-    pfp: BenFrank
+    pfp: BenFrank,
+    name: 'John Doe'
   },
   {
-    pfp: ZakHeath
+    pfp: ZakHeath,
+    name: 'Zak Heath'
   },
   {
-    pfp: KirstyLewis
+    pfp: KirstyLewis,
+    name: 'Kirsty Lewis'
   },
   {
-    pfp: BenFrank
+    pfp: BenFrank,
+    name: 'John Doe'
   },
   {
-    pfp: ShakeelMurtaza
+    pfp: ShakeelMurtaza,
+    name: 'Shakeel Murtaza'
   },
   {
-    pfp: MonaKattan
+    pfp: MonaKattan,
+    name: 'Mona Kattan'
   },
   {
-    pfp: LisaEldridge
+    pfp: LisaEldridge,
+    name: 'Lisa Eldridge'
   },
   {
-    pfp: BenFrank
+    pfp: BenFrank,
+    name: 'John Doe'
   },
   {
-    pfp: BenFrank
+    pfp: BenFrank,
+    name: 'John Doe'
   },
   {
-    pfp: BenFrank
+    pfp: BenFrank,
+    name: 'John Doe'
   },
   {
-    pfp: BenFrank
+    pfp: BenFrank,
+    name: 'Ben Frank'
   },
   {
-    pfp: BenFrank
+    pfp: BenFrank,
+    name: 'John Doe'
   },
 ]
 
@@ -138,6 +153,9 @@ const BeautyIconsInterviews = () => {
                           className='beauty-icons-pfp'
                           id={`icons-pfp-${index}`}
                         />
+                        <div className='name-container'>
+                          <p>{interview.name}</p>
+                        </div>
                       </div>
                     )
                   })

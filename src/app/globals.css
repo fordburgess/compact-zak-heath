@@ -131,7 +131,7 @@ a {
 
 .further-info-container h2, p {
   font-family: 'Josefin Sans';
-  color: #ffeadb;
+  /* color: #ffeadb; */
   font-weight: 300;
   z-index: 10;
   transform-style: preserve-3d;
@@ -215,4 +215,12 @@ a {
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
+}
+
+.name-container {
+  /* padding: 15px 20px;
+  border-radius: 50px;
+  background-color: #5b5b5b88; */
+  font-size: 1.25rem;
+  color: #fff !important;
 }

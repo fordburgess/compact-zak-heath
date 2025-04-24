@@ -26,6 +26,7 @@
   flex-direction: column;
   color: #fff;
   padding: 150px 20px;
+  backdrop-filter: blur(3px) brightness(80%);
 }
 
 .beauty-icons-section {
@@ -34,7 +35,6 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 40px 0;
   margin-bottom: 100px;
 }
 
@@ -45,26 +45,41 @@
 .beauty-icons-item {
   width: 50%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+}
+
+#icons-pfp-0 {
+  height: 105px;
+  width: 105px;
 }
 
 .beauty-icons-pfp {
   height: 70px;
   width: 70px;
+  margin-bottom: 10px;
   border-radius: 50%;
   opacity: 0;
   object-fit: cover;
   object-position: center;
+  border: solid 1px #fff;
+  transition: transform 0.2s;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
 }
 
 
 @media (min-width: 1000px) {
   .beauty-icons-content-container {
-    padding: 150px 100px;
+    padding: 150px 100px 0;
   }
 
   .beauty-icons-item {
     width: 33%;
+  }
+
+  .beauty-icons-section:not(:first-child) img {
+    margin-bottom: 50px;
   }
 
   #icons-pfp-0 {
@@ -75,5 +90,10 @@
   .beauty-icons-pfp {
     height: 150px;
     width: 150px;
+  }
+
+  .beauty-icons-pfp:hover {
+    cursor: pointer;
+    transform: scale(2);
   }
 }
