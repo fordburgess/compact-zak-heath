@@ -298,6 +298,43 @@
   background-color: #fff;
 }
 
+#fctc-trans-1 {
+  min-height: 400px;
+}
+
+#fctc-quote-1 {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  opacity: 0;
+  font-size: 1.5rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.fctc-circle-2 {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  top: 50%;
+  right: -50%;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+}
+
+.fctc-circle-3 {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  top: 50%;
+  left: -50%;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: translate(50%, -50%);
+}
+
 .fctc-rectangle {
   height: 100px;
   width: 100px;
