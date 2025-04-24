@@ -25,9 +25,24 @@ const FromConcealerToConfidence = () => {
       duration: 1,
     })
 
-    gsap.to('.title-line-1', {
-      minHeight: '80%',
+    gsap.to('.fctc-title', {
       opacity: 1,
+      y: '0%',
+      ease: "power1.inOut",
+      duration: 1,
+      delay: 0.5
+    })
+
+    gsap.to('.fctc-subtitle', {
+      opacity: 1,
+      y: '0%',
+      ease: "power1.inOut",
+      duration: 1,
+      delay: 0.5
+    })
+
+    gsap.to('.fctc-line-1', {
+      width: '80%',
       delay: 1,
       duration: 1,
       scrub: true,
@@ -40,10 +55,32 @@ const FromConcealerToConfidence = () => {
       duration: 1,
     })
 
-    gsap.to('.title-line-1', {
-      y: '-100%',
+    gsap.to('.fctc-title', {
+      x: 100,
+      ease: "power1.inOut",
       scrollTrigger: {
-        trigger: '.article-title-section',
+        trigger: '.fctc-title-section',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true
+      }
+    })
+
+    gsap.to('.fctc-subtitle', {
+      x: -100,
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: '.fctc-title-section',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true
+      }
+    })
+
+    gsap.to('.fctc-line-1', {
+      width: '10px',
+      scrollTrigger: {
+        trigger: '.fctc-title-section',
         start: 'top top',
         end: 'bottom top',
         scrub: true,
@@ -184,22 +221,19 @@ const FromConcealerToConfidence = () => {
     <div className='dream-room-article-container'>
       <Image src={AutumnExpanded} className='dream-room-bg' alt='dream-room-bg'/>
       <div className='dream-room-article-content'>
-        <div className='article-title-section'>
-          <h1 className='dream-room-title'>
+        <div className='fctc-title-section'>
+          <h1 className='fctc-title'>
             From Concealer<br/> to Confidence
           </h1>
-          <div className='title-line-1'></div>
-          <div className='title-line-2'></div>
-          <motion.p
-            className='dream-room-subtitle'
-            initial={{ x: -50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 1.25, duration: 1 }}
+          <div className='fctc-line-1'></div>
+          <h3
+            className='fctc-subtitle'
           >
-            Beauty is for everyone - so let's build together 
-          </motion.p>
-          <div className='title-circle-1'></div>
-          <div className='title-rectangle-1'></div>
+            Beauty is for everyone, <br/> so let's build together 
+          </h3>
+          {/* <div className='fctc-rectangle'></div>
+          <div className='fctc-circle'></div> */}
+          <div className='fctc-line-2'></div>
         </div>
         <div className='padding-enforcer'>
           <p className='dream-room-paragraph-text'>I often wonder if my uncle knew how much of a positive impact he would have on me, a 13-year-old boy navigating identity and insecurity; perhaps he might have chosen differently. My uncle Matthew, a charismatic model and actor who travelled the world as the personification of male beauty, tragically took his life five years before I was born. "He would have loved you very much," my mum used to say.</p>

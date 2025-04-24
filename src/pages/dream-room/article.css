@@ -262,8 +262,67 @@
   }
 }
 
+.fctc-title-section {
+  height: 50vh;
+  width: 100%;
+  /* padding: 20px; */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.fctc-title {
+  color: #fff;
+  font-weight: 300;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(-20%);
+}
+
+.fctc-subtitle {
+  color: #fff;
+  font-size: 1.5rem;
+  bottom: 26%;
+  opacity: 0;
+  transform: translateY(20%);
+}
+
+.fctc-line-1 {
+  height: 1px;
+  width: 10px;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.fctc-rectangle {
+  height: 100px;
+  width: 100px;
+  top: 8%;
+  left: 8%;
+  border-radius: 8px;
+  background-color: #56565652;
+  backdrop-filter: blur(10px);
+}
+
+.fctc-circle {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  bottom: 2%;
+  right: 12%;
+  border-radius: 50%;
+  background-color: #56565652;
+  backdrop-filter: blur(10px);
+  z-index: 1;
+}
+
 .day-in-life-title {
   font-size: 4rem;
+  position: absolute;
 }
 
 .image-with-caption {
