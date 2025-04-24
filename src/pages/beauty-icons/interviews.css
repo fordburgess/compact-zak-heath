@@ -50,6 +50,10 @@
   justify-content: center;
 }
 
+.name-container {
+  text-align: center;
+}
+
 #icons-pfp-0 {
   height: 105px;
   width: 105px;
@@ -83,13 +87,13 @@
   }
 
   #icons-pfp-0 {
-    height: 225px;
-    width: 225px;
+    height: 250px;
+    width: 250px;
   }
 
   .beauty-icons-pfp {
-    height: 150px;
-    width: 150px;
+    height: 165px;
+    width: 165px;
   }
 
   .beauty-icons-pfp:hover {

@@ -17,63 +17,78 @@ import BenFrank from '../../assets/images/ben-frank.webp';
 const interviews = [
   {
     pfp: AlessandraSteinherr,
-    name: 'Alessandra Steinherr'
+    name: 'Alessandra Steinherr',
+    job: 'Test',
   },
   {
     pfp: AdamReed,
-    name: 'Adam Reed'
+    name: 'Adam Reed',
+    job: 'Hairstylist'
   },
   {
     pfp: PatriciaBright,
-    name: 'Patricia Bright'
+    name: 'Patricia Bright',
+    job: 'Content Creator & CEO'
   },
   {
     pfp: BenFrank,
-    name: 'John Doe'
+    name: 'John Doe',
+    job: 'Test'
   },
   {
     pfp: ZakHeath,
-    name: 'Zak Heath'
+    name: 'Zak Heath',
+    job: 'Influencer'
   },
   {
     pfp: KirstyLewis,
-    name: 'Kirsty Lewis'
+    name: 'Kirsty Lewis',
+    job: 'Test'
   },
   {
     pfp: BenFrank,
-    name: 'John Doe'
+    name: 'John Doe',
+    job: 'Accountant'
   },
   {
     pfp: ShakeelMurtaza,
-    name: 'Shakeel Murtaza'
+    name: 'Shakeel Murtaza',
+    job: 'Influencer'
   },
   {
     pfp: MonaKattan,
-    name: 'Mona Kattan'
+    name: 'Mona Kattan',
+    job: 'Test'
   },
   {
     pfp: LisaEldridge,
-    name: 'Lisa Eldridge'
+    name: 'Lisa Eldridge',
+    job: 'Test'
   },
   {
     pfp: BenFrank,
-    name: 'John Doe'
+    name: 'John Doe',
+    job: 'Test'
   },
   {
     pfp: BenFrank,
-    name: 'John Doe'
+    name: 'John Doe',
+    job: 'Test'
   },
   {
     pfp: BenFrank,
-    name: 'John Doe'
+    name: 'John Doe',
+    job: 'Test'
   },
   {
     pfp: BenFrank,
-    name: 'Ben Frank'
+    name: 'Ben Frank',
+    job: 'Test'
   },
   {
     pfp: BenFrank,
-    name: 'John Doe'
+    name: 'John Doe',
+    job: 'Test'
   },
 ]
 
@@ -154,7 +169,8 @@ const BeautyIconsInterviews = () => {
                           id={`icons-pfp-${index}`}
                         />
                         <div className='name-container'>
-                          <p>{interview.name}</p>
+                          <h3>{interview.name}</h3>
+                          <p>{interview.job}</p>
                         </div>
                       </div>
                     )
