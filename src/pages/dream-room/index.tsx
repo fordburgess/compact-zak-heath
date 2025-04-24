@@ -199,10 +199,10 @@ const DreamRoom = () => {
           <div className='light-test-circle'></div>
         </div>
       </div>
-      <div className='content-container'>
+      {/* <div className='content-container'>
         <Image src={ExpandedImage} alt='expanded-image'/>
         <div className='bed-test-circle'></div>
-      </div>
+      </div> */}
     </>
   )
 }
