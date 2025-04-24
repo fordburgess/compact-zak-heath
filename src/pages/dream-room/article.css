@@ -262,8 +262,120 @@
   }
 }
 
+.fctc-title-section {
+  height: 50vh;
+  width: 100%;
+  /* padding: 20px; */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.fctc-title {
+  color: #fff;
+  font-weight: 300;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(-20%);
+}
+
+.fctc-subtitle {
+  color: #fff;
+  font-size: 1.5rem;
+  bottom: 26%;
+  opacity: 0;
+  transform: translateY(20%);
+}
+
+.fctc-line-1 {
+  height: 1px;
+  width: 10px;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+#fctc-trans-1, #fctc-trans-2 {
+  min-height: 400px;
+}
+
+#fctc-trans-2 {
+  padding: 0px 0 100px;
+}
+
+#fctc-quote-1 {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  opacity: 0;
+  font-size: 1.5rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.fctc-circle-2 {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  top: 50%;
+  right: -50%;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+}
+
+.fctc-circle-3 {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  top: 50%;
+  left: -50%;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: translate(50%, -50%);
+}
+
+.fctc-line-2 {
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  height: 10px;
+  width: 1px;
+  background-color: #fff;
+  transform: translate(-50%, -55%);
+  transform-origin: top;
+  z-index: 10;
+}
+
+.fctc-rectangle {
+  height: 100px;
+  width: 100px;
+  top: 8%;
+  left: 8%;
+  border-radius: 8px;
+  background-color: #56565652;
+  backdrop-filter: blur(10px);
+}
+
+.fctc-circle {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  bottom: 2%;
+  right: 12%;
+  border-radius: 50%;
+  background-color: #56565652;
+  backdrop-filter: blur(10px);
+  z-index: 1;
+}
+
 .day-in-life-title {
   font-size: 4rem;
+  position: absolute;
 }
 
 .image-with-caption {
@@ -275,9 +387,24 @@
   }
 
   img {
-    max-height: 200px;
+    max-height: 300px;
     max-width: 100%;
   }
+}
+
+.image-caption {
+  font-size: 1.125rem;
+  font-family: 'Playfair';
+  color: #fff;
+  font-style: italic;
+}
+
+#zak-uncle-caption {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -80%);
+  text-wrap: nowrap;
 }
 
 @media (min-width: 800px) and (max-width: 1200px) {

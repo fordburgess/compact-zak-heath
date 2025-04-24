@@ -25,9 +25,24 @@ const FromConcealerToConfidence = () => {
       duration: 1,
     })
 
-    gsap.to('.title-line-1', {
-      minHeight: '80%',
+    gsap.to('.fctc-title', {
       opacity: 1,
+      y: '0%',
+      ease: "power1.inOut",
+      duration: 1,
+      delay: 0.5
+    })
+
+    gsap.to('.fctc-subtitle', {
+      opacity: 1,
+      y: '0%',
+      ease: "power1.inOut",
+      duration: 1,
+      delay: 0.5
+    })
+
+    gsap.to('.fctc-line-1', {
+      width: '80%',
       delay: 1,
       duration: 1,
       scrub: true,
@@ -40,65 +55,89 @@ const FromConcealerToConfidence = () => {
       duration: 1,
     })
 
-    gsap.to('.title-line-1', {
-      y: '-100%',
+    gsap.to('.fctc-title', {
+      x: 100,
+      ease: "power1.inOut",
       scrollTrigger: {
-        trigger: '.article-title-section',
+        trigger: '.fctc-title-section',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true
+      }
+    })
+
+    gsap.to('.fctc-subtitle', {
+      x: -100,
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: '.fctc-title-section',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true
+      }
+    })
+
+    gsap.to('.fctc-line-1', {
+      width: '10px',
+      scrollTrigger: {
+        trigger: '.fctc-title-section',
         start: 'top top',
         end: 'bottom top',
         scrub: true,
       }
     })
 
-    gsap.to('.dream-room-title', {
-      x: '-100%',
-      scrollTrigger: {
-        trigger: '.article-title-section',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: true,
-      }
-    })
-
-    gsap.to('.dream-room-subtitle', {
-      x: '100%',
-      // ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: '.article-title-section',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: true,
-      }
-    })
-
-    gsap.to('.article-intro-image', {
-      y: '-20%',
-      scrollTrigger: {
-        trigger: '.article-title-section',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: true,
-      }
-    })
-
-    gsap.to('.title-circle-1', {
-      x: '50%',
+    gsap.to('.fctc-circle-2', {
+      x: -500,
       opacity: 0,
       scrollTrigger: {
-        trigger: '.article-title-section',
-        start: 'top top',
-        end: 'bottom top',
+        trigger: '#fctc-trans-1',
+        start: 'top center',
+        end: 'bottom center',
         scrub: true,
       }
     })
 
-    gsap.to('.title-rectangle-1', {
-      x: '-50%',
+    gsap.to('.fctc-circle-3', {
+      x: 600,
       opacity: 0,
       scrollTrigger: {
-        trigger: '.article-title-section',
-        start: 'top top',
-        end: 'bottom top',
+        trigger: '#fctc-trans-1',
+        start: 'top center',
+        end: 'bottom center',
+        scrub: true,
+      }
+    })
+
+    gsap.to('.key-quote-1', {
+      y: -400,
+      opacity: 1,
+      scrollTrigger: {
+        trigger: '#fctc-trans-1',
+        start: 'top center',
+        end: 'bottom center',
+        scrub: true,
+      }
+    })
+
+    gsap.to('.fctc-line-2', {
+      scaleY: '8',
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: '#fctc-trans-2',
+        start: 'top center',
+        end: 'bottom center',
+        scrub: true,
+      }
+    })
+
+    gsap.to('#zak-uncle-caption', {
+      y: -50,
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: '#fctc-trans-2',
+        start: 'top center',
+        end: 'bottom center',
         scrub: true,
       }
     })
@@ -127,39 +166,6 @@ const FromConcealerToConfidence = () => {
       }
     })
 
-    gsap.to('.key-quote-1', {
-      opacity: 1,
-      x: '-20%',
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: '.dream-room-transition-container',
-        start: 'top bottom',
-        end: 'center 60%',
-        scrub: true,
-      }
-    })
-
-    gsap.to('.dream-room-line-2', {
-      minHeight: '60%',
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: "#second-transition-container",
-        start: 'top bottom',
-        end: 'bottom center',
-        scrub: true,
-      }
-    })
-
-    gsap.to('.circle-shape-2', {
-      scale: 1.25,
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: "#second-transition-container",
-        start: 'top center',
-        end: 'bottom top',
-        scrub: true,
-      }
-    })
   }, [])
 
   useEffect(() => {
@@ -184,29 +190,33 @@ const FromConcealerToConfidence = () => {
     <div className='dream-room-article-container'>
       <Image src={AutumnExpanded} className='dream-room-bg' alt='dream-room-bg'/>
       <div className='dream-room-article-content'>
-        <div className='article-title-section'>
-          <h1 className='dream-room-title'>
+        <div className='fctc-title-section'>
+          <h1 className='fctc-title'>
             From Concealer<br/> to Confidence
           </h1>
-          <div className='title-line-1'></div>
-          <div className='title-line-2'></div>
-          <motion.p
-            className='dream-room-subtitle'
-            initial={{ x: -50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 1.25, duration: 1 }}
+          <div className='fctc-line-1'></div>
+          <h3
+            className='fctc-subtitle'
           >
-            Beauty is for everyone - so let's build together 
-          </motion.p>
-          <div className='title-circle-1'></div>
-          <div className='title-rectangle-1'></div>
+            Beauty is for everyone, <br/> so let's build together 
+          </h3>
         </div>
         <div className='padding-enforcer'>
           <p className='dream-room-paragraph-text'>I often wonder if my uncle knew how much of a positive impact he would have on me, a 13-year-old boy navigating identity and insecurity; perhaps he might have chosen differently. My uncle Matthew, a charismatic model and actor who travelled the world as the personification of male beauty, tragically took his life five years before I was born. "He would have loved you very much," my mum used to say.</p>
-          <p className='dream-room-paragraph-text' style={{ fontStyle: 'italic', fontFamily: 'Playfair' }}>"this industry is hard to get into. Together, we can create a future in this space”</p>
+          <div className='dream-room-transition-container' id='fctc-trans-1'>
+            <div className='fctc-circle-2'></div>
+            <div className='fctc-circle-3'></div>
+            <div className='key-quote-1' id='fctc-quote-1'>
+              <h1 className='key-quote-text'>"this industry is hard to get into. Together, we can create a future in this space”</h1>
+            </div>
+          </div>
           <p className='dream-room-paragraph-text'>At fourteen, before heading to a birthday party, I stared angrily at an extraterrestrial-looking red pimple on my forehead. I froze when my mum called it "gross" and handed me a concealer. "I can't wear this; that's gay," as I was scared of feeling emasculated when I already felt different and had constant churning emotions regarding how people perceived me. But my mum, unfazed, told me to "grow up" and shared a story about my uncle. Matthew, she explained, wore makeup as a working male model in the 90s. He was confident, successful, and unashamed. My mum was so comforting about it, but she also gave the eye like she'd disown me if I didn't grab this concealer from her hand; I gave in and applied the It Cosmetics Bye Bye Undereye on this red bulbous pimple. It was the beginning of something transformative. I felt an immediate sense of relief - both in hiding my insecurity and in feeling an odd, almost spiritual connection to my uncle I had never met because although we weren't blood-related (my mum's siblings were all adopted), I imagined Matthew's confidence on set, his flawless skin under the spotlight, and wondered if makeup gave him the same reassurance it was now giving me. That small act of applying concealer sparked a curiosity I couldn't ignore.</p>
-          <div className='image-with-caption'>
-            <Image src={ZakHeathUncle} alt='zak-heath-uncle'/>
+          <div className='dream-room-transition-container' id='fctc-trans-2'>
+            <div className='image-with-caption' style={{ zIndex: -1, }}>
+              <Image src={ZakHeathUncle} alt='zak-heath-uncle'/>
+            </div>
+            <div className='fctc-line-2'></div>
+            <p className='image-caption' id='zak-uncle-caption'>One of the photos I have of my uncle Matthew</p>
           </div>
           <p className='dream-room-paragraph-text' style={{ fontStyle: 'italic', fontFamily: 'Playfair' }}>“I soon encountered the harsh reality of online hate and the infamous keyboard warriors”</p>
           <p className='dream-room-paragraph-text'>So, if it was my mum or uncle's influence, I was rummaging through my mum's green Clinique makeup bag before long. Despite my initial feelings of intrigue, I still cared about what others might think about me, whether that be men weren't supposed to wear makeup unless it was artistic, they're celebrities, or they're gay. I knew my uncle was gay, and when coming out to my mum, I felt comfort knowing that; however, I still wasn't ready to admit it to my mum or myself, but I could admit - I loved my mum's YSL Beauty All Hours Foundation. "Where have you put my foundation?" or "I have a thief for a son" were soon being shouted up the stairs, followed by an angry woman rampaging my room quite frequently to collect her things. </p>
