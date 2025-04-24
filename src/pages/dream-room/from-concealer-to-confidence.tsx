@@ -89,6 +89,7 @@ const FromConcealerToConfidence = () => {
 
     gsap.to('.fctc-circle-2', {
       x: -500,
+      opacity: 0,
       scrollTrigger: {
         trigger: '#fctc-trans-1',
         start: 'top center',
@@ -99,6 +100,7 @@ const FromConcealerToConfidence = () => {
 
     gsap.to('.fctc-circle-3', {
       x: 600,
+      opacity: 0,
       scrollTrigger: {
         trigger: '#fctc-trans-1',
         start: 'top center',
