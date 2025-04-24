@@ -120,12 +120,12 @@ const FromConcealerToConfidence = () => {
       }
     })
 
-    gsap.to('.dream-room-subtitle', {
-      x: '100%',
-      // ease: "power1.inOut",
+    gsap.to('.fctc-line-2', {
+      scaleY: '10',
+      ease: "power1.inOut",
       scrollTrigger: {
-        trigger: '.article-title-section',
-        start: 'top top',
+        trigger: '#fctc-trans-2',
+        start: 'top center',
         end: 'bottom top',
         scrub: true,
       }
@@ -189,9 +189,6 @@ const FromConcealerToConfidence = () => {
           >
             Beauty is for everyone, <br/> so let's build together 
           </h3>
-          {/* <div className='fctc-rectangle'></div>
-          <div className='fctc-circle'></div> */}
-          <div className='fctc-line-2'></div>
         </div>
         <div className='padding-enforcer'>
           <p className='dream-room-paragraph-text'>I often wonder if my uncle knew how much of a positive impact he would have on me, a 13-year-old boy navigating identity and insecurity; perhaps he might have chosen differently. My uncle Matthew, a charismatic model and actor who travelled the world as the personification of male beauty, tragically took his life five years before I was born. "He would have loved you very much," my mum used to say.</p>
@@ -203,8 +200,11 @@ const FromConcealerToConfidence = () => {
             </div>
           </div>
           <p className='dream-room-paragraph-text'>At fourteen, before heading to a birthday party, I stared angrily at an extraterrestrial-looking red pimple on my forehead. I froze when my mum called it "gross" and handed me a concealer. "I can't wear this; that's gay," as I was scared of feeling emasculated when I already felt different and had constant churning emotions regarding how people perceived me. But my mum, unfazed, told me to "grow up" and shared a story about my uncle. Matthew, she explained, wore makeup as a working male model in the 90s. He was confident, successful, and unashamed. My mum was so comforting about it, but she also gave the eye like she'd disown me if I didn't grab this concealer from her hand; I gave in and applied the It Cosmetics Bye Bye Undereye on this red bulbous pimple. It was the beginning of something transformative. I felt an immediate sense of relief - both in hiding my insecurity and in feeling an odd, almost spiritual connection to my uncle I had never met because although we weren't blood-related (my mum's siblings were all adopted), I imagined Matthew's confidence on set, his flawless skin under the spotlight, and wondered if makeup gave him the same reassurance it was now giving me. That small act of applying concealer sparked a curiosity I couldn't ignore.</p>
-          <div className='image-with-caption'>
-            <Image src={ZakHeathUncle} alt='zak-heath-uncle'/>
+          <div className='dream-room-transition-container' id='fctc-trans-2'>
+            {/* <div className='image-with-caption' style={{ zIndex: -1, }}>
+              <Image src={ZakHeathUncle} alt='zak-heath-uncle'/>
+            </div> */}
+            <div className='fctc-line-2'></div>
           </div>
           <p className='dream-room-paragraph-text' style={{ fontStyle: 'italic', fontFamily: 'Playfair' }}>“I soon encountered the harsh reality of online hate and the infamous keyboard warriors”</p>
           <p className='dream-room-paragraph-text'>So, if it was my mum or uncle's influence, I was rummaging through my mum's green Clinique makeup bag before long. Despite my initial feelings of intrigue, I still cared about what others might think about me, whether that be men weren't supposed to wear makeup unless it was artistic, they're celebrities, or they're gay. I knew my uncle was gay, and when coming out to my mum, I felt comfort knowing that; however, I still wasn't ready to admit it to my mum or myself, but I could admit - I loved my mum's YSL Beauty All Hours Foundation. "Where have you put my foundation?" or "I have a thief for a son" were soon being shouted up the stairs, followed by an angry woman rampaging my room quite frequently to collect her things. </p>
