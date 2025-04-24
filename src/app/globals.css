@@ -224,3 +224,18 @@ a {
   font-size: 1.25rem;
   color: #fff !important;
 }
+
+@media (min-width: 1000px) {
+  .page-title {
+    font-size: 4.5rem;
+    font-weight: 300;
+  }
+
+  .subtitle-container {
+    top: 20%;
+  }
+
+  .page-subtitle {
+    font-size: 2rem;
+  }
+}

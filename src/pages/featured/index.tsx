@@ -169,7 +169,7 @@ const Featured = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1 }}
             >
-              DREAM ROOM
+              FEATURED
             </motion.h1>
           </div>
           <div className='subtitle-container'>

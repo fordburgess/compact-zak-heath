@@ -147,7 +147,7 @@ const BeautyIcons = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1 }}
             >
-              Beauty Icons
+              BEAUTY ICONS
             </motion.h1>
           </div>
           <div className='subtitle-container'>

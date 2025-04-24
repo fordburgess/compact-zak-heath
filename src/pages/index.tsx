@@ -193,7 +193,7 @@ const Home = () => {
         </div>
         <div className='subtitle-container'>
           <motion.p
-            className='cover-subtitle'
+            className='page-subtitle'
             id='cover-subtitle'
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
