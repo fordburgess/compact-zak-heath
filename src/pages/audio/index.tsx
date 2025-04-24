@@ -128,7 +128,7 @@ const Audio = () => {
       scale: 2,
       ease: 'none',
       scrollTrigger: {
-        trigger: ".scroll-container",
+        trigger: ".test-scroll",
         start: "top top",
         end: "bottom top",
         scrub: true
@@ -205,7 +205,8 @@ const Audio = () => {
 
   return (
     <>
-      <div className='scroll-container' style={{ }}>
+      <div className='scroll-container'>
+        <div className='test-scroll'></div>
         <div className='initial-image-container'>
           <div className='title-container'>
             <motion.h1
