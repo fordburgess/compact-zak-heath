@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from "next/router";
 import Image from "next/image";
+import Link from "next/link"
 import ExpandedImage from '../../assets/images/winter-expanded.webp'
 import PatriciaBright from '../../assets/images/patricia-bright-profile.webp';
 import ZakHeath from '../../assets/images/zak-heath-profile.webp';
@@ -55,6 +56,7 @@ const AudioEpisode = () => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [currentTime, setCurrentTime] = useState<number>(0);
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
+  const [drawer2Open, setDrawer2Open] = useState<boolean>(false);
   const router = useRouter();
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const titleContainerRef = useRef<HTMLDivElement | null>(null);
@@ -127,30 +129,64 @@ const AudioEpisode = () => {
     };
   }, [episode])
 
-  const handleDrawer = (location: string) => {
+  const handleDrawers = (location: string) => {
+    const moreEpisodesDrawer: HTMLDivElement | null = document.querySelector('.more-episodes-drawer');
     const infoDrawer: HTMLDivElement | null = document.querySelector('.info-drawer');
 
-    if (infoDrawer) {
-      if (location == 'drawer-button' && !drawerOpen) {
-        infoDrawer.classList.add('active');
-        setDrawerOpen(true);
-      }
-
-      if (location == 'container' && drawerOpen) {
+    if (location == 'container') {
+      if (drawerOpen && infoDrawer) {
         infoDrawer.classList.remove('active');
         setDrawerOpen(false);
       }
 
+      if (drawer2Open && moreEpisodesDrawer) {
+        moreEpisodesDrawer.classList.remove('open');
+        setDrawer2Open(false);
+      }
+    }
+
+    if (location == 'drawer-button') {
+      if (infoDrawer && !drawerOpen) {
+        infoDrawer.classList.add('active');
+        setDrawerOpen(true);
+      }
+    }
+
+    if (location == 'clickable-tab') {
+      if (moreEpisodesDrawer && !drawer2Open) {
+        moreEpisodesDrawer.classList.add('open');
+        setDrawer2Open(true);
+      }
+      if (moreEpisodesDrawer && drawer2Open) {
+        moreEpisodesDrawer.classList.remove('open');
+        setDrawer2Open(false);
+      }
     }
   }
 
   return (
-    <div className='episode-container' onClick={() => handleDrawer('container')}>
+    <div className='episode-container' onClick={() => handleDrawers('container')}>
       <Image src={ExpandedImage} className='episode-bg' alt='background'/>
       <audio ref={audioRef} src='/audio/example-audio.mp3' onTimeUpdate={() => handleTimeUpdate()} />
       <div className='episode-layout-container'>
-        <div className='episode-title-and-photo'>
-          <Image src={PatriciaBright} alt='pfp' className='episode-profile-image' />
+        <div className='episode-title-and-photo-desktop'>
+          {
+            episode && (
+              <Image src={episode.profileImage ? episode.profileImage : BenFrank} className='episode-pfp-desktop' alt='pfp'/>
+            )
+          }
+          <div className='info-container-desktop'>
+            <h1>{episode ? episode.title.split(':')[1] : 'Title Not Found'}</h1>
+            <h3>{episode ? episode.title.split(':')[0] : 'Person Not Found'}</h3>
+            <p>{episode ? episode.description : 'Description Not Found'}</p>
+          </div>
+        </div>
+        <div className='episode-title-and-photo-mobile'>
+          {
+            episode && (
+              <Image src={episode.profileImage ? episode.profileImage : BenFrank} alt='pfp' className='episode-profile-image' />
+            )
+          }
           <div ref={titleContainerRef} className='episode-title-container'>
             <div className='inner-title-container' ref={titleRef}>
               <h1 className='episode-title'>{episode ? episode.title.split(':')[1] : 'Title Not Found'}</h1>
@@ -184,11 +220,40 @@ const AudioEpisode = () => {
           </div>
         </div>
         <div className='bottom-controls'>
-          <div className='dot-menu' onClick={() => handleDrawer('drawer-button')}>
+          <div className='dot-menu' onClick={() => handleDrawers('drawer-button')}>
             <div></div>
             <div></div>
             <div></div>
           </div>
+        </div>
+      </div>
+      <div className='more-episodes-drawer'>
+        <div className='episode-drawer-content'>
+          <div style={{ height: '10%', padding: '20px' }}>
+            <h1>More<br/> Episodes</h1>
+          </div>
+          <div className='more-episodes-column'>
+            {
+              episodes && episode && episodes.map((item: Episode) => {
+                if (item.id !== episode.id) {
+                  return (
+                    <Link href={`/audio/${item.id}`}>
+                      <div className='more-episodes-item'>
+                        <Image src={item.profileImage ? item.profileImage : BenFrank} alt='pfp'/>
+                        <h3>{item.title.split(':')[1]}</h3>
+                        <p>{item.title.split(':')[0]}</p>
+                      </div>
+                    </Link>
+                  )
+                }
+              })
+            }
+          </div>
+        </div>
+        <div className='clickable-tab' onClick={() => handleDrawers('clickable-tab')}>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
       </div>
       <div className='info-drawer'>

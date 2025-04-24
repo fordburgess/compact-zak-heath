@@ -94,6 +94,6 @@
 
   .beauty-icons-pfp:hover {
     cursor: pointer;
-    transform: scale(2);
+    /* transform: scale(2); */
   }
 }
