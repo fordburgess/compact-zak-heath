@@ -179,12 +179,11 @@ const Home = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.to('.initial-image-container', {
+    gsap.to('.initial-image', {
       scale: 2,
       ease: 'none',
-      markers: true,
       scrollTrigger: {
-        trigger: ".test-scroll",
+        trigger: ".scroll-container",
         start: "top top",
         end: "bottom top",
         scrub: true
@@ -195,7 +194,7 @@ const Home = () => {
       z: 1500,
       ease: 'none',
       scrollTrigger: {
-        trigger: '.test-scroll',
+        trigger: '.scroll-container',
         start: 'top top',
         end: 'bottom bottom',
         scrub: true,
@@ -203,7 +202,7 @@ const Home = () => {
     })
 
     gsap.to('.subtitle-container', {
-      z: 800,
+      z: 1000,
       ease: 'none',
       scrollTrigger: {
         trigger: '.scroll-container',
