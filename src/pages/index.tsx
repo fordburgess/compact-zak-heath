@@ -182,8 +182,9 @@ const Home = () => {
     gsap.to('.initial-image-container', {
       scale: 2,
       ease: 'none',
+      markers: true,
       scrollTrigger: {
-        trigger: ".scroll-container",
+        trigger: ".test-scroll",
         start: "top top",
         end: "bottom top",
         scrub: true
@@ -194,7 +195,7 @@ const Home = () => {
       z: 1500,
       ease: 'none',
       scrollTrigger: {
-        trigger: '.scroll-container',
+        trigger: '.test-scroll',
         start: 'top top',
         end: 'bottom bottom',
         scrub: true,
@@ -238,6 +239,7 @@ const Home = () => {
 
   return (
     <div className='scroll-container'>
+      <div className='test-scroll'></div>
       <div className='initial-image-container'>
         <div className='title-container'>
           <motion.h1
