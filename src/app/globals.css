@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
 
+@keyframes draw-appear {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -121,6 +127,13 @@ a {
   z-index: 2;
   transform: scale(1.2);
   perspective: 1000px;
+}
+
+.pointer-line {
+  display: none;
+  stroke-dasharray: 1450;
+  stroke-dashoffset: 1450;
+  animation: draw-appear 1s ease-out forwards;
 }
 
 .svg-overlay-test {
