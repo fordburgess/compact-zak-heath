@@ -312,6 +312,10 @@
     width: 50%;
   }
 
+  #day-in-life-title-section {
+    padding: 0 300px;
+  }
+
   .image-with-caption {
     width: 100%;
     text-align: center;
