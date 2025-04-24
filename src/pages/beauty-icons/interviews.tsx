@@ -154,6 +154,7 @@ const BeautyIconsInterviews = () => {
     <div className='beauty-icons-interviews-container'>
       <Image priority src={ExpandedImage} alt='beauty-icons-bg' className='beauty-icons-bg'/>
       <div className='beauty-icons-content-container'>
+        <h1 className='beauty-icons-index-title'>The Icons</h1>
         {
           chunked.map((chunk: any, index: number) => {
             return (

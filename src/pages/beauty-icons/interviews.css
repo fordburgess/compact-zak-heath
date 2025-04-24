@@ -29,6 +29,11 @@
   backdrop-filter: blur(3px) brightness(80%);
 }
 
+.beauty-icons-index-title {
+  font-size: 4.5rem;
+  font-weight: 300;
+}
+
 .beauty-icons-section {
   width: 100%;
   height: 100vh;
@@ -75,25 +80,27 @@
 
 @media (min-width: 1000px) {
   .beauty-icons-content-container {
-    padding: 150px 100px 0;
+    padding: 100px 100px 0;
+  }
+
+  .beauty-icons-section {
+    /* background-color: rgba(193, 191, 191, 0.647); */
   }
 
   .beauty-icons-item {
     width: 33%;
   }
 
-  .beauty-icons-section:not(:first-child) img {
-    margin-bottom: 50px;
-  }
-
   #icons-pfp-0 {
     height: 250px;
     width: 250px;
+    margin-bottom: 20px;
   }
 
   .beauty-icons-pfp {
     height: 165px;
     width: 165px;
+    margin-bottom: 50px;
   }
 
   .beauty-icons-pfp:hover {
