@@ -121,12 +121,23 @@ const FromConcealerToConfidence = () => {
     })
 
     gsap.to('.fctc-line-2', {
-      scaleY: '10',
+      scaleY: '8',
       ease: "power1.inOut",
       scrollTrigger: {
         trigger: '#fctc-trans-2',
         start: 'top center',
-        end: 'bottom top',
+        end: 'bottom center',
+        scrub: true,
+      }
+    })
+
+    gsap.to('#zak-uncle-caption', {
+      y: -50,
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: '#fctc-trans-2',
+        start: 'top center',
+        end: 'bottom center',
         scrub: true,
       }
     })
@@ -205,6 +216,7 @@ const FromConcealerToConfidence = () => {
               <Image src={ZakHeathUncle} alt='zak-heath-uncle'/>
             </div>
             <div className='fctc-line-2'></div>
+            <p className='image-caption' id='zak-uncle-caption'>One of the photos I have of my uncle Matthew</p>
           </div>
           <p className='dream-room-paragraph-text' style={{ fontStyle: 'italic', fontFamily: 'Playfair' }}>“I soon encountered the harsh reality of online hate and the infamous keyboard warriors”</p>
           <p className='dream-room-paragraph-text'>So, if it was my mum or uncle's influence, I was rummaging through my mum's green Clinique makeup bag before long. Despite my initial feelings of intrigue, I still cared about what others might think about me, whether that be men weren't supposed to wear makeup unless it was artistic, they're celebrities, or they're gay. I knew my uncle was gay, and when coming out to my mum, I felt comfort knowing that; however, I still wasn't ready to admit it to my mum or myself, but I could admit - I loved my mum's YSL Beauty All Hours Foundation. "Where have you put my foundation?" or "I have a thief for a son" were soon being shouted up the stairs, followed by an angry woman rampaging my room quite frequently to collect her things. </p>

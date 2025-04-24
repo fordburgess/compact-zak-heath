@@ -392,6 +392,21 @@
   }
 }
 
+.image-caption {
+  font-size: 1.125rem;
+  font-family: 'Playfair';
+  color: #fff;
+  font-style: italic;
+}
+
+#zak-uncle-caption {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -80%);
+  text-wrap: nowrap;
+}
+
 @media (min-width: 800px) and (max-width: 1200px) {
   .dream-room-article-content {
     /* padding: 100px; */
