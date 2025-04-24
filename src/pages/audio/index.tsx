@@ -232,7 +232,7 @@ const Audio = () => {
           <picture>
             <source media="(min-width: 800px)" srcSet={WideImage.src} />
             <source media="(min-width: 640px)" srcSet={WideImageMobile.src} />
-            <Image priority src={WideImageMobile.src} className='initial-image' alt='initial-image' />
+            <Image priority src={WideImageMobile} className='initial-image' alt='initial-image-winter'/>
           </picture>
         </div>
         <div className='svg-overlay-container'>
