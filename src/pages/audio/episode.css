@@ -15,12 +15,18 @@ html, body {
   overflow: hidden;
 }
 
+img {
+  object-fit: cover;
+  object-position: center;
+}
+
 .episode-container {
   height: 100vh;
   width: 100vw;
   background-position: center;
   background-size: cover;
   overflow: hidden;
+  color: #fff;
 }
 
 .episode-bg {
@@ -37,14 +43,14 @@ html, body {
 .episode-layout-container {
   height: 100%;
   width: 100%;
-  padding: 100px 25px 25px;
+  padding: 100px 25px 10px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   box-sizing: border-box;
 }
 
-.episode-title-and-photo {
+.episode-title-and-photo-mobile {
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -74,6 +80,10 @@ html, body {
   object-position: center;
   object-fit: cover;
   margin-right: 10px;
+}
+
+h1 {
+  font-weight: 300;
 }
 
 .episode-title {
@@ -135,7 +145,9 @@ html, body {
   width: 100%;
   height: 9%;
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
 .dot-menu {
@@ -147,8 +159,8 @@ html, body {
 }
 
 .dot-menu div {
-  height: 8px;
-  width: 8px;
+  height: 6px;
+  width: 6px;
   background-color: #fff;
   border-radius: 50%;
 }
@@ -165,6 +177,7 @@ html, body {
   transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
   padding: 40px 20px;
   box-sizing: border-box;
+  z-index: 10;
 }
 
 .info-drawer.active {
@@ -175,19 +188,178 @@ html, body {
   margin-bottom: 10px;
 }
 
-.drawer-title-section h1 {
-  margin-bottom: 5px;
-}
-
 .drawer-description, .drawer-sub-info {
   font-size: 1.2rem;
   color: #fff;
   margin-bottom: 10px;
 }
 
+.episode-title-and-photo-desktop {
+  display: none;
+}
+
+.mobile-episodes-drawer-button {
+  font-size: 1.25rem !important;
+}
+
+.more-episodes-drawer {
+  height: 100%;
+  width: 75vw;
+  display: flex;
+  /* flex-direction: column; */
+  background-color: #ffffff93;
+  backdrop-filter: blur(5px);
+  border-radius: 0 10px 10px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-sizing: border-box;
+  color: #000;
+  overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.more-episodes-drawer.open {
+  transform: translateX(0%);
+}
+
+.clickable-tab {
+  height: 100%;
+  width: 6%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s ease-in;
+}
+
+.clickable-tab div {
+  height: 6px;
+  width: 6px;
+  background-color: #000000b9;
+  border-radius: 50%;
+  margin: 5px 0;
+}
+
+.clickable-tab:hover {
+  cursor: pointer;
+  background-color: #ffffff9a;
+}
+
+.episode-drawer-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.more-episodes-drawer h1 {
+  margin-bottom: 10px;
+}
+
+.more-episodes-column {
+  padding: 20px;
+  /* height: 90%; */
+  padding-bottom: 50px;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+.more-episodes-column::-webkit-scrollbar {
+  display: none;
+}
+
+.more-episodes-item {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.more-episodes-item img {
+  height: 150px;
+  width: 150px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
+
+.more-episodes-item p {
+  font-size: 1.2rem;
+}
+
 @media (min-width: 900px) {
-  .control-buttons {
-    width: 60%;
+  .episode-layout-container {
     margin: 0 auto;
+    width: 70%;
+  }
+
+  .control-buttons {
+    /* width: 60%; */
+    margin: 0 auto;
+  }
+
+  .episode-title-and-photo-mobile {
+    display: none;
+  }
+
+  .episode-title-and-photo-desktop {
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .episode-pfp-desktop {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    object-position: center;
+    margin-right: 50px;
+    border-radius: 8px;
+  }
+
+  .info-container-desktop {
+    margin-left: 25px;
+    width: 60%;
+    max-height: fit-content;
+    padding: 20px;
+    /* background-color: #59595970; */
+    /* backdrop-filter: blur(3px); */
+    border-radius: 8px;
+  }
+
+  .info-container-desktop h1 {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    /* margin-bottom: 500px !important; */
+  }
+
+  .info-container-desktop h3 {
+    font-size: 1.75rem;
+    margin-bottom: 10px;
+  }
+
+  .info-container-desktop p {
+    font-size: 1rem;
+    /* background-color: rgba(99, 99, 99, 0.686);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px; */
+  }
+
+  .mobile-episodes-drawer-button {
+    display: none;
+  }
+
+  .more-episodes-drawer {
+    width: 25vw;
+    transform: translateX(-95%);
+  }
+
+  .dot-menu {
+    display: none;
   }
 }

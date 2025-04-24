@@ -191,7 +191,7 @@ const Services = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1 }}
             >
-              Services
+              SERVICES
             </motion.h1>
           </div>
           <div className='subtitle-container'>

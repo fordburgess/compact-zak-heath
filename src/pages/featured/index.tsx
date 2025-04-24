@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import Image from 'next/image';
-import WideImage from '../../assets/images/field-far.webp';
-import WideImageMobile from '../../assets/images/field-far-mobile.webp';
-import OverheadImage from '../../assets/images/field-aerial.webp';
-import ExpandedImage from '../../assets/images/field-expanded.webp';
+import WideImage from '../../assets/images/spring-far.png';
+import WideImageMobile from '../../assets/images/spring-far-mobile.webp';
+import OverheadImage from '../../assets/images/spring-aerial.png';
+// import ExpandedImage from '../../assets/images/field-expanded.webp';
 import './index.css';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
@@ -158,9 +158,49 @@ const Featured = () => {
 
 
   return (
-    <div>
-
-    </div>
+    <>
+      <div className='scroll-container'>
+        <div className='initial-image-container'>
+          <div className='title-container'>
+            <motion.h1
+              className='page-title'
+              id='dream-room-title'
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1 }}
+            >
+              FEATURED
+            </motion.h1>
+          </div>
+          <div className='subtitle-container'>
+            <motion.p
+              className='page-subtitle'
+              id='dream-room-subtitle'
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 1.5, duration: 1 }}
+            >
+              Scroll to continue...
+            </motion.p>
+          </div>
+          <Image src={WideImage} className='initial-image' alt='initial-image'/>
+          <picture>
+            {/* <source media="(min-width: 1024px)" srcSet={WideImage} />
+            <source media="(min-width: 640px)" srcSet={WideImageMobile} /> */}
+          </picture>
+        </div>
+        <div className='svg-overlay-container'>
+          <Image src={OverheadImage} className='svg-overlay-test' alt='overlay-test'/>
+          <div className='further-info-container'>
+            <h2>CLICK</h2>
+            <p>A WAY TO CONTACT ME</p>
+          </div>
+          <div className='person-test-circle'></div>
+          <div className='bed-test-circle'></div>
+          <div className='light-test-circle'></div>
+        </div>
+      </div>
+    </>
   )
 }
 

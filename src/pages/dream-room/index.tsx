@@ -156,6 +156,7 @@ const DreamRoom = () => {
     })
   }, [])
 
+
   return (
     <>
       <div className='scroll-container'>
@@ -191,17 +192,12 @@ const DreamRoom = () => {
         <div className='svg-overlay-container'>
           <Image src={OverheadImage} className='svg-overlay-test' alt='overlay-test'/>
           <div className='further-info-container'>
-            <h2>CLICK</h2>
-            <p>A WAY TO CONTACT ME</p>
+            <h2>CLICK ON A PRODUCT</h2>
           </div>
           <div className='person-test-circle'></div>
           <div className='bed-test-circle'></div>
           <div className='light-test-circle'></div>
         </div>
-      </div>
-      <div className='content-container'>
-        <Image src={ExpandedImage} alt='expanded-image'/>
-        <div className='bed-test-circle'></div>
       </div>
     </>
   )
