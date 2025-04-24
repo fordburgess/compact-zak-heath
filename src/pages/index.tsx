@@ -179,7 +179,7 @@ const Home = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.to('.initial-image-container', {
+    gsap.to('.initial-image', {
       scale: 2,
       ease: 'none',
       scrollTrigger: {
@@ -202,7 +202,7 @@ const Home = () => {
     })
 
     gsap.to('.subtitle-container', {
-      z: 800,
+      z: 1000,
       ease: 'none',
       scrollTrigger: {
         trigger: '.scroll-container',
@@ -238,6 +238,7 @@ const Home = () => {
 
   return (
     <div className='scroll-container'>
+      <div className='test-scroll'></div>
       <div className='initial-image-container'>
         <div className='title-container'>
           <motion.h1

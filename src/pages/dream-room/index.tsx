@@ -77,7 +77,7 @@ const DreamRoom = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.to('.initial-image-container', {
+    gsap.to('.initial-image', {
       scale: 2,
       ease: 'none',
       scrollTrigger: {
