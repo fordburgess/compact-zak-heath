@@ -318,12 +318,17 @@ h1 {
     object-fit: cover;
     object-position: center;
     margin-right: 50px;
+    border-radius: 8px;
   }
 
   .info-container-desktop {
-    margin-left: 50px;
-    width: 50%;
+    margin-left: 25px;
+    width: 60%;
+    max-height: fit-content;
     padding: 20px;
+    /* background-color: #59595970; */
+    /* backdrop-filter: blur(3px); */
+    border-radius: 8px;
   }
 
   .info-container-desktop h1 {
@@ -338,6 +343,7 @@ h1 {
   }
 
   .info-container-desktop p {
+    font-size: 1rem;
     /* background-color: rgba(99, 99, 99, 0.686);
     backdrop-filter: blur(10px);
     border-radius: 20px;
