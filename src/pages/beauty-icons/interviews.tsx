@@ -136,25 +136,41 @@ const BeautyIconsInterviews = () => {
           { opacity: 0, scale: 1 },
           {
             opacity: 1,
-            scale: 1.5,
+            scale: 1.25,
             ease: 'power1.inOut',
             scrollTrigger: {
               trigger: `#section-${index + 1}`,
               start: 'top 80%',
-              end: 'top 20%',
+              end: 'top 40%',
               scrub: true,
             }
           }
         )
       })
     }
+
+    gsap.to('.beauty-icons-title-section', {
+      y: -100,
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: 'beauty-icons-content-container',
+        start: 'top top',
+        end: 'top -20%',
+        scrub: true
+      }
+    })
   }, [])
 
   return (
     <div className='beauty-icons-interviews-container'>
       <Image priority src={ExpandedImage} alt='beauty-icons-bg' className='beauty-icons-bg'/>
       <div className='beauty-icons-content-container'>
-        <h1 className='beauty-icons-index-title'>The Icons</h1>
+        <div className='beauty-icons-title-section'>
+          <div>
+            <p style={{ fontStyle: 'italic' }}>the</p>
+            <h1 className='beauty-icons-index-title'>ICONS</h1>
+          </div>
+        </div>
         {
           chunked.map((chunk: any, index: number) => {
             return (
