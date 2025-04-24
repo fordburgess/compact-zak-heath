@@ -150,7 +150,7 @@ const Home = () => {
       requestAnimationFrame(() => {
         svgOverlayContainer.style.opacity = 0;
         initialImageContainer.style.opacity = 1;
-        initialImage.style.transform = 'scale(1)';
+        // initialImage.style.transform = 'scale(1)';
       });
 
       setTimeout(() => {
@@ -163,7 +163,7 @@ const Home = () => {
       svgOverlayContainer.style.transition = 'opacity 0.5s ease-in-out';
       svgOverlayContainer.style.display = 'block';
 
-      initialImage.style.transform = 'scale(2)';
+      // initialImage.style.transform = 'scale(2)';
       initialImageContainer.style.opacity = 0;
 
       requestAnimationFrame(() => {
@@ -180,7 +180,7 @@ const Home = () => {
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.to('.initial-image', {
-      scale: 2,
+      scale: 1.5,
       ease: 'none',
       scrollTrigger: {
         trigger: ".scroll-container",
@@ -202,7 +202,7 @@ const Home = () => {
     })
 
     gsap.to('.subtitle-container', {
-      z: 1000,
+      z: 1100,
       ease: 'none',
       scrollTrigger: {
         trigger: '.scroll-container',
