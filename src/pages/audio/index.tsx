@@ -229,7 +229,11 @@ const Audio = () => {
               Scroll to continue...
             </motion.p>
           </div>
-          <Image src={WideImage} className='initial-image' alt='initial-image-winter'/>
+          <picture>
+            <source media="(min-width: 800px)" srcSet={WideImage.src} />
+            <source media="(min-width: 640px)" srcSet={WideImageMobile.src} />
+            <Image priority src={WideImageMobile.src} className='initial-image' alt='initial-image' />
+          </picture>
         </div>
         <div className='svg-overlay-container'>
           <Image src={OverheadImage} className='svg-overlay-test' alt='svg-overlay-winter'/>

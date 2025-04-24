@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import '../app/globals.css'
 import Image from 'next/image';
 import WideImage from '../assets/images/cover-wide.webp';
+import WideImageMobile from '../assets/images/cover-wide-mobile.webp';
 import OverheadImage from '../assets/images/cover-aerial.png';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
@@ -203,9 +204,9 @@ const Home = () => {
           </motion.p>
         </div>
         <picture>
-          <source media="(min-width: 1024px)" srcSet={WideImage} />
-          {/* <source media="(min-width: 640px)" srcSet={WideImageMobile} /> */}
-          <Image src={WideImage} className='initial-image' />
+          <source media="(min-width: 800px)" srcSet={WideImage} />
+          <source media="(min-width: 640px)" srcSet={WideImageMobile} />
+          <Image priority src={WideImageMobile} className='initial-image' />
         </picture>
       </div>
       <svg className="svg-overlay-container" viewBox="0 0 5120 2880" version="1.1" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
