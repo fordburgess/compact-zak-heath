@@ -125,8 +125,8 @@ const FromConcealerToConfidence = () => {
       ease: "power1.inOut",
       scrollTrigger: {
         trigger: '#fctc-trans-2',
-        start: 'top center',
-        end: 'bottom center',
+        start: 'top 60%',
+        end: 'bottom 60%',
         scrub: true,
       }
     })
@@ -136,9 +136,43 @@ const FromConcealerToConfidence = () => {
       ease: "power1.inOut",
       scrollTrigger: {
         trigger: '#fctc-trans-2',
-        start: 'top center',
-        end: 'bottom center',
+        start: 'top 60%',
+        end: 'bottom 60%',
         scrub: true,
+      }
+    })
+
+    gsap.to('.fctc-rectangle-1', {
+      y: 10,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#fctc-trans-3',
+        start: 'top 80%',
+        end: 'top 20%',
+        scrub: true
+      }
+    })
+
+    gsap.to('.fctc-line-3', {
+      scaleX: '35',
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#fctc-trans-3',
+        start: 'top 80%',
+        end: 'top 20%',
+        scrub: true
+      }
+    })
+
+    gsap.to('#fctc-quote-2', {
+      y: 30,
+      opacity: 1,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#fctc-trans-3',
+        start: 'top 80%',
+        end: 'top 20%',
+        scrub: true
       }
     })
 
@@ -148,8 +182,8 @@ const FromConcealerToConfidence = () => {
       ease: "power1.inOut",
       scrollTrigger: {
         trigger: '.dream-room-transition-container',
-        start: 'top bottom',
-        end: 'center 60%',
+        start: 'top center',
+        end: 'top top',
         scrub: true,
       }
     });
@@ -161,7 +195,7 @@ const FromConcealerToConfidence = () => {
       scrollTrigger: {
         trigger: '.dream-room-transition-container',
         start: 'top bottom',
-        end: 'center 60%',
+        end: 'bottom top',
         scrub: true,
       }
     })
@@ -218,8 +252,14 @@ const FromConcealerToConfidence = () => {
             <div className='fctc-line-2'></div>
             <p className='image-caption' id='zak-uncle-caption'>One of the photos I have of my uncle Matthew</p>
           </div>
-          <p className='dream-room-paragraph-text' style={{ fontStyle: 'italic', fontFamily: 'Playfair' }}>“I soon encountered the harsh reality of online hate and the infamous keyboard warriors”</p>
           <p className='dream-room-paragraph-text'>So, if it was my mum or uncle's influence, I was rummaging through my mum's green Clinique makeup bag before long. Despite my initial feelings of intrigue, I still cared about what others might think about me, whether that be men weren't supposed to wear makeup unless it was artistic, they're celebrities, or they're gay. I knew my uncle was gay, and when coming out to my mum, I felt comfort knowing that; however, I still wasn't ready to admit it to my mum or myself, but I could admit - I loved my mum's YSL Beauty All Hours Foundation. "Where have you put my foundation?" or "I have a thief for a son" were soon being shouted up the stairs, followed by an angry woman rampaging my room quite frequently to collect her things. </p>
+          <div className='dream-room-transition-container' id='fctc-trans-3' style={{ zIndex: -1 }}>
+            <div className='fctc-line-3'></div>
+            <div className='fctc-rectangle-1'></div>
+            <div id='fctc-quote-2'>
+              <h1 className='key-quote-text' id='fctc-quote-text-2'>“I soon encountered the harsh reality of online hate and the infamous keyboard warriors”</h1>
+            </div>
+          </div>
           <p className='dream-room-paragraph-text'>Years prior, I'd feel my mum's excitement at the Debenhams makeup counters or see her eagerness to apply her favourite Bareminerals lipstick in the mirror at home. I'd become her little helper, exploring the textures and colours. Now that I understood the ritual, I, too, began to crave it.</p>
           <p className='dream-room-paragraph-text'>By this point, I had come out, mum knew - everybody knew - I knew deep down, but looking back, I do think fourteen was still such a young and brave age to say I was gay. Knowing I could be myself - which I'm forever grateful for - I stopped watching from afar and eventually bought an eight-pan highlighter palette from Makeup Revolution from my local Superdrug. My makeup collection grew rapidly, and I bought lipsticks, eyeshadows, mascaras and blushes to follow the 2018 beauty gurus like Manny MUA, James Charles and Tati Westbrook. Yet, the cut creases and matte lipsticks felt performative, a persona I thought I needed as a newly out gay teen. It wasn't until I experimented with more natural makeup, taking the tips and tricks I learnt from glam makeup. I'd blend the Nivea moisturiser into my stolen YSL Beauty All Hours foundation for a subtle glow that I felt truly comfortable in. Little did I know that this "clean" makeup style would one day become popularised on social media as the "clean girl" look, which would be one of the reasons I astronomically grew on TikTok four years later.</p>
           <p className='dream-room-paragraph-text'>After having multiple conversations with myself in the mirror and giving my reflection reviews of the products I was using, when lockdown terrorised the world, I needed a creative outlet, so I started to make videos on TikTok. I was by no means a professional makeup artist, but I wanted to share my knowledge, skills, and confidence, and I knew nobody could say anything to me because we were locked inside our rooms. But I soon encountered the harsh reality of online hate and the infamous keyboard warriors. Comments like "this is disgusting," "Makeup is for women," and "You're a boy" flooded my content.</p>

@@ -298,7 +298,7 @@
   background-color: #fff;
 }
 
-#fctc-trans-1, #fctc-trans-2 {
+#fctc-trans-1, #fctc-trans-2, #fctc-trans-3 {
   min-height: 400px;
 }
 
@@ -315,6 +315,21 @@
   font-size: 1.5rem;
   text-align: center;
   box-sizing: border-box;
+}
+
+#fctc-quote-2 {
+  position: absolute;
+  top: 18%;
+  left: 5%;
+  transform: translate(-10%, -18%);
+  text-align: center;
+  box-sizing: border-box;
+  width: 200px;
+  opacity: 0;
+}
+
+#fctc-quote-text-2 {
+  font-size: 1.5rem;
 }
 
 .fctc-circle-2 {
@@ -371,6 +386,28 @@
   background-color: #56565652;
   backdrop-filter: blur(10px);
   z-index: 1;
+}
+
+.fctc-rectangle-1 {
+  height: 150px;
+  width: 110px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  position: absolute;
+  top: 30%;
+  right: 10%;
+  transform: translate(10%, -30%);
+}
+
+.fctc-line-3 {
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  min-height: 1px;
+  width: 10px;
+  background-color: #fff;
+  transform: translate(0%, -50%);
+  transform-origin: right;
 }
 
 .day-in-life-title {
