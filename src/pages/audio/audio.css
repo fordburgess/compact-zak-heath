@@ -11,15 +11,29 @@
   border-radius: 8px;
   text-align: center;
   transition: background-color 0.3s, backdrop-filter 0.3s;
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+  }
+
+  &:hover {
+    background-color: rgba(113, 113, 113, 0.103);
+    backdrop-filter: blur(10px);
+
+  }
 }
 
 .profile-container:hover {
   cursor: pointer;
+}
 
-  #podcast-index-info-container {
-    background-color: rgba(113, 113, 113, 0.103);
-    backdrop-filter: blur(10px);
-  }
+.profile-container img {
+  border: solid 1px #fff;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
 }
 
 #audio-content-container-background {

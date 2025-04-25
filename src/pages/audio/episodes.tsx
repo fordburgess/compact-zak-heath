@@ -83,8 +83,8 @@ const Episodes = () => {
                 <div className='profile-container'>
                   <Image className='profile-image' src={episode.profileImage ? episode.profileImage : BenFrank} alt='pfp'/>
                   <div id='podcast-index-info-container'>
-                    <h2 id="podcast-index-title">{episode.title.split(':')[0]}</h2>
-                    <p id="podcast-index-job">{episode.job}</p>
+                    <h3>{episode.title.split(':')[0]}</h3>
+                    <p>{episode.job}</p>
                   </div>
                 </div>
               </Link>
