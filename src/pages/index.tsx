@@ -18,121 +18,90 @@ const Home = () => {
 
       const pointerLine: SVGPathElement = document.querySelector('.pointer-line');
       const bgImage = document.getElementById('svg-bg-image');
+      const infoBox: SVGPathElement = document.querySelector('.info-box');
+      const objectOutlines = document.querySelectorAll('.object-outline');
+      const infoText = document.querySelector('.info-box-title-text');
 
       if (pointerLine && bgImage) {
         pointerLine.setAttribute('d', '');
         pointerLine.style.display = 'none';
 
+        objectOutlines.forEach((object) => {
+          object.style.display = 'block';
+        })
+
+        infoBox.style.opacity = '0';
+        setTimeout(() => {
+          infoBox.setAttribute('d', '');
+        }, 200);
+
+        infoText.setAttribute('x', '');
+        infoText.setAttribute('y', '');
+        infoText.style.opacity = '0';
+        infoText.textContent = '';
         bgImage.style.filter = 'brightness(100%)';
       }
-
     }
   }
 
   const handleClick = (id: string) => {
+    console.log(id)
     if (!activeItem) {
       setActiveItem(true);
 
       const itemVals = {
-        'D': { pointer: 'm3140 825 L3140 650 L3422 500', circleX: '3630', circleY: '430', textX: '3630', textY: '430', textVal: 'Influencer', linkX: '3630', linkY: '490' },
-        'F': { pointer: 'm3100 1275 L3100 1200 L3500 1200', circleX: '3710', circleY: '1200', textX: '3710', textY: '1200', textVal: 'Makeup Artist', linkX: '3710', linkY: '1260' },
-        'G': { pointer: 'm3060 1431 L2900 1575 L2775 1575', circleX: '2555', circleY: '1575', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
-        'H': { pointer: 'm3115 1498 L3115 1675 L3275 1900', circleX: '3400', circleY: '2075', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
-        'J': { pointer: 'm3265 1544 L3265 1700 L3700 1700', circleX: '3920', circleY: '1700', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
-        'K': { pointer: 'm2275 1200 L2100 1200 L2100 1000', circleX: '2100', circleY: '800', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
-        'L': { pointer: 'm2240 1950 L2240 2100 L2100 2300', circleX: '1950', circleY: '2450', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
-        'N': { pointer: 'm2772 1965 L2772 1900 L3340 1900', circleX: '3550', circleY: '1900', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
+        'D': { pointer: 'm3140 840 L3140 700 L2800 700', rectX: '2190', rectY: '550', textX: '2500', textY: '720', textVal: 'My Journey', linkX: '3630', linkY: '490' },
+        'E': { pointer: 'm2715 1280 L2600 1150 L2600 920', rectX: '2290', rectY: '600', textX: '2590', textY: '760', textVal: 'Celebrity Makeup Artist', linkX: '3630', linkY: '490' },
+        'F': { pointer: 'm3100 1275 L3100 1200 L3500 1200', rectX: '3510', rectY: '1050', textX: '3830', textY: '1210', textVal: 'Beauty CEO', linkX: '3710', linkY: '1260' },
+        'G': { pointer: 'm3060 1431 L2900 1575 L2775 1575', rectX: '2162', rectY: '1425', textX: '2470', textY: '1575', textVal: 'Celebrity Hairstylist', linX: '', linkY: '' },
+        'H': { pointer: 'm3115 1498 L3115 1675 L3275 1900', rectX: '3280', rectY: '1890', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
+        'J': { pointer: 'm3265 1544 L3265 1700 L3700 1700', rectX: '3710', rectY: '1550', textX: '4015', textY: '1700', textVal: 'Beauty Photographer', linX: '', linkY: '' },
+        'K': { pointer: 'm2275 1200 L2100 1200 L2100 1000', rectX: '1800', rectY: '680', textX: '2105', textY: '840', textVal: "Men's Beauty Influencer", linX: '', linkY: '' },
+        'L': { pointer: 'm2240 1950 L2240 2100 L1900 2100', rectX: '1290', rectY: '1950', textX: '1600', textY: '2100', textVal: 'Head of Beauty PR', linX: 'Head of Beauty PR', linkY: '' },
+        'N': { pointer: 'm2772 1965 L2772 1900 L3340 1900', rectX: '3350', rectY: '1750', textX: '3650', textY: '1905', textVal: 'Fragrance CEO', linX: '', linkY: '' },
       };
 
       const pointerLine: SVGPathElement = document.querySelector('.pointer-line');
-      const infoCircle = document.querySelector('.info-circle');
+      const infoBox: SVGPathElement = document.querySelector('.info-box');
       const bgImage = document.getElementById('svg-bg-image');
+      const svgOverlayContainer = document.querySelector('.svg-overlay-container');
+      const objectOutlines = document.querySelectorAll('.object-outline');
+      const infoText = document.querySelector('.info-box-title-text');
 
-      if (pointerLine && infoCircle && bgImage) {
+      if (pointerLine && bgImage && infoBox) {
+        objectOutlines.forEach((object) => {
+          if (object.id.split("-")[0] !== id) {
+            object.style.display = 'none';
+          }
+        })
+
         pointerLine.setAttribute('d', itemVals[id].pointer);
         pointerLine.style.display = 'block';
 
-        infoCircle.setAttribute('cx', itemVals[id].circleX);
-        infoCircle.setAttribute('cy', itemVals[id].circleY);
+        const infoBoxPath = `
+          M ${itemVals[id].rectX} ${itemVals[id].rectY}
+          h 600
+          a 10 10 0 0 1 10 10
+          v 300
+          a 10 10 0 0 1 -10 10
+          h -600
+          a 10 10 0 0 1 -10 -10
+          v -300
+          a 10 10 0 0 1 10 -10
+          Z
+        `;
+
+        infoBox.setAttribute('d', infoBoxPath);
+        infoBox.style.opacity = '1';
+
+        infoText.setAttribute('x', itemVals[id].textX);
+        infoText.setAttribute('y', itemVals[id].textY);
+        infoText.textContent = itemVals[id].textVal;
+        infoText.style.opacity = '1';
 
         bgImage.style.filter = 'brightness(85%)';
       }
     }
-  }
-
-  const handleHover = (id: string) => {
-    const itemVals = {
-      'D': { pointer: 'm3140 825 L3140 650 L3422 500', circleX: '3630', circleY: '430', textX: '3630', textY: '430', textVal: 'Makeup Influencer', linkX: '3630', linkY: '490' },
-      'F': { pointer: 'm3100 1275 L3100 1200 L3500 1200', circleX: '3710', circleY: '1200', textX: '3710', textY: '1200', textVal: 'Makeup Artist', linkX: '3710', linkY: '1260' },
-      'G': { pointer: 'm3060 1431 L2900 1575 L2775 1575', circleX: '2555', circleY: '1575', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
-      'H': { pointer: 'm3115 1498 L3115 1675 L3275 1900', circleX: '3400', circleY: '2075', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
-      'J': { pointer: 'm3265 1544 L3265 1700 L3700 1700', circleX: '3920', circleY: '1700', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
-      'K': { pointer: 'm2275 1200 L2100 1200 L2100 1000', circleX: '2100', circleY: '800', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
-      'L': { pointer: 'm2240 1950 L2240 2100 L2100 2300', circleX: '1950', circleY: '2450', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
-      'N': { pointer: 'm2772 1965 L2772 1900 L3340 1900', circleX: '3550', circleY: '1900', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
-    };
-
-    const pointerLine = document.querySelector('.pointer-line');
-    const infoCircle = document.querySelector('.info-circle');
-    const circleText = document.querySelector('.circle-text');
-    const linkText = document.querySelector('.link-text');
-    const fillPath = document.getElementById(`${id}-fill`);
-    const bgImage = document.getElementById('svg-bg-image');
-
-    const svgOverlayContainer = document.querySelector('.svg-overlay-container');
-    const outlines = document.querySelectorAll('.object-outline');
-
-
-    if (outlines && svgOverlayContainer) {
-      svgOverlayContainer.style.animation = ''
-    }
-
-//     if (fillPath && pointerLine && bgImage && infoCircle && itemVals[id]) {
-//       fillPath.style.stroke = 'rgba(239, 250, 255, 1)';
-//       fillPath.style.strokeWidth = '5px';
-//       fillPath.style.fill = 'rgba(239, 250, 255, 0.25)';
-//       fillPath.classList.add('glow');
-//
-//       console.log({id, itemVals})
-//       // pointerLine.setAttribute('d', itemVals[id].pointer);
-//       // pointerLine.style.display = 'block';
-//       infoCircle.setAttribute('cx', itemVals[id].circleX);
-//       infoCircle.setAttribute('cy', itemVals[id].circleY);
-//       infoCircle.style.opacity = '1';
-//
-//       circleText.setAttribute('x', itemVals[id].textX);
-//       circleText.setAttribute('y', itemVals[id].textY);
-//       circleText.textContent = itemVals[id].textVal;
-//       circleText.style.opacity = '1';
-//
-//       linkText.setAttribute('x', itemVals[id].linkX);
-//       linkText.setAttribute('y', itemVals[id].linkY);
-//       linkText.style.opacity = '1';
-//
-//       bgImage.style.filter = 'brightness(85%)';
-    // }
-  }
-
-  const handleExit = (id: string) => {
-//     const fillPath = document.getElementById(`${id}-fill`);
-//     const pointerLine = document.querySelector('.pointer-line');
-//     const infoCircle = document.querySelector('.info-circle');
-//     const bgImage = document.getElementById('svg-bg-image');
-//     const circleText = document.querySelector('.circle-text');
-//     const linkText = document.querySelector('.link-text');
-//
-//     if (fillPath && pointerLine && bgImage && infoCircle) {
-//       fillPath.style.stroke = 'none';
-//       fillPath.style.strokeWidth = '0';
-//       fillPath.style.fill = 'rgba(0, 0, 0, 0.01)';
-//
-//       pointerLine.setAttribute('d', '');
-//       pointerLine.style.display = 'none';
-//       infoCircle.style.opacity = '0';
-//       circleText.style.opacity = '0';
-//       linkText.style.opacity = '0';
-//       bgImage.style.filter = 'brightness(100%)';
-//     }
   }
 
   const handleImageChange = (direction: number) => { // direction is the way the user is travelling
@@ -312,22 +281,29 @@ const Home = () => {
             className='pointer-line'
             filter="url(#soft-glow)"
           />
-          <circle
+          <path
+            className='info-box'
+            d=''
+            fill="rgba(0, 0, 0, 0.65)"
+            stroke="#fff"
+          />
+          {/* <circle
             className='info-circle'
             cx=""
             cy=""
             r="220"
             fill="rgba(239, 250, 255, 0.75)"
             filter="url(#circle-glow)"
-          />
+          /> */}
           <text
-            className='circle-text'
-            x=""
-            y=""
+            className='info-box-title-text'
+            x="2500"
+            y="720"
             textAnchor="middle"
             dominantBaseline="middle"
-            fontSize="52"
-            fill="black"
+            fontSize="50"
+            fill="#fff"
+            fontFamily='Josefin Sans'
             fontWeight="300"
           >
           </text>

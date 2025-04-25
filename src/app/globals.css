@@ -5,7 +5,7 @@
   0% {
     filter: drop-shadow(0 0 0px rgba(239, 250, 255, 1));
     fill: rgba(239, 250, 255, 0.01);
-    stroke-width: 0px;
+    stroke-width: 1px;
   }
   50% {
     filter: drop-shadow(0 0 20px rgba(239, 250, 255, 1));
@@ -15,7 +15,7 @@
   100% {
     filter: drop-shadow(0 0 0px rgba(239, 250, 255, 1));
     fill: rgba(239, 250, 255, 0.01);
-    stroke-width: 0px;
+    stroke-width: 1px;
   }
 }
 
@@ -57,7 +57,7 @@ html, body {
 
 body {
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 100%;
 }
 
 img {
@@ -99,7 +99,7 @@ a {
 }
 
 .scroll-container {
-  height: 1000vh;
+  height: 1000dvh;
   width: 100vw;
   position: relative;
   box-sizing: border-box;
@@ -116,7 +116,7 @@ a {
 }
 
 .initial-image-container {
-  height: 100vh;
+  height: 100dvh;
   width: 100%;
   object-fit: cover;
   object-position: center;
@@ -160,15 +160,20 @@ a {
   perspective: 1000px;
 }
 
-.svg-overlay-container, #layer-outline path {
+.object-outline {
   animation: pulse 5s ease-in-out infinite;
+}
+
+.info-box {
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
 }
 
 #layer-interaction path:hover {
   cursor: pointer;
 }
 
-#layer-outline path {
+.object-outline {
   stroke: rgba(239, 250, 255, 1);
   stroke-width: 3px;
   fill: rgba(239, 250, 255, 0.25);
