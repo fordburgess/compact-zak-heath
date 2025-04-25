@@ -176,29 +176,30 @@ const FromConcealerToConfidence = () => {
       }
     })
 
-    gsap.to('.circle-shape-1', {
-      opacity: 1,
-      x: '20%',
-      ease: "power1.inOut",
+    gsap.to('.fctc-rectangle-2', {
+      borderRadius: '50%',
+      ease: 'power1.inOut',
       scrollTrigger: {
-        trigger: '.dream-room-transition-container',
-        start: 'top center',
-        end: 'top top',
-        scrub: true,
-      }
-    });
-
-    gsap.to('.dream-room-line-1', {
-      minWidth: '60%',
-      x: '20%',
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: '.dream-room-transition-container',
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: true,
+        trigger: '#fctc-trans-4',
+        start: 'top 80%',
+        end: 'top 20%',
+        scrub: true
       }
     })
+
+    gsap.to('#fctc-quote-3', {
+      y: -150,
+      opacity: 1,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#fctc-trans-4',
+        start: 'top 80%',
+        end: 'top 20%',
+        scrub: true
+      }
+    })
+
+
 
   }, [])
 
@@ -263,7 +264,12 @@ const FromConcealerToConfidence = () => {
           <p className='dream-room-paragraph-text'>Years prior, I'd feel my mum's excitement at the Debenhams makeup counters or see her eagerness to apply her favourite Bareminerals lipstick in the mirror at home. I'd become her little helper, exploring the textures and colours. Now that I understood the ritual, I, too, began to crave it.</p>
           <p className='dream-room-paragraph-text'>By this point, I had come out, mum knew - everybody knew - I knew deep down, but looking back, I do think fourteen was still such a young and brave age to say I was gay. Knowing I could be myself - which I'm forever grateful for - I stopped watching from afar and eventually bought an eight-pan highlighter palette from Makeup Revolution from my local Superdrug. My makeup collection grew rapidly, and I bought lipsticks, eyeshadows, mascaras and blushes to follow the 2018 beauty gurus like Manny MUA, James Charles and Tati Westbrook. Yet, the cut creases and matte lipsticks felt performative, a persona I thought I needed as a newly out gay teen. It wasn't until I experimented with more natural makeup, taking the tips and tricks I learnt from glam makeup. I'd blend the Nivea moisturiser into my stolen YSL Beauty All Hours foundation for a subtle glow that I felt truly comfortable in. Little did I know that this "clean" makeup style would one day become popularised on social media as the "clean girl" look, which would be one of the reasons I astronomically grew on TikTok four years later.</p>
           <p className='dream-room-paragraph-text'>After having multiple conversations with myself in the mirror and giving my reflection reviews of the products I was using, when lockdown terrorised the world, I needed a creative outlet, so I started to make videos on TikTok. I was by no means a professional makeup artist, but I wanted to share my knowledge, skills, and confidence, and I knew nobody could say anything to me because we were locked inside our rooms. But I soon encountered the harsh reality of online hate and the infamous keyboard warriors. Comments like "this is disgusting," "Makeup is for women," and "You're a boy" flooded my content.</p>
-          <p className='dream-room-paragraph-text' style={{ fontStyle: 'italic', fontFamily: 'Playfair' }}>“It was the beginning of something transformative”</p>
+          <div className='dream-room-transition-container' id='fctc-trans-4' style={{ zIndex: -1 }}>
+            <div className='fctc-rectangle-2'></div>
+            <div id='fctc-quote-3'>
+              <h1 className='key-quote-text' id='fctc-quote-text-3'>“It was the beginning of something transformative”</h1>
+            </div>
+          </div>
           <p className='dream-room-paragraph-text'>Four years later, I've built a community of over 1.5 million followers across TikTok, YouTube, Snapchat, and Instagram after having an incredible trajectory of growth from replying to these hate comments. I used this hate to positively create editorial, satisfying and humorous content to reimagine the saying actions speak louder than words. I wasn't being vocal, but instead, I showed that men can wear makeup, which really resonated with people because I wasn't angered by their words, but I was showcasing something I enjoy. I created practical tutorials for men who wanted quick, natural makeup solutions, who, like me at fourteen, just wanted to cover their imperfections. To my surprise, my videos resonated not just with men but with women as well. By showcasing traditionally "feminine" products like the Charlotte Tilbury Foundation and Nars concealer in a way that worked for everyone, I was breaking stereotypes and showing makeup as a tool of empowerment and that it is for everybody. People loved it, brands loved it and the videos I started making in my bedroom have led me to have some incredible experiences, alongside meeting the beauty Icons!</p>
           <div className='image-with-caption'>
             <Image src={ZakAndLisa} alt='zak-heath-uncle'/>
