@@ -164,6 +164,11 @@ a {
   /* animation: pulse 5s ease-in-out infinite; */
 }
 
+.info-box {
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+}
+
 #layer-interaction path:hover {
   cursor: pointer;
 }

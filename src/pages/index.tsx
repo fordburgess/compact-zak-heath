@@ -24,9 +24,13 @@ const Home = () => {
         pointerLine.setAttribute('d', '');
         pointerLine.style.display = 'none';
 
+        infoBox.style.opacity = '0';
+        setTimeout(() => {
+          infoBox.setAttribute('d', '');
+        }, 200);
+
         bgImage.style.filter = 'brightness(100%)';
       }
-
     }
   }
 
@@ -67,6 +71,7 @@ const Home = () => {
         `;
 
         infoBox.setAttribute('d', infoBoxPath);
+        infoBox.style.opacity = '1';
         bgImage.style.filter = 'brightness(85%)';
       }
     }
