@@ -28,7 +28,7 @@
   overflow-y: scroll;
   backdrop-filter: blur(10px) brightness(75%);
   box-sizing: border-box;
-  /* padding: 40px 0; */
+  padding: 0 0 100px;
   display: flex;
   flex-direction: column;
 }
@@ -302,8 +302,12 @@
   min-height: 400px;
 }
 
-#fctc-trans-2 {
+#fctc-trans-2, #fctc-trans-5 {
   padding: 0px 0 100px;
+}
+
+#fctc-trans-5 {
+  height: 500px;
 }
 
 #fctc-quote-1 {
@@ -465,6 +469,32 @@
   top: 80%;
   left: 50%;
   transform: translate(-50%, -80%);
+  text-wrap: nowrap;
+}
+
+#zak-and-lisa {
+  max-height: 400px;
+  width: 100%;
+  z-index: 0;
+}
+
+.fctc-line-4 {
+  position: absolute;
+  left: 50%;
+  top: 65%;
+  height: 10px;
+  width: 1px;
+  background-color: #fff;
+  transform: translate(-50%, -65%);
+  transform-origin: top;
+  z-index: 10;
+}
+
+#zak-lisa-caption {
+  position: absolute;
+  top: 87%;
+  left: 50%;
+  transform: translate(-50%, -87%);
   text-wrap: nowrap;
 }
 
