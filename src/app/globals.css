@@ -161,7 +161,7 @@ a {
 }
 
 .svg-overlay-container, #layer-outline path {
-  animation: pulse 5s ease-in-out infinite;
+  /* animation: pulse 5s ease-in-out infinite; */
 }
 
 #layer-interaction path:hover {

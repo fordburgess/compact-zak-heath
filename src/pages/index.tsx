@@ -18,6 +18,7 @@ const Home = () => {
 
       const pointerLine: SVGPathElement = document.querySelector('.pointer-line');
       const bgImage = document.getElementById('svg-bg-image');
+      const infoBox: SVGPathElement = document.querySelector('.info-box');
 
       if (pointerLine && bgImage) {
         pointerLine.setAttribute('d', '');
@@ -34,27 +35,38 @@ const Home = () => {
       setActiveItem(true);
 
       const itemVals = {
-        'D': { pointer: 'm3140 825 L3140 650 L3422 500', circleX: '3630', circleY: '430', textX: '3630', textY: '430', textVal: 'Influencer', linkX: '3630', linkY: '490' },
-        'F': { pointer: 'm3100 1275 L3100 1200 L3500 1200', circleX: '3710', circleY: '1200', textX: '3710', textY: '1200', textVal: 'Makeup Artist', linkX: '3710', linkY: '1260' },
-        'G': { pointer: 'm3060 1431 L2900 1575 L2775 1575', circleX: '2555', circleY: '1575', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
-        'H': { pointer: 'm3115 1498 L3115 1675 L3275 1900', circleX: '3400', circleY: '2075', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
-        'J': { pointer: 'm3265 1544 L3265 1700 L3700 1700', circleX: '3920', circleY: '1700', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
-        'K': { pointer: 'm2275 1200 L2100 1200 L2100 1000', circleX: '2100', circleY: '800', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
-        'L': { pointer: 'm2240 1950 L2240 2100 L2100 2300', circleX: '1950', circleY: '2450', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
-        'N': { pointer: 'm2772 1965 L2772 1900 L3340 1900', circleX: '3550', circleY: '1900', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
+        'D': { pointer: 'm3140 840 L3140 700 L2800 700', rectX: '2190', rectY: '550', textX: '3630', textY: '430', textVal: 'Influencer', linkX: '3630', linkY: '490' },
+        'F': { pointer: 'm3100 1275 L3100 1200 L3500 1200', rectX: '3510', rectY: '1050', textX: '3710', textY: '1200', textVal: 'Makeup Artist', linkX: '3710', linkY: '1260' },
+        'G': { pointer: 'm3060 1431 L2900 1575 L2775 1575', rectX: '2162', rectY: '1425', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
+        'H': { pointer: 'm3115 1498 L3115 1675 L3275 1900', rectX: '3280', rectY: '1890', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
+        'J': { pointer: 'm3265 1544 L3265 1700 L3700 1700', rectX: '3710', rectY: '1550', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
+        'K': { pointer: 'm2275 1200 L2100 1200 L2100 1000', rectX: '1800', rectY: '680', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
+        'L': { pointer: 'm2240 1950 L2240 2100 L1900 2100', rectX: '1290', rectY: '1950', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
+        'N': { pointer: 'm2772 1965 L2772 1900 L3340 1900', rectX: '3350', rectY: '1750', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
       };
 
       const pointerLine: SVGPathElement = document.querySelector('.pointer-line');
-      const infoCircle = document.querySelector('.info-circle');
+      const infoBox: SVGPathElement = document.querySelector('.info-box');
       const bgImage = document.getElementById('svg-bg-image');
 
-      if (pointerLine && infoCircle && bgImage) {
+      if (pointerLine && bgImage && infoBox) {
         pointerLine.setAttribute('d', itemVals[id].pointer);
         pointerLine.style.display = 'block';
 
-        infoCircle.setAttribute('cx', itemVals[id].circleX);
-        infoCircle.setAttribute('cy', itemVals[id].circleY);
+        const infoBoxPath = `
+          M ${itemVals[id].rectX} ${itemVals[id].rectY}
+          h 600
+          a 10 10 0 0 1 10 10
+          v 300
+          a 10 10 0 0 1 -10 10
+          h -600
+          a 10 10 0 0 1 -10 -10
+          v -300
+          a 10 10 0 0 1 10 -10
+          Z
+        `;
 
+        infoBox.setAttribute('d', infoBoxPath);
         bgImage.style.filter = 'brightness(85%)';
       }
     }
@@ -62,11 +74,11 @@ const Home = () => {
 
   const handleHover = (id: string) => {
     const itemVals = {
-      'D': { pointer: 'm3140 825 L3140 650 L3422 500', circleX: '3630', circleY: '430', textX: '3630', textY: '430', textVal: 'Makeup Influencer', linkX: '3630', linkY: '490' },
+      'D': { pointer: 'm3140 825 L3140 650 L3422 500', rectangleX: '3630', circleY: '430', textX: '3630', textY: '430', textVal: 'Makeup Influencer', linkX: '3630', linkY: '490' },
       'F': { pointer: 'm3100 1275 L3100 1200 L3500 1200', circleX: '3710', circleY: '1200', textX: '3710', textY: '1200', textVal: 'Makeup Artist', linkX: '3710', linkY: '1260' },
       'G': { pointer: 'm3060 1431 L2900 1575 L2775 1575', circleX: '2555', circleY: '1575', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
       'H': { pointer: 'm3115 1498 L3115 1675 L3275 1900', circleX: '3400', circleY: '2075', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
-      'J': { pointer: 'm3265 1544 L3265 1700 L3700 1700', circleX: '3920', circleY: '1700', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
+      'J': { pointer: 'm3265 1544 L3265 1700 L3700 1700', rectangleX: '3920', circleY: '1700', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
       'K': { pointer: 'm2275 1200 L2100 1200 L2100 1000', circleX: '2100', circleY: '800', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
       'L': { pointer: 'm2240 1950 L2240 2100 L2100 2300', circleX: '1950', circleY: '2450', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
       'N': { pointer: 'm2772 1965 L2772 1900 L3340 1900', circleX: '3550', circleY: '1900', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
@@ -312,14 +324,20 @@ const Home = () => {
             className='pointer-line'
             filter="url(#soft-glow)"
           />
-          <circle
+          <path
+            className='info-box'
+            d=''
+            fill="rgba(0, 0, 0, 0.5)"
+            stroke="#fff"
+          />
+          {/* <circle
             className='info-circle'
             cx=""
             cy=""
             r="220"
             fill="rgba(239, 250, 255, 0.75)"
             filter="url(#circle-glow)"
-          />
+          /> */}
           <text
             className='circle-text'
             x=""
