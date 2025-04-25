@@ -5,7 +5,7 @@
   0% {
     filter: drop-shadow(0 0 0px rgba(239, 250, 255, 1));
     fill: rgba(239, 250, 255, 0.01);
-    stroke-width: 0px;
+    stroke-width: 1px;
   }
   50% {
     filter: drop-shadow(0 0 20px rgba(239, 250, 255, 1));
@@ -15,7 +15,7 @@
   100% {
     filter: drop-shadow(0 0 0px rgba(239, 250, 255, 1));
     fill: rgba(239, 250, 255, 0.01);
-    stroke-width: 0px;
+    stroke-width: 1px;
   }
 }
 
@@ -160,8 +160,8 @@ a {
   perspective: 1000px;
 }
 
-.svg-overlay-container, #layer-outline path {
-  /* animation: pulse 5s ease-in-out infinite; */
+.object-outline {
+  animation: pulse 5s ease-in-out infinite;
 }
 
 .info-box {
@@ -173,7 +173,7 @@ a {
   cursor: pointer;
 }
 
-#layer-outline path {
+.object-outline {
   stroke: rgba(239, 250, 255, 1);
   stroke-width: 3px;
   fill: rgba(239, 250, 255, 0.25);

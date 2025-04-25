@@ -19,10 +19,15 @@ const Home = () => {
       const pointerLine: SVGPathElement = document.querySelector('.pointer-line');
       const bgImage = document.getElementById('svg-bg-image');
       const infoBox: SVGPathElement = document.querySelector('.info-box');
+      const objectOutlines = document.querySelectorAll('.object-outline');
 
       if (pointerLine && bgImage) {
         pointerLine.setAttribute('d', '');
         pointerLine.style.display = 'none';
+
+        objectOutlines.forEach((object) => {
+          object.style.display = 'block';
+        })
 
         infoBox.style.opacity = '0';
         setTimeout(() => {
@@ -52,8 +57,17 @@ const Home = () => {
       const pointerLine: SVGPathElement = document.querySelector('.pointer-line');
       const infoBox: SVGPathElement = document.querySelector('.info-box');
       const bgImage = document.getElementById('svg-bg-image');
+      const svgOverlayContainer = document.querySelector('.svg-overlay-container');
+      const objectOutlines = document.querySelectorAll('.object-outline');
 
       if (pointerLine && bgImage && infoBox) {
+
+        objectOutlines.forEach((object) => {
+          if (object.id.split("-")[0] !== id) {
+            object.style.display = 'none';
+          }
+        })
+
         pointerLine.setAttribute('d', itemVals[id].pointer);
         pointerLine.style.display = 'block';
 
