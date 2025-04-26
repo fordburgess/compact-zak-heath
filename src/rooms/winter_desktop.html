@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Ford</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #333333;
+      width: 100%;
+      height: 100%;
+      min-height: 100%;
+    }
+
+    @keyframes dash {
+      to { stroke-dashoffset: 0; }
+    }
+
+    #container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #room {
+      position: relative;
+      width: 100%;
+    }
+    #title {
+      font-family: sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.2rem;
+      text-transform: uppercase;
+      box-sizing: border-box;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #ffffff;
+      font-size: 1rem;
+      padding: 1rem;
+    }
+    #annotation {
+      font-family: sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.5rem;
+      text-transform: uppercase;
+      box-sizing: border-box;
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      color: #ffffff;
+      font-size: 3rem;
+      padding: 2rem;
+    }
+    #layer-interaction path {
+      fill: transparent;
+      cursor: pointer;
+    }
+
+    #layer-outline path {
+      stroke-dasharray: 30 10;
+      animation: dash 10s linear forwards;
+      stroke-dashoffset: 1000;
+      animation-iteration-count: infinite;
+    }
+
+    #layer-outline path.active {
+      stroke-width: 0.5rem;
+      stroke: white;
+      fill: rgba(255, 255, 255, 0.2);
+      -webkit-filter: rop-shadow(0 0 16px #60ccff );
+      filter: drop-shadow(0 0 16px #60ccff );
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <section id="room">
+      <svg version="1.1" viewBox="0 0 4551 2560" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="bg-image">
+          <image width="4551" height="2560" preserveAspectRatio="none" xlink:href="./room_winter_desktop.webp"/>
+        </g>
+        <g id="layer-outline">
+          <path name="chair" fill="none" d="m1952 1771c-2.06-1.42-3.76-2.85-3.78-3.19-0.017-0.338-5.13-25.7-11.4-56.5-6.76-33.3-11.9-56.4-12.8-57.3-0.783-0.783-24.4-8.18-52.4-16.4-64.5-19-61.5-18.6-104-13.5l-29.3 3.45-5.39-2.64c-2.96-1.45-5.39-2.96-5.39-3.34s12.3-8.23 27.2-17.4 28.1-17.5 29.1-18.5c1.82-1.7 1.29-3.35-18.2-57.1-11-30.4-28.6-79-39-108-10.4-28.9-23.3-64.2-28.5-78.4-11.4-30.8-11.6-31.8-8.65-35 2.57-2.74 12.2-7.23 16.5-7.71 2.55-0.282 3.05 0.042 3.35 2.17 0.529 3.77 2.05 4.08 7.18 1.48 4.4-2.23 4.73-2.69 5.79-7.95 1.42-7.1 5.66-13.3 12.9-18.8 28.3-21.6 57.9-38.5 91.7-52.2 59.9-24.3 84.8-32 107-33.2 20.8-1.09 27.4 1.48 37.5 14.7 9.93 12.9 25.2 49.7 27.7 66.5 0.635 4.4 2.84 13.4 4.91 19.9l3.75 11.9 18 3.21c23.2 4.13 25.9 5.19 109 41.7 70.2 30.9 81.2 36 83.2 38.6 1.55 2.04 1.67 13.2 0.172 16.5-1.01 2.23-10.7 7.63-13.7 7.63-0.574 0-6.56-2.47-13.3-5.5-6.74-3.02-12.5-5.28-12.7-5.01-0.271 0.271 1.94 17 4.92 37.2l5.41 36.8 7.17 3.41c8.54 4.05 9.9 6.38 10.9 18.6 0.364 4.4 1.08 8.53 1.6 9.17 0.516 0.644 2.82 1.48 5.13 1.86 5.5 0.907 9.35 3.23 10.7 6.44 0.633 1.53 0.958 7.9 0.792 15.5l-0.282 12.9-3.5 2.37c-3.14 2.13-4.23 2.31-10.5 1.77-3.85-0.332-7.58-0.217-8.3 0.255-1.04 0.69-0.301 7.61 3.75 35.1 2.78 18.8 5.05 34.4 5.05 34.7s-1.26 0.96-2.8 1.5c-5.09 1.77-6.99 7.09-4.68 13.1 0.348 0.908-0.706 1.83-3.07 2.68-1.98 0.716-3.76 1.14-3.96 0.944-0.197-0.197-2.86-14.7-5.91-32.3-3.06-17.6-5.99-32.4-6.51-32.9-0.605-0.605-43.2 20.9-117 58.9-98.6 51.1-116 60.1-116 62 0 1.17 3.11 18.1 6.91 37.6s7.06 36.5 7.25 37.9c0.272 1.98-0.442 2.9-3.66 4.73-5 2.85-6.1 2.81-10.8-0.384zm210-305c-0.375-1.51-5.22-20.3-10.8-41.7l-10.1-38.9-24.5-10.8c-21.7-9.54-26.7-11.5-27.1-10.6-0.339 0.947-5.55 85.3-5.29 85.6 0.444 0.53 74.4 18.9 76.6 19 1.44 0.087 1.64-0.404 1.09-2.64zm-97.3-24c0.01-1.51 1.11-21.9 2.46-45.2s2.13-42.8 1.74-43.2c-0.979-0.913-46.5-20.9-46.8-20.6-0.148 0.148 1.86 3.93 4.47 8.4 5.96 10.2 15.3 35.3 18.7 50.3 2.07 9.06 2.52 13.1 2.13 19.2-0.58 8.89-1.72 10.8-10.9 18.2-6.15 4.97-7.1 7.16-3.5 8.06 16.2 4.06 29.5 7.27 30.5 7.36 0.721 0.064 1.26-1.05 1.26-2.64z"/>
+        </g>
+        <g id="layer-interaction">
+          <path data-outline="chair" data-annotation="Chair" d="m1920 1798c-0.38-0.962-10.1-27.8-21.7-59.7-11.5-31.9-21.1-58.1-21.3-58.3-0.179-0.179-25.1-5.23-55.5-11.2l-55.1-10.9-35.7 6.44c-19.6 3.54-36.2 6.44-36.8 6.45-0.623 0-3.51-13.9-6.91-33.2-3.21-18.3-6.03-34-6.26-34.8-0.267-1.03 6.62-9.04 19.2-22.3 13.6-14.4 19.5-21.2 19.1-22.4-1.09-3.61-51.4-237-52-241-0.557-3.91 0.258-7.04 6.25-24l6.89-19.5 82.8-55.5 158-54.7 72.2 9.13 47.8 105 194 81.7 17.4 44.3-3.37 121c-1.85 66.7-3.52 121-3.71 122-0.188 0.179-13.9 3.8-30.6 8.04l-30.2 7.72-24.6-15.2c-19.1-11.8-25-15-26.4-14.4-0.991 0.475-26.5 14.8-56.8 31.8l-55 30.9-14.7 105h-42.7c-39.7 0-42.7-0.122-43.4-1.75z"/>
+        </g>
+      </svg>
+      <span id="title">Project Autumn.</span>
+      <span id="annotation">Word.</span>
+    </section>
+
+    <script>
+      const layers = {
+        buttons: document.querySelector('#labels'),
+        interaction: document.querySelector('#layer-interaction'),
+        outline: document.querySelector('#layer-outline'),
+        annotation: document.querySelector('#annotation'),
+      };
+
+      function annotate(text) {
+        layers.annotation.textContent = text || '';
+      }
+
+      function poi(ie, oe, state) {
+        if(state == 'on' && !oe.classList.contains('active')) {
+          oe.classList.add('active');
+          console.log('show', oe.getAttribute('name'));
+          annotate(ie.dataset.annotation);
+        } else if(state == 'off' && oe.classList.contains('active')) {
+          oe.classList.remove('active');
+          annotate('');
+        }
+      }
+
+      document.addEventListener('mouseout', e => {
+        const t = e.target;
+        if(!t.matches('#layer-interaction path')) return;
+        if(!t.dataset.outline) return;
+        const outline = document.querySelector(`#layer-outline path[name='${ t.dataset.outline }']`);
+        if(!outline) return;
+
+        poi(t, outline, 'off');
+      }, false);
+
+      document.addEventListener('mouseover', e => {
+        const t = e.target;
+        if(!t.matches('#layer-interaction path')) return;
+        if(!t.dataset.outline) return;
+        const outline = document.querySelector(`#layer-outline path[name='${ t.dataset.outline }']`);
+        if(!outline) return;
+
+        poi(t, outline, 'on');
+      }, false);
+
+      document.addEventListener('click', e => {
+        const t = e.target;
+        if(!t.matches('#layer-interaction path')) return;
+        alert(`clicked on layer ${ t.dataset.outline } (${ t.dataset.annotation })`);
+      }, false);
+    </script>
+  </div>
+</body>
+</html>
