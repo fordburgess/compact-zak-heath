@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Ford</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #333333;
+      width: 100%;
+      height: 100%;
+      min-height: 100%;
+    }
+
+    @keyframes dash {
+      to { stroke-dashoffset: 0; }
+    }
+
+    #container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #room {
+      position: relative;
+      width: 100%;
+    }
+    #title {
+      font-family: sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.2rem;
+      text-transform: uppercase;
+      box-sizing: border-box;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #ffffff;
+      font-size: 1rem;
+      padding: 1rem;
+    }
+    #annotation {
+      font-family: sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.5rem;
+      text-transform: uppercase;
+      box-sizing: border-box;
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      color: #ffffff;
+      font-size: 3rem;
+      padding: 2rem;
+    }
+    #layer-interaction path {
+      fill: transparent;
+      cursor: pointer;
+    }
+
+    #layer-outline path {
+      stroke-dasharray: 30 10;
+      animation: dash 10s linear forwards;
+      stroke-dashoffset: 1000;
+      animation-iteration-count: infinite;
+    }
+
+    #layer-outline path.active {
+      stroke-width: 0.5rem;
+      stroke: white;
+      fill: rgba(255, 255, 255, 0.2);
+      -webkit-filter: rop-shadow(0 0 16px #60ccff );
+      filter: drop-shadow(0 0 16px #60ccff );
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <section id="room">
+      <svg version="1.1" viewBox="0 0 1182 2560" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="bg-image">
+          <image width="1182" height="2560" preserveAspectRatio="none" xlink:href="./room_field_mobile.webp"/>
+        </g>
+        <g id="layer-outline">
+          <path name="trophies" fill="none" d="m544 1519c-17.8-14.4-32.7-26.4-32.9-26.6-0.679-0.591-6.02-154-5.74-165l0.227-8.84 39-14.9c21.4-8.21 40.6-15.4 42.5-16 3.38-1.02 4.72-0.411 39 17.6 19.5 10.3 36 19.2 36.6 19.8 0.814 0.823 0.361 22.3-1.7 80.6-1.54 43.7-2.84 83.1-2.87 87.5l-0.0656 8-39.2 21.2c-21.6 11.7-39.9 21.5-40.8 21.8-1.04 0.388-12.4-8.15-34-25.6z"/>
+        </g>
+        <g id="layer-interaction">
+          <path data-outline="trophies" data-annotation="Trophies" d="m527 1533-35.6-31.1-0.701-97c-0.386-53.4-0.345-97.4 0.089-97.8 0.434-0.409 19.9-9.56 43.2-20.3l42.4-19.6h21l81.7 45.4v50.1c0 27.6 0.289 73.7 0.642 103l0.642 52.4-87.9 46.5-29.9-0.074-35.6-31.1z" />
+        </g>
+      </svg>
+      <span id="title">Project Field.</span>
+      <span id="annotation">Word.</span>
+    </section>
+
+    <script>
+      const layers = {
+        buttons: document.querySelector('#labels'),
+        interaction: document.querySelector('#layer-interaction'),
+        outline: document.querySelector('#layer-outline'),
+        annotation: document.querySelector('#annotation'),
+      };
+
+      function annotate(text) {
+        layers.annotation.textContent = text || '';
+      }
+
+      function poi(ie, oe, state) {
+        if(state == 'on' && !oe.classList.contains('active')) {
+          oe.classList.add('active');
+          console.log('show', oe.getAttribute('name'));
+          annotate(ie.dataset.annotation);
+        } else if(state == 'off' && oe.classList.contains('active')) {
+          oe.classList.remove('active');
+          annotate('');
+        }
+      }
+
+      document.addEventListener('mouseout', e => {
+        const t = e.target;
+        if(!t.matches('#layer-interaction path')) return;
+        if(!t.dataset.outline) return;
+        const outline = document.querySelector(`#layer-outline path[name='${ t.dataset.outline }']`);
+        if(!outline) return;
+
+        poi(t, outline, 'off');
+      }, false);
+
+      document.addEventListener('mouseover', e => {
+        const t = e.target;
+        if(!t.matches('#layer-interaction path')) return;
+        if(!t.dataset.outline) return;
+        const outline = document.querySelector(`#layer-outline path[name='${ t.dataset.outline }']`);
+        if(!outline) return;
+
+        poi(t, outline, 'on');
+      }, false);
+
+      document.addEventListener('click', e => {
+        const t = e.target;
+        if(!t.matches('#layer-interaction path')) return;
+        alert(`clicked on layer ${ t.dataset.outline } (${ t.dataset.annotation })`);
+      }, false);
+    </script>
+  </div>
+</body>
+</html>
