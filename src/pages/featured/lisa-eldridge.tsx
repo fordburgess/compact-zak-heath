@@ -201,10 +201,6 @@ const LisaEldridge = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [bubblePositions, setBubblePositions] = useState([]);
 
-  useEffect(() => {
-    console.log(activeIndex)
-  }, [activeIndex])
-
   const handleClick = (id: number) => {
     if (activeIndex == null) {
       setActiveIndex(id);
@@ -232,7 +228,6 @@ const LisaEldridge = () => {
         // `
 
         if (bubble.dataset.id == id) {
-          console.log(bubble.id);
           const textContainer = document.getElementById(`text-container-${id}`);
           const itemTitle = document.getElementById(`item-title-${id}`);
           const itemText = document.getElementById(`item-text-${id}`);
@@ -243,7 +238,6 @@ const LisaEldridge = () => {
           // textContainer.style.width = '80%';
 
           if (mobile) {
-
             gsap.to(`#item-title-${bubble.id.split('-')[1]}`, {
               opacity: 0,
               duration: 0.1,
@@ -267,17 +261,17 @@ const LisaEldridge = () => {
               fontSize: '1.8rem',
               marginBottom: '10px',
               opacity: 1,
-              delay: 2,
+              delay: 0.3,
             })
 
             gsap.to(`#item-text-${bubble.id.split('-')[1]}`, {
               display: 'block',
-              delay: 2,
+              delay: 0.35,
             })
 
             gsap.to(`#item-text-${bubble.id.split('-')[1]}`, {
               opacity: 1,
-              delay: 2.01,
+              delay: 0.3,
             })
             // bubble.style.top = '0%';
             // bubble.style.left = '0%';
@@ -287,21 +281,47 @@ const LisaEldridge = () => {
             // bubble.style.borderRadius = '20px';
           }
           else {
-            bubble.style.top = '50%';
-            bubble.style.left = '60%';
-            bubble.style.transform = 'translate(-60%, -50%)';
-            bubble.style.padding = '20px';
+            gsap.to(`#item-title-${bubble.id.split('-')[1]}`, {
+              opacity: 0,
+              duration: 0.1,
+            })
 
-            bubble.style.height = '110vh';
-            bubble.style.width = '110vh';
+            gsap.to(`#${bubble.id}`, {
+              height: '110dvh',
+              width: '110dvh',
+              duration: 0.2,
+              delay: 0.1,
+            })
+
+            gsap.to(`#${bubble.id}`, {
+              top: '50%',
+              left: '10%',
+              transform: 'translate(-10%, -50%)',
+              padding: '100px',
+              textAlign: 'left',
+              ease: 'power1.inOut',
+              duration: 0.2,
+              delay: 0.3,
+            })
+
+            gsap.to(`#item-title-${bubble.id.split('-')[1]}`, {
+              fontSize: '1.8rem',
+              marginBottom: '10px',
+              opacity: 1,
+              delay: 1,
+            })
+
+            gsap.to(`#item-text-${bubble.id.split('-')[1]}`, {
+              display: 'block',
+              delay: 0.4,
+            })
+
+            gsap.to(`#item-text-${bubble.id.split('-')[1]}`, {
+              opacity: 1,
+              duration: 0.3,
+              delay: 1,
+            })
           }
-
-
-          // itemTitle.style.fontSize = '0.5rem';
-          // itemTitle.style.lineHeight = '0.75rem';
-
-
-
           setTimeout(() => {
             // textContainer.style.opacity = 1;
             // textContainer.style.textAlign = 'right';
@@ -339,21 +359,99 @@ const LisaEldridge = () => {
 
   const handleContainerClick = () => {
     if (activeIndex !== null) {
+      let currentIndex = activeIndex;
+      console.log(currentIndex);
       setActiveIndex(null);
 
       const bubbles = document.querySelectorAll('.bubble');
       const contentOverlay = document.querySelector('.content-overlay');
 
-      if (contentOverlay) {
-        contentOverlay.style.opacity = 0;
-        setTimeout(() => {
-          contentOverlay.style.visibility = 'hidden';
-        }, 550);
-      }
-
       bubbles.forEach((bubble: HTMLDivElement, i: number) => {
         const pos = positionsRef.current[i];
         if (!pos) return;
+
+        if (bubble.id.includes(currentIndex.toString())) {
+
+          if (mobile) {
+            gsap.to(`#item-text-${currentIndex}`, {
+              opacity: 0,
+              duration: 0.1
+            })
+
+            gsap.to(`#item-text-${currentIndex}`, {
+              display: 'none',
+              duration: 0.2
+            })
+
+            gsap.to(`#item-title-${currentIndex}`, {
+              opacity: 0,
+              fontSize: '1.25rem',
+              duration: 0.1,
+            })
+
+            gsap.to(`#${bubble.id}`, {
+              borderRadius: '50%',
+              top: `${pos.top}px`,
+              left: `${pos.left}px`,
+              transform: 'translate(-50%, -50%)',
+              height: '250px',
+              width: '250px',
+              padding: '10px',
+              textAlign: 'center',
+              ease: 'power1.inOut',
+              duration: 0.2,
+              delay: 0.1,
+            })
+
+            gsap.to(`#item-title-${currentIndex}`, {
+              opacity: 1,
+              duration: 0.1,
+              delay: 0.5
+            })
+          }
+          else {
+            gsap.to(`#item-title-${currentIndex}`, {
+              opacity: 0,
+              duration: 0.1
+            })
+
+            gsap.to(`#item-text-${currentIndex}`, {
+              opacity: 0,
+              duration: 0.1
+            })
+
+            gsap.to(`#item-text-${currentIndex}`, {
+              display: 'none',
+              duration: 0.2
+            })
+
+            gsap.to(`#item-title-${currentIndex}`, {
+              opacity: 0,
+              fontSize: '1.25rem',
+              duration: 0.1,
+            })
+
+            gsap.to(`#${bubble.id}`, {
+              borderRadius: '50%',
+              top: `${pos.top}px`,
+              left: `${pos.left}px`,
+              transform: `translate(-${pos.left}px, -${pos.top}px)`,
+              height: '250px',
+              width: '250px',
+              padding: '10px',
+              textAlign: 'center',
+              ease: 'power1.inOut',
+              duration: 0.2,
+              delay: 0.1,
+            })
+
+            gsap.to(`#item-title-${currentIndex}`, {
+              opacity: 1,
+              duration: 0.1,
+              delay: 0.65
+            })
+          }
+        }
 
         bubble.style.transition = `
           height 1s,
