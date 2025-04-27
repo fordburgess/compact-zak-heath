@@ -9,12 +9,15 @@ import './index.css';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useMediaQuery } from 'usehooks-ts';
 
 const DreamRoom = () => {
+  const mobile = useMediaQuery('(max-width: 800px)');
+
   const handleImageChange = (direction: number) => { // direction is the way the user is travelling
     const initialImageContainer: HTMLElement | null = document.querySelector('.initial-image-container');
     const initialImage: HTMLElement | null = document.querySelector('.initial-image');
-    const svgOverlayContainer: HTMLElement | null = document.querySelector('.svg-overlay-container');
+    const svgOverlayContainer: HTMLElement | null = document.getElementById(mobile ? 'mobile-overlay' : 'desktop-overlay');
 
     if (initialImageContainer && initialImage && svgOverlayContainer) {
       if (direction == 0) {
@@ -190,7 +193,7 @@ const DreamRoom = () => {
             <source media="(min-width: 640px)" srcSet={WideImageMobile} /> */}
           </picture>
         </div>
-        <svg className='svg-overlay-container' version="1.1" viewBox="0 0 1182 2560" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+        <svg className='svg-overlay-container' id="mobile-overlay" version="1.1" viewBox="0 0 1182 2560" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
           <g id="bg-image">
             <image width="1182" height="2560" preserveAspectRatio="none" xlinkHref={OverheadImageMobile.src}/>
           </g>
@@ -207,7 +210,7 @@ const DreamRoom = () => {
             <path data-outline="man" fill='none' data-annotation="Laptop" d="m689 1412-22.1-10.8-56.4 4.86-31.7-11.5-13.8-19.5c-7.6-10.7-14.1-20-14.5-20.6-0.38-0.627 0.668-6.29 2.33-12.6 2.98-11.3 3.02-11.8 2.88-35l-0.143-23.5 6-11.5c4.12-7.87 6.78-14.6 8.5-21.4 2.4-9.49 2.74-10.1 8.32-15.8 3.2-3.24 7.27-6.88 9.05-8.1 1.78-1.22 3.94-3.97 4.8-6.11 1.43-3.56 1.42-4.8-0.142-14.3-1.63-9.94-1.63-10.9 0.125-20.4 1.01-5.49 2.32-10.6 2.91-11.4s5.89-4.11 11.8-7.43l10.7-6.04 29.6 4.07 6.82 6.69c3.75 3.68 7.71 7.92 8.79 9.41l1.97 2.72-4.53 19.8c-2.49 10.9-5.74 23.7-7.21 28.6l-2.68 8.78 4.61 14.7 6.11 1.78c3.36 0.979 6.61 2.27 7.23 2.87s2.85 5.36 4.96 10.6l3.84 9.5 0.54 22.4 0.54 22.4 20.9 3.92 24.6 17.8-0.144 52.4-5.19 11.4c-2.86 6.28-5.64 11.5-6.18 11.7-0.542 0.141-10.9-4.6-23.1-10.5z"/>
           </g>
         </svg>
-        {/* <svg className='svg-overlay-container' version="1.1" viewBox="0 0 4551 2560" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+        <svg className='svg-overlay-container' id="desktop-overlay" version="1.1" viewBox="0 0 4551 2560" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
           <g id="bg-image">
             <image width="4551" height="2560" preserveAspectRatio="none" xlinkHref={OverheadImage.src}/>
           </g>
@@ -223,7 +226,7 @@ const DreamRoom = () => {
             <path data-outline="lamp1" data-annotation="Lamp1" fill="none" d="m2114 1299-27.1-3.73-14.1-8.74c-7.78-4.81-14.4-9.19-14.8-9.74-0.339-0.549-1.5-21.3-2.59-46.2-1.77-40.7-1.85-49.2-0.791-86.2 0.648-22.6 1.47-41.5 1.83-42.1 0.36-0.62 7.18-9.22 15.2-19.1l14.5-18 44.2-14.3 54 6.35 12.4 14c6.82 7.68 13.8 15.6 15.6 17.6 3.06 3.55 3.28 4.42 6.24 25.1l3.07 21.4 1.51 135-23 22.9-25.9 5.01c-14.3 2.76-27.5 4.96-29.5 4.9-1.96-0.065-15.8-1.8-30.7-3.85z"/>
             <path data-outline="man" data-annotation="Ford" fill="none" d="m2522 1624-61-14.4-57.5 4.04c-31.6 2.22-59.1 4.11-61 4.19-2.37 0.099-16.7-4.93-44.5-15.6l-41-15.8-52.6-76.3 1.36-138 21.8-98.7 26.4-42.7 18.3-13.2c10.1-7.24 18.6-13.6 18.9-14.1 0.302-0.489 1.71-19.2 3.13-41.6l2.58-40.7 22.2-30.9 63-24.5 44 14.2 9.5 13.1c5.22 7.2 10.9 15.1 12.7 17.6l3.2 4.55-18.7 88-1.42 44.5 11.4 26.5 16 9.4c11.6 6.82 16.3 10.1 17 12 4.16 10.9 22.5 75.2 28.3 99.1l7.13 29.4 68.7 23.2 21.8 40.9 2.74 112-10.1 19.4c-5.57 10.7-10.4 19.4-10.6 19.3-0.275-0.055-28-6.59-61.5-14.5z"/>
           </g>
-        </svg> */}
+        </svg>
         {/* <div className='svg-overlay-container'>
           <Image src={OverheadImage} className='svg-overlay-test' alt='overlay-test'/>
           <div className='further-info-container'>
