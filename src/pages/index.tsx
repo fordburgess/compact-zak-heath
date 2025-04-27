@@ -50,7 +50,7 @@ const Home = () => {
       setActiveItem(true);
 
       const itemVals = {
-        'D': { pointer: 'm3140 840 L3140 700 L2800 700', rectX: '2190', rectY: '550', textX: '2500', textY: '720', textVal: 'My Journey', linkX: '3630', linkY: '490' },
+        'D': { pointer: 'm2780 735 L2780 660 L2500 660', rectX: '1900', rectY: '490', textX: '2225', textY: '660', textVal: 'My Journey', linkX: '3630', linkY: '490' },
         'E': { pointer: 'm2715 1280 L2600 1150 L2600 920', rectX: '2290', rectY: '600', textX: '2590', textY: '760', textVal: 'Celebrity Makeup Artist', linkX: '3630', linkY: '490' },
         'F': { pointer: 'm3100 1275 L3100 1200 L3500 1200', rectX: '3510', rectY: '1050', textX: '3830', textY: '1210', textVal: 'Beauty CEO', linkX: '3710', linkY: '1260' },
         'G': { pointer: 'm3060 1431 L2900 1575 L2775 1575', rectX: '2162', rectY: '1425', textX: '2470', textY: '1575', textVal: 'Celebrity Hairstylist', linX: '', linkY: '' },
