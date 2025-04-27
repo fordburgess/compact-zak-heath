@@ -103,7 +103,7 @@ const Featured = () => {
     })
 
     gsap.to('.subtitle-container', {
-      z: 800,
+      z: 1100,
       ease: 'none',
       scrollTrigger: {
         trigger: '.scroll-container',
