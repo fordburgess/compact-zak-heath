@@ -2,23 +2,26 @@ import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import WideImage from '../../assets/images/desert-far.webp';
-import WideImageMobile from '../../assets/images/desert-far-mobile.webp';
+import WideImageMobile from '../../assets/images/desert-wide-mobile.webp';
 import OverheadImage from '../../assets/images/desert-aerial.webp';
 import OverheadImageMobile from '../../assets/images/desert-aerial-mobile.webp';
 import './index.css';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useMediaQuery } from 'usehooks-ts';
 
 const Services = () => {
+  const mobile = useMediaQuery('(max-width: 800px)');
   const verticalScrollRef = useRef<HTMLDivElement | null>(null);
 
   const handleImageChange = (direction: number) => { // direction is the way the user is travelling
     const initialImageContainer: HTMLElement | null = document.querySelector('.initial-image-container');
     const initialImage: HTMLElement | null = document.querySelector('.initial-image');
-    const svgOverlayContainer: HTMLElement | null = document.querySelector('.svg-overlay-container');
+    const svgOverlayContainer: HTMLElement | null = document.getElementById(mobile ? 'mobile-overlay' : 'desktop-overlay');
 
     if (initialImageContainer && initialImage && svgOverlayContainer) {
+      console.log(svgOverlayContainer);
       if (direction == 0) {
         initialImageContainer.style.display = 'block';
 
@@ -206,9 +209,13 @@ const Services = () => {
               Scroll to continue...
             </motion.p>
           </div>
-          <Image src={WideImage} className='initial-image' alt='initial-image-desert' />
+          <picture>
+            <source media="(min-width: 800px)" srcSet={WideImage.src} />
+            <source media="(min-width: 640px)" srcSet={WideImageMobile.src} />
+            <Image priority src={WideImageMobile} className='initial-image' alt='initial-image-cover'/>
+          </picture>
         </div>
-        <svg className='svg-overlay-container' version="1.1" viewBox="0 0 4551 2560" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+        <svg className='svg-overlay-container' id="mobile-overlay" version="1.1" viewBox="0 0 1182 2560" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
           <g id="bg-image">
             <image width="1182" height="2560" preserveAspectRatio="none" xlinkHref={OverheadImageMobile.src} />
           </g>
@@ -219,7 +226,7 @@ const Services = () => {
           <path data-outline="phone" fill="none" data-annotation="Phone" d="m598 1362c-7.92-3-15.2-5.45-16.1-5.45-0.929 0-8.85 1.61-17.6 3.58-15.3 3.43-16.4 3.55-28.4 2.88l-12.5-0.7-17.4-17.3 1.17-22 25.2-21.3 10.3-18.6c5.68-10.2 10.9-19 11.6-19.6 1.66-1.38 34.1-12.8 44.6-15.7 9.08-2.52 19.7-3 37.9-1.71l9.16 0.65 15 23.2 0.097 29 15.8 11 0.031 9.5c0.0171 5.22-0.249 11.8-0.592 14.7l-0.623 5.19-30.9 14.1c-17 7.73-31.2 14-31.6 14-0.386-0.025-7.18-2.5-15.1-5.5z" />
           </g>
         </svg>
-        {/* <svg className='svg-overlay-container' version="1.1" viewBox="0 0 4551 2560" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+        <svg className='svg-overlay-container' id="desktop-overlay" version="1.1" viewBox="0 0 4551 2560" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
           <g id="bg-image">
             <image width="4551" height="2560" preserveAspectRatio="xMinYMin meet" xlinkHref={OverheadImage.src} />
           </g>
@@ -229,7 +236,7 @@ const Services = () => {
           <g id="layer-interaction">
             <path fill="none" data-outline="phone" data-annotation="Phone" d="m2135 1517c-12.4-9.47-22.8-18-23.1-18.9-0.504-1.34-2.37-40.6-2.37-49.9 0-1.82 4.25-5.08 22.4-17.2l22.4-14.9 8.39-21.8c4.61-12 10.4-27.1 13-33.6l4.57-11.8 53.1-43.6c29.2-24 54.2-44.2 55.7-44.9 2.26-1.14 128-13.1 129-12.2 0.115 0.159 8 11.8 17.5 26l17.3 25.7-1.6 25.8-1.6 25.8 38.1 38.2 4.91 29.9c2.7 16.5 4.92 30.6 4.93 31.5 0.014 1.07-18.5 12.7-55.2 34.6l-55.2 33-71 14.5-158 1.13z"/>
           </g>
-        </svg> */}
+        </svg>
         {/* <div className='further-info-container'>
           <h2>CLICK</h2>
           <p>A WAY TO CONTACT ME</p>
