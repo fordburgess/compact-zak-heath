@@ -50,6 +50,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
   overscroll-behavior: none;
   margin: 0;
   padding: 0;
@@ -152,6 +153,7 @@ a {
 .svg-overlay-container {
   display: none;
   position: sticky;
+  overflow-x: hidden;
   top: 0;
   height: 100vh;
   width: 100vw;
