@@ -69,7 +69,7 @@ const FeaturedInterviews = () => {
 
       if (backgroundImage) {
         console.log(scrollTop)
-        backgroundImage.style.transform = `translateY(-${scrollTop * 0.5}px)`;
+        backgroundImage.style.transform = `translateY(-${scrollTop * 1.2}px)`;
       }
     };
 
@@ -91,26 +91,25 @@ const FeaturedInterviews = () => {
     })
 
     let shifted = chunked.shift();
-    console.log(shifted)
-    // if (shifted) {
-    //   shifted.map((item: any, index) => {
-    //     console.log(index);
-    //     gsap.fromTo(`#icons-pfp-${index + 1}`,
-    //       { opacity: 0, scale: 1 },
-    //       {
-    //         opacity: 1,
-    //         scale: 1.25,
-    //         ease: 'power1.inOut',
-    //         scrollTrigger: {
-    //           trigger: `#section-${index + 1}`,
-    //           start: 'top 80%',
-    //           end: 'top 40%',
-    //           scrub: true,
-    //         }
-    //       }
-    //     )
-    //   })
-    // }
+    if (shifted) {
+      shifted.map((item: any, index) => {
+        console.log(index);
+        gsap.fromTo(`#icons-pfp-${index + 1}`,
+          { opacity: 0, scale: 1 },
+          {
+            opacity: 1,
+            scale: 1.25,
+            ease: 'power1.inOut',
+            scrollTrigger: {
+              trigger: `#section-${index + 1}`,
+              start: 'top 80%',
+              end: 'top 40%',
+              scrub: true,
+            }
+          }
+        )
+      })
+    }
 
     gsap.to('.beauty-icons-title-section', {
       y: -100,
