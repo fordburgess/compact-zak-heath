@@ -86,4 +86,22 @@
 
 @media (min-width: 1000px) {
 
+  .featured-title-section {
+    padding: 100px 300px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .featured-title-text {
+    width: 48%;
+  }
+
+  .featured-article-text-section {
+    padding: 0 300px;
+  }
+
+  .title-image {
+    width: 48%;
+    min-height: 500px;
+  }
 }

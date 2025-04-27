@@ -11,10 +11,12 @@ const CarolynAronson = () => {
       <div className='featured-article-content'>
         <div className='featured-title-section'>
           <Image src={MillieKendallProfile} className='title-image' alt='kirsty-lewis-profile' />
-          <h1 className='featured-title-quote'>"If you can change your hair, change your life"</h1>
-          <div className='title-divider'></div>
-          <h2 className='featured-subtitle'>Carolyn Aronson: Brand Founder</h2>
-          <p className='featured-blurb'>Carolyn Aronson is a trailblazing entrepreneur, CEO, and sole owner of the international haircare brand It's A 10. With over four decades of experience in the beauty industry and a growing portfolio of different businesses, here’s a COMPACT overview of her journey from hairdresser to multi-business powerhouse.</p>
+          <div className='featured-title-text'>
+            <h1 className='featured-title-quote'>"If you can change your hair, change your life"</h1>
+            <div className='title-divider'></div>
+            <h2 className='featured-subtitle'>Carolyn Aronson: Brand Founder</h2>
+            <p className='featured-blurb'>Carolyn Aronson is a trailblazing entrepreneur, CEO, and sole owner of the international haircare brand It's A 10. With over four decades of experience in the beauty industry and a growing portfolio of different businesses, here’s a COMPACT overview of her journey from hairdresser to multi-business powerhouse.</p>
+          </div>
         </div>
         <div className='featured-article-text-section'>
           <p className='featured-article-paragraph'>When I first met Carolyn Aronson, I was in my first year of university. I remember being in awe of her as she walked into the room. Still, after hearing about her journey as a businesswoman, building a globally recognised brand, and creating a portfolio that includes real estate, jets, and lifestyle brands, I truly admired her. As a proud Latina woman, she's deeply passionate about giving back to her community and has created educational spaces across America to help the next generation break into beauty. She understands the importance of accessible education and hands-on learning, so I knew I had to speak to her again, for a COMPACT overview of how she built her empire.</p>
