@@ -4,17 +4,19 @@ import WideImage from '../../assets/images/spring-far.png';
 import WideImageMobile from '../../assets/images/spring-far-mobile.webp';
 import OverheadImage from '../../assets/images/spring-aerial.png';
 import OverheadImageMobile from '../../assets/images/spring-aerial-mobile.webp';
-// import ExpandedImage from '../../assets/images/field-expanded.webp';
 import './index.css';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useMediaQuery } from 'usehooks-ts';
 
 const Featured = () => {
+  const mobile = useMediaQuery('(max-width: 800px)');
+
   const handleImageChange = (direction: number) => { // direction is the way the user is travelling
     const initialImageContainer: HTMLElement | null = document.querySelector('.initial-image-container');
     const initialImage: HTMLElement | null = document.querySelector('.initial-image');
-    const svgOverlayContainer: HTMLElement | null = document.querySelector('.svg-overlay-container');
+    const svgOverlayContainer: HTMLElement | null = document.getElementById(mobile ? 'mobile-overlay' : 'desktop-overlay');
 
     if (initialImageContainer && initialImage && svgOverlayContainer) {
       if (direction == 0) {
@@ -201,7 +203,7 @@ const Featured = () => {
             <path data-outline="shelf" fill='none' data-annotation="Shelf" d="m552 1310-34.4-9.82-11.9-11.9-14.7-95.7 5.64-12.3c5.33-11.6 5.84-12.3 9.22-13.2 1.97-0.53 30.7-7.5 63.9-15.5l60.3-14.5 16.7 10.9 0.64 5.33c0.352 2.93 3.26 31.9 6.45 64.3l5.81 59-3.44 8.23c-1.89 4.53-3.97 8.63-4.62 9.12-1.36 1.03-63.9 26.3-64.7 26.1-0.275-0.067-16-4.54-34.9-9.94z" />
           </g>
         </svg>
-        {/* <svg className='svg-overlay-container' version="1.1" viewBox="0 0 4551 2560" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+        <svg className='svg-overlay-container' version="1.1" viewBox="0 0 4551 2560" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
           <g id="bg-image">
             <image width="4551" height="2560" preserveAspectRatio="none" xlinkHref={OverheadImage.src} />
           </g>
@@ -211,7 +213,7 @@ const Featured = () => {
           <g id="layer-interaction">
             <path data-outline="shelf" fill='none' data-annotation="Shelf" d="m2236 1388-41.8-24.9-38.4 13.2-37-13.1-11.7-97.9c-6.42-53.8-12.2-104-12.8-112l-1.16-14.5 15.7-44.8 245-100 32 16.2 23.4 217-7.38 20c-4.06 11-7.52 20.5-7.69 21.2s6.85 10 15.6 20.9l15.9 19.7-0.191 18.6c-0.105 10.2-0.432 20-0.727 21.6-0.525 2.94-2.08 3.66-72.1 33.5-39.4 16.8-72.3 30.6-73.2 30.8-0.867 0.143-20.4-11-43.4-24.7z"/>
           </g>
-        </svg> */}
+        </svg>
         {/* <div className='svg-overlay-container'>
           <Image src={OverheadImage} className='svg-overlay-test' alt='overlay-test'/>
           <div className='further-info-container'>
