@@ -9,12 +9,15 @@ import './index.css';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { useMediaQuery } from 'usehooks-ts';
 
 const BeautyIcons = () => {
+  const mobile = useMediaQuery('(max-width: 800px)');
+
   const handleImageChange = (direction: number) => { // direction is the way the user is travelling
     const initialImageContainer: HTMLElement | null = document.querySelector('.initial-image-container');
     const initialImage: HTMLElement | null = document.querySelector('.initial-image');
-    const svgOverlayContainer: HTMLElement | null = document.querySelector('.svg-overlay-container');
+    const svgOverlayContainer: HTMLElement | null = document.getElementById(mobile ? 'mobile-overlay' : 'desktop-overlay');
 
     if (initialImageContainer && svgOverlayContainer && initialImage) {
       if (direction == 0) {
@@ -164,7 +167,7 @@ const BeautyIcons = () => {
           </div>
           <Image src={WideImage} priority className='initial-image' alt='initial-bg' />
         </div>
-        <svg className='svg-overlay-container' version="1.1" viewBox="0 0 1182 2560" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+        <svg className='svg-overlay-container' id="mobile-overlay" version="1.1" viewBox="0 0 1182 2560" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
           <g id="bg-image">
             <image width="1182" height="2560" preserveAspectRatio="none" xlinkHref={OverheadImageMobile.src}/>
           </g>
@@ -175,7 +178,7 @@ const BeautyIcons = () => {
             <path fill='none' data-outline="trophies" data-annotation="Trophies" d="m527 1533-35.6-31.1-0.701-97c-0.386-53.4-0.345-97.4 0.089-97.8 0.434-0.409 19.9-9.56 43.2-20.3l42.4-19.6h21l81.7 45.4v50.1c0 27.6 0.289 73.7 0.642 103l0.642 52.4-87.9 46.5-29.9-0.074-35.6-31.1z" />
           </g>
         </svg>
-        {/* <svg className='svg-overlay-container' version="1.1" viewBox="0 0 4551 2560" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+        <svg className='svg-overlay-container' id="desktop-overlay" version="1.1" viewBox="0 0 4551 2560" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
           <g id="bg-image">
             <image width="4551" height="2560" preserveAspectRatio="none" xlinkHref={OverheadImage.src}/>
           </g>
@@ -185,7 +188,7 @@ const BeautyIcons = () => {
           <g id="layer-interaction">
             <path data-outline="trophies" fill="none" data-annotation="Trophies" d="m2143 1939-82.5-51.5-0.24-9.7c-1.72-69.3-6.26-407-6.04-449l0.284-54.9 176-86.7 128-0.054 85.1 43.6c46.8 24 86.1 44.3 87.4 45l2.25 1.39-0.019 60.2c-0.021 65.5-9.12 452-10.7 454-0.446 0.399-38.3 22.8-84.2 49.9l-83.4 49.1-129-0.09-82.5-51.5z"/>
           </g>
-        </svg> */}
+        </svg>
         {/* <div className='svg-overlay-container'>
           <Image src={OverheadImage} className='svg-overlay-test' alt='svg-overlay'/>
           <div className='further-info-container'>
