@@ -244,6 +244,11 @@ const LisaEldridge = () => {
 
           if (mobile) {
 
+            gsap.to(`#item-title-${bubble.id.split('-')[1]}`, {
+              opacity: 0,
+              duration: 0.1,
+            })
+
             gsap.to(`#${bubble.id}`, {
               borderRadius: '20px',
               top: '50%',
@@ -254,7 +259,25 @@ const LisaEldridge = () => {
               padding: '20px',
               textAlign: 'left',
               ease: 'power1.inOut',
-              duration: 0.5,
+              duration: 0.2,
+              delay: 0.1,
+            })
+
+            gsap.to(`#item-title-${bubble.id.split('-')[1]}`, {
+              fontSize: '1.8rem',
+              marginBottom: '10px',
+              opacity: 1,
+              delay: 2,
+            })
+
+            gsap.to(`#item-text-${bubble.id.split('-')[1]}`, {
+              display: 'block',
+              delay: 2,
+            })
+
+            gsap.to(`#item-text-${bubble.id.split('-')[1]}`, {
+              opacity: 1,
+              delay: 2.01,
             })
             // bubble.style.top = '0%';
             // bubble.style.left = '0%';
@@ -283,11 +306,11 @@ const LisaEldridge = () => {
             // textContainer.style.opacity = 1;
             // textContainer.style.textAlign = 'right';
             // textContainer.style.padding = '20px';
-            itemTitle.style.marginBottom = '10px';
-            itemTitle.style.fontSize = '1.8rem';
-            itemText.style.display = 'block'
-            itemText.style.opacity = '1';
-            itemText.style.fontSize = '1.25rem';
+            // itemTitle.style.marginBottom = '10px';
+            // itemTitle.style.fontSize = '1.8rem';
+            // itemText.style.display = 'block'
+            // itemText.style.opacity = '1';
+            // itemText.style.fontSize = '1.25rem';
           }, 1500);
 
           if (associatedImage) {
@@ -375,8 +398,8 @@ const LisaEldridge = () => {
                 overflow: 'hidden',
               }}
             >
-              <h3 className='item-title' id={`item-title-${index}`}>{item.question}</h3>
-              <p className='item-text' id={`item-text-${index}`}>{item.answer}</p>
+              <h3 className='item-title' id={`item-title-${item.id}`}>{item.question}</h3>
+              <p className='item-text' id={`item-text-${item.id}`}>{item.answer}</p>
               {/* {
                 item.question ? (
                   <div

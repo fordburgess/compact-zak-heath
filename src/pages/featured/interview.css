@@ -90,9 +90,8 @@ body::before {
 .item-text {
   display: none;
   opacity: 0;
-  transition: opacity 1s;
   color: #fff;
-  font-size: 0.35rem;
+  font-size: 1.25rem;
 }
 
 .associated-images {
