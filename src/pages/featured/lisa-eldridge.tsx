@@ -6,8 +6,11 @@ import Image2 from '../../assets/images/lisa-eldridge-2.webp';
 import Image4 from '../../assets/images/lisa-eldridge-4.webp';
 import SpringExpanded from '../../assets/images/spring-expanded.jpg';
 import { motion } from 'framer-motion';
+import gsap from 'gsap';
+import { useMediaQuery } from 'usehooks-ts';
 
-const LisaEldridgeView = () => {
+const LisaEldridge = () => {
+  const mobile = useMediaQuery('(max-width: 800px)');
   const windowWidth = 2000;
   const CANVAS_WIDTH = 2000;
   const NOISE_AMOUNT = 4;
@@ -28,7 +31,7 @@ const LisaEldridgeView = () => {
     {
       id: 1,
       question: 'What were your first experiences with makeup?',
-      answer: 'It started when I found my mum’s old makeup after we moved back to England from New Zealand. She had this box with little drawers, filled with 1960s makeup like Biba and Mary Quant that was really playful and colourful. Makeup from that era was designed for teenagers, so it had this childlike, crayon-like quality that I loved because of the objects and textures and for me, that was the turning point. I was also really inspired by the “vintageness”, because I knew it was old makeup and that was more interesting than modern makeup. I also used to draw on paper with it because it was more interesting than using regular crayons and art supplies. For my 13th birthday, I got a book on stage and theatrical makeup, and it blew my mind. The transformations, the way you could create light and shade, it was like art. I knew that’s what I wanted to do',
+      answer: 'It started when I found my mum’s old makeup after we moved back to England from New Zealand. She had this box with little drawers, filled with 1960s makeup like Biba and Mary Quant that was really playful and colourful. Makeup from that era was designed for teenagers, so it had this childlike, crayon-like quality that I loved because of the objects and textures and for me, that was the turning point. I was also really inspired by the “vintageness”, because I knew it was old makeup and that was more interesting than modern makeup. I also used to draw on paper with it because it was more interesting than using regular crayons and art supplies. For my 13th birthday, I got a book on stage and theatrical makeup, and it blew my mind. The transformations, the way you could create light and shade, it was like art. I knew that’s what I wanted to do.',
       x: CANVAS_WIDTH / 2,
       y: 200,
       s: 1,
@@ -198,6 +201,10 @@ const LisaEldridgeView = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [bubblePositions, setBubblePositions] = useState([]);
 
+  useEffect(() => {
+    console.log(activeIndex)
+  }, [activeIndex])
+
   const handleClick = (id: number) => {
     if (activeIndex == null) {
       setActiveIndex(id);
@@ -215,42 +222,67 @@ const LisaEldridgeView = () => {
 
       const bubbles = document.querySelectorAll('.bubble');
       bubbles.forEach((bubble: HTMLDivElement, i: number) => {
-
-        bubble.style.transition = `
-          height 1s,
-          width 1s,
-          top ${bubble.dataset.id == id ? 1.5 : 5}s cubic-bezier(0.25, 0.8, 0.25, 1),
-          left ${bubble.dataset.id == id ? 1.5 : 5}s cubic-bezier(0.25, 0.8, 0.25, 1),
-          transform 0.5s ease
-        `
+        // bubble.style.transition = `
+        //   height 1s,
+        //   width 1s,
+        //   border-rardius 1s,
+        //   top ${bubble.dataset.id == id ? 1.5 : 5}s cubic-bezier(0.25, 0.8, 0.25, 1),
+        //   left ${bubble.dataset.id == id ? 1.5 : 5}s cubic-bezier(0.25, 0.8, 0.25, 1),
+        //   transform 0.5s ease
+        // `
 
         if (bubble.dataset.id == id) {
+          console.log(bubble.id);
           const textContainer = document.getElementById(`text-container-${id}`);
           const itemTitle = document.getElementById(`item-title-${id}`);
           const itemText = document.getElementById(`item-text-${id}`);
           const associatedImage = document.getElementById(`associated-image-${id}`);
 
-          textContainer.style.opacity = 0;
-          textContainer.style.height = '80%';
-          textContainer.style.width = '80%';
+          // textContainer.style.opacity = 0;
+          // textContainer.style.height = '80%';
+          // textContainer.style.width = '80%';
 
-          bubble.style.top = '50%';
-          bubble.style.left = '60%';
-          bubble.style.transform = 'translate(-60%, -50%)';
-          bubble.style.padding = '20px';
+          if (mobile) {
+
+            gsap.to(`#${bubble.id}`, {
+              borderRadius: '20px',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              height: '100dvh',
+              width: '100dvw',
+              padding: '20px',
+              textAlign: 'left',
+              ease: 'power1.inOut',
+              duration: 0.5,
+            })
+            // bubble.style.top = '0%';
+            // bubble.style.left = '0%';
+            // bubble.style.height = '100dvh';
+            // bubble.style.width = '100dvw';
+            // bubble.style.padding = '10px';
+            // bubble.style.borderRadius = '20px';
+          }
+          else {
+            bubble.style.top = '50%';
+            bubble.style.left = '60%';
+            bubble.style.transform = 'translate(-60%, -50%)';
+            bubble.style.padding = '20px';
+
+            bubble.style.height = '110vh';
+            bubble.style.width = '110vh';
+          }
 
 
           // itemTitle.style.fontSize = '0.5rem';
           // itemTitle.style.lineHeight = '0.75rem';
 
-          bubble.style.height = '110vh';
-          bubble.style.width = '110vh';
 
 
           setTimeout(() => {
-            textContainer.style.opacity = 1;
-            textContainer.style.textAlign = 'right';
-            textContainer.style.padding = '20px';
+            // textContainer.style.opacity = 1;
+            // textContainer.style.textAlign = 'right';
+            // textContainer.style.padding = '20px';
             itemTitle.style.marginBottom = '10px';
             itemTitle.style.fontSize = '1.8rem';
             itemText.style.display = 'block'
@@ -324,10 +356,10 @@ const LisaEldridgeView = () => {
   }
 
   return (
-    <div className='article-container' onClick={() => handleContainerClick()}>
-      <div className='lisa-eldridge-header' style={{ opacity: activeIndex ? 0 : 1 }}>
-        <h1 className='article-title'>In Conversation With Lisa Eldridge:</h1>
-        <h2 className='article-subtitle'>Becoming A World Class Makeup Artist</h2>
+    <div className='interview-container' onClick={() => handleContainerClick()}>
+      <div className='interview-header' style={{ opacity: activeIndex !== null ? 0 : 1 }}>
+        <h1 className='interview-title'>In Conversation With Lisa Eldridge:</h1>
+        <h2 className='interview-subtitle'>Becoming A World Class Makeup Artist</h2>
       </div>
       {
         article.map((item: any, index: number) => {
@@ -339,20 +371,12 @@ const LisaEldridgeView = () => {
               id={item.question ? `item-${item.id}` : `associated-image-${item.questionId}`}
               onClick={() => handleClick(item.id)}
               style={{
-                padding: item.src ? '0' : '50px',
+                // padding: item.src ? '0' : '50px',
                 overflow: 'hidden',
-                height: item.size ? item.size : '250px',
-                width: item.size ? item.size : '250px'
               }}
             >
-                <div
-                    className='text-container'
-                    id={`text-container-${item.id}`}
-                    style={{ height: item.size, width: item.size }}
-                  >
-                <h3 className='item-title' id={`item-title-${index}`}>{item.question}</h3>
-                <p className='item-text' id={`item-text-${index}`}>{item.answer}</p>
-              </div>
+              <h3 className='item-title' id={`item-title-${index}`}>{item.question}</h3>
+              <p className='item-text' id={`item-text-${index}`}>{item.answer}</p>
               {/* {
                 item.question ? (
                   <div
@@ -378,4 +402,4 @@ const LisaEldridgeView = () => {
   )
 }
 
-export default LisaEldridgeView;
+export default LisaEldridge;

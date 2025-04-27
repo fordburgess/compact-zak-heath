@@ -1,4 +1,6 @@
-body {
+html, body {
+  height: 100%;
+  width: 100%;
   background-position: center;
   background-size: cover;
   color: #fff;
@@ -20,24 +22,27 @@ body::before {
   z-index: -1;
 }
 
-.article-container {
+
+.interview-container {
   position: relative;
-  height: 100vh;
-  width: 100vw;
+  height: 100dvh;
+  width: 100dvw;
+  overflow: hidden;
 }
 
-.article-title {
-  font-size: 3rem;
-}
-
-.article-subtitle {
-  font-size: 2rem;
-}
-
-.lisa-eldridge-header {
-  padding: 50px;
+.interview-header {
+  padding: 30px;
   text-align: left;
   transition: opacity 0.2s;
+}
+
+.interview-title {
+  font-size: 2.25rem;
+  font-weight: 300;
+}
+
+.interview-subtitle {
+  font-size: 1.25rem;
 }
 
 .bubble {
@@ -47,7 +52,7 @@ body::before {
   background-color: rgba(113, 113, 113, 0.55);
   backdrop-filter: blur(10px);
   border: solid 0.5px #fff;
-  padding: 50px;
+  padding: 10px;
   height: 250px;
   width: 250px;
   color: #fff;
@@ -55,10 +60,11 @@ body::before {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
   text-align: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-sizing: border-box;
   transition: height 1s, width 1s;
+  box-sizing: border-box;
 
   h3 {
     font-family: 'Josefin Sans';
@@ -79,7 +85,6 @@ body::before {
 .item-title {
   font-weight: 500;
   font-size: 1.25rem;
-  /* transition: font-size 1s, margin 1s; */
 }
 
 .item-text {
@@ -100,5 +105,33 @@ body::before {
   justify-content: center;
   align-items: center;
   transition: opacity 0.5s;
-  box-sizing: border-box;
+  height: 100px;
+  overflow: hidden;
+  width: 100%;
+  /* box-sizing: border-box; */
+  padding: 100px 0px;
+}
+
+@media (min-width: 1000px) {
+  .interview-header {
+    padding: 50px;
+  }
+
+  .interview-title {
+    font-size: 3rem;
+  }
+
+  .interview-subtitle {
+    font-size: 2rem;
+  }
+
+  .bubble {
+    /* padding: 50px; */
+    height: 250px;
+    width: 250px;
+  }
+
+  .item-title {
+    font-size: 1.25rem;
+  }
 }
