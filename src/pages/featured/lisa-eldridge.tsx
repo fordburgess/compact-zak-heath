@@ -7,7 +7,7 @@ import Image4 from '../../assets/images/lisa-eldridge-4.webp';
 import SpringExpanded from '../../assets/images/spring-expanded.jpg';
 import { motion } from 'framer-motion';
 
-const LisaEldridge = () => {
+const LisaEldridgeView = () => {
   const windowWidth = 2000;
   const CANVAS_WIDTH = 2000;
   const NOISE_AMOUNT = 4;
@@ -131,7 +131,7 @@ const LisaEldridge = () => {
     }
   }, [windowWidth])
 
-  const animationRef = useRef();
+  const animationRef = useRef<number>();
 
   useEffect(() => {
     // setTimeout(() => {
@@ -146,7 +146,7 @@ const LisaEldridge = () => {
     }
   }, [])
 
-  const positionsRef = useRef([]);
+  const positionsRef = useRef<{ left: number; top: number }[]>([]);
   function animate() {
     articleRef.current = articleRef.current.map((item, index)=> {
       const newNoiseSeedX = item.noiseSeedX + NOISE_SPEED;
@@ -195,10 +195,10 @@ const LisaEldridge = () => {
     animationRef.current = requestAnimationFrame(animate);
   }
 
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [bubblePositions, setBubblePositions] = useState([]);
 
-  const handleClick = (id) => {
+  const handleClick = (id: number) => {
     if (activeIndex == null) {
       setActiveIndex(id);
 
@@ -214,7 +214,7 @@ const LisaEldridge = () => {
       // }
 
       const bubbles = document.querySelectorAll('.bubble');
-      bubbles.forEach((bubble, i) => {
+      bubbles.forEach((bubble: HTMLDivElement, i: number) => {
 
         bubble.style.transition = `
           height 1s,
@@ -296,7 +296,7 @@ const LisaEldridge = () => {
         }, 550);
       }
 
-      bubbles.forEach((bubble, i) => {
+      bubbles.forEach((bubble: HTMLDivElement, i: number) => {
         const pos = positionsRef.current[i];
         if (!pos) return;
 
@@ -330,7 +330,7 @@ const LisaEldridge = () => {
         <h2 className='article-subtitle'>Becoming A World Class Makeup Artist</h2>
       </div>
       {
-        article.map((item, index) => {
+        article.map((item: any, index: number) => {
 
           return (
             <div
@@ -378,4 +378,4 @@ const LisaEldridge = () => {
   )
 }
 
-export default LisaEldridge;
+export default LisaEldridgeView;
