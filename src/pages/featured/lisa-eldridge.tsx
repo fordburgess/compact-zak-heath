@@ -350,8 +350,15 @@ const LisaEldridge = () => {
           const randomX = Math.random() < 0.5 ? -Math.abs(Math.random() * (2000 - 1000) + 1000) : Math.abs(Math.random() * (2000 - 1000) + 1000);
           const randomY = Math.random() < 0.5 ? -Math.abs(Math.random() * (2000 - 1000) + 1000) : Math.abs(Math.random() * (2000 - 1000) + 1000);
 
-          bubble.style.left = `${randomX}px`;
-          bubble.style.top = `${randomY}px`;
+          gsap.to(bubble, {
+            left: `${randomX}px`,
+            top: `${randomY}px`,
+            ease: "power1.inOut",
+            duration: 1
+          })
+
+          // bubble.style.left = `${randomX}px`;
+          // bubble.style.top = `${randomY}px`;
         }
       })
     }
