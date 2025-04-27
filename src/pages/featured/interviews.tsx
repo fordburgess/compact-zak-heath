@@ -15,27 +15,6 @@ import ShakeelMurtaza from '../../assets/images/shakeel-murtaza-profile.webp';
 import ZakHeath from '../../assets/images/zak-heath-profile.webp';
 import BenFrank from '../../assets/images/ben-frank.webp';
 
-// Adam Reed - Celebrity Hair Stylist
-// Carolyn Aronson - Beauty Entrepreneur
-// Mona Kattan - Fragrance CEO
-// Lisa Eldridge - Celebrity Makeup Artist
-// Alessandra Steinherr - Beauty Editor + Influencer
-// ngeborg Van Lotringen - Beauty Journalist
-// the articles about me - My Journey
-// Shakeel Murtaza - Men’s Beauty Influencer
-// Kirsty Lewis - Head of Beauty PR
-// Millie Kendall - Beauty CEO
-// Matilda Sanders - Beauty PR
-// Nikki Lily - Activist + Author + Influencer
-
-// Lisa Eldridge
-// Adam Reed
-// Kirsty Lewis
-// Alessandra Stienherr
-// Millie Kendall
-// Mona Kattan
-// Carolyn Anson
-
 const interviews = [
   {
     pfp: AdamReed,
@@ -112,24 +91,26 @@ const FeaturedInterviews = () => {
     })
 
     let shifted = chunked.shift();
-    if (shifted) {
-      shifted.map((item: any, index) => {
-        gsap.fromTo(`#icons-pfp-${index + 1}`,
-          { opacity: 0, scale: 1 },
-          {
-            opacity: 1,
-            scale: 1.25,
-            ease: 'power1.inOut',
-            scrollTrigger: {
-              trigger: `#section-${index + 1}`,
-              start: 'top 80%',
-              end: 'top 40%',
-              scrub: true,
-            }
-          }
-        )
-      })
-    }
+    console.log(shifted)
+    // if (shifted) {
+    //   shifted.map((item: any, index) => {
+    //     console.log(index);
+    //     gsap.fromTo(`#icons-pfp-${index + 1}`,
+    //       { opacity: 0, scale: 1 },
+    //       {
+    //         opacity: 1,
+    //         scale: 1.25,
+    //         ease: 'power1.inOut',
+    //         scrollTrigger: {
+    //           trigger: `#section-${index + 1}`,
+    //           start: 'top 80%',
+    //           end: 'top 40%',
+    //           scrub: true,
+    //         }
+    //       }
+    //     )
+    //   })
+    // }
 
     gsap.to('.beauty-icons-title-section', {
       y: -100,
