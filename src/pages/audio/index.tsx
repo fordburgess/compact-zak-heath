@@ -9,14 +9,15 @@ import OverheadImageMobile from '../../assets/images/winter-aerial-mobile.webp';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useMediaQuery } from 'usehooks-ts';
 
 const Audio = () => {
-  const horizontalScrollRef = useRef<HTMLDivElement | null>(null);
+  const mobile = useMediaQuery('(max-width: 800px)');
 
   const handleImageChange = (direction: number) => { // direction is the way the user is travelling
     const initialImageContainer: HTMLElement | null = document.querySelector('.initial-image-container');
     const initialImage: HTMLElement | null = document.querySelector('.initial-image');
-    const svgOverlayContainer: HTMLElement | null = document.querySelector('.svg-overlay-container');
+    const svgOverlayContainer: HTMLElement | null = document.getElementById(mobile ? 'mobile-overlay' : 'desktop-overlay');
 
     if (initialImageContainer && svgOverlayContainer && initialImage) {
 
@@ -192,7 +193,7 @@ const Audio = () => {
             <Image priority src={WideImageMobile} className='initial-image' alt='initial-image-winter'/>
           </picture>
         </div>
-        <svg className='svg-overlay-container' version="1.1" viewBox="0 0 1182 2560" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+        <svg className='svg-overlay-container' id="mobile-overlay" version="1.1" viewBox="0 0 1182 2560" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
           <g id="bg-image">
             <image width="1182" height="2560" preserveAspectRatio="none" xlinkHref={OverheadImageMobile.src}/>
           </g>
@@ -203,7 +204,7 @@ const Audio = () => {
             <path data-outline="chair" fill="none" data-annotation="Chair" d="m439 1477-7.2-2.65-4.13-17.5c-2.27-9.63-5.11-21.3-6.3-25.9l-2.17-8.37-28.9-12-27.9-0.265-2.17-6.5c-1.2-3.58-2.75-7.7-3.46-9.17-1.1-2.29-0.919-4.23 1.3-13.7l2.58-11-26.1-101 11.6-19.1 107-37.4 24.8 5.89 7.88 21.7c4.33 11.9 8.38 22.2 9 22.8 0.616 0.61 18.6 8.7 40 18s39.5 17.3 40.1 17.9c0.911 0.73 1.76 11.3 3.07 38l1.81 37-2.7 21.4c-1.48 11.8-2.86 21.6-3.06 21.8-0.556 0.556-20.9 4.32-23.3 4.32-1.39 0-4.51-2.54-8.8-7.18l-6.65-7.18-67.4 33.4-2.13 10.7c-1.17 5.9-2.42 12.4-2.78 14.4-0.515 2.9-2 4.81-7.2 9.25-3.6 3.08-7.3 5.55-8.22 5.5-0.919-0.051-4.91-1.28-8.87-2.74z"/>
           </g>
         </svg>
-        {/* <svg className='svg-overlay-container' version="1.1" viewBox="0 0 4551 2560" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+        <svg className='svg-overlay-container' id="desktop-overlay" version="1.1" viewBox="0 0 4551 2560" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
           <g id="bg-image">
             <image width="4551" height="2560" preserveAspectRatio="none" xlinkHref={OverheadImage.src} />
           </g>
@@ -213,7 +214,7 @@ const Audio = () => {
           <g id="layer-interaction">
             <path data-outline="chair" fill="none" data-annotation="Chair" d="m1920 1798c-0.38-0.962-10.1-27.8-21.7-59.7-11.5-31.9-21.1-58.1-21.3-58.3-0.179-0.179-25.1-5.23-55.5-11.2l-55.1-10.9-35.7 6.44c-19.6 3.54-36.2 6.44-36.8 6.45-0.623 0-3.51-13.9-6.91-33.2-3.21-18.3-6.03-34-6.26-34.8-0.267-1.03 6.62-9.04 19.2-22.3 13.6-14.4 19.5-21.2 19.1-22.4-1.09-3.61-51.4-237-52-241-0.557-3.91 0.258-7.04 6.25-24l6.89-19.5 82.8-55.5 158-54.7 72.2 9.13 47.8 105 194 81.7 17.4 44.3-3.37 121c-1.85 66.7-3.52 121-3.71 122-0.188 0.179-13.9 3.8-30.6 8.04l-30.2 7.72-24.6-15.2c-19.1-11.8-25-15-26.4-14.4-0.991 0.475-26.5 14.8-56.8 31.8l-55 30.9-14.7 105h-42.7c-39.7 0-42.7-0.122-43.4-1.75z"/>
           </g>
-        </svg> */}
+        </svg>
         {/* <div className='svg-overlay-container'>
           <Image src={OverheadImage} className='svg-overlay-test' alt='svg-overlay-winter'/>
           <div className='further-info-container'>
