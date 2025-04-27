@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import { Noise } from 'noisejs';
 import './interview.css'
 import Image1 from '../../assets/images/lisa-eldridge-1.webp';
@@ -49,6 +50,21 @@ const LisaEldridge = () => {
       size: '320px'
     },
     {
+      id: 7,
+      questionId: 1,
+      src: Image2,
+      x: 600,
+      y: 400,
+      s: 1.1
+    },
+    {
+      id: 8,
+      questionId: 4,
+      src: Image4,
+      x: 300,
+      y: 200,
+    },
+    {
       id: 3,
       question: 'Did you face any setbacks when you entered the industry?',
       answer: 'Oh, absolutely. I didn’t know anyone in the industry, and there wasn’t any internet back then to guide me, so it was tricky to figure out, especially wanting to go into the fashion industry. I’d buy magazines to study credits like "Mary Greenwell for Debbie Walters" and figure out which agency to call and who was repping each other. Networking was painstaking, you had to meet people at clubs or get in touch with agencies directly and say, “I would love to assist, or something”. I did a lot of unpaid work to build my portfolio, working with new models like Kate Moss who were just coming into the industry. At one point, I heard someone say they got a magazine cover because their boyfriend was the editor, and I remember thinking, oh my god, I hope it’s literally not going to come down to who you know. But in the end, hard work and perseverance paid off. By the time I was 23, I was signed by an agency alongside legends like Sam McKnight, Mary Greenwell and major major people - I was kind of the baby. That was huge. At first, I was asked why I wanted to assist, but I had only worked with up-and-coming models and I didn’t know how to react when a big supermodel or celebrity walked into the room; however, I quickly learnt that you just treat everybody the same.',
@@ -85,21 +101,6 @@ const LisaEldridge = () => {
       size: '275px'
     },
     // associated images beyond this point
-    // {
-    //   id: 7,
-    //   questionId: 1,
-    //   src: Image2,
-    //   x: 600,
-    //   y: 400,
-    //   s: 1.1
-    // },
-    // {
-    //   id: 8,
-    //   questionId: 4,
-    //   src: Image8,
-    //   x: 300,
-    //   y: 700,
-    // }
   ]
 
   const interval = CANVAS_WIDTH / article.length + 100;
@@ -164,7 +165,7 @@ const LisaEldridge = () => {
       const newXWithNoise = newX + randomX * NOISE_AMOUNT;
       const newYWithNoise = newY + randomY * NOISE_AMOUNT;
 
-      const idString = item.question ? `item-${item.id}` : `associated-image-${item.questionId}`
+      const idString = item.question ? `item-${item.id}` : `associated-image ${item.questionId}`
       const element = document.getElementById(idString);
 
       if (element) {
@@ -217,33 +218,49 @@ const LisaEldridge = () => {
       // }
 
       const bubbles = document.querySelectorAll('.bubble');
-      bubbles.forEach((bubble: HTMLDivElement, i: number) => {
-        // bubble.style.transition = `
-        //   height 1s,
-        //   width 1s,
-        //   border-rardius 1s,
-        //   top ${bubble.dataset.id == id ? 1.5 : 5}s cubic-bezier(0.25, 0.8, 0.25, 1),
-        //   left ${bubble.dataset.id == id ? 1.5 : 5}s cubic-bezier(0.25, 0.8, 0.25, 1),
-        //   transform 0.5s ease
-        // `
+      const images = document.querySelectorAll('.image-bubble');
 
+      images.forEach((image) => {
+        if (image.id.split(" ")[1] == id) {
+          gsap.to(image, {
+            top: '10%',
+            left: '80%',
+            transform: 'translate(-80%, -10%)',
+            duration: 0.75,
+            ease: "power1.inOut"
+          })
+        }
+        else {
+          const randomX = Math.random() < 0.5 ? -Math.abs(Math.random() * (2000 - 1000) + 1000) : Math.abs(Math.random() * (2000 - 1000) + 1000);
+          const randomY = Math.random() < 0.5 ? -Math.abs(Math.random() * (2000 - 1000) + 1000) : Math.abs(Math.random() * (2000 - 1000) + 1000);
+
+          gsap.to(image, {
+            left: `${randomX}px`,
+            top: `${randomY}px`,
+            ease: "power1.inOut",
+            duration: 1
+          })
+        }
+      })
+
+      bubbles.forEach((bubble: HTMLDivElement, i: number) => {
         if (bubble.dataset.id == id) {
           const textContainer = document.getElementById(`text-container-${id}`);
           const itemTitle = document.getElementById(`item-title-${id}`);
           const itemText = document.getElementById(`item-text-${id}`);
-          const associatedImage = document.getElementById(`associated-image-${id}`);
+          const associatedImage = document.getElementById(`associated-image ${id}`);
 
           // textContainer.style.opacity = 0;
           // textContainer.style.height = '80%';
           // textContainer.style.width = '80%';
 
           if (mobile) {
-            gsap.to(`#item-title-${bubble.id.split('-')[1]}`, {
+            gsap.to(itemTitle, {
               opacity: 0,
               duration: 0.1,
             })
 
-            gsap.to(`#${bubble.id}`, {
+            gsap.to(bubble, {
               borderRadius: '20px',
               top: '50%',
               left: '50%',
@@ -273,12 +290,6 @@ const LisaEldridge = () => {
               opacity: 1,
               delay: 0.3,
             })
-            // bubble.style.top = '0%';
-            // bubble.style.left = '0%';
-            // bubble.style.height = '100dvh';
-            // bubble.style.width = '100dvw';
-            // bubble.style.padding = '10px';
-            // bubble.style.borderRadius = '20px';
           }
           else {
             gsap.to(`#item-title-${bubble.id.split('-')[1]}`, {
@@ -294,10 +305,10 @@ const LisaEldridge = () => {
             })
 
             gsap.to(`#${bubble.id}`, {
-              top: '50%',
+              top: '0%',
               left: '10%',
-              transform: 'translate(-10%, -50%)',
-              padding: '100px',
+              // transform: 'translate(-10%, -50%)',
+              padding: '0 100px',
               textAlign: 'left',
               ease: 'power1.inOut',
               duration: 0.2,
@@ -332,21 +343,8 @@ const LisaEldridge = () => {
             // itemText.style.opacity = '1';
             // itemText.style.fontSize = '1.25rem';
           }, 1500);
-
-          if (associatedImage) {
-            associatedImage.style.transition = `
-              height 1s,
-              width 1s,
-              top 1.5s cubic-bezier(0.25, 0.8, 0.25, 1),
-              left 1.5s cubic-bezier(0.25, 0.8, 0.25, 1),
-              transform 0.5s ease
-            `
-            associatedImage.style.top = '20%';
-            associatedImage.style.left = '20%';
-            associatedImage.style.transform = 'translate(-20%, -20%)';
-          }
         }
-        else if (bubble.id !== `associated-image-${id}`) {
+        else {
           const randomX = Math.random() < 0.5 ? -Math.abs(Math.random() * (2000 - 1000) + 1000) : Math.abs(Math.random() * (2000 - 1000) + 1000);
           const randomY = Math.random() < 0.5 ? -Math.abs(Math.random() * (2000 - 1000) + 1000) : Math.abs(Math.random() * (2000 - 1000) + 1000);
 
@@ -356,9 +354,6 @@ const LisaEldridge = () => {
             ease: "power1.inOut",
             duration: 1
           })
-
-          // bubble.style.left = `${randomX}px`;
-          // bubble.style.top = `${randomY}px`;
         }
       })
     }
@@ -495,33 +490,27 @@ const LisaEldridge = () => {
           return (
             <div
               data-id={item.id}
-              className='bubble'
-              id={item.question ? `item-${item.id}` : `associated-image-${item.questionId}`}
+              className={item.question ? 'bubble' : 'image-bubble'}
+              id={item.question ? `item-${item.id}` : `associated-image ${item.questionId}`}
               onClick={() => handleClick(item.id)}
               style={{
-                // padding: item.src ? '0' : '50px',
+                padding: item.src ? '0' : `${mobile ? '10px' : '20px'}`,
                 overflow: 'hidden',
               }}
             >
-              <h3 className='item-title' id={`item-title-${item.id}`}>{item.question}</h3>
-              <p className='item-text' id={`item-text-${item.id}`}>{item.answer}</p>
-              {/* {
+              {
                 item.question ? (
-                  <div
-                    className='text-container'
-                    id={`text-container-${item.id}`}
-                    style={{ height: `${item.size}px`, width: `${item.size}px`, color: 'red' }}
-                  >
-                    <h3 className='item-title' id={`item-title-${index}`}>{item.question}</h3>
-                    <p className='item-text' id={`item-text-${index}`}>{item.answer}</p>
-                  </div>
+                  <>
+                    <h3 className='item-title' id={`item-title-${item.id}`}>{item.question}</h3>
+                    <p className='item-text' id={`item-text-${item.id}`}>{item.answer}</p>
+                  </>
                 ) : (
-                  <img
+                  <Image
                     src={item.src}
                     alt={`image-${item.id}`}
                   />
                 )
-              } */}
+              }
             </div>
           )
         })
