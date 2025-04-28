@@ -158,10 +158,8 @@ const BeautyIcons = () => {
             <h2>CLICK</h2>
             <p>ENTER THE WORLD OF BEAUTY ICONS</p>
           </div>
-          <svg version="1.1" viewBox="0 0 4551 2560" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
-            <g id="bg-image">
-              <image width="4551" height="2560" preserveAspectRatio="none" xlinkHref={OverheadImage.src}/>
-            </g>
+          <Image className='desktop-svg-bg' src={OverheadImage} alt='beauty-icons-desktop-svg-bg' />
+          <svg version="1.1" viewBox="0 0 4551 2560" preserveAspectRatio="xMidYmid meet" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
             <g id="layer-outline">
               <path className='object-outline' name="trophies" fill="none" d="m2207 1875-82.5-51.5-0.274-14.7c-2.33-125-5.9-370-5.39-370 1.18-1.14 175-86.2 176-86.2 1.38 0 172 87.2 173 88.7 1.33 1.29-7.93 385-9.33 387-1.41 1.26-168 99-168 99-0.342-0.025-37.7-23.2-83.1-51.6z"/>
             </g>

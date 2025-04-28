@@ -356,7 +356,7 @@ a {
     background-color: red;
   }
 
-  #desktop-overlay img {
+  .desktop-svg-bg {
     height: 100%;
     width: 100%;
     object-fit: cover;
