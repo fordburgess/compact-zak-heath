@@ -238,8 +238,8 @@ const AudioEpisode = () => {
       </div>
       <div className='more-episodes-drawer'>
         <div className='episode-drawer-content'>
-          <div style={{ height: '10%', padding: '20px' }}>
-            <h1>More<br/> Episodes</h1>
+          <div style={{ padding: '20px' }}>
+            <h1>More Episodes</h1>
           </div>
           <div className='more-episodes-column'>
             {

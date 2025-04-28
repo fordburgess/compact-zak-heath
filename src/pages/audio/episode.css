@@ -256,12 +256,12 @@ h1 {
 }
 
 .more-episodes-drawer h1 {
-  margin-bottom: 10px;
+  font-size: 1.5rem;
+  /* margin-bottom: 10px; */
 }
 
 .more-episodes-column {
   padding: 20px;
-  /* height: 90%; */
   padding-bottom: 50px;
   overflow-y: auto;
   flex: 1;
