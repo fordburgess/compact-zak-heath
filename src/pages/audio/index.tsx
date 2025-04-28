@@ -120,8 +120,8 @@ const Audio = () => {
       ease: "none",
       scrollTrigger: {
         trigger: ".scroll-container",
-        start: 'top top',
-        end: 'center center',
+        start: 'center 110%',
+        end: 'center top',
         scrub: true
       }
     })
@@ -131,7 +131,7 @@ const Audio = () => {
       ease: 'none',
       scrollTrigger: {
         trigger: ".scroll-container",
-        start: "55% top",
+        start: "center center",
         end: "bottom bottom",
         scrub: true
       }
