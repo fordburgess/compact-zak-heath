@@ -1,19 +1,19 @@
 import React, { useEffect } from 'react';
 import Image from 'next/image';
 import SpringExpanded from '../../assets/images/spring-expanded.jpg';
-import MillieKendallProfile from '../../assets/images/millie-kendall-profile.webp';
+import TillySandersProfile from '../../assets/images/tilly-sanders-profile.webp';
 import './article.css';
 import { useMediaQuery } from 'usehooks-ts';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-const MatildaSanders = () => {
+const TillySanders = () => {
   const mobile = useMediaQuery('(max-width: 800px)');
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     if (mobile) {
-//
+
     }
     else { // desktop transitions
       gsap.to('.title-image', {
@@ -93,7 +93,7 @@ const MatildaSanders = () => {
       <Image src={SpringExpanded} className='featured-article-bg' alt='featured-article-bg'/>
       <div className='featured-article-content'>
         <div className='featured-title-section'>
-          <Image src={MillieKendallProfile} className='title-image' alt='millie-kendall-profile' />
+          <Image src={TillySandersProfile} className='title-image' alt='tilly-sanders-profile' />
           <div className='featured-title-text'>
             <h1 className='featured-title-quote'>"It Looks Glamorous, But It's Hard Work"</h1>
             <div className='title-divider'></div>
@@ -159,4 +159,4 @@ const MatildaSanders = () => {
   )
 }
 
-export default MatildaSanders
+export default TillySanders

@@ -13,72 +13,6 @@ import { useMediaQuery } from 'usehooks-ts';
 
 const Services = () => {
   const mobile = useMediaQuery('(max-width: 800px)');
-  const verticalScrollRef = useRef<HTMLDivElement | null>(null);
-
-  const handleImageChange = (direction: number) => { // direction is the way the user is travelling
-    const initialImageContainer: HTMLElement | null = document.querySelector('.initial-image-container');
-    const initialImage: HTMLElement | null = document.querySelector('.initial-image');
-    const svgOverlayContainer: HTMLElement | null = document.getElementById(mobile ? 'mobile-overlay' : 'desktop-overlay');
-
-    if (initialImageContainer && initialImage && svgOverlayContainer) {
-      console.log(svgOverlayContainer);
-      if (direction == 0) {
-        initialImageContainer.style.display = 'block';
-
-        svgOverlayContainer.style.transition = 'opacity 0.5s ease-in-out, transform 0.3s ease-in-out';
-        initialImageContainer.style.transition = 'opacity 0.75s ease-in-out';
-        initialImage.style.transition = 'transform 0.3s ease-in-out';
-
-        requestAnimationFrame(() => {
-          svgOverlayContainer.style.opacity = '0';
-          initialImageContainer.style.opacity = '1';
-          initialImage.style.transform = 'scale(1)';
-        });
-
-        setTimeout(() => {
-          svgOverlayContainer.style.display = 'none';
-        }, 1000);
-      }
-      else if (direction == 1) {
-        initialImageContainer.style.transition = 'opacity 1.2s ease-in-out'
-        initialImage.style.transition = 'transform 0.3s ease-in-out';
-        svgOverlayContainer.style.transition = 'opacity 0.5s ease-in-out';
-        svgOverlayContainer.style.display = 'block';
-
-        initialImage.style.transform = 'scale(2)';
-        initialImageContainer.style.opacity = '0';
-
-        requestAnimationFrame(() => {
-          svgOverlayContainer.style.opacity = '1';
-        });
-
-        setTimeout(() => {
-          initialImageContainer.style.display = 'none';
-        }, 1000);
-      }
-    }
-  }
-
-  const handleObjectClick = () => {
-    const scrollContainer: HTMLElement | null = document.querySelector('.scroll-container');
-    const contentContainer: HTMLElement | null = document.querySelector('.content-container');
-
-    if (scrollContainer && contentContainer) {
-      scrollContainer.style.transition = 'opacity 0.5s ease-in-out';
-      contentContainer.style.transition = 'opacity 0.25s ease-in-out';
-
-      contentContainer.style.display = 'block';
-      scrollContainer.style.opacity = '0';
-
-      requestAnimationFrame(() => {
-        contentContainer.style.opacity = '1';
-      });
-
-      setTimeout(() => {
-        scrollContainer.style.display = 'none';
-      }, 1200);
-    }
-  }
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -116,12 +50,23 @@ const Services = () => {
       }
     })
 
+    gsap.to('.initial-image-container', {
+      opacity: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".scroll-container",
+        start: 'center 110%',
+        end: 'center top',
+        scrub: true
+      }
+    })
+
     gsap.to('.svg-overlay-container', {
       scale: 1.5,
       ease: 'none',
       scrollTrigger: {
         trigger: ".scroll-container",
-        start: "55% top",
+        start: "center top",
         end: "bottom bottom",
         scrub: true
       }
@@ -136,52 +81,28 @@ const Services = () => {
         end: '85% top',
         scrub: true
       }
-    })
-
-    gsap.to('.test-circle', {
-      opacity: 1,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.scroll-container',
-        start: '80% top',
-        end: '90% top',
-        scrub: true
-      }
-    })
+    });
 
     ScrollTrigger.create({
       trigger: ".scroll-container",
-      start: "center top", // Adjust as needed
+      start: "center top",
       // markers: true,
       onEnter: () => {
-        handleImageChange(1);
+        const initialImageContainer: HTMLElement | null = document.querySelector('.initial-image-container');
+
+        if (initialImageContainer) {
+          initialImageContainer.style.zIndex = '0';
+        }
       },
       onLeaveBack: () => {
-        handleImageChange(0);
+        const initialImageContainer: HTMLElement | null = document.querySelector('.initial-image-container');
+
+        if (initialImageContainer) {
+          initialImageContainer.style.zIndex = '2';
+        }
       }
     })
   }, [])
-
-  useEffect(() => {
-    const container = verticalScrollRef.current;
-    if (!container) return;
-
-    const handleScroll = () => {
-      const scrollLeft = container.scrollTop;
-      console.log(scrollLeft)
-      const backgroundImage: HTMLElement | null = document.getElementById('services-content-container-background');
-
-      if (backgroundImage) {
-        backgroundImage.style.transform = `translateY(-${scrollLeft * 0.25}px)`;
-      }
-    };
-
-    container.addEventListener('scroll', handleScroll);
-
-    return () => {
-      container.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   return (
     <>
@@ -212,7 +133,7 @@ const Services = () => {
           <picture>
             <source media="(min-width: 800px)" srcSet={WideImage.src} />
             <source media="(min-width: 640px)" srcSet={WideImageMobile.src} />
-            <Image priority src={WideImageMobile} className='initial-image' alt='initial-image-cover'/>
+            <Image priority src={WideImageMobile} className='initial-image' alt='initial-image-services'/>
           </picture>
         </div>
         <div className='svg-overlay-container' id="mobile-overlay">
@@ -249,12 +170,6 @@ const Services = () => {
             </g>
           </svg>
         </div>
-        {/* <div className='svg-overlay-container'>
-          <Image src={OverheadImage} className='svg-overlay-test' alt='overlay-test'/>
-          <Link href='/services/info'>
-            <div className='test-circle' onClick={() => handleObjectClick()}></div>
-          </Link>
-        </div> */}
       </div>
     </>
   )

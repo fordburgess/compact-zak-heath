@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import WideImage from '../../assets/images/field-far.png';
-import WideImageMobile from '../../images/assets/field-far-mobile.webp';
+import WideImageMobile from '../../assets/images/field-far-mobile.webp';
 import OverheadImage from '../../assets/images/field-aerial.png';
 import OverheadImageMobile from '../../assets/images/field-aerial-mobile.webp';
 import './index.css';
@@ -13,49 +13,6 @@ import { useMediaQuery } from 'usehooks-ts';
 
 const BeautyIcons = () => {
   const mobile = useMediaQuery('(max-width: 800px)');
-
-  const handleImageChange = (direction: number) => { // direction is the way the user is travelling
-    const initialImageContainer: HTMLElement | null = document.querySelector('.initial-image-container');
-    const initialImage: HTMLElement | null = document.querySelector('.initial-image');
-    const svgOverlayContainer: HTMLElement | null = document.getElementById(mobile ? 'mobile-overlay' : 'desktop-overlay');
-
-    if (initialImageContainer && svgOverlayContainer && initialImage) {
-      if (direction == 0) {
-        initialImageContainer.style.display = 'block';
-
-        svgOverlayContainer.style.transition = 'opacity 0.5s ease-in-out, transform 0.3s ease-in-out';
-        initialImageContainer.style.transition = 'opacity 0.75s ease-in-out';
-        initialImage.style.transition = 'transform 0.3s ease-in-out';
-
-        requestAnimationFrame(() => {
-          svgOverlayContainer.style.opacity = '0';
-          initialImageContainer.style.opacity = '1';
-          initialImage.style.transform = 'scale(1)';
-        });
-
-        setTimeout(() => {
-          svgOverlayContainer.style.display = 'none';
-        }, 1000);
-      }
-      else if (direction == 1) {
-        initialImageContainer.style.transition = 'opacity 1.2s ease-in-out'
-        initialImage.style.transition = 'transform 0.3s ease-in-out';
-        svgOverlayContainer.style.transition = 'opacity 0.5s ease-in-out';
-        svgOverlayContainer.style.display = 'block';
-
-        initialImage.style.transform = 'scale(2)';
-        initialImageContainer.style.opacity = '0';
-
-        requestAnimationFrame(() => {
-          svgOverlayContainer.style.opacity = '1';
-        });
-
-        setTimeout(() => {
-          initialImageContainer.style.display = 'none';
-        }, 1000);
-      }
-    }
-  }
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -93,12 +50,23 @@ const BeautyIcons = () => {
       }
     })
 
+    gsap.to('.initial-image-container', {
+      opacity: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".scroll-container",
+        start: 'center 110%',
+        end: 'center top',
+        scrub: true
+      }
+    })
+
     gsap.to('.svg-overlay-container', {
       scale: 1.5,
       ease: 'none',
       scrollTrigger: {
         trigger: ".scroll-container",
-        start: "55% top",
+        start: "center top",
         end: "bottom bottom",
         scrub: true
       }
@@ -113,28 +81,25 @@ const BeautyIcons = () => {
         end: '85% top',
         scrub: true
       }
-    })
-
-    gsap.to('.test-circle', {
-      opacity: 1,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.scroll-container',
-        start: '80% top',
-        end: '90% top',
-        scrub: true
-      }
-    })
+    });
 
     ScrollTrigger.create({
       trigger: ".scroll-container",
-      start: "center top", // Adjust as needed
+      start: "center top",
       // markers: true,
       onEnter: () => {
-        handleImageChange(1);
+        const initialImageContainer: HTMLElement | null = document.querySelector('.initial-image-container');
+
+        if (initialImageContainer) {
+          initialImageContainer.style.zIndex = '0';
+        }
       },
       onLeaveBack: () => {
-        handleImageChange(0);
+        const initialImageContainer: HTMLElement | null = document.querySelector('.initial-image-container');
+
+        if (initialImageContainer) {
+          initialImageContainer.style.zIndex = '2';
+        }
       }
     })
   }, [])
@@ -165,10 +130,18 @@ const BeautyIcons = () => {
               Scroll to continue...
             </motion.p>
           </div>
-          <Image src={WideImage} priority className='initial-image' alt='initial-bg' />
+          <picture>
+            <source media="(min-width: 800px)" srcSet={WideImage.src} />
+            <source media="(min-width: 640px)" srcSet={WideImageMobile.src} />
+            <Image priority src={WideImageMobile} className='initial-image' alt='initial-image-beauty-icons'/>
+          </picture>
         </div>
-        <div>
-          <svg className='svg-overlay-container' id="mobile-overlay" version="1.1" viewBox="0 0 1182 2560" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+        <div className='svg-overlay-container' id="mobile-overlay">
+          <div className='further-info-container'>
+            <h2>CLICK</h2>
+            <p>ENTER THE WORLD OF BEAUTY ICONS</p>
+          </div>
+          <svg version="1.1" viewBox="0 0 1182 2560" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
             <g id="bg-image">
               <image width="1182" height="2560" preserveAspectRatio="none" xlinkHref={OverheadImageMobile.src}/>
             </g>
@@ -197,12 +170,6 @@ const BeautyIcons = () => {
             </g>
           </svg>
         </div>
-        {/* <div className='svg-overlay-container'>
-          <Image src={OverheadImage} className='svg-overlay-test' alt='svg-overlay'/>
-          <Link href='/beauty-icons/interviews'>
-            <div className='test-circle'></div>
-          </Link>
-        </div> */}
       </div>
     </>
   )

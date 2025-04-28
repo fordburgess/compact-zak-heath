@@ -58,17 +58,13 @@ html, body {
   width: 100%;
   height: 100vh;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 100px;
 }
 
 .featured-interviews-section:last-child {
   height: 50vh;
-}
-
-.beauty-icons-section:last-child {
-  justify-content: center;
 }
 
 .beauty-icons-item {

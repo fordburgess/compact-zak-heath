@@ -15,70 +15,6 @@ const Featured = () => {
   const router = useRouter();
   const mobile = useMediaQuery('(max-width: 800px)');
 
-  const handleImageChange = (direction: number) => { // direction is the way the user is travelling
-    const initialImageContainer: HTMLElement | null = document.querySelector('.initial-image-container');
-    const initialImage: HTMLElement | null = document.querySelector('.initial-image');
-    const svgOverlayContainer: HTMLElement | null = document.getElementById(mobile ? 'mobile-overlay' : 'desktop-overlay');
-
-    if (initialImageContainer && initialImage && svgOverlayContainer) {
-      if (direction == 0) {
-        initialImageContainer.style.display = 'block';
-
-        svgOverlayContainer.style.transition = 'opacity 0.5s ease-in-out, transform 0.3s ease-in-out';
-        initialImageContainer.style.transition = 'opacity 0.75s ease-in-out';
-        initialImage.style.transition = 'transform 0.3s ease-in-out';
-
-        requestAnimationFrame(() => {
-          svgOverlayContainer.style.opacity = '0';
-          initialImageContainer.style.opacity = '1';
-          initialImage.style.transform = 'scale(1)';
-        });
-
-        setTimeout(() => {
-          svgOverlayContainer.style.display = 'none';
-        }, 1000);
-      }
-      else if (direction == 1) {
-        initialImageContainer.style.transition = 'opacity 1.2s ease-in-out'
-        initialImage.style.transition = 'transform 0.3s ease-in-out';
-        svgOverlayContainer.style.transition = 'opacity 0.5s ease-in-out';
-        svgOverlayContainer.style.display = 'block';
-
-        initialImage.style.transform = 'scale(2)';
-        initialImageContainer.style.opacity = '0';
-
-        requestAnimationFrame(() => {
-          svgOverlayContainer.style.opacity = '1';
-        });
-
-        setTimeout(() => {
-          initialImageContainer.style.display = 'none';
-        }, 1000);
-      }
-    }
-  }
-
-//   const handleObjectClick = () => {
-//     const scrollContainer: HTMLElement | null = document.querySelector('.scroll-container');
-//     const contentContainer: HTMLElement | null = document.querySelector('.content-container');
-//
-//     if (scrollContainer && contentContainer) {
-//       scrollContainer.style.transition = 'opacity 0.5s ease-in-out';
-//       contentContainer.style.transition = 'opacity 0.25s ease-in-out';
-//
-//       contentContainer.style.display = 'block';
-//       scrollContainer.style.opacity = '0';
-//
-//       requestAnimationFrame(() => {
-//         contentContainer.style.opacity = '1';
-//       });
-//
-//       setTimeout(() => {
-//         scrollContainer.style.display = 'none';
-//       }, 1200);
-//     }
-//   }
-
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -115,12 +51,23 @@ const Featured = () => {
       }
     })
 
+    gsap.to('.initial-image-container', {
+      opacity: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".scroll-container",
+        start: 'center 110%',
+        end: 'center top',
+        scrub: true
+      }
+    })
+
     gsap.to('.svg-overlay-container', {
       scale: 1.5,
       ease: 'none',
       scrollTrigger: {
         trigger: ".scroll-container",
-        start: "55% top",
+        start: "center top",
         end: "bottom bottom",
         scrub: true
       }
@@ -135,17 +82,25 @@ const Featured = () => {
         end: '85% top',
         scrub: true
       }
-    })
+    });
 
     ScrollTrigger.create({
       trigger: ".scroll-container",
-      start: "center top", // Adjust as needed
+      start: "center top",
       // markers: true,
       onEnter: () => {
-        handleImageChange(1);
+        const initialImageContainer: HTMLElement | null = document.querySelector('.initial-image-container');
+
+        if (initialImageContainer) {
+          initialImageContainer.style.zIndex = '0';
+        }
       },
       onLeaveBack: () => {
-        handleImageChange(0);
+        const initialImageContainer: HTMLElement | null = document.querySelector('.initial-image-container');
+
+        if (initialImageContainer) {
+          initialImageContainer.style.zIndex = '2';
+        }
       }
     })
   }, [])
@@ -153,7 +108,6 @@ const Featured = () => {
   const handleObjectClick = () => {
     router.push('/featured/interviews');
   }
-
 
   return (
     <>
@@ -181,10 +135,10 @@ const Featured = () => {
               Scroll to continue...
             </motion.p>
           </div>
-          <Image src={WideImage} className='initial-image' alt='initial-image'/>
           <picture>
-            {/* <source media="(min-width: 1024px)" srcSet={WideImage} />
-            <source media="(min-width: 640px)" srcSet={WideImageMobile} /> */}
+            <source media="(min-width: 1024px)" srcSet={WideImage.src} />
+            <source media="(min-width: 640px)" srcSet={WideImageMobile.src} />
+            <Image priority src={WideImageMobile} className='initial-image' alt='initial-image-featured' />
           </picture>
         </div>
         <div className='svg-overlay-container' id='mobile-overlay'>
