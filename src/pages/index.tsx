@@ -118,52 +118,11 @@ const Home = () => {
     }
   }
 
-  const handleImageChange = (direction: number) => { // direction is the way the user is travelling
-    const initialImageContainer = document.querySelector('.initial-image-container');
-    const initialImage = document.querySelector('.initial-image');
-    const svgOverlayContainer = document.querySelector('.svg-overlay-container');
-
-    if (direction == 0) {
-      initialImageContainer.style.display = 'block';
-
-      svgOverlayContainer.style.transition = 'opacity 0.5s ease-in-out, transform 0.3s ease-in-out';
-      initialImageContainer.style.transition = 'opacity 0.75s ease-in-out';
-      initialImage.style.transition = 'transform 0.3s ease-in-out';
-
-      requestAnimationFrame(() => {
-        svgOverlayContainer.style.opacity = 0;
-        initialImageContainer.style.opacity = 1;
-        // initialImage.style.transform = 'scale(1)';
-      });
-
-      setTimeout(() => {
-        svgOverlayContainer.style.display = 'none';
-      }, 1000);
-    }
-    else if (direction == 1) {
-      initialImageContainer.style.transition = 'opacity 1.2s ease-in-out'
-      initialImage.style.transition = 'transform 0.3s ease-in-out';
-      svgOverlayContainer.style.transition = 'opacity 0.5s ease-in-out';
-      svgOverlayContainer.style.display = 'block';
-
-      // initialImage.style.transform = 'scale(2)';
-      initialImageContainer.style.opacity = 0;
-
-      requestAnimationFrame(() => {
-        svgOverlayContainer.style.opacity = 1;
-      });
-
-      setTimeout(() => {
-        initialImageContainer.style.display = 'none';
-      }, 1000);
-    }
-  }
-
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.to('.initial-image', {
-      scale: 1.5,
+      scale: 2,
       ease: 'none',
       scrollTrigger: {
         trigger: ".scroll-container",
@@ -195,12 +154,23 @@ const Home = () => {
       }
     })
 
+    gsap.to('.initial-image-container', {
+      opacity: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".scroll-container",
+        start: 'center 110%',
+        end: 'center top',
+        scrub: true
+      }
+    })
+
     gsap.to('.svg-overlay-container', {
       scale: 1.5,
       ease: 'none',
       scrollTrigger: {
         trigger: ".scroll-container",
-        start: "55% top",
+        start: "center top",
         end: "bottom bottom",
         scrub: true
       }
@@ -208,13 +178,21 @@ const Home = () => {
 
     ScrollTrigger.create({
       trigger: ".scroll-container",
-      start: "center top", // Adjust as needed
+      start: "center top",
       // markers: true,
       onEnter: () => {
-        handleImageChange(1);
+        const initialImageContainer: HTMLElement | null = document.querySelector('.initial-image-container');
+
+        if (initialImageContainer) {
+          initialImageContainer.style.zIndex = '0';
+        }
       },
       onLeaveBack: () => {
-        handleImageChange(0);
+        const initialImageContainer: HTMLElement | null = document.querySelector('.initial-image-container');
+
+        if (initialImageContainer) {
+          initialImageContainer.style.zIndex = '2';
+        }
       }
     })
   }, [])
