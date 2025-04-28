@@ -15,7 +15,7 @@ import CarolynAronson from '../../assets/images/carolyn-aronson-profile.webp';
 import TillySanders from '../../assets/images/tilly-sanders-profile.webp';
 import ShakeelMurtaza from '../../assets/images/shakeel-murtaza-profile.webp';
 import ZakHeath from '../../assets/images/zak-heath-profile.webp';
-import BenFrank from '../../assets/images/ben-frank.webp';
+import Placeholder from '../../assets/images/placeholder.webp';
 
 const interviews = [
   {

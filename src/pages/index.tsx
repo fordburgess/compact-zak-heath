@@ -12,6 +12,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const Home = () => {
   const [activeItem, setActiveItem] = useState<boolean>(false);
+  const [currentHref, setCurrentHref] = useState<string>('');
 
   const handleContainerClick = (e) => {
     if (activeItem) {
@@ -70,6 +71,8 @@ const Home = () => {
         'N': { href: '/featured/mona-kattan', pointer: 'm2772 1965 L2772 1900 L3340 1900', rectX: '3350', rectY: '1750', textX: '3650', textY: '1905', textVal: 'Fragrance CEO', linkX: '', linkY: '' },
       };
 
+      setCurrentHref(itemVals[id].href);
+
       const pointerLine: SVGPathElement = document.querySelector('.pointer-line');
       const infoBox: SVGPathElement = document.querySelector('.info-box');
       const bgImage = document.querySelector('.bg-image');
@@ -79,7 +82,6 @@ const Home = () => {
       const linkText = document.querySelector('.link-text');
 
       if (pointerLine && bgImage && infoBox && linkText) {
-        console.log('hello world')
         objectOutlines.forEach((object) => {
           if (object.id.split("-")[0] !== id) {
             object.style.display = 'none';
@@ -280,7 +282,7 @@ const Home = () => {
               className='pointer-line'
               filter="url(#soft-glow)"
             />
-            <Link href='' className='item-link'>
+            <Link href={currentHref} className='item-link'>
               <path
                 className='info-box'
                 d=''

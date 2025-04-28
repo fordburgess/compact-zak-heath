@@ -6,7 +6,7 @@ import ExpandedImage from '../../assets/images/winter-expanded.webp';
 import PatriciaBright from '../../assets/images/patricia-bright-profile.webp';
 import ZakHeath from '../../assets/images/zak-heath-profile.webp';
 import ShakeelMurtaza from '../../assets/images/shakeel-murtaza-profile.webp';
-import BenFrank from '../../assets/images/ben-frank.webp';
+import Placeholder from '../../assets/images/placeholder.webp';
 import { Episode } from '@/types';
 
 const episodes = [
@@ -81,7 +81,7 @@ const Episodes = () => {
                 href={`/audio/${episode.id}`}
               >
                 <div className='profile-container'>
-                  <Image className='profile-image' src={episode.profileImage ? episode.profileImage : BenFrank} alt='pfp'/>
+                  <Image className='profile-image' src={episode.profileImage ? episode.profileImage : Placeholder} alt='pfp'/>
                   <div id='podcast-index-info-container'>
                     <h3>{episode.title.split(':')[0]}</h3>
                     <p>{episode.job}</p>

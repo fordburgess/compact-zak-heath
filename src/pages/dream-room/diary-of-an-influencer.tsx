@@ -177,7 +177,6 @@ const DiaryOfInfluencer = () => {
   useEffect(() => {
     const handleScroll = () => {
       let scrollUp = window.scrollY;
-      console.log(scrollUp)
       const backgroundImage: HTMLElement | null = document.querySelector('.dream-room-bg');
 
       if (backgroundImage) {
