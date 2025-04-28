@@ -148,17 +148,25 @@ const Audio = () => {
       }
     });
 
-    // ScrollTrigger.create({
-    //   trigger: ".scroll-container",
-    //   start: "center top", // Adjust as needed
-    //   // markers: true,
-    //   onEnter: () => {
-    //     handleImageChange(1);
-    //   },
-    //   onLeaveBack: () => {
-    //     handleImageChange(0);
-    //   }
-    // })
+    ScrollTrigger.create({
+      trigger: ".scroll-container",
+      start: "center top", // Adjust as needed
+      // markers: true,
+      onEnter: () => {
+        const initialImageContainer: HTMLElement | null = document.querySelector('.initial-image-container');
+
+        if (initialImageContainer) {
+          initialImageContainer.style.zIndex = '0';
+        }
+      },
+      onLeaveBack: () => {
+        const initialImageContainer: HTMLElement | null = document.querySelector('.initial-image-container');
+
+        if (initialImageContainer) {
+          initialImageContainer.style.zIndex = '2';
+        }
+      }
+    })
   }, [])
 
   return (
