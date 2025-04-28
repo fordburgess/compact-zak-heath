@@ -74,6 +74,18 @@ const MatildaSanders = () => {
         scrub: true
       }
     })
+
+    gsap.to('#hide-container-4', {
+      width: '500px',
+      height: '300px',
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#featured-trans-4',
+        start: 'top center',
+        end: 'bottom center',
+        scrub: true
+      }
+    })
   }, [])
 
 //   "Seeing Adele live as a part of a brand trip to Las Vegas was insane."
@@ -121,7 +133,7 @@ const MatildaSanders = () => {
           <p className='featured-article-paragraph'>To navigate this, we suggest and create intimate dinners with a brand, so influencers and journalists can attend. Sometimes, we turn these events around in a week, which isn't ideal. The perfect timeframe for an event is two months, but that never actually happens.</p>
           <div className='featured-article-transition-container' id='featured-trans-3'>
             <div className='hide-container' id='hide-container-3'>
-              <div className='corner-frame'>
+              <div className='corner-frame' id="corner-frame-1">
                 <h1 className='featured-key-quote'>"I was honest about not having PR experience, but I knew the products inside out."</h1>
               </div>
             </div>
@@ -133,6 +145,13 @@ const MatildaSanders = () => {
           <p className='featured-article-subheader'>Being Young in PR</p>
           <p className='featured-article-paragraph'>I really had to prove myself at first, and I still do sometimes, but I didn't want people to think I was too young or incapable. I'm happy with my role, so I don't have a 5-year plan as I'm not somebody who maps everything out.</p>
           <p className='featured-article-paragraph'>I know I'll always be in beauty, but whether that's still PR or doing something completely different, we'll see. However, I'd love to create something for myself someday but I don't want to jinx it. I get really disappointed if something doesn't go my way, so I prefer to go into something blind and then just have the opportunities come to me. As long as you're open to it, these opportunities will come.</p>
+          <div className='featured-article-transition-container' id='featured-trans-4'>
+            <div className='hide-container' id='hide-container-4'>
+              <div className='corner-frame' id="corner-frame-2">
+                <h1 className='featured-key-quote'>"I don't have a five-year plan."</h1>
+              </div>
+            </div>
+          </div>
           <p className='featured-article-subheader'>Where Beauty PR Is Going</p>
           <p className='featured-article-paragraph'>Beauty PR is definitely shifting, and I've seen a major shift over the past couple of years as creators and influencers play a much bigger role than traditional media. Our trips are now 90% focused on influencers, but I don't want to plan things that make me feel like I'm ticking a box.</p>
           <p className='featured-article-paragraph'>Events and partnerships need to feel authentic because when they don't, they lose their soul, and I want to create experiences which actually mean something. This is a people industry and if you're not building and maintaining relationships, the activation won't work.</p>

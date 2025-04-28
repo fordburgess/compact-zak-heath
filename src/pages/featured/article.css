@@ -119,22 +119,21 @@ html, body {
   border-left: solid 1px #fff;
 }
 
-#hide-container-3 {
+#hide-container-3, #hide-container-4 {
   height: 0;
   width: 0;
-  position: absolute;
 }
 
-.corner-frame::before,
-.corner-frame::after {
+#corner-frame-1::before,
+#corner-frame-1::after {
   content: '';
   position: absolute;
-  width: 40px; /* Length of corner lines */
+  width: 40px;
   height: 40px;
   border: 1px solid #fff;
 }
 
-.corner-frame::before {
+#corner-frame-1::before {
   top: 0;
   right: 0;
   border-left: none;
@@ -142,13 +141,37 @@ html, body {
   border-radius: 0 8px 0 0;
 }
 
-/* Bottom-left corner */
-.corner-frame::after {
+#corner-frame-1::after {
   bottom: 0;
   left: 0;
   border-right: none;
   border-top: none;
   border-radius: 0 0 0 8px;
+}
+
+#corner-frame-2::before,
+#corner-frame-2::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #fff;
+}
+
+#corner-frame-2::before {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 8px 0 0 0;
+}
+
+#corner-frame-2::after {
+  bottom: 0;
+  right: 0;
+  border-left: none;
+  border-top: none;
+  border-radius: 0 0 8px 0;
 }
 
 .featured-key-quote {
