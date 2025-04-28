@@ -162,7 +162,7 @@ const DreamRoom = () => {
           <div className='further-info-container'>
             <h2>CLICK ON A PRODUCT</h2>
           </div>
-          <Image className='desktop-svg-bg' src={OverheadImage} alt='dream-room-desktop-svg-bg' />
+          <Image id='desktop-svg-bg' src={OverheadImage} alt='dream-room-desktop-svg-bg' />
           <svg version="1.1" viewBox="0 0 4551 2560" preserveAspectRatio="xMidYmid meet" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
             <g id="layer-outline">
               <path name="laptop" className='object-outline' d="m2536 1217c-46.5-6.15-85.8-11.5-87.3-11.9-2.95-0.754-4.71-3.89-4.71-8.35 0-1.41 6.73-15 14.9-30.3l14.9-27.7 3.6-57.9c1.98-31.8 4.05-59.6 4.6-61.7 0.717-2.71 1.77-4.09 3.7-4.83 2.09-0.802 23.2 1.38 93.2 9.64 49.8 5.87 90.9 10.9 91.4 11.2 0.468 0.288 0.546 1.93 0.173 3.65-1.42 6.57-2.19 22.5-1.51 31.1 0.841 10.6-3.33 87.4-5.13 94.5-1.52 5.97-24.5 56.6-27.6 60.8-2.32 3.13-2.65 3.25-9.11 3.12-3.68-0.069-44.7-5.16-91.2-11.3z"/>
