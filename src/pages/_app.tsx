@@ -10,7 +10,6 @@ const App = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
 
   useEffect(() => {
-    console.log(`router state: ${loading}`)
     const handleStart = (url: string) => {
       setLoading(true);
     };
