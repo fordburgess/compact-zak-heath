@@ -166,12 +166,16 @@ a {
   animation: pulse 5s ease-in-out infinite;
 }
 
+/* .object-outline:hover {
+  cursor: pointer;
+} */
+
 .info-box {
   opacity: 0;
   transition: opacity 0.2s ease-in;
 }
 
-#layer-interaction path:hover {
+#layer-interaction {
   cursor: pointer;
 }
 
@@ -210,6 +214,7 @@ a {
   transform: translate(-50%, -50%);
   text-align: center;
   color: #fff;
+  pointer-events: none;
 }
 
 .further-info-container h2, p {

@@ -1,16 +1,53 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import SpringExpanded from '../../assets/images/spring-expanded.jpg';
 import MillieKendallProfile from '../../assets/images/millie-kendall-profile.webp';
 import './article.css';
+import { useMediaQuery } from 'usehooks-ts';
+import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const CarolynAronson = () => {
+  const mobile = useMediaQuery('(max-width: 800px)');
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    if (mobile) {
+//
+    }
+    else { // desktop transitions
+      gsap.to('.title-image', {
+        y: -100,
+        opacity: 0,
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '.featured-title-section',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: true
+        }
+      })
+
+      gsap.to('.featured-title-text', {
+        y: 100,
+        opacity: 0,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '.featured-title-section',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: true
+        }
+      })
+    }
+  }, [])
+
   return (
     <div className='featured-article-container'>
       <Image src={SpringExpanded} className='featured-article-bg' alt='featured-article-bg'/>
       <div className='featured-article-content'>
         <div className='featured-title-section'>
-          <Image src={MillieKendallProfile} className='title-image' alt='kirsty-lewis-profile' />
+          <Image src={MillieKendallProfile} className='title-image' alt='carolyn-aronson-profile' />
           <div className='featured-title-text'>
             <h1 className='featured-title-quote'>"If you can change your hair, change your life"</h1>
             <div className='title-divider'></div>

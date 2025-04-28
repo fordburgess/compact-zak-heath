@@ -1,3 +1,7 @@
+html, body {
+  height: auto !important;
+}
+
 .featured-article-container {
   width: 100vw;
   overflow-x: hidden;
@@ -49,6 +53,7 @@
   font-style: italic;
   font-weight: 400;
   margin-bottom: 10px;
+  font-size: 3rem;
 }
 
 .title-divider {
@@ -59,14 +64,14 @@
 }
 
 .featured-subtitle {
-  font-weight: 300;
-  font-size: 2rem;
+  font-weight: 600;
+  font-size: 1.25rem;
   margin-bottom: 20px;
 }
 
 .featured-blurb {
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 300;
 }
 
 .featured-article-text-section {
@@ -84,8 +89,106 @@
   margin-bottom: 20px;
 }
 
-@media (min-width: 1000px) {
+.featured-article-transition-container {
+  height: 50vh;
+  width: 100%;
+  margin-bottom: 20px;
+  position: relative;
+}
 
+.hide-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  border-radius: 8px;
+  text-align: center;
+}
+
+#hide-container-1 {
+  height: 0;
+  width: 100%;
+  border-top: solid 1px #fff;
+  border-bottom: solid 1px #fff;
+}
+
+#hide-container-2 {
+  height: 200px;
+  width: 0;
+  box-sizing: border-box;
+  border-right: solid 1px #fff;
+  border-left: solid 1px #fff;
+}
+
+#hide-container-3, #hide-container-4 {
+  height: 0;
+  width: 0;
+}
+
+#corner-frame-1::before,
+#corner-frame-1::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #fff;
+}
+
+#corner-frame-1::before {
+  top: 0;
+  right: 0;
+  border-left: none;
+  border-bottom: none;
+  border-radius: 0 8px 0 0;
+}
+
+#corner-frame-1::after {
+  bottom: 0;
+  left: 0;
+  border-right: none;
+  border-top: none;
+  border-radius: 0 0 0 8px;
+}
+
+#corner-frame-2::before,
+#corner-frame-2::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #fff;
+}
+
+#corner-frame-2::before {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 8px 0 0 0;
+}
+
+#corner-frame-2::after {
+  bottom: 0;
+  right: 0;
+  border-left: none;
+  border-top: none;
+  border-radius: 0 0 8px 0;
+}
+
+.featured-key-quote {
+  font-family: 'Playfair';
+  font-weight: 300;
+  font-size: 1.5rem;
+  font-style: italic;
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (min-width: 1000px) {
   .featured-title-section {
     padding: 100px 300px;
     display: flex;
@@ -103,5 +206,13 @@
   .title-image {
     width: 48%;
     min-height: 500px;
+  }
+
+  .featured-key-quote {
+    font-size: 2rem;
+  }
+
+  #hide-container-1 {
+    width: 500px;
   }
 }

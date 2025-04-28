@@ -1,3 +1,7 @@
+html, body {
+  height: auto !important;
+}
+
 .dream-room-article-container {
   width: 100vw;
   /* height: 500vh; */

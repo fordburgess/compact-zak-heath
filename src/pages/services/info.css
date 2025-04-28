@@ -1,3 +1,7 @@
+html, body {
+  height: auto !important;
+}
+
 .services-info-container {
   width: 100vw;
   position: relative;
