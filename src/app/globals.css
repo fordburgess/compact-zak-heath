@@ -175,6 +175,10 @@ a {
   transition: opacity 0.2s ease-in;
 }
 
+.info-box-title-text, .link-text {
+  transition: opacity 0.2s;
+}
+
 #layer-interaction {
   cursor: pointer;
 }
