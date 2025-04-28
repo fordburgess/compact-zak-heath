@@ -108,7 +108,7 @@ const BeautyIcons = () => {
     <>
       <div className='scroll-container'>
         <div className='initial-image-container'>
-          <div className='title-container'>
+          <div className='title-container' id="beauty-icons-title-container">
             <motion.h1
               className='page-title'
               id='beauty-title'
@@ -119,7 +119,7 @@ const BeautyIcons = () => {
               BEAUTY ICONS
             </motion.h1>
           </div>
-          <div className='subtitle-container'>
+          <div className='subtitle-container' id="beauty-icons-subtitle-container">
             <motion.p
               className='page-subtitle'
               id='beauty-subtitle'
