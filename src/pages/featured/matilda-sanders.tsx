@@ -62,6 +62,18 @@ const MatildaSanders = () => {
         scrub: true
       }
     })
+
+    gsap.to('#hide-container-3', {
+      width: '500px',
+      height: '300px',
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#featured-trans-3',
+        start: 'top center',
+        end: 'bottom center',
+        scrub: true
+      }
+    })
   }, [])
 
 //   "Seeing Adele live as a part of a brand trip to Las Vegas was insane."
@@ -107,6 +119,13 @@ const MatildaSanders = () => {
           <p className='featured-article-subheader'>What Really Goes On Behind The Events</p>
           <p className='featured-article-paragraph'>We're constantly shifting between the heritage brands and emerging indie brands. Luxury skincare brands often still work in very traditional ways - they're all about print and press, but this type of media coverage doesn't always translate to the consumer anymore.</p>
           <p className='featured-article-paragraph'>To navigate this, we suggest and create intimate dinners with a brand, so influencers and journalists can attend. Sometimes, we turn these events around in a week, which isn't ideal. The perfect timeframe for an event is two months, but that never actually happens.</p>
+          <div className='featured-article-transition-container' id='featured-trans-3'>
+            <div className='hide-container' id='hide-container-3'>
+              <div className='corner-frame'>
+                <h1 className='featured-key-quote'>"I was honest about not having PR experience, but I knew the products inside out."</h1>
+              </div>
+            </div>
+          </div>
           <p className='featured-article-paragraph'>When it comes to creators, I don't want them to feel forced to make content because that's where you lose authenticity, so if the experience that we create is good, then they'll organically post anyway. We usually invite 60 to 100 people for a large event; however, something more intimate is around 10-20 people.</p>
           <p className='featured-article-subheader'>Keeping Real</p>
           <p className='featured-article-paragraph'>It is hard when your job becomes your whole identity. People assume I'm out for dinner every night, but the reality is long hours and pressure. Many friends, family, and even people I bump into want to talk about my job, which can feel too intense sometimes, especially when the workload is busy. It means it's all I can think about because I'm constantly trying to keep brands, internal teams, creators and myself happy. It's exhausting.</p>
