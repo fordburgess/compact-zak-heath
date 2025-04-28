@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Image from 'next/image';
 import SpringExpanded from '../../assets/images/spring-expanded.jpg';
-import MillieKendallProfile from '../../assets/images/millie-kendall-profile.webp';
+import CarolynAronsonProfile from '../../assets/images/carolyn-aronson-profile.webp';
 import './article.css';
 import { useMediaQuery } from 'usehooks-ts';
 import gsap from 'gsap';
@@ -47,7 +47,7 @@ const CarolynAronson = () => {
       <Image src={SpringExpanded} className='featured-article-bg' alt='featured-article-bg'/>
       <div className='featured-article-content'>
         <div className='featured-title-section'>
-          <Image src={MillieKendallProfile} className='title-image' alt='carolyn-aronson-profile' />
+          <Image src={CarolynAronsonProfile} className='title-image' alt='carolyn-aronson-profile' />
           <div className='featured-title-text'>
             <h1 className='featured-title-quote'>"If you can change your hair, change your life"</h1>
             <div className='title-divider'></div>

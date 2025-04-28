@@ -11,7 +11,8 @@ import MillieKendall from '../../assets/images/millie-kendall-profile.webp';
 import AdamReed from '../../assets/images/adam-reed-profile.webp';
 import AlessandraSteinherr from '../../assets/images/alessandra-steinherr.webp';
 import MonaKattan from '../../assets/images/mona-kattan.webp';
-import PatriciaBright from '../../assets/images/patricia-bright-profile.webp';
+import CarolynAronson from '../../assets/images/carolyn-aronson-profile.webp';
+import TillySanders from '../../assets/images/tilly-sanders-profile.webp';
 import ShakeelMurtaza from '../../assets/images/shakeel-murtaza-profile.webp';
 import ZakHeath from '../../assets/images/zak-heath-profile.webp';
 import BenFrank from '../../assets/images/ben-frank.webp';
@@ -24,7 +25,7 @@ const interviews = [
     href: '/featured/adam-reed'
   },
   {
-    pfp: BenFrank,
+    pfp: CarolynAronson,
     name: 'Carolyn Aronson',
     job: 'Beauty Entrepreneur',
     href: '/featured/carolyn-aronson'
@@ -34,6 +35,12 @@ const interviews = [
     name: 'Mona Kattan',
     job: 'Fragrance CEO',
     href: '/featured/mona-kattan'
+  },
+  {
+    pfp: TillySanders,
+    name: 'Tilly Sanders',
+    job: 'Beauty PR',
+    href: '/featured/tilly-sanders'
   },
   {
     pfp: AlessandraSteinherr,
@@ -77,7 +84,7 @@ const FeaturedInterviews = () => {
 
       if (backgroundImage) {
         console.log(scrollTop)
-        backgroundImage.style.transform = `translateY(-${scrollTop * 1.2}px)`;
+        backgroundImage.style.transform = `translateY(-${scrollTop * 0.5}px)`;
       }
     };
 
@@ -155,7 +162,7 @@ const FeaturedInterviews = () => {
                             alt={`icon-${index}`}
                             className='beauty-icons-pfp'
                             id={`icons-pfp-${index}`}
-                            style={{ objectPosition: interview.name == 'Millie Kendall' ? 'top' : 'center' }}
+                            style={{ objectPosition: interview.name == 'Millie Kendall' || 'Carolyn Aronson' ? 'top' : 'center' }}
                           />
                           <div className='name-container'>
                             <h3>{interview.name}</h3>
