@@ -159,10 +159,8 @@ const Featured = () => {
             <h2>CLICK</h2>
             <p>FEATURED INTERVIEWS</p>
           </div>
-          <svg version="1.1" viewBox="0 0 4551 2560" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
-            <g id="bg-image">
-              <image width="4551" height="2560" preserveAspectRatio="none" xlinkHref={OverheadImage.src} />
-            </g>
+          <Image className='desktop-svg-bg' src={OverheadImage} alt='featured-desktop-svg-bg' />
+          <svg version="1.1" viewBox="0 0 4551 2560" preserveAspectRatio="xMidYmid meet" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
             <g id="layer-outline">
               <path name="shelf" className='object-outline' fill="none" d="m2276 1369-19.8-13.2 10.4-4.99c5.7-2.75 26.2-12.7 45.5-22.2l35.2-17.2 18.1 12.6c9.94 6.92 18 12.7 17.8 12.8-0.301 0.293-71.7 37.4-80.8 42l-6.59 3.32zm-129-28.5c-1.91-2.06-3.68-4.65-3.93-5.75-1.11-4.81-24.5-194-24.5-198 0-6.45 1.33-9.27 5.71-12.1 2.08-1.36 55.5-24.8 119-52.1 84.4-36.5 115-49.4 117-48.9 3.4 1.04 4.59 2.37 5.64 6.29 0.537 2 5.04 42.1 10 89.1s9.72 90.5 10.6 96.7c2.46 18 8.56 13.4-61.3 46.5-32.6 15.5-59.2 28.4-59.2 28.7 0.01 0.313 7.31 3.28 16.2 6.59 16 5.94 16.3 6.07 18.6 10.3 2.35 4.27 2.36 4.36 0.51 6.84-1.09 1.46-10.3 6.89-22.2 13-29.5 15.3-33.1 15.2-57.2-0.317-6.88-4.44-13.1-8.41-13.8-8.81-0.756-0.438-12.1 4.57-27.9 12.3-14.6 7.19-27.2 13.1-28 13.1s-2.98-1.69-4.89-3.75zm231-20.2c-7.98-4.34-14.5-8.48-14.5-9.21 0-2.86 7.88-5.85 16.1-6.11 7.05-0.223 8.51 0.069 13.8 2.74 3.25 1.65 7.14 4.22 8.63 5.71 3.29 3.29 4.27 8.21 2.03 10.2-1.77 1.57-8.72 4.61-10.4 4.57-0.62-0.013-7.65-3.57-15.6-7.91z"/>
             </g>
