@@ -97,16 +97,26 @@ html, body {
 }
 
 .hide-container {
-  height: 200px;
-  width: 0;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   overflow: hidden;
+  border-radius: 8px;
+}
+
+#hide-container-1 {
+  height: 0;
+  width: 500px;
+  border-top: solid 1px #fff;
+  border-bottom: solid 1px #fff;
+}
+
+#hide-container-2 {
+  height: 200px;
+  width: 0;
   border-right: solid 1px #fff;
   border-left: solid 1px #fff;
-  border-radius: 8px;
 }
 
 .featured-key-quote {

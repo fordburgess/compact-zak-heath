@@ -41,11 +41,22 @@ const MatildaSanders = () => {
       })
     }
 
-    gsap.to('.hide-container', {
-      width: '600px',
+    gsap.to('#hide-container-1', {
+      height: '300px',
       ease: 'power1.inOut',
       scrollTrigger: {
         trigger: '#featured-trans-1',
+        start: 'top center',
+        end: 'bottom center',
+        scrub: true
+      }
+    })
+
+    gsap.to('#hide-container-2', {
+      width: '600px',
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#featured-trans-2',
         start: 'top center',
         end: 'bottom center',
         scrub: true
@@ -79,11 +90,16 @@ const MatildaSanders = () => {
           <p className='featured-article-paragraph'>School was fine - not amazing, not terrible. I didn't love the environment, and I couldn't wait to get out. Most of my friends went off to uni, but I knew that early on, it wasn't for me. I didn't want to spend three more years in another version of school, so I went to the Fashion Retail Academy (FRA) and studied everything from marketing to retail strategy. It was practical and fun, and I could earn money whilst learning and living at home. Everyone was going to Nottingham Trent or Manchester, but that felt like three years of being stuck somewhere I didn't want to be.</p>
           <p className='featured-article-subheader'>"I Started On The Shop Floor"</p>
           <p className='featured-article-paragraph'>In an industry where most people get their start after university, Tilly’s began in Hertfordshire, UK, working at Jack Wills. I started at my local Space NK on the shop floor when I was 17 after being made redundant from a supervisor role at Jack Wills.</p>
+          <div className='featured-article-transition-container' id='featured-trans-1'>
+            <div className='hide-container' id='hide-container-1'>
+              <h1 className='featured-key-quote'>"I could bring something fresh."</h1>
+            </div>
+          </div>
           <p className='featured-article-paragraph'>I was 20 when I applied for the PR role at Space NK, and there were over a thousand applicants on LinkedIn. I didn't think I'd stand a chance; however, I already knew about all of the beauty products from working on the shop floor. I told my boss, Ginny Sanassy (Head of PR at Space NK), that I'd never done a PR job like this before, but I wanted to learn, and Ginny could see that. I hadn't been moulded by other teams, and I could bring something fresh.</p>
           <p className='featured-article-subheader'>Inside Her Day Job: Brand Launches and Adele</p>
           <p className='featured-article-paragraph'>No two days are the same, especially looking after over 100 brands stocked in our stores. Whether I'm in the office or not, everything has a quick turnover, so we'll have a full day of meetings planned, and if only one thing changes, then the entire day is rewritten. We work across too many teams, not just PR. It's the product launches, brand strategies, events, influencer and press relationships. Some months, we'll plan six events at once, and we juggle a lot for a small team, but we're creating activations around huge global campaigns. My favourite was a trip to New York with Rare Beauty; however, seeing Adele live as a part of a brand trip to Las Vegas was insane. Truly wild. However, Ginny has an in with her PR team, so we planned the trip around her concert dates, and it was one of those once-in-a-lifetime moments.</p>
-          <div className='featured-article-transition-container' id='featured-trans-1'>
-            <div className='hide-container'>
+          <div className='featured-article-transition-container' id='featured-trans-2'>
+            <div className='hide-container' id='hide-container-2'>
               <h1 className='featured-key-quote'>"Seeing Adele live as a part of a brand trip to Las Vegas was insane."</h1>
             </div>
           </div>
