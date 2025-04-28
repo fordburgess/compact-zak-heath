@@ -5,6 +5,7 @@ import ExpandedImage from '../../assets/images/field-expanded.jpg';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import LisaEldridge from '../../assets/images/lisa-eldridge-profile.webp';
+import MillieKendall from '../../assets/images/millie-kendall-profile.webp';
 import KirstyLewis from '../../assets/images/kirsty-lewis-profile.webp';
 import AdamReed from '../../assets/images/adam-reed-profile.webp';
 import AlessandraSteinherr from '../../assets/images/alessandra-steinherr.webp';
@@ -12,14 +13,11 @@ import MonaKattan from '../../assets/images/mona-kattan.webp';
 import PatriciaBright from '../../assets/images/patricia-bright-profile.webp';
 import ShakeelMurtaza from '../../assets/images/shakeel-murtaza-profile.webp';
 import ZakHeath from '../../assets/images/zak-heath-profile.webp';
-import BenFrank from '../../assets/images/ben-frank.webp';
+import TillySanders from '../../assets/images/tilly-sanders-profile.webp';
+import Placeholder from '../../assets/images/placeholder.webp';
+import CarolynAronson from '../../assets/images/carolyn-aronson-profile.webp';
 
 const interviews = [
-  {
-    pfp: AlessandraSteinherr,
-    name: 'Alessandra Steinherr',
-    job: 'Test',
-  },
   {
     pfp: AdamReed,
     name: 'Adam Reed',
@@ -31,9 +29,19 @@ const interviews = [
     job: 'Content Creator & CEO'
   },
   {
-    pfp: BenFrank,
-    name: 'John Doe',
-    job: 'Test'
+    pfp: Placeholder,
+    name: 'Ingeborg Van Lotringen',
+    job: 'Beauty Journalist'
+  },
+  {
+    pfp: AlessandraSteinherr,
+    name: 'Alessandra Steinherr',
+    job: 'Beauty Editor + Influencer',
+  },
+  {
+    pfp: MillieKendall,
+    name: 'Millie Kendall',
+    job: 'Beauty CEO'
   },
   {
     pfp: ZakHeath,
@@ -43,52 +51,42 @@ const interviews = [
   {
     pfp: KirstyLewis,
     name: 'Kirsty Lewis',
-    job: 'Test'
+    job: 'Head of Beauty PR'
   },
   {
-    pfp: BenFrank,
-    name: 'John Doe',
-    job: 'Accountant'
-  },
-  {
-    pfp: ShakeelMurtaza,
-    name: 'Shakeel Murtaza',
-    job: 'Influencer'
-  },
-  {
-    pfp: MonaKattan,
-    name: 'Mona Kattan',
-    job: 'Test'
+    pfp: TillySanders,
+    name: 'Tilly Sanders',
+    job: 'Beauty PR'
   },
   {
     pfp: LisaEldridge,
     name: 'Lisa Eldridge',
-    job: 'Test'
+    job: 'Celebrity Makeup Artist'
   },
   {
-    pfp: BenFrank,
-    name: 'John Doe',
-    job: 'Test'
+    pfp: ShakeelMurtaza,
+    name: 'Shakeel Murtaza',
+    job: "Men's Beauty Influencer"
   },
   {
-    pfp: BenFrank,
-    name: 'John Doe',
-    job: 'Test'
+    pfp: MonaKattan,
+    name: 'Mona Kattan',
+    job: 'Fragrance CEO'
   },
   {
-    pfp: BenFrank,
-    name: 'John Doe',
-    job: 'Test'
+    pfp: Placeholder,
+    name: 'Raquell Bouris',
+    job: 'Fragrance Founder'
   },
   {
-    pfp: BenFrank,
-    name: 'Ben Frank',
-    job: 'Test'
+    pfp: CarolynAronson,
+    name: 'Carolyn Aronson',
+    job: 'Brand Founder'
   },
   {
-    pfp: BenFrank,
-    name: 'John Doe',
-    job: 'Test'
+    pfp: Placeholder,
+    name: 'Yana Kafeli',
+    job: 'Agent'
   },
 ]
 
