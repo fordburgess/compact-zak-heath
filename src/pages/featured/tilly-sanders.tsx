@@ -13,7 +13,7 @@ const TillySanders = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     if (mobile) {
-//
+
     }
     else { // desktop transitions
       gsap.to('.title-image', {
