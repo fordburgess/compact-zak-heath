@@ -91,7 +91,7 @@ html, body {
   font-weight: 400;
   position: absolute;
   bottom: 15%;
-  right: 8%;
+  right: 14%;
   z-index: 2;
 }
 
@@ -151,7 +151,7 @@ html, body {
 
 .dream-room-paragraph-text {
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 300;
   margin-bottom: 25px;
   color: #fff;
 }
