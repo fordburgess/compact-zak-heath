@@ -133,7 +133,7 @@ const Services = () => {
           <picture>
             <source media="(min-width: 800px)" srcSet={WideImage.src} />
             <source media="(min-width: 640px)" srcSet={WideImageMobile.src} />
-            <Image priority src={WideImageMobile} className='initial-image' alt='initial-image-cover'/>
+            <Image priority src={WideImageMobile} className='initial-image' alt='initial-image-services'/>
           </picture>
         </div>
         <div className='svg-overlay-container' id="mobile-overlay">

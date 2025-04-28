@@ -130,10 +130,10 @@ const DreamRoom = () => {
               Scroll to continue...
             </motion.p>
           </div>
-          <Image src={WideImage} className='initial-image' alt='initial-image'/>
           <picture>
-            {/* <source media="(min-width: 1024px)" srcSet={WideImage} />
-            <source media="(min-width: 640px)" srcSet={WideImageMobile} /> */}
+            <source media="(min-width: 1024px)" srcSet={WideImage.src} />
+            <source media="(min-width: 640px)" srcSet={WideImageMobile.src} />
+            <Image priority src={WideImageMobile} className='initial-image' alt='initial-image-dream-room'/>
           </picture>
         </div>
         <div className='svg-overlay-container' id="mobile-overlay">

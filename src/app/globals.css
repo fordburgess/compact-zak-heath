@@ -156,7 +156,6 @@ a {
 }
 
 .svg-overlay-container {
-  /* display: none; */
   position: sticky;
   overflow: hidden;
   top: 0;
@@ -164,9 +163,12 @@ a {
   height: 100dvh;
   width: 100dvw;
   box-sizing: border-box;
-  /* opacity: 0; */
   z-index: 1;
   perspective: 1000px;
+}
+
+#desktop-overlay {
+  display: none;
 }
 
 .svg-overlay-container svg {
@@ -343,6 +345,14 @@ a {
 
   .page-subtitle {
     font-size: 2rem;
+  }
+
+  #mobile-overlay {
+    display: none;
+  }
+
+  #desktop-overlay {
+    display: block;
   }
 
   .profile-container {
