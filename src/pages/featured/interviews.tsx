@@ -103,7 +103,7 @@ const FeaturedInterviews = () => {
             scrollTrigger: {
               trigger: `#section-${index + 1}`,
               start: 'top 80%',
-              end: 'top 40%',
+              end: 'top center',
               scrub: true,
             }
           }
@@ -136,7 +136,7 @@ const FeaturedInterviews = () => {
         {
           chunked.map((chunk: any, index: number) => {
             return (
-              <div className='beauty-icons-section' id={`section-${index}`}>
+              <div className='featured-interviews-section' id={`section-${index}`}>
                 {
                   chunk.map((interview: any, i: number) => {
                     return (
