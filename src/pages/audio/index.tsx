@@ -19,43 +19,43 @@ const Audio = () => {
     const initialImage: HTMLElement | null = document.querySelector('.initial-image');
     const svgOverlayContainer: HTMLElement | null = document.getElementById(mobile ? 'mobile-overlay' : 'desktop-overlay');
 
-    if (initialImageContainer && svgOverlayContainer && initialImage) {
-
-      if (direction == 0) {
-        initialImageContainer.style.display = 'block';
-
-        svgOverlayContainer.style.transition = 'opacity 0.5s ease-in-out, transform 0.3s ease-in-out';
-        initialImageContainer.style.transition = 'opacity 0.75s ease-in-out';
-        initialImage.style.transition = 'transform 0.3s ease-in-out';
-
-        requestAnimationFrame(() => {
-          svgOverlayContainer.style.opacity = '0';
-          initialImageContainer.style.opacity = '1';
-          initialImage.style.transform = 'scale(1)';
-        });
-
-        setTimeout(() => {
-          svgOverlayContainer.style.display = 'none';
-        }, 1000);
-      }
-      else if (direction == 1) {
-        initialImageContainer.style.transition = 'opacity 1.2s ease-in-out'
-        initialImage.style.transition = 'transform 0.3s ease-in-out';
-        svgOverlayContainer.style.transition = 'opacity 0.5s ease-in-out';
-        svgOverlayContainer.style.display = 'block';
-
-        initialImage.style.transform = 'scale(2)';
-        initialImageContainer.style.opacity = '0';
-
-        requestAnimationFrame(() => {
-          svgOverlayContainer.style.opacity = '1';
-        });
-
-        setTimeout(() => {
-          initialImageContainer.style.display = 'none';
-        }, 1000);
-      }
-    }
+//     if (initialImageContainer && svgOverlayContainer && initialImage) {
+//
+//       if (direction == 0) {
+//         initialImageContainer.style.display = 'block';
+//
+//         svgOverlayContainer.style.transition = 'opacity 0.5s ease-in-out, transform 0.3s ease-in-out';
+//         initialImageContainer.style.transition = 'opacity 0.75s ease-in-out';
+//         initialImage.style.transition = 'transform 0.3s ease-in-out';
+//
+//         requestAnimationFrame(() => {
+//           svgOverlayContainer.style.opacity = '0';
+//           initialImageContainer.style.opacity = '1';
+//           initialImage.style.transform = 'scale(1)';
+//         });
+//
+//         setTimeout(() => {
+//           svgOverlayContainer.style.display = 'none';
+//         }, 1000);
+//       }
+//       else if (direction == 1) {
+//         initialImageContainer.style.transition = 'opacity 1.2s ease-in-out'
+//         initialImage.style.transition = 'transform 0.3s ease-in-out';
+//         svgOverlayContainer.style.transition = 'opacity 0.5s ease-in-out';
+//         svgOverlayContainer.style.display = 'block';
+//
+//         initialImage.style.transform = 'scale(2)';
+//         initialImageContainer.style.opacity = '0';
+//
+//         requestAnimationFrame(() => {
+//           svgOverlayContainer.style.opacity = '1';
+//         });
+//
+//         setTimeout(() => {
+//           initialImageContainer.style.display = 'none';
+//         }, 1000);
+//       }
+//     }
   }
 
   const handleObjectClick = () => {
@@ -115,6 +115,17 @@ const Audio = () => {
       }
     })
 
+    gsap.to('.initial-image-container', {
+      opacity: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".scroll-container",
+        start: 'top top',
+        end: 'center center',
+        scrub: true
+      }
+    })
+
     gsap.to('.svg-overlay-container', {
       scale: 1.5,
       ease: 'none',
@@ -137,17 +148,17 @@ const Audio = () => {
       }
     });
 
-    ScrollTrigger.create({
-      trigger: ".scroll-container",
-      start: "center top", // Adjust as needed
-      // markers: true,
-      onEnter: () => {
-        handleImageChange(1);
-      },
-      onLeaveBack: () => {
-        handleImageChange(0);
-      }
-    })
+    // ScrollTrigger.create({
+    //   trigger: ".scroll-container",
+    //   start: "center top", // Adjust as needed
+    //   // markers: true,
+    //   onEnter: () => {
+    //     handleImageChange(1);
+    //   },
+    //   onLeaveBack: () => {
+    //     handleImageChange(0);
+    //   }
+    // })
   }, [])
 
   return (
@@ -182,7 +193,7 @@ const Audio = () => {
             <Image priority src={WideImageMobile} className='initial-image' alt='initial-image-winter'/>
           </picture>
         </div>
-        <div className='svg-overlay-container' id="mobile-overlay">
+        {/* <div className='svg-overlay-container' id="mobile-overlay">
           <div className='further-info-container'>
             <h2>HINT</h2>
             <p>YOU CAN READ BUT YOU CAN'T OPEN</p>
@@ -198,7 +209,7 @@ const Audio = () => {
               <path data-outline="chair" fill="none" data-annotation="Chair" d="m439 1477-7.2-2.65-4.13-17.5c-2.27-9.63-5.11-21.3-6.3-25.9l-2.17-8.37-28.9-12-27.9-0.265-2.17-6.5c-1.2-3.58-2.75-7.7-3.46-9.17-1.1-2.29-0.919-4.23 1.3-13.7l2.58-11-26.1-101 11.6-19.1 107-37.4 24.8 5.89 7.88 21.7c4.33 11.9 8.38 22.2 9 22.8 0.616 0.61 18.6 8.7 40 18s39.5 17.3 40.1 17.9c0.911 0.73 1.76 11.3 3.07 38l1.81 37-2.7 21.4c-1.48 11.8-2.86 21.6-3.06 21.8-0.556 0.556-20.9 4.32-23.3 4.32-1.39 0-4.51-2.54-8.8-7.18l-6.65-7.18-67.4 33.4-2.13 10.7c-1.17 5.9-2.42 12.4-2.78 14.4-0.515 2.9-2 4.81-7.2 9.25-3.6 3.08-7.3 5.55-8.22 5.5-0.919-0.051-4.91-1.28-8.87-2.74z"/>
             </g>
           </svg>
-        </div>
+        </div> */}
         <div className='svg-overlay-container' id="desktop-overlay">
           <div className='further-info-container'>
             <h2>HINT</h2>
@@ -216,12 +227,6 @@ const Audio = () => {
             </g>
           </svg>
         </div>
-        {/* <div className='svg-overlay-container'>
-          <Image src={OverheadImage} className='svg-overlay-test' alt='svg-overlay-winter'/>
-          <Link href='/audio/episodes'>
-            <div className='test-circle' onClick={() => handleObjectClick()}></div>
-          </Link>
-        </div> */}
       </div>
     </>
   )
