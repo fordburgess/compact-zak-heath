@@ -1,108 +1,108 @@
-// import { useState, useEffect, useRef } from 'react';
-// import Image from 'next/image';
+import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 // import { Noise } from 'noisejs';
-// import './interview.css'
-// import Image1 from '../../assets/images/lisa-eldridge-1.webp';
-// import Image2 from '../../assets/images/lisa-eldridge-2.webp';
-// import Image4 from '../../assets/images/lisa-eldridge-4.webp';
-// import SpringExpanded from '../../assets/images/spring-expanded.jpg';
-// import { motion } from 'framer-motion';
-// import gsap from 'gsap';
-// import { useMediaQuery } from 'usehooks-ts';
-//
-// const LisaEldridge = () => {
-//   const mobile = useMediaQuery('(max-width: 800px)');
-//   const windowWidth = 2000;
-//   const CANVAS_WIDTH = 2000;
-//   const NOISE_AMOUNT = 4;
-//   const NOISE_SPEED = 0.006;
-//   const SCROLL_SPEED = 0.75;
-//   const noise = new Noise();
-//
-//   const article = [
-//     {
-//       id: 0,
-//       question: 'What name would you have chosen, if you could have been called anything else?',
-//       answer: 'Oh, my God, well, my mum was actually going to call me Nina. And then, last minute, she changed it to Lisa. At one point, I thought I would have preferred Nina—I like it better. Honestly, I don’t like Lisa.',
-//       x: CANVAS_WIDTH / 1,
-//       y: 320,
-//       s: 1,
-//       size: '300px',
-//     },
-//     {
-//       id: 1,
-//       question: 'What were your first experiences with makeup?',
-//       answer: 'It started when I found my mum’s old makeup after we moved back to England from New Zealand. She had this box with little drawers, filled with 1960s makeup like Biba and Mary Quant that was really playful and colourful. Makeup from that era was designed for teenagers, so it had this childlike, crayon-like quality that I loved because of the objects and textures and for me, that was the turning point. I was also really inspired by the “vintageness”, because I knew it was old makeup and that was more interesting than modern makeup. I also used to draw on paper with it because it was more interesting than using regular crayons and art supplies. For my 13th birthday, I got a book on stage and theatrical makeup, and it blew my mind. The transformations, the way you could create light and shade, it was like art. I knew that’s what I wanted to do.',
-//       x: CANVAS_WIDTH / 2,
-//       y: 200,
-//       s: 1,
-//       image: Image2,
-//       size: '250px',
-//       expandedSize: '100vh'
-//     },
-//     {
-//       id: 2,
-//       question: 'When you were 21, who did you look up to in the beauty industry?',
-//       answer: 'Probably Mary Greenwell. She was the makeup artist doing all the Vogue covers at the time. When I was a teenager, I’d use my pocket money to buy Vogue magazines and dream about having a career like hers. She was doing the makeup for literally every major cover. And then, two years later, I was working with her. It was a dream come true.',
-//       x: CANVAS_WIDTH / 3,
-//       y: 400,
-//       s: 1,
-//       size: '320px'
-//     },
-//     {
-//       id: 7,
-//       questionId: 1,
-//       src: Image2,
-//       x: 600,
-//       y: 400,
-//       s: 1.1
-//     },
-//     {
-//       id: 8,
-//       questionId: 4,
-//       src: Image4,
-//       x: 300,
-//       y: 200,
-//     },
-//     {
-//       id: 3,
-//       question: 'Did you face any setbacks when you entered the industry?',
-//       answer: 'Oh, absolutely. I didn’t know anyone in the industry, and there wasn’t any internet back then to guide me, so it was tricky to figure out, especially wanting to go into the fashion industry. I’d buy magazines to study credits like "Mary Greenwell for Debbie Walters" and figure out which agency to call and who was repping each other. Networking was painstaking, you had to meet people at clubs or get in touch with agencies directly and say, “I would love to assist, or something”. I did a lot of unpaid work to build my portfolio, working with new models like Kate Moss who were just coming into the industry. At one point, I heard someone say they got a magazine cover because their boyfriend was the editor, and I remember thinking, oh my god, I hope it’s literally not going to come down to who you know. But in the end, hard work and perseverance paid off. By the time I was 23, I was signed by an agency alongside legends like Sam McKnight, Mary Greenwell and major major people - I was kind of the baby. That was huge. At first, I was asked why I wanted to assist, but I had only worked with up-and-coming models and I didn’t know how to react when a big supermodel or celebrity walked into the room; however, I quickly learnt that you just treat everybody the same.',
-//       x: CANVAS_WIDTH / 4,
-//       y: 250,
-//       s: 1,
-//       size: '275px'
-//     },
-//     {
-//       id: 4,
-//       question: 'What was your favourite club when you were 21?',
-//       answer: 'The WAG Club was the place to be. So many cool people in fashion and creative industries hung out there. Clubs like that were great for meeting people and building connections. I’d speak to the people from Models One and ask whether they had any new models and that’s how I got my portfolio together.',
-//       x: CANVAS_WIDTH / 5,
-//       y: 500,
-//       s: 0.8,
-//       size: '275px'
-//     },
-//     {
-//       id: 5,
-//       question: 'What was the first big show you worked on?',
-//       answer: 'It was with Mary, assisting at shows like Rifat Ozbek in London and Romeo Gigli in Paris. I remember rushing through makeup at my first big show, and Mary told me to slow down and take my time. I was like, oh my god, okay!',
-//       x: CANVAS_WIDTH / 6,
-//       y: 250,
-//       s: 1,
-//       size: '250px'
-//     },
-//     {
-//       id: 6,
-//       question: 'What advice would you give your 21-year-old self?',
-//       answer: 'I’d tell her to stay confident and not compare herself to others but explore the ideas she had and wanted to share. In a creative industry, it’s fuelled by ideas, there’s no such thing as a bad one. I wish I’d spoken up more on shoots when I had ideas. Now, I’m much more comfortable experimenting. For instance, I recently tried a bold blue eyeshadow look during a Claudia Schiffer shoot for Pop Magazine. It didn’t work, and we took it off, but that’s okay! It’s all part of the creative process. Don’t think you’re silly or something and don’t be afraid to explore, speak your mind, and trust your instincts. There’s good ideas, bad ideas, but actually they’re all good.',
-//       x: CANVAS_WIDTH / 7,
-//       y: 300,
-//       s: 1,
-//       size: '275px'
-//     },
-//     // associated images beyond this point
-//   ]
-//
+import './interview.css'
+import Image1 from '../../assets/images/lisa-eldridge-1.webp';
+import Image2 from '../../assets/images/lisa-eldridge-2.webp';
+import Image4 from '../../assets/images/lisa-eldridge-4.webp';
+import SpringExpanded from '../../assets/images/spring-expanded.jpg';
+import { motion } from 'framer-motion';
+import gsap from 'gsap';
+import { useMediaQuery } from 'usehooks-ts';
+
+const LisaEldridge = () => {
+  const mobile = useMediaQuery('(max-width: 800px)');
+  const windowWidth = 2000;
+  const CANVAS_WIDTH = 2000;
+  const NOISE_AMOUNT = 4;
+  const NOISE_SPEED = 0.006;
+  const SCROLL_SPEED = 0.75;
+  // const noise = new Noise();
+
+  const article = [
+    {
+      id: 0,
+      question: 'What name would you have chosen, if you could have been called anything else?',
+      answer: 'Oh, my God, well, my mum was actually going to call me Nina. And then, last minute, she changed it to Lisa. At one point, I thought I would have preferred Nina—I like it better. Honestly, I don’t like Lisa.',
+      x: CANVAS_WIDTH / 1,
+      y: 320,
+      s: 1,
+      size: '300px',
+    },
+    {
+      id: 1,
+      question: 'What were your first experiences with makeup?',
+      answer: 'It started when I found my mum’s old makeup after we moved back to England from New Zealand. She had this box with little drawers, filled with 1960s makeup like Biba and Mary Quant that was really playful and colourful. Makeup from that era was designed for teenagers, so it had this childlike, crayon-like quality that I loved because of the objects and textures and for me, that was the turning point. I was also really inspired by the “vintageness”, because I knew it was old makeup and that was more interesting than modern makeup. I also used to draw on paper with it because it was more interesting than using regular crayons and art supplies. For my 13th birthday, I got a book on stage and theatrical makeup, and it blew my mind. The transformations, the way you could create light and shade, it was like art. I knew that’s what I wanted to do.',
+      x: CANVAS_WIDTH / 2,
+      y: 200,
+      s: 1,
+      image: Image2,
+      size: '250px',
+      expandedSize: '100vh'
+    },
+    {
+      id: 2,
+      question: 'When you were 21, who did you look up to in the beauty industry?',
+      answer: 'Probably Mary Greenwell. She was the makeup artist doing all the Vogue covers at the time. When I was a teenager, I’d use my pocket money to buy Vogue magazines and dream about having a career like hers. She was doing the makeup for literally every major cover. And then, two years later, I was working with her. It was a dream come true.',
+      x: CANVAS_WIDTH / 3,
+      y: 400,
+      s: 1,
+      size: '320px'
+    },
+    {
+      id: 7,
+      questionId: 1,
+      src: Image2,
+      x: 600,
+      y: 400,
+      s: 1.1
+    },
+    {
+      id: 8,
+      questionId: 4,
+      src: Image4,
+      x: 300,
+      y: 200,
+    },
+    {
+      id: 3,
+      question: 'Did you face any setbacks when you entered the industry?',
+      answer: 'Oh, absolutely. I didn’t know anyone in the industry, and there wasn’t any internet back then to guide me, so it was tricky to figure out, especially wanting to go into the fashion industry. I’d buy magazines to study credits like "Mary Greenwell for Debbie Walters" and figure out which agency to call and who was repping each other. Networking was painstaking, you had to meet people at clubs or get in touch with agencies directly and say, “I would love to assist, or something”. I did a lot of unpaid work to build my portfolio, working with new models like Kate Moss who were just coming into the industry. At one point, I heard someone say they got a magazine cover because their boyfriend was the editor, and I remember thinking, oh my god, I hope it’s literally not going to come down to who you know. But in the end, hard work and perseverance paid off. By the time I was 23, I was signed by an agency alongside legends like Sam McKnight, Mary Greenwell and major major people - I was kind of the baby. That was huge. At first, I was asked why I wanted to assist, but I had only worked with up-and-coming models and I didn’t know how to react when a big supermodel or celebrity walked into the room; however, I quickly learnt that you just treat everybody the same.',
+      x: CANVAS_WIDTH / 4,
+      y: 250,
+      s: 1,
+      size: '275px'
+    },
+    {
+      id: 4,
+      question: 'What was your favourite club when you were 21?',
+      answer: 'The WAG Club was the place to be. So many cool people in fashion and creative industries hung out there. Clubs like that were great for meeting people and building connections. I’d speak to the people from Models One and ask whether they had any new models and that’s how I got my portfolio together.',
+      x: CANVAS_WIDTH / 5,
+      y: 500,
+      s: 0.8,
+      size: '275px'
+    },
+    {
+      id: 5,
+      question: 'What was the first big show you worked on?',
+      answer: 'It was with Mary, assisting at shows like Rifat Ozbek in London and Romeo Gigli in Paris. I remember rushing through makeup at my first big show, and Mary told me to slow down and take my time. I was like, oh my god, okay!',
+      x: CANVAS_WIDTH / 6,
+      y: 250,
+      s: 1,
+      size: '250px'
+    },
+    {
+      id: 6,
+      question: 'What advice would you give your 21-year-old self?',
+      answer: 'I’d tell her to stay confident and not compare herself to others but explore the ideas she had and wanted to share. In a creative industry, it’s fuelled by ideas, there’s no such thing as a bad one. I wish I’d spoken up more on shoots when I had ideas. Now, I’m much more comfortable experimenting. For instance, I recently tried a bold blue eyeshadow look during a Claudia Schiffer shoot for Pop Magazine. It didn’t work, and we took it off, but that’s okay! It’s all part of the creative process. Don’t think you’re silly or something and don’t be afraid to explore, speak your mind, and trust your instincts. There’s good ideas, bad ideas, but actually they’re all good.',
+      x: CANVAS_WIDTH / 7,
+      y: 300,
+      s: 1,
+      size: '275px'
+    },
+    // associated images beyond this point
+  ]
+
 //   const interval = CANVAS_WIDTH / article.length + 100;
 //   const articleRef = useRef(
 //     article.map((question, i) => {
@@ -477,46 +477,49 @@
 //       return;
 //     }
 //   }
-//
-//   return (
-//     <div className='interview-container' onClick={() => handleContainerClick()}>
-//       <div className='interview-header' style={{ opacity: activeIndex !== null ? 0 : 1 }}>
-//         <h1 className='interview-title'>In Conversation With Lisa Eldridge:</h1>
-//         <h2 className='interview-subtitle'>Becoming A World Class Makeup Artist</h2>
-//       </div>
-//       {
-//         article.map((item: any, index: number) => {
-//
-//           return (
-//             <div
-//               data-id={item.id}
-//               className={item.question ? 'bubble' : 'image-bubble'}
-//               id={item.question ? `item-${item.id}` : `associated-image ${item.questionId}`}
-//               onClick={() => handleClick(item.id)}
-//               style={{
-//                 padding: item.src ? '0' : `${mobile ? '10px' : '20px'}`,
-//                 overflow: 'hidden',
-//               }}
-//             >
-//               {
-//                 item.question ? (
-//                   <>
-//                     <h3 className='item-title' id={`item-title-${item.id}`}>{item.question}</h3>
-//                     <p className='item-text' id={`item-text-${item.id}`}>{item.answer}</p>
-//                   </>
-//                 ) : (
-//                   <Image
-//                     src={item.src}
-//                     alt={`image-${item.id}`}
-//                   />
-//                 )
-//               }
-//             </div>
-//           )
-//         })
-//       }
-//     </div>
-//   )
-// }
-//
-// export default LisaEldridge;
+
+  return (
+    <div
+      className='interview-container'
+      // onClick={() => handleContainerClick()}
+    >
+      {/* <div className='interview-header' style={{ opacity: activeIndex !== null ? 0 : 1 }}>
+        <h1 className='interview-title'>In Conversation With Lisa Eldridge:</h1>
+        <h2 className='interview-subtitle'>Becoming A World Class Makeup Artist</h2>
+      </div>
+      {
+        article.map((item: any, index: number) => {
+
+          return (
+            <div
+              data-id={item.id}
+              className={item.question ? 'bubble' : 'image-bubble'}
+              id={item.question ? `item-${item.id}` : `associated-image ${item.questionId}`}
+              onClick={() => handleClick(item.id)}
+              style={{
+                padding: item.src ? '0' : `${mobile ? '10px' : '20px'}`,
+                overflow: 'hidden',
+              }}
+            >
+              {
+                item.question ? (
+                  <>
+                    <h3 className='item-title' id={`item-title-${item.id}`}>{item.question}</h3>
+                    <p className='item-text' id={`item-text-${item.id}`}>{item.answer}</p>
+                  </>
+                ) : (
+                  <Image
+                    src={item.src}
+                    alt={`image-${item.id}`}
+                  />
+                )
+              }
+            </div>
+          )
+        })
+      } */}
+    </div>
+  )
+}
+
+export default LisaEldridge;
