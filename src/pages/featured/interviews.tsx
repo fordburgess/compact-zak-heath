@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import './interviews.css';
 import ExpandedImage from '../../assets/images/spring-expanded.jpg';
@@ -19,37 +20,44 @@ const interviews = [
   {
     pfp: AdamReed,
     name: 'Adam Reed',
-    job: 'Hairstylist'
+    job: 'Hairstylist',
+    href: '/featured/adam-reed'
   },
   {
     pfp: BenFrank,
     name: 'Carolyn Aronson',
-    job: 'Beauty Entrepreneur'
+    job: 'Beauty Entrepreneur',
+    href: '/featured/carolyn-aronson'
   },
   {
     pfp: MonaKattan,
     name: 'Mona Kattan',
     job: 'Fragrance CEO',
+    href: '/featured/mona-kattan'
   },
   {
     pfp: AlessandraSteinherr,
     name: 'Alessandra Steinherr',
-    job: 'Beauty Editor + Influencer'
+    job: 'Beauty Editor + Influencer',
+    href: '/featured/alessandra-steinherr'
   },
   {
     pfp: MillieKendall,
     name: 'Millie Kendall',
-    job: 'Beauty CEO'
+    job: 'Beauty CEO',
+    href: '/featured/millie-kendall'
   },
   {
     pfp: ZakHeath,
     name: 'Zak Heath',
-    job: 'My Journey'
+    job: 'My Journey',
+    href: '/dream-room'
   },
   {
     pfp: LisaEldridge,
     name: 'Lisa Eldridge',
-    job: 'Celebrity Makeup Artist'
+    job: 'Celebrity Makeup Artist',
+    href: '/featured/lisa-eldridge'
   },
 ]
 
@@ -141,17 +149,19 @@ const FeaturedInterviews = () => {
                   chunk.map((interview: any, i: number) => {
                     return (
                       <div className='beauty-icons-item'>
-                        <Image
-                          src={interview.pfp}
-                          alt={`icon-${index}`}
-                          className='beauty-icons-pfp'
-                          id={`icons-pfp-${index}`}
-                          style={{ objectPosition: interview.name == 'Millie Kendall' ? 'top' : 'center' }}
-                        />
-                        <div className='name-container'>
-                          <h3>{interview.name}</h3>
-                          <p>{interview.job}</p>
-                        </div>
+                        <Link href={interview.href}>
+                          <Image
+                            src={interview.pfp}
+                            alt={`icon-${index}`}
+                            className='beauty-icons-pfp'
+                            id={`icons-pfp-${index}`}
+                            style={{ objectPosition: interview.name == 'Millie Kendall' ? 'top' : 'center' }}
+                          />
+                          <div className='name-container'>
+                            <h3>{interview.name}</h3>
+                            <p>{interview.job}</p>
+                          </div>
+                        </Link>
                       </div>
                     )
                   })
