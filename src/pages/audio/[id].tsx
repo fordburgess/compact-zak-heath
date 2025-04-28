@@ -6,7 +6,7 @@ import ExpandedImage from '../../assets/images/winter-expanded.webp'
 import PatriciaBright from '../../assets/images/patricia-bright-profile.webp';
 import ZakHeath from '../../assets/images/zak-heath-profile.webp';
 import ShakeelMurtaza from '../../assets/images/shakeel-murtaza-profile.webp';
-import BenFrank from '../../assets/images/ben-frank.webp';
+import Placeholder from '../../assets/images/placeholder.webp';
 import PlayButton from '../../assets/images/play-button.png';
 import PauseButton from '../../assets/images/pause-button.png';
 import SkipButton from '../../assets/images/skip-button.png';
@@ -180,7 +180,7 @@ const AudioEpisode = () => {
         <div className='episode-title-and-photo-desktop'>
           {
             episode && (
-              <Image src={episode.profileImage ? episode.profileImage : BenFrank} className='episode-pfp-desktop' alt='pfp'/>
+              <Image src={episode.profileImage ? episode.profileImage : Placeholder} className='episode-pfp-desktop' alt='pfp'/>
             )
           }
           <div className='info-container-desktop'>
@@ -192,7 +192,7 @@ const AudioEpisode = () => {
         <div className='episode-title-and-photo-mobile'>
           {
             episode && (
-              <Image src={episode.profileImage ? episode.profileImage : BenFrank} alt='pfp' className='episode-profile-image' />
+              <Image src={episode.profileImage ? episode.profileImage : Placeholder} alt='pfp' className='episode-profile-image' />
             )
           }
           <div ref={titleContainerRef} className='episode-title-container'>
@@ -248,7 +248,7 @@ const AudioEpisode = () => {
                   return (
                     <Link href={`/audio/${item.id}`}>
                       <div className='more-episodes-item'>
-                        <Image src={item.profileImage ? item.profileImage : BenFrank} alt='pfp'/>
+                        <Image src={item.profileImage ? item.profileImage : Placeholder} alt='pfp'/>
                         <h3>{item.title.split(':')[1]}</h3>
                         <p>{item.title.split(':')[0]}</p>
                       </div>
