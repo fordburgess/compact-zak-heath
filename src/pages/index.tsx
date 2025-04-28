@@ -17,7 +17,7 @@ const Home = () => {
       setActiveItem(false);
 
       const pointerLine: SVGPathElement = document.querySelector('.pointer-line');
-      const bgImage = document.getElementById('svg-bg-image');
+      const bgImage = document.querySelector('.bg-image');
       const infoBox: SVGPathElement = document.querySelector('.info-box');
       const objectOutlines = document.querySelectorAll('.object-outline');
       const infoText = document.querySelector('.info-box-title-text');
@@ -71,16 +71,16 @@ const Home = () => {
 
       const pointerLine: SVGPathElement = document.querySelector('.pointer-line');
       const infoBox: SVGPathElement = document.querySelector('.info-box');
-      const bgImage = document.getElementById('svg-bg-image');
+      const bgImage = document.querySelector('.bg-image');
       const svgOverlayContainer = document.querySelector('.svg-overlay-container');
       const objectOutlines = document.querySelectorAll('.object-outline');
       const infoText = document.querySelector('.info-box-title-text');
       const linkText = document.querySelector('.link-text');
 
       if (pointerLine && bgImage && infoBox && linkText) {
+        console.log('hello world')
         objectOutlines.forEach((object) => {
           if (object.id.split("-")[0] !== id) {
-            // console.log(object.id)
             object.style.display = 'none';
           }
         })
@@ -230,7 +230,7 @@ const Home = () => {
         </picture>
       </div>
       <div className="svg-overlay-container" id="desktop-overlay">
-        <Image className='desktop-svg-bg' src={OverheadImage} alt='cover-desktop-svg-bg' />
+        <Image className='bg-image' id='desktop-svg-bg' src={OverheadImage} alt='cover-desktop-svg-bg' />
         <svg onClick={(e) => handleContainerClick(e)} viewBox="0 0 4551 2560" preserveAspectRatio="xMidYmid meet" version="1.1" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
           <g id="layer-outline">
             <path className='object-outline' id='A-fill' name="laptop" fill="none" d="m2558 1221c-32.8-1.61-61-3.27-62.7-3.7-2.12-0.525-3.35-1.47-3.88-2.97-0.519-1.48 0.449-12 2.94-32 3.54-28.4 3.79-32.1 5.41-78.7 0.933-26.9 1.71-53.5 1.73-59.1 0.035-12.5 1.02-16.6 4.26-17.9 3.16-1.2 180 5.86 185 7.38 6.23 1.93 6.06-1.36 3.21 60.3-1.41 30.6-2.93 66.5-3.38 79.8-0.445 13.3-1.02 24.5-1.28 24.7-0.815 0.815-25.3-1.22-27.2-2.26-1.13-0.605-1.87-1.87-1.87-3.22 0-4.29-6.15-3.96-7.97 0.424-0.955 2.3-1.42 2.55-3.97 2.14-5.43-0.881-14.6 5.6-13.4 9.44 0.373 1.18-0.149 3.42-1.4 5.99-1.73 3.58-1.88 4.67-1.11 8.42l0.882 4.3-7.62-0.115c-4.19-0.063-34.4-1.43-67.2-3.04z"/>
