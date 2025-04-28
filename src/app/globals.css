@@ -353,6 +353,23 @@ a {
 
   #desktop-overlay {
     display: block;
+    background-color: red;
+  }
+
+  #desktop-overlay img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  #desktop-overlay svg {
+    height: 100%;
+    width: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .profile-container {
