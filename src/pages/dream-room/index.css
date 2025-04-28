@@ -32,3 +32,17 @@
   top: 50%;
   right: 45%;
 }
+
+@media (max-width: 800px) {
+  #dream-room-title-container {
+    top: 10%;
+  }
+
+  #dream-room-title {
+    font-size: 4rem;
+  }
+
+  #dream-room-subtitle-container {
+    top: 28%;
+  }
+}

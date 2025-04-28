@@ -9,3 +9,17 @@
   font-size: 2rem;
   font-weight: 300;
 }
+
+@media (max-width: 800px) {
+  #beauty-icons-title-container {
+    top: 10%;
+  }
+
+  #beauty-title {
+    font-size: 4rem;
+  }
+
+  #beauty-icons-subtitle-container {
+    top: 28%;
+  }
+}

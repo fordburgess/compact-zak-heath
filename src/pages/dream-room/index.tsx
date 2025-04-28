@@ -108,7 +108,7 @@ const DreamRoom = () => {
     <>
       <div className='scroll-container'>
         <div className='initial-image-container'>
-          <div className='title-container'>
+          <div className='title-container' id="dream-room-title-container">
             <motion.h1
               className='page-title'
               id='dream-room-title'
@@ -119,7 +119,7 @@ const DreamRoom = () => {
               DREAM ROOM
             </motion.h1>
           </div>
-          <div className='subtitle-container'>
+          <div className='subtitle-container' id="dream-room-subtitle-container">
             <motion.p
               className='page-subtitle'
               id='dream-room-subtitle'
