@@ -131,7 +131,7 @@ const Audio = () => {
       ease: 'none',
       scrollTrigger: {
         trigger: ".scroll-container",
-        start: "center center",
+        start: "center top",
         end: "bottom bottom",
         scrub: true
       }
