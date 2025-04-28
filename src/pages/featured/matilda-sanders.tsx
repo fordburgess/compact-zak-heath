@@ -47,51 +47,46 @@ const MatildaSanders = () => {
       scrollTrigger: {
         trigger: '#featured-trans-1',
         start: 'top center',
-        end: 'bottom center',
+        end: `bottom ${mobile ? '90%' : '70%' }`,
         scrub: true
       }
     })
 
     gsap.to('#hide-container-2', {
-      width: '600px',
+      width: `${mobile ? '100%' : '600px'}`,
       ease: 'power1.inOut',
       scrollTrigger: {
         trigger: '#featured-trans-2',
         start: 'top center',
-        end: 'bottom center',
+        end: `bottom ${mobile ? '90%' : '70%' }`,
         scrub: true
       }
     })
 
     gsap.to('#hide-container-3', {
-      width: '500px',
+      width: mobile ? '100%' : '500px',
       height: '300px',
       ease: 'power1.inOut',
       scrollTrigger: {
         trigger: '#featured-trans-3',
         start: 'top center',
-        end: 'bottom center',
+        end: `bottom ${mobile ? '90%' : '70%' }`,
         scrub: true
       }
     })
 
     gsap.to('#hide-container-4', {
-      width: '500px',
+      width: mobile ? '100%' : '500px',
       height: '300px',
       ease: 'power1.inOut',
       scrollTrigger: {
         trigger: '#featured-trans-4',
         start: 'top center',
-        end: 'bottom center',
+        end: `bottom ${mobile ? '90%' : '70%' }`,
         scrub: true
       }
     })
   }, [])
-
-//   "Seeing Adele live as a part of a brand trip to Las Vegas was insane."
-// "I could bring something fresh."
-// "I was honest about not having PR experience, but I knew the products inside out." "I don't have a five-year plan."
-
 
   return (
     <div className='featured-article-container'>
@@ -124,7 +119,7 @@ const MatildaSanders = () => {
           <p className='featured-article-paragraph'>No two days are the same, especially looking after over 100 brands stocked in our stores. Whether I'm in the office or not, everything has a quick turnover, so we'll have a full day of meetings planned, and if only one thing changes, then the entire day is rewritten. We work across too many teams, not just PR. It's the product launches, brand strategies, events, influencer and press relationships. Some months, we'll plan six events at once, and we juggle a lot for a small team, but we're creating activations around huge global campaigns. My favourite was a trip to New York with Rare Beauty; however, seeing Adele live as a part of a brand trip to Las Vegas was insane. Truly wild. However, Ginny has an in with her PR team, so we planned the trip around her concert dates, and it was one of those once-in-a-lifetime moments.</p>
           <div className='featured-article-transition-container' id='featured-trans-2'>
             <div className='hide-container' id='hide-container-2'>
-              <h1 className='featured-key-quote'>"Seeing Adele live as a part of a brand trip to Las Vegas was insane."</h1>
+              <h1 className='featured-key-quote'>"Seeing Adele live as a<br/> part of a brand trip<br/>to Las Vegas was insane."</h1>
             </div>
           </div>
           <p className='featured-article-paragraph'>Trips are fun, but there's a reason behind them, whether that be education around the product launch or photo opportunities for the creators. Let's just say that I was shocked, though, when I first heard how much events and trips can cost. Just the flowers for the events alone can be thousands, but there are also production costs, venue costs, and gifting—it all adds up, but it's an investment for the brand.</p>
