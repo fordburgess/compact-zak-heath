@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { useRouter } from 'next/router';
 import Image from 'next/image';
 import WideImage from '../../assets/images/spring-far.png';
 import WideImageMobile from '../../assets/images/spring-far-mobile.webp';
@@ -11,6 +12,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useMediaQuery } from 'usehooks-ts';
 
 const Featured = () => {
+  const router = useRouter();
   const mobile = useMediaQuery('(max-width: 800px)');
 
   const handleImageChange = (direction: number) => { // direction is the way the user is travelling
@@ -56,26 +58,26 @@ const Featured = () => {
     }
   }
 
-  const handleObjectClick = () => {
-    const scrollContainer: HTMLElement | null = document.querySelector('.scroll-container');
-    const contentContainer: HTMLElement | null = document.querySelector('.content-container');
-
-    if (scrollContainer && contentContainer) {
-      scrollContainer.style.transition = 'opacity 0.5s ease-in-out';
-      contentContainer.style.transition = 'opacity 0.25s ease-in-out';
-
-      contentContainer.style.display = 'block';
-      scrollContainer.style.opacity = '0';
-
-      requestAnimationFrame(() => {
-        contentContainer.style.opacity = '1';
-      });
-
-      setTimeout(() => {
-        scrollContainer.style.display = 'none';
-      }, 1200);
-    }
-  }
+//   const handleObjectClick = () => {
+//     const scrollContainer: HTMLElement | null = document.querySelector('.scroll-container');
+//     const contentContainer: HTMLElement | null = document.querySelector('.content-container');
+//
+//     if (scrollContainer && contentContainer) {
+//       scrollContainer.style.transition = 'opacity 0.5s ease-in-out';
+//       contentContainer.style.transition = 'opacity 0.25s ease-in-out';
+//
+//       contentContainer.style.display = 'block';
+//       scrollContainer.style.opacity = '0';
+//
+//       requestAnimationFrame(() => {
+//         contentContainer.style.opacity = '1';
+//       });
+//
+//       setTimeout(() => {
+//         scrollContainer.style.display = 'none';
+//       }, 1200);
+//     }
+//   }
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -135,17 +137,6 @@ const Featured = () => {
       }
     })
 
-    gsap.to('.test-circle', {
-      opacity: 1,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.scroll-container',
-        start: '80% top',
-        end: '90% top',
-        scrub: true
-      }
-    })
-
     ScrollTrigger.create({
       trigger: ".scroll-container",
       start: "center top", // Adjust as needed
@@ -158,6 +149,10 @@ const Featured = () => {
       }
     })
   }, [])
+
+  const handleObjectClick = () => {
+    router.push('/featured/interviews');
+  }
 
 
   return (
@@ -218,20 +213,10 @@ const Featured = () => {
               <path name="shelf" className='object-outline' fill="none" d="m2276 1369-19.8-13.2 10.4-4.99c5.7-2.75 26.2-12.7 45.5-22.2l35.2-17.2 18.1 12.6c9.94 6.92 18 12.7 17.8 12.8-0.301 0.293-71.7 37.4-80.8 42l-6.59 3.32zm-129-28.5c-1.91-2.06-3.68-4.65-3.93-5.75-1.11-4.81-24.5-194-24.5-198 0-6.45 1.33-9.27 5.71-12.1 2.08-1.36 55.5-24.8 119-52.1 84.4-36.5 115-49.4 117-48.9 3.4 1.04 4.59 2.37 5.64 6.29 0.537 2 5.04 42.1 10 89.1s9.72 90.5 10.6 96.7c2.46 18 8.56 13.4-61.3 46.5-32.6 15.5-59.2 28.4-59.2 28.7 0.01 0.313 7.31 3.28 16.2 6.59 16 5.94 16.3 6.07 18.6 10.3 2.35 4.27 2.36 4.36 0.51 6.84-1.09 1.46-10.3 6.89-22.2 13-29.5 15.3-33.1 15.2-57.2-0.317-6.88-4.44-13.1-8.41-13.8-8.81-0.756-0.438-12.1 4.57-27.9 12.3-14.6 7.19-27.2 13.1-28 13.1s-2.98-1.69-4.89-3.75zm231-20.2c-7.98-4.34-14.5-8.48-14.5-9.21 0-2.86 7.88-5.85 16.1-6.11 7.05-0.223 8.51 0.069 13.8 2.74 3.25 1.65 7.14 4.22 8.63 5.71 3.29 3.29 4.27 8.21 2.03 10.2-1.77 1.57-8.72 4.61-10.4 4.57-0.62-0.013-7.65-3.57-15.6-7.91z"/>
             </g>
             <g id="layer-interaction">
-              <path data-outline="shelf" fill='none' data-annotation="Shelf" d="m2236 1388-41.8-24.9-38.4 13.2-37-13.1-11.7-97.9c-6.42-53.8-12.2-104-12.8-112l-1.16-14.5 15.7-44.8 245-100 32 16.2 23.4 217-7.38 20c-4.06 11-7.52 20.5-7.69 21.2s6.85 10 15.6 20.9l15.9 19.7-0.191 18.6c-0.105 10.2-0.432 20-0.727 21.6-0.525 2.94-2.08 3.66-72.1 33.5-39.4 16.8-72.3 30.6-73.2 30.8-0.867 0.143-20.4-11-43.4-24.7z"/>
+              <path data-outline="shelf" onClick={() => handleObjectClick()} fill='rgba(0, 0, 0, 0.01)' data-annotation="Shelf" d="m2236 1388-41.8-24.9-38.4 13.2-37-13.1-11.7-97.9c-6.42-53.8-12.2-104-12.8-112l-1.16-14.5 15.7-44.8 245-100 32 16.2 23.4 217-7.38 20c-4.06 11-7.52 20.5-7.69 21.2s6.85 10 15.6 20.9l15.9 19.7-0.191 18.6c-0.105 10.2-0.432 20-0.727 21.6-0.525 2.94-2.08 3.66-72.1 33.5-39.4 16.8-72.3 30.6-73.2 30.8-0.867 0.143-20.4-11-43.4-24.7z"/>
             </g>
           </svg>
         </div>
-        {/* <div className='svg-overlay-container'>
-          <Image src={OverheadImage} className='svg-overlay-test' alt='overlay-test'/>
-          <div className='further-info-container'>
-            <h2>CLICK</h2>
-            <p>A WAY TO CONTACT ME</p>
-          </div>
-          <div className='person-test-circle'></div>
-          <div className='bed-test-circle'></div>
-          <div className='light-test-circle'></div>
-        </div> */}
       </div>
     </>
   )

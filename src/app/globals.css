@@ -214,6 +214,7 @@ a {
   transform: translate(-50%, -50%);
   text-align: center;
   color: #fff;
+  pointer-events: none;
 }
 
 .further-info-container h2, p {
