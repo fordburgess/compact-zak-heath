@@ -51,13 +51,13 @@ const Home = () => {
 
       const itemVals = {
         'D': { pointer: 'm2780 735 L2780 660 L2500 660', rectX: '1900', rectY: '490', textX: '2225', textY: '660', textVal: 'My Journey', linkX: '3630', linkY: '490' },
-        'E': { pointer: 'm2715 1280 L2600 1150 L2600 920', rectX: '2290', rectY: '600', textX: '2590', textY: '760', textVal: 'Celebrity Makeup Artist', linkX: '3630', linkY: '490' },
-        'F': { pointer: 'm3100 1275 L3100 1200 L3500 1200', rectX: '3510', rectY: '1050', textX: '3830', textY: '1210', textVal: 'Beauty CEO', linkX: '3710', linkY: '1260' },
+        'E': { pointer: 'm2420 1135 L2350 1135 L2350 920', rectX: '2290', rectY: '600', textX: '2590', textY: '760', textVal: 'Celebrity Makeup Artist', linkX: '3630', linkY: '490' },
+        'F': { pointer: 'm2750 1130 L2750 1050 L3090 1050', rectX: '3100', rectY: '900', textX: '3400', textY: '1050', textVal: 'Beauty CEO', linkX: '3710', linkY: '1260' },
         'G': { pointer: 'm3060 1431 L2900 1575 L2775 1575', rectX: '2162', rectY: '1425', textX: '2470', textY: '1575', textVal: 'Celebrity Hairstylist', linX: '', linkY: '' },
         'H': { pointer: 'm3115 1498 L3115 1675 L3275 1900', rectX: '3280', rectY: '1890', textX: '', textY: '', textVal: '', linX: '', linkY: '' },
-        'J': { pointer: 'm3265 1544 L3265 1700 L3700 1700', rectX: '3710', rectY: '1550', textX: '4015', textY: '1700', textVal: 'Beauty Photographer', linX: '', linkY: '' },
+        'J': { pointer: 'm2000 1144 L1900 1144 L1900 920', rectX: '1600', rectY: '600', textX: '4015', textY: '1700', textVal: 'Beauty Photographer', linX: '', linkY: '' },
         'K': { pointer: 'm2275 1200 L2100 1200 L2100 1000', rectX: '1800', rectY: '680', textX: '2105', textY: '840', textVal: "Men's Beauty Influencer", linX: '', linkY: '' },
-        'L': { pointer: 'm2240 1950 L2240 2100 L1900 2100', rectX: '1290', rectY: '1950', textX: '1600', textY: '2100', textVal: 'Head of Beauty PR', linX: 'Head of Beauty PR', linkY: '' },
+        'L': { pointer: 'm2500 1830 L2700 1950 L3000 1950', rectX: '3005', rectY: '1800', textX: '3310', textY: '1960', textVal: 'Head of Beauty PR', linX: 'Head of Beauty PR', linkY: '' },
         'N': { pointer: 'm2772 1965 L2772 1900 L3340 1900', rectX: '3350', rectY: '1750', textX: '3650', textY: '1905', textVal: 'Fragrance CEO', linX: '', linkY: '' },
       };
 
