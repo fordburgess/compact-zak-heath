@@ -1,20 +1,59 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import SpringExpanded from '../../assets/images/spring-expanded.jpg';
 import MillieKendallProfile from '../../assets/images/millie-kendall-profile.webp';
 import './article.css';
+import { useMediaQuery } from 'usehooks-ts';
+import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const MillieKendall = () => {
+  const mobile = useMediaQuery('(max-width: 800px)');
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    if (mobile) {
+//
+    }
+    else { // desktop transitions
+      gsap.to('.title-image', {
+        y: -100,
+        opacity: 0,
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '.featured-title-section',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: true
+        }
+      })
+
+      gsap.to('.featured-title-text', {
+        y: 100,
+        opacity: 0,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '.featured-title-section',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: true
+        }
+      })
+    }
+  }, [])
+
   return (
     <div className='featured-article-container'>
       <Image src={SpringExpanded} className='featured-article-bg' alt='featured-article-bg'/>
       <div className='featured-article-content'>
         <div className='featured-title-section'>
-          <Image src={MillieKendallProfile} className='title-image' alt='kirsty-lewis-profile' />
-          <h1 className='featured-title-quote'>"Why would I sit in a classroom when I could be earning?"</h1>
-          <div className='title-divider'></div>
-          <h2 className='featured-subtitle'>Millie Kendall: CEO</h2>
-          <p className='featured-blurb'>Millie Kendall OBE is one of the beauty industry's most celebrated figures. She co-founded iconic makeup brands like Ruby & Millie and created the British Beauty Council. Here's a COMPACT conversation about her career.</p>
+          <Image src={MillieKendallProfile} className='title-image' alt='millie-kendall-profile' />
+          <div className='featured-title-text'>
+            <h1 className='featured-title-quote'>"Why would I sit in a classroom when I could be earning?"</h1>
+            <div className='title-divider'></div>
+            <h2 className='featured-subtitle'>Millie Kendall: CEO</h2>
+            <p className='featured-blurb'>Millie Kendall OBE is one of the beauty industry's most celebrated figures. She co-founded iconic makeup brands like Ruby & Millie and created the British Beauty Council. Here's a COMPACT conversation about her career.</p>
+          </div>
         </div>
         <div className='featured-article-text-section'>
           <p className='featured-article-paragraph'>Millie's story starts not with a business plan but with skipping school. She left school at 15, moved countries multiple times, and partied, but she ended up leading the British Beauty Council. She holds both an MBE and OBE and is helping to shape the future of content creation through the Creator Collective, an initiative that merges beauty and education. In this COMPACT overview, Millie shares what launching a brand feels like and the advice she wishes she'd taken herself.</p>
