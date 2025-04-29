@@ -1,12 +1,9 @@
 html, body {
-  height: auto !important;
+  overflow-x: hidden;
 }
 
 .dream-room-article-container {
   width: 100vw;
-  /* height: 500vh; */
-  position: relative;
-  overflow-x: hidden;
 }
 
 .dream-room-bg {
@@ -21,20 +18,17 @@ html, body {
 }
 
 #day-in-my-life-bg {
-  height: 300%;
+  height: 300vh;
 }
 
 .dream-room-article-content {
-  position: relative;
   width: 100%;
-  overflow-x: hidden;
-  top: 0;
-  overflow-y: scroll;
-  backdrop-filter: blur(10px) brightness(75%);
-  box-sizing: border-box;
+  position: relative;
+  backdrop-filter: blur(3px) brightness(80%);
   padding: 0 0 100px;
   display: flex;
   flex-direction: column;
+  color: #fff;
 }
 
 .padding-enforcer {
