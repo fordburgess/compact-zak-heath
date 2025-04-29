@@ -79,6 +79,14 @@ html, body {
   text-align: center;
 }
 
+.name-container h3 {
+  font-size: 1.15rem;
+}
+
+.name-container p {
+  font-size: 1rem;
+}
+
 #icons-pfp-0 {
   height: 120px;
   width: 120px;
@@ -132,23 +140,32 @@ html, body {
   }
 
   .beauty-icons-section {
-    /* height: 80vh; */
+    height: auto;
   }
 
   .beauty-icons-item {
     width: 33%;
+    height: 50vh;
+  }
+
+  .name-container h3 {
+    font-size: 1.25rem;
+  }
+
+  .name-container p {
+    font-size: 1.15rem;
   }
 
   #icons-pfp-0 {
-    height: 250px;
-    width: 250px;
+    height: 230px;
+    width: 230px;
     margin-bottom: 20px;
   }
 
   .beauty-icons-pfp {
     height: 200px;
     width: 200px;
-    margin-bottom: 60px;
+    margin-bottom: 45px;
   }
 
   .beauty-icons-pfp:hover {

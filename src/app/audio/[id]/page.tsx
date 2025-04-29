@@ -1,6 +1,7 @@
 "use client"
 import { useState, useEffect, useRef } from 'react';
 import { useParams } from "next/navigation";
+import { useMediaQuery } from 'usehooks-ts';
 import Image from "next/image";
 import Link from "next/link"
 import ExpandedImage from '../../../assets/images/winter-expanded.webp'
@@ -14,9 +15,11 @@ import SkipButton from '../../../assets/images/skip-button.png';
 import { Episode } from '@/types';
 import '../styles/episode.css'
 import gsap from 'gsap';
+import WavesurferPlayer from '@wavesurfer/react'
 
 const episodes = [
   {
+    index: 0,
     id: 'patricia-bright',
     title: 'Patricia Bright: From Finance to Fame',
     job: 'Content Creator and CEO',
@@ -24,6 +27,7 @@ const episodes = [
     description: 'In this episode, Zak is joined by the ICON Patricia Bright an entrepreneur and one of the UK’s first OG beauty influencers. From being excluded at school to landing a job in finance, she then pursued YouTube full-time despite criticism at work. She shares about launching her palette with a major cosmetics company to the challenges of constantly evolving her personal brand. If you’re interested in juggling finances, investing, property and how she has built long-term success beyond social media then here’s an honest conversation about these topics.'
   },
   {
+    index: 1,
     id: 'yana-kafeli',
     title: 'Yana Kafeli: From Intern to Agent',
     job: 'Agent',
@@ -31,6 +35,7 @@ const episodes = [
     description: 'In this episode, Zak is joined by the ICON Yana Kafeli, who began her career in fashion at just 17 and now works as a leading agent across fashion, beauty, culture and music. She shares her journey through the industry, from managing top-tier talent and collaborating with some of the biggest global brands. Yana opens up about the importance of personal identity in a fast-paced creative world, the power of networking and what it really takes to support and elevate influencers behind the scenes.'
   },
   {
+    index: 2,
     id: 'zak-heath',
     title: 'Zak Heath: How I Built A Career At 17',
     job: 'Influencer',
@@ -38,6 +43,7 @@ const episodes = [
     description: 'This episode is a little different. I’m talking about the business of influencing from my perspective after this became my full-time job at the age of 17. From working with people who haven’t had my best interests, to juggling a career whilst studying at Central Saint martins it has been an intense journey. If you’re interested in brand deals with commercial and luxury brands, PR, content strategy, the equipment I use and building relationships then here’s an honest conversation about these topics.',
   },
   {
+    index: 3,
     id: 'shakeel-murtaza',
     title: 'Shakeel Murtaza: From Criticism To Campaigns',
     job: 'Influencer',
@@ -45,6 +51,7 @@ const episodes = [
     description: 'In this episode, Zak is joined by Shakeel Murtaza, a leading men’s beauty influencer known for his skincare routines and self-care content. Despite regularly receiving online hate, he has carved out an incredible niche for himself in the beauty world and worked with some of top brands. If you’re interested in how to navigate identity in a female-dominated space, growing a community, breaking down stereotypes, getting invited to events and how to maintain a successful career online then here’s an honest conversation about these topics.'
   },
   {
+    index: 4,
     id: 'raquell-bouris',
     title: 'Raquell Bouris: Scent, Strategy And Creating A Startup',
     job: 'Fragrance Founder',
@@ -59,7 +66,9 @@ const AudioEpisode = () => {
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
   const [drawer2Open, setDrawer2Open] = useState<boolean>(false);
   const [episode, setEpisode] = useState<Episode | null>(null);
+  const [wavesurfer, setWavesurfer] = useState<any>(null);
   const params = useParams();
+  const mobile = useMediaQuery('(max-width: 1000px)');
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const titleContainerRef = useRef<HTMLDivElement | null>(null);
   const titleRef = useRef<HTMLHeadingElement | null>(null);
@@ -185,10 +194,28 @@ const AudioEpisode = () => {
     }
   }
 
+  const onReady = (ws: any) => {
+    setWavesurfer(ws)
+    setIsPlaying(false)
+  }
+
+  const onPlayPause = () => {
+    wavesurfer && wavesurfer.playPause()
+  }
+
   return (
     <div className='episode-container' onClick={() => handleDrawers('container')}>
       <Image src={ExpandedImage} className='episode-bg' alt='background'/>
-      <audio ref={audioRef} src='/audio/example-audio.mp3' onTimeUpdate={() => handleTimeUpdate()} />
+      {
+        episode && episode.index > 0 && (
+          <Link href={`/audio/${episodes[episode.index - 1].id}`}>
+            <div className='prev-episode'>
+              <Image className='nav-image' src={episodes[episode.index - 1].profileImage || Placeholder} alt='prev-episode'/>
+              <p>Prev</p>
+            </div>
+          </Link>
+        )
+      }
       <div className='episode-layout-container'>
         <div className='episode-title-and-photo-desktop'>
           {
@@ -215,41 +242,81 @@ const AudioEpisode = () => {
             <p className='episode-subtitle'>{episode ? episode.title.split(':')[0] : 'Person Not Found'}</p>
           </div>
         </div>
+        <WavesurferPlayer
+          height={mobile ? 125 : 150}
+          waveColor="rgba(255, 255, 255, 0.85)"
+          mediaControls={false}
+          progressColor="#c2d6ff"
+          cursorColor='transparent'
+          url="/audio/example-audio.mp3"
+          onReady={onReady}
+          onPlay={() => setIsPlaying(true)}
+          onPause={() => setIsPlaying(false)}
+        />
         <div className='control-panel'>
-          <div className='progress-bar-container'>
-            <div className='progress-bar'></div>
-          </div>
           <div className='control-buttons'>
-            <Image
-              src={SkipButton}
-              id="skip-back"
-              alt="rewind"
-              onClick={() => handleSkip(0)}
-            />
+            {
+              wavesurfer && (
+                <Image
+                  src={SkipButton}
+                  id="skip-back"
+                  alt="rewind"
+                  onClick={() => wavesurfer.skip(-5)}
+                />
+              )
+            }
             <Image
               src={isPlaying ? PauseButton : PlayButton}
               id="play-pause"
               alt="play-pause"
-              onClick={() => handlePlayback()}
+              onClick={() => onPlayPause()}
             />
-            <Image
-              src={SkipButton}
-              id="skip-forward"
-              alt="forward"
-              onClick={() => handleSkip(1)}
-            />
+            {
+              wavesurfer && (
+                <Image
+                  src={SkipButton}
+                  id="skip-forward"
+                  alt="forward"
+                  onClick={() => wavesurfer.skip(5)}
+                />
+              )
+            }
           </div>
         </div>
         <div className='bottom-controls'>
-          <p className="mobile-episodes-drawer-button" onClick={() => handleDrawers('more-button')}>More</p>
-          <div className='dot-menu' onClick={() => handleDrawers('drawer-button')}>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
+          {/* {
+            episode && episode.index > 0 && (
+              <Link href={`/audio/${episodes[episode.index - 1].id}`}>
+                <div className=''>
+                  <Image className='nav-image' src={episodes[episode.index - 1].profileImage || Placeholder} alt='prev-episode'/>
+                  <p>Prev</p>
+                </div>
+              </Link>
+            )
+          }
+          {
+            episode && episode.index < episodes.length - 1 && (
+              <Link href={`/audio/${episodes[episode.index + 1].id}`}>
+                <div className=''>
+                  <Image className='nav-image' src={episodes[episode.index + 1].profileImage || Placeholder} alt='next-episode'/>
+                  <p>Next</p>
+                </div>
+              </Link>
+            )
+          } */}
         </div>
       </div>
-      <div className='more-episodes-drawer'>
+      {
+        episode && episode.index < episodes.length - 1 && (
+          <Link href={`/audio/${episodes[episode.index + 1].id}`}>
+            <div className='next-episode'>
+              <Image className='nav-image' src={episodes[episode.index + 1].profileImage || Placeholder} alt='next-episode'/>
+              <p>Next</p>
+            </div>
+          </Link>
+        )
+      }
+      {/* <div className='more-episodes-drawer'>
         <div className='episode-drawer-content'>
           <div style={{ padding: '20px' }}>
             <h1>More Episodes</h1>
@@ -277,7 +344,7 @@ const AudioEpisode = () => {
           <div></div>
           <div></div>
         </div>
-      </div>
+      </div> */}
       <div className='info-drawer'>
         <div className='drawer-title-section'>
           <h1 className='episode-title'>{episode ? episode.title.split(':')[1] : 'Title Not Found'}</h1>

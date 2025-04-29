@@ -2,7 +2,7 @@
 "use client"
 import { useState, useEffect } from 'react';
 import Link from 'next/link'
-import '../app/globals.css'
+// import '../app/globals.css'
 import Image from 'next/image';
 import WideImage from '../assets/images/cover-wide.webp';
 import WideImageMobile from '../assets/images/cover-wide-mobile.webp';
