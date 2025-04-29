@@ -1,15 +1,16 @@
+"use client"
 import { useEffect, useRef } from 'react';
 // import './index.css';
-import './info.css';
+import '../styles/info.css';
 import Image from 'next/image';
-import ExpandedImage from '../../assets/images/desert-expanded.webp';
+import ExpandedImage from '../../../assets/images/desert-expanded.webp';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { motion } from 'framer-motion';
-import Instagram from '../../assets/images/instagram.png';
-import Snapchat from '../../assets/images/snapchat.png';
-import Youtube from '../../assets/images/youtube.png';
-import TikTok from '../../assets/images/tik-tok.png';
+import Instagram from '../../../assets/images/instagram.png';
+import Snapchat from '../../../assets/images/snapchat.png';
+import Youtube from '../../../assets/images/youtube.png';
+import TikTok from '../../../assets/images/tik-tok.png';
 
 
 const ServicesInfo = () => {

@@ -1,12 +1,13 @@
+"use client"
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import WideImage from '../../assets/images/desert-far.webp';
 import WideImageMobile from '../../assets/images/desert-wide-mobile.webp';
 import OverheadImage from '../../assets/images/desert-aerial.webp';
 import OverheadImageMobile from '../../assets/images/desert-aerial-mobile.webp';
-import './index.css';
+import './styles/index.css';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
