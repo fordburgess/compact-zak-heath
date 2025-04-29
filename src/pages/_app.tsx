@@ -4,6 +4,7 @@ import '../app/globals.css';
 import Layout from '@/components/layout';
 import Loading from '@/components/loading';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 const App = ({ Component, pageProps }: AppProps) => {
   const [loading, setLoading] = useState<boolean>(false);
@@ -30,6 +31,9 @@ const App = ({ Component, pageProps }: AppProps) => {
 
   return (
     <>
+      <Head>
+        <title>COMPACT</title>
+      </Head>
       {
         loading ? (
           <Loading />
