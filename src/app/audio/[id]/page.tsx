@@ -205,7 +205,7 @@ const AudioEpisode = () => {
 
   return (
     <div className='episode-container' onClick={() => handleDrawers('container')}>
-      <Image src={ExpandedImage} className='episode-bg' alt='background'/>
+      <Image priority src={ExpandedImage} className='episode-bg' alt='background'/>
       {
         episode && episode.index > 0 && (
           <Link href={`/audio/${episodes[episode.index - 1].id}`}>

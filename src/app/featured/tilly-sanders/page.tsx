@@ -104,7 +104,7 @@ const TillySanders = () => {
 
   return (
     <div className='featured-article-container'>
-      <Image src={SpringExpanded} className='featured-article-bg' alt='featured-article-bg'/>
+      <Image priority src={SpringExpanded} className='featured-article-bg' alt='featured-article-bg'/>
       <div className='featured-article-content'>
         <Link href='/featured/interviews' className='article-back-button'><p>Back</p></Link>
         <div className='featured-title-section'>
