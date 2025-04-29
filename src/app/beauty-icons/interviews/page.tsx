@@ -18,46 +18,13 @@ import TillySanders from '../../../assets/images/tilly-sanders-profile.webp';
 import Placeholder from '../../../assets/images/placeholder.webp';
 import CarolynAronson from '../../../assets/images/carolyn-aronson-profile.webp';
 
+// Lisa, Millie and Alessandra, second row, Patricia, Adam, Mona, 3rd row, Shakeel, Kirsty ingeborg, 4th Carolyn, Yana, Tilly, 5th row, me and Raquell
+
 const interviews = [
-  {
-    pfp: AdamReed,
-    name: 'Adam Reed',
-    job: 'Hairstylist'
-  },
-  {
-    pfp: PatriciaBright,
-    name: 'Patricia Bright',
-    job: 'Content Creator & CEO'
-  },
-  {
-    pfp: Placeholder,
-    name: 'Ingeborg Van Lotringen',
-    job: 'Beauty Journalist'
-  },
-  {
-    pfp: AlessandraSteinherr,
-    name: 'Alessandra Steinherr',
-    job: 'Beauty Editor + Influencer',
-  },
   {
     pfp: MillieKendall,
     name: 'Millie Kendall',
     job: 'Beauty CEO'
-  },
-  {
-    pfp: ZakHeath,
-    name: 'Zak Heath',
-    job: 'Influencer'
-  },
-  {
-    pfp: KirstyLewis,
-    name: 'Kirsty Lewis',
-    job: 'Head of Beauty PR'
-  },
-  {
-    pfp: TillySanders,
-    name: 'Tilly Sanders',
-    job: 'Beauty PR'
   },
   {
     pfp: LisaEldridge,
@@ -65,9 +32,19 @@ const interviews = [
     job: 'Celebrity Makeup Artist'
   },
   {
-    pfp: ShakeelMurtaza,
-    name: 'Shakeel Murtaza',
-    job: "Men's Beauty Influencer"
+    pfp: AlessandraSteinherr,
+    name: 'Alessandra Steinherr',
+    job: 'Beauty Editor + Influencer',
+  },
+  {
+    pfp: PatriciaBright,
+    name: 'Patricia Bright',
+    job: 'Content Creator & CEO'
+  },
+  {
+    pfp: AdamReed,
+    name: 'Adam Reed',
+    job: 'Hairstylist'
   },
   {
     pfp: MonaKattan,
@@ -75,9 +52,19 @@ const interviews = [
     job: 'Fragrance CEO'
   },
   {
+    pfp: ShakeelMurtaza,
+    name: 'Shakeel Murtaza',
+    job: "Men's Beauty Influencer"
+  },
+  {
+    pfp: KirstyLewis,
+    name: 'Kirsty Lewis',
+    job: 'Head of Beauty PR'
+  },
+  {
     pfp: Placeholder,
-    name: 'Raquell Bouris',
-    job: 'Fragrance Founder'
+    name: 'Ingeborg Van Lotringen',
+    job: 'Beauty Journalist'
   },
   {
     pfp: CarolynAronson,
@@ -88,6 +75,21 @@ const interviews = [
     pfp: Placeholder,
     name: 'Yana Kafeli',
     job: 'Agent'
+  },
+  {
+    pfp: TillySanders,
+    name: 'Tilly Sanders',
+    job: 'Beauty PR'
+  },
+  {
+    pfp: ZakHeath,
+    name: 'Zak Heath',
+    job: 'Influencer'
+  },
+  {
+    pfp: Placeholder,
+    name: 'Raquell Bouris',
+    job: 'Fragrance Founder'
   },
 ]
 
@@ -100,32 +102,42 @@ const chunked = chunkArray(interviews, 6);
 
 const BeautyIconsInterviews = () => {
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const backgroundImage: HTMLElement | null = document.querySelector('.beauty-icons-bg');
-
-      if (backgroundImage) {
-        console.log(scrollTop)
-        backgroundImage.style.transform = `translateY(-${scrollTop * 0.5}px)`;
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       const scrollTop = window.scrollY;
+//       const backgroundImage: HTMLElement | null = document.querySelector('.beauty-icons-bg');
+//
+//       if (backgroundImage) {
+//         backgroundImage.style.transform = `translateY(-${scrollTop * 0.25}px)`;
+//       }
+//     };
+//
+//     window.addEventListener('scroll', handleScroll);
+//
+//     return () => {
+//       window.removeEventListener('scroll', handleScroll);
+//     };
+//   }, []);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to('.beauty-icons-bg', {
+      y: -500,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.beauty-icons-content-container',
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: true,
+      }
+    })
 
     gsap.to('#icons-pfp-0', {
       opacity: 1,
       y: -10,
       duration: 1,
-      delay: 1,
+      delay: 0.5,
     })
 
     let shifted = chunked.shift();
@@ -135,12 +147,12 @@ const BeautyIconsInterviews = () => {
           { opacity: 0, scale: 1 },
           {
             opacity: 1,
-            scale: 1.25,
+            scale: 1.15,
             ease: 'power1.inOut',
             scrollTrigger: {
               trigger: `#section-${index + 1}`,
               start: 'top 80%',
-              end: 'top 40%',
+              end: 'top center',
               scrub: true,
             }
           }
