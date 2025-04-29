@@ -238,24 +238,32 @@ const AudioEpisode = () => {
         </div>
         <div className='control-panel'>
           <div className='control-buttons'>
-            <Image
-              src={SkipButton}
-              id="skip-back"
-              alt="rewind"
-              onClick={() => handleSkip(0)}
-            />
+            {
+              wavesurfer && (
+                <Image
+                  src={SkipButton}
+                  id="skip-back"
+                  alt="rewind"
+                  onClick={() => wavesurfer.skip(-5)}
+                />
+              )
+            }
             <Image
               src={isPlaying ? PauseButton : PlayButton}
               id="play-pause"
               alt="play-pause"
               onClick={() => onPlayPause()}
             />
-            <Image
-              src={SkipButton}
-              id="skip-forward"
-              alt="forward"
-              onClick={() => handleSkip(1)}
-            />
+            {
+              wavesurfer && (
+                <Image
+                  src={SkipButton}
+                  id="skip-forward"
+                  alt="forward"
+                  onClick={() => wavesurfer.skip(5)}
+                />
+              )
+            }
           </div>
         </div>
         <div className='bottom-controls'>
