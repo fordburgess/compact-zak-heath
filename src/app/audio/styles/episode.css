@@ -295,6 +295,45 @@ h1 {
   .episode-container {
     display: flex;
     align-items: center;
+    box-sizing: border-box;
+  }
+
+  .next-episode, .prev-episode {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem !important;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: rgba(224, 224, 224, 0.5);
+    backdrop-filter: blur(3px);
+    transition: background-color 0.3s;
+  }
+
+  .next-episode {
+    transform: translate(-5px, -50%);
+    right: 5px;
+  }
+
+  .prev-episode {
+    left: 5px;
+    transform: translate(5px, -50%);
+  }
+
+  .next-episode:hover, .prev-episode:hover {
+    background-color: rgba(205, 205, 205, 0.5);
+    cursor: pointer;
+  }
+
+  .nav-image {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
   }
 
   .episode-layout-container {
