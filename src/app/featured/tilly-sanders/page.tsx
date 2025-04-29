@@ -1,8 +1,9 @@
+"use client"
 import React, { useEffect } from 'react';
 import Image from 'next/image';
-import SpringExpanded from '../../assets/images/spring-expanded.jpg';
-import TillySandersProfile from '../../assets/images/tilly-sanders-profile.webp';
-import './article.css';
+import SpringExpanded from '../../../assets/images/spring-expanded.jpg';
+import TillySandersProfile from '../../../assets/images/tilly-sanders-profile.webp';
+import '../styles/article.css';
 import { useMediaQuery } from 'usehooks-ts';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";

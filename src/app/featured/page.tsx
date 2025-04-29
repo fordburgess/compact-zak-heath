@@ -1,11 +1,12 @@
+"use client"
 import React, { useEffect } from 'react'
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import WideImage from '../../assets/images/spring-far.png';
 import WideImageMobile from '../../assets/images/spring-far-mobile.webp';
 import OverheadImage from '../../assets/images/spring-aerial.png';
 import OverheadImageMobile from '../../assets/images/spring-aerial-mobile.webp';
-import './index.css';
+import './styles/index.css';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";

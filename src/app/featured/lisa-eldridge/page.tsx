@@ -1,11 +1,12 @@
+"use client"
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 // import { Noise } from 'noisejs';
-import './interview.css'
-import Image1 from '../../assets/images/lisa-eldridge-1.webp';
-import Image2 from '../../assets/images/lisa-eldridge-2.webp';
-import Image4 from '../../assets/images/lisa-eldridge-4.webp';
-import SpringExpanded from '../../assets/images/spring-expanded.jpg';
+import '../styles/interview.css'
+import Image1 from '../../../assets/images/lisa-eldridge-1.webp';
+import Image2 from '../../../assets/images/lisa-eldridge-2.webp';
+import Image4 from '../../../assets/images/lisa-eldridge-4.webp';
+import SpringExpanded from '../../../assets/images/spring-expanded.jpg';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { useMediaQuery } from 'usehooks-ts';

@@ -1,21 +1,22 @@
+"use client"
 import { useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import './interviews.css';
-import ExpandedImage from '../../assets/images/spring-expanded.jpg';
+import '../styles/interviews.css';
+import ExpandedImage from '../../../assets/images/spring-expanded.jpg';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import LisaEldridge from '../../assets/images/lisa-eldridge-profile.webp';
-import KirstyLewis from '../../assets/images/kirsty-lewis-profile.webp';
-import MillieKendall from '../../assets/images/millie-kendall-profile.webp';
-import AdamReed from '../../assets/images/adam-reed-profile.webp';
-import AlessandraSteinherr from '../../assets/images/alessandra-steinherr.webp';
-import MonaKattan from '../../assets/images/mona-kattan.webp';
-import CarolynAronson from '../../assets/images/carolyn-aronson-profile.webp';
-import TillySanders from '../../assets/images/tilly-sanders-profile.webp';
-import ShakeelMurtaza from '../../assets/images/shakeel-murtaza-profile.webp';
-import ZakHeath from '../../assets/images/zak-heath-profile.webp';
-import Placeholder from '../../assets/images/placeholder.webp';
+import LisaEldridge from '../../../assets/images/lisa-eldridge-profile.webp';
+import KirstyLewis from '../../../assets/images/kirsty-lewis-profile.webp';
+import MillieKendall from '../../../assets/images/millie-kendall-profile.webp';
+import AdamReed from '../../../assets/images/adam-reed-profile.webp';
+import AlessandraSteinherr from '../../../assets/images/alessandra-steinherr.webp';
+import MonaKattan from '../../../assets/images/mona-kattan.webp';
+import CarolynAronson from '../../../assets/images/carolyn-aronson-profile.webp';
+import TillySanders from '../../../assets/images/tilly-sanders-profile.webp';
+import ShakeelMurtaza from '../../../assets/images/shakeel-murtaza-profile.webp';
+import ZakHeath from '../../../assets/images/zak-heath-profile.webp';
+import Placeholder from '../../../assets/images/placeholder.webp';
 
 const interviews = [
   {
@@ -151,11 +152,11 @@ const FeaturedInterviews = () => {
         {
           chunked.map((chunk: any, index: number) => {
             return (
-              <div className='featured-interviews-section' id={`section-${index}`}>
+              <div className='featured-interviews-section' id={`section-${index}`} key={index}>
                 {
                   chunk.map((interview: any, i: number) => {
                     return (
-                      <div className='beauty-icons-item'>
+                      <div className='beauty-icons-item' key={interview.href}>
                         <Link href={interview.href}>
                           <Image
                             src={interview.pfp}
