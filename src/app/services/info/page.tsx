@@ -174,10 +174,18 @@ const ServicesInfo = () => {
         <div className='services-info-body' id="body-1">
           <h3 className='body-1-title'>Socials</h3>
           <div className='body-1-text' style={{ opacity: 0, width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <Image src={Instagram} alt='instagram' />
-            <Image src={TikTok} alt='tik-tok' />
-            <Image src={Youtube} alt='youtube' />
-            <Image src={Snapchat} alt='snapchat' />
+            <a target="_blank" href='https://www.instagram.com/zak.heath/?hl=en'>
+              <Image src={Instagram} alt='instagram' />
+            </a>
+            <a target="_blank" href='https://www.tiktok.com/@zakheath?lang=en'>
+              <Image src={TikTok} alt='tik-tok' />
+            </a>
+            <a target="_blank" href='https://www.youtube.com/@zakheathx'>
+              <Image src={Youtube} alt='youtube' />
+            </a>
+            <a target="_blank" href='https://www.snapchat.com/add/Zakheathx'>
+              <Image src={Snapchat} alt='snapchat' />
+            </a>
           </div>
         </div>
         <div className='services-info-body' id="body-2">

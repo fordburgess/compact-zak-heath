@@ -86,6 +86,12 @@ html, body {
 #body-1 img {
   height: 50px;
   width: 50px;
+  transition: transform 0.3s ease-in-out;
+}
+
+#body-1 img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
 .title-line-1 {
