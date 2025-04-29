@@ -33,6 +33,7 @@ const App = ({ Component, pageProps }: AppProps) => {
     <>
       <Head>
         <title>COMPACT</title>
+        <link rel="icon" href="/favicon.png" type="image/png" />
       </Head>
       {
         loading ? (
