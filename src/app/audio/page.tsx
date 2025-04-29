@@ -1,7 +1,8 @@
+"use client"
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
-import './audio.css'
+import { useRouter } from 'next/navigation';
+import './styles/audio.css'
 import WideImage from '../../assets/images/winter-far.webp';
 import WideImageMobile from '../../assets/images/winter-far-mobile.webp';
 import OverheadImage from '../../assets/images/winter-aerial.webp';

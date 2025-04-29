@@ -1,17 +1,18 @@
+"use client"
 import { useState, useEffect, useRef } from 'react';
-import { useRouter } from "next/router";
+import { useParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link"
-import ExpandedImage from '../../assets/images/winter-expanded.webp'
-import PatriciaBright from '../../assets/images/patricia-bright-profile.webp';
-import ZakHeath from '../../assets/images/zak-heath-profile.webp';
-import ShakeelMurtaza from '../../assets/images/shakeel-murtaza-profile.webp';
-import Placeholder from '../../assets/images/placeholder.webp';
-import PlayButton from '../../assets/images/play-button.png';
-import PauseButton from '../../assets/images/pause-button.png';
-import SkipButton from '../../assets/images/skip-button.png';
+import ExpandedImage from '../../../assets/images/winter-expanded.webp'
+import PatriciaBright from '../../../assets/images/patricia-bright-profile.webp';
+import ZakHeath from '../../../assets/images/zak-heath-profile.webp';
+import ShakeelMurtaza from '../../../assets/images/shakeel-murtaza-profile.webp';
+import Placeholder from '../../../assets/images/placeholder.webp';
+import PlayButton from '../../../assets/images/play-button.png';
+import PauseButton from '../../../assets/images/pause-button.png';
+import SkipButton from '../../../assets/images/skip-button.png';
 import { Episode } from '@/types';
-import './episode.css'
+import '../styles/episode.css'
 import gsap from 'gsap';
 
 const episodes = [
@@ -57,12 +58,24 @@ const AudioEpisode = () => {
   const [currentTime, setCurrentTime] = useState<number>(0);
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
   const [drawer2Open, setDrawer2Open] = useState<boolean>(false);
-  const router = useRouter();
+  const [episode, setEpisode] = useState<Episode | null>(null);
+  const params = useParams();
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const titleContainerRef = useRef<HTMLDivElement | null>(null);
   const titleRef = useRef<HTMLHeadingElement | null>(null);
-  const { id } = router.query;
-  const episode = episodes.find((episode: Episode) => episode.id == id);
+  const id = params?.id as string;
+
+  useEffect(() => {
+    if (params && params.id) {
+      let currentEpisode = episodes.find((episode: Episode) => episode.id == params.id);
+      if (currentEpisode) {
+        setEpisode(currentEpisode)
+      }
+      else {
+        setEpisode(null)
+      }
+    }
+  }, [params])
 
 
   const handlePlayback = () => {
@@ -246,7 +259,7 @@ const AudioEpisode = () => {
               episodes && episode && episodes.map((item: Episode) => {
                 if (item.id !== episode.id) {
                   return (
-                    <Link href={`/audio/${item.id}`}>
+                    <Link href={`/audio/${item.id}`} key={item.id}>
                       <div className='more-episodes-item'>
                         <Image src={item.profileImage ? item.profileImage : Placeholder} alt='pfp'/>
                         <h3>{item.title.split(':')[1]}</h3>

@@ -1,12 +1,13 @@
+"use client"
 import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import './audio.css'
-import ExpandedImage from '../../assets/images/winter-expanded.webp';
-import PatriciaBright from '../../assets/images/patricia-bright-profile.webp';
-import ZakHeath from '../../assets/images/zak-heath-profile.webp';
-import ShakeelMurtaza from '../../assets/images/shakeel-murtaza-profile.webp';
-import Placeholder from '../../assets/images/placeholder.webp';
+import '../styles/audio.css'
+import ExpandedImage from '../../../assets/images/winter-expanded.webp';
+import PatriciaBright from '../../../assets/images/patricia-bright-profile.webp';
+import ZakHeath from '../../../assets/images/zak-heath-profile.webp';
+import ShakeelMurtaza from '../../../assets/images/shakeel-murtaza-profile.webp';
+import Placeholder from '../../../assets/images/placeholder.webp';
 import { Episode } from '@/types';
 
 const episodes = [
