@@ -80,6 +80,7 @@ const Episodes = () => {
             return (
               <Link
                 href={`/audio/${episode.id}`}
+                key={episode.id}
               >
                 <div className='profile-container'>
                   <Image className='profile-image' src={episode.profileImage ? episode.profileImage : Placeholder} alt='pfp'/>
