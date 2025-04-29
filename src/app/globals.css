@@ -19,6 +19,24 @@
   }
 }
 
+@keyframes pulseMobile {
+  0% {
+    filter: drop-shadow(0 0 0px rgba(239, 250, 255, 1));
+    fill: rgba(239, 250, 255, 0.01);
+    stroke-width: 1px;
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(239, 250, 255, 1));
+    fill: rgba(239, 250, 255, 0.2);
+    stroke-width: 2px;
+  }
+  100% {
+    filter: drop-shadow(0 0 0px rgba(239, 250, 255, 1));
+    fill: rgba(239, 250, 255, 0.01);
+    stroke-width: 1px;
+  }
+}
+
 @keyframes draw-appear {
   to {
     stroke-dashoffset: 0;
@@ -177,7 +195,7 @@ a {
 }
 
 .object-outline {
-  animation: pulse 5s ease-in-out infinite;
+  animation: pulseMobile 5s ease-in-out infinite;
 }
 
 /* .object-outline:hover {
@@ -369,6 +387,10 @@ a {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  .object-outline {
+    animation: pulse 5s ease-in-out infinite;
   }
 
   .profile-container {
