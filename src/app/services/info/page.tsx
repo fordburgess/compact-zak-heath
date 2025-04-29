@@ -1,6 +1,7 @@
 "use client"
 import { useEffect, useRef } from 'react';
 // import './index.css';
+import { sendMail } from '../../../../lib/send-mail';
 import '../styles/info.css';
 import Image from 'next/image';
 import ExpandedImage from '../../../assets/images/desert-expanded.webp';
@@ -162,6 +163,24 @@ const ServicesInfo = () => {
     })
   }, [])
 
+  const sendMessage = async (e: any) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+
+    const data = Object.fromEntries(formData.entries());
+    console.log(data);
+
+    const res = await sendMail(data.name, data.email, data.message);
+
+    if (res?.messageId) {
+      alert('Application Submitted Successfully.');
+    } else {
+      alert('Failed To send application.');
+    }
+
+  }
+
   return (
     <div className='services-info-container'>
       <Image src={ExpandedImage} priority id='services-content-container-background' alt='content-container-bg'/>
@@ -204,20 +223,20 @@ const ServicesInfo = () => {
         </div>
         <div className='services-info-body' id="body-5">
           <h3 className='body-5-title'>Contact Me</h3>
-          <form className='contact-form'>
+          <form className='contact-form' onSubmit={sendMessage}>
             <div>
               <label>Name</label>
-              <input type="text" />
+              <input name='name' type="text" />
             </div>
             <div>
               <label>Email</label>
-              <input type="text" />
+              <input name='email' type="text" />
             </div>
             <div style={{ marginBottom: '15px' }}>
               <label>Message</label>
-              <textarea />
+              <textarea name='message'/>
             </div>
-            <button>Send</button>
+            <button type='submit'>Send</button>
           </form>
         </div>
       </div>
