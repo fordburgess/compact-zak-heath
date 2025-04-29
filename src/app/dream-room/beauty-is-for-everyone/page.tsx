@@ -1,6 +1,7 @@
 "use client"
 import React, { useEffect, useRef } from 'react'
 import Image from 'next/image';
+import Link from 'next/link';
 import '../styles/article.css'
 import AutumnExpanded from '../../../assets/images/autumn-expanded.webp';
 import ZakHeathUncle from '../../../assets/images/zak-heath-uncle.webp';
@@ -12,6 +13,17 @@ import { motion } from 'framer-motion';
 const FromConcealerToConfidence = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to('.dream-room-bg', {
+      y: -500,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.dream-room-article-container',
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: true,
+      }
+    })
 
     gsap.to('.article-intro-image', {
       // y: '-10%',
@@ -224,28 +236,12 @@ const FromConcealerToConfidence = () => {
 
   }, [])
 
-  useEffect(() => {
-    const handleScroll = () => {
-      let scrollUp = window.scrollY;
-      const backgroundImage: HTMLElement | null = document.querySelector('.dream-room-bg');
-
-      if (backgroundImage) {
-        backgroundImage.style.transform = `translateY(-${scrollUp * 0.1}px)`;
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
   return (
 
     <div className='dream-room-article-container'>
       <Image src={AutumnExpanded} className='dream-room-bg' alt='dream-room-bg'/>
       <div className='dream-room-article-content'>
+        <Link href='/dream-room' className='article-back-button'><p>Back</p></Link>
         <div className='fctc-title-section'>
           <h1 className='fctc-title'>
             From Concealer<br/> to Confidence

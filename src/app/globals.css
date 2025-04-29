@@ -61,7 +61,7 @@
 }
 
 body::-webkit-scrollbar {
-  display: none;
+  /* display: none; */
 }
 
 html, body {
@@ -345,6 +345,32 @@ a {
   background-color: #5b5b5b88; */
   font-size: 1.25rem;
   color: #fff !important;
+}
+
+.article-back-button {
+  display: block;
+  position: sticky;
+  position: -webkit-sticky;
+  text-align: center;
+  width: 100px;
+  padding: 0px 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #8a8a8a;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+  border-radius: 50px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  p {
+    font-family: 'Josefin Sans';
+    font-size: 1.15rem;
+    margin-bottom: -2px;
+    font-weight: 400;
+  }
 }
 
 @media (min-width: 1000px) {
