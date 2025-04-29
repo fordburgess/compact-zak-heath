@@ -17,7 +17,7 @@ const TransitionWrapper = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <AnimatePresence mode='wait'>
-      <motion.main
+      <motion.div
         className='main-tag'
         key={pathname}
         initial={{ opacity: 0, filter: 'blur(10px)' }}
@@ -26,7 +26,7 @@ const TransitionWrapper = ({ children }: { children: React.ReactNode }) => {
         transition={{ duration: 0.5, ease: 'easeInOut' }}
       >
         {children}
-      </motion.main>
+      </motion.div>
     </AnimatePresence>
   )
 }
