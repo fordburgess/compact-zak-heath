@@ -1,9 +1,10 @@
+"use client"
 import React, { useEffect, useRef } from 'react'
 import Image from 'next/image';
-import './article.css'
-import AutumnExpanded from '../../assets/images/autumn-expanded.webp';
-import ZakHeathProfile from '../../assets/images/zak-heath-profile.webp';
-import ZakHeathYoung from '../../assets/images/zak-heath-young.webp';
+import '../styles/article.css'
+import AutumnExpanded from '../../../assets/images/autumn-expanded.webp';
+import ZakHeathProfile from '../../../assets/images/zak-heath-profile.webp';
+import ZakHeathYoung from '../../../assets/images/zak-heath-young.webp';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { motion } from 'framer-motion';
@@ -13,14 +14,6 @@ const DiaryOfInfluencer = () => {
 
 
   useEffect(() => {
-//     const introImage: HTMLElement | null = document.querySelector('.article-intro-image');
-//
-//     if (introImage) {
-//       setTimeout(() => {
-//         introImage.style.opacity = '1';
-//       }, 100);
-//     }
-
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.to('.article-intro-image', {
