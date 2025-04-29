@@ -9,13 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@wavesurfer/react": "^1.0.11",
     "gsap": "^3.12.7",
     "motion": "^12.7.4",
     "next": "15.3.1",
     "noisejs": "^2.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "usehooks-ts": "^3.1.1"
+    "usehooks-ts": "^3.1.1",
+    "wavesurfer.js": "^7.9.4"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

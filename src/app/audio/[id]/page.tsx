@@ -14,6 +14,7 @@ import SkipButton from '../../../assets/images/skip-button.png';
 import { Episode } from '@/types';
 import '../styles/episode.css'
 import gsap from 'gsap';
+import WavesurferPlayer from '@wavesurfer/react'
 
 const episodes = [
   {
@@ -59,6 +60,7 @@ const AudioEpisode = () => {
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
   const [drawer2Open, setDrawer2Open] = useState<boolean>(false);
   const [episode, setEpisode] = useState<Episode | null>(null);
+  const [wavesurfer, setWavesurfer] = useState<any>(null);
   const params = useParams();
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const titleContainerRef = useRef<HTMLDivElement | null>(null);
@@ -185,10 +187,18 @@ const AudioEpisode = () => {
     }
   }
 
+  const onReady = (ws: any) => {
+    setWavesurfer(ws)
+    setIsPlaying(false)
+  }
+
+  const onPlayPause = () => {
+    wavesurfer && wavesurfer.playPause()
+  }
+
   return (
     <div className='episode-container' onClick={() => handleDrawers('container')}>
       <Image src={ExpandedImage} className='episode-bg' alt='background'/>
-      <audio ref={audioRef} src='/audio/example-audio.mp3' onTimeUpdate={() => handleTimeUpdate()} />
       <div className='episode-layout-container'>
         <div className='episode-title-and-photo-desktop'>
           {
@@ -202,6 +212,17 @@ const AudioEpisode = () => {
             <p>{episode ? episode.description : 'Description Not Found'}</p>
           </div>
         </div>
+        <WavesurferPlayer
+          height={150}
+          waveColor="rgba(255, 255, 255, 0.85)"
+          mediaControls={false}
+          progressColor="#c2d6ff"
+          cursorColor='transparent'
+          url="/audio/example-audio.mp3"
+          onReady={onReady}
+          onPlay={() => setIsPlaying(true)}
+          onPause={() => setIsPlaying(false)}
+        />
         <div className='episode-title-and-photo-mobile'>
           {
             episode && (
@@ -216,9 +237,6 @@ const AudioEpisode = () => {
           </div>
         </div>
         <div className='control-panel'>
-          <div className='progress-bar-container'>
-            <div className='progress-bar'></div>
-          </div>
           <div className='control-buttons'>
             <Image
               src={SkipButton}
@@ -230,7 +248,7 @@ const AudioEpisode = () => {
               src={isPlaying ? PauseButton : PlayButton}
               id="play-pause"
               alt="play-pause"
-              onClick={() => handlePlayback()}
+              onClick={() => onPlayPause()}
             />
             <Image
               src={SkipButton}
@@ -249,7 +267,7 @@ const AudioEpisode = () => {
           </div>
         </div>
       </div>
-      <div className='more-episodes-drawer'>
+      {/* <div className='more-episodes-drawer'>
         <div className='episode-drawer-content'>
           <div style={{ padding: '20px' }}>
             <h1>More Episodes</h1>
@@ -277,7 +295,7 @@ const AudioEpisode = () => {
           <div></div>
           <div></div>
         </div>
-      </div>
+      </div> */}
       <div className='info-drawer'>
         <div className='drawer-title-section'>
           <h1 className='episode-title'>{episode ? episode.title.split(':')[1] : 'Title Not Found'}</h1>
