@@ -56,16 +56,16 @@ const interviews = [
     href: '/featured/mona-kattan'
   },
   {
-    pfp: TillySanders,
-    name: 'Tilly Sanders',
-    job: 'Beauty PR',
-    href: '/featured/tilly-sanders'
-  },
-  {
     pfp: ZakHeath,
     name: 'Zak Heath',
     job: 'My Journey',
     href: '/dream-room'
+  },
+  {
+    pfp: TillySanders,
+    name: 'Tilly Sanders',
+    job: 'Beauty PR',
+    href: '/featured/tilly-sanders'
   },
 ]
 
