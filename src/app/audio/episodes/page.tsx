@@ -78,7 +78,7 @@ const Episodes = () => {
 
   return (
     <div className='content-container'>
-      <Image src={ExpandedImage} className='content-container-background' id='audio-content-container-background' alt='expanded-image-winter'/>
+      <Image priority src={ExpandedImage} className='content-container-background' id='audio-content-container-background' alt='expanded-image-winter'/>
       <div className='profile-scroll-container' ref={horizontalScrollRef}>
         {
           episodes.map((episode: Episode) => {
