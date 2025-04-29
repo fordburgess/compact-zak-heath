@@ -1,32 +1,51 @@
 "use client"
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import gsap from 'gsap';
 import { usePathname } from 'next/navigation';
 
 
 const TransitionWrapper = ({ children }: { children: React.ReactNode }) => {
+  const [ready, setReady] = useState(false);
   const pathname = usePathname();
-  // useEffect(() => {
-  //   gsap.to('.main-tag', {
-  //     opacity: 1,
-  //     duration: 2,
-  //     ease: "power1.inOut"
-  //   })
-  // }, [])
+
+  useEffect(() => {
+    const images = Array.from(document.images);
+    const unloaded = images.filter(img => !img.complete);
+
+    if (unloaded.length == 0) {
+      setReady(true);
+    }
+    else {
+      let loadedCount = 0;
+      unloaded.forEach(img => {
+        img.onload = img.onerror = () => {
+          loadedCount++;
+          if (loadedCount === unloaded.length) {
+            setReady(true);
+          }
+        };
+      });
+    }
+
+  }, [pathname])
 
   return (
     <AnimatePresence mode='wait'>
-      <motion.div
-        className='main-tag'
-        key={pathname}
-        initial={{ opacity: 0, filter: 'blur(10px)' }}
-        animate={{ opacity: 1, filter: 'blur(0px)' }}
-        exit={{ opacity: 0, filter: 'blur(10px)' }}
-        transition={{ duration: 1, ease: 'easeInOut' }}
-      >
-        {children}
-      </motion.div>
+      {
+        ready && (
+          <motion.div
+            className='main-tag'
+            key={pathname}
+            initial={{ filter: 'blur(10px)' }}
+            animate={{ filter: 'blur(0px)' }}
+            exit={{ filter: 'blur(10px)' }}
+            transition={{ duration: 0.5, ease: 'easeInOut' }}
+          >
+            {children}
+          </motion.div>
+        )
+      }
     </AnimatePresence>
   )
 }

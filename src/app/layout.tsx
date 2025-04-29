@@ -34,9 +34,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <DesktopNavbar />
-        <TransitionWrapper>
+        {/* <TransitionWrapper> */}
           {children}
-        </TransitionWrapper>
+        {/* </TransitionWrapper> */}
       </body>
     </html>
   );
