@@ -1,6 +1,7 @@
 "use client"
 import React, { useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import SpringExpanded from '../../../assets/images/spring-expanded.jpg';
 import MillieKendallProfile from '../../../assets/images/millie-kendall-profile.webp';
 import '../styles/article.css';
@@ -13,8 +14,20 @@ const MillieKendall = () => {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to('.featured-article-bg', {
+      y: -500,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.featured-article-container',
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: true,
+      }
+    })
+
     if (mobile) {
-//
+
     }
     else { // desktop transitions
       gsap.to('.title-image', {
@@ -43,27 +56,11 @@ const MillieKendall = () => {
     }
   }, [])
 
-  useEffect(() => {
-    const handleScroll = () => {
-      let scrollUp = window.scrollY;
-      const backgroundImage: HTMLElement | null = document.querySelector('.featured-article-bg');
-
-      if (backgroundImage) {
-        backgroundImage.style.transform = `translateY(-${scrollUp * 0.25}px)`;
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
   return (
     <div className='featured-article-container'>
       <Image src={SpringExpanded} className='featured-article-bg' alt='featured-article-bg'/>
       <div className='featured-article-content'>
+        <Link href='/featured/interviews' className='article-back-button'><p>Back</p></Link>
         <div className='featured-title-section'>
           <Image src={MillieKendallProfile} className='title-image' alt='millie-kendall-profile' />
           <div className='featured-title-text'>

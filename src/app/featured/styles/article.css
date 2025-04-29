@@ -1,10 +1,11 @@
 html, body {
-  height: auto !important;
+  /* height: auto !important; */
+  overflow-x: hidden;
 }
 
 .featured-article-container {
   width: 100vw;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .featured-article-bg {
@@ -19,13 +20,9 @@ html, body {
 }
 
 .featured-article-content {
-  position: relative;
   width: 100%;
-  overflow-x: hidden;
-  top: 0;
-  overflow-y: scroll;
+  position: relative;
   backdrop-filter: blur(3px) brightness(90%);
-  box-sizing: border-box;
   padding: 0 0 100px;
   display: flex;
   flex-direction: column;
