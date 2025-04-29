@@ -1,6 +1,7 @@
 "use client"
 import { useState, useEffect, useRef } from 'react';
 import { useParams } from "next/navigation";
+import { useMediaQuery } from 'usehooks-ts';
 import Image from "next/image";
 import Link from "next/link"
 import ExpandedImage from '../../../assets/images/winter-expanded.webp'
@@ -67,6 +68,7 @@ const AudioEpisode = () => {
   const [episode, setEpisode] = useState<Episode | null>(null);
   const [wavesurfer, setWavesurfer] = useState<any>(null);
   const params = useParams();
+  const mobile = useMediaQuery('(max-width: 1000px)');
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const titleContainerRef = useRef<HTMLDivElement | null>(null);
   const titleRef = useRef<HTMLHeadingElement | null>(null);
@@ -227,17 +229,6 @@ const AudioEpisode = () => {
             <p>{episode ? episode.description : 'Description Not Found'}</p>
           </div>
         </div>
-        <WavesurferPlayer
-          height={150}
-          waveColor="rgba(255, 255, 255, 0.85)"
-          mediaControls={false}
-          progressColor="#c2d6ff"
-          cursorColor='transparent'
-          url="/audio/example-audio.mp3"
-          onReady={onReady}
-          onPlay={() => setIsPlaying(true)}
-          onPause={() => setIsPlaying(false)}
-        />
         <div className='episode-title-and-photo-mobile'>
           {
             episode && (
@@ -251,6 +242,17 @@ const AudioEpisode = () => {
             <p className='episode-subtitle'>{episode ? episode.title.split(':')[0] : 'Person Not Found'}</p>
           </div>
         </div>
+        <WavesurferPlayer
+          height={mobile ? 125 : 150}
+          waveColor="rgba(255, 255, 255, 0.85)"
+          mediaControls={false}
+          progressColor="#c2d6ff"
+          cursorColor='transparent'
+          url="/audio/example-audio.mp3"
+          onReady={onReady}
+          onPlay={() => setIsPlaying(true)}
+          onPause={() => setIsPlaying(false)}
+        />
         <div className='control-panel'>
           <div className='control-buttons'>
             {
@@ -282,12 +284,26 @@ const AudioEpisode = () => {
           </div>
         </div>
         <div className='bottom-controls'>
-          <p className="mobile-episodes-drawer-button" onClick={() => handleDrawers('more-button')}>More</p>
-          <div className='dot-menu' onClick={() => handleDrawers('drawer-button')}>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
+          {/* {
+            episode && episode.index > 0 && (
+              <Link href={`/audio/${episodes[episode.index - 1].id}`}>
+                <div className=''>
+                  <Image className='nav-image' src={episodes[episode.index - 1].profileImage || Placeholder} alt='prev-episode'/>
+                  <p>Prev</p>
+                </div>
+              </Link>
+            )
+          }
+          {
+            episode && episode.index < episodes.length - 1 && (
+              <Link href={`/audio/${episodes[episode.index + 1].id}`}>
+                <div className=''>
+                  <Image className='nav-image' src={episodes[episode.index + 1].profileImage || Placeholder} alt='next-episode'/>
+                  <p>Next</p>
+                </div>
+              </Link>
+            )
+          } */}
         </div>
       </div>
       {
