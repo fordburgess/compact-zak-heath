@@ -236,23 +236,6 @@ const FromConcealerToConfidence = () => {
 
   }, [])
 
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       let scrollUp = window.scrollY;
-//       const backgroundImage: HTMLElement | null = document.querySelector('.dream-room-bg');
-//
-//       if (backgroundImage) {
-//         backgroundImage.style.transform = `translateY(-${scrollUp * 0.1}px)`;
-//       }
-//     };
-//
-//     window.addEventListener('scroll', handleScroll);
-//
-//     return () => {
-//       window.removeEventListener('scroll', handleScroll);
-//     };
-//   }, []);
-
   return (
 
     <div className='dream-room-article-container'>
