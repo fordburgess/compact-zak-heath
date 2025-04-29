@@ -24,7 +24,7 @@ html, body {
   overflow-x: hidden;
   top: 0;
   overflow-y: scroll;
-  backdrop-filter: blur(10px) brightness(80%);
+  backdrop-filter: blur(3px) brightness(90%);
   box-sizing: border-box;
   padding: 0 0 100px;
   display: flex;
@@ -201,6 +201,14 @@ html, body {
 
   .featured-article-text-section {
     padding: 0 300px;
+  }
+
+  .featured-article-subheader {
+    font-size: 1.33rem;
+  }
+
+  .featured-article-paragraph {
+    font-size: 1.25rem;
   }
 
   .title-image {

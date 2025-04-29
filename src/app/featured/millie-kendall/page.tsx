@@ -43,6 +43,23 @@ const MillieKendall = () => {
     }
   }, [])
 
+  useEffect(() => {
+    const handleScroll = () => {
+      let scrollUp = window.scrollY;
+      const backgroundImage: HTMLElement | null = document.querySelector('.featured-article-bg');
+
+      if (backgroundImage) {
+        backgroundImage.style.transform = `translateY(-${scrollUp * 0.25}px)`;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <div className='featured-article-container'>
       <Image src={SpringExpanded} className='featured-article-bg' alt='featured-article-bg'/>
