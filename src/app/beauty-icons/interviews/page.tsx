@@ -1,21 +1,22 @@
+"use client"
 import { useEffect } from 'react';
 import Image from 'next/image';
-import './interviews.css';
-import ExpandedImage from '../../assets/images/field-expanded.jpg';
+import '../styles/interviews.css';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import LisaEldridge from '../../assets/images/lisa-eldridge-profile.webp';
-import MillieKendall from '../../assets/images/millie-kendall-profile.webp';
-import KirstyLewis from '../../assets/images/kirsty-lewis-profile.webp';
-import AdamReed from '../../assets/images/adam-reed-profile.webp';
-import AlessandraSteinherr from '../../assets/images/alessandra-steinherr.webp';
-import MonaKattan from '../../assets/images/mona-kattan.webp';
-import PatriciaBright from '../../assets/images/patricia-bright-profile.webp';
-import ShakeelMurtaza from '../../assets/images/shakeel-murtaza-profile.webp';
-import ZakHeath from '../../assets/images/zak-heath-profile.webp';
-import TillySanders from '../../assets/images/tilly-sanders-profile.webp';
-import Placeholder from '../../assets/images/placeholder.webp';
-import CarolynAronson from '../../assets/images/carolyn-aronson-profile.webp';
+import ExpandedImage from '../../../assets/images/field-expanded.jpg';
+import LisaEldridge from '../../../assets/images/lisa-eldridge-profile.webp';
+import MillieKendall from '../../../assets/images/millie-kendall-profile.webp';
+import KirstyLewis from '../../../assets/images/kirsty-lewis-profile.webp';
+import AdamReed from '../../../assets/images/adam-reed-profile.webp';
+import AlessandraSteinherr from '../../../assets/images/alessandra-steinherr.webp';
+import MonaKattan from '../../../assets/images/mona-kattan.webp';
+import PatriciaBright from '../../../assets/images/patricia-bright-profile.webp';
+import ShakeelMurtaza from '../../../assets/images/shakeel-murtaza-profile.webp';
+import ZakHeath from '../../../assets/images/zak-heath-profile.webp';
+import TillySanders from '../../../assets/images/tilly-sanders-profile.webp';
+import Placeholder from '../../../assets/images/placeholder.webp';
+import CarolynAronson from '../../../assets/images/carolyn-aronson-profile.webp';
 
 const interviews = [
   {
@@ -172,11 +173,11 @@ const BeautyIconsInterviews = () => {
         {
           chunked.map((chunk: any, index: number) => {
             return (
-              <div className='beauty-icons-section' id={`section-${index}`}>
+              <div className='beauty-icons-section' id={`section-${index}`} key={index}>
                 {
                   chunk.map((interview: any, i: number) => {
                     return (
-                      <div className='beauty-icons-item'>
+                      <div className='beauty-icons-item' key={interview.name}>
                         <Image
                           src={interview.pfp}
                           alt={`icon-${index}`}

@@ -1,3 +1,4 @@
+"use client"
 import { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -5,8 +6,8 @@ import WideImage from '../../assets/images/field-far.png';
 import WideImageMobile from '../../assets/images/field-far-mobile.webp';
 import OverheadImage from '../../assets/images/field-aerial.png';
 import OverheadImageMobile from '../../assets/images/field-aerial-mobile.webp';
-import { useRouter } from 'next/router';
-import './index.css';
+import { useRouter } from 'next/navigation';
+import './styles/index.css';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
