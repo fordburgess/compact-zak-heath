@@ -20,28 +20,22 @@ import Placeholder from '../../../assets/images/placeholder.webp';
 
 const interviews = [
   {
-    pfp: AdamReed,
-    name: 'Adam Reed',
-    job: 'Hairstylist',
-    href: '/featured/adam-reed'
-  },
-  {
     pfp: CarolynAronson,
     name: 'Carolyn Aronson',
     job: 'Beauty Entrepreneur',
     href: '/featured/carolyn-aronson'
   },
   {
-    pfp: MonaKattan,
-    name: 'Mona Kattan',
-    job: 'Fragrance CEO',
-    href: '/featured/mona-kattan'
+    pfp: LisaEldridge,
+    name: 'Lisa Eldridge',
+    job: 'Celebrity Makeup Artist',
+    href: '/featured/lisa-eldridge'
   },
   {
-    pfp: TillySanders,
-    name: 'Tilly Sanders',
-    job: 'Beauty PR',
-    href: '/featured/tilly-sanders'
+    pfp: AdamReed,
+    name: 'Adam Reed',
+    job: 'Hairstylist',
+    href: '/featured/adam-reed'
   },
   {
     pfp: AlessandraSteinherr,
@@ -56,16 +50,22 @@ const interviews = [
     href: '/featured/millie-kendall'
   },
   {
+    pfp: MonaKattan,
+    name: 'Mona Kattan',
+    job: 'Fragrance CEO',
+    href: '/featured/mona-kattan'
+  },
+  {
+    pfp: TillySanders,
+    name: 'Tilly Sanders',
+    job: 'Beauty PR',
+    href: '/featured/tilly-sanders'
+  },
+  {
     pfp: ZakHeath,
     name: 'Zak Heath',
     job: 'My Journey',
     href: '/dream-room'
-  },
-  {
-    pfp: LisaEldridge,
-    name: 'Lisa Eldridge',
-    job: 'Celebrity Makeup Artist',
-    href: '/featured/lisa-eldridge'
   },
 ]
 
