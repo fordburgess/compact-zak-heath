@@ -126,6 +126,12 @@ const Home = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
+    gsap.to('.chevron-container', {
+      opacity: 1,
+      duration: 0.5,
+      delay: 1.25,
+    })
+
     gsap.to('.initial-image', {
       scale: 2,
       ease: 'none',
@@ -166,6 +172,17 @@ const Home = () => {
         trigger: ".scroll-container",
         start: 'center 110%',
         end: 'center top',
+        scrub: true
+      }
+    })
+
+    gsap.to('.chevron-container', {
+      y: 50,
+      ease: "none",
+      scrollTrigger: {
+        trigger: '.scroll-container',
+        start: 'top top',
+        end: 'center center',
         scrub: true
       }
     })
@@ -222,9 +239,9 @@ const Home = () => {
             id='cover-subtitle'
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 1.5, duration: 1 }}
+            transition={{ delay: 1, duration: 1 }}
           >
-            Scroll to continue...
+            Learn from icons
           </motion.p>
         </div>
         <picture>
@@ -232,6 +249,22 @@ const Home = () => {
           <source media="(min-width: 640px)" srcSet={WideImageMobile.src} />
           <Image priority src={WideImageMobile} className='initial-image' alt='initial-image-cover'/>
         </picture>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="40"
+          height="40"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1"
+          className='chevron-container'
+          strokeLinecap='round'
+          strokeLinejoin="round"
+        >
+          <polyline points="6 5 12 11 18 5" stroke="#fff"/>
+          <polyline points="6 11 12 17 18 11" stroke="#fff"/>
+          <polyline points="6 17 12 23 18 17" stroke="#fff"/>
+        </svg>
       </div>
       <div className="svg-overlay-container" id="mobile-overlay">
         <svg version="1.1" viewBox="0 0 1182 2560" preserveAspectRatio="xMidYmid meet" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
