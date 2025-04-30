@@ -6,12 +6,14 @@ import '../styles/article.css'
 import AutumnExpanded from '../../../assets/images/autumn-expanded.webp';
 import ZakHeathProfile from '../../../assets/images/zak-heath-profile.webp';
 import ZakHeathYoung from '../../../assets/images/zak-heath-young.webp';
+import { useMediaQuery } from 'usehooks-ts';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { motion } from 'framer-motion';
 
 const DiaryOfInfluencer = () => {
   const verticalScrollRef = useRef<HTMLDivElement | null>(null);
+  const mobile = useMediaQuery('(max-width: 1000px');
 
 
   useEffect(() => {
@@ -41,6 +43,12 @@ const DiaryOfInfluencer = () => {
       duration: 1,
     })
 
+    gsap.to('.dream-room-subtitle', {
+      y: '-20%',
+      opacity: 1,
+      duration: 1,
+    })
+
     gsap.to('.title-line-1', {
       minHeight: '80%',
       opacity: 1,
@@ -50,7 +58,7 @@ const DiaryOfInfluencer = () => {
     })
 
     gsap.to('.title-line-2', {
-      minWidth: '40%',
+      minWidth: mobile ? '70%' : '40%',
       opacity: 1,
       delay: 1,
       duration: 1,
@@ -77,7 +85,7 @@ const DiaryOfInfluencer = () => {
     })
 
     gsap.to('.dream-room-subtitle', {
-      x: '100%',
+      x: '80%',
       // ease: "power1.inOut",
       scrollTrigger: {
         trigger: '.article-title-section',
@@ -192,9 +200,9 @@ const DiaryOfInfluencer = () => {
           <div className='title-line-2'></div>
           <motion.p
             className='dream-room-subtitle'
-            initial={{ x: -50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 1.25, duration: 1 }}
+            // initial={{ x: -50, opacity: 0 }}
+            // animate={{ x: 0, opacity: 1 }}
+            // transition={{ delay: 1.25, duration: 1 }}
           >
             Contrary to popular belief,<br/>Lorem Ipsum is not simply random text. <br/>It has roots in a piece of classical <br/>Latin literature from 45 BC
           </motion.p>
@@ -207,7 +215,7 @@ const DiaryOfInfluencer = () => {
             <div className='dream-room-line-1'></div>
             <div className='circle-shape-1'></div>
             <div className='key-quote-1'>
-              <h1 className='key-quote-text'>"I brought this facade<br/> I learned to create at <br/>school online with me"</h1>
+              <h1 className='key-quote-text' id="doai-1">"I brought this facade<br/> I learned to create at <br/>school online with me"</h1>
             </div>
           </div>
           <p className='dream-room-paragraph-text'>“One day I’ll buy Valentino”, I used to tell myself - little did I know I’d be working with them three years later! From the products I bought to the content I wanted to create, I started making elevated TikTok videos in 2020 when the first lockdown hit, with the intention of one day being noticed by luxury fashion houses. I didn’t have direction, just a makeup bag and a dream. But. Knowing I was locked in a room, I knew nobody could say anything to me, and the negative comments I received online only fuelled me more. Using the hate I received as a boy wearing makeup became my USP, and I started to create educational and aesthetic videos of me applying makeup for those who wanted a natural and everyday makeup routine. I didn’t have much makeup, and I certainly couldn’t buy lots of expensive makeup; however, when Charlotte Tilbury, a luxury makeup brand, reached out to me, I knew I was doing something right. Aesthetically, I was both commercial and editorial, and being an 18-year-old boy really helped to segment me in the British beauty space. </p>
@@ -215,7 +223,7 @@ const DiaryOfInfluencer = () => {
           <div className='dream-room-transition-container' id="second-transition-container">
             <div className='dream-room-line-2'></div>
             {/* <div className='key-quote-2'> */}
-              <h1 className='key-quote-text' id="second-quote">"Using the hate<br/> I received as a boy wearing<br/>makeup became my USP"</h1>
+              <h1 className='key-quote-text' id="doai-2">"Using the hate I received as a boy wearing makeup became my USP"</h1>
             {/* </div> */}
             <div className='circle-shape-2'></div>
           </div>

@@ -1,6 +1,7 @@
 "use client"
 import { useEffect, useRef } from 'react';
 // import './index.css';
+import { sendMail } from '../../../../lib/send-mail';
 import '../styles/info.css';
 import Image from 'next/image';
 import ExpandedImage from '../../../assets/images/desert-expanded.webp';
@@ -143,8 +144,8 @@ const ServicesInfo = () => {
       ease: 'power1.inOut',
       scrollTrigger: {
         trigger: '#body-5',
-        start: 'top bottom',
-        end: 'center 80%',
+        start: 'top center',
+        end: 'center 40%',
         scrub: true,
       }
     })
@@ -155,12 +156,30 @@ const ServicesInfo = () => {
       ease: 'power1.inOut',
       scrollTrigger: {
         trigger: '#body-5',
-        start: 'top bottom',
-        end: 'center 80%',
+        start: 'top center',
+        end: 'center 60%',
         scrub: true,
       }
     })
   }, [])
+
+  const sendMessage = async (e: any) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+
+    const data = Object.fromEntries(formData.entries());
+    console.log(data);
+
+    const res = await sendMail(data.name, data.email, data.message);
+
+    if (res?.messageId) {
+      alert('Application Submitted Successfully.');
+    } else {
+      alert('Failed To send application.');
+    }
+
+  }
 
   return (
     <div className='services-info-container'>
@@ -174,10 +193,18 @@ const ServicesInfo = () => {
         <div className='services-info-body' id="body-1">
           <h3 className='body-1-title'>Socials</h3>
           <div className='body-1-text' style={{ opacity: 0, width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <Image src={Instagram} alt='instagram' />
-            <Image src={TikTok} alt='tik-tok' />
-            <Image src={Youtube} alt='youtube' />
-            <Image src={Snapchat} alt='snapchat' />
+            <a target="_blank" href='https://www.instagram.com/zak.heath/?hl=en'>
+              <Image src={Instagram} alt='instagram' />
+            </a>
+            <a target="_blank" href='https://www.tiktok.com/@zakheath?lang=en'>
+              <Image src={TikTok} alt='tik-tok' />
+            </a>
+            <a target="_blank" href='https://www.youtube.com/@zakheathx'>
+              <Image src={Youtube} alt='youtube' />
+            </a>
+            <a target="_blank" href='https://www.snapchat.com/add/Zakheathx'>
+              <Image src={Snapchat} alt='snapchat' />
+            </a>
           </div>
         </div>
         <div className='services-info-body' id="body-2">
@@ -196,20 +223,20 @@ const ServicesInfo = () => {
         </div>
         <div className='services-info-body' id="body-5">
           <h3 className='body-5-title'>Contact Me</h3>
-          <form className='contact-form'>
+          <form className='contact-form' onSubmit={sendMessage}>
             <div>
               <label>Name</label>
-              <input type="text" />
+              <input name='name' type="text" />
             </div>
             <div>
               <label>Email</label>
-              <input type="text" />
+              <input name='email' type="text" />
             </div>
             <div style={{ marginBottom: '15px' }}>
               <label>Message</label>
-              <textarea />
+              <textarea name='message'/>
             </div>
-            <button>Send</button>
+            <button type='submit'>Send</button>
           </form>
         </div>
       </div>
