@@ -241,7 +241,7 @@ const Home = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 1, duration: 1 }}
           >
-            Learn from icons
+            learn from icons
           </motion.p>
         </div>
         <picture>
