@@ -19,6 +19,12 @@ const Audio = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
+    gsap.to('.chevron-container', {
+      opacity: 1,
+      duration: 0.5,
+      delay: 1.25,
+    })
+
     gsap.to('.initial-image', {
       scale: 2,
       ease: 'none',
@@ -148,23 +154,23 @@ const Audio = () => {
             <source media="(min-width: 640px)" srcSet={WideImageMobile.src} />
             <Image priority src={WideImageMobile} className='initial-image' alt='initial-image-audio'/>
           </picture>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="40"
+            height="40"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1"
+            className='chevron-container'
+            strokeLinecap='round'
+            strokeLinejoin="round"
+          >
+            <polyline points="6 5 12 11 18 5" stroke="#fff"/>
+            <polyline points="6 11 12 17 18 11" stroke="#fff"/>
+            <polyline points="6 17 12 23 18 17" stroke="#fff"/>
+          </svg>
         </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="40"
-          height="40"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1"
-          className='chevron-container'
-          strokeLinecap='round'
-          strokeLinejoin="round"
-        >
-          <polyline points="6 5 12 11 18 5" stroke="#fff"/>
-          <polyline points="6 11 12 17 18 11" stroke="#fff"/>
-          <polyline points="6 17 12 23 18 17" stroke="#fff"/>
-        </svg>
         <div className='svg-overlay-container' id="mobile-overlay">
           <div className='further-info-container'>
             <h2>HINT</h2>
