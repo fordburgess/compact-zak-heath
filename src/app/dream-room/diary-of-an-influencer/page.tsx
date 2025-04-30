@@ -223,7 +223,7 @@ const DiaryOfInfluencer = () => {
           <div className='dream-room-transition-container' id="second-transition-container">
             <div className='dream-room-line-2'></div>
             {/* <div className='key-quote-2'> */}
-              <h1 className='key-quote-text' id="second-quote">"Using the hate<br/> I received as a boy wearing<br/>makeup became my USP"</h1>
+              <h1 className='key-quote-text' id="second-quote">"Using the hate I received as a boy wearing makeup became my USP"</h1>
             {/* </div> */}
             <div className='circle-shape-2'></div>
           </div>

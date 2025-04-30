@@ -179,16 +179,17 @@ html, body {
 }
 
 #second-quote {
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-style: italic;
   font-weight: 300;
   color: #fff;
   font-family: 'Playfair';
   position: absolute;
   left: 50%;
-  bottom: 10%;
-  transform: translate(-50%, -10%);
+  bottom: 12%;
+  transform: translate(-50%, 12%);
   text-align: center;
+  width: 80%;
 }
 
 .key-quote-text {
@@ -215,8 +216,8 @@ html, body {
 }
 
 .circle-shape-2 {
-  min-height: 300px;
-  min-width: 300px;
+  min-height: 250px;
+  min-width: 250px;
   border-radius: 50%;
   position: absolute;
   left: 50%;
@@ -605,6 +606,16 @@ html, body {
 
   .dream-room-profile {
     width: 50%;
+  }
+
+  .circle-shape-2 {
+    min-height: 300px;
+    min-width: 300px;
+  }
+
+  #second-quote {
+    font-size: 2rem;
+    width: auto;
   }
 
   #day-in-life-title-section {
