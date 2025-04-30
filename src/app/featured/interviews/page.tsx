@@ -140,44 +140,46 @@ const FeaturedInterviews = () => {
   }, [])
 
   return (
-    <div className='beauty-icons-interviews-container'>
-      <Image priority src={ExpandedImage} alt='beauty-icons-bg' className='beauty-icons-bg'/>
-      <div className='beauty-icons-content-container'>
-        <div className='beauty-icons-title-section'>
-          <div>
-            {/* <p style={{ fontStyle: 'italic' }}>the</p> */}
-            <h1 className='beauty-icons-index-title'>FEATURED</h1>
+    <div className='body-replacement'>
+      <div className='beauty-icons-interviews-container'>
+        <Image priority src={ExpandedImage} alt='beauty-icons-bg' className='beauty-icons-bg'/>
+        <div className='beauty-icons-content-container'>
+          <div className='beauty-icons-title-section'>
+            <div>
+              {/* <p style={{ fontStyle: 'italic' }}>the</p> */}
+              <h1 className='beauty-icons-index-title'>FEATURED</h1>
+            </div>
           </div>
+          {
+            chunked.map((chunk: any, index: number) => {
+              return (
+                <div className='featured-interviews-section' id={`section-${index}`} key={index}>
+                  {
+                    chunk.map((interview: any, i: number) => {
+                      return (
+                        <div className='beauty-icons-item' key={interview.href}>
+                          <Link href={interview.href}>
+                            <Image
+                              src={interview.pfp}
+                              alt={`icon-${index}`}
+                              className='beauty-icons-pfp'
+                              id={`icons-pfp-${index}`}
+                              style={{ objectPosition: interview.name == 'Millie Kendall' || 'Carolyn Aronson' ? 'top' : 'center' }}
+                            />
+                            <div className='name-container'>
+                              <h3>{interview.name}</h3>
+                              <p>{interview.job}</p>
+                            </div>
+                          </Link>
+                        </div>
+                      )
+                    })
+                  }
+                </div>
+              )
+            })
+          }
         </div>
-        {
-          chunked.map((chunk: any, index: number) => {
-            return (
-              <div className='featured-interviews-section' id={`section-${index}`} key={index}>
-                {
-                  chunk.map((interview: any, i: number) => {
-                    return (
-                      <div className='beauty-icons-item' key={interview.href}>
-                        <Link href={interview.href}>
-                          <Image
-                            src={interview.pfp}
-                            alt={`icon-${index}`}
-                            className='beauty-icons-pfp'
-                            id={`icons-pfp-${index}`}
-                            style={{ objectPosition: interview.name == 'Millie Kendall' || 'Carolyn Aronson' ? 'top' : 'center' }}
-                          />
-                          <div className='name-container'>
-                            <h3>{interview.name}</h3>
-                            <p>{interview.job}</p>
-                          </div>
-                        </Link>
-                      </div>
-                    )
-                  })
-                }
-              </div>
-            )
-          })
-        }
       </div>
     </div>
   )
