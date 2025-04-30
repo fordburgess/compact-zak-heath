@@ -64,6 +64,17 @@ const Services = () => {
       }
     })
 
+    gsap.to('.chevron-container', {
+      y: 50,
+      ease: "none",
+      scrollTrigger: {
+        trigger: '.scroll-container',
+        start: 'top top',
+        end: 'center center',
+        scrub: true
+      }
+    })
+
     gsap.to('.svg-overlay-container', {
       scale: 1.5,
       ease: 'none',
@@ -139,6 +150,22 @@ const Services = () => {
             <Image priority src={WideImageMobile} className='initial-image' alt='initial-image-services'/>
           </picture>
         </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="40"
+          height="40"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1"
+          className='chevron-container'
+          strokeLinecap='round'
+          strokeLinejoin="round"
+        >
+          <polyline points="6 5 12 11 18 5" stroke="#fff"/>
+          <polyline points="6 11 12 17 18 11" stroke="#fff"/>
+          <polyline points="6 17 12 23 18 17" stroke="#fff"/>
+        </svg>
         <div className='svg-overlay-container' id="mobile-overlay">
           <div className='further-info-container'>
             <h2>CLICK</h2>
