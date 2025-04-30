@@ -6,11 +6,14 @@ import '../styles/article.css'
 import AutumnExpanded from '../../../assets/images/autumn-expanded.webp';
 import ZakHeathUncle from '../../../assets/images/zak-heath-uncle.webp';
 import ZakAndLisa from '../../../assets/images/zak-and-lisa.webp';
+import { useMediaQuery } from 'usehooks-ts';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { motion } from 'framer-motion';
 
 const FromConcealerToConfidence = () => {
+  const mobile = useMediaQuery('(max-width: 1000px');
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -56,7 +59,7 @@ const FromConcealerToConfidence = () => {
 
     gsap.to('.fctc-line-1', {
       width: '80%',
-      delay: 1,
+      delay: 0.5,
       duration: 1,
       scrub: true,
     })
@@ -91,7 +94,7 @@ const FromConcealerToConfidence = () => {
     })
 
     gsap.to('.fctc-line-1', {
-      width: '10px',
+      opacity: 0,
       scrollTrigger: {
         trigger: '.fctc-title-section',
         start: 'top top',
@@ -105,8 +108,8 @@ const FromConcealerToConfidence = () => {
       opacity: 0,
       scrollTrigger: {
         trigger: '#fctc-trans-1',
-        start: 'top center',
-        end: 'bottom center',
+        start: mobile ? 'top center' : 'top 60%',
+        end: mobile ? 'bottom top' : 'bottom center',
         scrub: true,
       }
     })
@@ -116,8 +119,8 @@ const FromConcealerToConfidence = () => {
       opacity: 0,
       scrollTrigger: {
         trigger: '#fctc-trans-1',
-        start: 'top center',
-        end: 'bottom center',
+        start: mobile ? 'top center' : 'top 60%',
+        end: mobile ? 'bottom top' : 'bottom center',
         scrub: true,
       }
     })
@@ -127,14 +130,13 @@ const FromConcealerToConfidence = () => {
       opacity: 1,
       scrollTrigger: {
         trigger: '#fctc-trans-1',
-        start: 'top center',
-        end: 'bottom center',
+        start: mobile ? 'top center' : 'top 60%',
+        end: mobile ? 'bottom top' : 'bottom center',
         scrub: true,
       }
     })
 
-    gsap.to('.fctc-line-2', {
-      scaleY: '8',
+    const line2Props: any = {
       ease: "power1.inOut",
       scrollTrigger: {
         trigger: '#fctc-trans-2',
@@ -142,10 +144,12 @@ const FromConcealerToConfidence = () => {
         end: 'bottom 60%',
         scrub: true,
       }
-    })
+    };
+    const scaleAxis = mobile ? 'scaleY' : 'scaleX';
+    line2Props[scaleAxis] = mobile ? 8 : 10;
+    gsap.to('.fctc-line-2', line2Props);
 
-    gsap.to('#zak-uncle-caption', {
-      y: -50,
+    const caption2props: any = {
       ease: "power1.inOut",
       scrollTrigger: {
         trigger: '#fctc-trans-2',
@@ -153,7 +157,11 @@ const FromConcealerToConfidence = () => {
         end: 'bottom 60%',
         scrub: true,
       }
-    })
+    }
+    const transitionDirection = mobile ? 'y' : 'x';
+    caption2props[transitionDirection] = mobile ? -50 : -1;
+    gsap.to('#zak-uncle-caption', caption2props);
+
 
     gsap.to('.fctc-rectangle-1', {
       y: 10,
@@ -250,19 +258,20 @@ const FromConcealerToConfidence = () => {
           <h3
             className='fctc-subtitle'
           >
-            Beauty is for everyone, <br/> so let's build together 
+            Beauty is for everyone, <br/> so let's build together
           </h3>
         </div>
         <div className='padding-enforcer'>
           <p className='dream-room-paragraph-text'>I often wonder if my uncle knew how much of a positive impact he would have on me, a 13-year-old boy navigating identity and insecurity; perhaps he might have chosen differently. My uncle Matthew, a charismatic model and actor who travelled the world as the personification of male beauty, tragically took his life five years before I was born. "He would have loved you very much," my mum used to say.</p>
+          <p className='dream-room-paragraph-text'>At fourteen, before heading to a birthday party, I stared angrily at an extraterrestrial-looking red pimple on my forehead. I froze when my mum called it "gross" and handed me a concealer. "I can't wear this; that's gay," as I was scared of feeling emasculated when I already felt different and had constant churning emotions regarding how people perceived me. But my mum, unfazed, told me to "grow up" and shared a story about my uncle. Matthew, she explained, wore makeup as a working male model in the 90s. He was confident, successful, and unashamed. My mum was so comforting about it, but she also gave the eye like she'd disown me if I didn't grab this concealer from her hand; I gave in and applied the It Cosmetics Bye Bye Undereye on this red bulbous pimple. It was the beginning of something transformative. I felt an immediate sense of relief - both in hiding my insecurity and in feeling an odd, almost spiritual connection to my uncle I had never met because although we weren't blood-related (my mum's siblings were all adopted), I imagined Matthew's confidence on set, his flawless skin under the spotlight, and wondered if makeup gave him the same reassurance it was now giving me. That small act of applying concealer sparked a curiosity I couldn't ignore.</p>
           <div className='dream-room-transition-container' id='fctc-trans-1'>
             <div className='fctc-circle-2'></div>
             <div className='fctc-circle-3'></div>
             <div className='key-quote-1' id='fctc-quote-1'>
-              <h1 className='key-quote-text'>"this industry is hard to get into. Together, we can create a future in this space”</h1>
+              <h1 className='key-quote-text'>"This industry is hard to get into. Together, we can create a future in this space”</h1>
             </div>
           </div>
-          <p className='dream-room-paragraph-text'>At fourteen, before heading to a birthday party, I stared angrily at an extraterrestrial-looking red pimple on my forehead. I froze when my mum called it "gross" and handed me a concealer. "I can't wear this; that's gay," as I was scared of feeling emasculated when I already felt different and had constant churning emotions regarding how people perceived me. But my mum, unfazed, told me to "grow up" and shared a story about my uncle. Matthew, she explained, wore makeup as a working male model in the 90s. He was confident, successful, and unashamed. My mum was so comforting about it, but she also gave the eye like she'd disown me if I didn't grab this concealer from her hand; I gave in and applied the It Cosmetics Bye Bye Undereye on this red bulbous pimple. It was the beginning of something transformative. I felt an immediate sense of relief - both in hiding my insecurity and in feeling an odd, almost spiritual connection to my uncle I had never met because although we weren't blood-related (my mum's siblings were all adopted), I imagined Matthew's confidence on set, his flawless skin under the spotlight, and wondered if makeup gave him the same reassurance it was now giving me. That small act of applying concealer sparked a curiosity I couldn't ignore.</p>
+          <p className='dream-room-paragraph-text'>So, if it was my mum or uncle's influence, I was rummaging through my mum's green Clinique makeup bag before long. Despite my initial feelings of intrigue, I still cared about what others might think about me, whether that be men weren't supposed to wear makeup unless it was artistic, they're celebrities, or they're gay. I knew my uncle was gay, and when coming out to my mum, I felt comfort knowing that; however, I still wasn't ready to admit it to my mum or myself, but I could admit - I loved my mum's YSL Beauty All Hours Foundation. "Where have you put my foundation?" or "I have a thief for a son" were soon being shouted up the stairs, followed by an angry woman rampaging my room quite frequently to collect her things. </p>
           <div className='dream-room-transition-container' id='fctc-trans-2'>
             <div className='image-with-caption' style={{ zIndex: -1, }}>
               <Image src={ZakHeathUncle} alt='zak-heath-uncle'/>
@@ -270,7 +279,7 @@ const FromConcealerToConfidence = () => {
             <div className='fctc-line-2'></div>
             <p className='image-caption' id='zak-uncle-caption'>One of the photos I have of my uncle Matthew</p>
           </div>
-          <p className='dream-room-paragraph-text'>So, if it was my mum or uncle's influence, I was rummaging through my mum's green Clinique makeup bag before long. Despite my initial feelings of intrigue, I still cared about what others might think about me, whether that be men weren't supposed to wear makeup unless it was artistic, they're celebrities, or they're gay. I knew my uncle was gay, and when coming out to my mum, I felt comfort knowing that; however, I still wasn't ready to admit it to my mum or myself, but I could admit - I loved my mum's YSL Beauty All Hours Foundation. "Where have you put my foundation?" or "I have a thief for a son" were soon being shouted up the stairs, followed by an angry woman rampaging my room quite frequently to collect her things. </p>
+          <p className='dream-room-paragraph-text'>Years prior, I'd feel my mum's excitement at the Debenhams makeup counters or see her eagerness to apply her favourite Bareminerals lipstick in the mirror at home. I'd become her little helper, exploring the textures and colours. Now that I understood the ritual, I, too, began to crave it.</p>
           <div className='dream-room-transition-container' id='fctc-trans-3' style={{ zIndex: -1 }}>
             <div className='fctc-line-3'></div>
             <div className='fctc-rectangle-1'></div>
@@ -278,7 +287,6 @@ const FromConcealerToConfidence = () => {
               <h1 className='key-quote-text' id='fctc-quote-text-2'>“I soon encountered the harsh reality of online hate and the infamous keyboard warriors”</h1>
             </div>
           </div>
-          <p className='dream-room-paragraph-text'>Years prior, I'd feel my mum's excitement at the Debenhams makeup counters or see her eagerness to apply her favourite Bareminerals lipstick in the mirror at home. I'd become her little helper, exploring the textures and colours. Now that I understood the ritual, I, too, began to crave it.</p>
           <p className='dream-room-paragraph-text'>By this point, I had come out, mum knew - everybody knew - I knew deep down, but looking back, I do think fourteen was still such a young and brave age to say I was gay. Knowing I could be myself - which I'm forever grateful for - I stopped watching from afar and eventually bought an eight-pan highlighter palette from Makeup Revolution from my local Superdrug. My makeup collection grew rapidly, and I bought lipsticks, eyeshadows, mascaras and blushes to follow the 2018 beauty gurus like Manny MUA, James Charles and Tati Westbrook. Yet, the cut creases and matte lipsticks felt performative, a persona I thought I needed as a newly out gay teen. It wasn't until I experimented with more natural makeup, taking the tips and tricks I learnt from glam makeup. I'd blend the Nivea moisturiser into my stolen YSL Beauty All Hours foundation for a subtle glow that I felt truly comfortable in. Little did I know that this "clean" makeup style would one day become popularised on social media as the "clean girl" look, which would be one of the reasons I astronomically grew on TikTok four years later.</p>
           <p className='dream-room-paragraph-text'>After having multiple conversations with myself in the mirror and giving my reflection reviews of the products I was using, when lockdown terrorised the world, I needed a creative outlet, so I started to make videos on TikTok. I was by no means a professional makeup artist, but I wanted to share my knowledge, skills, and confidence, and I knew nobody could say anything to me because we were locked inside our rooms. But I soon encountered the harsh reality of online hate and the infamous keyboard warriors. Comments like "this is disgusting," "Makeup is for women," and "You're a boy" flooded my content.</p>
           <div className='dream-room-transition-container' id='fctc-trans-4' style={{ zIndex: -1 }}>
