@@ -224,7 +224,7 @@ const Home = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 1.5, duration: 1 }}
           >
-            Scroll to continue...
+            Learn from icons
           </motion.p>
         </div>
         <picture>
