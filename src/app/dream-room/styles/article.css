@@ -167,6 +167,11 @@ html, body {
   position: absolute;
   top: 15%;
   right: -15%;
+  font-size: 1.75rem;
+}
+
+#doai-1 {
+  font-size: 1.5rem;
 }
 
 .key-quote-2 {
@@ -178,7 +183,7 @@ html, body {
   /* width: 100%; */
 }
 
-#second-quote {
+#doai-2 {
   font-size: 1.75rem;
   font-style: italic;
   font-weight: 300;
@@ -202,10 +207,10 @@ html, body {
 
 .circle-shape-1 {
   transform: translateX(-50%);
-  min-height: 400px;
-  min-width: 400px;
-  max-height: 400px;
-  max-width: 400px;
+  min-height: 200px;
+  min-width: 200px;
+  max-height: 200px;
+  max-width: 200px;
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(3px);
   border-radius: 50%;
@@ -608,13 +613,26 @@ html, body {
     width: 50%;
   }
 
+  .circle-shape-1 {
+    transform: translateX(-50%);
+    min-height: 400px;
+    min-width: 400px;
+    max-height: 400px;
+    max-width: 400px;
+  }
+
+  #doai-1 {
+    font-size: 2.5rem;
+  }
+
+
   .circle-shape-2 {
     min-height: 300px;
     min-width: 300px;
   }
 
-  #second-quote {
-    font-size: 2rem;
+  #doai-2 {
+    font-size: 2.5rem;
     width: auto;
   }
 
