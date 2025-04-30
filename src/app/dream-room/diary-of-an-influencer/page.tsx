@@ -6,12 +6,14 @@ import '../styles/article.css'
 import AutumnExpanded from '../../../assets/images/autumn-expanded.webp';
 import ZakHeathProfile from '../../../assets/images/zak-heath-profile.webp';
 import ZakHeathYoung from '../../../assets/images/zak-heath-young.webp';
+import { useMediaQuery } from 'usehooks-ts';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { motion } from 'framer-motion';
 
 const DiaryOfInfluencer = () => {
   const verticalScrollRef = useRef<HTMLDivElement | null>(null);
+  const mobile = useMediaQuery('(max-width: 1000px');
 
 
   useEffect(() => {
@@ -41,6 +43,12 @@ const DiaryOfInfluencer = () => {
       duration: 1,
     })
 
+    gsap.to('.dream-room-subtitle', {
+      y: '-20%',
+      opacity: 1,
+      duration: 1,
+    })
+
     gsap.to('.title-line-1', {
       minHeight: '80%',
       opacity: 1,
@@ -50,7 +58,7 @@ const DiaryOfInfluencer = () => {
     })
 
     gsap.to('.title-line-2', {
-      minWidth: '40%',
+      minWidth: mobile ? '70%' : '40%',
       opacity: 1,
       delay: 1,
       duration: 1,
@@ -77,7 +85,7 @@ const DiaryOfInfluencer = () => {
     })
 
     gsap.to('.dream-room-subtitle', {
-      x: '100%',
+      x: '80%',
       // ease: "power1.inOut",
       scrollTrigger: {
         trigger: '.article-title-section',
@@ -192,9 +200,9 @@ const DiaryOfInfluencer = () => {
           <div className='title-line-2'></div>
           <motion.p
             className='dream-room-subtitle'
-            initial={{ x: -50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 1.25, duration: 1 }}
+            // initial={{ x: -50, opacity: 0 }}
+            // animate={{ x: 0, opacity: 1 }}
+            // transition={{ delay: 1.25, duration: 1 }}
           >
             Contrary to popular belief,<br/>Lorem Ipsum is not simply random text. <br/>It has roots in a piece of classical <br/>Latin literature from 45 BC
           </motion.p>
