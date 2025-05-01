@@ -17,6 +17,12 @@ const Featured = () => {
   const mobile = useMediaQuery('(max-width: 800px)');
 
   useEffect(() => {
+    const scrollPosition = localStorage.getItem('featured-page-scroll');
+
+    if (scrollPosition) {
+      document.body.scrollTop = parseInt(scrollPosition);
+    }
+
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.to('.chevron-container', {
@@ -123,9 +129,17 @@ const Featured = () => {
     })
   }, [])
 
-  const handleObjectClick = () => {
-    router.push('/featured/interviews');
-  }
+  useEffect(() => {
+    const handleScroll = () => {
+      localStorage.setItem('featured-page-scroll', document.body.scrollTop.toString());
+    }
+
+    document.body.addEventListener('scroll', handleScroll);
+
+    return () => {
+      document.body.removeEventListener('scroll', handleScroll);
+    }
+  }, [])
 
   return (
     <>

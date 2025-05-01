@@ -18,6 +18,12 @@ const BeautyIcons = () => {
   const router = useRouter();
 
   useEffect(() => {
+    const scrollPosition = localStorage.getItem('beauty-icons-page-scroll');
+
+    if (scrollPosition) {
+      document.body.scrollTop = parseInt(scrollPosition);
+    }
+
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.to('.chevron-container', {
@@ -122,6 +128,18 @@ const BeautyIcons = () => {
         }
       }
     })
+  }, [])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      localStorage.setItem('beauty-icons-page-scroll', document.body.scrollTop.toString());
+    }
+
+    document.body.addEventListener('scroll', handleScroll);
+
+    return () => {
+      document.body.removeEventListener('scroll', handleScroll);
+    }
   }, [])
 
   return (

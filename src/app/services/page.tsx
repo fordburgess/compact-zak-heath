@@ -18,6 +18,12 @@ const Services = () => {
   const router = useRouter();
 
   useEffect(() => {
+    const scrollPosition = localStorage.getItem('services-page-scroll');
+
+    if (scrollPosition) {
+      document.body.scrollTop = parseInt(scrollPosition);
+    }
+
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.to('.chevron-container', {
@@ -122,6 +128,18 @@ const Services = () => {
         }
       }
     })
+  }, [])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      localStorage.setItem('services-page-scroll', document.body.scrollTop.toString());
+    }
+
+    document.body.addEventListener('scroll', handleScroll);
+
+    return () => {
+      document.body.removeEventListener('scroll', handleScroll);
+    }
   }, [])
 
   return (

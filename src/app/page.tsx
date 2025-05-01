@@ -124,6 +124,12 @@ const Home = () => {
   }
 
   useEffect(() => {
+    const scrollPosition = localStorage.getItem('cover-page-scroll');
+
+    if (scrollPosition) {
+      document.body.scrollTop = parseInt(scrollPosition);
+    }
+
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.to('.chevron-container', {
@@ -217,6 +223,18 @@ const Home = () => {
         }
       }
     })
+  }, [])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      localStorage.setItem('cover-page-scroll', document.body.scrollTop.toString());
+    }
+
+    document.body.addEventListener('scroll', handleScroll);
+
+    return () => {
+      document.body.removeEventListener('scroll', handleScroll);
+    }
   }, [])
 
   return (
