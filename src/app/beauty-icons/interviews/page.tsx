@@ -173,41 +173,43 @@ const BeautyIconsInterviews = () => {
   }, [])
 
   return (
-    <div className='beauty-icons-interviews-container'>
-      <Image priority src={ExpandedImage} alt='beauty-icons-bg' className='beauty-icons-bg'/>
-      <div className='beauty-icons-content-container'>
-        <div className='beauty-icons-title-section'>
-          <div>
-            <p style={{ fontStyle: 'italic' }}>the</p>
-            <h1 className='beauty-icons-index-title'>ICONS</h1>
+    <div className='body-replacement'>
+      <div className='beauty-icons-interviews-container'>
+        <Image priority src={ExpandedImage} alt='beauty-icons-bg' className='beauty-icons-bg'/>
+        <div className='beauty-icons-content-container'>
+          <div className='beauty-icons-title-section'>
+            <div>
+              <p style={{ fontStyle: 'italic' }}>the</p>
+              <h1 className='beauty-icons-index-title'>ICONS</h1>
+            </div>
           </div>
-        </div>
-        {
-          chunked.map((chunk: any, index: number) => {
-            return (
-              <div className='beauty-icons-section' id={`section-${index}`} key={index}>
-                {
-                  chunk.map((interview: any, i: number) => {
-                    return (
-                      <div className='beauty-icons-item' key={interview.name}>
-                        <Image
-                          src={interview.pfp}
-                          alt={`icon-${index}`}
-                          className='beauty-icons-pfp'
-                          id={`icons-pfp-${index}`}
-                        />
-                        <div className='name-container'>
-                          <h3>{interview.name}</h3>
-                          <p>{interview.job}</p>
+          {
+            chunked.map((chunk: any, index: number) => {
+              return (
+                <div className='beauty-icons-section' id={`section-${index}`} key={index}>
+                  {
+                    chunk.map((interview: any, i: number) => {
+                      return (
+                        <div className='beauty-icons-item' key={interview.name}>
+                          <Image
+                            src={interview.pfp}
+                            alt={`icon-${index}`}
+                            className='beauty-icons-pfp'
+                            id={`icons-pfp-${index}`}
+                          />
+                          <div className='name-container'>
+                            <h3>{interview.name}</h3>
+                            <p>{interview.job}</p>
+                          </div>
                         </div>
-                      </div>
-                    )
-                  })
-                }
-              </div>
-            )
-          })
-        }
+                      )
+                    })
+                  }
+                </div>
+              )
+            })
+          }
+        </div>
       </div>
     </div>
   )

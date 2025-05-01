@@ -17,7 +17,19 @@ const Featured = () => {
   const mobile = useMediaQuery('(max-width: 800px)');
 
   useEffect(() => {
+    const scrollPosition = localStorage.getItem('featured-page-scroll');
+
+    if (scrollPosition) {
+      document.body.scrollTop = parseInt(scrollPosition);
+    }
+
     gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to('.chevron-container', {
+      opacity: 1,
+      duration: 0.5,
+      delay: 1.25,
+    })
 
     gsap.to('.initial-image', {
       scale: 2,
@@ -59,6 +71,17 @@ const Featured = () => {
         trigger: ".scroll-container",
         start: 'center 110%',
         end: 'center top',
+        scrub: true
+      }
+    })
+
+    gsap.to('.chevron-container', {
+      y: 50,
+      ease: "none",
+      scrollTrigger: {
+        trigger: '.scroll-container',
+        start: 'top top',
+        end: 'center center',
         scrub: true
       }
     })
@@ -106,9 +129,17 @@ const Featured = () => {
     })
   }, [])
 
-  const handleObjectClick = () => {
-    router.push('/featured/interviews');
-  }
+  useEffect(() => {
+    const handleScroll = () => {
+      localStorage.setItem('featured-page-scroll', document.body.scrollTop.toString());
+    }
+
+    document.body.addEventListener('scroll', handleScroll);
+
+    return () => {
+      document.body.removeEventListener('scroll', handleScroll);
+    }
+  }, [])
 
   return (
     <>
@@ -133,7 +164,7 @@ const Featured = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 1.5, duration: 1 }}
             >
-              Scroll to continue...
+              learn from icons
             </motion.p>
           </div>
           <picture>
@@ -141,6 +172,22 @@ const Featured = () => {
             <source media="(min-width: 640px)" srcSet={WideImageMobile.src} />
             <Image priority src={WideImageMobile} className='initial-image' alt='initial-image-featured' />
           </picture>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="40"
+            height="40"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1"
+            className='chevron-container'
+            strokeLinecap='round'
+            strokeLinejoin="round"
+          >
+            <polyline points="6 5 12 11 18 5" stroke="#fff"/>
+            <polyline points="6 11 12 17 18 11" stroke="#fff"/>
+            <polyline points="6 17 12 23 18 17" stroke="#fff"/>
+          </svg>
         </div>
         <div className='svg-overlay-container' id='mobile-overlay'>
           <svg version="1.1" viewBox="0 0 1182 2560" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">

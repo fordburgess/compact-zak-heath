@@ -124,6 +124,12 @@ const Home = () => {
   }
 
   useEffect(() => {
+    const scrollPosition = localStorage.getItem('cover-page-scroll');
+
+    if (scrollPosition) {
+      document.body.scrollTop = parseInt(scrollPosition);
+    }
+
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.to('.chevron-container', {
@@ -219,6 +225,18 @@ const Home = () => {
     })
   }, [])
 
+  useEffect(() => {
+    const handleScroll = () => {
+      localStorage.setItem('cover-page-scroll', document.body.scrollTop.toString());
+    }
+
+    document.body.addEventListener('scroll', handleScroll);
+
+    return () => {
+      document.body.removeEventListener('scroll', handleScroll);
+    }
+  }, [])
+
   return (
     <div className='scroll-container'>
       <div className='initial-image-container' onClick={() => console.log('hello world')}>
@@ -241,7 +259,7 @@ const Home = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 1, duration: 1 }}
           >
-            Learn from icons
+            learn from icons
           </motion.p>
         </div>
         <picture>
