@@ -17,6 +17,12 @@ const Audio = () => {
   const mobile = useMediaQuery('(max-width: 800px)');
 
   useEffect(() => {
+    const scrollPosition = localStorage.getItem('audio-page-scroll');
+
+    if (scrollPosition) {
+      document.body.scrollTop = parseInt(scrollPosition);
+    }
+
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.to('.chevron-container', {
@@ -121,6 +127,18 @@ const Audio = () => {
         }
       }
     })
+  }, [])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      localStorage.setItem('audio-page-scroll', document.body.scrollTop.toString());
+    }
+
+    document.body.addEventListener('scroll', handleScroll);
+
+    return () => {
+      document.body.removeEventListener('scroll', handleScroll);
+    }
   }, [])
 
   return (
