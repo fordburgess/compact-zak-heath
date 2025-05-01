@@ -204,158 +204,160 @@ const AudioEpisode = () => {
   }
 
   return (
-    <div className='episode-container' onClick={() => handleDrawers('container')}>
-      <Image priority src={ExpandedImage} className='episode-bg' alt='background'/>
-      {
-        episode && episode.index > 0 && (
-          <Link href={`/audio/${episodes[episode.index - 1].id}`}>
-            <div className='prev-episode'>
-              <Image className='nav-image' src={episodes[episode.index - 1].profileImage || Placeholder} alt='prev-episode'/>
-              <p>Prev</p>
+    <div className='body-replacement'>
+      <div className='episode-container' onClick={() => handleDrawers('container')}>
+        <Image priority src={ExpandedImage} className='episode-bg' alt='background'/>
+        {
+          episode && episode.index > 0 && (
+            <Link href={`/audio/${episodes[episode.index - 1].id}`}>
+              <div className='prev-episode'>
+                <Image className='nav-image' src={episodes[episode.index - 1].profileImage || Placeholder} alt='prev-episode'/>
+                <p>Prev</p>
+              </div>
+            </Link>
+          )
+        }
+        <div className='episode-layout-container'>
+          <div className='episode-title-and-photo-desktop'>
+            {
+              episode && (
+                <Image src={episode.profileImage ? episode.profileImage : Placeholder} className='episode-pfp-desktop' alt='pfp'/>
+              )
+            }
+            <div className='info-container-desktop'>
+              <h1>{episode ? episode.title.split(':')[1] : 'Title Not Found'}</h1>
+              <h3>{episode ? episode.title.split(':')[0] : 'Person Not Found'}</h3>
+              <p>{episode ? episode.description : 'Description Not Found'}</p>
             </div>
-          </Link>
-        )
-      }
-      <div className='episode-layout-container'>
-        <div className='episode-title-and-photo-desktop'>
-          {
-            episode && (
-              <Image src={episode.profileImage ? episode.profileImage : Placeholder} className='episode-pfp-desktop' alt='pfp'/>
-            )
-          }
-          <div className='info-container-desktop'>
-            <h1>{episode ? episode.title.split(':')[1] : 'Title Not Found'}</h1>
-            <h3>{episode ? episode.title.split(':')[0] : 'Person Not Found'}</h3>
-            <p>{episode ? episode.description : 'Description Not Found'}</p>
+          </div>
+          <div className='episode-title-and-photo-mobile'>
+            {
+              episode && (
+                <Image src={episode.profileImage ? episode.profileImage : Placeholder} alt='pfp' className='episode-profile-image' />
+              )
+            }
+            <div ref={titleContainerRef} className='episode-title-container'>
+              <div className='inner-title-container' ref={titleRef}>
+                <h1 className='episode-title'>{episode ? episode.title.split(':')[1] : 'Title Not Found'}</h1>
+              </div>
+              <p className='episode-subtitle'>{episode ? episode.title.split(':')[0] : 'Person Not Found'}</p>
+            </div>
+          </div>
+          <WavesurferPlayer
+            height={mobile ? 125 : 150}
+            waveColor="rgba(255, 255, 255, 0.85)"
+            mediaControls={false}
+            progressColor="#c2d6ff"
+            cursorColor='transparent'
+            url="/audio/example-audio.mp3"
+            onReady={onReady}
+            onPlay={() => setIsPlaying(true)}
+            onPause={() => setIsPlaying(false)}
+          />
+          <div className='control-panel'>
+            <div className='control-buttons'>
+              {
+                wavesurfer && (
+                  <Image
+                    src={SkipButton}
+                    id="skip-back"
+                    alt="rewind"
+                    onClick={() => wavesurfer.skip(-5)}
+                  />
+                )
+              }
+              <Image
+                src={isPlaying ? PauseButton : PlayButton}
+                id="play-pause"
+                alt="play-pause"
+                onClick={() => onPlayPause()}
+              />
+              {
+                wavesurfer && (
+                  <Image
+                    src={SkipButton}
+                    id="skip-forward"
+                    alt="forward"
+                    onClick={() => wavesurfer.skip(5)}
+                  />
+                )
+              }
+            </div>
+          </div>
+          <div className='bottom-controls'>
+            {/* {
+              episode && episode.index > 0 && (
+                <Link href={`/audio/${episodes[episode.index - 1].id}`}>
+                  <div className=''>
+                    <Image className='nav-image' src={episodes[episode.index - 1].profileImage || Placeholder} alt='prev-episode'/>
+                    <p>Prev</p>
+                  </div>
+                </Link>
+              )
+            }
+            {
+              episode && episode.index < episodes.length - 1 && (
+                <Link href={`/audio/${episodes[episode.index + 1].id}`}>
+                  <div className=''>
+                    <Image className='nav-image' src={episodes[episode.index + 1].profileImage || Placeholder} alt='next-episode'/>
+                    <p>Next</p>
+                  </div>
+                </Link>
+              )
+            } */}
           </div>
         </div>
-        <div className='episode-title-and-photo-mobile'>
-          {
-            episode && (
-              <Image src={episode.profileImage ? episode.profileImage : Placeholder} alt='pfp' className='episode-profile-image' />
-            )
-          }
-          <div ref={titleContainerRef} className='episode-title-container'>
-            <div className='inner-title-container' ref={titleRef}>
-              <h1 className='episode-title'>{episode ? episode.title.split(':')[1] : 'Title Not Found'}</h1>
+        {
+          episode && episode.index < episodes.length - 1 && (
+            <Link href={`/audio/${episodes[episode.index + 1].id}`}>
+              <div className='next-episode'>
+                <Image className='nav-image' src={episodes[episode.index + 1].profileImage || Placeholder} alt='next-episode'/>
+                <p>Next</p>
+              </div>
+            </Link>
+          )
+        }
+        {/* <div className='more-episodes-drawer'>
+          <div className='episode-drawer-content'>
+            <div style={{ padding: '20px' }}>
+              <h1>More Episodes</h1>
             </div>
+            <div className='more-episodes-column'>
+              {
+                episodes && episode && episodes.map((item: Episode) => {
+                  if (item.id !== episode.id) {
+                    return (
+                      <Link href={`/audio/${item.id}`} key={item.id}>
+                        <div className='more-episodes-item'>
+                          <Image src={item.profileImage ? item.profileImage : Placeholder} alt='pfp'/>
+                          <h3>{item.title.split(':')[1]}</h3>
+                          <p>{item.title.split(':')[0]}</p>
+                        </div>
+                      </Link>
+                    )
+                  }
+                })
+              }
+            </div>
+          </div>
+          <div className='clickable-tab' onClick={() => handleDrawers('clickable-tab')}>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div> */}
+        <div className='info-drawer'>
+          <div className='drawer-title-section'>
+            <h1 className='episode-title'>{episode ? episode.title.split(':')[1] : 'Title Not Found'}</h1>
             <p className='episode-subtitle'>{episode ? episode.title.split(':')[0] : 'Person Not Found'}</p>
           </div>
+          <p className='drawer-description'>{episode ? episode.description : 'Description Not Found'}</p>
+          <p className='drawer-sub-info'><strong style={{ marginRight: '10px' }}>Date:</strong> Jan 2025</p>
+          <p className='drawer-sub-info'>
+            <strong style={{ marginRight: '10px' }}>Duration:</strong>
+            {audioRef.current ? `${Math.round(audioRef.current.duration / 60)} minutes` : 'N/A'}
+          </p>
         </div>
-        <WavesurferPlayer
-          height={mobile ? 125 : 150}
-          waveColor="rgba(255, 255, 255, 0.85)"
-          mediaControls={false}
-          progressColor="#c2d6ff"
-          cursorColor='transparent'
-          url="/audio/example-audio.mp3"
-          onReady={onReady}
-          onPlay={() => setIsPlaying(true)}
-          onPause={() => setIsPlaying(false)}
-        />
-        <div className='control-panel'>
-          <div className='control-buttons'>
-            {
-              wavesurfer && (
-                <Image
-                  src={SkipButton}
-                  id="skip-back"
-                  alt="rewind"
-                  onClick={() => wavesurfer.skip(-5)}
-                />
-              )
-            }
-            <Image
-              src={isPlaying ? PauseButton : PlayButton}
-              id="play-pause"
-              alt="play-pause"
-              onClick={() => onPlayPause()}
-            />
-            {
-              wavesurfer && (
-                <Image
-                  src={SkipButton}
-                  id="skip-forward"
-                  alt="forward"
-                  onClick={() => wavesurfer.skip(5)}
-                />
-              )
-            }
-          </div>
-        </div>
-        <div className='bottom-controls'>
-          {/* {
-            episode && episode.index > 0 && (
-              <Link href={`/audio/${episodes[episode.index - 1].id}`}>
-                <div className=''>
-                  <Image className='nav-image' src={episodes[episode.index - 1].profileImage || Placeholder} alt='prev-episode'/>
-                  <p>Prev</p>
-                </div>
-              </Link>
-            )
-          }
-          {
-            episode && episode.index < episodes.length - 1 && (
-              <Link href={`/audio/${episodes[episode.index + 1].id}`}>
-                <div className=''>
-                  <Image className='nav-image' src={episodes[episode.index + 1].profileImage || Placeholder} alt='next-episode'/>
-                  <p>Next</p>
-                </div>
-              </Link>
-            )
-          } */}
-        </div>
-      </div>
-      {
-        episode && episode.index < episodes.length - 1 && (
-          <Link href={`/audio/${episodes[episode.index + 1].id}`}>
-            <div className='next-episode'>
-              <Image className='nav-image' src={episodes[episode.index + 1].profileImage || Placeholder} alt='next-episode'/>
-              <p>Next</p>
-            </div>
-          </Link>
-        )
-      }
-      {/* <div className='more-episodes-drawer'>
-        <div className='episode-drawer-content'>
-          <div style={{ padding: '20px' }}>
-            <h1>More Episodes</h1>
-          </div>
-          <div className='more-episodes-column'>
-            {
-              episodes && episode && episodes.map((item: Episode) => {
-                if (item.id !== episode.id) {
-                  return (
-                    <Link href={`/audio/${item.id}`} key={item.id}>
-                      <div className='more-episodes-item'>
-                        <Image src={item.profileImage ? item.profileImage : Placeholder} alt='pfp'/>
-                        <h3>{item.title.split(':')[1]}</h3>
-                        <p>{item.title.split(':')[0]}</p>
-                      </div>
-                    </Link>
-                  )
-                }
-              })
-            }
-          </div>
-        </div>
-        <div className='clickable-tab' onClick={() => handleDrawers('clickable-tab')}>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div> */}
-      <div className='info-drawer'>
-        <div className='drawer-title-section'>
-          <h1 className='episode-title'>{episode ? episode.title.split(':')[1] : 'Title Not Found'}</h1>
-          <p className='episode-subtitle'>{episode ? episode.title.split(':')[0] : 'Person Not Found'}</p>
-        </div>
-        <p className='drawer-description'>{episode ? episode.description : 'Description Not Found'}</p>
-        <p className='drawer-sub-info'><strong style={{ marginRight: '10px' }}>Date:</strong> Jan 2025</p>
-        <p className='drawer-sub-info'>
-          <strong style={{ marginRight: '10px' }}>Duration:</strong>
-          {audioRef.current ? `${Math.round(audioRef.current.duration / 60)} minutes` : 'N/A'}
-        </p>
       </div>
     </div>
   )

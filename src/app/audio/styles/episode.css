@@ -10,7 +10,7 @@
   }
 }
 
-html, body {
+.body-replacement {
   height: 100%;
   overflow: hidden;
 }
