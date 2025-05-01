@@ -50,21 +50,21 @@ const LisaEldridge = () => {
       s: 1,
       size: '320px'
     },
-    {
-      id: 7,
-      questionId: 1,
-      src: Image2,
-      x: 600,
-      y: 400,
-      s: 1.1
-    },
-    {
-      id: 8,
-      questionId: 4,
-      src: Image4,
-      x: 300,
-      y: 200,
-    },
+    // {
+    //   id: 7,
+    //   questionId: 1,
+    //   src: Image2,
+    //   x: 600,
+    //   y: 400,
+    //   s: 1.1
+    // },
+    // {
+    //   id: 8,
+    //   questionId: 4,
+    //   src: Image4,
+    //   x: 300,
+    //   y: 200,
+    // },
     {
       id: 3,
       question: 'Did you face any setbacks when you entered the industry?',
@@ -308,12 +308,11 @@ const LisaEldridge = () => {
             gsap.to(`#${bubble.id}`, {
               top: '0%',
               left: '10%',
-              // transform: 'translate(-10%, -50%)',
               padding: '0 100px',
               textAlign: 'left',
               ease: 'power1.inOut',
               duration: 0.2,
-              delay: 0.3,
+              delay: 0.5,
             })
 
             gsap.to(`#item-title-${bubble.id.split('-')[1]}`, {
@@ -455,6 +454,8 @@ const LisaEldridge = () => {
             })
           }
         }
+
+        console.log(bubble);
 
         bubble.style.transition = `
           height 1s,
