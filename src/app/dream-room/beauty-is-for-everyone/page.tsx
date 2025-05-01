@@ -29,7 +29,7 @@ const FromConcealerToConfidence = () => {
     })
 
     gsap.to('.article-intro-image', {
-      // y: '-10%',
+      y: '-10%',
       opacity: 1,
       delay: 1,
       duration: 1,
@@ -175,7 +175,7 @@ const FromConcealerToConfidence = () => {
     })
 
     gsap.to('.fctc-line-3', {
-      scaleX: '35',
+      scaleX: mobile ? '35' : '85',
       ease: 'power1.inOut',
       scrollTrigger: {
         trigger: '#fctc-trans-3',

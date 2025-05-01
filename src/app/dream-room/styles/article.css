@@ -513,7 +513,7 @@ html, body {
   }
 }
 
-@media (min-width: 1201px) {
+@media (min-width: 1101px) {
   .dream-room-article-content {
     /* padding: 100px 0; */
   }
@@ -673,5 +673,34 @@ html, body {
   .fctc-circle-2, .fctc-circle-3 {
     height: 400px;
     width: 400px;
+  }
+
+  .fctc-line-3 {
+    top: 70%;
+    right: -5%;
+    min-height: 1px;
+    width: 10px;
+    background-color: #fff;
+    transform: translate(5%, -70%);
+    transform-origin: right;
+  }
+
+  .fctc-rectangle-1 {
+    height: 300px;
+    width: 250px;
+    top: 20%;
+    right: 10%;
+    transform: translate(10%, -20%);
+  }
+
+  #fctc-quote-2 {
+    width: 400px;
+    top: 22%;
+    left: 10%;
+    transform: translate(-10%, -22%);
+  }
+
+  #fctc-quote-text-2 {
+    font-size: 2rem;
   }
 }
