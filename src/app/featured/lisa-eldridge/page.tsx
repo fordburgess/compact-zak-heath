@@ -1,12 +1,12 @@
 "use client"
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-// import { Noise } from 'noisejs';
+import { Noise } from 'noisejs';
 import '../styles/interview.css'
 import Image1 from '../../../assets/images/lisa-eldridge-1.webp';
 import Image2 from '../../../assets/images/lisa-eldridge-2.webp';
 import Image4 from '../../../assets/images/lisa-eldridge-4.webp';
-import SpringExpanded from '../../../assets/images/spring-expanded.jpg';
+import SpringExpanded from '../../../assets/images/spring-expanded.webp';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { useMediaQuery } from 'usehooks-ts';
@@ -17,8 +17,8 @@ const LisaEldridge = () => {
   const CANVAS_WIDTH = 2000;
   const NOISE_AMOUNT = 4;
   const NOISE_SPEED = 0.006;
-  const SCROLL_SPEED = 0.75;
-  // const noise = new Noise();
+  const SCROLL_SPEED = 0.45;
+  const noise = new Noise();
 
   const article = [
     {
@@ -104,421 +104,421 @@ const LisaEldridge = () => {
     // associated images beyond this point
   ]
 
-//   const interval = CANVAS_WIDTH / article.length + 100;
-//   const articleRef = useRef(
-//     article.map((question, i) => {
-//
-//       const extraBuffer = i >= 13 ? 100 : 0;
-//
-//       return {
-//         ...question,
-//         x: i * interval + extraBuffer,
-//         noiseSeedX: Math.floor(Math.random() * 64000),
-//         noiseSeedY: Math.floor(Math.random() * 64000),
-//         xWithNoise: question.x,
-//       }
-//     })
-//   )
-//
-//   const [newArticle, setNewArticle] = useState([])
-//
-//   useEffect(() => {
-//     if (windowWidth) {
-//       const interval = windowWidth / article.length + 50
-//
-//       const testArticle = article.map((image, i) => {
-//         const extraBuffer = i >= 13 ? 100 : 0
-//
-//         return { ...image, x: i * interval + extraBuffer }
-//       })
-//
-//       setNewArticle(testArticle)
-//     }
-//   }, [windowWidth])
-//
-//   const animationRef = useRef<number>();
-//
-//   useEffect(() => {
-//     // setTimeout(() => {
-//     //   setReady(true)
-//     // }, 400)
-//
-//     animationRef.current = requestAnimationFrame(animate);
-//     return () => {
-//       if (animationRef.current) {
-//         cancelAnimationFrame(animationRef.current);
-//       }
-//     }
-//   }, [])
-//
-//   const positionsRef = useRef<{ left: number; top: number }[]>([]);
-//   function animate() {
-//     articleRef.current = articleRef.current.map((item, index)=> {
-//       const newNoiseSeedX = item.noiseSeedX + NOISE_SPEED;
-//       const newNoiseSeedY = item.noiseSeedY + NOISE_SPEED;
-//
-//       const randomX = noise.simplex2(newNoiseSeedX, 0);
-//       const randomY = noise.simplex2(newNoiseSeedY, 0);
-//
-//       const newX = item.x - SCROLL_SPEED + 0.05;
-//       const newY = item.y - SCROLL_SPEED + 0.05;
-//
-//       const newXWithNoise = newX + randomX * NOISE_AMOUNT;
-//       const newYWithNoise = newY + randomY * NOISE_AMOUNT;
-//
-//       const idString = item.question ? `item-${item.id}` : `associated-image ${item.questionId}`
-//       const element = document.getElementById(idString);
-//
-//       if (element) {
-//         if (!positionsRef.current[index]) {
-//           positionsRef.current[index] = { newXWithNoise, newYWithNoise };
-//         }
-//
-//         if (newXWithNoise < -450) {
-//           element.style.opacity = '0';
-//         }
-//
-//         if (newXWithNoise < 2500 && newXWithNoise > 2000) {
-//           element.style.opacity = '1';
-//         }
-//
-//         element.style.left = `${newXWithNoise}px`;
-//         element.style.top = `${newYWithNoise}px`;
-//         element.style.transform = `scale(${item.s})`;
-//       }
-//
-//       return {
-//         ...item,
-//         noiseSeedX: newNoiseSeedX,
-//         noiseSeedY: newNoiseSeedY,
-//         x: newX < -500 ? CANVAS_WIDTH + 600: newX,
-//         xWithNoise: newXWithNoise,
-//         yWithNoise: newYWithNoise,
-//       }
-//     });
-//
-//     animationRef.current = requestAnimationFrame(animate);
-//   }
-//
-//   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-//   const [bubblePositions, setBubblePositions] = useState([]);
-//
-//   const handleClick = (id: number) => {
-//     if (activeIndex == null) {
-//       setActiveIndex(id);
-//
-//       if (animationRef.current) {
-//         cancelAnimationFrame(animationRef.current);
-//       }
-//
-//       // let contentOverlay = document.querySelector('.content-overlay');
-//
-//       // if (contentOverlay) {
-//       //   contentOverlay.style.visibility = 'visible';
-//       //   contentOverlay.style.opacity = 1;
-//       // }
-//
-//       const bubbles = document.querySelectorAll('.bubble');
-//       const images = document.querySelectorAll('.image-bubble');
-//
-//       images.forEach((image) => {
-//         if (image.id.split(" ")[1] == id) {
-//           gsap.to(image, {
-//             top: '10%',
-//             left: '80%',
-//             transform: 'translate(-80%, -10%)',
-//             duration: 0.75,
-//             ease: "power1.inOut"
-//           })
-//         }
-//         else {
-//           const randomX = Math.random() < 0.5 ? -Math.abs(Math.random() * (2000 - 1000) + 1000) : Math.abs(Math.random() * (2000 - 1000) + 1000);
-//           const randomY = Math.random() < 0.5 ? -Math.abs(Math.random() * (2000 - 1000) + 1000) : Math.abs(Math.random() * (2000 - 1000) + 1000);
-//
-//           gsap.to(image, {
-//             left: `${randomX}px`,
-//             top: `${randomY}px`,
-//             ease: "power1.inOut",
-//             duration: 1
-//           })
-//         }
-//       })
-//
-//       bubbles.forEach((bubble: HTMLDivElement, i: number) => {
-//         if (bubble.dataset.id == id) {
-//           const textContainer = document.getElementById(`text-container-${id}`);
-//           const itemTitle = document.getElementById(`item-title-${id}`);
-//           const itemText = document.getElementById(`item-text-${id}`);
-//           const associatedImage = document.getElementById(`associated-image ${id}`);
-//
-//           // textContainer.style.opacity = 0;
-//           // textContainer.style.height = '80%';
-//           // textContainer.style.width = '80%';
-//
-//           if (mobile) {
-//             gsap.to(itemTitle, {
-//               opacity: 0,
-//               duration: 0.1,
-//             })
-//
-//             gsap.to(bubble, {
-//               borderRadius: '20px',
-//               top: '50%',
-//               left: '50%',
-//               transform: 'translate(-50%, -50%)',
-//               height: '100dvh',
-//               width: '100dvw',
-//               padding: '20px',
-//               textAlign: 'left',
-//               ease: 'power1.inOut',
-//               duration: 0.2,
-//               delay: 0.1,
-//             })
-//
-//             gsap.to(`#item-title-${bubble.id.split('-')[1]}`, {
-//               fontSize: '1.8rem',
-//               marginBottom: '10px',
-//               opacity: 1,
-//               delay: 0.3,
-//             })
-//
-//             gsap.to(`#item-text-${bubble.id.split('-')[1]}`, {
-//               display: 'block',
-//               delay: 0.35,
-//             })
-//
-//             gsap.to(`#item-text-${bubble.id.split('-')[1]}`, {
-//               opacity: 1,
-//               delay: 0.3,
-//             })
-//           }
-//           else {
-//             gsap.to(`#item-title-${bubble.id.split('-')[1]}`, {
-//               opacity: 0,
-//               duration: 0.1,
-//             })
-//
-//             gsap.to(`#${bubble.id}`, {
-//               height: '110dvh',
-//               width: '110dvh',
-//               duration: 0.2,
-//               delay: 0.1,
-//             })
-//
-//             gsap.to(`#${bubble.id}`, {
-//               top: '0%',
-//               left: '10%',
-//               // transform: 'translate(-10%, -50%)',
-//               padding: '0 100px',
-//               textAlign: 'left',
-//               ease: 'power1.inOut',
-//               duration: 0.2,
-//               delay: 0.3,
-//             })
-//
-//             gsap.to(`#item-title-${bubble.id.split('-')[1]}`, {
-//               fontSize: '1.8rem',
-//               marginBottom: '10px',
-//               opacity: 1,
-//               delay: 1,
-//             })
-//
-//             gsap.to(`#item-text-${bubble.id.split('-')[1]}`, {
-//               display: 'block',
-//               delay: 0.4,
-//             })
-//
-//             gsap.to(`#item-text-${bubble.id.split('-')[1]}`, {
-//               opacity: 1,
-//               duration: 0.3,
-//               delay: 1,
-//             })
-//           }
-//           setTimeout(() => {
-//             // textContainer.style.opacity = 1;
-//             // textContainer.style.textAlign = 'right';
-//             // textContainer.style.padding = '20px';
-//             // itemTitle.style.marginBottom = '10px';
-//             // itemTitle.style.fontSize = '1.8rem';
-//             // itemText.style.display = 'block'
-//             // itemText.style.opacity = '1';
-//             // itemText.style.fontSize = '1.25rem';
-//           }, 1500);
-//         }
-//         else {
-//           const randomX = Math.random() < 0.5 ? -Math.abs(Math.random() * (2000 - 1000) + 1000) : Math.abs(Math.random() * (2000 - 1000) + 1000);
-//           const randomY = Math.random() < 0.5 ? -Math.abs(Math.random() * (2000 - 1000) + 1000) : Math.abs(Math.random() * (2000 - 1000) + 1000);
-//
-//           gsap.to(bubble, {
-//             left: `${randomX}px`,
-//             top: `${randomY}px`,
-//             ease: "power1.inOut",
-//             duration: 1
-//           })
-//         }
-//       })
-//     }
-//   }
-//
-//   const handleContainerClick = () => {
-//     if (activeIndex !== null) {
-//       let currentIndex = activeIndex;
-//       console.log(currentIndex);
-//       setActiveIndex(null);
-//
-//       const bubbles = document.querySelectorAll('.bubble');
-//       const contentOverlay = document.querySelector('.content-overlay');
-//
-//       bubbles.forEach((bubble: HTMLDivElement, i: number) => {
-//         const pos = positionsRef.current[i];
-//         if (!pos) return;
-//
-//         if (bubble.id.includes(currentIndex.toString())) {
-//
-//           if (mobile) {
-//             gsap.to(`#item-text-${currentIndex}`, {
-//               opacity: 0,
-//               duration: 0.1
-//             })
-//
-//             gsap.to(`#item-text-${currentIndex}`, {
-//               display: 'none',
-//               duration: 0.2
-//             })
-//
-//             gsap.to(`#item-title-${currentIndex}`, {
-//               opacity: 0,
-//               fontSize: '1.25rem',
-//               duration: 0.1,
-//             })
-//
-//             gsap.to(`#${bubble.id}`, {
-//               borderRadius: '50%',
-//               top: `${pos.top}px`,
-//               left: `${pos.left}px`,
-//               transform: 'translate(-50%, -50%)',
-//               height: '250px',
-//               width: '250px',
-//               padding: '10px',
-//               textAlign: 'center',
-//               ease: 'power1.inOut',
-//               duration: 0.2,
-//               delay: 0.1,
-//             })
-//
-//             gsap.to(`#item-title-${currentIndex}`, {
-//               opacity: 1,
-//               duration: 0.1,
-//               delay: 0.5
-//             })
-//           }
-//           else {
-//             gsap.to(`#item-title-${currentIndex}`, {
-//               opacity: 0,
-//               duration: 0.1
-//             })
-//
-//             gsap.to(`#item-text-${currentIndex}`, {
-//               opacity: 0,
-//               duration: 0.1
-//             })
-//
-//             gsap.to(`#item-text-${currentIndex}`, {
-//               display: 'none',
-//               duration: 0.2
-//             })
-//
-//             gsap.to(`#item-title-${currentIndex}`, {
-//               opacity: 0,
-//               fontSize: '1.25rem',
-//               duration: 0.1,
-//             })
-//
-//             gsap.to(`#${bubble.id}`, {
-//               borderRadius: '50%',
-//               top: `${pos.top}px`,
-//               left: `${pos.left}px`,
-//               transform: `translate(-${pos.left}px, -${pos.top}px)`,
-//               height: '250px',
-//               width: '250px',
-//               padding: '10px',
-//               textAlign: 'center',
-//               ease: 'power1.inOut',
-//               duration: 0.2,
-//               delay: 0.1,
-//             })
-//
-//             gsap.to(`#item-title-${currentIndex}`, {
-//               opacity: 1,
-//               duration: 0.1,
-//               delay: 0.65
-//             })
-//           }
-//         }
-//
-//         bubble.style.transition = `
-//           height 1s,
-//           width 1s,
-//           top 2s cubic-bezier(0.25, 0.8, 0.25, 1),
-//           left 2s cubic-bezier(0.25, 0.8, 0.25, 1),
-//           transform 0.5s ease
-//         `
-//         bubble.style.left = `${pos.left}px`;
-//         bubble.style.top = `${pos.top}px`;
-//         bubble.style.height = '250px';
-//         bubble.style.width = '250px';
-//         bubble.classList.remove('active');
-//
-//         // setTimeout(() => {
-//         //   bubble.style.transition = '';
-//         // }, 4000);
-//       });
-//
-//       animationRef.current = requestAnimationFrame(animate); // Resume animation if needed
-//       return;
-//     }
-//   }
+  const interval = CANVAS_WIDTH / article.length + 100;
+  const articleRef = useRef(
+    article.map((question, i) => {
+
+      const extraBuffer = i >= 13 ? 100 : 0;
+
+      return {
+        ...question,
+        x: i * interval + extraBuffer,
+        noiseSeedX: Math.floor(Math.random() * 64000),
+        noiseSeedY: Math.floor(Math.random() * 64000),
+        xWithNoise: question.x,
+      }
+    })
+  )
+
+  const [newArticle, setNewArticle] = useState([])
+
+  useEffect(() => {
+    if (windowWidth) {
+      const interval = windowWidth / article.length + 50
+
+      const testArticle = article.map((image, i) => {
+        const extraBuffer = i >= 13 ? 100 : 0
+
+        return { ...image, x: i * interval + extraBuffer }
+      })
+
+      setNewArticle(testArticle)
+    }
+  }, [windowWidth])
+
+  const animationRef = useRef<number>();
+
+  useEffect(() => {
+    // setTimeout(() => {
+    //   setReady(true)
+    // }, 400)
+
+    animationRef.current = requestAnimationFrame(animate);
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    }
+  }, [])
+
+  const positionsRef = useRef<{ left: number; top: number }[]>([]);
+  function animate() {
+    articleRef.current = articleRef.current.map((item, index)=> {
+      const newNoiseSeedX = item.noiseSeedX + NOISE_SPEED;
+      const newNoiseSeedY = item.noiseSeedY + NOISE_SPEED;
+
+      const randomX = noise.simplex2(newNoiseSeedX, 0);
+      const randomY = noise.simplex2(newNoiseSeedY, 0);
+
+      const newX = item.x - SCROLL_SPEED + 0.05;
+      const newY = item.y - SCROLL_SPEED + 0.05;
+
+      const newXWithNoise = newX + randomX * NOISE_AMOUNT;
+      const newYWithNoise = newY + randomY * NOISE_AMOUNT;
+
+      const idString = item.question ? `item-${item.id}` : `associated-image ${item.questionId}`
+      const element = document.getElementById(idString);
+
+      if (element) {
+        if (!positionsRef.current[index]) {
+          positionsRef.current[index] = { newXWithNoise, newYWithNoise };
+        }
+
+        if (newXWithNoise < -450) {
+          element.style.opacity = '0';
+        }
+
+        if (newXWithNoise < 2500 && newXWithNoise > 2000) {
+          element.style.opacity = '1';
+        }
+
+        element.style.left = `${newXWithNoise}px`;
+        element.style.top = `${newYWithNoise}px`;
+        element.style.transform = `scale(${item.s})`;
+      }
+
+      return {
+        ...item,
+        noiseSeedX: newNoiseSeedX,
+        noiseSeedY: newNoiseSeedY,
+        x: newX < -500 ? CANVAS_WIDTH + 600: newX,
+        xWithNoise: newXWithNoise,
+        yWithNoise: newYWithNoise,
+      }
+    });
+
+    animationRef.current = requestAnimationFrame(animate);
+  }
+
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [bubblePositions, setBubblePositions] = useState([]);
+
+  const handleClick = (id: number) => {
+    if (activeIndex == null) {
+      setActiveIndex(id);
+
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+
+      // let contentOverlay = document.querySelector('.content-overlay');
+
+      // if (contentOverlay) {
+      //   contentOverlay.style.visibility = 'visible';
+      //   contentOverlay.style.opacity = 1;
+      // }
+
+      const bubbles = document.querySelectorAll('.bubble');
+      const images = document.querySelectorAll('.image-bubble');
+
+      images.forEach((image) => {
+        if (image.id.split(" ")[1] == id) {
+          gsap.to(image, {
+            top: '10%',
+            left: '80%',
+            transform: 'translate(-80%, -10%)',
+            duration: 0.75,
+            ease: "power1.inOut"
+          })
+        }
+        else {
+          const randomX = Math.random() < 0.5 ? -Math.abs(Math.random() * (2000 - 1000) + 1000) : Math.abs(Math.random() * (2000 - 1000) + 1000);
+          const randomY = Math.random() < 0.5 ? -Math.abs(Math.random() * (2000 - 1000) + 1000) : Math.abs(Math.random() * (2000 - 1000) + 1000);
+
+          gsap.to(image, {
+            left: `${randomX}px`,
+            top: `${randomY}px`,
+            ease: "power1.inOut",
+            duration: 1
+          })
+        }
+      })
+
+      bubbles.forEach((bubble: HTMLDivElement, i: number) => {
+        if (bubble.dataset.id == id) {
+          const textContainer = document.getElementById(`text-container-${id}`);
+          const itemTitle = document.getElementById(`item-title-${id}`);
+          const itemText = document.getElementById(`item-text-${id}`);
+          const associatedImage = document.getElementById(`associated-image ${id}`);
+
+          // textContainer.style.opacity = 0;
+          // textContainer.style.height = '80%';
+          // textContainer.style.width = '80%';
+
+          if (mobile) {
+            gsap.to(itemTitle, {
+              opacity: 0,
+              duration: 0.1,
+            })
+
+            gsap.to(bubble, {
+              borderRadius: '20px',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              height: '100dvh',
+              width: '100dvw',
+              padding: '20px',
+              textAlign: 'left',
+              ease: 'power1.inOut',
+              duration: 0.2,
+              delay: 0.1,
+            })
+
+            gsap.to(`#item-title-${bubble.id.split('-')[1]}`, {
+              fontSize: '1.8rem',
+              marginBottom: '10px',
+              opacity: 1,
+              delay: 0.3,
+            })
+
+            gsap.to(`#item-text-${bubble.id.split('-')[1]}`, {
+              display: 'block',
+              delay: 0.35,
+            })
+
+            gsap.to(`#item-text-${bubble.id.split('-')[1]}`, {
+              opacity: 1,
+              delay: 0.3,
+            })
+          }
+          else {
+            gsap.to(`#item-title-${bubble.id.split('-')[1]}`, {
+              opacity: 0,
+              duration: 0.1,
+            })
+
+            gsap.to(`#${bubble.id}`, {
+              height: '110dvh',
+              width: '110dvh',
+              duration: 0.2,
+              delay: 0.1,
+            })
+
+            gsap.to(`#${bubble.id}`, {
+              top: '0%',
+              left: '10%',
+              // transform: 'translate(-10%, -50%)',
+              padding: '0 100px',
+              textAlign: 'left',
+              ease: 'power1.inOut',
+              duration: 0.2,
+              delay: 0.3,
+            })
+
+            gsap.to(`#item-title-${bubble.id.split('-')[1]}`, {
+              fontSize: '1.8rem',
+              marginBottom: '10px',
+              opacity: 1,
+              delay: 1,
+            })
+
+            gsap.to(`#item-text-${bubble.id.split('-')[1]}`, {
+              display: 'block',
+              delay: 0.4,
+            })
+
+            gsap.to(`#item-text-${bubble.id.split('-')[1]}`, {
+              opacity: 1,
+              duration: 0.3,
+              delay: 1,
+            })
+          }
+          setTimeout(() => {
+            // textContainer.style.opacity = 1;
+            // textContainer.style.textAlign = 'right';
+            // textContainer.style.padding = '20px';
+            // itemTitle.style.marginBottom = '10px';
+            // itemTitle.style.fontSize = '1.8rem';
+            // itemText.style.display = 'block'
+            // itemText.style.opacity = '1';
+            // itemText.style.fontSize = '1.25rem';
+          }, 1500);
+        }
+        else {
+          const randomX = Math.random() < 0.5 ? -Math.abs(Math.random() * (2000 - 1000) + 1000) : Math.abs(Math.random() * (2000 - 1000) + 1000);
+          const randomY = Math.random() < 0.5 ? -Math.abs(Math.random() * (2000 - 1000) + 1000) : Math.abs(Math.random() * (2000 - 1000) + 1000);
+
+          gsap.to(bubble, {
+            left: `${randomX}px`,
+            top: `${randomY}px`,
+            ease: "power1.inOut",
+            duration: 1
+          })
+        }
+      })
+    }
+  }
+
+  const handleContainerClick = () => {
+    if (activeIndex !== null) {
+      let currentIndex = activeIndex;
+      console.log(currentIndex);
+      setActiveIndex(null);
+
+      const bubbles = document.querySelectorAll('.bubble');
+      const contentOverlay = document.querySelector('.content-overlay');
+
+      bubbles.forEach((bubble: HTMLDivElement, i: number) => {
+        const pos = positionsRef.current[i];
+        if (!pos) return;
+
+        if (bubble.id.includes(currentIndex.toString())) {
+
+          if (mobile) {
+            gsap.to(`#item-text-${currentIndex}`, {
+              opacity: 0,
+              duration: 0.1
+            })
+
+            gsap.to(`#item-text-${currentIndex}`, {
+              display: 'none',
+              duration: 0.2
+            })
+
+            gsap.to(`#item-title-${currentIndex}`, {
+              opacity: 0,
+              fontSize: '1.25rem',
+              duration: 0.1,
+            })
+
+            gsap.to(`#${bubble.id}`, {
+              borderRadius: '50%',
+              top: `${pos.top}px`,
+              left: `${pos.left}px`,
+              transform: 'translate(-50%, -50%)',
+              height: '250px',
+              width: '250px',
+              padding: '10px',
+              textAlign: 'center',
+              ease: 'power1.inOut',
+              duration: 0.2,
+              delay: 0.1,
+            })
+
+            gsap.to(`#item-title-${currentIndex}`, {
+              opacity: 1,
+              duration: 0.1,
+              delay: 0.5
+            })
+          }
+          else {
+            gsap.to(`#item-title-${currentIndex}`, {
+              opacity: 0,
+              duration: 0.1
+            })
+
+            gsap.to(`#item-text-${currentIndex}`, {
+              opacity: 0,
+              duration: 0.1
+            })
+
+            gsap.to(`#item-text-${currentIndex}`, {
+              display: 'none',
+              duration: 0.2
+            })
+
+            gsap.to(`#item-title-${currentIndex}`, {
+              opacity: 0,
+              fontSize: '1.25rem',
+              duration: 0.1,
+            })
+
+            gsap.to(`#${bubble.id}`, {
+              borderRadius: '50%',
+              top: `${pos.top}px`,
+              left: `${pos.left}px`,
+              transform: `translate(-${pos.left}px, -${pos.top}px)`,
+              height: '250px',
+              width: '250px',
+              padding: '10px',
+              textAlign: 'center',
+              ease: 'power1.inOut',
+              duration: 0.2,
+              delay: 0.1,
+            })
+
+            gsap.to(`#item-title-${currentIndex}`, {
+              opacity: 1,
+              duration: 0.1,
+              delay: 0.65
+            })
+          }
+        }
+
+        bubble.style.transition = `
+          height 1s,
+          width 1s,
+          top 2s cubic-bezier(0.25, 0.8, 0.25, 1),
+          left 2s cubic-bezier(0.25, 0.8, 0.25, 1),
+          transform 0.5s ease
+        `
+        bubble.style.left = `${pos.left}px`;
+        bubble.style.top = `${pos.top}px`;
+        bubble.style.height = '250px';
+        bubble.style.width = '250px';
+        bubble.classList.remove('active');
+
+        // setTimeout(() => {
+        //   bubble.style.transition = '';
+        // }, 4000);
+      });
+
+      animationRef.current = requestAnimationFrame(animate); // Resume animation if needed
+      return;
+    }
+  }
 
   return (
-    <div
-      className='interview-container'
-      // onClick={() => handleContainerClick()}
-    >
-      {/* <div className='interview-header' style={{ opacity: activeIndex !== null ? 0 : 1 }}>
-        <h1 className='interview-title'>In Conversation With Lisa Eldridge:</h1>
-        <h2 className='interview-subtitle'>Becoming A World Class Makeup Artist</h2>
-      </div>
-      {
-        article.map((item: any, index: number) => {
+    <div className='body-replacement-qa-article'>
+      <div className='interview-container' onClick={() => handleContainerClick()}>
+        <div className='interview-header' style={{ opacity: activeIndex !== null ? 0 : 1 }}>
+          <h1 className='interview-title'>In Conversation With Lisa Eldridge:</h1>
+          <h2 className='interview-subtitle'>Becoming A World Class Makeup Artist</h2>
+        </div>
+        {
+          article.map((item: any, index: number) => {
 
-          return (
-            <div
-              data-id={item.id}
-              className={item.question ? 'bubble' : 'image-bubble'}
-              id={item.question ? `item-${item.id}` : `associated-image ${item.questionId}`}
-              onClick={() => handleClick(item.id)}
-              style={{
-                padding: item.src ? '0' : `${mobile ? '10px' : '20px'}`,
-                overflow: 'hidden',
-              }}
-            >
-              {
-                item.question ? (
-                  <>
-                    <h3 className='item-title' id={`item-title-${item.id}`}>{item.question}</h3>
-                    <p className='item-text' id={`item-text-${item.id}`}>{item.answer}</p>
-                  </>
-                ) : (
-                  <Image
-                    src={item.src}
-                    alt={`image-${item.id}`}
-                  />
-                )
-              }
-            </div>
-          )
-        })
-      } */}
+            return (
+              <div
+                data-id={item.id}
+                key={item.id}
+                className={item.question ? 'bubble' : 'image-bubble'}
+                id={item.question ? `item-${item.id}` : `associated-image ${item.questionId}`}
+                onClick={() => handleClick(item.id)}
+                style={{
+                  padding: item.src ? '0' : `${mobile ? '10px' : '20px'}`,
+                  overflow: 'hidden',
+                }}
+              >
+                {
+                  item.question ? (
+                    <>
+                      <h3 className='item-title' id={`item-title-${item.id}`}>{item.question}</h3>
+                      <p className='item-text' id={`item-text-${item.id}`}>{item.answer}</p>
+                    </>
+                  ) : (
+                    <Image
+                      src={item.src}
+                      alt={`image-${item.id}`}
+                    />
+                  )
+                }
+              </div>
+            )
+          })
+        }
+      </div>
     </div>
   )
 }
