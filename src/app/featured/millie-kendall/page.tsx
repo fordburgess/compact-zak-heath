@@ -16,7 +16,7 @@ const MillieKendall = () => {
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.to('.featured-article-bg', {
-      y: -500,
+      y: -800,
       ease: 'none',
       scrollTrigger: {
         trigger: '.featured-article-container',
