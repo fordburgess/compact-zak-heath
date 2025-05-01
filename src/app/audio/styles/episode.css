@@ -297,6 +297,13 @@ h1 {
   display: none;
 }
 
+.audio-chevrons {
+  position: absolute;
+  top: 48%;
+  right: 2%;
+  transform: translate(2%, -48%);
+}
+
 @media (min-width: 900px) {
   .episode-layout-container {
     padding: 100px 0 10px;

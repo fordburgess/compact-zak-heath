@@ -63,9 +63,16 @@ const Episodes = () => {
     const handleScroll = () => {
       const scrollLeft = container.scrollLeft;
       const backgroundImage: HTMLElement | null = document.querySelector('.content-container-background');
+      const chevrons: HTMLElement | null = document.querySelector('.audio-chevrons');
 
       if (backgroundImage) {
         backgroundImage.style.transform = `translateX(-${scrollLeft * 0.25}px)`;
+      }
+
+      if (chevrons) {
+        const opacity = Math.max(0, 1 - scrollLeft / 500);
+        chevrons.style.opacity = opacity.toString();
+
       }
     };
 
@@ -98,6 +105,23 @@ const Episodes = () => {
             )
           })
         }
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="40"
+          height="40"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1"
+          className='audio-chevrons'
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          style={{ position: 'absolute', top: '48%', right: '2%', transform: 'translate(2%, -48%)' }}
+        >
+          <polyline points="5 6 11 12 5 18" stroke="#fff" />
+          <polyline points="11 6 17 12 11 18" stroke="#fff" />
+          <polyline points="17 6 23 12 17 18" stroke="#fff" />
+        </svg>
       </div>
     </div>
   )
