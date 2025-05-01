@@ -204,7 +204,7 @@ const AudioEpisode = () => {
   }
 
   return (
-    <div className='body-replacement'>
+    <div className='audio-body-replacement'>
       <div className='episode-container' onClick={() => handleDrawers('container')}>
         <Image priority src={ExpandedImage} className='episode-bg' alt='background'/>
         {
