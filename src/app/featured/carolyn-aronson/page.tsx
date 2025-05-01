@@ -16,7 +16,7 @@ const CarolynAronson = () => {
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.to('.featured-article-bg', {
-      y: -500,
+      y: -800,
       ease: 'none',
       scrollTrigger: {
         trigger: '.featured-article-container',
@@ -26,34 +26,40 @@ const CarolynAronson = () => {
       }
     })
 
-    if (mobile) {
+    gsap.to('.title-image', {
+      opacity: 1,
+      ease: "power1.inOut"
+    })
 
-    }
-    else { // desktop transitions
-      gsap.to('.title-image', {
-        y: -100,
-        opacity: 0,
-        ease: "power1.inOut",
-        scrollTrigger: {
-          trigger: '.featured-title-section',
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true
-        }
-      })
+    gsap.to('.featured-title-quote', {
+      opacity: 1,
+      ease: "power1.inOut",
+      delay: 0.15
+    })
 
-      gsap.to('.featured-title-text', {
-        y: 100,
-        opacity: 0,
-        ease: 'power1.inOut',
-        scrollTrigger: {
-          trigger: '.featured-title-section',
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true
-        }
-      })
-    }
+    gsap.to('.featured-subtitle', {
+      opacity: 1,
+      ease: "power1.inOut",
+      delay: 0.25
+    })
+
+    gsap.to('.featured-blurb', {
+      opacity: 1,
+      ease: "power1.inOut",
+      delay: 0.5
+    })
+
+    gsap.to('.featured-title-section', {
+      y: -100,
+      opacity: 0,
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: '.featured-title-section',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true
+      }
+    })
 
     gsap.to('#hide-container-1', {
       height: '300px',
