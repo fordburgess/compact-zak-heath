@@ -703,4 +703,10 @@ html, body {
   #fctc-quote-text-2 {
     font-size: 2rem;
   }
+
+  #fctc-quote-3 {
+    bottom: 13%;
+    left: 50%;
+    transform: translate(-50%, -13%);
+  }
 }
