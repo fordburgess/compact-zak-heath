@@ -64,36 +64,39 @@ const Test = () => {
       ease: "none",
     });
 
-
     ScrollTrigger.create({
       trigger:".racesWrapper",
       start:"top 12%",
       end: () => `+=${getScrollAmount() * -1}`,
       pin:true,
-      animation:tween,
+      animation: tween,
       scrub:1,
       invalidateOnRefresh:true,
       markers:true
     })
+
   }, [])
 
 
   return (
     <>
-      <div className='featured-title-section'>
-        <Image priority src={SpringExpanded} id='test-container-background' alt='test'/>
-        <Image src={LisaEldrigdeProfile} alt='pfp' className='featured-profile-image'/>
-        <h1>In Conversation With Lisa Eldridge MBE:<br/> <strong style={{ fontWeight: '300', fontSize: '2rem' }}>Becoming A World Class Makeup Artist</strong></h1>
-      </div>
+      <Image priority src={SpringExpanded} id='test-container-background' alt='test'/>
+      <div style={{ position: 'absolute', top: 0, left: 0, width: '100vw', zIndex: 10, color: '#fff', }}>
+        <div className='featured-title-section'>
+          <Image src={LisaEldrigdeProfile} alt='pfp' className='featured-profile-image'/>
+          <h1>In Conversation With Lisa Eldridge MBE:<br/> <strong style={{ fontWeight: '300', fontSize: '2rem' }}>Becoming A World Class Makeup Artist</strong></h1>
+        </div>
 
-      <div className="racesWrapper">
-        <div className="races">
-          <h3>Lisa Eldridge MBE is known for her innovative yet timeless approach to makeup. She has worked with celebrities including Dua Lipa, Cindy Crawford, Rihanna, Keira Knightley and many more. In 2015, she was appointed Creative Director of Lancôme Makeup and in 2018, she launched her own award-winning beauty brand. She is also a respected historian of vintage makeup and she has written Face Paint: The Story of Makeup (Image credit: Lisa Eldridge MBE).</h3>
-          <Image src={RihannaVogue} alt='rihanna' />
-          <Image src={VogueJapan} alt='vogue-japan' />
-          <Image src={VogueParis} alt='vogue-paris' />
-          <Image src={VogueTurkey} alt='vogue-turkey' />
-          <Image src={HarpersBazaar} alt='harpers-bazaar' />
+        <div className="racesWrapper">
+          <div className="races">
+            <h3>Lisa Eldridge MBE is known for her innovative yet timeless approach to makeup. She has worked with celebrities including Dua Lipa, Cindy Crawford, Rihanna, Keira Knightley and many more. In 2015, she was appointed Creative Director of Lancôme Makeup and in 2018, she launched her own award-winning beauty brand. She is also a respected historian of vintage makeup and she has written Face Paint: The Story of Makeup (Image credit: Lisa Eldridge MBE).</h3>
+            <div className='grow-line-1'></div>
+            <Image src={RihannaVogue} alt='rihanna' />
+            <Image src={VogueJapan} alt='vogue-japan' />
+            <Image src={VogueParis} alt='vogue-paris' />
+            <Image src={VogueTurkey} alt='vogue-turkey' />
+            <Image src={HarpersBazaar} alt='harpers-bazaar' />
+          </div>
         </div>
         <div className='next-section'>
 
