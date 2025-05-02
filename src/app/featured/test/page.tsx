@@ -81,6 +81,7 @@ const Test = () => {
   return (
     <>
       <div className='featured-title-section'>
+        <Image priority src={SpringExpanded} id='test-container-background' alt='test'/>
         <Image src={LisaEldrigdeProfile} alt='pfp' className='featured-profile-image'/>
         <h1>In Conversation With Lisa Eldridge MBE:<br/> <strong style={{ fontWeight: '300', fontSize: '2rem' }}>Becoming A World Class Makeup Artist</strong></h1>
       </div>
@@ -100,7 +101,6 @@ const Test = () => {
       </div>
     </>
     // <div className='test-container'>
-    //   <Image priority src={SpringExpanded} id='test-container-background' alt='test'/>
     //   <div className='featured-scroll-container'>
     //     <div className='featured-title-section'>
     //       <Image src={LisaEldrigdeProfile} alt='pfp' className='featured-profile-image'/>
