@@ -89,7 +89,7 @@ const Test = () => {
 
         <div className="racesWrapper">
           <div className="races">
-            <h3>Lisa Eldridge MBE is known for her innovative yet timeless approach to makeup. She has worked with celebrities including Dua Lipa, Cindy Crawford, Rihanna, Keira Knightley and many more. In 2015, she was appointed Creative Director of Lancôme Makeup and in 2018, she launched her own award-winning beauty brand. She is also a respected historian of vintage makeup and she has written Face Paint: The Story of Makeup (Image credit: Lisa Eldridge MBE).</h3>
+            <h3>Lisa Eldridge MBE is known for her innovative yet timeless approach to makeup. She has worked with celebrities including Dua Lipa, Cindy Crawford, Rihanna, Keira Knightley and many more. In 2015, she was appointed Creative Director of Lancôme Makeup and in 2018, she launched her own award-winning beauty brand. She is also a respected historian of vintage makeup and she has written Face Paint: The Story of Makeup</h3>
             <div className='grow-line-1'></div>
             <Image src={RihannaVogue} alt='rihanna' />
             <Image src={VogueJapan} alt='vogue-japan' />

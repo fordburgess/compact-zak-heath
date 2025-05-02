@@ -10,10 +10,10 @@
 }
 
 #test-container-background {
-  position: absolute;
+  position: sticky;
   top: 0;
   left: 0;
-  height: 300vh;
+  height: 1000vh;
   width: 100vw;
   object-fit: cover;
   object-position: center;
@@ -112,6 +112,7 @@ body {
   width: 40vw;
   flex-shrink: 0;
   margin-right: 5vw;
+  font-size: 2re;
   /* padding-right:0.3em;
   padding-left:0.3em; */
   /* margin: 0; */
