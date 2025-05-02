@@ -67,7 +67,7 @@ const Test = () => {
 
     ScrollTrigger.create({
       trigger:".racesWrapper",
-      start:"top 20%",
+      start:"top 12%",
       end: () => `+=${getScrollAmount() * -1}`,
       pin:true,
       animation:tween,
