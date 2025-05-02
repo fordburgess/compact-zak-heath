@@ -3,7 +3,11 @@ import React, { useEffect } from 'react';
 import Image from 'next/image';
 import LisaEldrigdeProfile from '../../../assets/images/lisa-eldridge-profile.webp';
 import SpringExpanded from '../../../assets/images/spring-expanded.jpg';
-import RihannaVogue from '../../../assets/images/rihanna-vogue.jpeg';
+import RihannaVogue from '../../../assets/images/rihanna-vogue.jpg';
+import VogueParis from '../../../assets/images/vogue-paris.jpg';
+import VogueJapan from '../../../assets/images/vogue-japan.webp';
+import VogueTurkey from '../../../assets/images/vogue-turkey.jpg';
+import HarpersBazaar from '../../../assets/images/harpers-bazaar.jpg';
 import './test.css'
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
@@ -85,10 +89,10 @@ const Test = () => {
         <div className="races">
           <h3>Lisa Eldridge MBE is known for her innovative yet timeless approach to makeup. She has worked with celebrities including Dua Lipa, Cindy Crawford, Rihanna, Keira Knightley and many more. In 2015, she was appointed Creative Director of Lancôme Makeup and in 2018, she launched her own award-winning beauty brand. She is also a respected historian of vintage makeup and she has written Face Paint: The Story of Makeup (Image credit: Lisa Eldridge MBE).</h3>
           <Image src={RihannaVogue} alt='rihanna' />
-          <h2>Austria</h2>
-          <h2>Hungary</h2>
-          <h2>Netherlands</h2>
-          <h2>Japan</h2>
+          <Image src={VogueJapan} alt='vogue-japan' />
+          <Image src={VogueParis} alt='vogue-paris' />
+          <Image src={VogueTurkey} alt='vogue-turkey' />
+          <Image src={HarpersBazaar} alt='harpers-bazaar' />
         </div>
       </div>
     </>

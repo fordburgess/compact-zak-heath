@@ -33,10 +33,12 @@
 .featured-title-section {
   display: flex;
   min-width: 90%;
-  min-height: 50vh;
+  min-height: 100vh;
+  padding: 0 100px;
   justify-content: space-between;
   margin: 0 auto;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .featured-title-section h1 {
@@ -78,19 +80,21 @@
 
 body {
   margin:0;
-  background:#15151e;
+  /* background:#15151e; */
   overflow-x:hidden;
 }
 
 .races {
-  width:fit-content;
-  display:flex;
-  flex-wrap:nowrap;
+  width: fit-content;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding-left: 100px;
 }
 
 .races h2 {
   font-family: 'Staatliches', cursive;
-  font-size:30vw;
+  font-size: 30vw;
   flex-shrink:0;
   padding-right:0.3em;
   padding-left:0.3em;
@@ -101,15 +105,17 @@ body {
 .races h3 {
   width: 30vw;
   flex-shrink: 0;
-  padding-right:0.3em;
-  padding-left:0.3em;
-  margin: 0;
+  margin-right: 5vw;
+  /* padding-right:0.3em;
+  padding-left:0.3em; */
+  /* margin: 0; */
 }
 
 .races img {
-  width: 30vw;
-  height: 90%;
+  width: 35vw;
+  height: 80vh;
   flex-shrink: 0;
+  margin-right: 2vw;
   padding-right:0.3em;
   padding-left:0.3em;
 }
