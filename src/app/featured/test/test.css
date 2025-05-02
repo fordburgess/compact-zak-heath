@@ -74,6 +74,11 @@
   flex-shrink: 0;
 }
 
+.next-section {
+  height: 100vh;
+  width: 100vw;
+}
+
 
 /* test only */
 
@@ -89,7 +94,7 @@ body {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  padding-left: 100px;
+  padding: 0 100px;
 }
 
 .races h2 {
@@ -121,5 +126,5 @@ body {
 }
 
 .races h2:last-of-type {
-  background:#e1e1ff;
+  background: #e1e1ff;
 }

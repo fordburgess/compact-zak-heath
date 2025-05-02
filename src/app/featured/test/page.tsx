@@ -94,6 +94,9 @@ const Test = () => {
           <Image src={VogueTurkey} alt='vogue-turkey' />
           <Image src={HarpersBazaar} alt='harpers-bazaar' />
         </div>
+        <div className='next-section'>
+
+        </div>
       </div>
     </>
     // <div className='test-container'>
