@@ -7,7 +7,10 @@ import './test.css'
 const Test = () => {
   return (
     <div className='test-container'>
-      <Image priority src={SpringExpanded} className='content-container-background' alt='test'/>
+      <Image priority src={SpringExpanded} id='test-container-background' alt='test'/>
+      <div className='timeline-container'>
+        <div className='time-line'></div>
+      </div>
     </div>
   )
 }

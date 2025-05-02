@@ -1,0 +1,33 @@
+.test-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping */
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  z-index: 100;
+  padding: 0;
+  box-sizing: border-box;
+  backdrop-filter: blur(3px);
+  background-color: red;
+}
+
+#test-container-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 200vw;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.timeline-container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
