@@ -80,8 +80,8 @@ const Test = () => {
 
   return (
     <>
-      <Image priority src={SpringExpanded} id='test-container-background' alt='test'/>
-      <div style={{ position: 'absolute', top: 0, left: 0, width: '100vw', zIndex: 10, color: '#fff', }}>
+      <div style={{ position: 'absolute', top: 0, left: 0, width: '100vw', }}>
+        {/* <Image priority src={SpringExpanded} id='test-container-background' alt='test'/> */}
         <div className='featured-title-section'>
           <Image src={LisaEldrigdeProfile} alt='pfp' className='featured-profile-image'/>
           <h1>In Conversation With Lisa Eldridge MBE:<br/> <strong style={{ fontWeight: '300', fontSize: '2rem' }}>Becoming A World Class Makeup Artist</strong></h1>
@@ -99,7 +99,8 @@ const Test = () => {
           </div>
         </div>
         <div className='next-section'>
-
+          <h1>What name would you have chosen, if you could have been called anything else?</h1>
+          <p className='featured-paragraph-text'>Oh, my God, well, my mum was actually going to call me Nina. And then, last minute, she changed it to Lisa. At one point, I thought I would have preferred Nina—I like it better. Honestly, I don’t like Lisa.</p>
         </div>
       </div>
     </>
