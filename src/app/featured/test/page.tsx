@@ -211,19 +211,14 @@ const Test = () => {
       end: "+=100%",
       pin: "#section-4",
       scrub: true,
-      markers: true
     });
 
-    gsap.to(".image-column", {
-      y: "-100%",
-      opacity: 1,
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: ".column-wrapper",
-        start: "top top",
-        end: "+=150%",
-        scrub: true
-      }
+    ScrollTrigger.create({
+      trigger: ".image-column",
+      start: "top 10%",
+      end: "+=100%",
+      pin: ".image-column",
+      scrub: true,
     });
   }, [])
 
@@ -280,8 +275,14 @@ const Test = () => {
         </div>
         <div className='column-wrapper'>
           <div className='text-section' id='section-4'>
-            <h1 className='text-section-title'>What was your favourite club when you were 21?</h1>
-            <p className='featured-paragraph-text'>The WAG Club was the place to be. So many cool people in fashion and creative industries hung out there. Clubs like that were great for meeting people and building connections. I’d speak to the people from Models One and ask whether they had any new models and that’s how I got my portfolio together.</p>
+            <div>
+              <h1 className='text-section-title'>What was your favourite club when you were 21?</h1>
+              <p className='featured-paragraph-text'>The WAG Club was the place to be. So many cool people in fashion and creative industries hung out there. Clubs like that were great for meeting people and building connections. I’d speak to the people from Models One and ask whether they had any new models and that’s how I got my portfolio together.</p>
+            </div>
+            <div>
+              <h1>What was the first big show you worked on?</h1>
+              <p>It was with Mary, assisting at shows like Rifat Ozbek in London and Romeo Gigli in Paris. I remember rushing through makeup at my first big show, and Mary told me to slow down and take my time. I was like, oh my god, okay!</p>
+            </div>
           </div>
           <div className='image-column'>
             <Image src={LisaEldridge8} alt='lisa-eldridge-at-work' className='image-column-child' id='image-column-1'/>
