@@ -141,6 +141,17 @@ const Test = () => {
       scrub: true,
     });
 
+    gsap.to('#section-3', {
+      y: -200,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#section-3',
+        start: 'top 110%',
+        end: 'top center',
+        scrub: true
+      }
+    })
+
     gsap.to('#mary-greenwell-image', {
       x: '0%',
       ease: 'power1.inOut',
