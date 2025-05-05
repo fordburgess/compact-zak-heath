@@ -74,6 +74,17 @@ const Test = () => {
       markers:true
     })
 
+    gsap.to(['.text-section-title', '.featured-paragraph-text'],  {
+      opacity: 1,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '.text-section',
+        start: 'top 30%',
+        end: 'bottom bottom',
+        scrub: true
+      }
+    })
+
   }, [])
 
 
@@ -85,7 +96,6 @@ const Test = () => {
           <Image src={LisaEldrigdeProfile} alt='pfp' className='featured-profile-image'/>
           <h1>In Conversation With Lisa Eldridge MBE:<br/> <strong style={{ fontWeight: '300', fontSize: '2rem' }}>Becoming A World Class Makeup Artist</strong></h1>
         </div>
-
         <div className="mag-wrapper">
           <div className="mag-covers">
             <h3><span className='drop-cap'>Lisa Eldridge MBE</span> is known for her innovative yet timeless approach to makeup. She has worked with celebrities including Dua Lipa, Cindy Crawford, Rihanna, Keira Knightley and many more. In 2015, she was appointed Creative Director of Lancôme Makeup and in 2018, she launched her own award-winning beauty brand. She is also a respected historian of vintage makeup and she has written Face Paint: The Story of Makeup.</h3>
@@ -97,8 +107,8 @@ const Test = () => {
             <Image src={HarpersBazaar} alt='harpers-bazaar' />
           </div>
         </div>
-        <div className='next-section'>
-          <h1>What name would you have chosen, if you could have been called anything else?</h1>
+        <div className='text-section'>
+          <h1 className='text-section-title'>What name would you have chosen, if you could have been called anything else?</h1>
           <p className='featured-paragraph-text'>Oh, my God, well, my mum was actually going to call me Nina. And then, last minute, she changed it to Lisa. At one point, I thought I would have preferred Nina—I like it better. Honestly, I don’t like Lisa.</p>
         </div>
       </div>

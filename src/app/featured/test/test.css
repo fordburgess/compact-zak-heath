@@ -15,10 +15,6 @@
   font-size: 2.5rem;
 }
 
-.featured-paragraph-text {
-  font-size: 1.5rem !important;
-}
-
 #test-container-background {
   position: sticky;
   top: 0;
@@ -87,14 +83,6 @@
   flex-shrink: 0;
 }
 
-.next-section {
-  min-height: 100vh;
-  width: 100vw;
-  padding: 100px;
-  box-sizing: border-box;
-}
-
-
 /* test only */
 
 
@@ -159,4 +147,25 @@ body {
 
 .mag-covers h2:last-of-type {
   background: #e1e1ff;
+}
+
+
+.text-section {
+  min-height: 100vh;
+  width: 100vw;
+  padding: 100px;
+  box-sizing: border-box;
+}
+
+.text-section h1 {
+  margin-bottom: 20px;
+  opacity: 0;
+}
+
+.featured-paragraph-text {
+  opacity: 0;
+}
+
+.featured-paragraph-text {
+  font-size: 1.5rem !important;
 }
