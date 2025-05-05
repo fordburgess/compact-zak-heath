@@ -170,9 +170,6 @@ body {
   width: 70%;
 }
 
-#section-2 {
-}
-
 .pin-container {
   display: flex;
   justify-content: space-between;
@@ -255,22 +252,18 @@ body {
   /* background-color: rgba(0, 0, 255, 0.605); */
 }
 
-#section-4 {
-  width: 70%;
-  background: white;
-  padding: 4rem;
+#section-4, #section-5 {
+  width: 100%;
+  padding: 5rem 4rem;
 }
 
 .image-column {
   width: 30%;
   height: 80vh;
-  /* position: sticky; */
-  /* top: 0; */
   border-left: 1px solid black;
-  transform: translateY(100%);
   padding: 0 20px;
   box-sizing: border-box;
-  /* opacity: 0; */
+  transform: translateY(100%);
 }
 
 .image-column-child {
