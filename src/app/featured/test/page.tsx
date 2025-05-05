@@ -263,10 +263,26 @@ const Test = () => {
     })
   }, [])
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const backgroundImage: HTMLElement | null = document.getElementById('spring-container-background');
+
+      if (backgroundImage) {
+        backgroundImage.style.transform = `translateY(-${scrollTop * 0.05}px)`;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <>
-      <Image priority src={SpringExpanded} id='test-container-background' alt='test'/>
+      <Image priority src={SpringExpanded} id='spring-container-background' alt='test'/>
       <div style={{ position: 'fixed', top: 0, left: 0, height: '100vh', width: '100vw', backdropFilter: 'blur(3px) brightness(80%)', zIndex: 5 }}></div>
       <div style={{ position: 'absolute', top: 0, left: 0, width: '100vw', zIndex: 10, color: '#fff' }}>
         <div style={{ zIndex: 10 }}>

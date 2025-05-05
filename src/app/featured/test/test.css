@@ -1,8 +1,8 @@
-#test-container-background {
+#spring-container-background {
   position: fixed;
   top: 0;
   left: 0;
-  height: 200vh;
+  height: 300vh;
   width: 100vw;
   object-fit: cover;
   object-position: center;
