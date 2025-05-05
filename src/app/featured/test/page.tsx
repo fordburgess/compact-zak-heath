@@ -51,7 +51,6 @@ const Test = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const races = document.querySelector(".races");
-    console.log(races.offsetWidth)
 
     function getScrollAmount() {
       let racesWidth = races.scrollWidth;
