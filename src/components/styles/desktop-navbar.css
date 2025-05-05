@@ -19,8 +19,8 @@
     height: 40px;
     width: 60dvw;
     border-radius: 0 0 12px 12px;
-    background-color: rgba(64, 64, 64, 0.25);
-    backdrop-filter: blur(3px);
+    /* background-color: rgba(64, 64, 64, 0.25); */
+    backdrop-filter: blur(10px);
     z-index: 100;
     display: flex;
     justify-content: space-around;
