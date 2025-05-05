@@ -1,17 +1,17 @@
-// "use client"
-// import { useState, useEffect, useRef } from 'react';
-// import Image from 'next/image';
+"use client"
+import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 // import { Noise } from 'noisejs';
-// import '../styles/interview.css'
-// import Image1 from '../../../assets/images/lisa-eldridge-1.webp';
-// import Image2 from '../../../assets/images/lisa-eldridge-2.webp';
-// import Image4 from '../../../assets/images/lisa-eldridge-4.webp';
-// import SpringExpanded from '../../../assets/images/spring-expanded.webp';
-// import { motion } from 'framer-motion';
-// import gsap from 'gsap';
-// import { useMediaQuery } from 'usehooks-ts';
-//
-// const LisaEldridge = () => {
+import '../styles/interview.css'
+import Image1 from '../../../assets/images/lisa-eldridge-1.webp';
+import Image2 from '../../../assets/images/lisa-eldridge-2.webp';
+import Image4 from '../../../assets/images/lisa-eldridge-4.webp';
+import SpringExpanded from '../../../assets/images/spring-expanded.webp';
+import { motion } from 'framer-motion';
+import gsap from 'gsap';
+import { useMediaQuery } from 'usehooks-ts';
+
+const LisaEldridge = () => {
 //   const mobile = useMediaQuery('(max-width: 800px)');
 //   const windowWidth = 2000;
 //   const CANVAS_WIDTH = 2000;
@@ -479,49 +479,49 @@
 //       return;
 //     }
 //   }
-//
-//   return (
-//     <div className='body-replacement-qa-article'>
-//       <div className='interview-container' onClick={() => handleContainerClick()}>
-//         <div className='interview-header' style={{ opacity: activeIndex !== null ? 0 : 1 }}>
-//           <h1 className='interview-title'>In Conversation With Lisa Eldridge:</h1>
-//           <h2 className='interview-subtitle'>Becoming A World Class Makeup Artist</h2>
-//         </div>
-//         {
-//           article.map((item: any, index: number) => {
-//
-//             return (
-//               <div
-//                 data-id={item.id}
-//                 key={item.id}
-//                 className={item.question ? 'bubble' : 'image-bubble'}
-//                 id={item.question ? `item-${item.id}` : `associated-image ${item.questionId}`}
-//                 onClick={() => handleClick(item.id)}
-//                 style={{
-//                   padding: item.src ? '0' : `${mobile ? '10px' : '20px'}`,
-//                   overflow: 'hidden',
-//                 }}
-//               >
-//                 {
-//                   item.question ? (
-//                     <>
-//                       <h3 className='item-title' id={`item-title-${item.id}`}>{item.question}</h3>
-//                       <p className='item-text' id={`item-text-${item.id}`}>{item.answer}</p>
-//                     </>
-//                   ) : (
-//                     <Image
-//                       src={item.src}
-//                       alt={`image-${item.id}`}
-//                     />
-//                   )
-//                 }
-//               </div>
-//             )
-//           })
-//         }
-//       </div>
-//     </div>
-//   )
-// }
-//
-// export default LisaEldridge;
+
+  return (
+    <div className='body-replacement-qa-article'>
+      {/* <div className='interview-container' onClick={() => handleContainerClick()}>
+        <div className='interview-header' style={{ opacity: activeIndex !== null ? 0 : 1 }}>
+          <h1 className='interview-title'>In Conversation With Lisa Eldridge:</h1>
+          <h2 className='interview-subtitle'>Becoming A World Class Makeup Artist</h2>
+        </div>
+        {
+          article.map((item: any, index: number) => {
+
+            return (
+              <div
+                data-id={item.id}
+                key={item.id}
+                className={item.question ? 'bubble' : 'image-bubble'}
+                id={item.question ? `item-${item.id}` : `associated-image ${item.questionId}`}
+                onClick={() => handleClick(item.id)}
+                style={{
+                  padding: item.src ? '0' : `${mobile ? '10px' : '20px'}`,
+                  overflow: 'hidden',
+                }}
+              >
+                {
+                  item.question ? (
+                    <>
+                      <h3 className='item-title' id={`item-title-${item.id}`}>{item.question}</h3>
+                      <p className='item-text' id={`item-text-${item.id}`}>{item.answer}</p>
+                    </>
+                  ) : (
+                    <Image
+                      src={item.src}
+                      alt={`image-${item.id}`}
+                    />
+                  )
+                }
+              </div>
+            )
+          })
+        }
+      </div> */}
+    </div>
+  )
+}
+
+export default LisaEldridge;
