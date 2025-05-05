@@ -38,8 +38,6 @@
 
 .featured-title-section {
   z-index: 10;
-  /* position: absolute; */
-  /* top: 0; */
   display: flex;
   min-width: 90%;
   min-height: 100vh;
@@ -65,14 +63,12 @@
 }
 
 .mags {
-  /* height: 80vh; */
   width: fit-content;
   padding: 50px 100px;
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
   pointer-events: none;
-  /* box-sizing: border-box; */
 }
 
 .horizontal-scroll-item {
@@ -92,10 +88,6 @@ body {
   overflow-x:hidden;
 }
 
-/* .racesWrapper {
-  position: absolute;
-  top: 10%;
-} */
 
 .mag-covers {
   width: fit-content;
@@ -174,6 +166,7 @@ body {
 #section-1 {
   position: sticky;
   top: 0;
+  width: 70%;
 }
 
 #section-3 {
