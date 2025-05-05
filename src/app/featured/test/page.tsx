@@ -10,6 +10,7 @@ import VogueTurkey from '../../../assets/images/vogue-turkey.jpg';
 import HarpersBazaar from '../../../assets/images/harpers-bazaar.jpg';
 import LisaEldridge2 from '../../../assets/images/lisa-eldridge-2.webp';
 import LisaEldridge4 from '../../../assets/images/lisa-eldridge-4.webp';
+import LisaEldridge8 from '../../../assets/images/lisa-eldridge-8.jpg';
 import './test.css'
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
@@ -283,7 +284,7 @@ const Test = () => {
             <p className='featured-paragraph-text'>The WAG Club was the place to be. So many cool people in fashion and creative industries hung out there. Clubs like that were great for meeting people and building connections. I’d speak to the people from Models One and ask whether they had any new models and that’s how I got my portfolio together.</p>
           </div>
           <div className='image-column'>
-
+            <Image src={LisaEldridge8} alt='lisa-eldridge-at-work' className='image-column-child' id='image-column-1'/>
           </div>
         </div>
       </div>

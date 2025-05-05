@@ -261,11 +261,18 @@ body {
 }
 
 .image-column {
-  width: 25%;
+  width: 30%;
   height: 80vh;
   /* position: sticky; */
   /* top: 0; */
   border-left: 1px solid black;
-  /* transform: translateY(100%); */
+  transform: translateY(100%);
+  padding: 0 20px;
+  box-sizing: border-box;
   /* opacity: 0; */
+}
+
+.image-column-child {
+  width: 100%;
+  height: 300px;
 }
