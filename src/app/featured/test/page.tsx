@@ -9,7 +9,7 @@ import VogueJapan from '../../../assets/images/vogue-japan.webp';
 import VogueTurkey from '../../../assets/images/vogue-turkey.jpg';
 import HarpersBazaar from '../../../assets/images/harpers-bazaar.jpg';
 import LisaEldridge2 from '../../../assets/images/lisa-eldridge-2.webp';
-import LisaEldridge8 from '../../../assets/images/lisa-eldridge-8.jpg';
+import LisaEldridge4 from '../../../assets/images/lisa-eldridge-4.webp';
 import './test.css'
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
@@ -135,12 +135,44 @@ const Test = () => {
     ScrollTrigger.create({
       trigger: "#section-2",
       start: "top top",
-      end: "bottom top", // unpin when bottom of pinned section reaches top
+      end: "bottom top",
       pin: ".pin-container",
-      pinSpacing: false, // optional: disables added padding after unpin
+      pinSpacing: false,
       scrub: true,
     });
 
+    gsap.to('#mary-greenwell-image', {
+      x: '0%',
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#image-section-1',
+        start: 'top bottom',
+        end: 'top top',
+        scrub: true
+      }
+    })
+
+    gsap.to('#caption-2', {
+      x: '0%',
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#image-section-1',
+        start: 'top bottom',
+        end: 'top top',
+        scrub: true
+      }
+    })
+
+    gsap.to('.mary-greenwell-line', {
+      scaleX: '100%',
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#image-section-1',
+        start: 'top 80%',
+        end: 'top top',
+        scrub: true
+      }
+    })
   }, [])
 
 
@@ -182,8 +214,17 @@ const Test = () => {
         <div className='lisa-scroll-test'></div>
         <div className='text-section' id='section-3'>
           <h1 className='text-section-title'>When you were 21, who did you look up to in the beauty industry?</h1>
-          <p className='featured-paragraph-text'>Oh, absolutely. I didn’t know anyone in the industry, and there wasn’t any internet back then to guide me, so it was tricky to figure out, especially wanting to go into the fashion industry. I’d buy magazines to study credits like "Mary Greenwell for Debbie Walters" and figure out which agency to call and who was repping each other. Networking was painstaking, you had to meet people at clubs or get in touch with agencies directly and say, “I would love to assist, or something”. I did a lot of unpaid work to build my portfolio, working with new models like Kate Moss who were just coming into the industry.</p>
+          <p className='featured-paragraph-text' style={{ marginBottom: '10px'}}>Oh, absolutely. I didn’t know anyone in the industry, and there wasn’t any internet back then to guide me, so it was tricky to figure out, especially wanting to go into the fashion industry. I’d buy magazines to study credits like "Mary Greenwell for Debbie Walters" and figure out which agency to call and who was repping each other. Networking was painstaking, you had to meet people at clubs or get in touch with agencies directly and say, “I would love to assist, or something”. I did a lot of unpaid work to build my portfolio, working with new models like Kate Moss who were just coming into the industry.</p>
           <p className='featured-paragraph-text'>At one point, I heard someone say they got a magazine cover because their boyfriend was the editor, and I remember thinking, oh my god, I hope it’s literally not going to come down to who you know. But in the end, hard work and perseverance paid off. By the time I was 23, I was signed by an agency alongside legends like Sam McKnight MBE, Mary Greenwell and major major people - I was kind of the baby. That was huge. At first, I was asked why I wanted to assist, but I had only worked with up-and-coming models and I didn’t know how to react when a big supermodel or celebrity walked into the room; however, I quickly learnt that you just treat everybody the same.</p>
+        </div>
+        <div className='image-section' id='image-section-1'>
+          <Image src={LisaEldridge4} alt='mary-greenwell' id='mary-greenwell-image' />
+          <div className='mary-greenwell-line'></div>
+          <div className='interactive-image-caption' id='caption-2'>
+            <p style={{ marginBottom: '10px' }}>Mary Greenwell is one of the world’s most sought-after makeup artists, known for setting beauty trends on the runway and earning numerous industry accolades. Her work has been shown in Vogue Italia, Vogue UK, and Vogue US, and she has collaborated with legendary photographers such as Patrick Demarchelier and Peter Lindbergh. Most notably, she helped redefine the image of Princess Diana, contributing to some of her most iconic photo shoots. In 2015, Mary was honored with the Lifetime Achievement Award from CEW and in 2023, she was appointed as an ambassador for the British Beauty Council.</p>
+            <p style={{ marginBottom: '10px' }}>Sam McKnight MBE is one of the most iconic hair stylists in fashion history, renowned for collaborating on over 200 Vogue covers in campaigns for Fendi, Chanel and Balmain. He famously crafted Princess Diana’s signature short hairstyle and has worked with legends like Naomi Campbell and Lady Gaga. In 2023, he was awarded an MBE for his services in fashion and beauty and continues to influence the industry with his brand, Hair by Sam McKnight.</p>
+            <p>Mary Greenwell and Princess Diana with Hairstylist Sam McKnight MBE (Image credit: Pinterest).</p>
+          </div>
         </div>
       </div>
     </>
