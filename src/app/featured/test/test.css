@@ -247,12 +247,12 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 400vh; /* enough scroll space */
+  height: 600vh; /* enough scroll space */
   position: relative;
   /* background-color: rgba(0, 0, 255, 0.605); */
 }
 
-#section-4, #section-5 {
+#section-4, #section-5, #section-6 {
   width: 100%;
   padding: 5rem 4rem;
   opacity: 0;
@@ -274,4 +274,13 @@ body {
 
 #text-block-1, #text-block-2 {
   margin-bottom: 100px;
+}
+
+#image-item-2 {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  opacity: 0;
 }

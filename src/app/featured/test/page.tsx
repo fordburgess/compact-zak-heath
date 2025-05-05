@@ -11,6 +11,7 @@ import HarpersBazaar from '../../../assets/images/harpers-bazaar.jpg';
 import LisaEldridge2 from '../../../assets/images/lisa-eldridge-2.webp';
 import LisaEldridge4 from '../../../assets/images/lisa-eldridge-4.webp';
 import LisaEldridge8 from '../../../assets/images/lisa-eldridge-8.jpg';
+import DuaLipa from '../../../assets/images/dua-lipa-lisa-eldridge.jpg';
 import './test.css'
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
@@ -228,6 +229,17 @@ const Test = () => {
       }
     })
 
+    gsap.to('#section-6', {
+      opacity: 1,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#section-6',
+        start: 'top -50%',
+        end: 'top -100%',
+        scrub: true,
+      }
+    })
+
     ScrollTrigger.create({
       trigger: "#section-4",
       start: "top top",
@@ -245,60 +257,44 @@ const Test = () => {
     });
 
     ScrollTrigger.create({
-      trigger: ".image-column",
-      start: "top 10%",
-      end: "+=150%",
+      trigger: "#section-6",
+      start: "top top",
+      end: "+=50%",
       pin: true,
       scrub: true,
     });
 
-//     gsap.to('.image-column', {
-//
-//     })
+    ScrollTrigger.create({
+      trigger: ".image-column",
+      start: "top 10%",
+      end: "+=300%",
+      pin: true,
+      scrub: true,
+    });
 
-    // gsap.to('.image-column', {
-    //   y: '-100%',
-    //   ease: "power1.inOut",
-    //   scrollTrigger: {
-    //     trigger: ''
-    //   }
-    // })
+    gsap.to('#image-item-1', {
+      opacity: 0,
+      y: -100,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#section-4',
+        start: 'top -20%',
+        end: 'bottom top',
+        scrub: true,
+      }
+    })
 
-    // ScrollTrigger.create({
-    //   trigger: ".column-wrapper",
-    //   start: "top top",
-    //   end: "+=100%",
-    //   pin: "#section-4",
-    //   scrub: true,
-    // });
-
-//     ScrollTrigger.create({
-//       trigger: ".image-column",
-//       start: "top 10%",
-//       end: "+=100%",
-//       pin: ".image-column",
-//       scrub: true,
-//     });
-//
-//     gsap.to('#text-block-2', {
-//       opacity: 1,
-//       ease: "power1.inOut",
-//       scrollTrigger: {
-//         trigger: '.column-wrapper',
-//         start: 'center center',
-//         end: 'center top',
-//         scrub: true,
-//       }
-//     })
-
-    // ScrollTrigger.create({
-    //   trigger: ".image-column",
-    //   start: "top center",
-    //   end: "+=100%",
-    //   pin: "#text-block-2",
-    //   scrub: true,
-    //   markers: true,
-    // });
+    gsap.to('#image-item-2', {
+      opacity: 1,
+      top: '0%',
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#section-5',
+        start: 'top center',
+        end: 'top top',
+        scrub: true,
+      }
+    })
   }, [])
 
 
@@ -362,15 +358,25 @@ const Test = () => {
               <h1>What was the first big show you worked on?</h1>
               <p className='featured-paragraph-text'>It was with Mary, assisting at shows like Rifat Ozbek in London and Romeo Gigli in Paris. I remember rushing through makeup at my first big show, and Mary told me to slow down and take my time. I was like, oh my god, okay!</p>
             </div>
-
-            {/* <div className='text-section'>
+            <div className='text-section' id='section-6'>
               <h1>What advice would you give your 21-year-old self?</h1>
               <p className='featured-paragraph-text'>I’d tell her to stay confident and not compare herself to others but explore the ideas she had and wanted to share. In a creative industry, it’s fuelled by ideas, there’s no such thing as a bad one. I wish I’d spoken up more on shoots when I had ideas. Now, I’m much more comfortable experimenting. For instance, I recently tried a bold blue eyeshadow look during a Claudia Schiffer shoot for Pop Magazine. It didn’t work, and we took it off, but that’s okay! It’s all part of the creative process.</p>
               <p className='featured-paragraph-text'>Don’t think you’re silly or something and don’t be afraid to explore, speak your mind, and trust your instincts. There’s good ideas, bad ideas, but actually they’re all good.</p>
-            </div> */}
+            </div>
           </div>
           <div className='image-column'>
-            <Image src={LisaEldridge8} alt='lisa-eldridge-at-work' className='image-column-child' id='image-column-1'/>
+            <div id='image-item-1'>
+              <Image src={LisaEldridge8} alt='lisa-eldridge-at-work' className='image-column-child' id='image-column-1'/>
+              <div className='interactive-image-caption' id='caption-3'>
+                <p>Lisa at work.</p>
+              </div>
+            </div>
+            <div id='image-item-2'>
+              <Image src={DuaLipa} alt='lisa-eldridge-at-work' className='image-column-child' id='image-column-1'/>
+              <div className='interactive-image-caption' id='caption-3'>
+                <p>Test Test Test</p>
+              </div>
+            </div>
           </div>
         </div>
         {/* </div> */}
