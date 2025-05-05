@@ -109,7 +109,7 @@ body {
   top: 10%;
 } */
 
-.races {
+.mag-covers {
   width: fit-content;
   display: flex;
   flex-wrap: nowrap;
@@ -117,7 +117,7 @@ body {
   padding: 0 100px;
 }
 
-.races h2 {
+.mag-covers h2 {
   font-family: 'Staatliches', cursive;
   font-size: 30vw;
   flex-shrink:0;
@@ -127,7 +127,7 @@ body {
   margin:0;
 }
 
-.races h3 {
+.mag-covers h3 {
   width: 40vw;
   flex-shrink: 0;
   margin-right: 5vw;
@@ -148,7 +148,7 @@ body {
   margin-right: 5vw;
 }
 
-.races img {
+.mag-covers img {
   width: 35vw;
   height: 80vh;
   flex-shrink: 0;
@@ -157,6 +157,6 @@ body {
   padding-left:0.3em;
 }
 
-.races h2:last-of-type {
+.mag-covers h2:last-of-type {
   background: #e1e1ff;
 }
