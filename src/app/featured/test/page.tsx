@@ -50,14 +50,14 @@ const Test = () => {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    const races = document.querySelector(".mag-covers");
+    const mags = document.querySelector(".mag-covers");
 
     function getScrollAmount() {
-      let racesWidth = races.scrollWidth;
-      return -(racesWidth - window.innerWidth);
+      let magsWidth = mags.scrollWidth;
+      return -(magsWidth - window.innerWidth);
     }
 
-    const tween = gsap.to(races, {
+    const tween = gsap.to(mags, {
       x: getScrollAmount,
       duration: 3,
       ease: "none",
@@ -70,8 +70,7 @@ const Test = () => {
       pin:true,
       animation: tween,
       scrub:1,
-      invalidateOnRefresh:true,
-      markers:true
+      invalidateOnRefresh: true,
     })
 
     gsap.to(['.text-section-title', '.featured-paragraph-text'],  {
@@ -81,6 +80,18 @@ const Test = () => {
         trigger: '.text-section',
         start: 'top 30%',
         end: 'bottom bottom',
+        scrub: true
+      }
+    })
+
+    gsap.to('#section-1', {
+      y: -500,
+      opacity: 0,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#section-2',
+        start: 'top 40%',
+        end: 'top top',
         scrub: true
       }
     })
@@ -107,9 +118,13 @@ const Test = () => {
             <Image src={HarpersBazaar} alt='harpers-bazaar' />
           </div>
         </div>
-        <div className='text-section'>
+        <div className='text-section' id='section-1'>
           <h1 className='text-section-title'>What name would you have chosen, if you could have been called anything else?</h1>
           <p className='featured-paragraph-text'>Oh, my God, well, my mum was actually going to call me Nina. And then, last minute, she changed it to Lisa. At one point, I thought I would have preferred Nina—I like it better. Honestly, I don’t like Lisa.</p>
+        </div>
+        <div className='text-section' id='section-2'>
+          <h1 className='text-section-title'>What were your first experiences with makeup?</h1>
+          <p className='featured-paragraph-text'>It started when I found my mum’s old makeup after we moved back to England from New Zealand. She had this box with little drawers, filled with 1960s makeup like Biba and Mary Quant that was really playful and colourful. Makeup from that era was designed for teenagers, so it had this childlike, crayon-like quality that I loved because of the objects and textures and for me, that was the turning point. I was also really inspired by the “vintageness”, because I knew it was old makeup and that was more interesting than modern makeup. I also used to draw on paper with it because it was more interesting than using regular crayons and art supplies. For my 13th birthday, I got a book on stage and theatrical makeup, and it blew my mind. The transformations, the way you could create light and shade, it was like art. I knew that’s what I wanted to do.</p>
         </div>
       </div>
     </>

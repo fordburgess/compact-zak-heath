@@ -159,13 +159,18 @@ body {
 
 .text-section h1 {
   margin-bottom: 20px;
-  opacity: 0;
+  opacity: 1;
 }
 
 .featured-paragraph-text {
-  opacity: 0;
+  opacity: 1;
 }
 
 .featured-paragraph-text {
   font-size: 1.5rem !important;
+}
+
+#section-1 {
+  position: sticky;
+  top: 0;
 }
