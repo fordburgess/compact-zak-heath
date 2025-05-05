@@ -255,6 +255,7 @@ body {
 #section-4, #section-5 {
   width: 100%;
   padding: 5rem 4rem;
+  opacity: 0;
 }
 
 .image-column {

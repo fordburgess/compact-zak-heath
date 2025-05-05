@@ -205,13 +205,35 @@ const Test = () => {
       }
     );
 
+    gsap.to('#section-4', {
+      opacity: 1,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#section-4',
+        start: 'top center',
+        end: 'top -100%',
+        scrub: true,
+      }
+    })
+
+    gsap.to('#section-5', {
+      opacity: 1,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#section-5',
+        start: 'top -50%',
+        end: 'top -100%',
+        scrub: true,
+        markers: true
+      }
+    })
+
     ScrollTrigger.create({
       trigger: "#section-4",
       start: "top top",
       end: "+=100%",
       pin: true,
       scrub: true,
-      markers: true
     });
 
     ScrollTrigger.create({
@@ -220,7 +242,6 @@ const Test = () => {
       end: "+=50%",
       pin: true,
       scrub: true,
-      markers: true
     });
 
     ScrollTrigger.create({
@@ -229,7 +250,6 @@ const Test = () => {
       end: "+=150%",
       pin: true,
       scrub: true,
-      markers: true
     });
 
 //     gsap.to('.image-column', {
