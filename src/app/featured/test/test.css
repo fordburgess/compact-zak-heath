@@ -157,10 +157,7 @@ body {
 
 .featured-paragraph-text {
   opacity: 1;
-}
-
-.featured-paragraph-text {
-  font-size: 1.5rem !important;
+  font-size: 1.25rem !important;
 }
 
 #section-1 {
@@ -170,7 +167,7 @@ body {
 }
 
 #section-3 {
-  width: 300vw;
+  width: 70%;
 }
 
 #section-2 {
