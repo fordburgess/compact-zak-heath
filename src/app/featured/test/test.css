@@ -174,3 +174,19 @@ body {
   position: sticky;
   top: 0;
 }
+
+#section-3 {
+  width: 300vw;
+}
+
+#section-2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+#section-2 img {
+  height: auto;
+  width: 40%;
+  object-fit: cover;
+  object-position: center;
+}

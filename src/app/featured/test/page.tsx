@@ -8,6 +8,8 @@ import VogueParis from '../../../assets/images/vogue-paris.jpg';
 import VogueJapan from '../../../assets/images/vogue-japan.webp';
 import VogueTurkey from '../../../assets/images/vogue-turkey.jpg';
 import HarpersBazaar from '../../../assets/images/harpers-bazaar.jpg';
+import LisaEldridge2 from '../../../assets/images/lisa-eldridge-2.webp';
+import LisaEldridge8 from '../../../assets/images/lisa-eldridge-8.jpg';
 import './test.css'
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
@@ -123,8 +125,13 @@ const Test = () => {
           <p className='featured-paragraph-text'>Oh, my God, well, my mum was actually going to call me Nina. And then, last minute, she changed it to Lisa. At one point, I thought I would have preferred Nina—I like it better. Honestly, I don’t like Lisa.</p>
         </div>
         <div className='text-section' id='section-2'>
-          <h1 className='text-section-title'>What were your first experiences with makeup?</h1>
-          <p className='featured-paragraph-text'>It started when I found my mum’s old makeup after we moved back to England from New Zealand. She had this box with little drawers, filled with 1960s makeup like Biba and Mary Quant that was really playful and colourful. Makeup from that era was designed for teenagers, so it had this childlike, crayon-like quality that I loved because of the objects and textures and for me, that was the turning point. I was also really inspired by the “vintageness”, because I knew it was old makeup and that was more interesting than modern makeup. I also used to draw on paper with it because it was more interesting than using regular crayons and art supplies. For my 13th birthday, I got a book on stage and theatrical makeup, and it blew my mind. The transformations, the way you could create light and shade, it was like art. I knew that’s what I wanted to do.</p>
+          <div style={{ width: '55%' }}>
+            <h1 className='text-section-title'>What were your first experiences with makeup?</h1>
+            <p className='featured-paragraph-text'>It started when I found my mum’s old makeup after we moved back to England from New Zealand. She had this box with little drawers, filled with 1960s makeup like Biba and Mary Quant that was really playful and colourful. Makeup from that era was designed for teenagers, so it had this childlike, crayon-like quality that I loved because of the objects and textures and for me, that was the turning point. I was also really inspired by the “vintageness”, because I knew it was old makeup and that was more interesting than modern makeup. I also used to draw on paper with it because it was more interesting than using regular crayons and art supplies. For my 13th birthday, I got a book on stage and theatrical makeup, and it blew my mind. The transformations, the way you could create light and shade, it was like art. I knew that’s what I wanted to do.</p>
+          </div>
+          <Image src={LisaEldridge2} alt='lisa-eldridge-2' />
+        </div>
+        <div className='image-section' id='section-3'>
         </div>
       </div>
     </>
