@@ -72,7 +72,7 @@ const AudioEpisode = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const titleContainerRef = useRef<HTMLDivElement | null>(null);
   const titleRef = useRef<HTMLHeadingElement | null>(null);
-  const id = params?.id as string;
+  const episodeId = params?.id as string;
 
   useEffect(() => {
     if (params && params.id) {
@@ -249,7 +249,7 @@ const AudioEpisode = () => {
             mediaControls={false}
             progressColor="#c2d6ff"
             cursorColor='transparent'
-            url="/audio/example-audio.mp3"
+            url={`/audio/${episodeId}-audio.mp3`}
             onReady={onReady}
             onPlay={() => setIsPlaying(true)}
             onPause={() => setIsPlaying(false)}
