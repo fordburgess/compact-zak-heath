@@ -237,6 +237,10 @@ const Test = () => {
             <p>Mary Greenwell and Princess Diana with Hairstylist Sam McKnight MBE (Image credit: Pinterest).</p>
           </div>
         </div>
+        <div className='text-section' id='section-4'>
+          <h1 className='text-section-title'>What was your favourite club when you were 21?</h1>
+          <p className='featured-paragraph-text'>The WAG Club was the place to be. So many cool people in fashion and creative industries hung out there. Clubs like that were great for meeting people and building connections. I’d speak to the people from Models One and ask whether they had any new models and that’s how I got my portfolio together.</p>
+        </div>
       </div>
     </>
   )
