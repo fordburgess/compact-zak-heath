@@ -152,38 +152,57 @@ const Test = () => {
       }
     })
 
-    gsap.to('#mary-greenwell-image', {
-      x: '0%',
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#image-section-1',
-        start: 'top bottom',
-        end: 'top top',
-        scrub: true
-      }
-    })
+    ScrollTrigger.create({
+      trigger: "#image-section-1",
+      start: "top top",
+      end: "+=100%", // keep pinned for 1 viewport height
+      pin: true,
+      scrub: true,
+    });
 
-    gsap.to('#caption-2', {
-      x: '0%',
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#image-section-1',
-        start: 'top bottom',
-        end: 'top top',
-        scrub: true
+    gsap.fromTo("#mary-greenwell-image",
+      { x: "-100%", opacity: 0 },
+      {
+        x: "0%",
+        opacity: 1,
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: "#image-section-1",
+          start: "top top",
+          end: "+=100%",
+          scrub: true,
+        }
       }
-    })
+    );
 
-    gsap.to('.mary-greenwell-line', {
-      scaleX: '100%',
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#image-section-1',
-        start: 'top 80%',
-        end: 'top top',
-        scrub: true
+    gsap.fromTo("#caption-2",
+      { x: "100%", opacity: 0 },
+      {
+        x: "0%",
+        opacity: 1,
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: "#image-section-1",
+          start: "top top+=20%", // slight delay
+          end: "+=100%",
+          scrub: true,
+        }
       }
-    })
+    );
+
+    gsap.fromTo(".mary-greenwell-line",
+      { scaleX: 0 },
+      {
+        scaleX: 1,
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: "#image-section-1",
+          start: "top top+=10%",
+          end: "+=80%",
+          scrub: true,
+        }
+      }
+    );
   }, [])
 
 
