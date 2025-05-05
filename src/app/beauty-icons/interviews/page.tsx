@@ -1,6 +1,7 @@
 "use client"
 import { useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link'
 import '../styles/interviews.css';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -24,72 +25,86 @@ const interviews = [
   {
     pfp: MillieKendall,
     name: 'Millie Kendall',
-    job: 'Beauty CEO'
+    job: 'Beauty CEO',
+    href: '/featured/millie-kendall'
   },
   {
     pfp: LisaEldridge,
     name: 'Lisa Eldridge',
-    job: 'Celebrity Makeup Artist'
+    job: 'Celebrity Makeup Artist',
+    href: '/featured/lisa-eldridge'
   },
   {
     pfp: AlessandraSteinherr,
     name: 'Alessandra Steinherr',
     job: 'Beauty Editor + Influencer',
+    href: '/featured/alessandra-steinherr'
   },
   {
     pfp: PatriciaBright,
     name: 'Patricia Bright',
-    job: 'Content Creator & CEO'
+    job: 'Content Creator & CEO',
+    href: '/audio/patricia-bright'
   },
   {
     pfp: AdamReed,
     name: 'Adam Reed',
-    job: 'Hairstylist'
+    job: 'Hairstylist',
+    href: '/featured/adam-reed'
   },
   {
     pfp: MonaKattan,
     name: 'Mona Kattan',
-    job: 'Fragrance CEO'
+    job: 'Fragrance CEO',
+    href: '/featured/mona-kattan'
   },
   {
     pfp: ShakeelMurtaza,
     name: 'Shakeel Murtaza',
-    job: "Men's Beauty Influencer"
+    job: "Men's Beauty Influencer",
+    href: '/audio/shakeel-murtaza'
   },
   {
     pfp: KirstyLewis,
     name: 'Kirsty Lewis',
-    job: 'Head of Beauty PR'
+    job: 'Head of Beauty PR',
+    href: '/featured/kirsty-lewis'
   },
   {
     pfp: Placeholder,
     name: 'Ingeborg Van Lotringen',
-    job: 'Beauty Journalist'
+    job: 'Beauty Journalist',
+    href: '/audio/ingeborg-van-lotringen'
   },
   {
     pfp: CarolynAronson,
     name: 'Carolyn Aronson',
-    job: 'Brand Founder'
+    job: 'Brand Founder',
+    href: '/featured/carolyn-aronson'
   },
   {
     pfp: Placeholder,
     name: 'Yana Kafeli',
-    job: 'Agent'
+    job: 'Agent',
+    href: '/audio/yana-kafeli'
   },
   {
     pfp: TillySanders,
     name: 'Tilly Sanders',
-    job: 'Beauty PR'
+    job: 'Beauty PR',
+    href: '/featured/tilly-sanders'
   },
   {
     pfp: ZakHeath,
     name: 'Zak Heath',
-    job: 'Influencer'
+    job: 'Influencer',
+    href: '/dream-room'
   },
   {
     pfp: Placeholder,
     name: 'Raquell Bouris',
-    job: 'Fragrance Founder'
+    job: 'Fragrance Founder',
+    href: '/audio/raquell-bouris'
   },
 ]
 
@@ -190,18 +205,20 @@ const BeautyIconsInterviews = () => {
                   {
                     chunk.map((interview: any, i: number) => {
                       return (
-                        <div className='beauty-icons-item' key={interview.name}>
-                          <Image
-                            src={interview.pfp}
-                            alt={`icon-${index}`}
-                            className='beauty-icons-pfp'
-                            id={`icons-pfp-${index}`}
-                          />
-                          <div className='name-container'>
-                            <h3>{interview.name}</h3>
-                            <p>{interview.job}</p>
+                        <Link href={interview.href}>
+                          <div className='beauty-icons-item' key={interview.name}>
+                            <Image
+                              src={interview.pfp}
+                              alt={`icon-${index}`}
+                              className='beauty-icons-pfp'
+                              id={`icons-pfp-${index}`}
+                            />
+                            <div className='name-container'>
+                              <h3>{interview.name}</h3>
+                              <p>{interview.job}</p>
+                            </div>
                           </div>
-                        </div>
+                        </Link>
                       )
                     })
                   }

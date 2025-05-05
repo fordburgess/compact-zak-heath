@@ -513,7 +513,7 @@ html, body {
   }
 }
 
-@media (min-width: 1201px) {
+@media (min-width: 1101px) {
   .dream-room-article-content {
     /* padding: 100px 0; */
   }
@@ -673,5 +673,67 @@ html, body {
   .fctc-circle-2, .fctc-circle-3 {
     height: 400px;
     width: 400px;
+  }
+
+  .fctc-line-3 {
+    top: 70%;
+    right: -5%;
+    min-height: 1px;
+    width: 10px;
+    background-color: #fff;
+    transform: translate(5%, -70%);
+    transform-origin: right;
+  }
+
+  .fctc-rectangle-1 {
+    height: 300px;
+    width: 250px;
+    top: 20%;
+    right: 10%;
+    transform: translate(10%, -20%);
+  }
+
+  #fctc-quote-2 {
+    width: 400px;
+    top: 22%;
+    left: 10%;
+    transform: translate(-10%, -22%);
+  }
+
+  #fctc-quote-text-2 {
+    font-size: 2rem;
+  }
+
+  #fctc-quote-3 {
+    bottom: 13%;
+    left: 50%;
+    transform: translate(-50%, -13%);
+  }
+
+  #fctc-trans-5 {
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #zak-and-lisa {
+    max-height: 500px;
+    width: 50%;
+  }
+
+  .fctc-line-4 {
+    position: static;
+    height: 1px;
+    width: 20px;
+    background-color: #fff;
+    transform-origin: right;
+    transform: translateX(100px);
+    z-index: 10;
+  }
+
+  #zak-lisa-caption {
+    position: static;
+    transform: translateX(-50px);
   }
 }

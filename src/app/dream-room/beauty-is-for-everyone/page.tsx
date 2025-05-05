@@ -29,7 +29,7 @@ const FromConcealerToConfidence = () => {
     })
 
     gsap.to('.article-intro-image', {
-      // y: '-10%',
+      y: '-10%',
       opacity: 1,
       delay: 1,
       duration: 1,
@@ -175,7 +175,7 @@ const FromConcealerToConfidence = () => {
     })
 
     gsap.to('.fctc-line-3', {
-      scaleX: '35',
+      scaleX: mobile ? '35' : '85',
       ease: 'power1.inOut',
       scrollTrigger: {
         trigger: '#fctc-trans-3',
@@ -220,8 +220,7 @@ const FromConcealerToConfidence = () => {
       }
     })
 
-    gsap.to('.fctc-line-4', {
-      scaleY: '8',
+    const line4Props: any = {
       ease: "power1.inOut",
       scrollTrigger: {
         trigger: '#fctc-trans-5',
@@ -229,10 +228,13 @@ const FromConcealerToConfidence = () => {
         end: 'bottom 60%',
         scrub: true,
       }
-    })
+    };
+    const scaleAxisLine4 = mobile ? 'scaleY' : 'scaleX';
+    line4Props[scaleAxisLine4] = 8
+    gsap.to('.fctc-line-4', line4Props);
 
-    gsap.to('#zak-lisa-caption', {
-      y: -50,
+
+    const caption4props: any = {
       ease: "power1.inOut",
       scrollTrigger: {
         trigger: '#fctc-trans-5',
@@ -240,7 +242,10 @@ const FromConcealerToConfidence = () => {
         end: 'bottom 60%',
         scrub: true,
       }
-    })
+    }
+    const transitionDirectionCaption4 = mobile ? 'y' : 'x';
+    caption4props[transitionDirectionCaption4] = mobile ? 50 : '10px';
+    gsap.to('#zak-lisa-caption', caption4props);
 
   }, [])
 
@@ -297,9 +302,9 @@ const FromConcealerToConfidence = () => {
           </div>
           <p className='dream-room-paragraph-text'>Four years later, I've built a community of over 1.5 million followers across TikTok, YouTube, Snapchat, and Instagram after having an incredible trajectory of growth from replying to these hate comments. I used this hate to positively create editorial, satisfying and humorous content to reimagine the saying actions speak louder than words. I wasn't being vocal, but instead, I showed that men can wear makeup, which really resonated with people because I wasn't angered by their words, but I was showcasing something I enjoy. I created practical tutorials for men who wanted quick, natural makeup solutions, who, like me at fourteen, just wanted to cover their imperfections. To my surprise, my videos resonated not just with men but with women as well. By showcasing traditionally "feminine" products like the Charlotte Tilbury Foundation and Nars concealer in a way that worked for everyone, I was breaking stereotypes and showing makeup as a tool of empowerment and that it is for everybody. People loved it, brands loved it and the videos I started making in my bedroom have led me to have some incredible experiences, alongside meeting the beauty Icons!</p>
           <div className='dream-room-transition-container' id='fctc-trans-5'>
-            <Image src={ZakAndLisa} id='zak-and-lisa' alt='zak-and-lisa'/>
+            <p className='image-caption' id="zak-lisa-caption">Lisa Eldridge and I at her brand event</p>
             <div className='fctc-line-4'></div>
-            <p className='image-caption' id='zak-lisa-caption'>Lisa Eldridge and I at her brand event</p>
+            <Image src={ZakAndLisa} id='zak-and-lisa' alt='zak-and-lisa'/>
           </div>
           <p className='dream-room-paragraph-text'>This platform began as my Final Major Project (FMP) whilst studying Fashion Communication: Fashion Journalism at Central Saint Martins. What started as a university submission quickly became something much bigger. The more Icons in beauty I interviewed, the more I realised just how many people could also learn, grow and feel empowered through these stories. Everybody is doing life for the first time, so hearing each story was genuinely transformative. I also wrote down notes and quotes I've pinned onto my own manifestation board. I couldn't keep their insights to myself, so I created this space to share with you. These articles and podcasts offer real behind-the-scenes insights into what it takes to build a career within beauty, as yes, this industry is hard to get into. Together, we can create a future in this space.</p>
         </div>
