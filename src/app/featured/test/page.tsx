@@ -98,6 +98,40 @@ const Test = () => {
       }
     })
 
+    gsap.to('.section-2-text', {
+      x: -500,
+      opacity: 0,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '.lisa-scroll-test',
+        start: 'top 80%',
+        end: 'top top',
+        scrub: true
+      }
+    })
+
+    gsap.to('#image-1', {
+      x: -700,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '.lisa-scroll-test',
+        start: 'top 80%',
+        end: 'top top',
+        scrub: true
+      }
+    })
+
+    gsap.to('#caption-1', {
+      opacity: 1,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '.lisa-scroll-test',
+        start: 'top 80%',
+        end: 'top top',
+        scrub: true
+      }
+    })
+
   }, [])
 
 
@@ -125,12 +159,16 @@ const Test = () => {
           <p className='featured-paragraph-text'>Oh, my God, well, my mum was actually going to call me Nina. And then, last minute, she changed it to Lisa. At one point, I thought I would have preferred Nina—I like it better. Honestly, I don’t like Lisa.</p>
         </div>
         <div className='text-section' id='section-2'>
-          <div style={{ width: '55%' }}>
+          <div className='section-2-text' style={{ width: '55%' }}>
             <h1 className='text-section-title'>What were your first experiences with makeup?</h1>
             <p className='featured-paragraph-text'>It started when I found my mum’s old makeup after we moved back to England from New Zealand. She had this box with little drawers, filled with 1960s makeup like Biba and Mary Quant that was really playful and colourful. Makeup from that era was designed for teenagers, so it had this childlike, crayon-like quality that I loved because of the objects and textures and for me, that was the turning point. I was also really inspired by the “vintageness”, because I knew it was old makeup and that was more interesting than modern makeup. I also used to draw on paper with it because it was more interesting than using regular crayons and art supplies. For my 13th birthday, I got a book on stage and theatrical makeup, and it blew my mind. The transformations, the way you could create light and shade, it was like art. I knew that’s what I wanted to do.</p>
           </div>
-          <Image src={LisaEldridge2} alt='lisa-eldridge-2' />
+          <Image src={LisaEldridge2} alt='lisa-eldridge-2' id='image-1' />
+          <div className='interactive-image-caption' id='caption-1'>
+            <p>Lisa Eldridge MBE and her mum. “Discovering my mum’s teenage makeup stash at my grandmothers sparked my intense interest/ obsession with makeup and it’s history” (Credit: Lisa Eldridge’s MBE Facebook).</p>
+          </div>
         </div>
+          <div className='lisa-scroll-test'></div>
         <div className='image-section' id='section-3'>
         </div>
       </div>
