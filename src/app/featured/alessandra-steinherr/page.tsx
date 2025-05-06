@@ -168,12 +168,12 @@ const AlessandraSteinherr = () => {
             <p className='featured-paragraph-text'>I was reading magazines from such a young age. My grandmother was a dressmaker and had Italian Vogue, Periscope, and other fashion magazines. I wasn’t a skinny girl, so I didn’t connect with fashion models because I couldn’t fit into those bikinis, but I loved the beauty sections—the faces, skin, and hair. Allure was American; it was my bible, but it wasn’t easily available where I lived in Austria, so I found an English-speaking bookshop, which always had one, and I’d run to buy it. I was obsessed. It’s not like today, where you can go on your phone and find new information. It was always my dream to become a beauty editor.</p>
           </div>
         </div>
-        {/* <div className='text-section' id='section-2'>
+        <div className='text-section' id='section-2'>
           <div style={{ width: '50%' }}>
             <h1 className='text-section-title'>Did you study journalism or something completely different?</h1>
             <p className='featured-paragraph-text'>I studied business and economics in America and Belgium, but my heart was always set on beauty journalism. My dad insisted I get a degree first because then I could do whatever I wanted, and to be honest, I don’t think you need to study journalism to be a beauty journalist because in any course you study, you learn how to write and how to compose and structure sentences. But to be a beauty journalist, yes, you need to have an idea about the business of beauty. Looking back, my studies helped me understand the industry from a commercial perspective.</p>
           </div>
-        </div> */}
+        </div>
       </div>
     </>
   )
