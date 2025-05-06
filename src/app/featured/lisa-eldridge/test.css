@@ -179,6 +179,10 @@ body {
   font-style: italic;
 }
 
+.interactive-image-caption a {
+  text-decoration: underline;
+}
+
 .interactive-image-caption p {
   font-family: 'Playfair' !important;
 }

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+
 #spring-container-background {
   position: fixed;
   top: 0;
@@ -39,24 +41,15 @@
 }
 
 .featured-profile-image {
-  height: 500px;
-  width: 40%;
-  position: absolute;
-  top: 15%;
-  left: 5%;
+  height: 700px;
+  width: 50%;
   object-fit: cover;
   object-position: center;
 }
 
-.featured-title {
-  position: absolute;
-  right: 8%;
-  top: 40%;
-}
-
 .mags {
   width: fit-content;
-  padding: 50px 200px;
+  padding: 50px 500px 50px 200px;
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
@@ -167,6 +160,10 @@ body {
   justify-content: space-between;
 }
 
+#section-2 {
+  padding-top: 200px;
+}
+
 #section-2 img {
   height: auto;
   width: 40%;
@@ -186,18 +183,20 @@ body {
   font-size: 1.25rem;
   font-weight: 300;
   font-style: italic;
+  font-family: 'Playfair' !important;
 }
 
-.interactive-image-caption p {
-  font-family: 'Playfair' !important;
+.interactive-image-caption a {
+  text-decoration: underline;
 }
 
 #caption-1 {
   position: absolute;
-  top: 40%;
+  top: 0%;
   right: 15%;
   opacity: 0;
   width: 400px;
+  font-family: 'Playfair';
 }
 
 #image-section-1 {
