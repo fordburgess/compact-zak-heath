@@ -21,7 +21,6 @@ const Lipstick = (props) => {
   }, []);
 
   useEffect(() => {
-    console.log(scrollY)
     if (modelRef.current && scrollY) {
       modelRef.current.rotation.z = -(scrollY - 870) * 0.0005;
       modelRef.current.rotation.y = -(scrollY - 870) * 0.0005;

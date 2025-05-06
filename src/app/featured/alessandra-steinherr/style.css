@@ -290,6 +290,7 @@ body {
 
 .alessandro-intro {
   height: 200vh;
+  background-color: red;
 }
 
 .alessandra-intro-text h2 {
@@ -308,4 +309,25 @@ body {
 .another-div {
   height: 500vh;
   width: 100vw;
+}
+
+.canvas-pointer-line {
+  height: 20px;
+  width: 1px;
+  background-color: #fff;
+  position: absolute;
+  bottom: 15%;
+  left: 40%;
+  transform-origin: bottom;
+  opacity: 0;
+}
+
+.model-caption {
+  position: absolute;
+  left: 22%;
+  bottom: -2%;
+  width: 300px;
+  font-size: 1.15rem;
+  font-family: 'Playfair';
+  opacity: 0;
 }
