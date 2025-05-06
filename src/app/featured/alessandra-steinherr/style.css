@@ -153,6 +153,10 @@ body {
   /* background-color: red; */
 }
 
+#section-6, #section-7 {
+  align-items: start !important;
+}
+
 #section-2 img {
   height: auto;
   width: 40%;

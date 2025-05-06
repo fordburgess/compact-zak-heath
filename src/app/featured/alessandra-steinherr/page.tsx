@@ -59,6 +59,15 @@ const AlessandraSteinherr = () => {
       scrub: true,
     });
 
+    ScrollTrigger.create({
+      trigger: ".second-image-container",
+      start: "top top",
+      end: "+=7000",
+      pin: ".second-image-container",
+      pinSpacing: false,
+      scrub: true,
+    });
+
     gsap.to('.alessandra-intro-text', {
       opacity: 0,
       ease: 'power1.inOut',
@@ -80,42 +89,6 @@ const AlessandraSteinherr = () => {
         scrub: true
       }
     })
-
-//     ScrollTrigger.create({
-//       trigger: "#section-1",
-//       start: "top top",
-//       end: "+=100%",
-//       pin: "#section-1",
-//       pinSpacing: false,
-//       scrub: true,
-//     });
-//
-//     ScrollTrigger.create({
-//       trigger: "#section-2",
-//       start: "top top",
-//       end: "+=100%",
-//       pin: "#section-2",
-//       pinSpacing: false,
-//       scrub: true,
-//     });
-//
-//     ScrollTrigger.create({
-//       trigger: "#section-3",
-//       start: "top top",
-//       end: "+=100%",
-//       pin: "#section-3",
-//       pinSpacing: false,
-//       scrub: true,
-//     });
-//
-//     ScrollTrigger.create({
-//       trigger: "#section-4",
-//       start: "top top",
-//       end: "+=100%",
-//       pin: "#section-4",
-//       pinSpacing: false,
-//       scrub: true,
-//     });
 
     gsap.to('.canvas-pointer-line', {
       height: '50px',
@@ -233,9 +206,20 @@ const AlessandraSteinherr = () => {
         <div className='second-image-container'>
           <Image src={AlessandraPrimark} alt='alessandra-primark' />
         </div>
-        <div style={{ height: '200vh', width: '200vw' }}>
-
+        <div style={{ height: '50vh', width: '50vw' }}></div>
+        <div className='text-section' id='section-6' style={{ marginBottom: '80vh' }}>
+          <div style={{ width: '50%' }}>
+            <h1 className='text-section-title'>How did you manifest your entry into journalism?</h1>
+            <p className='featured-paragraph-text'>My dream has always been to be a beauty editor. Every day, on my way to work, sitting on the bus from Lancaster Gate, I looked out at the Thames and told myself, 'One day, I’ll be the beauty director of the biggest magazine in the UK’. I didn’t know which one; I just knew it would happen. And it did; when I joined Glamour, it was the best-selling magazine at the time in terms of sales and most popular for beauty at the time.</p>
+          </div>
         </div>
+        <div className='text-section' id='section-7'>
+          <div style={{ width: '50%' }}>
+            <h1 className='text-section-title'>You became the youngest beauty director at Glamour at 26. What was that like?</h1>
+            <p className='featured-paragraph-text'>It was intense. I wanted the role, and I worked hard for it, but I wasn’t fully prepared for the pressure. It was isolating because I didn’t want to show any signs of struggle. Other directors questioned why I was there at such a young age. Looking back, I could have benefitted from one more time learning the ropes, but I don’t regret it - it shaped me. I worked nonstop, even on Christmas, just to prove myself.</p>
+          </div>
+        </div>
+        <div style={{ height: '200vh' }}></div>
       </div>
     </>
   )
