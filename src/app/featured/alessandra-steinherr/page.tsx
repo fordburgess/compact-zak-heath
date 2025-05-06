@@ -144,22 +144,22 @@ const AlessandraSteinherr = () => {
     })
   }, []);
 
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       const scrollTop = window.scrollY;
-//       const backgroundImage: HTMLElement | null = document.getElementById('spring-container-background');
-//
-//       if (backgroundImage) {
-//         backgroundImage.style.transform = `translateY(-${scrollTop * 0.05}px)`;
-//       }
-//     };
-//
-//     window.addEventListener('scroll', handleScroll);
-//
-//     return () => {
-//       window.removeEventListener('scroll', handleScroll);
-//     };
-//   }, []);
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const backgroundImage: HTMLElement | null = document.getElementById('spring-container-background');
+
+      if (backgroundImage) {
+        backgroundImage.style.transform = `translateY(-${scrollTop * 0.05}px)`;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <>
