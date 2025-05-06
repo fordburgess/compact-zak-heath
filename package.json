@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-three/drei": "^10.0.7",
+    "@react-three/fiber": "^9.1.2",
     "@wavesurfer/react": "^1.0.11",
     "gsap": "^3.12.7",
     "motion": "^12.7.4",
@@ -17,6 +19,7 @@
     "noisejs": "^2.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "three": "^0.176.0",
     "usehooks-ts": "^3.1.1",
     "wavesurfer.js": "^7.9.4"
   },
@@ -26,6 +29,7 @@
     "@types/noisejs": "^2.1.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/three": "^0.176.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

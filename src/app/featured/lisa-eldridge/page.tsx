@@ -11,7 +11,7 @@ import HarpersBazaar from '../../../assets/images/harpers-bazaar.jpg';
 import LisaEldridge2 from '../../../assets/images/lisa-eldridge-2.webp';
 import LisaEldridge4 from '../../../assets/images/lisa-eldridge-4.webp';
 import LisaEldridge8 from '../../../assets/images/lisa-eldridge-8.jpg';
-import DuaLipa from '../../../assets/images/dua-lipa-lisa-eldridge.jpg';
+import LisaMBE from '../../../assets/images/lisa-mbe.png';
 import './test.css'
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
@@ -303,10 +303,6 @@ const LisaEldridge = () => {
               <Image src={HarpersBazaar} alt='harpers-bazaar' />
             </div>
           </div>
-          <div className='text-section' id='section-1'>
-            <h1 className='text-section-title'>What name would you have chosen, if you could have been called anything else?</h1>
-            <p className='featured-paragraph-text'>Oh, my God, well, my mum was actually going to call me Nina. And then, last minute, she changed it to Lisa. At one point, I thought I would have preferred Nina—I like it better. Honestly, I don’t like Lisa.</p>
-          </div>
           <div className='text-section' id='section-2'>
             <div className='pin-container'>
               <div className='section-2-text' style={{ width: '55%' }}>
@@ -354,13 +350,13 @@ const LisaEldridge = () => {
               <div id='image-item-1'>
                 <Image src={LisaEldridge8} alt='lisa-eldridge-at-work' className='image-column-child' id='image-column-1'/>
                 <div className='interactive-image-caption' id='caption-3'>
-                  <p>Lisa at work.</p>
+                  <p>Lisa at work - From <a style={{ textDecoration: 'underline'}} href='https://lisaeldridge.com' rel="noopener noreferrer" target="_blank">lisaeldridge.com</a></p>
                 </div>
               </div>
               <div id='image-item-2'>
-                <Image src={DuaLipa} alt='lisa-eldridge-at-work' className='image-column-child' id='image-column-1'/>
+                <Image src={LisaMBE} alt='lisa-eldridge-at-work' className='image-column-child' id='image-column-1'/>
                 <div className='interactive-image-caption' id='caption-3'>
-                  <p>Test Test Test</p>
+                  <p>Lisa is awarded an MBE</p>
                 </div>
               </div>
             </div>
