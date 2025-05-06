@@ -7,7 +7,7 @@ import AlessandraPrimark from '../../../assets/images/alessandra-primark.png';
 import { useLoader } from '@react-three/fiber';
 import { Environment } from '@react-three/drei';
 import { Canvas } from "@react-three/fiber";
-import { ScrollControls, OrbitControls, useScroll } from '@react-three/drei';
+import GlamourMag from '../../../assets/images/glamour-mag.webp';
 import Lipstick from '@/components/lipstick';
 import './style.css'
 import { motion } from 'framer-motion';
@@ -62,7 +62,7 @@ const AlessandraSteinherr = () => {
     ScrollTrigger.create({
       trigger: ".second-image-container",
       start: "top top",
-      end: "+=7000",
+      end: "+=4900",
       pin: ".second-image-container",
       pinSpacing: false,
       scrub: true,
