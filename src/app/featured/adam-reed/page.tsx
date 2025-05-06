@@ -259,14 +259,14 @@ const AdamReed = () => {
       pin: true,
       scrub: true,
     });
-
-    ScrollTrigger.create({
-      trigger: "#section-8",
-      start: "top top",
-      end: "+=50%",
-      pin: true,
-      scrub: true,
-    });
+//
+//     ScrollTrigger.create({
+//       trigger: "#section-8",
+//       start: "top top",
+//       end: "+=50%",
+//       pin: true,
+//       scrub: true,
+//     });
 
     ScrollTrigger.create({
       trigger: ".image-column",
@@ -282,10 +282,9 @@ const AdamReed = () => {
       ease: 'power1.inOut',
       scrollTrigger: {
         trigger: '#section-5',
-        start: 'top 10%',
-        end: 'bottom 80%',
+        start: 'top -20%',
+        end: 'bottom top',
         scrub: true,
-        // markers: true,
       }
     })
 
@@ -301,30 +300,17 @@ const AdamReed = () => {
       }
     })
 
-    // gsap.to('#image-item-2', {
-    //   opacity: 0,
-    //   y: -100,
-    //   ease: 'power1.inOut',
-    //   scrollTrigger: {
-    //     trigger: '#section-8',
-    //     start: 'top 10%',
-    //     end: 'bottom 80%',
-    //     scrub: true,
-    //     markers: true
-    //   }
-    // })
-//
-//     gsap.to('#image-item-3', {
-//       opacity: 1,
-//       top: '0%',
-//       ease: 'power1.inOut',
-//       scrollTrigger: {
-//         trigger: '#section-9',
-//         start: 'top center',
-//         end: 'top top',
-//         scrub: true,
-//       }
-//     })
+    gsap.to('#image-item-2', {
+      opacity: 0,
+      // y: -100,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#section-7',
+        start: 'top -10%',
+        end: 'top -20%',
+        scrub: true,
+      }
+    })
   }, [])
 
   return (
@@ -398,7 +384,7 @@ const AdamReed = () => {
                 <h1>What was your very first show?</h1>
                 <p className='featured-paragraph-text'>It was for Red or Dead in 1996. They were a revolutionary streetwear brand who had a shop in Covent Garden, and I was obsessed with their clothes. It felt like a full-circle moment that they were my first London Fashion Week show since I loved their clothes and this made me massively believe in manifestation and putting things into the universe . From there, I worked with other amazing designers, including Andrew Groves, who was McQueen’s boyfriend at the time and whose shows really pushed boundaries - for example, one of his shows was called Cociane Nights and down the runway was a line of “coke”. I then started doing Julian McDonald, Matthew Williamson and then both the commercial and high-end fashion. I was really lucky that my trajectory took me to do all of that.</p>
               </div>
-              <div className='text-section' id='section-8'>
+              {/* <div className='text-section' id='section-8'>
                 <h1>What’s been your biggest “pinch me” moment so far?</h1>
                 <p className='featured-paragraph-text'>You know what, it was doing Madonna’s hair for her Me Against the Music video with Britney Spears. I’ve always been a huge Madonna fan, so stepping into that role was surreal.</p>
                 <p className='featured-paragraph-text'>For £60 in 2002, I bought some black heels from a charity auction on the Old Icon Madonna fan club as I am the biggest Madonna fan. Luigi Murenu used to do her hair but he was in Paris to do the Victor and Rolf show, so he asked me to go instead to Silver Cup Studios in New York. That was insane. Whilst doing her hair, Like A Prayer was being played on the radio, it felt like a everything had come full circle.</p>
@@ -407,7 +393,7 @@ const AdamReed = () => {
                 <h1>Did you attend beauty school?</h1>
                 <p className='featured-paragraph-text'>Yes, I worked in a salon and attended beauty school once a week to get my City & Guilds qualification and the school was called SCAT, Somerset College of Arts. Then it was very in- depth, we even learned how to make shampoo and perm solutions from scratch. When I moved to London at the age of twenty-two, I started at Charles Worthington.</p>
                 <p className='featured-paragraph-text'>Don’t think you’re silly or something and don’t be afraid to explore, speak your mind, and trust your instincts. There’s good ideas, bad ideas, but actually they’re all good.</p>
-              </div>
+              </div> */}
             </div>
             <div className='image-column'>
               <div id='image-item-1'>
@@ -418,17 +404,17 @@ const AdamReed = () => {
                 </div>
               </div>
               <div id='image-item-2'>
-                <Image src={CocaineNights} alt='lisa-eldridge-at-work' className='image-column-child' id='image-column-1'/>
+                <Image src={CocaineNights} alt='cocaine-nights' className='image-column-child' id='image-column-1'/>
                 <div className='interactive-image-caption' id='caption-3'>
                   <p>Andrew Goves’ 1998 Cocaine Nights fashion show was extremely controversial but memorable. A dress was constructed entirely from razor blades and the runway itself was made out of a white powdery substance symbolising cocaine. Adam was the hair stylist for this show (Image credit: Pinterest)</p>
                 </div>
               </div>
-              <div id='image-item-3'>
+              {/* <div id='image-item-3'>
                 <Image src={AdamReed2} alt='lisa-eldridge-at-work' className='image-column-child' id='image-column-1'/>
                 <div className='interactive-image-caption' id='caption-3'>
                   <p>Adam Reed in 2023</p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
