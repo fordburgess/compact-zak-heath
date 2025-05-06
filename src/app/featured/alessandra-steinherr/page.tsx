@@ -137,13 +137,42 @@ const AlessandraSteinherr = () => {
     gsap.fromTo(".glamour-mag-image",
       { x: "-100%", opacity: 0 },
       {
-        x: "10%",
+        x: "5%",
         opacity: 1,
         ease: "power1.out",
         scrollTrigger: {
           trigger: ".glamour-mag-section",
           start: "top top",
           end: "+=100%",
+          scrub: true,
+        }
+      }
+    );
+
+    gsap.fromTo(".glamour-caption",
+      { x: "100%", opacity: 0 },
+      {
+        x: "0%",
+        opacity: 1,
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: ".glamour-mag-section",
+          start: "top top",
+          end: "+=100%",
+          scrub: true,
+        }
+      }
+    );
+
+    gsap.fromTo(".glamour-line",
+      { scaleX: 0 },
+      {
+        scaleX: 1,
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: ".glamour-mag-section",
+          start: "top top+=10%",
+          end: "+=80%",
           scrub: true,
         }
       }
@@ -252,6 +281,10 @@ const AlessandraSteinherr = () => {
         <div style={{ height: '50vh', width: '100vw'}}></div>
         <div className='glamour-mag-section'>
           <Image src={GlamourMag} className='glamour-mag-image' alt='glamour-mag-cover' />
+          <div className='glamour-line'></div>
+          <div className='glamour-caption'>
+            <p>Rosie Huntington-Whiteley on the cover of Glamour UK’s June 2017 issue. She was styled for the shoot by Alessandra Steinherr.</p>
+          </div>
         </div>
         <div style={{ height: '200vh' }}></div>
       </div>
