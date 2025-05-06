@@ -343,7 +343,7 @@ const AdamReed = () => {
               </div>
               <Image src={JulienDys} alt='lisa-eldridge-2' id='image-1' />
               <div className='interactive-image-caption' id='caption-1'>
-                <p>Julien d’Ys is a renowned French hairstylist and artist, celebrated for his avant-garde approach resulting in his work being featured in Vogue and Harper’s Bazaar. He has partnered with legendary photographers insulting Steven Meisel and Annie Leibovitz but notably he has maintained a decades-long collaboration with Comme des Garçons designer Rei Kawakubo, contributing to some of the brand’s iconic runway looks. He has also created multiple sculptures which have been featured in various exhibitions (Image credit: Peter Lindbergh/ 2b Management)</p>
+                <p>Julien d’Ys is a renowned French hairstylist and artist, celebrated for his avant-garde approach resulting in his work being featured in Vogue and Harper’s Bazaar. He has partnered with legendary photographers including Steven Meisel and Annie Leibovitz but notably he has maintained a decades-long collaboration with Comme des Garçons designer Rei Kawakubo, contributing to some of the brand’s iconic runway looks. He has also created multiple sculptures which have been featured in various exhibitions (Image credit: Peter Lindbergh/ 2b Management)</p>
               </div>
             </div>
           </div>
