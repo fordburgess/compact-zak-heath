@@ -8,7 +8,6 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls, useScroll } from '@react-three/drei';
 
 const page = (props) => {
-  const { nodes, materials } = useGLTF('/lipstick.glb')
   const modelRef = useRef(null);
   const scroll = useScroll();
   const rotationSpeed = 0.1;

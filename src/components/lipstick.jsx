@@ -12,8 +12,11 @@ const Lipstick = (props) => {
   const scroll = useScroll();
   const rotationSpeed = 0.1;
 
-  return (
+  if (!nodes || !materials) {
+    return <p>Loading</p>
+  }
 
+  return (
     <group {...props} dispose={null}>
       <group scale={0.01}>
         <group
