@@ -126,6 +126,29 @@ const AlessandraSteinherr = () => {
       });
     })
 
+    ScrollTrigger.create({
+      trigger: ".glamour-mag-section",
+      start: "top top",
+      end: "+=100%",
+      pin: true,
+      scrub: true,
+    });
+
+    gsap.fromTo(".glamour-mag-image",
+      { x: "-100%", opacity: 0 },
+      {
+        x: "10%",
+        opacity: 1,
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: ".glamour-mag-section",
+          start: "top top",
+          end: "+=100%",
+          scrub: true,
+        }
+      }
+    );
+
   }, []);
 
   useEffect(() => {
@@ -228,7 +251,7 @@ const AlessandraSteinherr = () => {
         </div>
         <div style={{ height: '50vh', width: '100vw'}}></div>
         <div className='glamour-mag-section'>
-          <Image src={GlamourMag} alt='glamour-mag-cover' />
+          <Image src={GlamourMag} className='glamour-mag-image' alt='glamour-mag-cover' />
         </div>
         <div style={{ height: '200vh' }}></div>
       </div>
