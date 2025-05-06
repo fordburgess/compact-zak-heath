@@ -84,8 +84,14 @@ const AlessandraSteinherr = () => {
       }
     })
 
-
-
+    ScrollTrigger.create({
+      trigger: "#section-1",
+      start: "top top",
+      end: "+=100%",
+      pin: "#section-1",
+      pinSpacing: false,
+      scrub: true,
+    });
   }, []);
 
 //   useEffect(() => {
@@ -131,6 +137,12 @@ const AlessandraSteinherr = () => {
           </Canvas>
         </div>
         <div className='alex-scroll-test'></div>
+        <div className='text-section' id='section-1'>
+          <div style={{ width: '50%' }}>
+            <h1 className='text-section-title'>What was your first interaction with magazines and beauty?</h1>
+            <p className='featured-paragraph-text'>I was reading magazines from such a young age. My grandmother was a dressmaker and had Italian Vogue, Periscope, and other fashion magazines. I wasn’t a skinny girl, so I didn’t connect with fashion models because I couldn’t fit into those bikinis, but I loved the beauty sections—the faces, skin, and hair. Allure was American; it was my bible, but it wasn’t easily available where I lived in Austria, so I found an English-speaking bookshop, which always had one, and I’d run to buy it. I was obsessed. It’s not like today, where you can go on your phone and find new information. It was always my dream to become a beauty editor.</p>
+          </div>
+        </div>
         <div className='another-div'>
 
         </div>
