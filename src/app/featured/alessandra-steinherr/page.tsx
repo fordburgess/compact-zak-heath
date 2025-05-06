@@ -93,6 +93,24 @@ const AlessandraSteinherr = () => {
       scrub: true,
     });
 
+    ScrollTrigger.create({
+      trigger: "#section-2",
+      start: "top top",
+      end: "+=100%",
+      pin: "#section-2",
+      pinSpacing: false,
+      scrub: true,
+    });
+
+    ScrollTrigger.create({
+      trigger: "#section-3",
+      start: "top top",
+      end: "+=100%",
+      pin: "#section-3",
+      pinSpacing: false,
+      scrub: true,
+    });
+
     gsap.to('.canvas-pointer-line', {
       height: '50px',
       opacity: 1,
@@ -172,6 +190,12 @@ const AlessandraSteinherr = () => {
           <div style={{ width: '50%' }}>
             <h1 className='text-section-title'>Did you study journalism or something completely different?</h1>
             <p className='featured-paragraph-text'>I studied business and economics in America and Belgium, but my heart was always set on beauty journalism. My dad insisted I get a degree first because then I could do whatever I wanted, and to be honest, I don’t think you need to study journalism to be a beauty journalist because in any course you study, you learn how to write and how to compose and structure sentences. But to be a beauty journalist, yes, you need to have an idea about the business of beauty. Looking back, my studies helped me understand the industry from a commercial perspective.</p>
+          </div>
+        </div>
+        <div className='text-section' id='section-3'>
+          <div style={{ width: '50%' }}>
+            <h1 className='text-section-title'>What was your first job?</h1>
+            <p className='featured-paragraph-text'>My first paid ‘official’ job in journalism was as a beauty assistant at a magazine called Shine, which doesn’t exist anymore. My salary was £13,000 a year - not much, but I was thrilled to be there, and I think I must have been 23 or 24. Before that, I had work experience, but it was unpaid back then. Nowadays, that’s not allowed, thank God; now you have to be paid!</p>
           </div>
         </div>
       </div>
