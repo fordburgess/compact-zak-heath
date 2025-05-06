@@ -237,12 +237,12 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 600vh; /* enough scroll space */
+  height: 1000vh; /* enough scroll space */
   position: relative;
   /* background-color: rgba(0, 0, 255, 0.605); */
 }
 
-#section-4, #section-5, #section-6 {
+#section-4, #section-5, #section-6, #section-7, #section-8, #section-9 {
   width: 100%;
   padding: 5rem 4rem;
   opacity: 0;
@@ -277,6 +277,15 @@ body {
 #image-item-2 {
   position: absolute;
   top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  opacity: 0;
+}
+
+#image-item-3 {
+  position: absolute;
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
