@@ -205,6 +205,7 @@ const AlessandraSteinherr = () => {
         </div>
         <div className='second-image-container'>
           <Image src={AlessandraPrimark} alt='alessandra-primark' />
+          <p>Alessandra Steinherr x Primark. The collection focused on affordable but effective products (Image credit: Pop Sugar)</p>
         </div>
         <div style={{ height: '50vh', width: '50vw' }}></div>
         <div className='text-section' id='section-6'>

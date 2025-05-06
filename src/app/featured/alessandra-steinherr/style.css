@@ -280,6 +280,12 @@ body {
 .second-image-container img {
   height: 500px;
   width: 350px;
+  margin-bottom: 10px;
+}
+
+.second-image-container p {
+  font-family: 'Playfair';
+  width: 500px;
 }
 
 .lipstick-canvas {
