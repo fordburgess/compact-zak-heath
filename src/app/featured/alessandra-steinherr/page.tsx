@@ -73,16 +73,16 @@ const AlessandraSteinherr = () => {
       }
     })
 
-    // gsap.to('.lipstick-container', {
-    //   x: -700,
-    //   ease: 'power1.inOut',
-    //   scrollTrigger: {
-    //     trigger: '.alex-scroll-test',
-    //     start: 'top 80%',
-    //     end: 'top top',
-    //     scrub: true
-    //   }
-    // })
+    gsap.to('.lipstick-container', {
+      x: -700,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '.alex-scroll-test',
+        start: 'center 85%',
+        end: 'center top',
+        scrub: true
+      }
+    })
 
 
 
