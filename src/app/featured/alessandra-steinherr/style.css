@@ -261,6 +261,22 @@ body {
   right: -10%;
 }
 
+.second-image-container {
+  width: 50vw;
+  height: 100vh;
+  position: absolute;
+  right: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.second-image-container img {
+  height: 500px;
+  width: 350px;
+}
+
 .lipstick-canvas {
   width: 100%;
   /* transform: translateY(100%); */

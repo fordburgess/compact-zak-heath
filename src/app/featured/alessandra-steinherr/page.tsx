@@ -3,10 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import AlessandraSteinherrProfile from '../../../assets/images/alessandra-steinherr.webp';
 import SpringExpanded from '../../../assets/images/spring-expanded.jpg';
-import RihannaVogue from '../../../assets/images/rihanna-vogue.jpg';
-import VogueParis from '../../../assets/images/vogue-paris.jpg';
-import VogueJapan from '../../../assets/images/vogue-japan.webp';
-import VogueTurkey from '../../../assets/images/vogue-turkey.jpg';
+import AlessandraPrimark from '../../../assets/images/alessandra-primark.png';
 import { useLoader } from '@react-three/fiber';
 import { Environment } from '@react-three/drei';
 import { Canvas } from "@react-three/fiber";
@@ -227,11 +224,17 @@ const AlessandraSteinherr = () => {
             <p className='featured-paragraph-text'>I had a completely unpaid internship at Marie Claire, so I basically paid to work. It was worth it, so I don’t regret it, and I was grateful even to be there. Since I’m not from London, I couldn’t live at home, so, before moving, I worked at a law office in Austria, doing translations and assistant work to save money for a few months until I had enough to afford the rent for a room in Lancaster Gate.</p>
           </div>
         </div>
-        <div className='text-section' id='section-5'>
+        <div className='text-section' id='section-5' style={{ marginBottom: '80vh' }}>
           <div style={{ width: '50%' }}>
             <h1 className='text-section-title'>What were your early career struggles?</h1>
             <p className='featured-paragraph-text'>Firstly, I had no contacts in the industry, so when I got a job at Marie Claire, I wanted to be in the beauty department, but due to a mix-up, I was placed in reception. It should’ve been a paid role, but I said, ‘I’m going to make this work’. I made myself useful and volunteered for everything—photocopies, organising beauty cupboards and whatever was needed. It was a Devil Wears Prada kind of environment, very hierarchical. Interns didn’t talk to editors directly; interns talked to assistants.</p>
           </div>
+        </div>
+        <div className='second-image-container'>
+          <Image src={AlessandraPrimark} alt='alessandra-primark' />
+        </div>
+        <div style={{ height: '200vh', width: '200vw' }}>
+
         </div>
       </div>
     </>
