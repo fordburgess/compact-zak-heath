@@ -189,8 +189,8 @@ const AdamReed = () => {
       ease: 'power1.inOut',
       scrollTrigger: {
         trigger: '#section-6',
-        start: 'top -50%',
-        end: 'top -100%',
+        start: 'top -100%',
+        end: 'top -150%',
         scrub: true,
       }
     })
@@ -200,8 +200,8 @@ const AdamReed = () => {
       ease: 'power1.inOut',
       scrollTrigger: {
         trigger: '#section-7',
-        start: 'top -50%',
-        end: 'top -100%',
+        start: 'top -150%',
+        end: 'top -200%',
         scrub: true,
       }
     })
@@ -211,8 +211,19 @@ const AdamReed = () => {
       ease: 'power1.inOut',
       scrollTrigger: {
         trigger: '#section-8',
-        start: 'top -50%',
-        end: 'top -100%',
+        start: 'top -200%',
+        end: 'top -250%',
+        scrub: true,
+      }
+    })
+
+    gsap.to('#section-9', {
+      opacity: 1,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#section-9',
+        start: 'top -250%',
+        end: 'top -300%',
         scrub: true,
       }
     })
@@ -227,14 +238,6 @@ const AdamReed = () => {
 
     ScrollTrigger.create({
       trigger: "#section-5",
-      start: "top top",
-      end: "+=50%",
-      pin: true,
-      scrub: true,
-    });
-
-    ScrollTrigger.create({
-      trigger: "#section-6",
       start: "top top",
       end: "+=50%",
       pin: true,
@@ -278,10 +281,11 @@ const AdamReed = () => {
       y: -100,
       ease: 'power1.inOut',
       scrollTrigger: {
-        trigger: '#section-6',
-        start: 'top -20%',
-        end: 'bottom top',
+        trigger: '#section-5',
+        start: 'top 10%',
+        end: 'bottom 80%',
         scrub: true,
+        // markers: true,
       }
     })
 
@@ -290,24 +294,37 @@ const AdamReed = () => {
       top: '0%',
       ease: 'power1.inOut',
       scrollTrigger: {
-        trigger: '#section-7',
+        trigger: '#section-6',
         start: 'top center',
         end: 'top top',
         scrub: true,
       }
     })
 
-    gsap.to('#image-item-3', {
-      opacity: 1,
-      top: '0%',
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#section-9',
-        start: 'top center',
-        end: 'top top',
-        scrub: true,
-      }
-    })
+    // gsap.to('#image-item-2', {
+    //   opacity: 0,
+    //   y: -100,
+    //   ease: 'power1.inOut',
+    //   scrollTrigger: {
+    //     trigger: '#section-8',
+    //     start: 'top 10%',
+    //     end: 'bottom 80%',
+    //     scrub: true,
+    //     markers: true
+    //   }
+    // })
+//
+//     gsap.to('#image-item-3', {
+//       opacity: 1,
+//       top: '0%',
+//       ease: 'power1.inOut',
+//       scrollTrigger: {
+//         trigger: '#section-9',
+//         start: 'top center',
+//         end: 'top top',
+//         scrub: true,
+//       }
+//     })
   }, [])
 
   return (
@@ -358,6 +375,12 @@ const AdamReed = () => {
           </div>
           <div className='column-wrapper'>
             <div style={{ width: '70%' }}>
+              {/* <div style={{ height: '50vh', width: '50vw', backgroundColor: 'red',  }}></div> */}
+              {/* <div style={{ height: '50vh', width: '50vw', backgroundColor: 'green',  }}></div> */}
+              {/* <div style={{ height: '50vh', width: '50vw', backgroundColor: 'blue',  }}></div> */}
+              {/* <div style={{ height: '50vh', width: '50vw', backgroundColor: 'red', opacity: 0 }}></div>
+              <div style={{ height: '50vh', width: '50vw', backgroundColor: 'red', opacity: 0 }}></div>
+              <div style={{ height: '50vh', width: '50vw', backgroundColor: 'red', opacity: 0 }}></div> */}
               <div className='text-section' id='section-4'>
                 <h1 className='text-section-title'>Where did you go clubbing in London at 21?</h1>
                 <p className='featured-paragraph-text'>I went to Heaven, Velvet Underground, and a bar in Soho called Ricky Ticks, a hub for fashion people. Moving to London at 22, I immersed myself in these places to network and meet people, so I went three to four times a week, I loved it and I felt like I was with my people. I even met Jean Paul Gaultier at Heaven! I was wearing a Jean Paul Gaultier kilt, and so was he. I walked right up to him. Networking then was all face-to-face, and I loved it, so I made sure I was in the right places to meet the right people and you’d meet the most amazing people in Heaven.</p>
