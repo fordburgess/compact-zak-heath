@@ -1,5 +1,6 @@
 "use client"
 import React, { useEffect, useRef } from 'react'
+import Lipstick from '@/components/lipstick';
 import { useLoader } from '@react-three/fiber';
 import { Environment, useGLTF } from '@react-three/drei';
 import { Canvas } from "@react-three/fiber";
@@ -17,34 +18,7 @@ const page = (props) => {
       <Canvas>
         <Environment preset='studio' />
         <OrbitControls />
-        <group {...props} dispose={null}>
-          <group scale={0.01}>
-            <group
-              position={[-45.848, 58.243, -17.769]}
-              rotation={[Math.PI / 2, 0, -0.262]}
-              scale={[1.009, 1.009, 1.046]}>
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes['Circle002_Material_#26_0'].geometry}
-                material={materials.Material_26}
-                position={[8.778, -80.737, 54.321]}
-              />
-            </group>
-            <group
-              position={[-49.423, 58.243, -16.375]}
-              rotation={[Math.PI / 2, 0, 0.436]}
-              scale={[1.009, 1.009, 1.046]}>
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes['Object001_Material_#26_0'].geometry}
-                material={materials.Material_26}
-                position={[8.778, -80.737, 54.321]}
-              />
-            </group>
-          </group>
-        </group>
+        <Lipstick />
       </Canvas>
     </div>
   )

@@ -16,19 +16,18 @@ import './style.css'
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import Lipstick from '/models/next.svg'
 
 const AlessandraSteinherr = () => {
-  const gltf = useGLTF('/lipstick.glb')
-  const modelRef = useRef(null);
-  const scroll = useScroll();
-  const rotationSpeed = 0.1;
+  // const gltf = useGLTF('/lipstick.glb')
+  // const modelRef = useRef(null);
+  // const scroll = useScroll();
+  // const rotationSpeed = 0.1;
 
   useEffect(() => {
     // if (modelRef.current) {
     //   modelRef.current.rotation.y = scroll * rotationSpeed;
     // }
-    console.log(gltf.scene)
+    // console.log(gltf.scene)
   }, []);
 
 //   useEffect(() => {
@@ -60,11 +59,11 @@ const AlessandraSteinherr = () => {
           </div>
         </div>
         <div style={{ padding: '100px 0'}}>
-          <Canvas
+          {/* <Canvas
             style={{ width: '50vw', height: '50vh' }}
             camera={{ position: [0, 0, 5], fov: 75 }}
           >
-            {/* <mesh geometry={nodes.Circle002.geometry} material={materials.gray} material-envMap={env} /> */}
+            <mesh geometry={nodes.Circle002.geometry} material={materials.gray} material-envMap={env} />
             <mesh ref={modelRef} scale={5} position={[0, 0, 0]}>
               <ambientLight intensity={1} />
               <spotLight position={[0, 0, 0]} angle={0.25} intensity={1.8} />
@@ -72,7 +71,7 @@ const AlessandraSteinherr = () => {
               <OrbitControls />
               <primitive object={gltf.scene} />
             </mesh>
-          </Canvas>
+          </Canvas> */}
         </div>
       </div>
     </>
