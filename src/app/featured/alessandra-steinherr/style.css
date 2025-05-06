@@ -153,11 +153,6 @@ body {
   width: 70%;
 }
 
-.pin-container {
-  display: flex;
-  justify-content: space-between;
-}
-
 #section-2 img {
   height: auto;
   width: 40%;
@@ -165,7 +160,7 @@ body {
   object-position: center;
 }
 
-.lisa-scroll-test {
+.alex-scroll-test {
   /* position: absolute; */
   height: 200vh;
   width: 100vw;
@@ -268,11 +263,13 @@ body {
 
 .lipstick-canvas {
   width: 50%;
+  transform: translateY(100%);
+  position: relative;
   /* width: 50px; */
   /* background-color: rgba(255, 0, 0, 0.6); */
 }
 
-.alessandra-intro {
+.pin-container {
   height: 100vh;
   width: 100vw;
   padding: 100px;
@@ -280,6 +277,10 @@ body {
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
+}
+
+.alessandro-intro {
+  height: 200vh;
 }
 
 .alessandra-intro-text h2 {
@@ -296,6 +297,6 @@ body {
 }
 
 .another-div {
-  height: 300vh;
+  height: 500vh;
   width: 100vw;
 }

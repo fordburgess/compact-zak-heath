@@ -26,11 +26,53 @@ const AlessandraSteinherr = () => {
     ScrollTrigger.create({
       trigger: ".alessandra-intro",
       start: "top top",
-      end: "+=70%",
+      end: "+=250%",
       pin: ".alessandra-intro",
       pinSpacing: false,
       scrub: true,
     });
+
+    gsap.to('.lipstick-container', {
+      y: '-100%',
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '.alessandra-intro',
+        start: 'top 20%',
+        end: 'top top',
+        scrub: true,
+      }
+    })
+
+    // ScrollTrigger.create({
+    //   trigger: ".alessandra-intro",
+    //   start: "top top",
+    //   end: "bottom top",
+    //   pin: ".pin-container",
+    //   pinSpacing: false,
+    //   scrub: true,
+    // });
+
+    gsap.to('.alessandra-intro-text', {
+      opacity: 0,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '.alex-scroll-test',
+        start: 'top 80%',
+        end: 'top top',
+        scrub: true
+      }
+    })
+
+    gsap.to('.lipstick-container', {
+      x: -700,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '.alex-scroll-test',
+        start: 'top 80%',
+        end: 'top top',
+        scrub: true
+      }
+    })
   }, []);
 
 //   useEffect(() => {
@@ -62,16 +104,21 @@ const AlessandraSteinherr = () => {
           </div>
         </div>
         <div className='alessandra-intro'>
-          <div className='alessandra-intro-text'>
-            <h2>Alessandra reflects on her journey as Glamour’s youngest beauty director at 26, to becoming an influencer in this constantly changing beauty landscape.</h2>
-            <p>Alessandra Steinherr is a beauty journalist with over two decades of experience serving as Beauty Director at Cosmopolitan for six years and at Glamour magazine for eleven years before concentrating more on socials and becoming an influencer. What sets her apart, in this saturated digital landscape, is that she combines her online career, with her role as the Beauty Director at The Glossary magazine whilst having a consultancy business too.</p>
+          <div className='pin-container'>
+            <div className='alessandra-intro-text'>
+              <h2>Alessandra reflects on her journey as Glamour’s youngest beauty director at 26, to becoming an influencer in this constantly changing beauty landscape.</h2>
+              <p>Alessandra Steinherr is a beauty journalist with over two decades of experience serving as Beauty Director at Cosmopolitan for six years and at Glamour magazine for eleven years before concentrating more on socials and becoming an influencer. What sets her apart, in this saturated digital landscape, is that she combines her online career, with her role as the Beauty Director at The Glossary magazine whilst having a consultancy business too.</p>
+            </div>
+            <div className='lipstick-container'>
+              <Canvas className='lipstick-canvas' style={{ width: '500px', height: '80vh'}}>
+                <Environment preset='studio' />
+                {/* <OrbitControls /> */}
+                <Lipstick />
+              </Canvas>
+            </div>
           </div>
-          <Canvas className='lipstick-canvas' style={{ width: '500px', height: '80vh'}}>
-            <Environment preset='studio' />
-            {/* <OrbitControls /> */}
-            <Lipstick />
-          </Canvas>
         </div>
+        <div className='alex-scroll-test'></div>
         <div className='another-div'>
 
         </div>
