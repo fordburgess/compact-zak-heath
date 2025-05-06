@@ -263,7 +263,8 @@ body {
 
 .lipstick-container {
   width: 50vw;
-
+  position: absolute;
+  right: -10%;
 }
 
 .lipstick-canvas {

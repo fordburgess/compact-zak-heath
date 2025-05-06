@@ -55,7 +55,7 @@ const AlessandraSteinherr = () => {
 
     ScrollTrigger.create({
       trigger: ".lipstick-container",
-      start: "top top",
+      start: "top 10%",
       end: "+=5000",
       pin: ".lipstick-container",
       pinSpacing: false,
