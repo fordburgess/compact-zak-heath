@@ -90,7 +90,7 @@ const AdamReed = () => {
 
     ScrollTrigger.create({
       trigger: "#section-2",
-      start: "top top",
+      start: "top 10%",
       end: "bottom top",
       pin: ".pin-container",
       pinSpacing: false,
@@ -122,7 +122,7 @@ const AdamReed = () => {
           </div>
           <div className="mag-wrapper">
             <div className="mag-covers">
-              <h3><span className='drop-cap'>Adam Reed</span>Adam Reed is one of the UK’s most celebrated hair stylists, known for working with fashion magazines like Vogue, Elle and Harper’s Bazaar. Adam has styled an array of celebrities including Madonna and Lady Gaga, earning him the reputation for effortlessly cool, wearable hair. He is the founder of Arkive Headache and the Adam Reed London hair salon. He is an ambassador for L’Oréal Pro and in 2022, the British Beauty Council appointed him as an ambassador for his recognised contribution and advocacy for mental wellbeing in the beauty industry.</h3>
+              <h3><span className='drop-cap'>Adam Reed</span> is one of the UK’s most celebrated hair stylists, known for working with fashion magazines like Vogue, Elle and Harper’s Bazaar. Adam has styled an array of celebrities including Madonna and Lady Gaga, earning him the reputation for effortlessly cool, wearable hair. He is the founder of Arkive Headache and the Adam Reed London hair salon. He is an ambassador for L’Oréal Pro and in 2022, the British Beauty Council appointed him as an ambassador for his recognised contribution and advocacy for mental wellbeing in the beauty industry.</h3>
               <div className='grow-line-1'></div>
               <Image src={AdamReedHair1} alt='adam-reed-hair-1' />
               <Image src={AdamReedHair2} alt='adam-reed-hair-2' />
