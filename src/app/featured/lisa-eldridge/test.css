@@ -33,12 +33,13 @@
 .featured-title-section h1 {
   width: 40%;
   text-align: left;
-  font-weight: 700;
-  font-size: 2.5rem;
+  font-weight: 600;
+  /* font-family: 'Playfair'; */
+  font-size: 3rem;
 }
 
 .featured-profile-image {
-  height: 400px;
+  height: 700px;
   width: 50%;
   object-fit: cover;
   object-position: center;
