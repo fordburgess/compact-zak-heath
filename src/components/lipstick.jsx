@@ -18,9 +18,9 @@ const Lipstick = (props) => {
 
   return (
     <group {...props} dispose={null}>
-      <group scale={0.1}>
+      <group scale={0.045}>
         <group
-          position={[-45.848, 58.243, -17.769]}
+          position={[0, 0, 0]}
           rotation={[Math.PI / 2, 0, -0.262]}
           scale={[1.009, 1.009, 1.046]}>
           <mesh
@@ -32,7 +32,7 @@ const Lipstick = (props) => {
           />
         </group>
         <group
-          position={[-49.423, 58.243, -16.375]}
+          position={[0, 0, 0]}
           rotation={[Math.PI / 2, 0, 0.436]}
           scale={[1.009, 1.009, 1.046]}>
           <mesh

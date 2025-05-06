@@ -267,6 +267,35 @@ body {
 }
 
 .lipstick-canvas {
+  width: 50%;
   /* width: 50px; */
-  background-color: rgba(255, 0, 0, 0.6);
+  /* background-color: rgba(255, 0, 0, 0.6); */
+}
+
+.alessandra-intro {
+  height: 100vh;
+  width: 100vw;
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.alessandra-intro-text h2 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.alessandra-intro-text p {
+  font-size: 1.25rem;
+}
+
+.alessandra-intro-text {
+  width: 50%;
+}
+
+.another-div {
+  height: 300vh;
+  width: 100vw;
 }

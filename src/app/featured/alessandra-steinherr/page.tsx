@@ -18,16 +18,19 @@ import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const AlessandraSteinherr = () => {
-  // const gltf = useGLTF('/lipstick.glb')
-  // const modelRef = useRef(null);
-  // const scroll = useScroll();
-  // const rotationSpeed = 0.1;
+
 
   useEffect(() => {
-    // if (modelRef.current) {
-    //   modelRef.current.rotation.y = scroll * rotationSpeed;
-    // }
-    // console.log(gltf.scene)
+    gsap.registerPlugin(ScrollTrigger);
+
+    ScrollTrigger.create({
+      trigger: ".alessandra-intro",
+      start: "top top",
+      end: "+=70%",
+      pin: ".alessandra-intro",
+      pinSpacing: false,
+      scrub: true,
+    });
   }, []);
 
 //   useEffect(() => {
@@ -58,14 +61,18 @@ const AlessandraSteinherr = () => {
             <h1>In Conversation with Alessandra Steinherr:<br/> <strong style={{ fontWeight: '300', fontSize: '2rem' }}>From Print Journalism to Digital Content</strong></h1>
           </div>
         </div>
-        <div className='' style={{ width: '100vw', padding: '0 100px' }}>
-          <div style={{ padding: '100px 0'}}>
-            <Canvas className='lipstick-canvas' style={{ width: '500px', height: '80vh'}}>
-              <Environment preset='studio' />
-              <OrbitControls />
-              <Lipstick />
-            </Canvas>
+        <div className='alessandra-intro'>
+          <div className='alessandra-intro-text'>
+            <h2>Alessandra reflects on her journey as Glamour’s youngest beauty director at 26, to becoming an influencer in this constantly changing beauty landscape.</h2>
+            <p>Alessandra Steinherr is a beauty journalist with over two decades of experience serving as Beauty Director at Cosmopolitan for six years and at Glamour magazine for eleven years before concentrating more on socials and becoming an influencer. What sets her apart, in this saturated digital landscape, is that she combines her online career, with her role as the Beauty Director at The Glossary magazine whilst having a consultancy business too.</p>
           </div>
+          <Canvas className='lipstick-canvas' style={{ width: '500px', height: '80vh'}}>
+            <Environment preset='studio' />
+            {/* <OrbitControls /> */}
+            <Lipstick />
+          </Canvas>
+        </div>
+        <div className='another-div'>
 
         </div>
       </div>
