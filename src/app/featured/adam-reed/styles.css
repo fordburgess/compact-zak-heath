@@ -262,6 +262,10 @@ body {
   height: 300px;
 }
 
+#image-column-1 {
+  height: 600px;
+}
+
 #text-block-1, #text-block-2 {
   margin-bottom: 100px;
 }

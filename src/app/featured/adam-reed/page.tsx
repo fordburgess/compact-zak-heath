@@ -4,13 +4,14 @@ import Image from 'next/image';
 import LisaEldrigdeProfile from '../../../assets/images/lisa-eldridge-profile.webp';
 import SpringExpanded from '../../../assets/images/spring-expanded.jpg';
 import AdamReedProfile from '../../../assets/images/adam-reed-profile.webp';
-import AdamReed2 from '../../../assets/images/adam-reed-2.jpeg';
 import AdamReedHair1 from '../../../assets/images/adam-reed-hair-1.jpg';
 import AdamReedHair2 from '../../../assets/images/adam-reed-hair-2.jpg';
 import AdamReedHair3 from '../../../assets/images/adam-reed-hair-3.webp';
 import AdamReedHair4 from '../../../assets/images/adam-reed-hair-4.webp';
 import JulienDys from '../../../assets/images/julien-dys.webp';
 import TrevorSorbie from '../../../assets/images/trevor-sorbie.jpg';
+import CocaineNights from '../../../assets/images/cocaine-nights.jpg';
+import LuigiMurenu from '../../../assets/images/luigi-murenu.jpg';
 import './styles.css'
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
@@ -161,6 +162,94 @@ const AdamReed = () => {
       }
     );
 
+    gsap.to('#section-4', {
+      opacity: 1,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#section-4',
+        start: 'top center',
+        end: 'top -100%',
+        scrub: true,
+      }
+    })
+
+    gsap.to('#section-5', {
+      opacity: 1,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#section-5',
+        start: 'top -50%',
+        end: 'top -100%',
+        scrub: true,
+      }
+    })
+
+    gsap.to('#section-6', {
+      opacity: 1,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#section-6',
+        start: 'top -50%',
+        end: 'top -100%',
+        scrub: true,
+      }
+    })
+
+    ScrollTrigger.create({
+      trigger: "#section-4",
+      start: "top top",
+      end: "+=100%",
+      pin: true,
+      scrub: true,
+    });
+
+    ScrollTrigger.create({
+      trigger: "#section-5",
+      start: "top top",
+      end: "+=50%",
+      pin: true,
+      scrub: true,
+    });
+
+    ScrollTrigger.create({
+      trigger: "#section-6",
+      start: "top top",
+      end: "+=50%",
+      pin: true,
+      scrub: true,
+    });
+
+    ScrollTrigger.create({
+      trigger: ".image-column",
+      start: "top 10%",
+      end: "+=300%",
+      pin: true,
+      scrub: true,
+    });
+
+    gsap.to('#image-item-1', {
+      opacity: 0,
+      y: -100,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#section-4',
+        start: 'top -20%',
+        end: 'bottom top',
+        scrub: true,
+      }
+    })
+
+    gsap.to('#image-item-2', {
+      opacity: 1,
+      top: '0%',
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#section-5',
+        start: 'top center',
+        end: 'top top',
+        scrub: true,
+      }
+    })
   }, [])
 
   return (
@@ -212,28 +301,28 @@ const AdamReed = () => {
           <div className='column-wrapper'>
             <div style={{ width: '70%' }}>
               <div className='text-section' id='section-4'>
-                <h1 className='text-section-title'>What was your favourite club when you were 21?</h1>
-                <p className='featured-paragraph-text'>The WAG Club was the place to be. So many cool people in fashion and creative industries hung out there. Clubs like that were great for meeting people and building connections. I’d speak to the people from Models One and ask whether they had any new models and that’s how I got my portfolio together.</p>
+                <h1 className='text-section-title'>Where did you go clubbing in London at 21?</h1>
+                <p className='featured-paragraph-text'>I went to Heaven, Velvet Underground, and a bar in Soho called Ricky Ticks, a hub for fashion people. Moving to London at 22, I immersed myself in these places to network and meet people, so I went three to four times a week, I loved it and I felt like I was with my people. I even met Jean Paul Gaultier at Heaven! I was wearing a Jean Paul Gaultier kilt, and so was he. I walked right up to him. Networking then was all face-to-face, and I loved it, so I made sure I was in the right places to meet the right people and you’d meet the most amazing people in Heaven.</p>
               </div>
               <div className='text-section' id='section-5'>
-                <h1>What was the first big show you worked on?</h1>
-                <p className='featured-paragraph-text'>It was with Mary, assisting at shows like Rifat Ozbek in London and Romeo Gigli in Paris. I remember rushing through makeup at my first big show, and Mary told me to slow down and take my time. I was like, oh my god, okay!</p>
+                <h1>How did you approach networking when you didn’t know anyone?</h1>
+                <p className='featured-paragraph-text'>I’d go up to people, compliment their work, and start conversations. My strategy was also to meet PRs face-to-face who could get me into events and who looked after these big names. The party scene was much bigger back then because social media wasn’t around to let people know what was happening, it was more exclusive, so having the PR’s numbers was a better way. Once there, my motto was kill people with kindness, so I avoided being obnoxious and focused on being helpful and approachable because that is what stood out.</p>
               </div>
               <div className='text-section' id='section-6'>
-                <h1>What advice would you give your 21-year-old self?</h1>
-                <p className='featured-paragraph-text'>I’d tell her to stay confident and not compare herself to others but explore the ideas she had and wanted to share. In a creative industry, it’s fuelled by ideas, there’s no such thing as a bad one. I wish I’d spoken up more on shoots when I had ideas. Now, I’m much more comfortable experimenting. For instance, I recently tried a bold blue eyeshadow look during a Claudia Schiffer shoot for Pop Magazine. It didn’t work, and we took it off, but that’s okay! It’s all part of the creative process.</p>
+                <h1>Did you face any setbacks in the industry?</h1>
+                <p className='featured-paragraph-text'>Yes. I now understand that some of my struggles were tied to neurodiversity. I’ve always been sensitive to negativity and could feel overwhelmed in certain situations. Another challenge was proving that I wasn’t just a salon hairdresser and that I could do creative work and could manage a team behind the scenes at Fashion Week, and I had to battle with this. I persevered and assisted Luigi Murenu, an Italian hairstylist early on in my career, which helped me break through those barriers by supporting everything I wanted to do. They were amazing.</p>
                 <p className='featured-paragraph-text'>Don’t think you’re silly or something and don’t be afraid to explore, speak your mind, and trust your instincts. There’s good ideas, bad ideas, but actually they’re all good.</p>
               </div>
             </div>
             <div className='image-column'>
               <div id='image-item-1'>
-                {/* <Image src={LisaEldridge8} alt='lisa-eldridge-at-work' className='image-column-child' id='image-column-1'/> */}
+                <Image src={LuigiMurenu} alt='lisa-eldridge-at-work' className='image-column-child' id='image-column-1'/>
                 <div className='interactive-image-caption' id='caption-3'>
                   <p>Lisa at work - From <a style={{ textDecoration: 'underline'}} href='https://lisaeldridge.com' rel="noopener noreferrer" target="_blank">lisaeldridge.com</a></p>
                 </div>
               </div>
               <div id='image-item-2'>
-                {/* <Image src={LisaMBE} alt='lisa-eldridge-at-work' className='image-column-child' id='image-column-1'/> */}
+                <Image src={CocaineNights} alt='lisa-eldridge-at-work' className='image-column-child' id='image-column-1'/>
                 <div className='interactive-image-caption' id='caption-3'>
                   <p>Lisa is awarded an MBE</p>
                 </div>
