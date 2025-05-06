@@ -36,7 +36,7 @@ const AlessandraSteinherr = () => {
     ScrollTrigger.create({
       trigger: ".alessandra-intro",
       start: "top top",
-      end: "+=250%",
+      end: "+=300%",
       pin: ".alessandra-intro",
       pinSpacing: false,
       scrub: true,
@@ -67,8 +67,8 @@ const AlessandraSteinherr = () => {
       ease: 'power1.inOut',
       scrollTrigger: {
         trigger: '.alex-scroll-test',
-        start: 'top 80%',
-        end: 'top top',
+        start: 'center 80%',
+        end: 'center top',
         scrub: true
       }
     })
