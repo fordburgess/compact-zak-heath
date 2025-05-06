@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect } from 'react';
 import Image from 'next/image';
-import LisaEldrigdeProfile from '../../../assets/images/lisa-eldridge-profile.webp';
+import AlessandraSteinherrProfile from '../../../assets/images/alessandra-steinherr.webp';
 import SpringExpanded from '../../../assets/images/spring-expanded.jpg';
 import RihannaVogue from '../../../assets/images/rihanna-vogue.jpg';
 import VogueParis from '../../../assets/images/vogue-paris.jpg';
@@ -12,12 +12,12 @@ import LisaEldridge2 from '../../../assets/images/lisa-eldridge-2.webp';
 import LisaEldridge4 from '../../../assets/images/lisa-eldridge-4.webp';
 import LisaEldridge8 from '../../../assets/images/lisa-eldridge-8.jpg';
 import DuaLipa from '../../../assets/images/dua-lipa-lisa-eldridge.jpg';
-import './test.css'
+import './style.css'
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-const LisaEldridge = () => {
+const AlessandraSteinherr = () => {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -289,12 +289,15 @@ const LisaEldridge = () => {
       <div style={{ position: 'absolute', top: 0, left: 0, width: '100vw', zIndex: 10, color: '#fff' }}>
         <div style={{ zIndex: 10 }}>
           <div className='featured-title-section'>
-            <Image src={LisaEldrigdeProfile} alt='pfp' className='featured-profile-image'/>
-            <h1>In Conversation With Lisa Eldridge MBE:<br/> <strong style={{ fontWeight: '300', fontSize: '2rem' }}>Becoming A World Class Makeup Artist</strong></h1>
+            <Image src={AlessandraSteinherrProfile} alt='pfp' className='featured-profile-image'/>
+            <h1>In Conversation with Alessandra Steinherr:<br/> <strong style={{ fontWeight: '300', fontSize: '2rem' }}>From Print Journalism to Digital Content</strong></h1>
           </div>
           <div className="mag-wrapper">
             <div className="mag-covers">
-              <h3><span className='drop-cap'>Lisa Eldridge MBE</span> is known for her innovative yet timeless approach to makeup. She has worked with celebrities including Dua Lipa, Cindy Crawford, Rihanna, Keira Knightley and many more. In 2015, she was appointed Creative Director of Lancôme Makeup and in 2018, she launched her own award-winning beauty brand. She is also a respected historian of vintage makeup and she has written Face Paint: The Story of Makeup.</h3>
+              <div>
+                <h3 style={{ marginBottom: '10px' }}><span className='drop-cap'>Alessandra Steinherr</span> reflects on her journey as Glamour’s youngest beauty director at 26, to becoming an influencer in this constantly changing beauty landscape.</h3>
+                <h3>Alessandra Steinherr is a beauty journalist with over two decades of experience serving as Beauty Director at Cosmopolitan for six years and at Glamour magazine for eleven years before concentrating more on socials and becoming an influencer. What sets her apart, in this saturated digital landscape, is that she combines her online career, with her role as the Beauty Director at The Glossary magazine whilst having a consultancy business too.</h3>
+              </div>
               <div className='grow-line-1'></div>
               <Image src={RihannaVogue} alt='rihanna' />
               <Image src={VogueJapan} alt='vogue-japan' />
@@ -302,6 +305,10 @@ const LisaEldridge = () => {
               <Image src={VogueTurkey} alt='vogue-turkey' />
               <Image src={HarpersBazaar} alt='harpers-bazaar' />
             </div>
+          </div>
+          <div className='text-section' id='section-1'>
+            <h1 className='text-section-title'>What name would you have chosen, if you could have been called anything else?</h1>
+            <p className='featured-paragraph-text'>Oh, my God, well, my mum was actually going to call me Nina. And then, last minute, she changed it to Lisa. At one point, I thought I would have preferred Nina—I like it better. Honestly, I don’t like Lisa.</p>
           </div>
           <div className='text-section' id='section-2'>
             <div className='pin-container'>
@@ -368,4 +375,4 @@ const LisaEldridge = () => {
   )
 }
 
-export default LisaEldridge;
+export default AlessandraSteinherr
