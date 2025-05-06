@@ -1,24 +1,39 @@
 "use client"
-import React, { useEffect, useRef } from 'react'
-import { useLoader } from '@react-three/fiber';
+import React, { useState, useEffect, useRef } from 'react'
+import { useLoader, useFrame } from '@react-three/fiber';
 import { Environment, useGLTF } from '@react-three/drei';
 import { Canvas } from "@react-three/fiber";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls, useScroll } from '@react-three/drei';
 
 const Lipstick = (props) => {
+  const [scrollY, setScrollY] = useState(0);
   const { nodes, materials } = useGLTF('/lipstick.glb')
   const modelRef = useRef(null);
   const scroll = useScroll();
   const rotationSpeed = 0.1;
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    console.log(scrollY)
+    if (modelRef.current && scrollY) {
+      modelRef.current.rotation.z = scrollY * 0.0005; // Adjust multiplier as needed
+    }
+  }, [scrollY])
 
   if (!nodes || !materials) {
     return <p>Loading</p>
   }
 
   return (
-    <group {...props} dispose={null}>
-      <group scale={0.045}>
+    <group ref={modelRef} {...props} dispose={null}>
+      <group scale={0.035}>
         <group
           position={[0, 0, 0]}
           rotation={[Math.PI / 2, 0, -0.262]}

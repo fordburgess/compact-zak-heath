@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import AlessandraSteinherrProfile from '../../../assets/images/alessandra-steinherr.webp';
 import SpringExpanded from '../../../assets/images/spring-expanded.jpg';
@@ -10,7 +10,7 @@ import VogueTurkey from '../../../assets/images/vogue-turkey.jpg';
 import { useLoader } from '@react-three/fiber';
 import { Environment } from '@react-three/drei';
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, useScroll } from '@react-three/drei';
+import { ScrollControls, OrbitControls, useScroll } from '@react-three/drei';
 import Lipstick from '@/components/lipstick';
 import './style.css'
 import { motion } from 'framer-motion';
@@ -18,10 +18,20 @@ import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const AlessandraSteinherr = () => {
-
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+
+    // const trigger = ScrollTrigger.create({
+    //   trigger: '.alessandra-intro',
+    //   start: 'top top',
+    //   end: 'bottom bottom',
+    //   scrub: true,
+    //   onUpdate: (self) => {
+    //     setScrollProgress(self.progress); // value from 0 to 1
+    //   }
+    // });
 
     ScrollTrigger.create({
       trigger: ".alessandra-intro",
@@ -73,6 +83,9 @@ const AlessandraSteinherr = () => {
         scrub: true
       }
     })
+
+
+
   }, []);
 
 //   useEffect(() => {
@@ -112,8 +125,7 @@ const AlessandraSteinherr = () => {
             <div className='lipstick-container'>
               <Canvas className='lipstick-canvas' style={{ width: '500px', height: '80vh'}}>
                 <Environment preset='studio' />
-                {/* <OrbitControls /> */}
-                <Lipstick />
+                  <Lipstick scrollProgress={scrollProgress} />
               </Canvas>
             </div>
           </div>
