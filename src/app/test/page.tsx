@@ -1,37 +1,51 @@
 "use client"
-import React, { useEffect } from 'react'
-import gsap from 'gsap';
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin';
-import { useMediaQuery } from 'usehooks-ts';
+import React, { useEffect, useRef } from 'react'
+import { useLoader } from '@react-three/fiber';
+import { Environment, useGLTF } from '@react-three/drei';
+import { Canvas } from "@react-three/fiber";
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { OrbitControls, useScroll } from '@react-three/drei';
 
-const page = () => {
-  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-
-  useEffect(() => {
-    const scrollDiv = document.querySelector('.test-scroll-div');
-
-    if (scrollDiv) {
-      scrollDiv.scrollTop = 4000;
-    }
-    // let ctx = gsap.context(() => {
-    //   gsap.to('.test-scroll-div', {
-    //     duration: 0,
-    //     scrollTo: 4000,
-    //     delay: 0
-    //   });
-    // });
-    // return () => ctx.revert();
-  }, []);
+const page = (props: any) => {
+  const { nodes, materials } = useGLTF('/lipstick.glb')
+  const modelRef = useRef(null);
+  const scroll = useScroll();
+  const rotationSpeed = 0.1;
 
   return (
     <div className='test-scroll-div' style={{ height: '100vh', width: '100vw', overflowY: 'auto' }}>
-      <div style={{ backgroundColor: 'blue', width: '100%', height: '100vh' }}></div>
-      <div style={{ backgroundColor: 'yellow', width: '100%', height: '100vh' }}></div>
-      <div style={{ backgroundColor: 'green', width: '100%', height: '100vh' }}></div>
-      <div style={{ backgroundColor: 'orange', width: '100%', height: '100vh' }}></div>
-      <div style={{ backgroundColor: 'pink', width: '100%', height: '100vh' }}></div>
-      <div style={{ backgroundColor: 'purple', width: '100%', height: '100vh' }}></div>
+      <Canvas>
+        <Environment preset='studio' />
+        <OrbitControls />
+        <group {...props} dispose={null}>
+          <group scale={0.01}>
+            <group
+              position={[-45.848, 58.243, -17.769]}
+              rotation={[Math.PI / 2, 0, -0.262]}
+              scale={[1.009, 1.009, 1.046]}>
+              <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes['Circle002_Material_#26_0'].geometry}
+                material={materials.Material_26}
+                position={[8.778, -80.737, 54.321]}
+              />
+            </group>
+            <group
+              position={[-49.423, 58.243, -16.375]}
+              rotation={[Math.PI / 2, 0, 0.436]}
+              scale={[1.009, 1.009, 1.046]}>
+              <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes['Object001_Material_#26_0'].geometry}
+                material={materials.Material_26}
+                position={[8.778, -80.737, 54.321]}
+              />
+            </group>
+          </group>
+        </group>
+      </Canvas>
     </div>
   )
 }

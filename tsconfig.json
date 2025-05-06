@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/pages/featured/lisa-eldridge.jsx", "lib/send-mail.js"],
+  "include": ["lipstick.glb", "next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/pages/featured/lisa-eldridge.jsx", "lib/send-mail.js", "src/app/featured/alessandra-steinherr/page.tsx"],
   "exclude": ["node_modules"]
 }
