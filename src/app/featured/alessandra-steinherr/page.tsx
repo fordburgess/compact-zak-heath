@@ -84,41 +84,41 @@ const AlessandraSteinherr = () => {
       }
     })
 
-    ScrollTrigger.create({
-      trigger: "#section-1",
-      start: "top top",
-      end: "+=100%",
-      pin: "#section-1",
-      pinSpacing: false,
-      scrub: true,
-    });
-
-    ScrollTrigger.create({
-      trigger: "#section-2",
-      start: "top top",
-      end: "+=100%",
-      pin: "#section-2",
-      pinSpacing: false,
-      scrub: true,
-    });
-
-    ScrollTrigger.create({
-      trigger: "#section-3",
-      start: "top top",
-      end: "+=100%",
-      pin: "#section-3",
-      pinSpacing: false,
-      scrub: true,
-    });
-
-    ScrollTrigger.create({
-      trigger: "#section-4",
-      start: "top top",
-      end: "+=100%",
-      pin: "#section-4",
-      pinSpacing: false,
-      scrub: true,
-    });
+//     ScrollTrigger.create({
+//       trigger: "#section-1",
+//       start: "top top",
+//       end: "+=100%",
+//       pin: "#section-1",
+//       pinSpacing: false,
+//       scrub: true,
+//     });
+//
+//     ScrollTrigger.create({
+//       trigger: "#section-2",
+//       start: "top top",
+//       end: "+=100%",
+//       pin: "#section-2",
+//       pinSpacing: false,
+//       scrub: true,
+//     });
+//
+//     ScrollTrigger.create({
+//       trigger: "#section-3",
+//       start: "top top",
+//       end: "+=100%",
+//       pin: "#section-3",
+//       pinSpacing: false,
+//       scrub: true,
+//     });
+//
+//     ScrollTrigger.create({
+//       trigger: "#section-4",
+//       start: "top top",
+//       end: "+=100%",
+//       pin: "#section-4",
+//       pinSpacing: false,
+//       scrub: true,
+//     });
 
     gsap.to('.canvas-pointer-line', {
       height: '50px',
@@ -142,6 +142,20 @@ const AlessandraSteinherr = () => {
         scrub: true
       }
     })
+
+
+    const textSections = document.querySelectorAll('.text-section')!;
+    textSections.forEach((section) => {
+      ScrollTrigger.create({
+        trigger: `#${section.id}`,
+        start: "top top",
+        end: "+=100%",
+        pin: `#${section.id}`,
+        pinSpacing: false,
+        scrub: true,
+      });
+    })
+
   }, []);
 
   useEffect(() => {
@@ -211,6 +225,12 @@ const AlessandraSteinherr = () => {
           <div style={{ width: '50%' }}>
             <h1 className='text-section-title'>How did you navigate unpaid work in the industry?</h1>
             <p className='featured-paragraph-text'>I had a completely unpaid internship at Marie Claire, so I basically paid to work. It was worth it, so I don’t regret it, and I was grateful even to be there. Since I’m not from London, I couldn’t live at home, so, before moving, I worked at a law office in Austria, doing translations and assistant work to save money for a few months until I had enough to afford the rent for a room in Lancaster Gate.</p>
+          </div>
+        </div>
+        <div className='text-section' id='section-5'>
+          <div style={{ width: '50%' }}>
+            <h1 className='text-section-title'>What were your early career struggles?</h1>
+            <p className='featured-paragraph-text'>Firstly, I had no contacts in the industry, so when I got a job at Marie Claire, I wanted to be in the beauty department, but due to a mix-up, I was placed in reception. It should’ve been a paid role, but I said, ‘I’m going to make this work’. I made myself useful and volunteered for everything—photocopies, organising beauty cupboards and whatever was needed. It was a Devil Wears Prada kind of environment, very hierarchical. Interns didn’t talk to editors directly; interns talked to assistants.</p>
           </div>
         </div>
       </div>
