@@ -263,7 +263,11 @@ body {
 }
 
 #image-column-1 {
-  height: 600px;
+  height: 500px;
+}
+
+#caption-3 {
+  font-size: 0.85rem;
 }
 
 #text-block-1, #text-block-2 {

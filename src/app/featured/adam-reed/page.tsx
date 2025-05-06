@@ -222,7 +222,7 @@ const AdamReed = () => {
     ScrollTrigger.create({
       trigger: ".image-column",
       start: "top 10%",
-      end: "+=300%",
+      end: "+=500%",
       pin: true,
       scrub: true,
     });
@@ -318,13 +318,14 @@ const AdamReed = () => {
               <div id='image-item-1'>
                 <Image src={LuigiMurenu} alt='lisa-eldridge-at-work' className='image-column-child' id='image-column-1'/>
                 <div className='interactive-image-caption' id='caption-3'>
-                  <p>Lisa at work - From <a style={{ textDecoration: 'underline'}} href='https://lisaeldridge.com' rel="noopener noreferrer" target="_blank">lisaeldridge.com</a></p>
+                  <p>Italian Luigi Murenu moved to Paris in 1983 to begin his career as a hairstylist and has since worked with leading fashion publications including Vogue Italia, Vogue UK and Vogue US
+                  collaborating with photographers like Steven Meisel and Marcus Piggott. His looks have coveted red carpets and in 2005, he was appointed as Kérastase’s Creative Artistic Consultant. He is known for his signature blown out hairstyles like in this image (Image credit: Taken by Luigi for Models.com)</p>
                 </div>
               </div>
               <div id='image-item-2'>
                 <Image src={CocaineNights} alt='lisa-eldridge-at-work' className='image-column-child' id='image-column-1'/>
                 <div className='interactive-image-caption' id='caption-3'>
-                  <p>Lisa is awarded an MBE</p>
+                  <p>Andrew Goves’ 1998 Cocaine Nights fashion show was extremely controversial but memorable. A dress was constructed entirely from razor blades and the runway itself was made out of a white powdery substance symbolising cocaine. Adam was the hair stylist for this show (Image credit: Pinterest)</p>
                 </div>
               </div>
             </div>
