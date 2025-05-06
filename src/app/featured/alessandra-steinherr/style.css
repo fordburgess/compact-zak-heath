@@ -260,9 +260,8 @@ body {
 
 #image-item-2 {
   position: absolute;
-  top: 40%;
+  top: 70%;
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
-  opacity: 0;
 }
