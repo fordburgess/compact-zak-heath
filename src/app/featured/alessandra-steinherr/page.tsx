@@ -134,14 +134,14 @@ const AlessandraSteinherr = () => {
       scrub: true,
     });
 
-    ScrollTrigger.create({
-      trigger: '.later-text',
-      start: "top top",
-      end: "+=100%",
-      pin: '.later-text',
-      pinSpacing: false,
-      scrub: true,
-    });
+    // ScrollTrigger.create({
+    //   trigger: '.later-text',
+    //   start: "top top",
+    //   end: "+=100%",
+    //   pin: '.later-text',
+    //   pinSpacing: false,
+    //   scrub: true,
+    // });
 
     gsap.fromTo(".glamour-mag-image",
       { x: "-100%", opacity: 0 },
@@ -296,10 +296,82 @@ const AlessandraSteinherr = () => {
           </div>
         </div>
         {/* <div style={{ height: '50vh', width: '100vw' }}></div> */}
-        <div className='later-text' style={{ height: '100vh', width: '100vw' }}>
-          <div style={{ width: '50%' }}>
+        <div className='later-text'>
+          <div style={{ width: '70%' }}>
             <h1 className='text-section-title'>You’ve been on some incredible brand trips. What's the most memorable one?</h1>
             <p className='featured-paragraph-text'>The trips were amazing. Back then, the difference was that you were there to just learn about the products. Now there’s a focus on creating beautiful content and whilst there are still educational moments, there aren’t as many. Over lunch, we’d learn the ins and outs of the product formulations; but it also felt like a holiday because we were enjoying our free time and not having to make content. One year, we were flown to Florence to visit the Basilica Santa Maria Del Fiore at night, but nobody was there. They opened this incredible cathedral just for us, and it was breathtaking - a moment you couldn’t pay for.</p>
+          </div>
+        </div>
+        <div className='later-text'>
+          <div style={{ width: '70%' }}>
+            <h1 className='text-section-title'>When did print media start to change?</h1>
+            <p className='featured-paragraph-text'>When Instagram emerged, no brands were yet on it. Around 2015, I started posting, inspired by Eva Chen from Teen Vogue in America, who was already active on social. I loved the direct connection with readers, so I believe I was the first beauty director in the UK to start using it. As Glamour was a monthly magazine, I didn’t have any direct conversations with readers, so I started this thing called 'Ask Alex' for beauty questions, which I still have, and the 'Sunday Facial Series'. Every Sunday, I’d put together a facial and talk through the products; however, for the rest of the week, there was no strategy, and this was back when all you could post on Instagram were photos and captions. I think my first post was a bouquet of roses on my desk with a weird blue-tinted filter over the top.</p>
+          </div>
+        </div>
+        <div className='later-text'>
+          <div style={{ width: '70%' }}>
+            <h1 className='text-section-title'>What was it like leaving Glamour to focus on something which was still very new?</h1>
+            <p className='featured-paragraph-text'>By 2017, I understood that things were shifting. Blogging and Instagram were growing, and influencers were being invited to events. I left Glamour in 2018, and people thought I was mad. But I wanted to explore social media entirely, without being tied to a magazine. I still remember taking pictures at events and colleagues looking at me, like, why are you doing this? You can mock me as much as you want, but I go with my instincts, and I told other writers, ‘guys, get onto it’. One of the best skills to have in life is to know when to pivot and not to overstay your welcome. I was at Glamour for eleven years and previously at Cosmopolitan for five, so I had been a director for a long time, but I felt an energy to hop onto Instagram. It was exciting, and I found it much more modern because I could be myself, and I wasn’t representing a magazine. Glamour was the best time of my life, and I was so grateful to work with the people on my team, but being a director now isn’t what it once was. My one regret with socials is that I didn’t jump onto TikTok quickly enough, and I said too many times will it take off? In 2020, TikTok was still about dancing, and there wasn’t much beauty content on the app, so I genuinely didn’t see it. I’m not ashamed to admit that I couldn’t see myself on the app either, but now that I do it, I enjoy it. If I had gotten on it sooner, like I did on Instagram, that would have been beneficial.</p>
+          </div>
+        </div>
+        <div className='later-text'>
+          <div style={{ width: '70%' }}>
+            <h1 className='text-section-title'>From being Glamour’s beauty director to having successful makeup collaborations, what was that like?</h1>
+            <p className='featured-paragraph-text'>The same year I left Glamour, I became the first beauty editor to collaborate with MAC in 2017. We created a lipstick called Alessandra, a pale colour similar to my lips. I also launched a skincare line with Primark in 2018, which people discovered me through. It was a collection that I loved. It was just such an exciting and dynamic time.</p>
+          </div>
+        </div>
+        <div className='later-text'>
+          <div style={{ width: '70%' }}>
+            <h1 className='text-section-title'>The Future of Beauty Journalism</h1>
+            <p className='featured-paragraph-text'>You and I are from different generations, but I like talking to you because I feel, in a way, that you’re an old soul because you understand magazines. You know that magazines were the medium of the time before TikTok, but you also realise that an even newer medium will arise, and it’s about being a step ahead. Magazines were the source of information - Glamour had 800,000 readers per month - however, people wanted to learn things quickly, so social media overtook print. However, I will always love magazines for one important reason, and that is fact-checking. You’d have a sub-editor who would fact- check everything you write. So, although SubStack (a social media platform made for writers) has quality writers, it isn’t fact-checked - I can write whatever I want. Obviously, I’ll write to the best of my ability, but the main difference between magazines and socials is that print was always backed by facts and expertise. I don’t think print will ever recover unless social media disappears, but I also hope magazines won’t disappear.</p>
+          </div>
+        </div>
+        <div className='later-text'>
+          <div style={{ width: '70%' }}>
+            <h1 className='text-section-title'>What advice would you give to aspiring beauty editors and directors?</h1>
+            <p className='featured-paragraph-text'>The industry has changed. Journalists now have to write much faster and for multiple platforms. My advice: always research thoroughly and do real interviews instead of just emailing for responses; you get so much more in-depth information that way too. Also, don’t enter the field for the perks. If you’re only in it for free products or glamorous events, you’ll never be satisfied. Passion is what will sustain you. I still get excited about beauty today, just like when I was young.</p>
+          </div>
+        </div>
+        <div className='later-text'>
+          <div style={{ width: '70%' }}>
+            <h1 className='text-section-title'>Do you think ageism exists within the beauty industry?</h1>
+            <p className='featured-paragraph-text'>I joke with you about being old enough to be your parent, but I genuinely love my age. I never feel out of place in this industry. I sometimes wonder, ‘is this the right thing for me to do?’ But not in a way that makes me feel outdated. Ageism within the industry is getting better, but brands need to make more of an effort to represent all. Diversity in advertising should include different skin tones, genders, and ages, and it’s something I want to advocate for.</p>
+          </div>
+        </div>
+        <div className='later-text'>
+          <div style={{ width: '70%' }}>
+            <h1 className='text-section-title'>Fashion is such a big part of your life. Do you have any shopping regrets?</h1>
+            <p className='featured-paragraph-text'>Oh my God, definitely! My biggest regret has to be expensive high heels. I can’t walk in them, yet I keep buying them, and sometimes I still buy dresses I’ll never wear.</p>
+          </div>
+        </div>
+        <div className='later-text'>
+          <div style={{ width: '70%' }}>
+            <h1 className='text-section-title'>The Future of Beauty Journalism</h1>
+            <p className='featured-paragraph-text'>You and I are from different generations, but I like talking to you because I feel, in a way, that you’re an old soul because you understand magazines. You know that magazines were the medium of the time before TikTok, but you also realise that an even newer medium will arise, and it’s about being a step ahead. Magazines were the source of information - Glamour had 800,000 readers per month - however, people wanted to learn things quickly, so social media overtook print. However, I will always love magazines for one important reason, and that is fact-checking. You’d have a sub-editor who would fact- check everything you write. So, although SubStack (a social media platform made for writers) has quality writers, it isn’t fact-checked - I can write whatever I want. Obviously, I’ll write to the best of my ability, but the main difference between magazines and socials is that print was always backed by facts and expertise. I don’t think print will ever recover unless social media disappears, but I also hope magazines won’t disappear.</p>
+          </div>
+        </div>
+        <div className='later-text'>
+          <div style={{ width: '70%' }}>
+            <h1 className='text-section-title'>What fragrance takes you back to being 21?</h1>
+            <p className='featured-paragraph-text'>Oh, definitely Sun by Jill Sander. I still swear by it.</p>
+          </div>
+        </div>
+        <div className='later-text'>
+          <div style={{ width: '70%' }}>
+            <h1 className='text-section-title'>Where did you go clubbing when you were 21, and how did you make friends?</h1>
+            <p className='featured-paragraph-text'>For me, the Met Bar was the place to be, but it wasn’t clubbing. I also used to go to this place called Momos, which was off Regent Street. Tramp was ok too.</p>
+          </div>
+        </div>
+        <div className='later-text'>
+          <div style={{ width: '70%' }}>
+            <h1 className='text-section-title'>What is your favourite London restaurant?</h1>
+            <p className='featured-paragraph-text'>My favourite is Scotts. They have this honeycomb and chocolate dessert I’m obsessed with. It comes in a cold container, and when you pour the hot chocolate over it, it melts just right and sort of settles. It’s amazing.</p>
+          </div>
+        </div>
+        <div className='later-text'>
+          <div style={{ width: '70%' }}>
+            <h1 className='text-section-title'>What’s next for you?</h1>
+            <p className='featured-paragraph-text'>Exciting things are coming in 2025, but I mainly want to be an advocate for mature beauty. Just like you are pushing for more male representation within the industry, I want to ensure that older individuals - both men and women - are included in beauty campaigns. Representation matters at every age.</p>
           </div>
         </div>
       </div>

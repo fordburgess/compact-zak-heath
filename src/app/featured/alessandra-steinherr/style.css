@@ -138,13 +138,17 @@ body {
 }
 
 .later-text {
-  height: 100vh;
+  /* height: 50vh; */
   width: 100vw;
-  padding: 100px;
+  padding: 50px 100px;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+.later-text h1, .text-section h1 {
+  font-size: 1.5rem;
 }
 
 .text-section h1 {
