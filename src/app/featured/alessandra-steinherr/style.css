@@ -261,10 +261,15 @@ body {
   width: 90%;
 }
 
+.lipstick-container {
+  width: 50vw;
+
+}
+
 .lipstick-canvas {
-  width: 50%;
-  transform: translateY(100%);
-  position: relative;
+  width: 100%;
+  /* transform: translateY(100%); */
+  /* position: relative; */
   /* width: 50px; */
   /* background-color: rgba(255, 0, 0, 0.6); */
 }
