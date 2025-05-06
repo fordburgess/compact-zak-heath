@@ -153,8 +153,9 @@ body {
   /* background-color: red; */
 }
 
-#section-6, #section-7 {
+#section-6, #section-7, #section-8 {
   align-items: start !important;
+  margin-bottom: 80vh !important;
 }
 
 #section-2 img {

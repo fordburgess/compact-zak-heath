@@ -207,7 +207,7 @@ const AlessandraSteinherr = () => {
           <Image src={AlessandraPrimark} alt='alessandra-primark' />
         </div>
         <div style={{ height: '50vh', width: '50vw' }}></div>
-        <div className='text-section' id='section-6' style={{ marginBottom: '80vh' }}>
+        <div className='text-section' id='section-6'>
           <div style={{ width: '50%' }}>
             <h1 className='text-section-title'>How did you manifest your entry into journalism?</h1>
             <p className='featured-paragraph-text'>My dream has always been to be a beauty editor. Every day, on my way to work, sitting on the bus from Lancaster Gate, I looked out at the Thames and told myself, 'One day, I’ll be the beauty director of the biggest magazine in the UK’. I didn’t know which one; I just knew it would happen. And it did; when I joined Glamour, it was the best-selling magazine at the time in terms of sales and most popular for beauty at the time.</p>
@@ -217,6 +217,12 @@ const AlessandraSteinherr = () => {
           <div style={{ width: '50%' }}>
             <h1 className='text-section-title'>You became the youngest beauty director at Glamour at 26. What was that like?</h1>
             <p className='featured-paragraph-text'>It was intense. I wanted the role, and I worked hard for it, but I wasn’t fully prepared for the pressure. It was isolating because I didn’t want to show any signs of struggle. Other directors questioned why I was there at such a young age. Looking back, I could have benefitted from one more time learning the ropes, but I don’t regret it - it shaped me. I worked nonstop, even on Christmas, just to prove myself.</p>
+          </div>
+        </div>
+        <div className='text-section' id='section-8'>
+          <div style={{ width: '50%' }}>
+            <h1 className='text-section-title'>How did you find your USP as a beauty director?</h1>
+            <p className='featured-paragraph-text'>Unlike most beauty writers, I was also involved in styling and creative direction, and we did many beauty shoots because I loved directing beauty and the creative process. I worked with makeup artists like Lisa Eldridge MBE and Charlotte Tilbury MBE, creating concepts, selecting photographers, and directing shoots. My favourite part of these shoots was watching everyone come together, and seeing how the model was transformed with their makeup, hairstyling and manicures. Glamour was like Vogue’s little sister, so we got the up-and-coming models before they exploded into the scene, for example: Bella Hadid. Gigi was already famous, but Bella was just beginning her journey; she was so lovely and gorgeous, and it was exciting to be part of her first shoots. Another memorable shoot was with Rosie Huntington-Whiteley, who I shot with a lot because she’s obsessed with beauty. She wasn’t just the model, but she’d sit there and go through the products. She was such a strong person to work with! These shoots were expensive, and we’d fly to New York or photograph on location; however, now because of budgets, these don’t happen as much.</p>
           </div>
         </div>
         <div style={{ height: '200vh' }}></div>
