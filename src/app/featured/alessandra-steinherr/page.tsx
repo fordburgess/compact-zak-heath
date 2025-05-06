@@ -134,6 +134,15 @@ const AlessandraSteinherr = () => {
       scrub: true,
     });
 
+    ScrollTrigger.create({
+      trigger: '.later-text',
+      start: "top top",
+      end: "+=100%",
+      pin: '.later-text',
+      pinSpacing: false,
+      scrub: true,
+    });
+
     gsap.fromTo(".glamour-mag-image",
       { x: "-100%", opacity: 0 },
       {
@@ -286,7 +295,13 @@ const AlessandraSteinherr = () => {
             <p>Rosie Huntington-Whiteley on the cover of Glamour UK’s June 2017 issue. She was styled for the shoot by Alessandra Steinherr.</p>
           </div>
         </div>
-        <div style={{ height: '200vh' }}></div>
+        {/* <div style={{ height: '50vh', width: '100vw' }}></div> */}
+        <div className='later-text' style={{ height: '100vh', width: '100vw' }}>
+          <div style={{ width: '50%' }}>
+            <h1 className='text-section-title'>You’ve been on some incredible brand trips. What's the most memorable one?</h1>
+            <p className='featured-paragraph-text'>The trips were amazing. Back then, the difference was that you were there to just learn about the products. Now there’s a focus on creating beautiful content and whilst there are still educational moments, there aren’t as many. Over lunch, we’d learn the ins and outs of the product formulations; but it also felt like a holiday because we were enjoying our free time and not having to make content. One year, we were flown to Florence to visit the Basilica Santa Maria Del Fiore at night, but nobody was there. They opened this incredible cathedral just for us, and it was breathtaking - a moment you couldn’t pay for.</p>
+          </div>
+        </div>
       </div>
     </>
   )
