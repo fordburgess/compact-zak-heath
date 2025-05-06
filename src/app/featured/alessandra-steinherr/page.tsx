@@ -56,7 +56,7 @@ const AlessandraSteinherr = () => {
     ScrollTrigger.create({
       trigger: ".lipstick-container",
       start: "top 10%",
-      end: "+=5000",
+      end: "+=7000",
       pin: ".lipstick-container",
       pinSpacing: false,
       scrub: true,
@@ -107,6 +107,15 @@ const AlessandraSteinherr = () => {
       start: "top top",
       end: "+=100%",
       pin: "#section-3",
+      pinSpacing: false,
+      scrub: true,
+    });
+
+    ScrollTrigger.create({
+      trigger: "#section-4",
+      start: "top top",
+      end: "+=100%",
+      pin: "#section-4",
       pinSpacing: false,
       scrub: true,
     });
@@ -196,6 +205,12 @@ const AlessandraSteinherr = () => {
           <div style={{ width: '50%' }}>
             <h1 className='text-section-title'>What was your first job?</h1>
             <p className='featured-paragraph-text'>My first paid ‘official’ job in journalism was as a beauty assistant at a magazine called Shine, which doesn’t exist anymore. My salary was £13,000 a year - not much, but I was thrilled to be there, and I think I must have been 23 or 24. Before that, I had work experience, but it was unpaid back then. Nowadays, that’s not allowed, thank God; now you have to be paid!</p>
+          </div>
+        </div>
+        <div className='text-section' id='section-4'>
+          <div style={{ width: '50%' }}>
+            <h1 className='text-section-title'>How did you navigate unpaid work in the industry?</h1>
+            <p className='featured-paragraph-text'>I had a completely unpaid internship at Marie Claire, so I basically paid to work. It was worth it, so I don’t regret it, and I was grateful even to be there. Since I’m not from London, I couldn’t live at home, so, before moving, I worked at a law office in Austria, doing translations and assistant work to save money for a few months until I had enough to afford the rent for a room in Lancaster Gate.</p>
           </div>
         </div>
       </div>
