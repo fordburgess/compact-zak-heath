@@ -8,10 +8,10 @@ import VogueParis from '../../../assets/images/vogue-paris.jpg';
 import VogueJapan from '../../../assets/images/vogue-japan.webp';
 import VogueTurkey from '../../../assets/images/vogue-turkey.jpg';
 import { useLoader } from '@react-three/fiber';
-import { useGLTF } from '@react-three/drei';
+import { Environment } from '@react-three/drei';
 import { Canvas } from "@react-three/fiber";
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls, useScroll } from '@react-three/drei';
+import Lipstick from '@/components/lipstick';
 import './style.css'
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
@@ -58,20 +58,15 @@ const AlessandraSteinherr = () => {
             <h1>In Conversation with Alessandra Steinherr:<br/> <strong style={{ fontWeight: '300', fontSize: '2rem' }}>From Print Journalism to Digital Content</strong></h1>
           </div>
         </div>
-        <div style={{ padding: '100px 0'}}>
-          {/* <Canvas
-            style={{ width: '50vw', height: '50vh' }}
-            camera={{ position: [0, 0, 5], fov: 75 }}
-          >
-            <mesh geometry={nodes.Circle002.geometry} material={materials.gray} material-envMap={env} />
-            <mesh ref={modelRef} scale={5} position={[0, 0, 0]}>
-              <ambientLight intensity={1} />
-              <spotLight position={[0, 0, 0]} angle={0.25} intensity={1.8} />
-              <directionalLight position={[-10, 10, 5]} intensity={1} />
+        <div className='' style={{ width: '100vw', padding: '0 100px' }}>
+          <div style={{ padding: '100px 0'}}>
+            <Canvas className='lipstick-canvas' style={{ width: '500px', height: '80vh'}}>
+              <Environment preset='studio' />
               <OrbitControls />
-              <primitive object={gltf.scene} />
-            </mesh>
-          </Canvas> */}
+              <Lipstick />
+            </Canvas>
+          </div>
+
         </div>
       </div>
     </>
