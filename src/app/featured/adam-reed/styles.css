@@ -242,10 +242,15 @@ body {
   /* background-color: rgba(0, 0, 255, 0.605); */
 }
 
-#section-4, #section-5, #section-6, #section-7, #section-8, #section-9 {
+#section-4, #section-5, #section-6, #section-7, #section-8, #section-9, #section-10, #section-11, #section-12, #section-13, #section-14 {
   width: 100%;
   padding: 5rem 4rem;
   opacity: 0;
+}
+
+#section-9, #section-10, #section-11, #section-12, #section-13, #section-14 {
+  opacity: 1;
+  width: 100%;
 }
 
 .image-column {
