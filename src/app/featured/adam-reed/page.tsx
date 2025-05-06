@@ -10,6 +10,7 @@ import AdamReedHair2 from '../../../assets/images/adam-reed-hair-2.jpg';
 import AdamReedHair3 from '../../../assets/images/adam-reed-hair-3.webp';
 import AdamReedHair4 from '../../../assets/images/adam-reed-hair-4.webp';
 import JulienDys from '../../../assets/images/julien-dys.webp';
+import TrevorSorbie from '../../../assets/images/trevor-sorbie.jpg';
 import './styles.css'
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
@@ -108,6 +109,58 @@ const AdamReed = () => {
       }
     })
 
+     ScrollTrigger.create({
+      trigger: "#image-section-1",
+      start: "top top",
+      end: "+=100%",
+      pin: true,
+      scrub: true,
+    });
+
+    gsap.fromTo("#mary-greenwell-image",
+      { x: "-100%", opacity: 0 },
+      {
+        x: "0%",
+        opacity: 1,
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: "#image-section-1",
+          start: "top top",
+          end: "+=100%",
+          scrub: true,
+        }
+      }
+    );
+
+    gsap.fromTo("#caption-2",
+      { x: "100%", opacity: 0 },
+      {
+        x: "0%",
+        opacity: 1,
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: "#image-section-1",
+          start: "top top+=20%", // slight delay
+          end: "+=100%",
+          scrub: true,
+        }
+      }
+    );
+
+    gsap.fromTo(".mary-greenwell-line",
+      { scaleX: 0 },
+      {
+        scaleX: 1,
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: "#image-section-1",
+          start: "top top+=10%",
+          end: "+=80%",
+          scrub: true,
+        }
+      }
+    );
+
   }, [])
 
   return (
@@ -150,12 +203,10 @@ const AdamReed = () => {
             <p className='featured-paragraph-text' style={{ marginBottom: '10px'}}>It started with my Nan. As a boy, I’d go with her to this tiny salon in a tiny village in Somerset called Jenny’s Cut & Shape. It was full of old ladies getting shampoos and cut and I felt at home, me in a salon I did. I used to cut my sister’s and best friends hair from a young age and I guess that is why I have always worked in a salon and not been just a session stylist because I love that sense of community. I was only four, but they had me cleaning rollers, sweeping the floor, and making coffee. That salon gave me a sense of belonging that school never did, because I felt like I wasn’t very good at school, but in a salon I thrived, and I loved it.</p>
           </div>
           <div className='image-section' id='image-section-1'>
-            <Image src={JulienDys} alt='mary-greenwell' id='mary-greenwell-image' />
+            <Image src={TrevorSorbie} alt='mary-greenwell' id='mary-greenwell-image' />
             <div className='mary-greenwell-line'></div>
             <div className='interactive-image-caption' id='caption-2'>
-              <p style={{ marginBottom: '10px' }}>Mary Greenwell is one of the world’s most sought-after makeup artists, known for setting beauty trends on the runway and earning numerous industry accolades. Her work has been shown in Vogue Italia, Vogue UK, and Vogue US, and she has collaborated with legendary photographers such as Patrick Demarchelier and Peter Lindbergh. Most notably, she helped redefine the image of Princess Diana, contributing to some of her most iconic photo shoots. In 2015, Mary was honored with the Lifetime Achievement Award from CEW and in 2023, she was appointed as an ambassador for the British Beauty Council.</p>
-              <p style={{ marginBottom: '10px' }}>Sam McKnight MBE is one of the most iconic hair stylists in fashion history, renowned for collaborating on over 200 Vogue covers in campaigns for Fendi, Chanel and Balmain. He famously crafted Princess Diana’s signature short hairstyle and has worked with legends like Naomi Campbell and Lady Gaga. In 2023, he was awarded an MBE for his services in fashion and beauty and continues to influence the industry with his brand, Hair by Sam McKnight.</p>
-              <p>Mary Greenwell and Princess Diana with Hairstylist Sam McKnight MBE (Image credit: Pinterest).</p>
+              <p style={{ marginBottom: '10px' }}>Trevor Sorbie was a Scottish Hairdresser who died in 2024 after a long history of working in the beauty industry and renowned for his innovative techniques and transformative hairstyles. His signature “Scrunch” hairstyle (the style in this image) became a hallmark of the late 1970s fashion scenes and were featured regularly in publications like Vogue. Trevor founded the charity My New Hair, providing support and wig customisation for individuals experiencing hair loss. (Image credit: Hairdressers Journal)</p>
             </div>
           </div>
           <div className='column-wrapper'>
