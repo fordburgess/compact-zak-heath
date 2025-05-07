@@ -6,6 +6,7 @@ import './styles.css';
 import '../styles/article.css';
 import SpringExpanded from '../../../assets/images/spring-expanded.jpg';
 import KirstLewisProfile from '../../../assets/images/kirsty-lewis-profile.webp';
+import KirstyLewis2 from '../../../assets/images/kirsty-lewis-2.webp';
 import { useMediaQuery } from 'usehooks-ts';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -117,6 +118,11 @@ const KirstyLewis = () => {
         <div className='featured-title-section-2'>
           <Image src={KirstLewisProfile} alt='pfp' className='featured-profile-image' id='kirsty-lewis-profile'/>
           <h1>In Conversation with Kirsty Lewis:<br/> <strong style={{ fontWeight: '300', fontSize: '2rem' }}>On PR and Relationships In The Workplace</strong></h1>
+        </div>
+        <div className='kirsty-lewis-second-intro'>
+          <h3 className='kirsty-lewis-second-intro-text'><span className='drop-cap'>Kirsty Lewis</span> is public relations professional known for her impactful work in the beauty industry. As the Senior International PR & Influencer Manager at Huda Beauty and Kayali, she has played a pivotal role in shaping the brand’s global presence. She launched Fenty Beauty and Marc Jacobs Beauty in the UK and in 2018, she co-founded SEEN Group, a creative agency specialising in brand strategy and communications.</h3>
+          <div className='divider'></div>
+          <Image src={KirstyLewis2} id='kirsty-lewis-2' alt='kirsty-lewis-2' />
         </div>
         <div className='featured-article-text-section'>
           <p className='featured-article-paragraph'>Ingeborg van Lotringen has spent more than two decades in beauty journalism and has seen it all. From lavish press trips to witnessing the decline of print magazines with the rise of influencers in this digital landscape. Now working as a Daily Mail columnist, testing the latest facials and clinical treatments, she was Cosmopolitan's award-winning beauty director from 2007 to 2019. In this COMPACT conversation, she reflects on her career highlights, industry shifts and why good writing still matters.</p>

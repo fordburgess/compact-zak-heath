@@ -101,7 +101,7 @@ body {
 .drop-cap {
   font-size: 2rem;
   font-weight: 600;
-  background-color: rgba(255, 0, 0, 0.39);
+  background-color: rgba(37, 192, 92, 0.39);
 }
 
 .grow-line-1 {
@@ -274,4 +274,30 @@ body {
 #kirsty-lewis-profile {
   height: 600px;
   /* width: 400px; */
+}
+
+.kirsty-lewis-second-intro {
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+  align-items: center;
+}
+
+.kirsty-lewis-second-intro-text {
+  width: 35%;
+  font-weight: 300;
+}
+
+#kirsty-lewis-2 {
+  height: 100%;
+  width: 40%;
+}
+
+.divider {
+  height: 1px;
+  width: 100px;
+  background-color: #fff;
+  margin: 0 40px;
 }
