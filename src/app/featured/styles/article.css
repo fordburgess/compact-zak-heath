@@ -1,5 +1,5 @@
 html, body {
-  /* height: auto !important; */
+  height: auto !important;
   overflow-x: hidden;
 }
 
@@ -91,7 +91,7 @@ html, body {
 }
 
 .featured-article-transition-container {
-  height: 50vh;
+  height: 400px;
   width: 100%;
   margin-bottom: 20px;
   position: relative;
@@ -182,7 +182,7 @@ html, body {
   font-weight: 300;
   font-size: 1.5rem;
   font-style: italic;
-  width: 400px;
+  width: 300px;
   position: absolute;
   top: 50%;
   left: 50%;
