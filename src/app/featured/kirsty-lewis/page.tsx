@@ -237,7 +237,7 @@ const LisaEldridge = () => {
             <p className='featured-article-paragraph'>AI like a lot of the restaurants that are more local, that do really good food, like, back in the day, I would want to go to Nobu - all the big ones, I'll do that for work now, but otherwise, I want to go to local place where the food is amazing. The street food around Peckham, Chiswick - which is near me - is all really nice. Whenever I walk by places like Sexy Fish now, I never get inspired to go in.</p>
             <div className='featured-article-transition-container' id='featured-trans-1'>
               <div className='hide-container' id='hide-container-1'>
-                <h1 className='featured-key-quote'>Through process of elimination of doing jobs I didn’t actually enjoy, I ended up working in beauty PR"</h1>
+                <h1 className='featured-key-quote'>"Through process of elimination of doing jobs I didn’t actually enjoy, I ended up working in beauty PR"</h1>
               </div>
             </div>
             <p className='featured-article-subheader'>What restaurants do you like in London?</p>
