@@ -194,7 +194,7 @@ const LisaEldridge = () => {
     const line2Props: any = {
       ease: "power1.inOut",
       scrollTrigger: {
-        trigger: '#fctc-trans-2',
+        trigger: '#first-image-trans',
         start: 'top 60%',
         end: 'bottom 60%',
         scrub: true,
@@ -209,7 +209,7 @@ const LisaEldridge = () => {
     const caption2props: any = {
       ease: "power1.inOut",
       scrollTrigger: {
-        trigger: '#fctc-trans-2',
+        trigger: '#first-image-trans',
         start: 'top 80%',
         end: 'bottom bottom',
         scrub: true,
@@ -301,7 +301,7 @@ const LisaEldridge = () => {
             <p className='featured-article-paragraph'>I like a lot of the restaurants that are more local, that do really good food, like, back in the day, I would want to go to Nobu - all the big ones, I'll do that for work now, but otherwise, I want to go to local place where the food is amazing. The street food around Peckham, Chiswick - which is near me - is all really nice. Whenever I walk by places like Sexy Fish now, I never get inspired to go in.</p>
             <p className='featured-article-subheader'>What would your 21-year-old self think of where you are now?</p>
             <p className='featured-article-paragraph'>She’d be proud and I think it’s ok to say that as people don’t really say that enough about themselves. At 21, I didn’t have a clear vision, but I always knew I loved connecting with people. I’ve built my career around that. I love introducing people, helping them, and bringing them together. It’s incredibly rewarding. When I worked at Origins my co-worker said “do you ever go home and be really horrible to Ian - who’s my partner - because you've had to be so nice all day”, and I laughed. I thought about it and said, that's a really good question, but no I don’t because that isn’t me.</p>
-            <div className='featured-transition-container' id='fctc-trans-2'>
+            <div className='featured-transition-container' id='first-image-trans'>
               <div className='image-with-caption' style={{ zIndex: -1, }}>
                 <Image src={KirstyLewis3} alt='zak-heath-uncle'/>
               </div>
