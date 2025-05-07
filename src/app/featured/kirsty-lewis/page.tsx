@@ -215,7 +215,7 @@ const LisaEldridge = () => {
         <div style={{ zIndex: 10 }}>
           <div className='featured-title-section-2'>
             <Image src={KirstyLewisProfile} alt='pfp' className='featured-profile-image'/>
-            <h1>In Conversation With Kirsty Lewis:<br/> <strong style={{ fontWeight: '300', fontSize: '2rem' }}>On PR and Relationships In The Workplace</strong></h1>
+            <h1><span style={{ fontFamily: 'Playfair', fontWeight: '300', fontSize: '4rem' }}>In Conversation With Kirsty Lewis:</span><br/> <strong style={{ fontWeight: '300', fontSize: '2rem' }}>On PR and Relationships In The Workplace</strong></h1>
           </div>
           <div className='image-section' id='second-intro-container'>
             <div className='interactive-image-caption' id='caption-2'>
