@@ -17,6 +17,7 @@ import TillySanders from '../../../assets/images/tilly-sanders-profile.webp';
 import ShakeelMurtaza from '../../../assets/images/shakeel-murtaza-profile.webp';
 import ZakHeath from '../../../assets/images/zak-heath-profile.webp';
 import Placeholder from '../../../assets/images/placeholder.webp';
+import Ingeborg from '../../../assets/images/ingeborg-profile.png';
 
 const interviews = [
   {
@@ -42,6 +43,12 @@ const interviews = [
     name: 'Alessandra Steinherr',
     job: 'Beauty Editor + Influencer',
     href: '/featured/alessandra-steinherr'
+  },
+  {
+    pfp: Ingeborg,
+    name: 'Ingeborg Van Lotringen',
+    job: 'Beauty Journalist',
+    href: '/featured/ingeborg-van-lotringen'
   },
   {
     pfp: MillieKendall,
