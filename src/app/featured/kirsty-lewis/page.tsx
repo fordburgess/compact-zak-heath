@@ -268,7 +268,7 @@ const LisaEldridge = () => {
     <>
       <Image priority src={SpringExpanded} id='spring-container-background' alt='test'/>
       <div style={{ position: 'fixed', top: 0, left: 0, height: '100vh', width: '100vw', backdropFilter: 'blur(3px) brightness(80%)', zIndex: 5 }}></div>
-      <div style={{ position: 'absolute', top: 0, left: 0, width: '100vw', zIndex: 10, color: '#fff' }}>
+      <div style={{ position: 'absolute', top: 0, left: 0, width: '100vw', zIndex: 10, color: '#fff', paddingBottom: '100px' }}>
         <div style={{ zIndex: 10 }}>
           <div className='featured-title-section-2'>
             <Image src={KirstyLewisProfile} alt='pfp' className='featured-profile-image'/>
