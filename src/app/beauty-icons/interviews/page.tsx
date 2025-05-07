@@ -18,6 +18,7 @@ import ZakHeath from '../../../assets/images/zak-heath-profile.webp';
 import TillySanders from '../../../assets/images/tilly-sanders-profile.webp';
 import Placeholder from '../../../assets/images/placeholder.webp';
 import CarolynAronson from '../../../assets/images/carolyn-aronson-profile.webp';
+import Ingeborg from '../../../assets/images/ingeborg-profile.png';
 import { useMediaQuery } from 'usehooks-ts';
 
 // Lisa, Millie and Alessandra, second row, Patricia, Adam, Mona, 3rd row, Shakeel, Kirsty ingeborg, 4th Carolyn, Yana, Tilly, 5th row, me and Raquell
@@ -72,7 +73,7 @@ const interviews = [
     href: '/featured/kirsty-lewis'
   },
   {
-    pfp: Placeholder,
+    pfp: Ingeborg,
     name: 'Ingeborg Van Lotringen',
     job: 'Beauty Journalist',
     href: '/audio/ingeborg-van-lotringen'
