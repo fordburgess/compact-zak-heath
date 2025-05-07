@@ -222,7 +222,7 @@ const LisaEldridge = () => {
     const line4Props: any = {
       ease: "power1.inOut",
       scrollTrigger: {
-        trigger: '#fctc-trans-5',
+        trigger: '#second-image-trans',
         start: 'top 60%',
         end: 'bottom 60%',
         scrub: true,
@@ -236,7 +236,7 @@ const LisaEldridge = () => {
     const caption4props: any = {
       ease: "power1.inOut",
       scrollTrigger: {
-        trigger: '#fctc-trans-5',
+        trigger: '#second-image-trans',
         start: 'top 60%',
         end: 'bottom 60%',
         scrub: true,
@@ -244,7 +244,7 @@ const LisaEldridge = () => {
     }
     const transitionDirectionCaption4 = mobile ? 'y' : 'x';
     caption4props[transitionDirectionCaption4] = mobile ? 50 : '10px';
-    gsap.to('#zak-lisa-caption', caption4props);
+    gsap.to('#second-trans-caption', caption4props);
   }, [])
 
   useEffect(() => {
@@ -319,8 +319,8 @@ const LisaEldridge = () => {
             </div>
             <p className='featured-article-subheader'>What’s your take on the beauty industry’s shift toward social media and influencers?</p>
             <p className='featured-article-paragraph'>The landscape has changed so much. When I started, traditional media like magazines were the cornerstone of PR as well as celebrity endorsements. Now, content creators are vital as many celebrities have their own cosmetic brands and they are therefore promoting them. Creators connect with audiences in ways traditional media can’t, helping businesses to thrive and grow. Although we invest less in traditional journalism, print media still holds credibility and authority, so I think the future lies in a balance between the two. Credibility and transparency are key, whether you’re a journalist or a creator because people want to educate themselves through honest resources. On the other hand, I don’t think people realise, but magazines are businesses too and kept alive through advertisements. In this consumer economy, educating yourself and looking at multiple resources is the most important thing because magazines will sometimes cater to the brand - like a social media advertisement.</p>
-            <div className='dream-room-transition-container' id='fctc-trans-5'>
-              <p className='image-caption' id="zak-lisa-caption">Kirsty with Mona Kattan <br/>and the rest of the Kayali Team for the<br/> launch of the Vanilla Candy 42 fragrance.</p>
+            <div className='dream-room-transition-container' id='second-image-trans'>
+              <p className='image-caption' id="second-trans-caption">Kirsty with Mona Kattan <br/>and the rest of the Kayali Team for the<br/> launch of the Vanilla Candy 42 fragrance.</p>
               <div className='fctc-line-4'></div>
               <Image src={KirstyLewis4} id='zak-and-lisa' alt='zak-and-lisa'/>
             </div>
