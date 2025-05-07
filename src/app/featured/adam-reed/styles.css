@@ -18,7 +18,7 @@
   left: 0; */
 }
 
-.featured-title-section-2 {
+.featured-title-section {
   display: flex;
   min-width: 90%;
   min-height: 100vh;
@@ -30,7 +30,7 @@
   position: relative;
 }
 
-.featured-title-section-2 h1 {
+.featured-title-section h1 {
   width: 40%;
   text-align: left;
   font-weight: 600;
@@ -102,6 +102,10 @@ body {
   font-size: 2rem;
   font-weight: 600;
   background-color: rgba(255, 0, 0, 0.39);
+}
+
+.drop-cap a, p {
+  font-family: 'Playfair';
 }
 
 .grow-line-1 {
@@ -189,7 +193,7 @@ body {
 
 #caption-1 {
   position: absolute;
-  top: 40%;
+  top: 0%;
   right: 15%;
   opacity: 0;
   width: 400px;
@@ -207,7 +211,7 @@ body {
 }
 
 #mary-greenwell-image {
-  height: 450px;
+  height: 700px;
   width: 500px;
   object-fit: cover;
   object-position: center;
@@ -233,15 +237,20 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 600vh; /* enough scroll space */
+  height: 1000vh; /* enough scroll space */
   position: relative;
   /* background-color: rgba(0, 0, 255, 0.605); */
 }
 
-#section-4, #section-5, #section-6 {
+#section-4, #section-5, #section-6, #section-7, #section-8, #section-9, #section-10, #section-11, #section-12, #section-13, #section-14 {
   width: 100%;
   padding: 5rem 4rem;
   opacity: 0;
+}
+
+#section-9, #section-10, #section-11, #section-12, #section-13, #section-14 {
+  opacity: 1;
+  width: 100%;
 }
 
 .image-column {
@@ -258,6 +267,14 @@ body {
   height: 300px;
 }
 
+#image-column-1 {
+  height: 500px;
+}
+
+#caption-3 {
+  font-size: 0.85rem;
+}
+
 #text-block-1, #text-block-2 {
   margin-bottom: 100px;
 }
@@ -265,6 +282,15 @@ body {
 #image-item-2 {
   position: absolute;
   top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  opacity: 0;
+}
+
+#image-item-3 {
+  position: absolute;
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   width: 90%;

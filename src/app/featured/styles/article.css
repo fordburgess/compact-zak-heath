@@ -22,7 +22,7 @@ html, body {
 .featured-article-content {
   width: 100%;
   position: relative;
-  backdrop-filter: blur(3px) brightness(95%);
+  backdrop-filter: blur(3px) brightness(85%);
   padding: 0 0 100px;
   display: flex;
   flex-direction: column;

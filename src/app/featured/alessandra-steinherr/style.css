@@ -128,9 +128,27 @@ body {
 .text-section {
   min-height: 100vh;
   max-height: 100vh;
-  width: 100vw;
+  min-width: 100vw;
   padding: 100px;
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: end;
+}
+
+.later-text {
+  /* height: 50vh; */
+  width: 100vw;
+  padding: 50px 100px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.later-text h1, .text-section h1 {
+  font-size: 1.5rem;
 }
 
 .text-section h1 {
@@ -143,19 +161,15 @@ body {
   font-size: 1.25rem !important;
 }
 
-#section-1 {
-  position: sticky;
-  top: 0;
-  width: 70%;
+#section-1, #section-2, #section-3, #section-4, #section-5 {
+  margin-bottom: 60vh;
+  /* max-width: 50%; */
+  /* background-color: red; */
 }
 
-#section-3 {
-  width: 70%;
-}
-
-.pin-container {
-  display: flex;
-  justify-content: space-between;
+#section-6, #section-7, #section-8, #section-9 {
+  align-items: start !important;
+  margin-bottom: 80vh !important;
 }
 
 #section-2 img {
@@ -165,7 +179,7 @@ body {
   object-position: center;
 }
 
-.lisa-scroll-test {
+.alex-scroll-test {
   /* position: absolute; */
   height: 200vh;
   width: 100vw;
@@ -234,12 +248,6 @@ body {
   /* background-color: rgba(0, 0, 255, 0.605); */
 }
 
-#section-4, #section-5, #section-6 {
-  width: 100%;
-  padding: 5rem 4rem;
-  opacity: 0;
-}
-
 .image-column {
   width: 30%;
   height: 80vh;
@@ -264,4 +272,128 @@ body {
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
+}
+
+.lipstick-container {
+  width: 50vw;
+  position: absolute;
+  right: -10%;
+}
+
+.second-image-container {
+  width: 50vw;
+  height: 100vh;
+  position: absolute;
+  right: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.second-image-container img {
+  height: 500px;
+  width: 350px;
+  margin-bottom: 10px;
+}
+
+.second-image-container p {
+  font-family: 'Playfair';
+  width: 500px;
+}
+
+.lipstick-canvas {
+  width: 100%;
+  /* transform: translateY(100%); */
+  /* position: relative; */
+  /* width: 50px; */
+  /* background-color: rgba(255, 0, 0, 0.6); */
+}
+
+.pin-container {
+  height: 100vh;
+  width: 100vw;
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.alessandro-intro {
+  height: 200vh;
+  background-color: red;
+}
+
+.alessandra-intro-text h2 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.alessandra-intro-text p {
+  font-size: 1.25rem;
+}
+
+.alessandra-intro-text {
+  width: 50%;
+}
+
+.another-div {
+  height: 500vh;
+  width: 100vw;
+}
+
+.canvas-pointer-line {
+  height: 20px;
+  width: 1px;
+  background-color: #fff;
+  position: absolute;
+  bottom: 15%;
+  left: 40%;
+  transform-origin: bottom;
+  opacity: 0;
+}
+
+.model-caption {
+  position: absolute;
+  left: 22%;
+  bottom: -2%;
+  width: 300px;
+  font-size: 1.15rem;
+  font-family: 'Playfair';
+  opacity: 0;
+}
+
+.glamour-mag-section {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  /* margin-bottom: 100vh; */
+}
+
+.glamour-mag-image {
+  height: 95%;
+  width: 40%;
+  object-fit: cover;
+  object-position: center;
+  /* transform: translateX(-100%); */
+}
+
+.glamour-line {
+  height: 1px;
+  width: 100px;
+  background-color: #fff;
+}
+
+.glamour-caption {
+  width: 40%;
+  font-size: 1.25rem;
+
+  p {
+    font-family: 'Playfair';
+  }
 }

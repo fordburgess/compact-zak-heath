@@ -288,7 +288,7 @@ const LisaEldridge = () => {
       <div style={{ position: 'fixed', top: 0, left: 0, height: '100vh', width: '100vw', backdropFilter: 'blur(3px) brightness(80%)', zIndex: 5 }}></div>
       <div style={{ position: 'absolute', top: 0, left: 0, width: '100vw', zIndex: 10, color: '#fff' }}>
         <div style={{ zIndex: 10 }}>
-          <div className='featured-title-section'>
+          <div className='featured-title-section-2'>
             <Image src={LisaEldrigdeProfile} alt='pfp' className='featured-profile-image'/>
             <h1>In Conversation With Lisa Eldridge MBE:<br/> <strong style={{ fontWeight: '300', fontSize: '2rem' }}>Becoming A World Class Makeup Artist</strong></h1>
           </div>
