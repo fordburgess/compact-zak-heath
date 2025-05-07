@@ -101,7 +101,7 @@ body {
 .drop-cap {
   font-size: 2rem;
   font-weight: 600;
-  background-color: rgba(255, 0, 0, 0.39);
+  background-color: rgba(40, 200, 112, 0.39);
 }
 
 .grow-line-1 {
@@ -173,11 +173,10 @@ body {
   /* background-color: #e1070096; */
 }
 
-.interactive-image-caption {
+/* .interactive-image-caption {
   font-size: 1.25rem;
   font-weight: 300;
-  font-style: italic;
-}
+} */
 
 .interactive-image-caption a {
   text-decoration: underline;
@@ -195,7 +194,7 @@ body {
   width: 400px;
 }
 
-#image-section-1 {
+#second-intro-container {
   height: 100vh;
   width: 100vw;
   position: relative;
@@ -203,12 +202,12 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 100px;
+  padding: 0 80px;
 }
 
 #kirsty-lewis-2 {
-  height: 450px;
-  width: 500px;
+  height: 85%;
+  width: 45%;
   object-fit: cover;
   object-position: center;
   transform: translateX(-500px);
@@ -269,4 +268,9 @@ body {
   transform: translateX(-50%);
   width: 90%;
   opacity: 0;
+}
+
+.kirsty-lewis-second-intro-text {
+  font-size: 1.5rem;
+  font-weight: 300;
 }
