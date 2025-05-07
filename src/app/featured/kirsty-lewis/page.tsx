@@ -235,6 +235,11 @@ const LisaEldridge = () => {
             <p className='featured-article-paragraph'>Oh, I wasn’t much of a student-clubber type. I’ve always been into hip-hop and rare groove. When I was younger, I’d go to places like the WAG Club, Carwash, and Limelight. Later, it was warehouse parties or spots like Subterania, Notting Hill, Camden, Milk and Honey. I even made my own outfits for nights out, often from vintage menswear waistcoats and trousers from charity shops. I’ve always loved suits, and I still wear them now. My friend used to wear floral print dresses and I’d wear ties.</p>
             <p className='featured-article-subheader'>What restaurants do you like in London?</p>
             <p className='featured-article-paragraph'>AI like a lot of the restaurants that are more local, that do really good food, like, back in the day, I would want to go to Nobu - all the big ones, I'll do that for work now, but otherwise, I want to go to local place where the food is amazing. The street food around Peckham, Chiswick - which is near me - is all really nice. Whenever I walk by places like Sexy Fish now, I never get inspired to go in.</p>
+            <div className='featured-article-transition-container' id='featured-trans-1'>
+              <div className='hide-container' id='hide-container-1'>
+                <h1 className='featured-key-quote'>Through process of elimination of doing jobs I didn’t actually enjoy, I ended up working in beauty PR"</h1>
+              </div>
+            </div>
             <p className='featured-article-subheader'>What restaurants do you like in London?</p>
             <p className='featured-article-paragraph'>I like a lot of the restaurants that are more local, that do really good food, like, back in the day, I would want to go to Nobu - all the big ones, I'll do that for work now, but otherwise, I want to go to local place where the food is amazing. The street food around Peckham, Chiswick - which is near me - is all really nice. Whenever I walk by places like Sexy Fish now, I never get inspired to go in.</p>
             <p className='featured-article-subheader'>What would your 21-year-old self think of where you are now?</p>
@@ -243,49 +248,26 @@ const LisaEldridge = () => {
             <p className='featured-article-paragraph'>The facades people may have is just life and some people are realer than others - you just have to find your tribe of people who you can trust. The beauty industry all-in-all is very friendly but if somebody has spoken about me behind my back then it’s not to my knowledge. When I first started in PR, I’d make sure to meet up with the other PRs who were in the beauty industry and I got to be friends with them, so I’ve always surrounded myself with people who I like in the industry. Of course, there are other challenges. Early in my career, I had a boss who was incredibly difficult, especially when I got pregnant with my first child. It was a tough situation, and I ended up leaving the role. You’ll encounter difficult people in any industry, but it’s about finding your tribe and staying true to your values and kill the other people with kindness.</p>
             <p className='featured-article-subheader'>After working for so many different brands at once, what’s it like to look after the whole of the UK and Europe for Huda Beauty and Kayali?</p>
             <p className='featured-article-paragraph'>Simply amazing - I have been with them now for five years and at one point it was only me who was doing all of the brand’s PR. Although they are two different brands with different distributors, audiences and founders, because they are under the same umbrella, there are lots of crossovers. As brands they are like twins because you can’t treat them as the same things, they’re not. You can’t give them the same present to share at Christmas, but maybe that’s a silly analogy. They're both people who care very much about their community, they're very much involved in their brands. They listen to their community. They're also very different in terms of the direction of their brands and how they achieve it, especially since fragrance is completely different to makeup. If one launch is outperforming in a different part of Europe then I want to fix the problem as to how we can make the product perform better in other places too. As an agency we do work with the global team but we localise what we’re doing and we run it ourselves which gives us more creative freedom.</p>
+            <div className='featured-article-transition-container' id='featured-trans-2'>
+              <div className='hide-container' id='hide-container-2'>
+                <h1 className='featured-key-quote'>"Absorb all you can, take advantage of things, be willing to listen"</h1>
+              </div>
+            </div>
             <p className='featured-article-subheader'>What’s your take on the beauty industry’s shift toward social media and influencers?</p>
             <p className='featured-article-paragraph'>The landscape has changed so much. When I started, traditional media like magazines were the cornerstone of PR as well as celebrity endorsements. Now, content creators are vital as many celebrities have their own cosmetic brands and they are therefore promoting them. Creators connect with audiences in ways traditional media can’t, helping businesses to thrive and grow. Although we invest less in traditional journalism, print media still holds credibility and authority, so I think the future lies in a balance between the two. Credibility and transparency are key, whether you’re a journalist or a creator because people want to educate themselves through honest resources. On the other hand, I don’t think people realise, but magazines are businesses too and kept alive through advertisements. In this consumer economy, educating yourself and looking at multiple resources is the most important thing because magazines will sometimes cater to the brand - like a social media advertisement.</p>
             <p className='featured-article-subheader'>What advice would you give your 21-year-old self?</p>
+            <div className='featured-article-transition-container' id='featured-trans-3'>
+              <div className='hide-container' id='hide-container-3'>
+                <div className='corner-frame' id="corner-frame-1">
+                  <h1 className='featured-key-quote'>"Find your tribe of people who you can trust"</h1>
+                </div>
+              </div>
+            </div>
             <p className='featured-article-paragraph'>I’d tell her to stay open to new challenges and not stress too much about having everything figured out. Life will lead you where you’re meant to go, as long as you’re willing to put in the work. Don’t be afraid to ask for help or learn from others - there’s no weakness in seeking guidance, absorb all you can, take advantage of things, be willing to listen - something that I think youngsters don't do.</p>
             <p className='featured-article-subheader'>What has been your biggest pinch-me moment in your career?</p>
             <p className='featured-article-paragraph'>There have been so many, but one standout was working with John Galliano on the launch of his fragrance. Visiting his atelier in Paris was surreal. Only two PRs had ever been invited inside before. It was an incredible experience.</p>
             <p className='featured-article-subheader'>What’s your favourite fragrance?</p>
             <p className='featured-article-paragraph'>That’s tough! I love layering fragrances, especially Kayali’s Elixir and Citrus—though they’re sadly discontinued. Another favourite is Tobacco Oud by Kayali. Fragrance is such a personal thing, and I love experimenting to create my own scent - especially as I’m lucky enough to have access to so many fragrances.</p>
-            {/* <div className='featured-article-transition-container' id='featured-trans-1'>
-              <div className='hide-container' id='hide-container-1'>
-                <h1 className='featured-key-quote'>"I was a total club girl — I'd be out all night, then go straight to work in the morning. I absolutely loved it."</h1>
-              </div>
-            </div>
-            <p className='featured-article-paragraph'>She laughs when asked what she wore back in her clubbing days. "The shortest denim shorts you've ever seen, Converse, a white T-shirt. I wasn't into fashion. I was into dancing and being comfortable!"</p>
-            <p className='featured-article-paragraph'>Millie's first introduction to beauty was at her grandmother's dressing table. "She had a Corgi that drank tea out of a saucer. She'd put moisturiser on her face, then let the dog lick her fingers. The dog basically lived off Nivea!"</p>
-            <p className='featured-article-paragraph'>She describes her grandmother applying mascara with a flat palette that required saliva to activate. "She'd spit on it and apply. That whole moment, the diamonds, the glamour, the spitting, was iconic. It made a huge impression on me."</p>
-            <p className='featured-article-paragraph'>Despite being close, her family wasn't overly interested in her later success in the beauty industry. "My grandmother didn't really understand why I worked so much. She thought I should've stayed home and married. My mum never wore makeup. My dad, though, was a hairdresser - always very groomed. He was more into it than anyone."</p>
-            <p className='featured-article-paragraph'>Although her roots were in salons and makeup, Millie never crossed into fashion. "It never appealed to me. I like the smells, the tactility, the packaging of beauty. Fashion didn't have that same intimacy. Beauty is housed in beautiful things; you open, close, and hold it. I love that experience."</p>
-            <div className='featured-article-transition-container' id='featured-trans-2'>
-              <div className='hide-container' id='hide-container-2'>
-                <h1 className='featured-key-quote'>"Beauty is housed in beautiful things; you open, close, and hold it. I love that experience."</h1>
-              </div>
-            </div>
-            <p className='featured-article-paragraph'>Millie was already working in PR when she met makeup artist Ruby Hammer. "I was her publicist, and she and her husband spent two years convincing me to form a brand with them. I liked my job, had my own business, was making loads of money - I wasn't interested in being the face of a brand."</p>
-            <p className='featured-article-paragraph'>Eventually though, she agreed. Ruby & Millie launched in 1998 and became one of the UK's most recognisable beauty brands in the late 90s and early 2000s.</p>
-            <p className='featured-article-paragraph'>"The moment it launched, I freaked out. My face was suddenly in hundreds of stores. People recognised me at bus stops. It was my worst nightmare. I actually moved to LA to get away from it. That's how much I hated being the front person."</p>
-            <p className='featured-article-paragraph'>"Creating a brand is fun, developing it, the product, the packaging. But once it's on the shelf, the pressure is massive. You've got to sell. You have to pay your team. You're in retailers with gate fees and rules about shelf heights and signage. It's not as simple as looking pretty."</p>
-            <div className='featured-article-transition-container' id='featured-trans-3'>
-              <div className='hide-container' id='hide-container-3'>
-                <div className='corner-frame' id="corner-frame-1">
-                  <h1 className='featured-key-quote'>"Creating a brand is fun. But once it's on the shelf, the pressure is massive. It's not as simple as looking pretty."</h1>
-                </div>
-              </div>
-            </div>
-            <p className='featured-article-subheader'>Her Role In The British Beauty Council And Starting The Creator Collective</p>
-            <p className='featured-article-paragraph'>Millie is deeply engaged in the future of beauty. She founded the Creator Collective in 2021 to address a growing problem: misinformation in the content space.</p>
-            <p className='featured-article-paragraph'>"It started when Gwyneth Paltrow posted that video smearing SPF only on the high points of her face. It was completely wrong. And I thought, if I had to get trained to sell skincare in a department store, why aren't creators and influencers getting trained?"</p>
-            <p className='featured-article-paragraph'>The Creator Collective became a training ground for influencers to learn about skin health so they can speak with credibility and authenticity. It was built with the Boots and Walgreens Alliance, which owns several brands, including No7, Liz Earle Beauty Co, Botanics, Soap & Glory, and Sleek MakeUP. "It helps creators, helps brands, and helps the industry”, explains millie. The online course is now open to the public and covers various topics, including misinformation surrounding acne and the dangers of not using SPF.</p>
-            <p className='featured-article-subheader'>Recognition For Her Work</p>
-            <p className='featured-article-paragraph'>"I got the MBE just after having my daughter. A letter came, and I didn't realise I wasn't supposed to tell anyone, so of course, I told everyone! Then I read the letter properly and realised it wasn't official yet. You have to wait until the honours list is published to see if you're actually on it."</p>
-            <p className='featured-article-paragraph'>The OBE came during the pandemic. "By then, I knew how it worked. It was less of a shock but still surreal. The Queen gave it to us. Weird, but amazing."</p>
-            <p className='featured-article-subheader'>What's Next When You Have Already Done Everything?</p>
-            <p className='featured-article-paragraph'>"I always have something brewing," she says. "Right now, I want to help brands more privately. I used to charge for strategy, but now people come to me through the British Beauty Council and get it for free. Eventually, I want to formalise that again."</p> */}
           </div>
         </div>
       </div>
