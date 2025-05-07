@@ -4,6 +4,7 @@ import Image from 'next/image';
 import SpringExpanded from '../../../assets/images/spring-expanded.jpg';
 import KirstyLewisProfile from '../../../assets/images/kirsty-lewis-profile.webp';
 import KirstyLewis2 from '../../../assets/images/kirsty-lewis-2.webp';
+import KirstyLewis3 from '../../../assets/images/kirsty-lewis-3.webp';
 import './styles.css'
 import { useMediaQuery } from 'usehooks-ts';
 import gsap from 'gsap';
@@ -188,6 +189,32 @@ const LisaEldridge = () => {
         scrub: true
       }
     })
+
+    const line2Props: any = {
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: '#fctc-trans-2',
+        start: 'top 60%',
+        end: 'bottom 60%',
+        scrub: true,
+      }
+    };
+    const scaleAxis = mobile ? 'scaleY' : 'scaleX';
+    line2Props[scaleAxis] = mobile ? 8 : 10;
+    gsap.to('.fctc-line-2', line2Props);
+
+    const caption2props: any = {
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: '#fctc-trans-2',
+        start: 'top 60%',
+        end: 'bottom 60%',
+        scrub: true,
+      }
+    }
+    const transitionDirection = mobile ? 'y' : 'x';
+    caption2props[transitionDirection] = mobile ? -50 : -1;
+    gsap.to('#zak-uncle-caption', caption2props);
   }, [])
 
   useEffect(() => {
@@ -244,6 +271,13 @@ const LisaEldridge = () => {
             <p className='featured-article-paragraph'>I like a lot of the restaurants that are more local, that do really good food, like, back in the day, I would want to go to Nobu - all the big ones, I'll do that for work now, but otherwise, I want to go to local place where the food is amazing. The street food around Peckham, Chiswick - which is near me - is all really nice. Whenever I walk by places like Sexy Fish now, I never get inspired to go in.</p>
             <p className='featured-article-subheader'>What would your 21-year-old self think of where you are now?</p>
             <p className='featured-article-paragraph'>She’d be proud and I think it’s ok to say that as people don’t really say that enough about themselves. At 21, I didn’t have a clear vision, but I always knew I loved connecting with people. I’ve built my career around that. I love introducing people, helping them, and bringing them together. It’s incredibly rewarding. When I worked at Origins my co-worker said “do you ever go home and be really horrible to Ian - who’s my partner - because you've had to be so nice all day”, and I laughed. I thought about it and said, that's a really good question, but no I don’t because that isn’t me.</p>
+            <div className='dream-room-transition-container' id='fctc-trans-2'>
+              <div className='image-with-caption' style={{ zIndex: -1, }}>
+                <Image src={KirstyLewis3} alt='zak-heath-uncle'/>
+              </div>
+              <div className='fctc-line-2'></div>
+              <p className='image-caption' id='zak-uncle-caption'>Kirsty with Huda and Mona Kattan and the rest of the team after a tour of France with Sephora. Huda Beauty was founded in 2013, initially as a makeup blog where she shared beauty tips and tutorials. After selling a collection of false eyelashes, Huda expanded her brand into a global beauty empire! Kirsty first started to work with them in 2019 (Image credit: Kirsty Lewis Pr on Instagram)</p>
+            </div>
             <p className='featured-article-subheader'>Have you experienced setbacks or challenges in the industry?</p>
             <p className='featured-article-paragraph'>The facades people may have is just life and some people are realer than others - you just have to find your tribe of people who you can trust. The beauty industry all-in-all is very friendly but if somebody has spoken about me behind my back then it’s not to my knowledge. When I first started in PR, I’d make sure to meet up with the other PRs who were in the beauty industry and I got to be friends with them, so I’ve always surrounded myself with people who I like in the industry. Of course, there are other challenges. Early in my career, I had a boss who was incredibly difficult, especially when I got pregnant with my first child. It was a tough situation, and I ended up leaving the role. You’ll encounter difficult people in any industry, but it’s about finding your tribe and staying true to your values and kill the other people with kindness.</p>
             <p className='featured-article-subheader'>After working for so many different brands at once, what’s it like to look after the whole of the UK and Europe for Huda Beauty and Kayali?</p>
