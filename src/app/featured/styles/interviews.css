@@ -90,12 +90,6 @@
   font-size: 1rem;
 }
 
-/* #icons-pfp-0 {
-  height: 120px;
-  width: 120px;
-  margin-bottom: 10px;
-} */
-
 .beauty-icons-pfp {
   height: 120px;
   width: 120px;
@@ -142,23 +136,29 @@
     margin: 0;
   }
 
-  .beauty-icons-section {
-    /* height: 80vh; */
+  .name-container h3 {
+    font-size: 1.5rem;
+  }
+
+  .name-container p {
+    font-size: 1.25rem;
   }
 
   .beauty-icons-item {
     width: 33%;
+    margin-bottom: 100px;
   }
 
   #icons-pfp-0 {
     height: 250px;
     width: 250px;
     margin-bottom: 20px;
+    opacity: 0;
   }
 
   .beauty-icons-pfp {
-    height: 200px;
-    width: 200px;
+    height: 225px;
+    width: 225px;
     margin-bottom: 60px;
   }
 

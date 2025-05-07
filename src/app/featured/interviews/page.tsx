@@ -118,7 +118,7 @@ const FeaturedInterviews = () => {
           { opacity: 0, scale: 1 },
           {
             opacity: 1,
-            scale: 1.25,
+            scale: 1.11,
             ease: 'power1.inOut',
             scrollTrigger: {
               trigger: `#section-${index + 1}`,
@@ -133,8 +133,7 @@ const FeaturedInterviews = () => {
       gsap.to('#icons-pfp-0', {
         opacity: 1,
         y: -10,
-        duration: 1,
-        delay: 1,
+        duration: 0.5,
       })
 
       gsap.to('.beauty-icons-title-section', {
