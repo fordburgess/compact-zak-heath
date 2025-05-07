@@ -209,7 +209,7 @@ const LisaEldridge = () => {
       scrollTrigger: {
         trigger: '#fctc-trans-2',
         start: 'top 60%',
-        end: 'bottom 60%',
+        end: 'bottom 70%',
         scrub: true,
       }
     }
@@ -304,7 +304,7 @@ const LisaEldridge = () => {
                 <Image src={KirstyLewis3} alt='zak-heath-uncle'/>
               </div>
               <div className='fctc-line-2'></div>
-              <p className='image-caption' id='zak-uncle-caption'>Kirsty with Huda and Mona Kattan and the rest of the team after a tour of France with Sephora. Huda Beauty was founded in 2013, initially as a makeup blog where she shared beauty tips and tutorials. After selling a collection of false eyelashes, Huda expanded her brand into a global beauty empire! Kirsty first started to work with them in 2019 (Image credit: Kirsty Lewis Pr on Instagram)</p>
+              <p className='image-caption' id='zak-uncle-caption'>Kirsty with Huda and Mona Kattan<br/> and the rest of the team after a <br/>tour of France with Sephora. Huda Beauty was <br/>founded in 2013, initially as a makeup blog where she shared <br/>beauty tips and tutorials. After selling a collection<br/> of false eyelashes, Huda expanded her brand into<br/> a global beauty empire! Kirsty first<br/> started to work with them in 2019<br/> (Image credit: Kirsty Lewis Pr on Instagram)</p>
             </div>
             <p className='featured-article-subheader'>Have you experienced setbacks or challenges in the industry?</p>
             <p className='featured-article-paragraph'>The facades people may have is just life and some people are realer than others - you just have to find your tribe of people who you can trust. The beauty industry all-in-all is very friendly but if somebody has spoken about me behind my back then it’s not to my knowledge. When I first started in PR, I’d make sure to meet up with the other PRs who were in the beauty industry and I got to be friends with them, so I’ve always surrounded myself with people who I like in the industry. Of course, there are other challenges. Early in my career, I had a boss who was incredibly difficult, especially when I got pregnant with my first child. It was a tough situation, and I ended up leaving the role. You’ll encounter difficult people in any industry, but it’s about finding your tribe and staying true to your values and kill the other people with kindness.</p>
