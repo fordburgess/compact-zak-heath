@@ -217,7 +217,7 @@ const LisaEldridge = () => {
     }
     const transitionDirection = mobile ? 'y' : 'x';
     caption2props[transitionDirection] = mobile ? -50 : -1;
-    gsap.to('#zak-uncle-caption', caption2props);
+    gsap.to('#first-trans-caption', caption2props);
 
     const line4Props: any = {
       ease: "power1.inOut",
@@ -303,10 +303,10 @@ const LisaEldridge = () => {
             <p className='featured-article-paragraph'>She’d be proud and I think it’s ok to say that as people don’t really say that enough about themselves. At 21, I didn’t have a clear vision, but I always knew I loved connecting with people. I’ve built my career around that. I love introducing people, helping them, and bringing them together. It’s incredibly rewarding. When I worked at Origins my co-worker said “do you ever go home and be really horrible to Ian - who’s my partner - because you've had to be so nice all day”, and I laughed. I thought about it and said, that's a really good question, but no I don’t because that isn’t me.</p>
             <div className='featured-transition-container' id='first-image-trans'>
               <div className='image-with-caption' style={{ zIndex: -1, }}>
-                <Image src={KirstyLewis3} alt='zak-heath-uncle'/>
+                <Image src={KirstyLewis3} alt='kirsty-lewis-huda'/>
               </div>
               <div className='fctc-line-2'></div>
-              <p className='image-caption' id='zak-uncle-caption'>Kirsty with Huda and Mona Kattan<br/> and the rest of the team after a <br/>tour of France with Sephora. Huda Beauty was <br/>founded in 2013, initially as a makeup blog where she shared <br/>beauty tips and tutorials. After selling a collection<br/> of false eyelashes, Huda expanded her brand into<br/> a global beauty empire! Kirsty first<br/> started to work with them in 2019<br/> (Image credit: Kirsty Lewis Pr on Instagram)</p>
+              <p className='image-caption' id='first-trans-caption'>Kirsty with Huda and Mona Kattan<br/> and the rest of the team after a <br/>tour of France with Sephora. Huda Beauty was <br/>founded in 2013, initially as a makeup blog where she shared <br/>beauty tips and tutorials. After selling a collection<br/> of false eyelashes, Huda expanded her brand into<br/> a global beauty empire! Kirsty first<br/> started to work with them in 2019<br/> (Image credit: Kirsty Lewis Pr on Instagram)</p>
             </div>
             <p className='featured-article-subheader'>Have you experienced setbacks or challenges in the industry?</p>
             <p className='featured-article-paragraph'>The facades people may have is just life and some people are realer than others - you just have to find your tribe of people who you can trust. The beauty industry all-in-all is very friendly but if somebody has spoken about me behind my back then it’s not to my knowledge. When I first started in PR, I’d make sure to meet up with the other PRs who were in the beauty industry and I got to be friends with them, so I’ve always surrounded myself with people who I like in the industry. Of course, there are other challenges. Early in my career, I had a boss who was incredibly difficult, especially when I got pregnant with my first child. It was a tough situation, and I ended up leaving the role. You’ll encounter difficult people in any industry, but it’s about finding your tribe and staying true to your values and kill the other people with kindness.</p>

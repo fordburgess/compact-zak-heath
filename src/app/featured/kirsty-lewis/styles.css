@@ -299,7 +299,7 @@ html, body {
   font-style: italic;
 }
 
-#zak-uncle-caption {
+#first-trans-caption {
   position: absolute;
   top: 80%;
   left: 50%;
@@ -400,7 +400,7 @@ html, body {
     z-index: 10;
   }
 
-  #zak-uncle-caption {
+  #first-trans-caption {
     font-size: 1.25rem !important;
     top: 50%;
     left: 60%;
