@@ -18,6 +18,7 @@ import ZakHeath from '../../../assets/images/zak-heath-profile.webp';
 import TillySanders from '../../../assets/images/tilly-sanders-profile.webp';
 import Placeholder from '../../../assets/images/placeholder.webp';
 import CarolynAronson from '../../../assets/images/carolyn-aronson-profile.webp';
+import { useMediaQuery } from 'usehooks-ts';
 
 // Lisa, Millie and Alessandra, second row, Patricia, Adam, Mona, 3rd row, Shakeel, Kirsty ingeborg, 4th Carolyn, Yana, Tilly, 5th row, me and Raquell
 
@@ -116,53 +117,36 @@ const chunkArray = (array: Array<any>, size: number) =>
 const chunked = chunkArray(interviews, 6);
 
 const BeautyIconsInterviews = () => {
+  const mobile = useMediaQuery('(max-width: 1000px)');
 
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       const scrollTop = window.scrollY;
-//       const backgroundImage: HTMLElement | null = document.querySelector('.beauty-icons-bg');
-//
-//       if (backgroundImage) {
-//         backgroundImage.style.transform = `translateY(-${scrollTop * 0.25}px)`;
-//       }
-//     };
-//
-//     window.addEventListener('scroll', handleScroll);
-//
-//     return () => {
-//       window.removeEventListener('scroll', handleScroll);
-//     };
-//   }, []);
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const backgroundImage: HTMLElement | null = document.querySelector('.beauty-icons-bg');
+
+      if (backgroundImage) {
+        backgroundImage.style.transform = `translateY(-${scrollTop * 0.5}px)`;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.to('.beauty-icons-bg', {
-      y: -500,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.beauty-icons-content-container',
-        start: 'top top',
-        end: 'bottom bottom',
-        scrub: true,
-      }
-    })
-
-    gsap.to('#icons-pfp-0', {
-      opacity: 1,
-      y: -10,
-      duration: 1,
-      delay: 0.5,
-    })
-
     let shifted = chunked.shift();
-    if (shifted) {
+    if (shifted && !mobile) {
       shifted.map((item: any, index) => {
         gsap.fromTo(`#icons-pfp-${index + 1}`,
           { opacity: 0, scale: 1 },
           {
             opacity: 1,
-            scale: 1.15,
+            scale: 1.11,
             ease: 'power1.inOut',
             scrollTrigger: {
               trigger: `#section-${index + 1}`,
@@ -173,18 +157,24 @@ const BeautyIconsInterviews = () => {
           }
         )
       })
-    }
 
-    gsap.to('.beauty-icons-title-section', {
-      y: -100,
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: 'beauty-icons-content-container',
-        start: 'top top',
-        end: 'top -20%',
-        scrub: true
-      }
-    })
+      gsap.to('#icons-pfp-0', {
+        opacity: 1,
+        y: -10,
+        duration: 0.5,
+      })
+
+      gsap.to('.beauty-icons-title-section', {
+        y: -100,
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: 'beauty-icons-content-container',
+          start: 'top top',
+          end: 'top -20%',
+          scrub: true
+        }
+      })
+    }
   }, [])
 
   return (
@@ -201,24 +191,25 @@ const BeautyIconsInterviews = () => {
           {
             chunked.map((chunk: any, index: number) => {
               return (
-                <div className='beauty-icons-section' id={`section-${index}`} key={index}>
+                <div className='featured-interviews-section' id={`section-${index}`} key={index}>
                   {
                     chunk.map((interview: any, i: number) => {
                       return (
-                        <Link href={interview.href}>
-                          <div className='beauty-icons-item' key={interview.name}>
+                        <div className='beauty-icons-item' key={interview.href}>
+                          <Link href={interview.href}>
                             <Image
                               src={interview.pfp}
                               alt={`icon-${index}`}
                               className='beauty-icons-pfp'
                               id={`icons-pfp-${index}`}
+                              style={{ objectPosition: interview.name == 'Millie Kendall' || 'Carolyn Aronson' ? 'top' : 'center' }}
                             />
                             <div className='name-container'>
                               <h3>{interview.name}</h3>
                               <p>{interview.job}</p>
                             </div>
-                          </div>
-                        </Link>
+                          </Link>
+                        </div>
                       )
                     })
                   }
