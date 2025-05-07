@@ -1,180 +1,370 @@
 "use client"
 import React, { useEffect } from 'react';
-import Link from 'next/link'
 import Image from 'next/image';
-import './styles.css';
-import '../styles/article.css';
+import LisaEldrigdeProfile from '../../../assets/images/lisa-eldridge-profile.webp';
 import SpringExpanded from '../../../assets/images/spring-expanded.jpg';
-import KirstLewisProfile from '../../../assets/images/kirsty-lewis-profile.webp';
+import RihannaVogue from '../../../assets/images/rihanna-vogue.jpg';
+import VogueParis from '../../../assets/images/vogue-paris.jpg';
+import VogueJapan from '../../../assets/images/vogue-japan.webp';
+import VogueTurkey from '../../../assets/images/vogue-turkey.jpg';
+import HarpersBazaar from '../../../assets/images/harpers-bazaar.jpg';
+import LisaEldridge2 from '../../../assets/images/lisa-eldridge-2.webp';
+import LisaEldridge4 from '../../../assets/images/lisa-eldridge-4.webp';
+import LisaEldridge8 from '../../../assets/images/lisa-eldridge-8.jpg';
+import LisaMBE from '../../../assets/images/lisa-mbe.png';
 import KirstyLewis2 from '../../../assets/images/kirsty-lewis-2.webp';
-import { useMediaQuery } from 'usehooks-ts';
+import './styles.css'
+import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-const KirstyLewis = () => {
-  const mobile = useMediaQuery('(max-width: 1000px)')
+const LisaEldridge = () => {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+    const mags = document.querySelector(".mag-covers")!;
 
-    gsap.to('.featured-article-bg', {
-      y: -800,
-      ease: 'none',
+    // if (mags !== null) {
+      function getScrollAmount() {
+        let magsWidth = mags.scrollWidth;
+        return -(magsWidth - window.innerWidth);
+      }
+
+      const tween = gsap.to(mags, {
+        x: getScrollAmount,
+        duration: 3,
+        ease: "none",
+      });
+
+      ScrollTrigger.create({
+        trigger:".mag-wrapper",
+        start:"top 12%",
+        end: () => `+=${getScrollAmount() * -1}`,
+        pin:true,
+        animation: tween,
+        scrub:1,
+        invalidateOnRefresh: true,
+      })
+
+
+    gsap.to(['.text-section-title', '.featured-paragraph-text'],  {
+      opacity: 1,
+      ease: 'power1.inOut',
       scrollTrigger: {
-        trigger: '.featured-article-container',
-        start: 'top top',
+        trigger: '.text-section',
+        start: 'top 30%',
         end: 'bottom bottom',
+        scrub: true
+      }
+    })
+
+    gsap.to('#section-1', {
+      y: -500,
+      opacity: 0,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#section-2',
+        start: 'top 40%',
+        end: 'top top',
+        scrub: true
+      }
+    })
+
+    gsap.to('.section-2-text', {
+      x: -500,
+      opacity: 0,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '.lisa-scroll-test',
+        start: 'top 80%',
+        end: 'top top',
         scrub: true,
       }
     })
 
-    gsap.to('.title-image', {
-      opacity: 1,
-      ease: "power1.inOut"
+    gsap.to('#image-1', {
+      x: -700,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '.lisa-scroll-test',
+        start: 'top 80%',
+        end: 'top top',
+        scrub: true
+      }
     })
 
-    gsap.to('.featured-title-quote', {
+    gsap.to('#caption-1', {
       opacity: 1,
-      ease: "power1.inOut",
-      delay: 0.15
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '.lisa-scroll-test',
+        start: 'top 80%',
+        end: 'top top',
+        scrub: true
+      }
     })
 
-    gsap.to('.featured-subtitle', {
-      opacity: 1,
-      ease: "power1.inOut",
-      delay: 0.25
+    ScrollTrigger.create({
+      trigger: "#section-2",
+      start: "top top",
+      end: "bottom top",
+      pin: ".pin-container",
+      pinSpacing: false,
+      scrub: true,
+    });
+
+    gsap.to('#section-3', {
+      y: -200,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#section-3',
+        start: 'top 110%',
+        end: 'top center',
+        scrub: true
+      }
     })
 
-    gsap.to('.featured-blurb', {
+    ScrollTrigger.create({
+      trigger: "#image-section-1",
+      start: "top top",
+      end: "+=100%",
+      pin: true,
+      scrub: true,
+    });
+
+    gsap.fromTo("#caption-2",
+      { x: "-100%", opacity: 0 },
+      {
+        x: "0%",
+        opacity: 1,
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: "#image-section-1",
+          start: "top top",
+          end: "+=100%",
+          scrub: true,
+        }
+      }
+    );
+
+    gsap.fromTo("#kirsty-lewis-2",
+      { x: "100%", opacity: 0 },
+      {
+        x: "0%",
+        opacity: 1,
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: "#image-section-1",
+          start: "top top+=20%", // slight delay
+          end: "+=100%",
+          scrub: true,
+        }
+      }
+    );
+
+    gsap.fromTo(".mary-greenwell-line",
+      { scaleX: 0 },
+      {
+        scaleX: 1,
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: "#image-section-1",
+          start: "top top+=10%",
+          end: "+=80%",
+          scrub: true,
+        }
+      }
+    );
+
+    gsap.to('#section-4', {
       opacity: 1,
-      ease: "power1.inOut",
-      delay: 0.5
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#section-4',
+        start: 'top center',
+        end: 'top -100%',
+        scrub: true,
+      }
     })
 
-    gsap.to('.featured-title-section', {
-      y: -100,
+    gsap.to('#section-5', {
+      opacity: 1,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#section-5',
+        start: 'top -50%',
+        end: 'top -100%',
+        scrub: true,
+      }
+    })
+
+    gsap.to('#section-6', {
+      opacity: 1,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#section-6',
+        start: 'top -50%',
+        end: 'top -100%',
+        scrub: true,
+      }
+    })
+
+    ScrollTrigger.create({
+      trigger: "#section-4",
+      start: "top top",
+      end: "+=100%",
+      pin: true,
+      scrub: true,
+    });
+
+    ScrollTrigger.create({
+      trigger: "#section-5",
+      start: "top top",
+      end: "+=50%",
+      pin: true,
+      scrub: true,
+    });
+
+    ScrollTrigger.create({
+      trigger: "#section-6",
+      start: "top top",
+      end: "+=50%",
+      pin: true,
+      scrub: true,
+    });
+
+    ScrollTrigger.create({
+      trigger: ".image-column",
+      start: "top 10%",
+      end: "+=300%",
+      pin: true,
+      scrub: true,
+    });
+
+    gsap.to('#image-item-1', {
       opacity: 0,
-      ease: "power1.inOut",
+      y: -100,
+      ease: 'power1.inOut',
       scrollTrigger: {
-        trigger: '.featured-title-section',
-        start: 'top top',
+        trigger: '#section-4',
+        start: 'top -20%',
         end: 'bottom top',
-        scrub: true
+        scrub: true,
       }
     })
 
-    gsap.to('#hide-container-1', {
-      height: '300px',
+    gsap.to('#image-item-2', {
+      opacity: 1,
+      top: '0%',
       ease: 'power1.inOut',
       scrollTrigger: {
-        trigger: '#featured-trans-1',
+        trigger: '#section-5',
         start: 'top center',
-        end: `bottom ${mobile ? '90%' : '70%' }`,
-        scrub: true
-      }
-    })
-
-    gsap.to('#hide-container-2', {
-      width: `${mobile ? '100%' : '600px'}`,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#featured-trans-2',
-        start: 'top center',
-        end: `bottom ${mobile ? '90%' : '70%' }`,
-        scrub: true
-      }
-    })
-
-    gsap.to('#hide-container-3', {
-      width: mobile ? '100%' : '500px',
-      height: '300px',
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#featured-trans-3',
-        start: 'top center',
-        end: `bottom ${mobile ? '90%' : '70%' }`,
-        scrub: true
-      }
-    })
-
-    gsap.to('#hide-container-4', {
-      width: mobile ? '100%' : '500px',
-      height: '300px',
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#featured-trans-4',
-        start: 'top center',
-        end: `bottom ${mobile ? '90%' : '70%' }`,
-        scrub: true
+        end: 'top top',
+        scrub: true,
       }
     })
   }, [])
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const backgroundImage: HTMLElement | null = document.getElementById('spring-container-background');
+
+      if (backgroundImage) {
+        backgroundImage.style.transform = `translateY(-${scrollTop * 0.05}px)`;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <div className='featured-article-container'>
-      <Image priority src={SpringExpanded} className='featured-article-bg' alt='featured-article-bg'/>
-      <div className='featured-article-content'>
-        <Link href='/featured/interviews' className='article-back-button'><p>Back</p></Link>
-        <div className='featured-title-section-2'>
-          <Image src={KirstLewisProfile} alt='pfp' className='featured-profile-image' id='kirsty-lewis-profile'/>
-          <h1>In Conversation with Kirsty Lewis:<br/> <strong style={{ fontWeight: '300', fontSize: '2rem' }}>On PR and Relationships In The Workplace</strong></h1>
-        </div>
-        <div className='kirsty-lewis-second-intro'>
-          <h3 className='kirsty-lewis-second-intro-text'><span className='drop-cap'>Kirsty Lewis</span> is public relations professional known for her impactful work in the beauty industry. As the Senior International PR & Influencer Manager at Huda Beauty and Kayali, she has played a pivotal role in shaping the brand’s global presence. She launched Fenty Beauty and Marc Jacobs Beauty in the UK and in 2018, she co-founded SEEN Group, a creative agency specialising in brand strategy and communications.</h3>
-          <div className='divider'></div>
-          <Image src={KirstyLewis2} id='kirsty-lewis-2' alt='kirsty-lewis-2' />
-        </div>
-        <div className='featured-article-text-section'>
-          <p className='featured-article-paragraph'>Ingeborg van Lotringen has spent more than two decades in beauty journalism and has seen it all. From lavish press trips to witnessing the decline of print magazines with the rise of influencers in this digital landscape. Now working as a Daily Mail columnist, testing the latest facials and clinical treatments, she was Cosmopolitan's award-winning beauty director from 2007 to 2019. In this COMPACT conversation, she reflects on her career highlights, industry shifts and why good writing still matters.</p>
-          <p className='featured-article-subheader'>The early days</p>
-          <p className='featured-article-paragraph'>Ingeborg's path into beauty journalism wasn't exactly traditional. "I came to London to work in television - I was a researcher on Davina McCall's MTV show Most Wanted, but after a year, they made redundancies, and I had to do something else. Beauty journalism wasn't a job I'd even heard of - I'm Dutch, and it wasn't exactly a known job back home. But I wanted to write, and beauty was a subject I could write about".</p>
-          <p className='featured-article-paragraph'>She started out interning at Hello! before landing her first full-time role at the now- defunct Minx Magazine. From there, she bounced across glossy magazines— Looks, Shape, Eve, Psychologies—before joining Cosmopolitan, where she eventually became beauty director.</p>
-          <p className='featured-article-subheader'>First-class perks: the golden era of brand trips</p>
-          <p className='featured-article-paragraph'>Although beauty journalism wasn't her first choice, Ingeborg entered the industry in the peak magazine trip era - a time of glamour, money-can't-buy experiences and unforgettable experiences. "My first trip was in '98 with L'Occitane, and all the beauty directors from other publications were invited. I wasn't even supposed to go - I was the intern. But I asked my boss if she needed help and went instead".</p>
-          <p className='featured-article-subheader'>Your most memorable trip?</p>
-          <p className='featured-article-paragraph'>"Mustique," she says without hesitation. "It's a private Caribbean island - you can't go unless invited. We were there for a John Freida launch. We stayed in private houses - I was in the one William and Kate had just stayed in. The other beauty directors and I looked around, thinking, what the hell?"</p>
-          <p className='featured-article-subheader'>The constant churn of products</p>
-          <p className='featured-article-paragraph'>With decades of testing the latest beauty launches, Ingeborg has seen, tried, or discarded thousands of products. "It's almost impossible to name all the brands now. I once had a list of 28 brands I used to request new products, like lipstick or moisturiser. Now, there are hundreds of brands. I do still have a few favourites, including Crème de la Mer, Gallinée, The Ordinary, and Medik8. Most of my all-time favourites have been discontinued.</p>
-          <p className='featured-article-subheader'>Beauty journalism: then vs now</p>
-          <p className='featured-article-paragraph'>"The main difference is editorial independence," says Ingeborg. "We had no commercial pressure. The sales team dealt with the ads, and we just reported honestly. If I went on a trip and I didn't like the product, I'd still mention it somewhere, but not in a glowing feature. If I loved it, I'd give it a big write-up".</p>
-          <div className='featured-article-transition-container' id='featured-trans-1'>
-            <div className='hide-container' id='hide-container-1'>
-              <h1 className='featured-key-quote'>"It's almost impossible to name all the brands now... I once had a list of 28 brands... now, there are hundreds."</h1>
+    <>
+      <Image priority src={SpringExpanded} id='spring-container-background' alt='test'/>
+      <div style={{ position: 'fixed', top: 0, left: 0, height: '100vh', width: '100vw', backdropFilter: 'blur(3px) brightness(80%)', zIndex: 5 }}></div>
+      <div style={{ position: 'absolute', top: 0, left: 0, width: '100vw', zIndex: 10, color: '#fff' }}>
+        <div style={{ zIndex: 10 }}>
+          <div className='featured-title-section-2'>
+            <Image src={LisaEldrigdeProfile} alt='pfp' className='featured-profile-image'/>
+            <h1>In Conversation With Lisa Eldridge MBE:<br/> <strong style={{ fontWeight: '300', fontSize: '2rem' }}>Becoming A World Class Makeup Artist</strong></h1>
+          </div>
+          <div className="mag-wrapper">
+            <div className="mag-covers">
+              <h3><span className='drop-cap'>Lisa Eldridge MBE</span> is known for her innovative yet timeless approach to makeup. She has worked with celebrities including Dua Lipa, Cindy Crawford, Rihanna, Keira Knightley and many more. In 2015, she was appointed Creative Director of Lancôme Makeup and in 2018, she launched her own award-winning beauty brand. She is also a respected historian of vintage makeup and she has written Face Paint: The Story of Makeup.</h3>
+              <div className='grow-line-1'></div>
+              <Image src={RihannaVogue} alt='rihanna' />
+              <Image src={VogueJapan} alt='vogue-japan' />
+              <Image src={VogueParis} alt='vogue-paris' />
+              <Image src={VogueTurkey} alt='vogue-turkey' />
+              <Image src={HarpersBazaar} alt='harpers-bazaar' />
             </div>
           </div>
-          <p className='featured-article-subheader'>This honesty has changed dramatically.</p>
-          <p className='featured-article-paragraph'>"These days, journalists are expected to act like influencers. Trips come with expectations - whether that be to write as many pieces - and there's a transactional feel that wasn't there before."</p>
-          <p className='featured-article-paragraph'>"I've stopped reading magazines because I don't believe half of what's in them anymore. It used to be that you could trust the journalist's voice. Now it's all marketing copy."</p>
-          <p className='featured-article-subheader'>The rise of influencers</p>
-          <p className='featured-article-paragraph'>When the conversation that social media could overtake journalism, many journalists didn't take it seriously.</p>
-          <p className='featured-article-paragraph'>"We all thought, oh whatever, this won't last. Some colleagues pivoted, and some didn't. I stuck to what I love - writing. But I didn't see the shift coming. Around 2015, the tables turned, and we were suddenly asked to act like marketers."</p>
-          <p className='featured-article-paragraph'>She notes that magazines began emulating influencer content, "and that's when everything changed."</p>
-          <p className='featured-article-subheader'>Advice for aspiring writers</p>
-          <p className='featured-article-paragraph'>"Get out of the house. Meet people. Journalism is about talking to others and being present in the world. Too many people think they can do it all online - that's not journalism. Don't say, 'I love makeup, or I want free things' as your reason for wanting the job; that's not enough. You have to love writing. Be willing to do anything, learn anything and start from the bottom. That's how you grow."</p>
-          <p className='featured-article-paragraph'>Looking back, she says: "I sometimes wish I'd started earlier. University was great - I studied Cultural Studies in Amsterdam - but journalism is about experience. You learn by doing. That's what really counts."</p>
-          <div className='featured-article-transition-container' id='featured-trans-2'>
-            <div className='hide-container' id='hide-container-2'>
-              <h1 className='featured-key-quote'>“I've stopped reading magazines because I don't believe half of what's in them anymore.”</h1>
-            </div>
-          </div>
-          <p className='featured-article-subheader'>Her daily routine</p>
-          <p className='featured-article-paragraph'>As a freelance journalist, Ingeborg's routine is confessed chaos.</p>
-          <p className='featured-article-paragraph'>"I get up late, procrastinate all morning, then work non-stop from 1 pm to 10 pm. I live in a basement - I call it my bunker - and I rarely leave because I always have deadlines."</p>
-          <p className='featured-article-paragraph'>Despite that, she still finds joy in simple pleasures, such as The Wolseley on Piccadilly, her favourite restaurant in London.</p>
-          <p className='featured-article-paragraph'>"Creating a brand is fun, developing it, the product, the packaging. But once it's on the shelf, the pressure is massive. You've got to sell. You have to pay your team. You're in retailers with gate fees and rules about shelf heights and signage. It's not as simple as looking pretty."</p>
-          <div className='featured-article-transition-container' id='featured-trans-3'>
-            <div className='hide-container' id='hide-container-3'>
-              <div className='corner-frame' id="corner-frame-1">
-                <h1 className='featured-key-quote'>"Magazines began emulating influencer content – and that's when everything changed."</h1>
+          <div className='text-section' id='section-2'>
+            <div className='pin-container'>
+              <div className='section-2-text' style={{ width: '55%' }}>
+                <h1 className='text-section-title'>What were your first experiences with makeup?</h1>
+                <p className='featured-paragraph-text'>It started when I found my mum’s old makeup after we moved back to England from New Zealand. She had this box with little drawers, filled with 1960s makeup like Biba and Mary Quant that was really playful and colourful. Makeup from that era was designed for teenagers, so it had this childlike, crayon-like quality that I loved because of the objects and textures and for me, that was the turning point. I was also really inspired by the “vintageness”, because I knew it was old makeup and that was more interesting than modern makeup. I also used to draw on paper with it because it was more interesting than using regular crayons and art supplies. For my 13th birthday, I got a book on stage and theatrical makeup, and it blew my mind. The transformations, the way you could create light and shade, it was like art. I knew that’s what I wanted to do.</p>
+              </div>
+              <Image src={LisaEldridge2} alt='lisa-eldridge-2' id='image-1' />
+              <div className='interactive-image-caption' id='caption-1'>
+                <p>Lisa Eldridge MBE and her mum. “Discovering my mum’s teenage makeup stash at my grandmothers sparked my intense interest/ obsession with makeup and it’s history” (Credit: Lisa Eldridge’s MBE Facebook).</p>
               </div>
             </div>
           </div>
-          <p className='featured-article-subheader'>Final thoughts</p>
-          <p className='featured-article-paragraph'>"I may not have predicted all the changes, but I do know this: writing with honesty will always matter".</p>
+          <div className='lisa-scroll-test'></div>
+          <div className='text-section' id='section-3'>
+            <h1 className='text-section-title'>When you were 21, who did you look up to in the beauty industry?</h1>
+            <p className='featured-paragraph-text' style={{ marginBottom: '10px'}}>Oh, absolutely. I didn’t know anyone in the industry, and there wasn’t any internet back then to guide me, so it was tricky to figure out, especially wanting to go into the fashion industry. I’d buy magazines to study credits like "Mary Greenwell for Debbie Walters" and figure out which agency to call and who was repping each other. Networking was painstaking, you had to meet people at clubs or get in touch with agencies directly and say, “I would love to assist, or something”. I did a lot of unpaid work to build my portfolio, working with new models like Kate Moss who were just coming into the industry.</p>
+            <p className='featured-paragraph-text'>At one point, I heard someone say they got a magazine cover because their boyfriend was the editor, and I remember thinking, oh my god, I hope it’s literally not going to come down to who you know. But in the end, hard work and perseverance paid off. By the time I was 23, I was signed by an agency alongside legends like Sam McKnight MBE, Mary Greenwell and major major people - I was kind of the baby. That was huge. At first, I was asked why I wanted to assist, but I had only worked with up-and-coming models and I didn’t know how to react when a big supermodel or celebrity walked into the room; however, I quickly learnt that you just treat everybody the same.</p>
+          </div>
+          <div className='image-section' id='image-section-1'>
+            <div className='interactive-image-caption' id='caption-2'>
+            <h3 className='kirsty-lewis-second-intro-text'><span className='drop-cap'>Kirsty Lewis</span> is public relations professional known for her impactful work in the beauty industry. As the Senior International PR & Influencer Manager at Huda Beauty and Kayali, she has played a pivotal role in shaping the brand’s global presence. She launched Fenty Beauty and Marc Jacobs Beauty in the UK and in 2018, she co-founded SEEN Group, a creative agency specialising in brand strategy and communications.</h3>
+            </div>
+            <div className='mary-greenwell-line'></div>
+            <Image src={KirstyLewis2} alt='mary-greenwell' id='kirsty-lewis-2' />
+          </div>
+          <div className='column-wrapper'>
+            <div style={{ width: '70%' }}>
+              <div className='text-section' id='section-4'>
+                <h1 className='text-section-title'>What was your favourite club when you were 21?</h1>
+                <p className='featured-paragraph-text'>The WAG Club was the place to be. So many cool people in fashion and creative industries hung out there. Clubs like that were great for meeting people and building connections. I’d speak to the people from Models One and ask whether they had any new models and that’s how I got my portfolio together.</p>
+              </div>
+              <div className='text-section' id='section-5'>
+                <h1>What was the first big show you worked on?</h1>
+                <p className='featured-paragraph-text'>It was with Mary, assisting at shows like Rifat Ozbek in London and Romeo Gigli in Paris. I remember rushing through makeup at my first big show, and Mary told me to slow down and take my time. I was like, oh my god, okay!</p>
+              </div>
+              <div className='text-section' id='section-6'>
+                <h1>What advice would you give your 21-year-old self?</h1>
+                <p className='featured-paragraph-text'>I’d tell her to stay confident and not compare herself to others but explore the ideas she had and wanted to share. In a creative industry, it’s fuelled by ideas, there’s no such thing as a bad one. I wish I’d spoken up more on shoots when I had ideas. Now, I’m much more comfortable experimenting. For instance, I recently tried a bold blue eyeshadow look during a Claudia Schiffer shoot for Pop Magazine. It didn’t work, and we took it off, but that’s okay! It’s all part of the creative process.</p>
+                <p className='featured-paragraph-text'>Don’t think you’re silly or something and don’t be afraid to explore, speak your mind, and trust your instincts. There’s good ideas, bad ideas, but actually they’re all good.</p>
+              </div>
+            </div>
+            <div className='image-column'>
+              <div id='image-item-1'>
+                <Image src={LisaEldridge8} alt='lisa-eldridge-at-work' className='image-column-child' id='image-column-1'/>
+                <div className='interactive-image-caption' id='caption-3'>
+                  <p>Lisa at work - From <a style={{ textDecoration: 'underline'}} href='https://lisaeldridge.com' rel="noopener noreferrer" target="_blank">lisaeldridge.com</a></p>
+                </div>
+              </div>
+              <div id='image-item-2'>
+                <Image src={LisaMBE} alt='lisa-eldridge-at-work' className='image-column-child' id='image-column-1'/>
+                <div className='interactive-image-caption' id='caption-3'>
+                  <p>Lisa is awarded an MBE</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        {/* </div> */}
       </div>
-    </div>
+    </>
   )
 }
 
-export default KirstyLewis
+export default LisaEldridge;
