@@ -14,10 +14,9 @@ import AlessandraSteinherr from '../../../assets/images/alessandra-steinherr.web
 import MonaKattan from '../../../assets/images/mona-kattan.webp';
 import CarolynAronson from '../../../assets/images/carolyn-aronson-profile.webp';
 import TillySanders from '../../../assets/images/tilly-sanders-profile.webp';
-import ShakeelMurtaza from '../../../assets/images/shakeel-murtaza-profile.webp';
 import ZakHeath from '../../../assets/images/zak-heath-profile.webp';
-import Placeholder from '../../../assets/images/placeholder.webp';
 import Ingeborg from '../../../assets/images/ingeborg-profile.png';
+import { useMediaQuery } from 'usehooks-ts';
 
 const interviews = [
   {
@@ -57,6 +56,12 @@ const interviews = [
     href: '/featured/millie-kendall'
   },
   {
+    pfp: KirstyLewis,
+    name: 'Kirsty Lewis',
+    job: 'Beauty PR',
+    href: '/featured/kirsty-lewis'
+  },
+  {
     pfp: MonaKattan,
     name: 'Mona Kattan',
     job: 'Fragrance CEO',
@@ -84,6 +89,7 @@ const chunkArray = (array: Array<any>, size: number) =>
 const chunked = chunkArray(interviews, 6);
 
 const FeaturedInterviews = () => {
+  const mobile = useMediaQuery('(max-width: 1000px)');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -91,7 +97,6 @@ const FeaturedInterviews = () => {
       const backgroundImage: HTMLElement | null = document.querySelector('.beauty-icons-bg');
 
       if (backgroundImage) {
-        console.log(scrollTop)
         backgroundImage.style.transform = `translateY(-${scrollTop * 0.5}px)`;
       }
     };
@@ -106,17 +111,9 @@ const FeaturedInterviews = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.to('#icons-pfp-0', {
-      opacity: 1,
-      y: -10,
-      duration: 1,
-      delay: 1,
-    })
-
     let shifted = chunked.shift();
-    if (shifted) {
+    if (shifted && !mobile) {
       shifted.map((item: any, index) => {
-        console.log(index);
         gsap.fromTo(`#icons-pfp-${index + 1}`,
           { opacity: 0, scale: 1 },
           {
@@ -132,18 +129,25 @@ const FeaturedInterviews = () => {
           }
         )
       })
-    }
 
-    gsap.to('.beauty-icons-title-section', {
-      y: -100,
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: 'beauty-icons-content-container',
-        start: 'top top',
-        end: 'top -20%',
-        scrub: true
-      }
-    })
+      gsap.to('#icons-pfp-0', {
+        opacity: 1,
+        y: -10,
+        duration: 1,
+        delay: 1,
+      })
+
+      gsap.to('.beauty-icons-title-section', {
+        y: -100,
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: 'beauty-icons-content-container',
+          start: 'top top',
+          end: 'top -20%',
+          scrub: true
+        }
+      })
+    }
   }, [])
 
   return (
