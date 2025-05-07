@@ -305,11 +305,11 @@ html, body {
   background-color: #fff;
 }
 
-#fctc-trans-1, #fctc-trans-2, #fctc-trans-3, #fctc-trans-4 {
+#fctc-trans-1, #first-image-trans, #fctc-trans-3, #fctc-trans-4 {
   min-height: 400px;
 }
 
-#fctc-trans-2, #fctc-trans-5 {
+#first-image-trans, #fctc-trans-5 {
   padding: 0px 0 100px;
 }
 
@@ -638,7 +638,7 @@ html, body {
     width: auto;
   }
 
-  #fctc-trans-2 {
+  #first-image-trans {
     padding: 50px 0;
   }
 

@@ -1,51 +1,20 @@
 "use client"
 import React, { useEffect } from 'react';
 import Image from 'next/image';
-import MonaKattanProfile from '../../../assets/images/mona-kattan.webp'
-import LisaEldrigdeProfile from '../../../assets/images/lisa-eldridge-profile.webp';
 import SpringExpanded from '../../../assets/images/spring-expanded.jpg';
-import RihannaVogue from '../../../assets/images/rihanna-vogue.jpg';
-import VogueParis from '../../../assets/images/vogue-paris.jpg';
-import VogueJapan from '../../../assets/images/vogue-japan.webp';
-import VogueTurkey from '../../../assets/images/vogue-turkey.jpg';
-import HarpersBazaar from '../../../assets/images/harpers-bazaar.jpg';
-import LisaEldridge2 from '../../../assets/images/lisa-eldridge-2.webp';
-import LisaEldridge4 from '../../../assets/images/lisa-eldridge-4.webp';
-import LisaEldridge8 from '../../../assets/images/lisa-eldridge-8.jpg';
-import DuaLipa from '../../../assets/images/dua-lipa-lisa-eldridge.jpg';
-import './test.css'
-import { motion } from 'framer-motion';
+import MonaKattanProfile from '../../../assets/images/mona-kattan.webp';
+import MonaKattan2 from '../../../assets/images/mona-kattan-2.webp';
+import MonaKattan3 from '../../../assets/images/mona-kattan-3.webp';
+import MonaKattan4 from '../../../assets/images/mona-kattan-4.webp';
+import './styles.css'
+import { useMediaQuery } from 'usehooks-ts';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const MonaKattan = () => {
-
+  const mobile = useMediaQuery('(max-width: 1000px)');
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    const mags = document.querySelector(".mag-covers")!;
-
-    // if (mags !== null) {
-      function getScrollAmount() {
-        let magsWidth = mags.scrollWidth;
-        return -(magsWidth - window.innerWidth);
-      }
-
-      const tween = gsap.to(mags, {
-        x: getScrollAmount,
-        duration: 3,
-        ease: "none",
-      });
-
-      ScrollTrigger.create({
-        trigger:".mag-wrapper",
-        start:"top 12%",
-        end: () => `+=${getScrollAmount() * -1}`,
-        pin:true,
-        animation: tween,
-        scrub:1,
-        invalidateOnRefresh: true,
-      })
-
 
     gsap.to(['.text-section-title', '.featured-paragraph-text'],  {
       opacity: 1,
@@ -125,14 +94,14 @@ const MonaKattan = () => {
     })
 
     ScrollTrigger.create({
-      trigger: "#image-section-1",
+      trigger: "#second-intro-container",
       start: "top top",
       end: "+=100%",
       pin: true,
       scrub: true,
     });
 
-    gsap.fromTo("#mary-greenwell-image",
+    gsap.fromTo("#caption-2",
       { x: "-100%", opacity: 0 },
       {
         x: "0%",
@@ -147,7 +116,7 @@ const MonaKattan = () => {
       }
     );
 
-    gsap.fromTo("#caption-2",
+    gsap.fromTo("#kirsty-lewis-2",
       { x: "100%", opacity: 0 },
       {
         x: "0%",
@@ -162,7 +131,7 @@ const MonaKattan = () => {
       }
     );
 
-    gsap.fromTo(".mary-greenwell-line",
+    gsap.fromTo(".second-intro-divider",
       { scaleX: 0 },
       {
         scaleX: 1,
@@ -176,94 +145,106 @@ const MonaKattan = () => {
       }
     );
 
-    gsap.to('#section-4', {
-      opacity: 1,
+    gsap.to('#hide-container-1', {
+      height: '300px',
       ease: 'power1.inOut',
       scrollTrigger: {
-        trigger: '#section-4',
+        trigger: '#featured-trans-1',
         start: 'top center',
-        end: 'top -100%',
-        scrub: true,
+        end: `bottom ${mobile ? '90%' : '70%' }`,
+        scrub: true
       }
     })
 
-    gsap.to('#section-5', {
-      opacity: 1,
+    gsap.to('#hide-container-2', {
+      width: `${mobile ? '100%' : '600px'}`,
       ease: 'power1.inOut',
       scrollTrigger: {
-        trigger: '#section-5',
-        start: 'top -50%',
-        end: 'top -100%',
-        scrub: true,
-      }
-    })
-
-    gsap.to('#section-6', {
-      opacity: 1,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#section-6',
-        start: 'top -50%',
-        end: 'top -100%',
-        scrub: true,
-      }
-    })
-
-    ScrollTrigger.create({
-      trigger: "#section-4",
-      start: "top top",
-      end: "+=100%",
-      pin: true,
-      scrub: true,
-    });
-
-    ScrollTrigger.create({
-      trigger: "#section-5",
-      start: "top top",
-      end: "+=50%",
-      pin: true,
-      scrub: true,
-    });
-
-    ScrollTrigger.create({
-      trigger: "#section-6",
-      start: "top top",
-      end: "+=50%",
-      pin: true,
-      scrub: true,
-    });
-
-    ScrollTrigger.create({
-      trigger: ".image-column",
-      start: "top 10%",
-      end: "+=300%",
-      pin: true,
-      scrub: true,
-    });
-
-    gsap.to('#image-item-1', {
-      opacity: 0,
-      y: -100,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#section-4',
-        start: 'top -20%',
-        end: 'bottom top',
-        scrub: true,
-      }
-    })
-
-    gsap.to('#image-item-2', {
-      opacity: 1,
-      top: '0%',
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#section-5',
+        trigger: '#featured-trans-2',
         start: 'top center',
-        end: 'top top',
-        scrub: true,
+        end: `bottom ${mobile ? '90%' : '70%' }`,
+        scrub: true
       }
     })
+
+    gsap.to('#hide-container-3', {
+      width: mobile ? '100%' : '500px',
+      height: '300px',
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#featured-trans-3',
+        start: 'top center',
+        end: `bottom ${mobile ? '90%' : '70%' }`,
+        scrub: true
+      }
+    })
+
+    gsap.to('#hide-container-4', {
+      width: mobile ? '100%' : '500px',
+      height: '300px',
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#featured-trans-4',
+        start: 'top center',
+        end: `bottom ${mobile ? '90%' : '70%' }`,
+        scrub: true
+      }
+    })
+
+    const line2Props: any = {
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: '#first-image-trans',
+        start: 'top 60%',
+        end: 'bottom 60%',
+        scrub: true,
+      }
+    };
+    const scaleAxis = mobile ? 'scaleY' : 'scaleX';
+    const opacity = 1;
+    line2Props[scaleAxis] = mobile ? 8 : 10;
+    line2Props[opacity];
+    gsap.to('.fctc-line-2', line2Props);
+
+    const caption2props: any = {
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: '#first-image-trans',
+        start: 'top 80%',
+        end: 'bottom bottom',
+        scrub: true,
+      }
+    }
+    const transitionDirection = mobile ? 'y' : 'x';
+    caption2props[transitionDirection] = mobile ? -50 : -1;
+    gsap.to('#first-trans-caption', caption2props);
+
+    const line4Props: any = {
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: '#second-image-trans',
+        start: 'top 60%',
+        end: 'bottom 60%',
+        scrub: true,
+      }
+    };
+    const scaleAxisLine4 = mobile ? 'scaleY' : 'scaleX';
+    line4Props[scaleAxisLine4] = 7
+    gsap.to('.fctc-line-4', line4Props);
+
+
+    const caption4props: any = {
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: '#second-image-trans',
+        start: 'top 60%',
+        end: 'bottom 60%',
+        scrub: true,
+      }
+    }
+    const transitionDirectionCaption4 = mobile ? 'y' : 'x';
+    caption4props[transitionDirectionCaption4] = mobile ? 50 : '10px';
+    gsap.to('#second-trans-caption', caption4props);
   }, [])
 
   useEffect(() => {
@@ -287,86 +268,76 @@ const MonaKattan = () => {
     <>
       <Image priority src={SpringExpanded} id='spring-container-background' alt='test'/>
       <div style={{ position: 'fixed', top: 0, left: 0, height: '100vh', width: '100vw', backdropFilter: 'blur(3px) brightness(80%)', zIndex: 5 }}></div>
-      <div style={{ position: 'absolute', top: 0, left: 0, width: '100vw', zIndex: 10, color: '#fff' }}>
+      <div style={{ position: 'absolute', top: 0, left: 0, width: '100vw', zIndex: 10, color: '#fff', paddingBottom: '100px' }}>
         <div style={{ zIndex: 10 }}>
-          <div className='featured-title-section'>
+          <div className='featured-title-section-2'>
             <Image src={MonaKattanProfile} alt='pfp' className='featured-profile-image'/>
-            <h1>In conversation with Mona Kattan: a Fragrance CEO:<br/> <strong style={{ fontWeight: '300', fontSize: '2rem' }}>A Fragrance CEO</strong></h1>
+            <h1><span style={{ fontFamily: 'Playfair', fontWeight: '300', fontSize: '4rem' }}>In Conversation With Mona Kattan:</span><br/> <strong style={{ fontWeight: '300', fontSize: '2rem' }}>Being a fragrance CEO</strong></h1>
           </div>
-          <div className="mag-wrapper">
-            <div className="mag-covers">
-              <h3><span className='drop-cap'>Mona</span> reflects on her early love for fragrance and creating the popular fragrance brand Kayali. Here she discusses her first jobs, career progression and her favourite part of being an entrepreneur.</h3>
-              <div className='grow-line-1'></div>
-              <Image src={RihannaVogue} alt='rihanna' />
-              <Image src={VogueJapan} alt='vogue-japan' />
-              <Image src={VogueParis} alt='vogue-paris' />
-              <Image src={VogueTurkey} alt='vogue-turkey' />
-              <Image src={HarpersBazaar} alt='harpers-bazaar' />
-            </div>
-          </div>
-          <div className='text-section' id='section-2'>
-            <div className='pin-container'>
-              <div className='section-2-text' style={{ width: '55%' }}>
-                <h1 className='text-section-title'>What were your first experiences with makeup?</h1>
-                <p className='featured-paragraph-text'>It started when I found my mum’s old makeup after we moved back to England from New Zealand. She had this box with little drawers, filled with 1960s makeup like Biba and Mary Quant that was really playful and colourful. Makeup from that era was designed for teenagers, so it had this childlike, crayon-like quality that I loved because of the objects and textures and for me, that was the turning point. I was also really inspired by the “vintageness”, because I knew it was old makeup and that was more interesting than modern makeup. I also used to draw on paper with it because it was more interesting than using regular crayons and art supplies. For my 13th birthday, I got a book on stage and theatrical makeup, and it blew my mind. The transformations, the way you could create light and shade, it was like art. I knew that’s what I wanted to do.</p>
-              </div>
-              <Image src={LisaEldridge2} alt='lisa-eldridge-2' id='image-1' />
-              <div className='interactive-image-caption' id='caption-1'>
-                <p>Lisa Eldridge MBE and her mum. “Discovering my mum’s teenage makeup stash at my grandmothers sparked my intense interest/ obsession with makeup and it’s history” (Credit: Lisa Eldridge’s MBE Facebook).</p>
-              </div>
-            </div>
-          </div>
-          <div className='lisa-scroll-test'></div>
-          <div className='text-section' id='section-3'>
-            <h1 className='text-section-title'>When you were 21, who did you look up to in the beauty industry?</h1>
-            <p className='featured-paragraph-text' style={{ marginBottom: '10px'}}>Oh, absolutely. I didn’t know anyone in the industry, and there wasn’t any internet back then to guide me, so it was tricky to figure out, especially wanting to go into the fashion industry. I’d buy magazines to study credits like "Mary Greenwell for Debbie Walters" and figure out which agency to call and who was repping each other. Networking was painstaking, you had to meet people at clubs or get in touch with agencies directly and say, “I would love to assist, or something”. I did a lot of unpaid work to build my portfolio, working with new models like Kate Moss who were just coming into the industry.</p>
-            <p className='featured-paragraph-text'>At one point, I heard someone say they got a magazine cover because their boyfriend was the editor, and I remember thinking, oh my god, I hope it’s literally not going to come down to who you know. But in the end, hard work and perseverance paid off. By the time I was 23, I was signed by an agency alongside legends like Sam McKnight MBE, Mary Greenwell and major major people - I was kind of the baby. That was huge. At first, I was asked why I wanted to assist, but I had only worked with up-and-coming models and I didn’t know how to react when a big supermodel or celebrity walked into the room; however, I quickly learnt that you just treat everybody the same.</p>
-          </div>
-          <div className='image-section' id='image-section-1'>
-            <Image src={LisaEldridge4} alt='mary-greenwell' id='mary-greenwell-image' />
-            <div className='mary-greenwell-line'></div>
+          <div className='image-section' id='second-intro-container'>
             <div className='interactive-image-caption' id='caption-2'>
-              <p style={{ marginBottom: '10px' }}>Mary Greenwell is one of the world’s most sought-after makeup artists, known for setting beauty trends on the runway and earning numerous industry accolades. Her work has been shown in Vogue Italia, Vogue UK, and Vogue US, and she has collaborated with legendary photographers such as Patrick Demarchelier and Peter Lindbergh. Most notably, she helped redefine the image of Princess Diana, contributing to some of her most iconic photo shoots. In 2015, Mary was honored with the Lifetime Achievement Award from CEW and in 2023, she was appointed as an ambassador for the British Beauty Council.</p>
-              <p style={{ marginBottom: '10px' }}>Sam McKnight MBE is one of the most iconic hair stylists in fashion history, renowned for collaborating on over 200 Vogue covers in campaigns for Fendi, Chanel and Balmain. He famously crafted Princess Diana’s signature short hairstyle and has worked with legends like Naomi Campbell and Lady Gaga. In 2023, he was awarded an MBE for his services in fashion and beauty and continues to influence the industry with his brand, Hair by Sam McKnight.</p>
-              <p>Mary Greenwell and Princess Diana with Hairstylist Sam McKnight MBE (Image credit: Pinterest).</p>
+              <h3 className='kirsty-lewis-second-intro-text'><span className='drop-cap'>Mona Kattan</span> is a beauty entrepreneur, fragrance connoisseur and co-founder of Huda Beauty. With a background in finance and PR, Mona created Kayali to share her love of storytelling through scent and she continues to shape the fragrance space with innovative notes and regular launches.</h3>
             </div>
+            <div className='second-intro-divider'></div>
+            <Image src={MonaKattan2} alt='mary-greenwell' id='kirsty-lewis-2' />
           </div>
-          <div className='column-wrapper'>
-            <div style={{ width: '70%' }}>
-              <div className='text-section' id='section-4'>
-                <h1 className='text-section-title'>What was your favourite club when you were 21?</h1>
-                <p className='featured-paragraph-text'>The WAG Club was the place to be. So many cool people in fashion and creative industries hung out there. Clubs like that were great for meeting people and building connections. I’d speak to the people from Models One and ask whether they had any new models and that’s how I got my portfolio together.</p>
-              </div>
-              <div className='text-section' id='section-5'>
-                <h1>What was the first big show you worked on?</h1>
-                <p className='featured-paragraph-text'>It was with Mary, assisting at shows like Rifat Ozbek in London and Romeo Gigli in Paris. I remember rushing through makeup at my first big show, and Mary told me to slow down and take my time. I was like, oh my god, okay!</p>
-              </div>
-              <div className='text-section' id='section-6'>
-                <h1>What advice would you give your 21-year-old self?</h1>
-                <p className='featured-paragraph-text'>I’d tell her to stay confident and not compare herself to others but explore the ideas she had and wanted to share. In a creative industry, it’s fuelled by ideas, there’s no such thing as a bad one. I wish I’d spoken up more on shoots when I had ideas. Now, I’m much more comfortable experimenting. For instance, I recently tried a bold blue eyeshadow look during a Claudia Schiffer shoot for Pop Magazine. It didn’t work, and we took it off, but that’s okay! It’s all part of the creative process.</p>
-                <p className='featured-paragraph-text'>Don’t think you’re silly or something and don’t be afraid to explore, speak your mind, and trust your instincts. There’s good ideas, bad ideas, but actually they’re all good.</p>
-              </div>
-            </div>
-            <div className='image-column'>
-              <div id='image-item-1'>
-                <Image src={LisaEldridge8} alt='lisa-eldridge-at-work' className='image-column-child' id='image-column-1'/>
-                <div className='interactive-image-caption' id='caption-3'>
-                  <p>Lisa at work.</p>
-                </div>
-              </div>
-              <div id='image-item-2'>
-                <Image src={DuaLipa} alt='lisa-eldridge-at-work' className='image-column-child' id='image-column-1'/>
-                <div className='interactive-image-caption' id='caption-3'>
-                  <p>Test Test Test</p>
-                </div>
+          <div className='featured-article-text-section'>
+            <p className='featured-article-subheader'>Who or what inspired you to fall in love with fragrance?</p>
+            <p className='featured-article-paragraph'>I've been obsessed with fragrances my whole life. But when I moved to the UAE, something shifted. The fragrance culture here is on another level; there's so much richness, intention, and respect for scent. People here use perfume to express emotion, status, and identity - it's so layered. That was really what deepened my love for fragrance. It became more than just a beauty product. It became something sacred.</p>
+            <p className='featured-article-subheader'>Do you remember your first experience with beauty?</p>
+            <p className='featured-article-paragraph'>Oh, 100%! I was in beauty pageants from the age of four until I was about seven. So full glam was just normal for me as a kid. It felt like playing dress-up, which is something I never really grew out of. I've always loved expressing myself through beauty and fashion.</p>
+            <p className='featured-article-subheader'>What were you doing when you were 21?</p>
+            <p className='featured-article-paragraph'>I was studying finance at the American University of Sharjah. But outside of school, I was modelling and promoting brands at malls and events - any opportunity I could get my hands on. I've always loved working. Even before that, back in the US, I worked non-stop.</p>
+            <p className='featured-article-subheader'>What was your very first job?</p>
+            <p className='featured-article-paragraph'>My first full-time job was at a family-owned Greek restaurant when I was 14. I loved it - it was scrappy, real, and hands-on. I did everything from answering phones to running orders, and by the end of my three years there, I could do every job in the restaurant. I also worked in a bridal store, a clothing shop, Texas Roadhouse, an ice cream shop - you name it. I just really loved to work, and I still do.</p>
+            <p className='featured-article-subheader'>Did you always know you wanted to go into fragrance?</p>
+            <p className='featured-article-paragraph'>Not at first. I didn't have that crystal-clear vision when I was younger. I actually wanted to be in business - entrepreneurship excited me. But by 25, I knew I wanted to launch my own fragrance brand. I started experimenting with making my samples at 26 and even met with a few investors, but nothing materialised. Kayali didn't launch until I was 33. So it took time - but every delay was a blessing. Trust the process.</p>
+            <div className='featured-article-transition-container' id='featured-trans-1'>
+              <div className='hide-container' id='hide-container-1'>
+                <h1 className='featured-key-quote'>"Full glam was just normal for me as a kid"</h1>
               </div>
             </div>
+            <p className='featured-article-subheader'>What happened between those years? What were your career steps?</p>
+            <p className='featured-article-paragraph'>After college, I interned in Accounts Payable at Johnson & Johnson, then moved into corporate and investment banking with the Development Bank of Singapore. I lasted a year there before resigning to start my entrepreneurial journey. I went into PR without experience and just started hustling - begging people to let me work with them, sometimes unpaid, sometimes just for product. I also co-founded a PR events business with a friend. We'd host brand launches and promote them with all our friends, which was really interesting. Around that time, I opened my own beauty salon. It was my first big business venture - trade licenses, CapEx, and hiring teams - which I ran for seven years. Then came Huda Beauty with my sisters, and finally Kayali. I've worn so many hats, and I still do. Now, my focus is Kayali, but I also invest in and incubate brands; of course, I also dabbled in reality TV when I went onto the Netflix show Dubai Bling too.</p>
+            <p className='featured-article-subheader'>What were your nights out like when you were 21?</p>
+            <p className='featured-article-paragraph'>Honestly? I didn't go out that much. I was obsessed with the gym. I spent most of my free time working out or hanging out with my best friend. But when I did go out, I wore cowboy-inspired looks - super funky outfits. I grew up in Tennessee, so cowboy style has always had a place in my heart. I thought I looked amazing back then, but looking back at those photos… let's just say I was very extra - some say it's the Arab blood. There were no filters back then!</p>
+            <div className='featured-transition-container' id='first-image-trans'>
+              <div className='image-with-caption' style={{ zIndex: -1, }}>
+                <Image src={MonaKattan3} alt='mona-kattan-3'/>
+              </div>
+              <div className='fctc-line-2'></div>
+              <p className='image-caption' id='first-trans-caption'>Inside Mona Kattan’s fragrance library<br/>which has nearly 4000 individual fragrances.<br/>Her goal is to have the largest amount of<br/>fragrances in the world.</p>
+            </div>
+            <p className='featured-article-subheader'>Is there a dream fragrance you haven't created yet?</p>
+            <p className='featured-article-paragraph'>Yes. I want to create the scent of peace. The world has been through so much in recent years. If I could bottle a fragrance that made people feel calm, hopeful, and inspired to spread peace - that would be a dream come true. I'm still working on how to do it, but that's what my soul craves to share.</p>
+            <div className='featured-article-transition-container' id='featured-trans-2'>
+              <div className='hide-container' id='hide-container-2'>
+                <h1 className='featured-key-quote'>"I was one of the few talking about fragrance"</h1>
+              </div>
+            </div>
+            <p className='featured-article-subheader'>If you could talk to your 21-year-old self, what would you say?</p>
+            <p className='featured-article-paragraph'>I'd tell her to start therapy earlier. Learn to communicate your needs, create boundaries, and get to know yourself deeply. I didn't respect my energy. I gave so much to people who didn't give anything back. Now, I only give to givers. You have to protect your peace and love yourself just as hard as you love others; otherwise, this can be very difficult for an empath.</p>
+            <div className='featured-article-transition-container' id='featured-trans-3'>
+              <div className='hide-container' id='hide-container-3'>
+                <div className='corner-frame' id="corner-frame-1">
+                  <h1 className='featured-key-quote'>"Every experience matters, and doing something creates an energetic movement"</h1>
+                </div>
+              </div>
+            </div>
+            <p className='featured-article-subheader'>What would you include if you were to make a fragrance inspired by me?</p>
+            <p className='featured-article-paragraph'>Oh my God, you are literally sunshine in human form! I'd definitely start with solar notes for that radiant, happy energy. I'd add vanilla because I'm a Kayali girl through and through. Then I'd layer in your favourite fruits, maybe a soft spice, and we'd have to figure it out together for the dry down. But it would be joyful, bright and warm.</p>
+            <div className='dream-room-transition-container' id='second-image-trans'>
+              <p className='image-caption' id="second-trans-caption">Mona Kattan and I in 2023 inside<br/>of her fragrance wardrobe in Dubai!</p>
+              <div className='fctc-line-4'></div>
+              <Image src={MonaKattan4} id='zak-and-lisa' alt='zak-and-lisa'/>
+            </div>
+            <p className='featured-article-subheader'>And what advice would you give to a 21-year-old who wants to get into fragrance today?</p>
+            <p className='featured-article-paragraph'>I'd tell them al haraka baraka—with movement comes blessing. If you're unsure where to start, move. Intern, shadow someone, start making your own blends by getting a fragrance-making kit online, take a course - anything. Get your hands dirty. Every experience matters, and doing something creates an energetic movement. Don't wait for perfection. Just keep trying, and everything will eventually fall into place. Looking back on my entire journey, I experimented a lot; however, everything links up. For example, if I didn't have my salon, I wouldn't have had the door in with Sephora because, at the salon, I learnt how to create a business and how to sell. Always make vision boards for what you want, but most importantly, keep creating.</p>
           </div>
         </div>
-        {/* </div> */}
       </div>
     </>
   )
 }
 
-export default MonaKattan
+export default MonaKattan;
