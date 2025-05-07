@@ -69,6 +69,10 @@ body-replacement {
 
 .beauty-icons-item {
   width: 50%;
+}
+
+.beauty-icons-item a {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -77,6 +81,14 @@ body-replacement {
 
 .name-container {
   text-align: center;
+}
+
+.name-container h3 {
+  font-size: 1rem;
+}
+
+.name-container p {
+  font-size: 1rem;
 }
 
 #icons-pfp-0 {
@@ -90,7 +102,7 @@ body-replacement {
   width: 96px;
   margin-bottom: 35px;
   border-radius: 50%;
-  opacity: 0;
+  opacity: 1;
   object-fit: cover;
   object-position: center;
   border: solid 1px #fff;
