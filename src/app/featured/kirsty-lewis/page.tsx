@@ -12,6 +12,7 @@ import LisaEldridge2 from '../../../assets/images/lisa-eldridge-2.webp';
 import LisaEldridge4 from '../../../assets/images/lisa-eldridge-4.webp';
 import LisaEldridge8 from '../../../assets/images/lisa-eldridge-8.jpg';
 import LisaMBE from '../../../assets/images/lisa-mbe.png';
+import KirstyLewisProfile from '../../../assets/images/kirsty-lewis-profile.webp';
 import KirstyLewis2 from '../../../assets/images/kirsty-lewis-2.webp';
 import './styles.css'
 import { motion } from 'framer-motion';
@@ -22,29 +23,29 @@ const LisaEldridge = () => {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    const mags = document.querySelector(".mag-covers")!;
+    // const mags = document.querySelector(".mag-covers")!;
 
     // if (mags !== null) {
-      function getScrollAmount() {
-        let magsWidth = mags.scrollWidth;
-        return -(magsWidth - window.innerWidth);
-      }
+//       function getScrollAmount() {
+//         let magsWidth = mags.scrollWidth;
+//         return -(magsWidth - window.innerWidth);
+//       }
+//
+//       const tween = gsap.to(mags, {
+//         x: getScrollAmount,
+//         duration: 3,
+//         ease: "none",
+//       });
 
-      const tween = gsap.to(mags, {
-        x: getScrollAmount,
-        duration: 3,
-        ease: "none",
-      });
-
-      ScrollTrigger.create({
-        trigger:".mag-wrapper",
-        start:"top 12%",
-        end: () => `+=${getScrollAmount() * -1}`,
-        pin:true,
-        animation: tween,
-        scrub:1,
-        invalidateOnRefresh: true,
-      })
+      // ScrollTrigger.create({
+      //   trigger:".mag-wrapper",
+      //   start:"top 12%",
+      //   end: () => `+=${getScrollAmount() * -1}`,
+      //   pin:true,
+      //   animation: tween,
+      //   scrub:1,
+      //   invalidateOnRefresh: true,
+      // })
 
 
     gsap.to(['.text-section-title', '.featured-paragraph-text'],  {
@@ -290,37 +291,8 @@ const LisaEldridge = () => {
       <div style={{ position: 'absolute', top: 0, left: 0, width: '100vw', zIndex: 10, color: '#fff' }}>
         <div style={{ zIndex: 10 }}>
           <div className='featured-title-section-2'>
-            <Image src={LisaEldrigdeProfile} alt='pfp' className='featured-profile-image'/>
-            <h1>In Conversation With Lisa Eldridge MBE:<br/> <strong style={{ fontWeight: '300', fontSize: '2rem' }}>Becoming A World Class Makeup Artist</strong></h1>
-          </div>
-          <div className="mag-wrapper">
-            <div className="mag-covers">
-              <h3><span className='drop-cap'>Lisa Eldridge MBE</span> is known for her innovative yet timeless approach to makeup. She has worked with celebrities including Dua Lipa, Cindy Crawford, Rihanna, Keira Knightley and many more. In 2015, she was appointed Creative Director of Lancôme Makeup and in 2018, she launched her own award-winning beauty brand. She is also a respected historian of vintage makeup and she has written Face Paint: The Story of Makeup.</h3>
-              <div className='grow-line-1'></div>
-              <Image src={RihannaVogue} alt='rihanna' />
-              <Image src={VogueJapan} alt='vogue-japan' />
-              <Image src={VogueParis} alt='vogue-paris' />
-              <Image src={VogueTurkey} alt='vogue-turkey' />
-              <Image src={HarpersBazaar} alt='harpers-bazaar' />
-            </div>
-          </div>
-          <div className='text-section' id='section-2'>
-            <div className='pin-container'>
-              <div className='section-2-text' style={{ width: '55%' }}>
-                <h1 className='text-section-title'>What were your first experiences with makeup?</h1>
-                <p className='featured-paragraph-text'>It started when I found my mum’s old makeup after we moved back to England from New Zealand. She had this box with little drawers, filled with 1960s makeup like Biba and Mary Quant that was really playful and colourful. Makeup from that era was designed for teenagers, so it had this childlike, crayon-like quality that I loved because of the objects and textures and for me, that was the turning point. I was also really inspired by the “vintageness”, because I knew it was old makeup and that was more interesting than modern makeup. I also used to draw on paper with it because it was more interesting than using regular crayons and art supplies. For my 13th birthday, I got a book on stage and theatrical makeup, and it blew my mind. The transformations, the way you could create light and shade, it was like art. I knew that’s what I wanted to do.</p>
-              </div>
-              <Image src={LisaEldridge2} alt='lisa-eldridge-2' id='image-1' />
-              <div className='interactive-image-caption' id='caption-1'>
-                <p>Lisa Eldridge MBE and her mum. “Discovering my mum’s teenage makeup stash at my grandmothers sparked my intense interest/ obsession with makeup and it’s history” (Credit: Lisa Eldridge’s MBE Facebook).</p>
-              </div>
-            </div>
-          </div>
-          <div className='lisa-scroll-test'></div>
-          <div className='text-section' id='section-3'>
-            <h1 className='text-section-title'>When you were 21, who did you look up to in the beauty industry?</h1>
-            <p className='featured-paragraph-text' style={{ marginBottom: '10px'}}>Oh, absolutely. I didn’t know anyone in the industry, and there wasn’t any internet back then to guide me, so it was tricky to figure out, especially wanting to go into the fashion industry. I’d buy magazines to study credits like "Mary Greenwell for Debbie Walters" and figure out which agency to call and who was repping each other. Networking was painstaking, you had to meet people at clubs or get in touch with agencies directly and say, “I would love to assist, or something”. I did a lot of unpaid work to build my portfolio, working with new models like Kate Moss who were just coming into the industry.</p>
-            <p className='featured-paragraph-text'>At one point, I heard someone say they got a magazine cover because their boyfriend was the editor, and I remember thinking, oh my god, I hope it’s literally not going to come down to who you know. But in the end, hard work and perseverance paid off. By the time I was 23, I was signed by an agency alongside legends like Sam McKnight MBE, Mary Greenwell and major major people - I was kind of the baby. That was huge. At first, I was asked why I wanted to assist, but I had only worked with up-and-coming models and I didn’t know how to react when a big supermodel or celebrity walked into the room; however, I quickly learnt that you just treat everybody the same.</p>
+            <Image src={KirstyLewisProfile} alt='pfp' className='featured-profile-image'/>
+            <h1>In Conversation With Kirsty Lewis:<br/> <strong style={{ fontWeight: '300', fontSize: '2rem' }}>On PR and Relationships In The Workplace</strong></h1>
           </div>
           <div className='image-section' id='image-section-1'>
             <div className='interactive-image-caption' id='caption-2'>
