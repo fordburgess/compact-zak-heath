@@ -5,6 +5,7 @@ import SpringExpanded from '../../../assets/images/spring-expanded.jpg';
 import KirstyLewisProfile from '../../../assets/images/kirsty-lewis-profile.webp';
 import KirstyLewis2 from '../../../assets/images/kirsty-lewis-2.webp';
 import KirstyLewis3 from '../../../assets/images/kirsty-lewis-3.webp';
+import KirstyLewis4 from '../../../assets/images/kirsty-lewis-4.webp';
 import './styles.css'
 import { useMediaQuery } from 'usehooks-ts';
 import gsap from 'gsap';
@@ -215,6 +216,33 @@ const LisaEldridge = () => {
     const transitionDirection = mobile ? 'y' : 'x';
     caption2props[transitionDirection] = mobile ? -50 : -1;
     gsap.to('#zak-uncle-caption', caption2props);
+
+    const line4Props: any = {
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: '#fctc-trans-5',
+        start: 'top 60%',
+        end: 'bottom 60%',
+        scrub: true,
+      }
+    };
+    const scaleAxisLine4 = mobile ? 'scaleY' : 'scaleX';
+    line4Props[scaleAxisLine4] = 7
+    gsap.to('.fctc-line-4', line4Props);
+
+
+    const caption4props: any = {
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: '#fctc-trans-5',
+        start: 'top 60%',
+        end: 'bottom 60%',
+        scrub: true,
+      }
+    }
+    const transitionDirectionCaption4 = mobile ? 'y' : 'x';
+    caption4props[transitionDirectionCaption4] = mobile ? 50 : '10px';
+    gsap.to('#zak-lisa-caption', caption4props);
   }, [])
 
   useEffect(() => {
@@ -289,7 +317,13 @@ const LisaEldridge = () => {
             </div>
             <p className='featured-article-subheader'>What’s your take on the beauty industry’s shift toward social media and influencers?</p>
             <p className='featured-article-paragraph'>The landscape has changed so much. When I started, traditional media like magazines were the cornerstone of PR as well as celebrity endorsements. Now, content creators are vital as many celebrities have their own cosmetic brands and they are therefore promoting them. Creators connect with audiences in ways traditional media can’t, helping businesses to thrive and grow. Although we invest less in traditional journalism, print media still holds credibility and authority, so I think the future lies in a balance between the two. Credibility and transparency are key, whether you’re a journalist or a creator because people want to educate themselves through honest resources. On the other hand, I don’t think people realise, but magazines are businesses too and kept alive through advertisements. In this consumer economy, educating yourself and looking at multiple resources is the most important thing because magazines will sometimes cater to the brand - like a social media advertisement.</p>
+            <div className='dream-room-transition-container' id='fctc-trans-5'>
+              <p className='image-caption' id="zak-lisa-caption">Kirsty with Mona Kattan <br/>and the rest of the Kayali Team for the<br/> launch of the Vanilla Candy 42 fragrance.</p>
+              <div className='fctc-line-4'></div>
+              <Image src={KirstyLewis4} id='zak-and-lisa' alt='zak-and-lisa'/>
+            </div>
             <p className='featured-article-subheader'>What advice would you give your 21-year-old self?</p>
+            <p className='featured-article-paragraph'>I’d tell her to stay open to new challenges and not stress too much about having everything figured out. Life will lead you where you’re meant to go, as long as you’re willing to put in the work. Don’t be afraid to ask for help or learn from others - there’s no weakness in seeking guidance, absorb all you can, take advantage of things, be willing to listen - something that I think youngsters don't do.</p>
             <div className='featured-article-transition-container' id='featured-trans-3'>
               <div className='hide-container' id='hide-container-3'>
                 <div className='corner-frame' id="corner-frame-1">
@@ -297,7 +331,6 @@ const LisaEldridge = () => {
                 </div>
               </div>
             </div>
-            <p className='featured-article-paragraph'>I’d tell her to stay open to new challenges and not stress too much about having everything figured out. Life will lead you where you’re meant to go, as long as you’re willing to put in the work. Don’t be afraid to ask for help or learn from others - there’s no weakness in seeking guidance, absorb all you can, take advantage of things, be willing to listen - something that I think youngsters don't do.</p>
             <p className='featured-article-subheader'>What has been your biggest pinch-me moment in your career?</p>
             <p className='featured-article-paragraph'>There have been so many, but one standout was working with John Galliano on the launch of his fragrance. Visiting his atelier in Paris was surreal. Only two PRs had ever been invited inside before. It was an incredible experience.</p>
             <p className='featured-article-subheader'>What’s your favourite fragrance?</p>

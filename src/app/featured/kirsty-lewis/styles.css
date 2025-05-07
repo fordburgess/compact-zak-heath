@@ -307,6 +307,32 @@ html, body {
   text-wrap: nowrap;
 }
 
+#zak-and-lisa {
+  max-height: 400px;
+  width: 100%;
+  z-index: 0;
+}
+
+.fctc-line-4 {
+  position: absolute;
+  left: 50%;
+  top: 65%;
+  height: 10px;
+  width: 1px;
+  background-color: #fff;
+  transform: translate(-50%, -65%);
+  transform-origin: top;
+  z-index: 10;
+}
+
+#zak-lisa-caption {
+  position: absolute;
+  top: 87%;
+  left: 50%;
+  transform: translate(-50%, -87%);
+  text-wrap: nowrap;
+}
+
 @media (min-width: 1000px) {
   .featured-title-section {
     padding: 100px 300px 50px;
@@ -379,5 +405,34 @@ html, body {
     top: 50%;
     left: 60%;
     transform: translate(60%, -50%);
+  }
+
+  #fctc-trans-5 {
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #zak-and-lisa {
+    max-height: 500px;
+    width: 50%;
+    z-index: 5;
+  }
+
+  .fctc-line-4 {
+    position: static;
+    height: 1px;
+    width: 20px;
+    background-color: #fff;
+    transform-origin: right;
+    transform: translateX(120px);
+    z-index: 10;
+  }
+
+  #zak-lisa-caption {
+    position: static;
+    transform: translateX(-50px);
+    width: 200px;
   }
 }
