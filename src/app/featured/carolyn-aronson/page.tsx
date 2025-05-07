@@ -67,7 +67,7 @@ const CarolynAronson = () => {
       scrollTrigger: {
         trigger: '#featured-trans-1',
         start: 'top center',
-        end: `bottom ${mobile ? '90%' : '70%' }`,
+        end: `bottom 40%`,
         scrub: true
       }
     })
@@ -78,7 +78,7 @@ const CarolynAronson = () => {
       scrollTrigger: {
         trigger: '#featured-trans-2',
         start: 'top center',
-        end: `bottom ${mobile ? '90%' : '70%' }`,
+        end: `bottom 40%`,
         scrub: true
       }
     })
@@ -90,7 +90,7 @@ const CarolynAronson = () => {
       scrollTrigger: {
         trigger: '#featured-trans-3',
         start: 'top center',
-        end: `bottom ${mobile ? '90%' : '70%' }`,
+        end: `bottom 40%`,
         scrub: true
       }
     })
@@ -102,7 +102,7 @@ const CarolynAronson = () => {
       scrollTrigger: {
         trigger: '#featured-trans-4',
         start: 'top center',
-        end: `bottom ${mobile ? '90%' : '70%' }`,
+        end: `bottom 40%`,
         scrub: true
       }
     })
