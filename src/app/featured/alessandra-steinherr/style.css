@@ -240,6 +240,7 @@ body {
 }
 
 .lipstick-container {
+  display: none;
   width: 50vw;
   position: absolute;
   right: -10%;
@@ -397,6 +398,13 @@ body {
 
   .title-subline {
     font-size: 2rem;
+  }
+
+  .lipstick-container {
+    display: block;
+    width: 50vw;
+    position: absolute;
+    right: -10%;
   }
 
   .alessandra-intro {

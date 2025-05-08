@@ -59,7 +59,6 @@ const AlessandraSteinherr = () => {
         pin: ".lipstick-container",
         pinSpacing: false,
         scrub: true,
-        markers: true
       });
 
       ScrollTrigger.create({
