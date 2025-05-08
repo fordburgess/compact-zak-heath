@@ -40,148 +40,149 @@ const AlessandraSteinherr = () => {
         pinSpacing: false,
         scrub: true,
       });
-    }
+
+      gsap.to('.lipstick-container', {
+        y: '-100%',
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '.alessandra-intro',
+          start: 'top 20%',
+          end: 'top top',
+          scrub: true,
+        }
+      })
 
 
-    // gsap.to('.lipstick-container', {
-    //   y: '-100%',
-    //   ease: 'power1.inOut',
-    //   scrollTrigger: {
-    //     trigger: '.alessandra-intro',
-    //     start: 'top 20%',
-    //     end: 'top top',
-    //     scrub: true,
-    //   }
-    // })
-
-    ScrollTrigger.create({
-      trigger: ".lipstick-container",
-      start: "top 10%",
-      end: "+=7000",
-      pin: ".lipstick-container",
-      pinSpacing: false,
-      scrub: true,
-    });
-
-    ScrollTrigger.create({
-      trigger: ".second-image-container",
-      start: "top top",
-      end: "+=4400",
-      pin: ".second-image-container",
-      pinSpacing: false,
-      scrub: true,
-    });
-
-    gsap.to('.alessandra-intro-text', {
-      opacity: 0,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '.alex-scroll-test',
-        start: 'center 80%',
-        end: 'center top',
-        scrub: true
-      }
-    })
-
-    gsap.to('.lipstick-container', {
-      x: -900,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '.alex-scroll-test',
-        start: 'center 85%',
-        end: 'center top',
-        scrub: true
-      }
-    })
-
-    gsap.to('.canvas-pointer-line', {
-      height: '50px',
-      opacity: 1,
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: '#section-1',
-        start: 'top 150%',
-        end: 'top bottom',
-        scrub: true
-      }
-    })
-
-    gsap.to('.model-caption', {
-      opacity: 1,
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: '#section-1',
-        start: 'top 150%',
-        end: 'top bottom',
-        scrub: true
-      }
-    })
 
 
-    const textSections = document.querySelectorAll('.text-section')!;
-    textSections.forEach((section) => {
       ScrollTrigger.create({
-        trigger: `#${section.id}`,
-        start: "top top",
-        end: "+=100%",
-        pin: `#${section.id}`,
+        trigger: ".lipstick-container",
+        start: "top 10%",
+        end: "+=7000",
+        pin: ".lipstick-container",
         pinSpacing: false,
         scrub: true,
       });
-    })
 
-    ScrollTrigger.create({
-      trigger: ".glamour-mag-section",
-      start: "top top",
-      end: "+=100%",
-      pin: true,
-      scrub: true,
-    });
+      ScrollTrigger.create({
+        trigger: ".second-image-container",
+        start: "top top",
+        end: "+=4400",
+        pin: ".second-image-container",
+        pinSpacing: false,
+        scrub: true,
+      });
 
-    gsap.fromTo(".glamour-mag-image",
-      { x: "-100%", opacity: 0 },
-      {
-        x: "5%",
-        opacity: 1,
-        ease: "power1.out",
+      gsap.to('.alessandra-intro-text', {
+        opacity: 0,
+        ease: 'power1.inOut',
         scrollTrigger: {
-          trigger: ".glamour-mag-section",
-          start: "top top",
-          end: "+=100%",
-          scrub: true,
+          trigger: '.alex-scroll-test',
+          start: 'center 80%',
+          end: 'center top',
+          scrub: true
         }
-      }
-    );
+      })
 
-    gsap.fromTo(".glamour-caption",
-      { x: "100%", opacity: 0 },
-      {
-        x: "0%",
-        opacity: 1,
-        ease: "power1.out",
+      gsap.to('.lipstick-container', {
+        x: -900,
+        ease: 'power1.inOut',
         scrollTrigger: {
-          trigger: ".glamour-mag-section",
-          start: "top top",
-          end: "+=100%",
-          scrub: true,
+          trigger: '.alex-scroll-test',
+          start: 'center 85%',
+          end: 'center top',
+          scrub: true
         }
-      }
-    );
+      })
 
-    gsap.fromTo(".glamour-line",
-      { scaleX: 0 },
-      {
-        scaleX: 1,
+      gsap.to('.canvas-pointer-line', {
+        height: '50px',
+        opacity: 1,
         ease: "power1.inOut",
         scrollTrigger: {
-          trigger: ".glamour-mag-section",
-          start: "top top+=10%",
-          end: "+=80%",
-          scrub: true,
+          trigger: '#section-1',
+          start: 'top 150%',
+          end: 'top bottom',
+          scrub: true
         }
-      }
-    );
+      })
 
+      gsap.to('.model-caption', {
+        opacity: 1,
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#section-1',
+          start: 'top 150%',
+          end: 'top bottom',
+          scrub: true
+        }
+      })
+
+
+      const textSections = document.querySelectorAll('.text-section')!;
+      textSections.forEach((section) => {
+        ScrollTrigger.create({
+          trigger: `#${section.id}`,
+          start: "top top",
+          end: "+=100%",
+          pin: `#${section.id}`,
+          pinSpacing: false,
+          scrub: true,
+        });
+      })
+
+      ScrollTrigger.create({
+        trigger: ".glamour-mag-section",
+        start: "top top",
+        end: "+=100%",
+        pin: true,
+        scrub: true,
+      });
+
+      gsap.fromTo(".glamour-mag-image",
+        { x: "-100%", opacity: 0 },
+        {
+          x: "5%",
+          opacity: 1,
+          ease: "power1.out",
+          scrollTrigger: {
+            trigger: ".glamour-mag-section",
+            start: "top top",
+            end: "+=100%",
+            scrub: true,
+          }
+        }
+      );
+
+      gsap.fromTo(".glamour-caption",
+        { x: "100%", opacity: 0 },
+        {
+          x: "0%",
+          opacity: 1,
+          ease: "power1.out",
+          scrollTrigger: {
+            trigger: ".glamour-mag-section",
+            start: "top top",
+            end: "+=100%",
+            scrub: true,
+          }
+        }
+      );
+
+      gsap.fromTo(".glamour-line",
+        { scaleX: 0 },
+        {
+          scaleX: 1,
+          ease: "power1.inOut",
+          scrollTrigger: {
+            trigger: ".glamour-mag-section",
+            start: "top top+=10%",
+            end: "+=80%",
+            scrub: true,
+          }
+        }
+      );
+    }
   }, []);
 
   useEffect(() => {
@@ -233,31 +234,31 @@ const AlessandraSteinherr = () => {
         </div> */}
         <div className='alex-scroll-test'></div>
         <div className='text-section' id='section-1'>
-          <div style={{ width: '50%' }}>
+          <div>
             <h1 className='text-section-title'>What was your first interaction with magazines and beauty?</h1>
             <p className='featured-paragraph-text'>I was reading magazines from such a young age. My grandmother was a dressmaker and had <span style={{ fontStyle: 'italic' }}>Italian Vogue</span>, <span style={{ fontStyle: 'italic' }}>Periscope</span>, and other fashion magazines. I wasn’t a skinny girl, so I didn’t connect with fashion models because I couldn’t fit into those bikinis, but I loved the beauty sections—the faces, skin, and hair. <span style={{ fontStyle: 'italic' }}>Allure</span> was American; it was my bible, but it wasn’t easily available where I lived in Austria, so I found an English-speaking bookshop, which always had one, and I’d run to buy it. I was obsessed. It’s not like today, where you can go on your phone and find new information. It was always my dream to become a beauty editor.</p>
           </div>
         </div>
         <div className='text-section' id='section-2'>
-          <div style={{ width: '50%' }}>
+          <div>
             <h1 className='text-section-title'>Did you study journalism or something completely different?</h1>
             <p className='featured-paragraph-text'>I studied business and economics in America and Belgium, but my heart was always set on beauty journalism. My dad insisted I get a degree first because then I could do whatever I wanted, and to be honest, I don’t think you need to study journalism to be a beauty journalist because in any course you study, you learn how to write and how to compose and structure sentences. But to be a beauty journalist, yes, you need to have an idea about the business of beauty. Looking back, my studies helped me understand the industry from a commercial perspective.</p>
           </div>
         </div>
         <div className='text-section' id='section-3'>
-          <div style={{ width: '50%' }}>
+          <div>
             <h1 className='text-section-title'>What was your first job?</h1>
             <p className='featured-paragraph-text'>My first paid 'official' job in journalism was as a beauty assistant at a magazine called <span style={{ fontStyle: 'italic' }}>Shine</span>, which doesn’t exist anymore. My salary was £13,000 a year - not much, but I was thrilled to be there, and I think I must have been 23 or 24. Before that, I had work experience, but it was unpaid back then. Nowadays, that’s not allowed, thank God; now you have to be paid!</p>
           </div>
         </div>
         <div className='text-section' id='section-4'>
-          <div style={{ width: '50%' }}>
+          <div>
             <h1 className='text-section-title'>How did you navigate unpaid work in the industry?</h1>
             <p className='featured-paragraph-text'>I had a completely unpaid internship at <span style={{ fontStyle: 'italic' }}>Marie Claire</span>, so I basically paid to work. It was worth it, so I don’t regret it, and I was grateful even to be there. Since I’m not from London, I couldn’t live at home, so, before moving, I worked at a law office in Austria, doing translations and assistant work to save money for a few months until I had enough to afford the rent for a room in Lancaster Gate.</p>
           </div>
         </div>
         <div className='text-section' id='section-5' style={{ marginBottom: '80vh' }}>
-          <div style={{ width: '50%' }}>
+          <div>
             <h1 className='text-section-title'>What were your early career struggles?</h1>
             <p className='featured-paragraph-text'>Firstly, I had no contacts in the industry, so when I got a job at <span style={{ fontStyle: 'italic' }}>Marie Claire</span>, I wanted to be in the beauty department, but due to a mix-up, I was placed in reception. It should’ve been a paid role, but I said, ‘I’m going to make this work’. I made myself useful and volunteered for everything—photocopies, organising beauty cupboards and whatever was needed. It was a Devil Wears Prada kind of environment, very hierarchical. Interns didn’t talk to editors directly; interns talked to assistants.</p>
           </div>
