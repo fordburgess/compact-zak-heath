@@ -8,6 +8,7 @@ import ExpandedImage from '../../../assets/images/winter-expanded.webp'
 import PatriciaBright from '../../../assets/images/patricia-bright-profile.webp';
 import ZakHeath from '../../../assets/images/zak-heath-profile.webp';
 import ShakeelMurtaza from '../../../assets/images/shakeel-murtaza-profile.webp';
+import RaquellBouris from '../../../assets/images/raquell-bouris-profile.png'
 import Placeholder from '../../../assets/images/placeholder.webp';
 import PlayButton from '../../../assets/images/play-button.png';
 import PauseButton from '../../../assets/images/pause-button.png';
@@ -24,7 +25,7 @@ const episodes = [
     title: 'Patricia Bright: From Finance to Fame',
     job: 'Content Creator and CEO',
     profileImage: PatriciaBright,
-    description: 'In this episode, Zak is joined by the ICON Patricia Bright an entrepreneur and one of the UK’s first OG beauty influencers. From being excluded at school to landing a job in finance, she then pursued YouTube full-time despite criticism at work. She shares about launching her palette with a major cosmetics company to the challenges of constantly evolving her personal brand. If you’re interested in juggling finances, investing, property and how she has built long-term success beyond social media then here’s an honest conversation about these topics.'
+    description: 'In this episode, Zak is joined by the ICON Patricia Bright an entrepreneur and one of the UK’s first OG beauty influencers. From being excluded at school to landing a job in finance, she then pursued a career in YouTube despite criticism at work. Here, she talks about launching her first makeup collection with a major cosmetics company, as well as the challenges of constantly evolving her personal brand. If you’re interested in how she managed to juggle finance, investment, property and how she built long-term success beyond social media, then here’s an honest conversation.'
   },
   {
     index: 1,
@@ -32,7 +33,7 @@ const episodes = [
     title: 'Yana Kafeli: From Intern to Agent',
     job: 'Agent',
     profileImage: null,
-    description: 'In this episode, Zak is joined by the ICON Yana Kafeli, who began her career in fashion at just 17 and now works as a leading agent across fashion, beauty, culture and music. She shares her journey through the industry, from managing top-tier talent and collaborating with some of the biggest global brands. Yana opens up about the importance of personal identity in a fast-paced creative world, the power of networking and what it really takes to support and elevate influencers behind the scenes.'
+    description: 'In this episode, Zak is joined by the ICON Yana Kafeli, who began her career in fashion at just 17. She now works as a leading agent across fashion, beauty, culture and music. Yana shares her journey through the industry, from managing top-tier talent to collaborating with some of the biggest global brands. Whilst opening up about the importance of personal identity in a fast- paced creative world, Yana highlights the realities of networking and what it really takes to support and elevate influencers.'
   },
   {
     index: 2,
@@ -40,7 +41,7 @@ const episodes = [
     title: 'Zak Heath: How I Built A Career At 17',
     job: 'Influencer',
     profileImage: ZakHeath,
-    description: 'This episode is a little different. I’m talking about the business of influencing from my perspective after this became my full-time job at the age of 17. From working with people who haven’t had my best interests, to juggling a career whilst studying at Central Saint martins it has been an intense journey. If you’re interested in brand deals with commercial and luxury brands, PR, content strategy, the equipment I use and building relationships then here’s an honest conversation about these topics.',
+    description: 'This episode is a little different. I’m talking to myself about the business of influencing and how this became my full-time job at 17. Working with people who haven’t always had my best interests, to juggling a career whilst studying at Central Saint Martins, it has been an intense journey. If you’re interested in brand deals with commercial and luxury companies, PR, content strategy, building relationships, as well as the equipment I use, then this episode is for you.',
   },
   {
     index: 3,
@@ -48,15 +49,15 @@ const episodes = [
     title: 'Shakeel Murtaza: From Criticism To Campaigns',
     job: 'Influencer',
     profileImage: ShakeelMurtaza,
-    description: 'In this episode, Zak is joined by Shakeel Murtaza, a leading men’s beauty influencer known for his skincare routines and self-care content. Despite regularly receiving online hate, he has carved out an incredible niche for himself in the beauty world and worked with some of top brands. If you’re interested in how to navigate identity in a female-dominated space, growing a community, breaking down stereotypes, getting invited to events and how to maintain a successful career online then here’s an honest conversation about these topics.'
+    description: 'In this episode, Zak is joined by Shakeel Murtaza, a leading men’s beauty influencer known for his skincare routines and self-care content. Despite regularly receiving online hate, he has carved out an incredible niche for himself in the beauty world. If you’re interested in how to navigate identity in a female-dominated space, growing a community, breaking down stereotypes, getting invited to events and how to maintain a successful career online, then listen to this revealing conversation.'
   },
   {
     index: 4,
     id: 'raquell-bouris',
     title: 'Raquell Bouris: Scent, Strategy And Creating A Startup',
     job: 'Fragrance Founder',
-    profileImage: null,
-    description: 'In this episode, Zak is joined by the ICON Raquell Bouris, founder of the Australian brand Who Is Elijah. After launching the brand in Sydney, she has now moved to London to expand internationally and she shares how she did it. If you’re interested in what it takes to build a business, the realities of running a team, creating new concepts, investments and issues she has encountered then here’s an honest conversation about these topics.'
+    profileImage: RaquellBouris,
+    description: 'In this episode, Zak is joined by the ICON Raquell Bouris, founder of the Australian brand Who Is Elijah. After launching the brand in Sydney, Raquell moved to London to expand internationally. If you’re interested in what it takes to build a business, creating new concepts, the realities of running a team, managing investments, and other issues she has encountered, then this conversation will be dropping soon.'
   }
 ]
 
