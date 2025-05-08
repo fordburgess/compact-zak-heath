@@ -240,6 +240,10 @@ body {
     position: relative;
   }
 
+  .adam-reed-container {
+    padding-bottom: 400px;
+  }
+
   .featured-profile-image {
     height: 700px;
     width: 50%;
