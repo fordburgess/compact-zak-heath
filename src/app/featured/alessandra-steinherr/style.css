@@ -131,9 +131,7 @@ body {
 }
 
 #section-1, #section-2, #section-3, #section-4, #section-5 {
-  margin-bottom: 60vh;
-  /* max-width: 50%; */
-  /* background-color: red; */
+  margin-bottom: 20px;
 }
 
 #section-6, #section-7, #section-8, #section-9 {
@@ -445,5 +443,13 @@ body {
 
   .text-section div {
     width: 50%;
+  }
+
+  #section-1, #section-2, #section-3, #section-4 {
+    margin-bottom: 60vh;
+  }
+
+  #section-5 {
+    margin-bottom: 80vh;
   }
 }
