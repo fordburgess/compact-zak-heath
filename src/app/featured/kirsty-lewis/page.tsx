@@ -13,238 +13,242 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const LisaEldridge = () => {
   const mobile = useMediaQuery('(max-width: 1000px)');
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.to(['.text-section-title', '.featured-paragraph-text'],  {
-      opacity: 1,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '.text-section',
-        start: 'top 30%',
-        end: 'bottom bottom',
-        scrub: true
-      }
-    })
+    if (!mobile) {
 
-    gsap.to('#section-1', {
-      y: -500,
-      opacity: 0,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#section-2',
-        start: 'top 40%',
-        end: 'top top',
-        scrub: true
-      }
-    })
+      gsap.to(['.text-section-title', '.featured-paragraph-text'],  {
+        opacity: 1,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '.text-section',
+          start: 'top 30%',
+          end: 'bottom bottom',
+          scrub: true
+        }
+      })
 
-    gsap.to('.section-2-text', {
-      x: -500,
-      opacity: 0,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '.lisa-scroll-test',
-        start: 'top 80%',
-        end: 'top top',
+      gsap.to('#section-1', {
+        y: -500,
+        opacity: 0,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#section-2',
+          start: 'top 40%',
+          end: 'top top',
+          scrub: true
+        }
+      })
+
+      gsap.to('.section-2-text', {
+        x: -500,
+        opacity: 0,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '.lisa-scroll-test',
+          start: 'top 80%',
+          end: 'top top',
+          scrub: true,
+        }
+      })
+
+      gsap.to('#image-1', {
+        x: -700,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '.lisa-scroll-test',
+          start: 'top 80%',
+          end: 'top top',
+          scrub: true
+        }
+      })
+
+      gsap.to('#caption-1', {
+        opacity: 1,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '.lisa-scroll-test',
+          start: 'top 80%',
+          end: 'top top',
+          scrub: true
+        }
+      })
+
+      ScrollTrigger.create({
+        trigger: "#section-2",
+        start: "top top",
+        end: "bottom top",
+        pin: ".pin-container",
+        pinSpacing: false,
         scrub: true,
-      }
-    })
+      });
 
-    gsap.to('#image-1', {
-      x: -700,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '.lisa-scroll-test',
-        start: 'top 80%',
-        end: 'top top',
-        scrub: true
-      }
-    })
-
-    gsap.to('#caption-1', {
-      opacity: 1,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '.lisa-scroll-test',
-        start: 'top 80%',
-        end: 'top top',
-        scrub: true
-      }
-    })
-
-    ScrollTrigger.create({
-      trigger: "#section-2",
-      start: "top top",
-      end: "bottom top",
-      pin: ".pin-container",
-      pinSpacing: false,
-      scrub: true,
-    });
-
-    gsap.to('#section-3', {
-      y: -200,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#section-3',
-        start: 'top 110%',
-        end: 'top center',
-        scrub: true
-      }
-    })
-
-    ScrollTrigger.create({
-      trigger: "#second-intro-container",
-      start: "top top",
-      end: "+=100%",
-      pin: true,
-      scrub: true,
-    });
-
-    gsap.fromTo("#caption-2",
-      { x: "-100%", opacity: 0 },
-      {
-        x: "0%",
-        opacity: 1,
-        ease: "power1.out",
+      gsap.to('#section-3', {
+        y: -200,
+        ease: 'power1.inOut',
         scrollTrigger: {
-          trigger: "#image-section-1",
-          start: "top top",
-          end: "+=100%",
-          scrub: true,
+          trigger: '#section-3',
+          start: 'top 110%',
+          end: 'top center',
+          scrub: true
         }
-      }
-    );
+      })
 
-    gsap.fromTo("#kirsty-lewis-2",
-      { x: "100%", opacity: 0 },
-      {
-        x: "0%",
-        opacity: 1,
-        ease: "power1.out",
+      ScrollTrigger.create({
+        trigger: "#second-intro-container",
+        start: "top top",
+        end: "+=100%",
+        pin: true,
+        scrub: true,
+      });
+
+      gsap.fromTo("#caption-2",
+        { x: "-100%", opacity: 0 },
+        {
+          x: "0%",
+          opacity: 1,
+          ease: "power1.out",
+          scrollTrigger: {
+            trigger: "#image-section-1",
+            start: "top top",
+            end: "+=100%",
+            scrub: true,
+          }
+        }
+      );
+
+      gsap.fromTo("#kirsty-lewis-2",
+        { x: "100%", opacity: 0 },
+        {
+          x: "0%",
+          opacity: 1,
+          ease: "power1.out",
+          scrollTrigger: {
+            trigger: "#image-section-1",
+            start: "top top+=20%", // slight delay
+            end: "+=100%",
+            scrub: true,
+          }
+        }
+      );
+
+      gsap.fromTo(".second-intro-divider",
+        { scaleX: 0 },
+        {
+          scaleX: 1,
+          ease: "power1.inOut",
+          scrollTrigger: {
+            trigger: "#image-section-1",
+            start: "top top+=10%",
+            end: "+=80%",
+            scrub: true,
+          }
+        }
+      );
+
+      gsap.to('#hide-container-1', {
+        height: '300px',
+        ease: 'power1.inOut',
         scrollTrigger: {
-          trigger: "#image-section-1",
-          start: "top top+=20%", // slight delay
-          end: "+=100%",
-          scrub: true,
+          trigger: '#featured-trans-1',
+          start: 'top center',
+          end: `bottom ${mobile ? '90%' : '70%' }`,
+          scrub: true
         }
-      }
-    );
+      })
 
-    gsap.fromTo(".second-intro-divider",
-      { scaleX: 0 },
-      {
-        scaleX: 1,
+      gsap.to('#hide-container-2', {
+        width: `${mobile ? '100%' : '600px'}`,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#featured-trans-2',
+          start: 'top center',
+          end: `bottom ${mobile ? '90%' : '70%' }`,
+          scrub: true
+        }
+      })
+
+      gsap.to('#hide-container-3', {
+        width: mobile ? '100%' : '500px',
+        height: '300px',
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#featured-trans-3',
+          start: 'top center',
+          end: `bottom ${mobile ? '90%' : '70%' }`,
+          scrub: true
+        }
+      })
+
+      gsap.to('#hide-container-4', {
+        width: mobile ? '100%' : '500px',
+        height: '300px',
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#featured-trans-4',
+          start: 'top center',
+          end: `bottom ${mobile ? '90%' : '70%' }`,
+          scrub: true
+        }
+      })
+
+      const line2Props: any = {
         ease: "power1.inOut",
         scrollTrigger: {
-          trigger: "#image-section-1",
-          start: "top top+=10%",
-          end: "+=80%",
+          trigger: '#first-image-trans',
+          start: 'top 60%',
+          end: 'bottom 60%',
+          scrub: true,
+        }
+      };
+      const scaleAxis = mobile ? 'scaleY' : 'scaleX';
+      const opacity = 1;
+      line2Props[scaleAxis] = mobile ? 8 : 10;
+      line2Props[opacity];
+      gsap.to('.fctc-line-2', line2Props);
+
+      const caption2props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#first-image-trans',
+          start: 'top 80%',
+          end: 'bottom bottom',
           scrub: true,
         }
       }
-    );
+      const transitionDirection = mobile ? 'y' : 'x';
+      caption2props[transitionDirection] = mobile ? -50 : -1;
+      gsap.to('#first-trans-caption', caption2props);
 
-    gsap.to('#hide-container-1', {
-      height: '300px',
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#featured-trans-1',
-        start: 'top center',
-        end: `bottom ${mobile ? '90%' : '70%' }`,
-        scrub: true
-      }
-    })
+      const line4Props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#second-image-trans',
+          start: 'top 60%',
+          end: 'bottom 60%',
+          scrub: true,
+        }
+      };
+      const scaleAxisLine4 = mobile ? 'scaleY' : 'scaleX';
+      line4Props[scaleAxisLine4] = 7
+      gsap.to('.fctc-line-4', line4Props);
 
-    gsap.to('#hide-container-2', {
-      width: `${mobile ? '100%' : '600px'}`,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#featured-trans-2',
-        start: 'top center',
-        end: `bottom ${mobile ? '90%' : '70%' }`,
-        scrub: true
-      }
-    })
 
-    gsap.to('#hide-container-3', {
-      width: mobile ? '100%' : '500px',
-      height: '300px',
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#featured-trans-3',
-        start: 'top center',
-        end: `bottom ${mobile ? '90%' : '70%' }`,
-        scrub: true
+      const caption4props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#second-image-trans',
+          start: 'top 60%',
+          end: 'bottom 60%',
+          scrub: true,
+        }
       }
-    })
-
-    gsap.to('#hide-container-4', {
-      width: mobile ? '100%' : '500px',
-      height: '300px',
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#featured-trans-4',
-        start: 'top center',
-        end: `bottom ${mobile ? '90%' : '70%' }`,
-        scrub: true
-      }
-    })
-
-    const line2Props: any = {
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: '#first-image-trans',
-        start: 'top 60%',
-        end: 'bottom 60%',
-        scrub: true,
-      }
-    };
-    const scaleAxis = mobile ? 'scaleY' : 'scaleX';
-    const opacity = 1;
-    line2Props[scaleAxis] = mobile ? 8 : 10;
-    line2Props[opacity];
-    gsap.to('.fctc-line-2', line2Props);
-
-    const caption2props: any = {
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: '#first-image-trans',
-        start: 'top 80%',
-        end: 'bottom bottom',
-        scrub: true,
-      }
+      const transitionDirectionCaption4 = mobile ? 'y' : 'x';
+      caption4props[transitionDirectionCaption4] = mobile ? 50 : '10px';
+      gsap.to('#second-trans-caption', caption4props);
     }
-    const transitionDirection = mobile ? 'y' : 'x';
-    caption2props[transitionDirection] = mobile ? -50 : -1;
-    gsap.to('#first-trans-caption', caption2props);
-
-    const line4Props: any = {
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: '#second-image-trans',
-        start: 'top 60%',
-        end: 'bottom 60%',
-        scrub: true,
-      }
-    };
-    const scaleAxisLine4 = mobile ? 'scaleY' : 'scaleX';
-    line4Props[scaleAxisLine4] = 7
-    gsap.to('.fctc-line-4', line4Props);
-
-
-    const caption4props: any = {
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: '#second-image-trans',
-        start: 'top 60%',
-        end: 'bottom 60%',
-        scrub: true,
-      }
-    }
-    const transitionDirectionCaption4 = mobile ? 'y' : 'x';
-    caption4props[transitionDirectionCaption4] = mobile ? 50 : '10px';
-    gsap.to('#second-trans-caption', caption4props);
   }, [])
 
   useEffect(() => {
@@ -272,7 +276,10 @@ const LisaEldridge = () => {
         <div style={{ zIndex: 10 }}>
           <div className='featured-title-section-2'>
             <Image src={KirstyLewisProfile} alt='pfp' className='featured-profile-image'/>
-            <h1><span style={{ fontFamily: 'Playfair', fontWeight: '300', fontSize: '4rem' }}>In Conversation With Kirsty Lewis:</span><br/> <strong style={{ fontWeight: '300', fontSize: '2rem' }}>On PR and Relationships In The Workplace</strong></h1>
+            <div id='title-box'>
+              <h1 className='strong-title'>In Conversation With Kirsty Lewis:</h1>
+              <h1 className='title-subline'>On PR and Relationships In The Workplace</h1>
+            </div>
           </div>
           <div className='image-section' id='second-intro-container'>
             <div className='interactive-image-caption' id='caption-2'>

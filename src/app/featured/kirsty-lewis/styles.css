@@ -9,30 +9,38 @@
 }
 
 .featured-title-section-2 {
+  height: 70vh;
   display: flex;
-  min-width: 90%;
-  min-height: 100vh;
-  padding: 0 100px;
-  justify-content: space-between;
-  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  box-sizing: border-box;
-  position: relative;
 }
 
-.featured-title-section-2 h1 {
-  width: 40%;
-  text-align: left;
-  font-weight: 600;
-  /* font-family: 'Playfair'; */
-  font-size: 3rem;
+#title-box {
+  width: 80%;
 }
 
 .featured-profile-image {
-  height: 700px;
-  width: 50%;
-  object-fit: cover;
-  object-position: center;
+  height: 65%;
+  width: 80%;
+  margin-bottom: 10px;
+}
+
+.strong-title {
+  font-family: 'Playfair';
+  font-weight: 300;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  /* width: 80%; */
+}
+
+.title-subline {
+  font-size: 1.25rem;
+}
+
+.featured-title-section-2 h1 {
+  text-align: left;
+  font-weight: 600;
 }
 
 .drop-cap {
@@ -88,27 +96,28 @@
 }
 
 #second-intro-container {
-  height: 100vh;
+  display: none;
   width: 100vw;
   position: relative;
   box-sizing: border-box;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 0 80px;
+  margin-bottom: 40px;
 }
 
 #kirsty-lewis-2 {
-  height: 85%;
-  width: 45%;
+  height: 400px;
+  width: 80%;
   object-fit: cover;
   object-position: center;
-  transform: translateX(-500px);
 }
 
 #caption-2 {
-  width: 40%;
-  transform: translateX(100%);
+  font-size: 1rem;
+  width: 80%;
+  margin-bottom: 20px;
 }
 
 #scroll-test-2 {
@@ -116,13 +125,10 @@
 }
 
 .second-intro-divider {
-  height: 1px;
-  width: 100px;
-  background-color: #fff;
+  display: none;
 }
 
 .kirsty-lewis-second-intro-text {
-  font-size: 1.5rem;
   font-weight: 300;
 }
 
@@ -299,12 +305,9 @@ html, body {
   font-style: italic;
 }
 
-#first-trans-caption {
-  position: absolute;
-  top: 80%;
-  left: 50%;
-  transform: translate(-50%, -80%);
-  text-wrap: nowrap;
+#second-image-trans {
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 #zak-and-lisa {
@@ -334,6 +337,75 @@ html, body {
 }
 
 @media (min-width: 1000px) {
+  .featured-title-section-2 {
+    display: flex;
+    flex-direction: row;
+    min-width: 90%;
+    min-height: 100vh;
+    padding: 0 100px;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .featured-profile-image {
+    height: 700px;
+    width: 50%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  #second-intro-container {
+    flex-direction: row;
+    height: 100vh;
+    padding: 0px 80px;
+    margin: 0;
+  }
+
+  #kirsty-lewis-2 {
+    height: 85%;
+    width: 45%;
+    object-fit: cover;
+    object-position: center;
+    transform: translateX(-500px);
+  }
+
+  #caption-2 {
+    font-size: 1.25rem !important;
+    width: 40%;
+    transform: translateX(100%);
+    margin: 0;
+  }
+
+  .second-intro-divider {
+    display: block;
+    height: 1px;
+    width: 100px;
+    background-color: #fff;
+  }
+
+  .strong-title {
+    font-family: 'Playfair';
+    font-weight: 300;
+    font-size: 4rem;
+    margin-bottom: 20px;
+  }
+
+  .title-subline {
+    font-size: 2rem;
+  }
+
+  #title-box {
+    width: 40%;
+  }
+
+  .featured-title-section-2 h1 {
+    text-align: left;
+    font-weight: 600;
+  }
+
   .featured-title-section {
     padding: 100px 300px 50px;
     display: flex;
@@ -402,6 +474,7 @@ html, body {
 
   #first-trans-caption {
     font-size: 1.25rem !important;
+    position: absolute;
     top: 50%;
     left: 60%;
     transform: translate(60%, -50%);
@@ -410,6 +483,7 @@ html, body {
   #second-image-trans {
     padding: 50px 0;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
   }
@@ -426,7 +500,7 @@ html, body {
     width: 20px;
     background-color: #fff;
     transform-origin: right;
-    transform: translateX(120px);
+    transform: translateX(100px);
     z-index: 10;
   }
 
