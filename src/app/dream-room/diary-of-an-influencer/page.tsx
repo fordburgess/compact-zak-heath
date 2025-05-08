@@ -134,7 +134,7 @@ const DiaryOfInfluencer = () => {
       scrollTrigger: {
         trigger: '.dream-room-transition-container',
         start: 'top bottom',
-        end: 'center 60%',
+        end: 'center 40%',
         scrub: true,
       }
     });
