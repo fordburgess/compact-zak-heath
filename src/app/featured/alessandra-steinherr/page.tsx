@@ -42,7 +42,7 @@ const AlessandraSteinherr = () => {
       });
 
       gsap.to('.lipstick-container', {
-        y: '-100%',
+        y: '-10%',
         ease: 'power1.inOut',
         scrollTrigger: {
           trigger: '.alessandra-intro',
@@ -52,9 +52,6 @@ const AlessandraSteinherr = () => {
         }
       })
 
-
-
-
       ScrollTrigger.create({
         trigger: ".lipstick-container",
         start: "top 10%",
@@ -62,6 +59,7 @@ const AlessandraSteinherr = () => {
         pin: ".lipstick-container",
         pinSpacing: false,
         scrub: true,
+        markers: true
       });
 
       ScrollTrigger.create({
