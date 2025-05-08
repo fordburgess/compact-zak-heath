@@ -16,235 +16,241 @@ const MonaKattan = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.to(['.text-section-title', '.featured-paragraph-text'],  {
-      opacity: 1,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '.text-section',
-        start: 'top 30%',
-        end: 'bottom bottom',
-        scrub: true
-      }
-    })
 
-    gsap.to('#section-1', {
-      y: -500,
-      opacity: 0,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#section-2',
-        start: 'top 40%',
-        end: 'top top',
-        scrub: true
-      }
-    })
+    if (!mobile) {
+      gsap.to(['.text-section-title', '.featured-paragraph-text'],  {
+        opacity: 1,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '.text-section',
+          start: 'top 30%',
+          end: 'bottom bottom',
+          scrub: true
+        }
+      })
 
-    gsap.to('.section-2-text', {
-      x: -500,
-      opacity: 0,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '.lisa-scroll-test',
-        start: 'top 80%',
-        end: 'top top',
+      gsap.to('#section-1', {
+        y: -500,
+        opacity: 0,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#section-2',
+          start: 'top 40%',
+          end: 'top top',
+          scrub: true
+        }
+      })
+
+      gsap.to('.section-2-text', {
+        x: -500,
+        opacity: 0,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '.lisa-scroll-test',
+          start: 'top 80%',
+          end: 'top top',
+          scrub: true,
+        }
+      })
+
+      gsap.to('#image-1', {
+        x: -700,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '.lisa-scroll-test',
+          start: 'top 80%',
+          end: 'top top',
+          scrub: true
+        }
+      })
+
+      gsap.to('#caption-1', {
+        opacity: 1,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '.lisa-scroll-test',
+          start: 'top 80%',
+          end: 'top top',
+          scrub: true
+        }
+      })
+
+      ScrollTrigger.create({
+        trigger: "#section-2",
+        start: "top top",
+        end: "bottom top",
+        pin: ".pin-container",
+        pinSpacing: false,
         scrub: true,
-      }
-    })
+      });
 
-    gsap.to('#image-1', {
-      x: -700,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '.lisa-scroll-test',
-        start: 'top 80%',
-        end: 'top top',
-        scrub: true
-      }
-    })
-
-    gsap.to('#caption-1', {
-      opacity: 1,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '.lisa-scroll-test',
-        start: 'top 80%',
-        end: 'top top',
-        scrub: true
-      }
-    })
-
-    ScrollTrigger.create({
-      trigger: "#section-2",
-      start: "top top",
-      end: "bottom top",
-      pin: ".pin-container",
-      pinSpacing: false,
-      scrub: true,
-    });
-
-    gsap.to('#section-3', {
-      y: -200,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#section-3',
-        start: 'top 110%',
-        end: 'top center',
-        scrub: true
-      }
-    })
-
-    ScrollTrigger.create({
-      trigger: "#second-intro-container",
-      start: "top top",
-      end: "+=100%",
-      pin: true,
-      scrub: true,
-    });
-
-    gsap.fromTo("#caption-2",
-      { x: "-100%", opacity: 0 },
-      {
-        x: "0%",
-        opacity: 1,
-        ease: "power1.out",
+      gsap.to('#section-3', {
+        y: -200,
+        ease: 'power1.inOut',
         scrollTrigger: {
-          trigger: "#image-section-1",
-          start: "top top",
-          end: "+=100%",
-          scrub: true,
+          trigger: '#section-3',
+          start: 'top 110%',
+          end: 'top center',
+          scrub: true
         }
-      }
-    );
+      })
 
-    gsap.fromTo("#kirsty-lewis-2",
-      { x: "100%", opacity: 0 },
-      {
-        x: "0%",
-        opacity: 1,
-        ease: "power1.out",
+      ScrollTrigger.create({
+        trigger: "#second-intro-container",
+        start: "top top",
+        end: "+=100%",
+        pin: true,
+        scrub: true,
+      });
+
+      gsap.fromTo("#caption-2",
+        { x: "-100%", opacity: 0 },
+        {
+          x: "0%",
+          opacity: 1,
+          ease: "power1.out",
+          scrollTrigger: {
+            trigger: "#image-section-1",
+            start: "top top",
+            end: "+=100%",
+            scrub: true,
+          }
+        }
+      );
+
+      gsap.fromTo("#mona-kattan-2",
+        { x: "100%", opacity: 0 },
+        {
+          x: "0%",
+          opacity: 1,
+          ease: "power1.out",
+          scrollTrigger: {
+            trigger: "#image-section-1",
+            start: "top top+=20%", // slight delay
+            end: "+=100%",
+            scrub: true,
+          }
+        }
+      );
+
+      gsap.fromTo(".second-intro-divider",
+        { scaleX: 0 },
+        {
+          scaleX: 1,
+          ease: "power1.inOut",
+          scrollTrigger: {
+            trigger: "#image-section-1",
+            start: "top top+=10%",
+            end: "+=80%",
+            scrub: true,
+          }
+        }
+      );
+
+      gsap.to('#hide-container-1', {
+        height: '300px',
+        ease: 'power1.inOut',
         scrollTrigger: {
-          trigger: "#image-section-1",
-          start: "top top+=20%", // slight delay
-          end: "+=100%",
-          scrub: true,
+          trigger: '#featured-trans-1',
+          start: 'top center',
+          end: `bottom ${mobile ? '90%' : '70%' }`,
+          scrub: true
         }
-      }
-    );
+      })
 
-    gsap.fromTo(".second-intro-divider",
-      { scaleX: 0 },
-      {
-        scaleX: 1,
+      gsap.to('#hide-container-2', {
+        width: `${mobile ? '100%' : '600px'}`,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#featured-trans-2',
+          start: 'top center',
+          end: `bottom ${mobile ? '90%' : '70%' }`,
+          scrub: true
+        }
+      })
+
+      gsap.to('#hide-container-3', {
+        width: mobile ? '100%' : '500px',
+        height: '300px',
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#featured-trans-3',
+          start: 'top center',
+          end: `bottom ${mobile ? '90%' : '70%' }`,
+          scrub: true
+        }
+      })
+
+      gsap.to('#hide-container-4', {
+        width: mobile ? '100%' : '500px',
+        height: '300px',
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#featured-trans-4',
+          start: 'top center',
+          end: `bottom ${mobile ? '90%' : '70%' }`,
+          scrub: true
+        }
+      })
+
+      const line2Props: any = {
         ease: "power1.inOut",
         scrollTrigger: {
-          trigger: "#image-section-1",
-          start: "top top+=10%",
-          end: "+=80%",
+          trigger: '#first-image-trans',
+          start: 'top 60%',
+          end: 'bottom 60%',
+          scrub: true,
+        }
+      };
+      const scaleAxis = mobile ? 'scaleY' : 'scaleX';
+      const opacity = 1;
+      line2Props[scaleAxis] = mobile ? 8 : 10;
+      line2Props[opacity];
+      gsap.to('.fctc-line-2', line2Props);
+
+      const caption2props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#first-image-trans',
+          start: 'top 80%',
+          end: 'bottom bottom',
           scrub: true,
         }
       }
-    );
-
-    gsap.to('#hide-container-1', {
-      height: '300px',
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#featured-trans-1',
-        start: 'top center',
-        end: `bottom ${mobile ? '90%' : '70%' }`,
-        scrub: true
-      }
-    })
-
-    gsap.to('#hide-container-2', {
-      width: `${mobile ? '100%' : '600px'}`,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#featured-trans-2',
-        start: 'top center',
-        end: `bottom ${mobile ? '90%' : '70%' }`,
-        scrub: true
-      }
-    })
-
-    gsap.to('#hide-container-3', {
-      width: mobile ? '100%' : '500px',
-      height: '300px',
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#featured-trans-3',
-        start: 'top center',
-        end: `bottom ${mobile ? '90%' : '70%' }`,
-        scrub: true
-      }
-    })
-
-    gsap.to('#hide-container-4', {
-      width: mobile ? '100%' : '500px',
-      height: '300px',
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#featured-trans-4',
-        start: 'top center',
-        end: `bottom ${mobile ? '90%' : '70%' }`,
-        scrub: true
-      }
-    })
-
-    const line2Props: any = {
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: '#first-image-trans',
-        start: 'top 60%',
-        end: 'bottom 60%',
-        scrub: true,
-      }
-    };
-    const scaleAxis = mobile ? 'scaleY' : 'scaleX';
-    const opacity = 1;
-    line2Props[scaleAxis] = mobile ? 8 : 10;
-    line2Props[opacity];
-    gsap.to('.fctc-line-2', line2Props);
-
-    const caption2props: any = {
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: '#first-image-trans',
-        start: 'top 80%',
-        end: 'bottom bottom',
-        scrub: true,
-      }
+      const transitionDirection = mobile ? 'y' : 'x';
+      caption2props[transitionDirection] = mobile ? -50 : -1;
+      gsap.to('#first-trans-caption', caption2props);
     }
-    const transitionDirection = mobile ? 'y' : 'x';
-    caption2props[transitionDirection] = mobile ? -50 : -1;
-    gsap.to('#first-trans-caption', caption2props);
 
-    const line4Props: any = {
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: '#second-image-trans',
-        start: 'top 60%',
-        end: 'bottom 60%',
-        scrub: true,
+    if (!mobile) {
+
+      const line4Props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#second-image-trans',
+          start: 'top 60%',
+          end: 'bottom 60%',
+          scrub: true,
+        }
+      };
+      const scaleAxisLine4 = mobile ? 'scaleY' : 'scaleX';
+      line4Props[scaleAxisLine4] = 7
+      gsap.to('.fctc-line-4', line4Props);
+
+
+      const caption4props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#second-image-trans',
+          start: 'top 60%',
+          end: 'bottom 60%',
+          scrub: true,
+        }
       }
-    };
-    const scaleAxisLine4 = mobile ? 'scaleY' : 'scaleX';
-    line4Props[scaleAxisLine4] = 7
-    gsap.to('.fctc-line-4', line4Props);
-
-
-    const caption4props: any = {
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: '#second-image-trans',
-        start: 'top 60%',
-        end: 'bottom 60%',
-        scrub: true,
-      }
+      const transitionDirectionCaption4 = mobile ? 'y' : 'x';
+      caption4props[transitionDirectionCaption4] = mobile ? 50 : '10px';
+      gsap.to('#second-trans-caption', caption4props);
     }
-    const transitionDirectionCaption4 = mobile ? 'y' : 'x';
-    caption4props[transitionDirectionCaption4] = mobile ? 50 : '10px';
-    gsap.to('#second-trans-caption', caption4props);
   }, [])
 
   useEffect(() => {
@@ -272,15 +278,15 @@ const MonaKattan = () => {
         <div style={{ zIndex: 10 }}>
           <div className='featured-title-section-2'>
             <Image src={MonaKattanProfile} alt='pfp' className='featured-profile-image'/>
-            <h1><span className='strong-title'>In Conversation With Mona Kattan:</span><br/> <span className='' style={{ fontWeight: '300', fontSize: '2rem' }}>Being a fragrance CEO</span></h1>
+            <h1><span className='strong-title'>In Conversation With Mona Kattan:</span><br/> <span className='title-subline'>Being a fragrance CEO</span></h1>
           </div>
-          {/* <div className='image-section' id='second-intro-container'>
+          <div className='image-section' id='second-intro-container'>
             <div className='interactive-image-caption' id='caption-2'>
-              <h3 className='kirsty-lewis-second-intro-text'><span className='drop-cap'>Mona Kattan</span> is a beauty entrepreneur, fragrance connoisseur and co-founder of Huda Beauty. With a background in finance and PR, Mona created Kayali to share her love of storytelling through scent and she continues to shape the fragrance space with innovative notes and regular launches.</h3>
+              <h3 className='mona-kattan-second-intro-text'><span className='drop-cap'>Mona Kattan</span> is a beauty entrepreneur, fragrance connoisseur and co-founder of Huda Beauty. With a background in finance and PR, Mona created Kayali to share her love of storytelling through scent and she continues to shape the fragrance space with innovative notes and regular launches.</h3>
             </div>
             <div className='second-intro-divider'></div>
-            <Image src={MonaKattan2} alt='mary-greenwell' id='kirsty-lewis-2' />
-          </div> */}
+            <Image src={MonaKattan2} alt='mary-greenwell' id='mona-kattan-2' />
+          </div>
           <div className='featured-article-text-section'>
             <p className='featured-article-subheader'>Who or what inspired you to fall in love with fragrance?</p>
             <p className='featured-article-paragraph'>I've been obsessed with fragrances my whole life. But when I moved to the UAE from America, something shifted. The fragrance culture here is on another level; there's so much richness, intention, and respect for scent. People here use perfume to express emotion, status, and identity - it's so layered. That was really what deepened my love for fragrance. It became more than just a beauty product. It became something sacred.</p>
@@ -330,7 +336,7 @@ const MonaKattan = () => {
             </div>
             <p className='featured-article-subheader'>What would you include if you were to make a fragrance inspired by me?</p>
             <p className='featured-article-paragraph'>Oh my God, you are literally sunshine in human form! I'd definitely start with solar notes for that radiant, happy energy. I'd add vanilla because I'm a Kayali girl through and through. Then I'd layer in your favourite fruits, maybe a soft spice, and we'd have to figure it out together for the dry down. But it would be joyful, bright and warm.</p>
-            <div className='dream-room-transition-container' id='second-image-trans'>
+            <div className='featured-transition-container' id='second-image-trans'>
               <p className='image-caption' id="second-trans-caption">Mona Kattan and I in 2023 inside<br/>of her fragrance wardrobe in Dubai!</p>
               <div className='fctc-line-4'></div>
               <Image src={MonaKattan4} id='zak-and-lisa' alt='zak-and-lisa'/>
