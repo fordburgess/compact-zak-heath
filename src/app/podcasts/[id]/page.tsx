@@ -54,10 +54,10 @@ const episodes = [
   {
     index: 4,
     id: 'raquell-bouris',
-    title: 'Raquell Bouris: Scent, Strategy And Creating A Startup',
+    title: 'Raquel Bouris: Scent, Strategy And Creating A Startup',
     job: 'Fragrance Founder',
     profileImage: RaquellBouris,
-    description: 'In this episode, Zak is joined by the ICON Raquell Bouris, founder of the Australian brand Who Is Elijah. After launching the brand in Sydney, Raquell moved to London to expand internationally. If you’re interested in what it takes to build a business, creating new concepts, the realities of running a team, managing investments, and other issues she has encountered, then this conversation will be dropping soon.'
+    description: 'In this episode, Zak is joined by the ICON Raquel Bouris, founder of the Australian brand Who Is Elijah. After launching the brand in Sydney, Raquel moved to London to expand internationally. If you’re interested in what it takes to build a business, creating new concepts, the realities of running a team, managing investments, and other issues she has encountered, then this conversation will be dropping soon.'
   }
 ]
 

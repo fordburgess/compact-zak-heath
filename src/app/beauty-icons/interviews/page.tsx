@@ -21,8 +21,6 @@ import CarolynAronson from '../../../assets/images/carolyn-aronson-profile.webp'
 import Ingeborg from '../../../assets/images/ingeborg-profile.png';
 import { useMediaQuery } from 'usehooks-ts';
 
-// Lisa, Millie and Alessandra, second row, Patricia, Adam, Mona, 3rd row, Shakeel, Kirsty ingeborg, 4th Carolyn, Yana, Tilly, 5th row, me and Raquell
-
 const interviews = [
   {
     pfp: MillieKendall,
@@ -104,9 +102,9 @@ const interviews = [
   },
   {
     pfp: Placeholder,
-    name: 'Raquell Bouris',
+    name: 'Raquel Bouris',
     job: 'Fragrance Founder',
-    href: '/audio/raquell-bouris'
+    href: '/audio/raquel-bouris'
   },
 ]
 
