@@ -85,9 +85,9 @@ body {
 }
 
 .drop-cap {
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  background-color: rgba(255, 0, 0, 0.39);
+  background-color: rgba(237, 111, 0, 0.39);
 }
 
 .grow-line-1 {
