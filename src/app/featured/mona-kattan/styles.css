@@ -99,9 +99,10 @@
   position: relative;
   box-sizing: border-box;
   display: flex;
+  flex-direction: column-reverse;
   justify-content: space-between;
   align-items: center;
-  padding: 0 80px;
+  padding: 0 10px;
 }
 
 #kirsty-lewis-2 {
@@ -113,9 +114,13 @@
 }
 
 #caption-2 {
+  font-size: 1rem;
+}
+
+/* #caption-2 {
   width: 40%;
   transform: translateX(100%);
-}
+} */
 
 #scroll-test-2 {
   background-color: rgba(255, 0, 0, 0.545);
@@ -127,8 +132,7 @@
   background-color: #fff;
 }
 
-.kirsty-lewis-second-intro-text {
-  font-size: 1.5rem;
+.mona-kattan-second-intro-text {
   font-weight: 300;
 }
 
@@ -355,6 +359,17 @@ html, body {
     width: 50%;
     object-fit: cover;
     object-position: center;
+  }
+
+  #second-intro-container {
+    flex-direction: row;
+    padding: 0px 80px;
+  }
+
+  #caption-2 {
+    font-size: 1.25rem !important;
+    width: 40%;
+    transform: translateX(100%);
   }
 
   .strong-title {
