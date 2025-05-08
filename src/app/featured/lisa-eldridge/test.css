@@ -110,17 +110,17 @@ body {
   background: #e1e1ff;
 }
 
-
 .text-section {
   min-height: 100vh;
   max-height: 100vh;
   width: 100vw;
-  padding: 100px;
+  padding: 50px 20px;
   box-sizing: border-box;
 }
 
-.text-section h1 {
+.text-section-title {
   margin-bottom: 20px;
+  font-size: 2rem;
   opacity: 1;
 }
 
@@ -337,8 +337,20 @@ body {
     font-weight: 600;
   }
 
+  .text-section {
+    padding: 100px;
+  }
+
+  .text-section-title {
+    font-size: 2.5rem;
+  }
+
   .pin-container {
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  .section-2-text {
+    width: 55%;
   }
 }
