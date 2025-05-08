@@ -116,9 +116,9 @@ const MillieKendall = () => {
         <div className='featured-title-section'>
           <Image src={MillieKendallProfile} className='title-image' alt='millie-kendall-profile' />
           <div className='featured-title-text'>
-            <h1 className='featured-title-quote'>"Why would I sit in a classroom when I could be earning?"</h1>
+            <h1 className='featured-title-quote'>"Why Would I Sit in a Classroom When I Could Be Earning?"</h1>
             <div className='title-divider'></div>
-            <h2 className='featured-subtitle'>Millie Kendall: CEO</h2>
+            <h2 className='featured-subtitle'>Millie Kendall: CEO of the British Beauty Council</h2>
             <p className='featured-blurb'>Millie Kendall OBE is one of the beauty industry's most celebrated figures. She co-founded iconic makeup brands like Ruby & Millie and created the British Beauty Council. Here's a COMPACT conversation about her career.</p>
           </div>
         </div>
@@ -138,7 +138,7 @@ const MillieKendall = () => {
           </div>
           <p className='featured-article-paragraph'>"I used to go to Paradise Garage, a gay club where you had to prove you were gay to get in. My friend was bisexual, and we worked together at Bumble & Bumble. So we'd hold hands and pretend we were dating to get through the door! I'm straight, but back then, things were just more fluid. That word didn't even exist yet. You didn't need a label. If you were weird, punk, queer - whatever, you gravitated to people who also didn't fit the norm."</p>
           <p className='featured-article-paragraph'>She adds that people found each other through "work and clubs." There was no social media. You showed up, and that was enough.</p>
-          <p className='featured-article-paragraph'>She laughs when asked what she wore back in her clubbing days. "The shortest denim shorts you've ever seen, Converse, a white T-shirt. I wasn't into fashion. I was into dancing and being comfortable!"</p>
+          <p className='featured-article-paragraph'>She laughs when asked what she wore back in her clubbing days. "The shortest denim shorts you've ever seen, Converse, a white t-shirt. I wasn't into fashion. I was into dancing and being comfortable!"</p>
           <p className='featured-article-subheader'>Building The Beauty Foundations</p>
           <p className='featured-article-paragraph'>Millie's first introduction to beauty was at her grandmother's dressing table. "She had a Corgi that drank tea out of a saucer. She'd put moisturiser on her face, then let the dog lick her fingers. The dog basically lived off Nivea!"</p>
           <p className='featured-article-paragraph'>She describes her grandmother applying mascara with a flat palette that required saliva to activate. "She'd spit on it and apply. That whole moment, the diamonds, the glamour, the spitting, was iconic. It made a huge impression on me."</p>
@@ -164,7 +164,7 @@ const MillieKendall = () => {
           <p className='featured-article-subheader'>Her Role In The British Beauty Council And Starting The Creator Collective</p>
           <p className='featured-article-paragraph'>Millie is deeply engaged in the future of beauty. She founded the Creator Collective in 2021 to address a growing problem: misinformation in the content space.</p>
           <p className='featured-article-paragraph'>"It started when Gwyneth Paltrow posted that video smearing SPF only on the high points of her face. It was completely wrong. And I thought, if I had to get trained to sell skincare in a department store, why aren't creators and influencers getting trained?"</p>
-          <p className='featured-article-paragraph'>The Creator Collective became a training ground for influencers to learn about skin health so they can speak with credibility and authenticity. It was built with the Boots and Walgreens Alliance, which owns several brands, including No7, Liz Earle Beauty Co, Botanics, Soap & Glory, and Sleek MakeUP. "It helps creators, helps brands, and helps the industry”, explains millie. The online course is now open to the public and covers various topics, including misinformation surrounding acne and the dangers of not using SPF.</p>
+          <p className='featured-article-paragraph'>The Creator Collective became a training ground for influencers to learn about skin health so they can speak with credibility and authenticity. It was built with the Boots and Walgreens Alliance, which owns several brands, including No7, Liz Earle Beauty Co, Botanics, Soap & Glory, and Sleek MakeUP. "It helps creators, helps brands, and helps the industry”, explains Millie. The online course is now open to the public and covers various topics, including misinformation surrounding acne and the dangers of not using SPF.</p>
           <p className='featured-article-subheader'>Recognition For Her Work</p>
           <p className='featured-article-paragraph'>"I got the MBE just after having my daughter. A letter came, and I didn't realise I wasn't supposed to tell anyone, so of course, I told everyone! Then I read the letter properly and realised it wasn't official yet. You have to wait until the honours list is published to see if you're actually on it."</p>
           <p className='featured-article-paragraph'>The OBE came during the pandemic. "By then, I knew how it worked. It was less of a shock but still surreal. The Queen gave it to us. Weird, but amazing."</p>

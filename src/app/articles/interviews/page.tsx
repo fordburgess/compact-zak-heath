@@ -7,7 +7,7 @@ import ExpandedImage from '../../../assets/images/spring-expanded.jpg';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import LisaEldridge from '../../../assets/images/lisa-eldridge-profile.webp';
-import KirstyLewis from '../../../assets/images/kirsty-lewis-profile.webp';
+import KirstyLewis from '../../../assets/images/kirsty-lewis-profile.jpeg';
 import MillieKendall from '../../../assets/images/millie-kendall-profile.webp';
 import AdamReed from '../../../assets/images/adam-reed-profile.webp';
 import AlessandraSteinherr from '../../../assets/images/alessandra-steinherr.webp';
@@ -174,7 +174,10 @@ const FeaturedInterviews = () => {
                               alt={`icon-${index}`}
                               className='beauty-icons-pfp'
                               id={`icons-pfp-${index}`}
-                              style={{ objectPosition: interview.name == 'Millie Kendall' || 'Carolyn Aronson' ? 'top' : 'center' }}
+                              style={{
+                                objectPosition: interview.name == 'Millie Kendall' || 'Carolyn Aronson' ? 'top' : 'center',
+                                backgroundSize: interview.name == 'Kirsty Lewis' ? '200%' : '0'
+                              }}
                             />
                             <div className='name-container'>
                               <h3>{interview.name}</h3>

@@ -8,7 +8,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import ExpandedImage from '../../../assets/images/field-expanded.jpg';
 import LisaEldridge from '../../../assets/images/lisa-eldridge-profile.webp';
 import MillieKendall from '../../../assets/images/millie-kendall-profile.webp';
-import KirstyLewis from '../../../assets/images/kirsty-lewis-profile.webp';
+import KirstyLewis from '../../../assets/images/kirsty-lewis-profile.jpeg';
 import AdamReed from '../../../assets/images/adam-reed-profile.webp';
 import AlessandraSteinherr from '../../../assets/images/alessandra-steinherr.webp';
 import MonaKattan from '../../../assets/images/mona-kattan.webp';
