@@ -3,17 +3,15 @@ import React, { useEffect } from 'react';
 import Image from 'next/image';
 import SpringExpanded from '../../../assets/images/spring-expanded.jpg';
 import AdamReedProfile from '../../../assets/images/adam-reed-profile.webp';
-import AdamReed2 from '../../../assets/images/adam-reed-2.jpeg';
 import AdamReedHair1 from '../../../assets/images/adam-reed-hair-1.jpg';
 import AdamReedHair2 from '../../../assets/images/adam-reed-hair-2.jpg';
 import AdamReedHair3 from '../../../assets/images/adam-reed-hair-3.webp';
 import AdamReedHair4 from '../../../assets/images/adam-reed-hair-4.webp';
 import JulienDys from '../../../assets/images/julien-dys.webp';
 import TrevorSorbie from '../../../assets/images/trevor-sorbie.jpg';
-import LisaEldridge2 from '../../../assets/images/lisa-eldridge-2.webp';
-import LisaEldridge4 from '../../../assets/images/lisa-eldridge-4.webp';
-import LisaEldridge8 from '../../../assets/images/lisa-eldridge-8.jpg';
-import LisaMBE from '../../../assets/images/lisa-mbe.png';
+import AdamReed2 from '../../../assets/images/adam-reed-2.jpeg';
+import CocaineNights from '../../../assets/images/cocaine-nights.jpg';
+import LuigiMurenu from '../../../assets/images/luigi-murenu.jpg';
 import './styles.css'
 import { useMediaQuery } from 'usehooks-ts';
 import gsap from 'gsap';
@@ -183,6 +181,7 @@ const LisaEldridge = () => {
           }
         }
       );
+
       gsap.to('#section-4', {
         opacity: 1,
         ease: 'power1.inOut',
@@ -210,8 +209,107 @@ const LisaEldridge = () => {
         ease: 'power1.inOut',
         scrollTrigger: {
           trigger: '#section-6',
-          start: 'top -50%',
-          end: 'top -100%',
+          start: 'top -100%',
+          end: 'top -150%',
+          scrub: true,
+        }
+      })
+
+      gsap.to('#section-7', {
+        opacity: 1,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#section-7',
+          start: 'top -150%',
+          end: 'top -200%',
+          scrub: true,
+        }
+      })
+
+      gsap.to('#section-8', {
+        opacity: 1,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#section-8',
+          start: 'top -200%',
+          end: 'top -250%',
+          scrub: true,
+        }
+      })
+
+      gsap.to('#section-9', {
+        opacity: 1,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#section-9',
+          start: 'top -250%',
+          end: 'top -300%',
+          scrub: true,
+        }
+      })
+
+      gsap.to('#section-10', {
+        opacity: 1,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#section-9',
+          start: 'top -250%',
+          end: 'top -300%',
+          scrub: true,
+        }
+      })
+
+      gsap.to('#section-11', {
+        opacity: 1,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#section-9',
+          start: 'top -250%',
+          end: 'top -300%',
+          scrub: true,
+        }
+      })
+
+      gsap.to('#section-12', {
+        opacity: 1,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#section-9',
+          start: 'top -250%',
+          end: 'top -300%',
+          scrub: true,
+        }
+      })
+
+      gsap.to('#section-13', {
+        opacity: 1,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#section-9',
+          start: 'top -250%',
+          end: 'top -300%',
+          scrub: true,
+        }
+      })
+
+      gsap.to('#section-14', {
+        opacity: 1,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#section-9',
+          start: 'top -250%',
+          end: 'top -300%',
+          scrub: true,
+        }
+      })
+
+      gsap.to('#section-15', {
+        opacity: 1,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#section-9',
+          start: 'top -250%',
+          end: 'top -300%',
           scrub: true,
         }
       })
@@ -241,9 +339,73 @@ const LisaEldridge = () => {
       });
 
       ScrollTrigger.create({
+        trigger: "#section-7",
+        start: "top top",
+        end: "+=50%",
+        pin: true,
+        scrub: true,
+      });
+
+      ScrollTrigger.create({
+        trigger: "#section-8",
+        start: "top top",
+        end: "+=50%",
+        pin: true,
+        scrub: true,
+      });
+
+      ScrollTrigger.create({
+        trigger: "#section-9",
+        start: "top top",
+        end: "+=50%",
+        pin: true,
+        scrub: true,
+      });
+
+      ScrollTrigger.create({
+        trigger: "#section-10",
+        start: "top top",
+        end: "+=50%",
+        pin: true,
+        scrub: true,
+      });
+
+      ScrollTrigger.create({
+        trigger: "#section-11",
+        start: "top top",
+        end: "+=50%",
+        pin: true,
+        scrub: true,
+      });
+
+      ScrollTrigger.create({
+        trigger: "#section-12",
+        start: "top top",
+        end: "+=50%",
+        pin: true,
+        scrub: true,
+      });
+
+      ScrollTrigger.create({
+        trigger: "#section-13",
+        start: "top top",
+        end: "+=50%",
+        pin: true,
+        scrub: true,
+      });
+
+      ScrollTrigger.create({
+        trigger: "#section-14",
+        start: "top top",
+        end: "+=50%",
+        pin: true,
+        scrub: true,
+      });
+
+      ScrollTrigger.create({
         trigger: ".image-column",
         start: "top 10%",
-        end: "+=300%",
+        end: "+=1200%",
         pin: true,
         scrub: true,
       });
@@ -253,7 +415,7 @@ const LisaEldridge = () => {
         y: -100,
         ease: 'power1.inOut',
         scrollTrigger: {
-          trigger: '#section-4',
+          trigger: '#section-5',
           start: 'top -20%',
           end: 'bottom top',
           scrub: true,
@@ -265,15 +427,37 @@ const LisaEldridge = () => {
         top: '0%',
         ease: 'power1.inOut',
         scrollTrigger: {
-          trigger: '#section-5',
+          trigger: '#section-6',
+          start: 'top center',
+          end: 'top top',
+          scrub: true,
+        }
+      })
+
+      gsap.to('#image-item-2', {
+        // opacity: 0,
+        y: -1000,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#section-7',
+          start: 'top -20%',
+          end: 'bottom top',
+          scrub: true,
+        }
+      })
+
+      gsap.to('#image-item-3', {
+        opacity: 1,
+        top: '0%',
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#section-8',
           start: 'top center',
           end: 'top top',
           scrub: true,
         }
       })
     }
-
-
   }, [])
 
   useEffect(() => {
@@ -402,15 +586,21 @@ const LisaEldridge = () => {
             </div>
             <div className='image-column'>
               <div id='image-item-1'>
-                <Image src={LisaEldridge8} alt='lisa-eldridge-at-work' className='image-column-child' id='image-column-1'/>
+                <Image src={LuigiMurenu} alt='lisa-eldridge-at-work' className='image-column-child' id='image-column-1'/>
                 <div className='interactive-image-caption' id='caption-3'>
                   <p>Lisa at work - From <a style={{ textDecoration: 'underline'}} href='https://lisaeldridge.com' rel="noopener noreferrer" target="_blank">lisaeldridge.com</a></p>
                 </div>
               </div>
               <div id='image-item-2'>
-                <Image src={LisaMBE} alt='lisa-eldridge-at-work' className='image-column-child' id='image-column-1'/>
+                <Image src={CocaineNights} alt='lisa-eldridge-at-work' className='image-column-child' id='image-column-1'/>
                 <div className='interactive-image-caption' id='caption-3'>
                   <p>Lisa is awarded an MBE</p>
+                </div>
+              </div>
+              <div id='image-item-3'>
+                <Image src={AdamReed2} alt='lisa-eldridge-at-work' className='image-column-child' id='image-column-1'/>
+                <div className='interactive-image-caption' id='caption-3'>
+                  <p>Adam Reed in 2023</p>
                 </div>
               </div>
             </div>
