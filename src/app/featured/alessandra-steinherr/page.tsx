@@ -10,12 +10,13 @@ import { Canvas } from "@react-three/fiber";
 import GlamourMag from '../../../assets/images/glamour-mag.webp';
 import Lipstick from '@/components/lipstick';
 import './style.css'
-import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useMediaQuery } from 'usehooks-ts';
 
 const AlessandraSteinherr = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const mobile = useMediaQuery('(max-width: 1000px)');
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -30,25 +31,28 @@ const AlessandraSteinherr = () => {
     //   }
     // });
 
-    ScrollTrigger.create({
-      trigger: ".alessandra-intro",
-      start: "top top",
-      end: "+=300%",
-      pin: ".alessandra-intro",
-      pinSpacing: false,
-      scrub: true,
-    });
+    if (!mobile) {
+      ScrollTrigger.create({
+        trigger: ".alessandra-intro",
+        start: "top top",
+        end: "+=300%",
+        pin: ".alessandra-intro",
+        pinSpacing: false,
+        scrub: true,
+      });
+    }
 
-    // gsap.to('.lipstick-container', {
-    //   y: '-100%',
-    //   ease: 'power1.inOut',
-    //   scrollTrigger: {
-    //     trigger: '.alessandra-intro',
-    //     start: 'top 20%',
-    //     end: 'top top',
-    //     scrub: true,
-    //   }
-    // })
+
+    gsap.to('.lipstick-container', {
+      y: '-100%',
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '.alessandra-intro',
+        start: 'top 20%',
+        end: 'top top',
+        scrub: true,
+      }
+    })
 
     ScrollTrigger.create({
       trigger: ".lipstick-container",
@@ -201,7 +205,7 @@ const AlessandraSteinherr = () => {
     <>
       <Image priority src={SpringExpanded} id='spring-container-background' alt='test'/>
       <div style={{ position: 'fixed', top: 0, left: 0, height: '100vh', width: '100vw', backdropFilter: 'blur(3px) brightness(80%)', zIndex: 5 }}></div>
-      <div style={{ position: 'absolute', top: 0, left: 0, width: '100vw', zIndex: 10, color: '#fff' }}>
+      <div style={{ position: 'absolute', top: 0, left: 0, width: '100vw', zIndex: 10, color: '#fff', overflowX: 'hidden', boxSizing: 'border-box' }}>
         <div style={{ zIndex: 10 }}>
           <div className='featured-title-section'>
             <Image src={AlessandraSteinherrProfile} alt='pfp' className='featured-profile-image'/>

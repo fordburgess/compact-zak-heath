@@ -25,6 +25,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .featured-profile-image {
@@ -277,23 +278,17 @@ body {
 }
 
 .pin-container {
-  height: 100vh;
+
   width: 100vw;
-  padding: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
 }
 
-.alessandro-intro {
-  height: 200vh;
-  background-color: red;
-}
-
 .alessandra-intro-text h2 {
   margin-bottom: 10px;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .alessandra-intro-text p {
@@ -301,7 +296,7 @@ body {
 }
 
 .alessandra-intro-text {
-  width: 50%;
+  width: 100%;
 }
 
 .another-div {
@@ -398,5 +393,36 @@ body {
 
   .title-subline {
     font-size: 2rem;
+  }
+
+  .alessandra-intro {
+    height: 200vh;
+  }
+
+  .alessandra-intro {
+    height: 200vh;
+  }
+
+  .alessandra-intro-text h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+  }
+
+  .alessandra-intro-text p {
+    font-size: 1.25rem;
+  }
+
+  .alessandra-intro-text {
+    width: 50%;
+  }
+
+  .pin-container {
+    height: 100vh;
+    width: 100vw;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
   }
 }
