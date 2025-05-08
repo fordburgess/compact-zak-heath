@@ -1,3 +1,8 @@
+body {
+  margin:0;
+  overflow-x: hidden;
+}
+
 #spring-container-background {
   position: fixed;
   top: 0;
@@ -45,61 +50,51 @@
 
 .mags {
   width: fit-content;
-  padding: 50px 200px;
+  padding: 20px 100px;
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
   pointer-events: none;
+  overflow-x: hidden;
 }
 
-.horizontal-scroll-item {
-  height: 500px;
-  min-width: 400px;
-  border: solid 2px #fff;
-  margin-right: 100px;
+.mag-covers h3 {
+  width: 80vw;
   flex-shrink: 0;
+  margin-right: 2vw;
+  font-size: 1rem;
+  font-weight: 300;
 }
-
-/* test only */
-
-
-body {
-  margin:0;
-  /* background:#15151e; */
-  overflow-x:hidden;
-}
-
 
 .mag-covers {
   width: fit-content;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  padding: 0 100px;
-}
-
-.mag-covers h2 {
-  font-family: 'Staatliches', cursive;
-  font-size: 30vw;
-  flex-shrink:0;
-  padding-right:0.3em;
-  padding-left:0.3em;
-  color:#e10600;
-  margin:0;
-}
-
-.mag-covers h3 {
-  width: 40vw;
-  flex-shrink: 0;
-  margin-right: 5vw;
-  font-size: 1.5rem;
-  font-weight: 300;
+  padding: 0 30px;
+  overflow-x: hidden;
 }
 
 .drop-cap {
-  font-size: 2rem;
+  font-size: 1.1rem;
   font-weight: 600;
-  background-color: rgba(255, 0, 0, 0.39);
+  background-color: rgb(0, 96, 160);
+}
+
+.grow-line-1 {
+  width: 20px;
+  height: 1px;
+  background-color: #fff;
+  margin-right: 5vw;
+}
+
+.mag-covers img {
+  width: 90vw;
+  height: 70vh;
+  flex-shrink: 0;
+  margin-right: 2vw;
+  padding-right:0.3em;
+  padding-left:0.3em;
 }
 
 .drop-cap a, p {
@@ -111,15 +106,6 @@ body {
   height: 1px;
   background-color: #fff;
   margin-right: 5vw;
-}
-
-.mag-covers img {
-  width: 35vw;
-  height: 80vh;
-  flex-shrink: 0;
-  margin-right: 2vw;
-  padding-right:0.3em;
-  padding-left:0.3em;
 }
 
 .mag-covers h2:last-of-type {
