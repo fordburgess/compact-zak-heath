@@ -190,9 +190,8 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 600vh; /* enough scroll space */
+  height: 600vh;
   position: relative;
-  /* background-color: rgba(0, 0, 255, 0.605); */
 }
 
 .text-column-wrapper {

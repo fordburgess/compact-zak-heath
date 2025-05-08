@@ -403,7 +403,7 @@ const AdamReed = () => {
           </div>
           <div className='text-section' id='section-2'>
             <div className='pin-container'>
-              <div className='section-2-text' style={{ width: '55%' }}>
+              <div className='section-2-text'>
                 <h1 className='text-section-title'>When you were 21, who did you look up to in the beauty industry?</h1>
                 <p className='featured-paragraph-text' style={{ marginBottom: '10px' }}>Julien d’Ys, the French hairdresser. He has always been my ultimate icon. And Estée Lauder, I was obsessed with her brand. My grandmother used Estée Lauder and the heritage of the brand and what they did back then captivated me because it was’t as consumer facing. I also admired François Nars. Meeting Julien d’Ys was surreal; I completely fan-girled and went quiet, which isn’t like me at all! I stood quite in awe of the fact I got to meet him, and as it was early on in my career, I just thought he was amazing!</p>
                 <p className='featured-paragraph-text'>Later, I met hairstylist Guido Palau and makeup artist Dick Page, and every time I was just amazed to be in their presence. There was also Trevor Sorbie, who recently passed, was another one of my idols and he became a really good friend of mine.</p>

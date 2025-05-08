@@ -99,7 +99,7 @@ body {
 
 .mag-covers img {
   width: 90vw;
-  height: 50vh;
+  height: 70vh;
   flex-shrink: 0;
   margin-right: 2vw;
   padding-right:0.3em;
@@ -168,6 +168,37 @@ body {
 .interactive-image-caption p {
   font-family: 'Playfair' !important;
 }
+
+#image-section-1 {
+  padding: 0 20px;
+}
+
+#mary-greenwell-image {
+  height: 400px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.mary-greenwell-line {
+  height: 1px;
+  width: 100px;
+  background-color: #fff;
+  display: none;
+}
+
+.column-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 600vh;
+  position: relative;
+}
+
+.text-column-wrapper {
+  width: 100%;
+}
+
+
 
 /* body {
   margin:0;
