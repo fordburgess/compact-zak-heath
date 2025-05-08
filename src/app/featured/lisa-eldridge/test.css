@@ -209,10 +209,12 @@ body {
   /* background-color: rgba(0, 0, 255, 0.605); */
 }
 
+.text-column-wrapper {
+  width: 100%;
+}
+
 #section-4, #section-5, #section-6 {
   width: 100%;
-  padding: 5rem 4rem;
-  opacity: 0;
 }
 
 .image-column {
@@ -394,6 +396,17 @@ body {
     height: 1px;
     width: 100px;
     background-color: #fff;
+  }
+
+  .text-column-wrapper {
+    width: 70%;
+  }
+
+  #section-4, #section-5, #section-6 {
+    width: 100%;
+    padding: 5rem 4rem;
+    opacity: 0;
+
   }
 
   .image-column {
