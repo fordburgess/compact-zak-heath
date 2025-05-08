@@ -272,15 +272,15 @@ const MonaKattan = () => {
         <div style={{ zIndex: 10 }}>
           <div className='featured-title-section-2'>
             <Image src={MonaKattanProfile} alt='pfp' className='featured-profile-image'/>
-            <h1><span style={{ fontFamily: 'Playfair', fontWeight: '300', fontSize: '4rem' }}>In Conversation With Mona Kattan:</span><br/> <strong style={{ fontWeight: '300', fontSize: '2rem' }}>Being a fragrance CEO</strong></h1>
+            <h1><span className='strong-title'>In Conversation With Mona Kattan:</span><br/> <span className='' style={{ fontWeight: '300', fontSize: '2rem' }}>Being a fragrance CEO</span></h1>
           </div>
-          <div className='image-section' id='second-intro-container'>
+          {/* <div className='image-section' id='second-intro-container'>
             <div className='interactive-image-caption' id='caption-2'>
               <h3 className='kirsty-lewis-second-intro-text'><span className='drop-cap'>Mona Kattan</span> is a beauty entrepreneur, fragrance connoisseur and co-founder of Huda Beauty. With a background in finance and PR, Mona created Kayali to share her love of storytelling through scent and she continues to shape the fragrance space with innovative notes and regular launches.</h3>
             </div>
             <div className='second-intro-divider'></div>
             <Image src={MonaKattan2} alt='mary-greenwell' id='kirsty-lewis-2' />
-          </div>
+          </div> */}
           <div className='featured-article-text-section'>
             <p className='featured-article-subheader'>Who or what inspired you to fall in love with fragrance?</p>
             <p className='featured-article-paragraph'>I've been obsessed with fragrances my whole life. But when I moved to the UAE from America, something shifted. The fragrance culture here is on another level; there's so much richness, intention, and respect for scent. People here use perfume to express emotion, status, and identity - it's so layered. That was really what deepened my love for fragrance. It became more than just a beauty product. It became something sacred.</p>
