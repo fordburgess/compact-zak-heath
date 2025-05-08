@@ -150,14 +150,13 @@ body {
   width: 100%;
   object-fit: cover;
   object-position: center;
+  margin-bottom: 10px;
 }
 
 .lisa-scroll-test {
-  /* position: absolute; */
-  height: 200vh;
+  /* display: none; */
+  height: 100vh;
   width: 100vw;
-  /* top: 0; */
-  /* background-color: #e1070096; */
 }
 
 .interactive-image-caption {
@@ -353,6 +352,7 @@ body {
 
   #section-2 img {
     width: 40%;
+    margin-bottom: 0;
   }
 
   .featured-paragraph-text {
@@ -365,5 +365,10 @@ body {
     right: 15%;
     opacity: 0;
     width: 400px;
+  }
+
+  .lisa-scroll-test {
+    height: 200vh;
+    width: 100vw;
   }
 }

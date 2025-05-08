@@ -126,18 +126,19 @@ const LisaEldridge = () => {
         pin: true,
         scrub: true,
       });
+
+      gsap.to('#section-3', {
+        y: -200,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#section-3',
+          start: 'top 110%',
+          end: 'top center',
+          scrub: true
+        }
+      })
     }
 
-    gsap.to('#section-3', {
-      y: -200,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#section-3',
-        start: 'top 110%',
-        end: 'top center',
-        scrub: true
-      }
-    })
 
     gsap.fromTo("#mary-greenwell-image",
       { x: "-100%", opacity: 0 },
