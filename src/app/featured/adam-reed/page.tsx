@@ -45,6 +45,18 @@ const AdamReed = () => {
       invalidateOnRefresh: true,
     })
 
+    gsap.to('#section-1', {
+      y: -500,
+      opacity: 0,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '#section-2',
+        start: 'top 40%',
+        end: 'top top',
+        scrub: true
+      }
+    })
+
     if (!mobile) {
 
       gsap.to(['.text-section-title', '.featured-paragraph-text'],  {
@@ -54,18 +66,6 @@ const AdamReed = () => {
           trigger: '.text-section',
           start: 'top 30%',
           end: 'bottom bottom',
-          scrub: true
-        }
-      })
-
-      gsap.to('#section-1', {
-        y: -500,
-        opacity: 0,
-        ease: 'power1.inOut',
-        scrollTrigger: {
-          trigger: '#section-2',
-          start: 'top 40%',
-          end: 'top top',
           scrub: true
         }
       })
