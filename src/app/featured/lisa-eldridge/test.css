@@ -141,7 +141,7 @@ body {
 
 .pin-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
 #section-2 img {
@@ -335,5 +335,10 @@ body {
   .featured-title-section-2 h1 {
     text-align: left;
     font-weight: 600;
+  }
+
+  .pin-container {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
