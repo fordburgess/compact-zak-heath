@@ -9,6 +9,7 @@ import AdamReedHair2 from '../../../assets/images/adam-reed-hair-2.jpg';
 import AdamReedHair3 from '../../../assets/images/adam-reed-hair-3.webp';
 import AdamReedHair4 from '../../../assets/images/adam-reed-hair-4.webp';
 import JulienDys from '../../../assets/images/julien-dys.webp';
+import TrevorSorbie from '../../../assets/images/trevor-sorbie.jpg';
 import LisaEldridge2 from '../../../assets/images/lisa-eldridge-2.webp';
 import LisaEldridge4 from '../../../assets/images/lisa-eldridge-4.webp';
 import LisaEldridge8 from '../../../assets/images/lisa-eldridge-8.jpg';
@@ -331,33 +332,72 @@ const LisaEldridge = () => {
           </div>
           <div className='lisa-scroll-test'></div>
           <div className='text-section' id='section-3'>
-            <h1 className='text-section-title'>When you were 21, who did you look up to in the beauty industry?</h1>
-            <p className='featured-paragraph-text' style={{ marginBottom: '10px'}}>Oh, absolutely. I didn’t know anyone in the industry, and there wasn’t any internet back then to guide me, so it was tricky to figure out, especially wanting to go into the fashion industry. I’d buy magazines to study credits like "Mary Greenwell for Debbie Walters" and figure out which agency to call and who was repping each other. Networking was painstaking, you had to meet people at clubs or get in touch with agencies directly and say, “I would love to assist, or something”. I did a lot of unpaid work to build my portfolio, working with new models like Kate Moss who were just coming into the industry.</p>
-            <p className='featured-paragraph-text'>At one point, I heard someone say they got a magazine cover because their boyfriend was the editor, and I remember thinking, oh my god, I hope it’s literally not going to come down to who you know. But in the end, hard work and perseverance paid off. By the time I was 23, I was signed by an agency alongside legends like Sam McKnight MBE, Mary Greenwell and major major people - I was kind of the baby. That was huge. At first, I was asked why I wanted to assist, but I had only worked with up-and-coming models and I didn’t know how to react when a big supermodel or celebrity walked into the room; however, I quickly learnt that you just treat everybody the same.</p>
+            <h1 className='text-section-title'>What was your first interaction with hair?</h1>
+            <p className='featured-paragraph-text' style={{ marginBottom: '10px'}}>It started with my Nan. As a boy, I’d go with her to this tiny salon in a tiny village in Somerset called Jenny’s Cut & Shape. It was full of old ladies getting shampoos and cut and I felt at home, me in a salon I did. I used to cut my sister’s and best friends hair from a young age and I guess that is why I have always worked in a salon and not been just a session stylist because I love that sense of community. I was only four, but they had me cleaning rollers, sweeping the floor, and making coffee. That salon gave me a sense of belonging that school never did, because I felt like I wasn’t very good at school, but in a salon I thrived, and I loved it.</p>
           </div>
           <div className='image-section' id='image-section-1'>
-            <Image src={LisaEldridge4} alt='mary-greenwell' id='mary-greenwell-image' />
+            <Image src={TrevorSorbie} alt='mary-greenwell' id='mary-greenwell-image' />
             <div className='mary-greenwell-line'></div>
             <div className='interactive-image-caption' id='caption-2'>
-              <p style={{ marginBottom: '10px' }}>Mary Greenwell is one of the world’s most sought-after makeup artists, known for setting beauty trends on the runway and earning numerous industry accolades. Her work has been shown in Vogue Italia, Vogue UK, and Vogue US, and she has collaborated with legendary photographers such as Patrick Demarchelier and Peter Lindbergh. Most notably, she helped redefine the image of Princess Diana, contributing to some of her most iconic photo shoots. In 2015, Mary was honored with the Lifetime Achievement Award from CEW and in 2023, she was appointed as an ambassador for the British Beauty Council.</p>
-              <p style={{ marginBottom: '10px' }}>Sam McKnight MBE is one of the most iconic hair stylists in fashion history, renowned for collaborating on over 200 Vogue covers in campaigns for Fendi, Chanel and Balmain. He famously crafted Princess Diana’s signature short hairstyle and has worked with legends like Naomi Campbell and Lady Gaga. In 2023, he was awarded an MBE for his services in fashion and beauty and continues to influence the industry with his brand, Hair by Sam McKnight.</p>
-              <p>Mary Greenwell and Princess Diana with Hairstylist Sam McKnight MBE (Image credit: Pinterest).</p>
+              <p style={{ marginBottom: '10px' }}>Trevor Sorbie was a Scottish Hairdresser who died in 2024 after a long history of working in the beauty industry and renowned for his innovative techniques and transformative hairstyles. His signature “Scrunch” hairstyle (the style in this image) became a hallmark of the late 1970s fashion scenes and were featured regularly in publications like Vogue. Trevor founded the charity My New Hair, providing support and wig customisation for individuals experiencing hair loss. (Image credit: Hairdressers Journal)</p>
             </div>
           </div>
           <div className='column-wrapper'>
             <div className='text-column-wrapper'>
               <div className='text-section' id='section-4'>
-                <h1 className='text-section-title'>What was your favourite club when you were 21?</h1>
-                <p className='featured-paragraph-text'>The WAG Club was the place to be. So many cool people in fashion and creative industries hung out there. Clubs like that were great for meeting people and building connections. I’d speak to the people from Models One and ask whether they had any new models and that’s how I got my portfolio together.</p>
+                <h1 className='text-section-title'>Where did you go clubbing in London at 21?</h1>
+                <p className='featured-paragraph-text'>I went to Heaven, Velvet Underground, and a bar in Soho called Ricky Ticks, a hub for fashion people. Moving to London at 22, I immersed myself in these places to network and meet people, so I went three to four times a week, I loved it and I felt like I was with my people. I even met Jean Paul Gaultier at Heaven! I was wearing a Jean Paul Gaultier kilt, and so was he. I walked right up to him. Networking then was all face-to-face, and I loved it, so I made sure I was in the right places to meet the right people and you’d meet the most amazing people in Heaven.</p>
               </div>
               <div className='text-section' id='section-5'>
-                <h1 className='text-section-title'>What was the first big show you worked on?</h1>
-                <p className='featured-paragraph-text'>It was with Mary, assisting at shows like Rifat Ozbek in London and Romeo Gigli in Paris. I remember rushing through makeup at my first big show, and Mary told me to slow down and take my time. I was like, oh my god, okay!</p>
+                <h1 className='text-section-title'>How did you approach networking when you didn’t know anyone?</h1>
+                <p className='featured-paragraph-text'>I’d go up to people, compliment their work, and start conversations. My strategy was also to meet PRs face-to-face who could get me into events and who looked after these big names. The party scene was much bigger back then because social media wasn’t around to let people know what was happening, it was more exclusive, so having the PR’s numbers was a better way. Once there, my motto was kill people with kindness, so I avoided being obnoxious and focused on being helpful and approachable because that is what stood out.</p>
               </div>
               <div className='text-section' id='section-6'>
-                <h1 className='text-section-title'>What advice would you give your 21-year-old self?</h1>
-                <p className='featured-paragraph-text'>I’d tell her to stay confident and not compare herself to others but explore the ideas she had and wanted to share. In a creative industry, it’s fuelled by ideas, there’s no such thing as a bad one. I wish I’d spoken up more on shoots when I had ideas. Now, I’m much more comfortable experimenting. For instance, I recently tried a bold blue eyeshadow look during a Claudia Schiffer shoot for Pop Magazine. It didn’t work, and we took it off, but that’s okay! It’s all part of the creative process.</p>
+                <h1>Did you face any setbacks in the industry?</h1>
+                <p className='featured-paragraph-text'>Yes. I now understand that some of my struggles were tied to neurodiversity. I’ve always been sensitive to negativity and could feel overwhelmed in certain situations. Another challenge was proving that I wasn’t just a salon hairdresser and that I could do creative work and could manage a team behind the scenes at Fashion Week, and I had to battle with this. I persevered and assisted Luigi Murenu, an Italian hairstylist early on in my career, which helped me break through those barriers by supporting everything I wanted to do. They were amazing.</p>
                 <p className='featured-paragraph-text'>Don’t think you’re silly or something and don’t be afraid to explore, speak your mind, and trust your instincts. There’s good ideas, bad ideas, but actually they’re all good.</p>
+              </div>
+              <div className='text-section' id='section-7'>
+                <h1>What was your very first show?</h1>
+                <p className='featured-paragraph-text'>It was for Red or Dead in 1996. They were a revolutionary streetwear brand who had a shop in Covent Garden, and I was obsessed with their clothes. It felt like a full-circle moment that they were my first London Fashion Week show since I loved their clothes and this made me massively believe in manifestation and putting things into the universe . From there, I worked with other amazing designers, including Andrew Groves, who was McQueen’s boyfriend at the time and whose shows really pushed boundaries - for example, one of his shows was called Cociane Nights and down the runway was a line of “coke”. I then started doing Julian McDonald, Matthew Williamson and then both the commercial and high-end fashion. I was really lucky that my trajectory took me to do all of that.</p>
+              </div>
+              <div className='text-section' id='section-8'>
+                <h1>What’s been your biggest “pinch me” moment so far?</h1>
+                <p className='featured-paragraph-text'>You know what, it was doing Madonna’s hair for her Me Against the Music video with Britney Spears. I’ve always been a huge Madonna fan, so stepping into that role was surreal.</p>
+                <p className='featured-paragraph-text'>For £60 in 2002, I bought some black heels from a charity auction on the Old Icon Madonna fan club as I am the biggest Madonna fan. Luigi Murenu used to do her hair but he was in Paris to do the Victor and Rolf show, so he asked me to go instead to Silver Cup Studios in New York. That was insane. Whilst doing her hair, Like A Prayer was being played on the radio, it felt like a everything had come full circle.</p>
+              </div>
+              <div className='text-section' id='section-9'>
+                <h1>Did you attend beauty school?</h1>
+                <p className='featured-paragraph-text'>Yes, I worked in a salon and attended beauty school once a week to get my City & Guilds qualification and the school was called SCAT, Somerset College of Arts. Then it was very in- depth, we even learned how to make shampoo and perm solutions from scratch. When I moved to London at the age of twenty-two, I started at Charles Worthington.</p>
+                <p className='featured-paragraph-text'>Don’t think you’re silly or something and don’t be afraid to explore, speak your mind, and trust your instincts. There’s good ideas, bad ideas, but actually they’re all good.</p>
+              </div>
+              <div className='text-section' id='section-10'>
+                <h1>What’s your favourite fragrance?</h1>
+                <p className='featured-paragraph-text'>Bloody hell, outside of my own line, I would say Diptyque’s 34.</p>
+              </div>
+              <div className='text-section' id='section-11'>
+                <h1>Did you attend beauty school?</h1>
+                <p className='featured-paragraph-text'>Yes, I worked in a salon and attended beauty school once a week to get my City & Guilds qualification and the school was called SCAT, Somerset College of Arts. Then it was very in- depth, we even learned how to make shampoo and perm solutions from scratch. When I moved to London at the age of twenty-two, I started at Charles Worthington.</p>
+              </div>
+              <div className='text-section' id='section-11'>
+                <h1>Did you attend beauty school?</h1>
+                <p className='featured-paragraph-text'>Yes, I worked in a salon and attended beauty school once a week to get my City & Guilds qualification and the school was called SCAT, Somerset College of Arts. Then it was very in- depth, we even learned how to make shampoo and perm solutions from scratch. When I moved to London at the age of twenty-two, I started at Charles Worthington.</p>
+              </div>
+              <div className='text-section' id='section-12'>
+                <h1>Your go-to restaurant in London?</h1>
+                <p className='featured-paragraph-text'>Som Saa in Spitalfields. It’s a Northern Thai restaurant that started as a pop-up. I love the community spirit of it but the food above anything is the best Thai food outside of Thailand.</p>
+              </div>
+              <div className='text-section' id='section-13'>
+                <h1>Is there a fashion item you regret buying?</h1>
+                <p className='featured-paragraph-text'>I’ve always used clothes as a bit of armour. I bought an outfit from a Central Saint Martins student because I loved what she made; however, I just felt uncomfortable in it. It wasn’t the outfit, it was me in it. Once, I fell down the escalator at Holborn Station wearing platform Buffalo boots. That was definitely a regret! I’ve always loved wearing skirts, but one I bought was too poofy and it was just so wrong for me.</p>
+              </div>
+              <div className='text-section' id='section-14'>
+                <h1>What would you tell your 21-year-old self now?</h1>
+                <p className='featured-paragraph-text'>To always be proud of your decisions, because long term, it’s those things that give me the drive to carry on.</p>
+              </div>
+              <div className='text-section' id='section-15'>
+                <h1>Do you think your 21-year-old you would be like, fucking hell this is crazy?</h1>
+                <p className='featured-paragraph-text'>Without any shadow of a doubt. I was bullied and literally my whole life there have been people saying things; however, I hate confrontation and it’s the neurodiversity of understanding it. People really took the piss, but actually, every time I’ve gone with my gut, they’re the things that I’m proud of and it’s paid off, I did it and I’m still doing it.</p>
               </div>
             </div>
             <div className='image-column'>

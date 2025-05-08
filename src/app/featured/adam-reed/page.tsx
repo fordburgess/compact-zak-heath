@@ -428,12 +428,6 @@ const AdamReed = () => {
           </div>
           <div className='column-wrapper'>
             <div style={{ width: '70%' }}>
-              {/* <div style={{ height: '50vh', width: '50vw', backgroundColor: 'red',  }}></div> */}
-              {/* <div style={{ height: '50vh', width: '50vw', backgroundColor: 'green',  }}></div> */}
-              {/* <div style={{ height: '50vh', width: '50vw', backgroundColor: 'blue',  }}></div> */}
-              {/* <div style={{ height: '50vh', width: '50vw', backgroundColor: 'red', opacity: 0 }}></div>
-              <div style={{ height: '50vh', width: '50vw', backgroundColor: 'red', opacity: 0 }}></div>
-              <div style={{ height: '50vh', width: '50vw', backgroundColor: 'red', opacity: 0 }}></div> */}
               <div className='text-section' id='section-4'>
                 <h1 className='text-section-title'>Where did you go clubbing in London at 21?</h1>
                 <p className='featured-paragraph-text'>I went to Heaven, Velvet Underground, and a bar in Soho called Ricky Ticks, a hub for fashion people. Moving to London at 22, I immersed myself in these places to network and meet people, so I went three to four times a week, I loved it and I felt like I was with my people. I even met Jean Paul Gaultier at Heaven! I was wearing a Jean Paul Gaultier kilt, and so was he. I walked right up to him. Networking then was all face-to-face, and I loved it, so I made sure I was in the right places to meet the right people and you’d meet the most amazing people in Heaven.</p>
