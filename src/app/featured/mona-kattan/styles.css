@@ -305,12 +305,9 @@ html, body {
   font-style: italic;
 }
 
-#first-trans-caption {
-  position: absolute;
-  top: 80%;
-  left: 50%;
-  transform: translate(-50%, -80%);
-  text-wrap: nowrap;
+#second-image-trans {
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 #zak-and-lisa {
@@ -446,6 +443,7 @@ html, body {
 
   #first-trans-caption {
     font-size: 1.25rem !important;
+    position: absolute;
     top: 50%;
     left: 60%;
     transform: translate(60%, -50%);
@@ -454,6 +452,7 @@ html, body {
   #second-image-trans {
     padding: 50px 0;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
   }

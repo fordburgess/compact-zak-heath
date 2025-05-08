@@ -191,60 +191,66 @@ const MonaKattan = () => {
       }
     })
 
-    const line2Props: any = {
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: '#first-image-trans',
-        start: 'top 60%',
-        end: 'bottom 60%',
-        scrub: true,
-      }
-    };
-    const scaleAxis = mobile ? 'scaleY' : 'scaleX';
-    const opacity = 1;
-    line2Props[scaleAxis] = mobile ? 8 : 10;
-    line2Props[opacity];
-    gsap.to('.fctc-line-2', line2Props);
+    if (!mobile) {
 
-    const caption2props: any = {
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: '#first-image-trans',
-        start: 'top 80%',
-        end: 'bottom bottom',
-        scrub: true,
+      const line2Props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#first-image-trans',
+          start: 'top 60%',
+          end: 'bottom 60%',
+          scrub: true,
+        }
+      };
+      const scaleAxis = mobile ? 'scaleY' : 'scaleX';
+      const opacity = 1;
+      line2Props[scaleAxis] = mobile ? 8 : 10;
+      line2Props[opacity];
+      gsap.to('.fctc-line-2', line2Props);
+
+      const caption2props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#first-image-trans',
+          start: 'top 80%',
+          end: 'bottom bottom',
+          scrub: true,
+        }
       }
+      const transitionDirection = mobile ? 'y' : 'x';
+      caption2props[transitionDirection] = mobile ? -50 : -1;
+      gsap.to('#first-trans-caption', caption2props);
     }
-    const transitionDirection = mobile ? 'y' : 'x';
-    caption2props[transitionDirection] = mobile ? -50 : -1;
-    gsap.to('#first-trans-caption', caption2props);
 
-    const line4Props: any = {
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: '#second-image-trans',
-        start: 'top 60%',
-        end: 'bottom 60%',
-        scrub: true,
+    if (!mobile) {
+
+      const line4Props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#second-image-trans',
+          start: 'top 60%',
+          end: 'bottom 60%',
+          scrub: true,
+        }
+      };
+      const scaleAxisLine4 = mobile ? 'scaleY' : 'scaleX';
+      line4Props[scaleAxisLine4] = 7
+      gsap.to('.fctc-line-4', line4Props);
+
+
+      const caption4props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#second-image-trans',
+          start: 'top 60%',
+          end: 'bottom 60%',
+          scrub: true,
+        }
       }
-    };
-    const scaleAxisLine4 = mobile ? 'scaleY' : 'scaleX';
-    line4Props[scaleAxisLine4] = 7
-    gsap.to('.fctc-line-4', line4Props);
-
-
-    const caption4props: any = {
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: '#second-image-trans',
-        start: 'top 60%',
-        end: 'bottom 60%',
-        scrub: true,
-      }
+      const transitionDirectionCaption4 = mobile ? 'y' : 'x';
+      caption4props[transitionDirectionCaption4] = mobile ? 50 : '10px';
+      gsap.to('#second-trans-caption', caption4props);
     }
-    const transitionDirectionCaption4 = mobile ? 'y' : 'x';
-    caption4props[transitionDirectionCaption4] = mobile ? 50 : '10px';
-    gsap.to('#second-trans-caption', caption4props);
   }, [])
 
   useEffect(() => {
@@ -330,7 +336,7 @@ const MonaKattan = () => {
             </div>
             <p className='featured-article-subheader'>What would you include if you were to make a fragrance inspired by me?</p>
             <p className='featured-article-paragraph'>Oh my God, you are literally sunshine in human form! I'd definitely start with solar notes for that radiant, happy energy. I'd add vanilla because I'm a Kayali girl through and through. Then I'd layer in your favourite fruits, maybe a soft spice, and we'd have to figure it out together for the dry down. But it would be joyful, bright and warm.</p>
-            <div className='dream-room-transition-container' id='second-image-trans'>
+            <div className='featured-transition-container' id='second-image-trans'>
               <p className='image-caption' id="second-trans-caption">Mona Kattan and I in 2023 inside<br/>of her fragrance wardrobe in Dubai!</p>
               <div className='fctc-line-4'></div>
               <Image src={MonaKattan4} id='zak-and-lisa' alt='zak-and-lisa'/>
