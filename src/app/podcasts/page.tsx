@@ -153,7 +153,7 @@ const Audio = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1 }}
             >
-              AUDIO
+              PODCASTS
             </motion.h1>
           </div>
           <div className='subtitle-container'>
