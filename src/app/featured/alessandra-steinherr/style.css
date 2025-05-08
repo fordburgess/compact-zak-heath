@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
 #spring-container-background {
   position: fixed;
   top: 0;
@@ -9,68 +14,39 @@
 }
 
 .featured-scroll-container {
-
   width: 100%;
   height: 400vh;
   backdrop-filter: blur(3px);
-  /* position: absolute;
-  top: 0%;
-  left: 0; */
 }
 
 .featured-title-section {
+  height: 70vh;
   display: flex;
-  min-width: 90%;
-  min-height: 100vh;
-  padding: 0 100px;
-  justify-content: space-between;
-  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.featured-title-section h1 {
-  width: 40%;
-  text-align: left;
-  font-weight: 600;
-  /* font-family: 'Playfair'; */
-  font-size: 3rem;
 }
 
 .featured-profile-image {
-  height: 700px;
-  width: 50%;
-  object-fit: cover;
-  object-position: center;
+  height: 65%;
+  width: 80%;
+  margin-bottom: 10px;
 }
 
-.mags {
-  width: fit-content;
-  padding: 50px 200px;
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-  pointer-events: none;
+#title-box {
+  width: 80%;
 }
 
-.horizontal-scroll-item {
-  height: 500px;
-  min-width: 400px;
-  border: solid 2px #fff;
-  margin-right: 100px;
-  flex-shrink: 0;
+.strong-title {
+  font-family: 'Playfair';
+  font-weight: 300;
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
-/* test only */
-
-
-body {
-  margin:0;
-  /* background:#15151e; */
-  overflow-x:hidden;
+.title-subline {
+  font-size: 1.25rem;
 }
-
 
 .mag-covers {
   width: fit-content;
@@ -78,16 +54,6 @@ body {
   flex-wrap: nowrap;
   align-items: center;
   padding: 0 100px;
-}
-
-.mag-covers h2 {
-  font-family: 'Staatliches', cursive;
-  font-size: 30vw;
-  flex-shrink:0;
-  padding-right:0.3em;
-  padding-left:0.3em;
-  color:#e10600;
-  margin:0;
 }
 
 .mag-covers h3 {
@@ -395,5 +361,42 @@ body {
 
   p {
     font-family: 'Playfair';
+  }
+}
+
+@media (min-width: 1000px) {
+
+  .featured-title-section {
+    display: flex;
+    flex-direction: row;
+    min-width: 90%;
+    min-height: 100vh;
+    padding: 0 100px;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .featured-profile-image {
+    height: 700px;
+    width: 50%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  #title-box {
+    width: 40%;
+  }
+
+  .strong-title {
+    font-family: 'Playfair';
+    font-weight: 300;
+    font-size: 4rem;
+  }
+
+  .title-subline {
+    font-size: 2rem;
   }
 }

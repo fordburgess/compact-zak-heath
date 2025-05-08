@@ -134,15 +134,6 @@ const AlessandraSteinherr = () => {
       scrub: true,
     });
 
-    // ScrollTrigger.create({
-    //   trigger: '.later-text',
-    //   start: "top top",
-    //   end: "+=100%",
-    //   pin: '.later-text',
-    //   pinSpacing: false,
-    //   scrub: true,
-    // });
-
     gsap.fromTo(".glamour-mag-image",
       { x: "-100%", opacity: 0 },
       {
@@ -214,7 +205,10 @@ const AlessandraSteinherr = () => {
         <div style={{ zIndex: 10 }}>
           <div className='featured-title-section'>
             <Image src={AlessandraSteinherrProfile} alt='pfp' className='featured-profile-image'/>
-            <h1>In Conversation with Alessandra Steinherr:<br/> <strong style={{ fontWeight: '300', fontSize: '2rem' }}>From Print Journalism to Digital Content</strong></h1>
+            <div id='title-box'>
+              <h1 className='strong-title'>In Conversation with Alessandra Steinherr:</h1>
+              <h1 className='title-subline'>From Print Journalism to Digital Content</h1>
+            </div>
           </div>
         </div>
         <div className='alessandra-intro'>
