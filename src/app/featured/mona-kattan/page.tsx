@@ -272,7 +272,7 @@ const MonaKattan = () => {
         <div style={{ zIndex: 10 }}>
           <div className='featured-title-section-2'>
             <Image src={MonaKattanProfile} alt='pfp' className='featured-profile-image'/>
-            <h1><span className='strong-title'>In Conversation With Mona Kattan:</span><br/> <span className='' style={{ fontWeight: '300', fontSize: '2rem' }}>Being a fragrance CEO</span></h1>
+            <h1><span className='strong-title'>In Conversation With Mona Kattan:</span><br/> <span className='title-subline'>Being a fragrance CEO</span></h1>
           </div>
           {/* <div className='image-section' id='second-intro-container'>
             <div className='interactive-image-caption' id='caption-2'>

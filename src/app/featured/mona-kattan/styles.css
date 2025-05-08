@@ -26,7 +26,11 @@
   font-family: 'Playfair';
   font-weight: 300;
   font-size: 2rem;
-  width: 80%
+  width: 80%;
+}
+
+.title-subline {
+  font-size: 1.5rem;
 }
 
 .featured-title-section-2 h1 {
@@ -360,6 +364,10 @@ html, body {
     font-family: 'Playfair';
     font-weight: 300;
     font-size: 4rem;
+  }
+
+  .title-subline {
+    font-size: 2rem;
   }
 
   .featured-title-section-2 h1 {
