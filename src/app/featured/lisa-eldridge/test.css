@@ -30,19 +30,26 @@
   position: relative;
 }
 
-.featured-title-section-2 h1 {
-  width: 40%;
-  text-align: left;
-  font-weight: 600;
-  /* font-family: 'Playfair'; */
-  font-size: 3rem;
-}
-
 .featured-profile-image {
   height: 700px;
   width: 50%;
   object-fit: cover;
   object-position: center;
+}
+
+#title-box {
+  width: 80%;
+}
+
+.strong-title {
+  font-family: 'Playfair';
+  font-weight: 300;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.title-subline {
+  font-size: 1.25rem;
 }
 
 .mags {
@@ -269,4 +276,46 @@ body {
   transform: translateX(-50%);
   width: 90%;
   opacity: 0;
+}
+
+@media (min-width: 1000px) {
+  .featured-title-section-2 {
+    padding: 0;
+    height: 100vh;
+    padding: 0 100px;
+    box-sizing: border-box;
+  }
+
+  .featured-profile-image {
+    height: 700px;
+    width: 50%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  #title-box {
+    width: 40%;
+  }
+
+  .second-intro-divider {
+    display: block;
+    height: 1px;
+    width: 100px;
+    background-color: #fff;
+  }
+
+  .strong-title {
+    font-family: 'Playfair';
+    font-weight: 300;
+    font-size: 4rem;
+  }
+
+  .title-subline {
+    font-size: 2rem;
+  }
+
+  .featured-title-section-2 h1 {
+    text-align: left;
+    font-weight: 600;
+  }
 }

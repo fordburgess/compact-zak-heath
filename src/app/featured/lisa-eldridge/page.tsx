@@ -290,7 +290,10 @@ const LisaEldridge = () => {
         <div style={{ zIndex: 10 }}>
           <div className='featured-title-section-2'>
             <Image src={LisaEldrigdeProfile} alt='pfp' className='featured-profile-image'/>
-            <h1>In Conversation With Lisa Eldridge MBE:<br/> <strong style={{ fontWeight: '300', fontSize: '2rem' }}>Becoming A World Class Makeup Artist</strong></h1>
+            <div id='title-box'>
+              <h1 className='strong-title'>In Conversation With Lisa Eldridge MBE:</h1>
+              <h1 className='title-subline'>Becoming A World Class Makeup Artist</h1>
+            </div>
           </div>
           <div className="mag-wrapper">
             <div className="mag-covers">
