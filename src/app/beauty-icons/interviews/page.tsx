@@ -26,19 +26,19 @@ const interviews = [
     pfp: MillieKendall,
     name: 'Millie Kendall',
     job: 'Beauty CEO',
-    href: '/featured/millie-kendall'
+    href: '/articles/millie-kendall'
   },
   {
     pfp: LisaEldridge,
     name: 'Lisa Eldridge',
     job: 'Celebrity Makeup Artist',
-    href: '/featured/lisa-eldridge'
+    href: '/articles/lisa-eldridge'
   },
   {
     pfp: AlessandraSteinherr,
     name: 'Alessandra Steinherr',
     job: 'Beauty Editor + Influencer',
-    href: '/featured/alessandra-steinherr'
+    href: '/articles/alessandra-steinherr'
   },
   {
     pfp: PatriciaBright,
@@ -50,13 +50,13 @@ const interviews = [
     pfp: AdamReed,
     name: 'Adam Reed',
     job: 'Hairstylist',
-    href: '/featured/adam-reed'
+    href: '/articles/adam-reed'
   },
   {
     pfp: MonaKattan,
     name: 'Mona Kattan',
     job: 'Fragrance CEO',
-    href: '/featured/mona-kattan'
+    href: '/articles/mona-kattan'
   },
   {
     pfp: ShakeelMurtaza,
@@ -68,7 +68,7 @@ const interviews = [
     pfp: KirstyLewis,
     name: 'Kirsty Lewis',
     job: 'Head of Beauty PR',
-    href: '/featured/kirsty-lewis'
+    href: '/articles/kirsty-lewis'
   },
   {
     pfp: Ingeborg,
@@ -80,7 +80,7 @@ const interviews = [
     pfp: CarolynAronson,
     name: 'Carolyn Aronson',
     job: 'Brand Founder',
-    href: '/featured/carolyn-aronson'
+    href: '/articles/carolyn-aronson'
   },
   {
     pfp: Placeholder,
@@ -92,7 +92,7 @@ const interviews = [
     pfp: TillySanders,
     name: 'Tilly Sanders',
     job: 'Beauty PR',
-    href: '/featured/tilly-sanders'
+    href: '/articles/tilly-sanders'
   },
   {
     pfp: ZakHeath,
