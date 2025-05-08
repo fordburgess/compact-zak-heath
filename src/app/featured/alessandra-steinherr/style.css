@@ -107,13 +107,13 @@ body {
 }
 
 .later-text {
-  /* height: 50vh; */
   width: 100vw;
-  padding: 50px 100px;
+  padding: 20px;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: 20px;
 }
 
 .later-text h1, .text-section h1 {
@@ -325,6 +325,7 @@ body {
   align-items: center;
   padding: 0 20px;
   box-sizing: border-box;
+  margin-bottom: 20px;
 }
 
 .glamour-mag-image {
@@ -501,6 +502,7 @@ body {
     align-items: center;
     padding: 0 20px;
     box-sizing: border-box;
+    margin-bottom: 0;
   }
 
   .glamour-mag-image {
@@ -525,5 +527,18 @@ body {
     p {
       font-family: 'Playfair';
     }
+  }
+
+  .later-text {
+    width: 100vw;
+    padding: 50px 100px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .later-text div {
+    width: 70%;
   }
 }
