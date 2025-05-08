@@ -137,141 +137,141 @@ const LisaEldridge = () => {
           scrub: true
         }
       })
+
+      gsap.fromTo("#mary-greenwell-image",
+        { x: "-100%", opacity: 0 },
+        {
+          x: "0%",
+          opacity: 1,
+          ease: "power1.out",
+          scrollTrigger: {
+            trigger: "#image-section-1",
+            start: "top top",
+            end: "+=100%",
+            scrub: true,
+          }
+        }
+      );
+
+      gsap.fromTo("#caption-2",
+        { x: "100%", opacity: 0 },
+        {
+          x: "0%",
+          opacity: 1,
+          ease: "power1.out",
+          scrollTrigger: {
+            trigger: "#image-section-1",
+            start: "top top+=20%", // slight delay
+            end: "+=100%",
+            scrub: true,
+          }
+        }
+      );
+
+      gsap.fromTo(".mary-greenwell-line",
+        { scaleX: 0 },
+        {
+          scaleX: 1,
+          ease: "power1.inOut",
+          scrollTrigger: {
+            trigger: "#image-section-1",
+            start: "top top+=10%",
+            end: "+=80%",
+            scrub: true,
+          }
+        }
+      );
+      gsap.to('#section-4', {
+        opacity: 1,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#section-4',
+          start: 'top center',
+          end: 'top -100%',
+          scrub: true,
+        }
+      })
+
+      gsap.to('#section-5', {
+        opacity: 1,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#section-5',
+          start: 'top -50%',
+          end: 'top -100%',
+          scrub: true,
+        }
+      })
+
+      gsap.to('#section-6', {
+        opacity: 1,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#section-6',
+          start: 'top -50%',
+          end: 'top -100%',
+          scrub: true,
+        }
+      })
+
+      ScrollTrigger.create({
+        trigger: "#section-4",
+        start: "top top",
+        end: "+=100%",
+        pin: true,
+        scrub: true,
+      });
+
+      ScrollTrigger.create({
+        trigger: "#section-5",
+        start: "top top",
+        end: "+=50%",
+        pin: true,
+        scrub: true,
+      });
+
+      ScrollTrigger.create({
+        trigger: "#section-6",
+        start: "top top",
+        end: "+=50%",
+        pin: true,
+        scrub: true,
+      });
+
+      ScrollTrigger.create({
+        trigger: ".image-column",
+        start: "top 10%",
+        end: "+=300%",
+        pin: true,
+        scrub: true,
+      });
+
+      gsap.to('#image-item-1', {
+        opacity: 0,
+        y: -100,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#section-4',
+          start: 'top -20%',
+          end: 'bottom top',
+          scrub: true,
+        }
+      })
+
+      gsap.to('#image-item-2', {
+        opacity: 1,
+        top: '0%',
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#section-5',
+          start: 'top center',
+          end: 'top top',
+          scrub: true,
+        }
+      })
     }
 
 
-    gsap.fromTo("#mary-greenwell-image",
-      { x: "-100%", opacity: 0 },
-      {
-        x: "0%",
-        opacity: 1,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: "#image-section-1",
-          start: "top top",
-          end: "+=100%",
-          scrub: true,
-        }
-      }
-    );
-
-    gsap.fromTo("#caption-2",
-      { x: "100%", opacity: 0 },
-      {
-        x: "0%",
-        opacity: 1,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: "#image-section-1",
-          start: "top top+=20%", // slight delay
-          end: "+=100%",
-          scrub: true,
-        }
-      }
-    );
-
-    gsap.fromTo(".mary-greenwell-line",
-      { scaleX: 0 },
-      {
-        scaleX: 1,
-        ease: "power1.inOut",
-        scrollTrigger: {
-          trigger: "#image-section-1",
-          start: "top top+=10%",
-          end: "+=80%",
-          scrub: true,
-        }
-      }
-    );
-
-    gsap.to('#section-4', {
-      opacity: 1,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#section-4',
-        start: 'top center',
-        end: 'top -100%',
-        scrub: true,
-      }
-    })
-
-    gsap.to('#section-5', {
-      opacity: 1,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#section-5',
-        start: 'top -50%',
-        end: 'top -100%',
-        scrub: true,
-      }
-    })
-
-    gsap.to('#section-6', {
-      opacity: 1,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#section-6',
-        start: 'top -50%',
-        end: 'top -100%',
-        scrub: true,
-      }
-    })
-
-    ScrollTrigger.create({
-      trigger: "#section-4",
-      start: "top top",
-      end: "+=100%",
-      pin: true,
-      scrub: true,
-    });
-
-    ScrollTrigger.create({
-      trigger: "#section-5",
-      start: "top top",
-      end: "+=50%",
-      pin: true,
-      scrub: true,
-    });
-
-    ScrollTrigger.create({
-      trigger: "#section-6",
-      start: "top top",
-      end: "+=50%",
-      pin: true,
-      scrub: true,
-    });
-
-    ScrollTrigger.create({
-      trigger: ".image-column",
-      start: "top 10%",
-      end: "+=300%",
-      pin: true,
-      scrub: true,
-    });
-
-    gsap.to('#image-item-1', {
-      opacity: 0,
-      y: -100,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#section-4',
-        start: 'top -20%',
-        end: 'bottom top',
-        scrub: true,
-      }
-    })
-
-    gsap.to('#image-item-2', {
-      opacity: 1,
-      top: '0%',
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#section-5',
-        start: 'top center',
-        end: 'top top',
-        scrub: true,
-      }
-    })
   }, [])
 
   useEffect(() => {
