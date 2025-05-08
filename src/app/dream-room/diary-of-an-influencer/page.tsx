@@ -200,11 +200,8 @@ const DiaryOfInfluencer = () => {
           <div className='title-line-2'></div>
           <motion.p
             className='dream-room-subtitle'
-            // initial={{ x: -50, opacity: 0 }}
-            // animate={{ x: 0, opacity: 1 }}
-            // transition={{ delay: 1.25, duration: 1 }}
           >
-            Contrary to popular belief,<br/>Lorem Ipsum is not simply random text. <br/>It has roots in a piece of classical <br/>Latin literature from 45 BC
+            This industry can feel impossible to break<br/> into - especially when you don’t come from<br/> money or know anyone in it. I didn’t either.<br/> But somehow, I found my way in,<br/> and this is how I did it.
           </motion.p>
           <div className='title-circle-1'></div>
           <div className='title-rectangle-1'></div>
