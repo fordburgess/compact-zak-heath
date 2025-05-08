@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
 #spring-container-background {
   position: fixed;
   top: 0;
@@ -9,68 +14,40 @@
 }
 
 .featured-scroll-container {
-
   width: 100%;
   height: 400vh;
   backdrop-filter: blur(3px);
-  /* position: absolute;
-  top: 0%;
-  left: 0; */
 }
 
 .featured-title-section {
+  height: 70vh;
   display: flex;
-  min-width: 90%;
-  min-height: 100vh;
-  padding: 0 100px;
-  justify-content: space-between;
-  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  position: relative;
-}
-
-.featured-title-section h1 {
-  width: 40%;
-  text-align: left;
-  font-weight: 600;
-  /* font-family: 'Playfair'; */
-  font-size: 3rem;
 }
 
 .featured-profile-image {
-  height: 700px;
-  width: 50%;
-  object-fit: cover;
-  object-position: center;
+  height: 65%;
+  width: 80%;
+  margin-bottom: 10px;
 }
 
-.mags {
-  width: fit-content;
-  padding: 50px 200px;
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-  pointer-events: none;
+#title-box {
+  width: 80%;
 }
 
-.horizontal-scroll-item {
-  height: 500px;
-  min-width: 400px;
-  border: solid 2px #fff;
-  margin-right: 100px;
-  flex-shrink: 0;
+.strong-title {
+  font-family: 'Playfair';
+  font-weight: 300;
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
-/* test only */
-
-
-body {
-  margin:0;
-  /* background:#15151e; */
-  overflow-x:hidden;
+.title-subline {
+  font-size: 1.25rem;
 }
-
 
 .mag-covers {
   width: fit-content;
@@ -78,16 +55,6 @@ body {
   flex-wrap: nowrap;
   align-items: center;
   padding: 0 100px;
-}
-
-.mag-covers h2 {
-  font-family: 'Staatliches', cursive;
-  font-size: 30vw;
-  flex-shrink:0;
-  padding-right:0.3em;
-  padding-left:0.3em;
-  color:#e10600;
-  margin:0;
 }
 
 .mag-covers h3 {
@@ -126,10 +93,8 @@ body {
 
 
 .text-section {
-  min-height: 100vh;
-  max-height: 100vh;
+  padding: 20px;
   min-width: 100vw;
-  padding: 100px;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -137,14 +102,18 @@ body {
   align-items: end;
 }
 
+.text-section div {
+  width: 100%;
+}
+
 .later-text {
-  /* height: 50vh; */
   width: 100vw;
-  padding: 50px 100px;
+  padding: 20px;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: 20px;
 }
 
 .later-text h1, .text-section h1 {
@@ -161,15 +130,8 @@ body {
   font-size: 1.25rem !important;
 }
 
-#section-1, #section-2, #section-3, #section-4, #section-5 {
-  margin-bottom: 60vh;
-  /* max-width: 50%; */
-  /* background-color: red; */
-}
-
-#section-6, #section-7, #section-8, #section-9 {
-  align-items: start !important;
-  margin-bottom: 80vh !important;
+#section-1, #section-2, #section-3, #section-4, #section-5, #section-6, #section-7, #section-8, #section-9 {
+  margin-bottom: 20px;
 }
 
 #section-2 img {
@@ -180,11 +142,9 @@ body {
 }
 
 .alex-scroll-test {
-  /* position: absolute; */
+  display: none;
   height: 200vh;
   width: 100vw;
-  /* top: 0; */
-  /* background-color: #e1070096; */
 }
 
 .interactive-image-caption {
@@ -229,10 +189,6 @@ body {
   transform: translateX(100%);
 }
 
-#scroll-test-2 {
-  background-color: rgba(255, 0, 0, 0.545);
-}
-
 .mary-greenwell-line {
   height: 1px;
   width: 100px;
@@ -275,31 +231,34 @@ body {
 }
 
 .lipstick-container {
+  display: none;
   width: 50vw;
   position: absolute;
   right: -10%;
 }
 
 .second-image-container {
-  width: 50vw;
-  height: 100vh;
-  position: absolute;
-  right: 3%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .second-image-container img {
   height: 500px;
-  width: 350px;
+  width: 100%;
   margin-bottom: 10px;
 }
 
 .second-image-container p {
   font-family: 'Playfair';
-  width: 500px;
+}
+
+.buffer-div, .buffer-div-2, .buffer-div-3 {
+  display: none;
 }
 
 .lipstick-canvas {
@@ -311,23 +270,17 @@ body {
 }
 
 .pin-container {
-  height: 100vh;
+  padding: 20px;
   width: 100vw;
-  padding: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
 }
 
-.alessandro-intro {
-  height: 200vh;
-  background-color: red;
-}
-
 .alessandra-intro-text h2 {
   margin-bottom: 10px;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .alessandra-intro-text p {
@@ -335,7 +288,7 @@ body {
 }
 
 .alessandra-intro-text {
-  width: 50%;
+  width: 100%;
 }
 
 .another-div {
@@ -365,35 +318,227 @@ body {
 }
 
 .glamour-mag-section {
-  height: 100vh;
   width: 100vw;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
   box-sizing: border-box;
-  /* margin-bottom: 100vh; */
+  margin-bottom: 20px;
 }
 
 .glamour-mag-image {
-  height: 95%;
-  width: 40%;
+  height: auto;
+  width: 100%;
   object-fit: cover;
   object-position: center;
-  /* transform: translateX(-100%); */
+  margin-bottom: 20px;
 }
 
 .glamour-line {
+  display: none;
   height: 1px;
   width: 100px;
   background-color: #fff;
 }
 
 .glamour-caption {
-  width: 40%;
+  width: 100%;
   font-size: 1.25rem;
 
   p {
     font-family: 'Playfair';
+  }
+}
+
+@media (min-width: 1000px) {
+
+  .featured-title-section {
+    display: flex;
+    flex-direction: row;
+    min-width: 90%;
+    min-height: 100vh;
+    padding: 0 100px;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .featured-profile-image {
+    height: 700px;
+    width: 50%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  #title-box {
+    width: 40%;
+  }
+
+  .strong-title {
+    font-family: 'Playfair';
+    font-weight: 300;
+    font-size: 4rem;
+  }
+
+  .title-subline {
+    font-size: 2rem;
+  }
+
+  .lipstick-container {
+    display: block;
+    width: 50vw;
+    position: absolute;
+    right: -10%;
+  }
+
+  .alessandra-intro {
+    height: 200vh;
+  }
+
+  .alessandra-intro {
+    height: 200vh;
+  }
+
+  .alessandra-intro-text h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+  }
+
+  .alessandra-intro-text p {
+    font-size: 1.25rem;
+  }
+
+  .alessandra-intro-text {
+    width: 50%;
+  }
+
+  .pin-container {
+    height: 100vh;
+    width: 100vw;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .alex-scroll-test {
+    display: block;
+    height: 200vh;
+    width: 100vw;
+  }
+
+  .text-section {
+    min-height: 100vh;
+    max-height: 100vh;
+    min-width: 100vw;
+    padding: 0 100px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: end;
+  }
+
+  .text-section div {
+    width: 50%;
+  }
+
+  #section-1, #section-2, #section-3, #section-4 {
+    margin-bottom: 60vh;
+  }
+
+  #section-5 {
+    margin-bottom: 80vh;
+  }
+
+  .second-image-container {
+    width: 50vw;
+    height: 100vh;
+    position: absolute;
+    right: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .second-image-container img {
+    height: 500px;
+    width: 350px;
+    margin-bottom: 10px;
+  }
+
+  .second-image-container p {
+    font-family: 'Playfair';
+    width: 500px;
+  }
+
+  .buffer-div {
+    height: 50vh;
+    width: 50vw;
+  }
+
+  .buffer-div-2, .buffer-div-3 {
+    height: 50vh;
+    width: 100vw;
+  }
+
+  #section-6, #section-7, #section-8, #section-9 {
+    align-items: start !important;
+    margin-bottom: 80vh !important;
+  }
+
+  .glamour-mag-section {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin-bottom: 0;
+  }
+
+  .glamour-mag-image {
+    height: 95%;
+    width: 40%;
+    object-fit: cover;
+    object-position: center;
+    /* transform: translateX(-100%); */
+  }
+
+  .glamour-line {
+    display: block;
+    height: 1px;
+    width: 100px;
+    background-color: #fff;
+  }
+
+  .glamour-caption {
+    width: 40%;
+    font-size: 1.25rem;
+
+    p {
+      font-family: 'Playfair';
+    }
+  }
+
+  .later-text {
+    width: 100vw;
+    padding: 50px 100px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .later-text div {
+    width: 70%;
   }
 }
