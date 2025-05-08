@@ -130,13 +130,8 @@ body {
   font-size: 1.25rem !important;
 }
 
-#section-1, #section-2, #section-3, #section-4, #section-5 {
+#section-1, #section-2, #section-3, #section-4, #section-5, #section-6, #section-7, #section-8, #section-9 {
   margin-bottom: 20px;
-}
-
-#section-6, #section-7, #section-8, #section-9 {
-  align-items: start !important;
-  margin-bottom: 80vh !important;
 }
 
 #section-2 img {
@@ -192,10 +187,6 @@ body {
 #caption-2 {
   width: 40%;
   transform: translateX(100%);
-}
-
-#scroll-test-2 {
-  background-color: rgba(255, 0, 0, 0.545);
 }
 
 .mary-greenwell-line {
@@ -495,8 +486,13 @@ body {
     width: 50vw;
   }
 
-  .buffer-div {
+  .buffer-div-2 {
     height: 50vh;
     width: 100vw;
+  }
+
+  #section-6, #section-7, #section-8, #section-9 {
+    align-items: start !important;
+    margin-bottom: 80vh !important;
   }
 }
