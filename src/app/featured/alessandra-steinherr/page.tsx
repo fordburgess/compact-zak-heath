@@ -291,7 +291,7 @@ const AlessandraSteinherr = () => {
             <p>Rosie Huntington-Whiteley on the cover of <span style={{ fontStyle: 'italic' }}>Glamour</span> UK's June 2017 issue. She was styled for the shoot by Alessandra Steinherr.</p>
           </div>
         </div>
-        {/* <div style={{ height: '50vh', width: '100vw' }}></div> */}
+        <div className='buffer-div-3'></div>
         <div className='later-text'>
           <div style={{ width: '70%' }}>
             <h1 className='text-section-title'>You've been on some incredible brand trips. What's the most memorable one?</h1>

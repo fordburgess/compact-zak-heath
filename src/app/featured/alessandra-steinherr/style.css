@@ -257,11 +257,7 @@ body {
   font-family: 'Playfair';
 }
 
-.buffer-div {
-  display: none;
-}
-
-.buffer-div-2 {
+.buffer-div, .buffer-div-2, .buffer-div-3 {
   display: none;
 }
 
@@ -486,7 +482,7 @@ body {
     width: 50vw;
   }
 
-  .buffer-div-2 {
+  .buffer-div-2, .buffer-div-3 {
     height: 50vh;
     width: 100vw;
   }
