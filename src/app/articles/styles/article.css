@@ -51,7 +51,7 @@ html, body {
   font-family: 'Playfair';
   font-weight: 400;
   margin-bottom: 10px;
-  font-size: 2rem;
+  font-size: 2.5rem;
   opacity: 0;
 }
 
@@ -64,7 +64,7 @@ html, body {
 
 .featured-subtitle {
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin-bottom: 20px;
   opacity: 0;
 }
