@@ -371,11 +371,11 @@ const LisaEldridge = () => {
                 <p className='featured-paragraph-text'>Yes, I worked in a salon and attended beauty school once a week to get my City & Guilds qualification and the school was called SCAT, Somerset College of Arts. Then it was very in- depth, we even learned how to make shampoo and perm solutions from scratch. When I moved to London at the age of twenty-two, I started at Charles Worthington.</p>
                 <p className='featured-paragraph-text'>Don’t think you’re silly or something and don’t be afraid to explore, speak your mind, and trust your instincts. There’s good ideas, bad ideas, but actually they’re all good.</p>
               </div>
-              <div className='text-section' id='section-10'>
+              {/* <div className='text-section' id='section-10'>
                 <h1>What’s your favourite fragrance?</h1>
                 <p className='featured-paragraph-text'>Bloody hell, outside of my own line, I would say Diptyque’s 34.</p>
-              </div>
-              <div className='text-section' id='section-11'>
+              </div> */}
+              {/* <div className='text-section' id='section-11'>
                 <h1>Did you attend beauty school?</h1>
                 <p className='featured-paragraph-text'>Yes, I worked in a salon and attended beauty school once a week to get my City & Guilds qualification and the school was called SCAT, Somerset College of Arts. Then it was very in- depth, we even learned how to make shampoo and perm solutions from scratch. When I moved to London at the age of twenty-two, I started at Charles Worthington.</p>
               </div>
@@ -398,9 +398,9 @@ const LisaEldridge = () => {
               <div className='text-section' id='section-15'>
                 <h1>Do you think your 21-year-old you would be like, fucking hell this is crazy?</h1>
                 <p className='featured-paragraph-text'>Without any shadow of a doubt. I was bullied and literally my whole life there have been people saying things; however, I hate confrontation and it’s the neurodiversity of understanding it. People really took the piss, but actually, every time I’ve gone with my gut, they’re the things that I’m proud of and it’s paid off, I did it and I’m still doing it.</p>
-              </div>
+              </div> */}
             </div>
-            <div className='image-column'>
+            {/* <div className='image-column'>
               <div id='image-item-1'>
                 <Image src={LisaEldridge8} alt='lisa-eldridge-at-work' className='image-column-child' id='image-column-1'/>
                 <div className='interactive-image-caption' id='caption-3'>
@@ -413,7 +413,7 @@ const LisaEldridge = () => {
                   <p>Lisa is awarded an MBE</p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
         {/* </div> */}
