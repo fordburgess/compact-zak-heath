@@ -16,182 +16,182 @@ const MonaKattan = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.to(['.text-section-title', '.featured-paragraph-text'],  {
-      opacity: 1,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '.text-section',
-        start: 'top 30%',
-        end: 'bottom bottom',
-        scrub: true
-      }
-    })
-
-    gsap.to('#section-1', {
-      y: -500,
-      opacity: 0,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#section-2',
-        start: 'top 40%',
-        end: 'top top',
-        scrub: true
-      }
-    })
-
-    gsap.to('.section-2-text', {
-      x: -500,
-      opacity: 0,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '.lisa-scroll-test',
-        start: 'top 80%',
-        end: 'top top',
-        scrub: true,
-      }
-    })
-
-    gsap.to('#image-1', {
-      x: -700,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '.lisa-scroll-test',
-        start: 'top 80%',
-        end: 'top top',
-        scrub: true
-      }
-    })
-
-    gsap.to('#caption-1', {
-      opacity: 1,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '.lisa-scroll-test',
-        start: 'top 80%',
-        end: 'top top',
-        scrub: true
-      }
-    })
-
-    ScrollTrigger.create({
-      trigger: "#section-2",
-      start: "top top",
-      end: "bottom top",
-      pin: ".pin-container",
-      pinSpacing: false,
-      scrub: true,
-    });
-
-    gsap.to('#section-3', {
-      y: -200,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#section-3',
-        start: 'top 110%',
-        end: 'top center',
-        scrub: true
-      }
-    })
-
-    ScrollTrigger.create({
-      trigger: "#second-intro-container",
-      start: "top top",
-      end: "+=100%",
-      pin: true,
-      scrub: true,
-    });
-
-    gsap.fromTo("#caption-2",
-      { x: "-100%", opacity: 0 },
-      {
-        x: "0%",
-        opacity: 1,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: "#image-section-1",
-          start: "top top",
-          end: "+=100%",
-          scrub: true,
-        }
-      }
-    );
-
-    gsap.fromTo("#kirsty-lewis-2",
-      { x: "100%", opacity: 0 },
-      {
-        x: "0%",
-        opacity: 1,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: "#image-section-1",
-          start: "top top+=20%", // slight delay
-          end: "+=100%",
-          scrub: true,
-        }
-      }
-    );
-
-    gsap.fromTo(".second-intro-divider",
-      { scaleX: 0 },
-      {
-        scaleX: 1,
-        ease: "power1.inOut",
-        scrollTrigger: {
-          trigger: "#image-section-1",
-          start: "top top+=10%",
-          end: "+=80%",
-          scrub: true,
-        }
-      }
-    );
-
-    gsap.to('#hide-container-1', {
-      height: '300px',
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#featured-trans-1',
-        start: 'top center',
-        end: `bottom ${mobile ? '90%' : '70%' }`,
-        scrub: true
-      }
-    })
-
-    gsap.to('#hide-container-2', {
-      width: `${mobile ? '100%' : '600px'}`,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#featured-trans-2',
-        start: 'top center',
-        end: `bottom ${mobile ? '90%' : '70%' }`,
-        scrub: true
-      }
-    })
-
-    gsap.to('#hide-container-3', {
-      width: mobile ? '100%' : '500px',
-      height: '300px',
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#featured-trans-3',
-        start: 'top center',
-        end: `bottom ${mobile ? '90%' : '70%' }`,
-        scrub: true
-      }
-    })
-
-    gsap.to('#hide-container-4', {
-      width: mobile ? '100%' : '500px',
-      height: '300px',
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#featured-trans-4',
-        start: 'top center',
-        end: `bottom ${mobile ? '90%' : '70%' }`,
-        scrub: true
-      }
-    })
 
     if (!mobile) {
+      gsap.to(['.text-section-title', '.featured-paragraph-text'],  {
+        opacity: 1,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '.text-section',
+          start: 'top 30%',
+          end: 'bottom bottom',
+          scrub: true
+        }
+      })
+
+      gsap.to('#section-1', {
+        y: -500,
+        opacity: 0,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#section-2',
+          start: 'top 40%',
+          end: 'top top',
+          scrub: true
+        }
+      })
+
+      gsap.to('.section-2-text', {
+        x: -500,
+        opacity: 0,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '.lisa-scroll-test',
+          start: 'top 80%',
+          end: 'top top',
+          scrub: true,
+        }
+      })
+
+      gsap.to('#image-1', {
+        x: -700,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '.lisa-scroll-test',
+          start: 'top 80%',
+          end: 'top top',
+          scrub: true
+        }
+      })
+
+      gsap.to('#caption-1', {
+        opacity: 1,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '.lisa-scroll-test',
+          start: 'top 80%',
+          end: 'top top',
+          scrub: true
+        }
+      })
+
+      ScrollTrigger.create({
+        trigger: "#section-2",
+        start: "top top",
+        end: "bottom top",
+        pin: ".pin-container",
+        pinSpacing: false,
+        scrub: true,
+      });
+
+      gsap.to('#section-3', {
+        y: -200,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#section-3',
+          start: 'top 110%',
+          end: 'top center',
+          scrub: true
+        }
+      })
+
+      ScrollTrigger.create({
+        trigger: "#second-intro-container",
+        start: "top top",
+        end: "+=100%",
+        pin: true,
+        scrub: true,
+      });
+
+      gsap.fromTo("#caption-2",
+        { x: "-100%", opacity: 0 },
+        {
+          x: "0%",
+          opacity: 1,
+          ease: "power1.out",
+          scrollTrigger: {
+            trigger: "#image-section-1",
+            start: "top top",
+            end: "+=100%",
+            scrub: true,
+          }
+        }
+      );
+
+      gsap.fromTo("#mona-kattan-2",
+        { x: "100%", opacity: 0 },
+        {
+          x: "0%",
+          opacity: 1,
+          ease: "power1.out",
+          scrollTrigger: {
+            trigger: "#image-section-1",
+            start: "top top+=20%", // slight delay
+            end: "+=100%",
+            scrub: true,
+          }
+        }
+      );
+
+      gsap.fromTo(".second-intro-divider",
+        { scaleX: 0 },
+        {
+          scaleX: 1,
+          ease: "power1.inOut",
+          scrollTrigger: {
+            trigger: "#image-section-1",
+            start: "top top+=10%",
+            end: "+=80%",
+            scrub: true,
+          }
+        }
+      );
+
+      gsap.to('#hide-container-1', {
+        height: '300px',
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#featured-trans-1',
+          start: 'top center',
+          end: `bottom ${mobile ? '90%' : '70%' }`,
+          scrub: true
+        }
+      })
+
+      gsap.to('#hide-container-2', {
+        width: `${mobile ? '100%' : '600px'}`,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#featured-trans-2',
+          start: 'top center',
+          end: `bottom ${mobile ? '90%' : '70%' }`,
+          scrub: true
+        }
+      })
+
+      gsap.to('#hide-container-3', {
+        width: mobile ? '100%' : '500px',
+        height: '300px',
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#featured-trans-3',
+          start: 'top center',
+          end: `bottom ${mobile ? '90%' : '70%' }`,
+          scrub: true
+        }
+      })
+
+      gsap.to('#hide-container-4', {
+        width: mobile ? '100%' : '500px',
+        height: '300px',
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#featured-trans-4',
+          start: 'top center',
+          end: `bottom ${mobile ? '90%' : '70%' }`,
+          scrub: true
+        }
+      })
 
       const line2Props: any = {
         ease: "power1.inOut",
@@ -285,7 +285,7 @@ const MonaKattan = () => {
               <h3 className='mona-kattan-second-intro-text'><span className='drop-cap'>Mona Kattan</span> is a beauty entrepreneur, fragrance connoisseur and co-founder of Huda Beauty. With a background in finance and PR, Mona created Kayali to share her love of storytelling through scent and she continues to shape the fragrance space with innovative notes and regular launches.</h3>
             </div>
             <div className='second-intro-divider'></div>
-            <Image src={MonaKattan2} alt='mary-greenwell' id='kirsty-lewis-2' />
+            <Image src={MonaKattan2} alt='mary-greenwell' id='mona-kattan-2' />
           </div>
           <div className='featured-article-text-section'>
             <p className='featured-article-subheader'>Who or what inspired you to fall in love with fragrance?</p>
