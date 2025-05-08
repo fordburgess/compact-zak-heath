@@ -353,50 +353,50 @@ const LisaEldridge = () => {
                 <p className='featured-paragraph-text'>I’d go up to people, compliment their work, and start conversations. My strategy was also to meet PRs face-to-face who could get me into events and who looked after these big names. The party scene was much bigger back then because social media wasn’t around to let people know what was happening, it was more exclusive, so having the PR’s numbers was a better way. Once there, my motto was kill people with kindness, so I avoided being obnoxious and focused on being helpful and approachable because that is what stood out.</p>
               </div>
               <div className='text-section' id='section-6'>
-                <h1>Did you face any setbacks in the industry?</h1>
+                <h1 className='text-section-title'>Did you face any setbacks in the industry?</h1>
                 <p className='featured-paragraph-text'>Yes. I now understand that some of my struggles were tied to neurodiversity. I’ve always been sensitive to negativity and could feel overwhelmed in certain situations. Another challenge was proving that I wasn’t just a salon hairdresser and that I could do creative work and could manage a team behind the scenes at Fashion Week, and I had to battle with this. I persevered and assisted Luigi Murenu, an Italian hairstylist early on in my career, which helped me break through those barriers by supporting everything I wanted to do. They were amazing.</p>
                 <p className='featured-paragraph-text'>Don’t think you’re silly or something and don’t be afraid to explore, speak your mind, and trust your instincts. There’s good ideas, bad ideas, but actually they’re all good.</p>
               </div>
               <div className='text-section' id='section-7'>
-                <h1>What was your very first show?</h1>
+                <h1 className='text-section-title'>What was your very first show?</h1>
                 <p className='featured-paragraph-text'>It was for Red or Dead in 1996. They were a revolutionary streetwear brand who had a shop in Covent Garden, and I was obsessed with their clothes. It felt like a full-circle moment that they were my first London Fashion Week show since I loved their clothes and this made me massively believe in manifestation and putting things into the universe . From there, I worked with other amazing designers, including Andrew Groves, who was McQueen’s boyfriend at the time and whose shows really pushed boundaries - for example, one of his shows was called Cociane Nights and down the runway was a line of “coke”. I then started doing Julian McDonald, Matthew Williamson and then both the commercial and high-end fashion. I was really lucky that my trajectory took me to do all of that.</p>
               </div>
               <div className='text-section' id='section-8'>
-                <h1>What’s been your biggest “pinch me” moment so far?</h1>
+                <h1 className='text-section-title'>What’s been your biggest “pinch me” moment so far?</h1>
                 <p className='featured-paragraph-text'>You know what, it was doing Madonna’s hair for her Me Against the Music video with Britney Spears. I’ve always been a huge Madonna fan, so stepping into that role was surreal.</p>
                 <p className='featured-paragraph-text'>For £60 in 2002, I bought some black heels from a charity auction on the Old Icon Madonna fan club as I am the biggest Madonna fan. Luigi Murenu used to do her hair but he was in Paris to do the Victor and Rolf show, so he asked me to go instead to Silver Cup Studios in New York. That was insane. Whilst doing her hair, Like A Prayer was being played on the radio, it felt like a everything had come full circle.</p>
               </div>
               <div className='text-section' id='section-9'>
-                <h1>Did you attend beauty school?</h1>
+                <h1 className='text-section-title'>Did you attend beauty school?</h1>
                 <p className='featured-paragraph-text'>Yes, I worked in a salon and attended beauty school once a week to get my City & Guilds qualification and the school was called SCAT, Somerset College of Arts. Then it was very in- depth, we even learned how to make shampoo and perm solutions from scratch. When I moved to London at the age of twenty-two, I started at Charles Worthington.</p>
                 <p className='featured-paragraph-text'>Don’t think you’re silly or something and don’t be afraid to explore, speak your mind, and trust your instincts. There’s good ideas, bad ideas, but actually they’re all good.</p>
               </div>
               <div className='text-section' id='section-10'>
-                <h1>What’s your favourite fragrance?</h1>
+                <h1 className='text-section-title'>What’s your favourite fragrance?</h1>
                 <p className='featured-paragraph-text'>Bloody hell, outside of my own line, I would say Diptyque’s 34.</p>
               </div>
               <div className='text-section' id='section-11'>
-                <h1>Did you attend beauty school?</h1>
+                <h1 className='text-section-title'>Did you attend beauty school?</h1>
                 <p className='featured-paragraph-text'>Yes, I worked in a salon and attended beauty school once a week to get my City & Guilds qualification and the school was called SCAT, Somerset College of Arts. Then it was very in- depth, we even learned how to make shampoo and perm solutions from scratch. When I moved to London at the age of twenty-two, I started at Charles Worthington.</p>
               </div>
               <div className='text-section' id='section-11'>
-                <h1>Did you attend beauty school?</h1>
+                <h1 className='text-section-title'>Did you attend beauty school?</h1>
                 <p className='featured-paragraph-text'>Yes, I worked in a salon and attended beauty school once a week to get my City & Guilds qualification and the school was called SCAT, Somerset College of Arts. Then it was very in- depth, we even learned how to make shampoo and perm solutions from scratch. When I moved to London at the age of twenty-two, I started at Charles Worthington.</p>
               </div>
               <div className='text-section' id='section-12'>
-                <h1>Your go-to restaurant in London?</h1>
+                <h1 className='text-section-title'>Your go-to restaurant in London?</h1>
                 <p className='featured-paragraph-text'>Som Saa in Spitalfields. It’s a Northern Thai restaurant that started as a pop-up. I love the community spirit of it but the food above anything is the best Thai food outside of Thailand.</p>
               </div>
               <div className='text-section' id='section-13'>
-                <h1>Is there a fashion item you regret buying?</h1>
+                <h1 className='text-section-title'>Is there a fashion item you regret buying?</h1>
                 <p className='featured-paragraph-text'>I’ve always used clothes as a bit of armour. I bought an outfit from a Central Saint Martins student because I loved what she made; however, I just felt uncomfortable in it. It wasn’t the outfit, it was me in it. Once, I fell down the escalator at Holborn Station wearing platform Buffalo boots. That was definitely a regret! I’ve always loved wearing skirts, but one I bought was too poofy and it was just so wrong for me.</p>
               </div>
               <div className='text-section' id='section-14'>
-                <h1>What would you tell your 21-year-old self now?</h1>
+                <h1 className='text-section-title'>What would you tell your 21-year-old self now?</h1>
                 <p className='featured-paragraph-text'>To always be proud of your decisions, because long term, it’s those things that give me the drive to carry on.</p>
               </div>
               <div className='text-section' id='section-15'>
-                <h1>Do you think your 21-year-old you would be like, fucking hell this is crazy?</h1>
+                <h1 className='text-section-title'>Do you think your 21-year-old you would be like, fucking hell this is crazy?</h1>
                 <p className='featured-paragraph-text'>Without any shadow of a doubt. I was bullied and literally my whole life there have been people saying things; however, I hate confrontation and it’s the neurodiversity of understanding it. People really took the piss, but actually, every time I’ve gone with my gut, they’re the things that I’m proud of and it’s paid off, I did it and I’m still doing it.</p>
               </div>
             </div>
