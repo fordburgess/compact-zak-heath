@@ -209,7 +209,7 @@ const Audio = () => {
         <div className='svg-overlay-container' id="desktop-overlay">
           <div className='further-info-container'>
             <h2>HINT</h2>
-            <p>YOU CAN READ BUT YOU CAN'T OPEN</p>
+            <p>TAKE A SEAT AND LISTEN</p>
           </div>
           <Image id='desktop-svg-bg' src={OverheadImage} alt='audio-desktop-svg-bg' />
           <svg version="1.1" viewBox="0 0 4551 2560" preserveAspectRatio="xMidYmid meet" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
