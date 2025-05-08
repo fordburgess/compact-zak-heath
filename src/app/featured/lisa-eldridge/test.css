@@ -161,7 +161,7 @@ body {
 }
 
 .interactive-image-caption {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 300;
   font-style: italic;
 }
@@ -172,14 +172,6 @@ body {
 
 .interactive-image-caption p {
   font-family: 'Playfair' !important;
-}
-
-#caption-1 {
-  position: absolute;
-  top: 40%;
-  right: 15%;
-  opacity: 0;
-  width: 400px;
 }
 
 #image-section-1 {
@@ -346,6 +338,10 @@ body {
     font-size: 2.5rem;
   }
 
+  .interactive-image-caption {
+    font-size: 1.25rem;
+  }
+
   .pin-container {
     flex-direction: row;
     justify-content: space-between;
@@ -361,5 +357,13 @@ body {
 
   .featured-paragraph-text {
     margin-bottom: 0;
+  }
+
+  #caption-1 {
+    position: absolute;
+    top: 40%;
+    right: 15%;
+    opacity: 0;
+    width: 400px;
   }
 }
