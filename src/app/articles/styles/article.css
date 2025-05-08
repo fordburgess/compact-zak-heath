@@ -70,14 +70,14 @@ html, body {
 }
 
 .featured-blurb {
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 300;
   opacity: 0;
 }
 
 .featured-article-text-section {
   padding: 0 20px;
-  font-size: 1.125rem;
+  font-size: 1.45rem;
   margin-bottom: 20px;
 }
 
