@@ -13,11 +13,12 @@ import LisaEldridge4 from '../../../assets/images/lisa-eldridge-4.webp';
 import LisaEldridge8 from '../../../assets/images/lisa-eldridge-8.jpg';
 import LisaMBE from '../../../assets/images/lisa-mbe.png';
 import './test.css'
-import { motion } from 'framer-motion';
+import { useMediaQuery } from 'usehooks-ts';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const LisaEldridge = () => {
+  const mobile = useMediaQuery('(min-width: 1000px)');
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -103,14 +104,16 @@ const LisaEldridge = () => {
       }
     })
 
-    ScrollTrigger.create({
-      trigger: "#section-2",
-      start: "top top",
-      end: "bottom top",
-      pin: ".pin-container",
-      pinSpacing: false,
-      scrub: true,
-    });
+    if (!mobile) {
+      ScrollTrigger.create({
+        trigger: "#section-2",
+        start: "top top",
+        end: "bottom top",
+        pin: ".pin-container",
+        pinSpacing: false,
+        scrub: true,
+      });
+    }
 
     gsap.to('#section-3', {
       y: -200,
@@ -308,7 +311,7 @@ const LisaEldridge = () => {
           </div>
           <div className='text-section' id='section-2'>
             <div className='pin-container'>
-              <div className='section-2-text' style={{ width: '55%' }}>
+              <div className='section-2-text'>
                 <h1 className='text-section-title'>What were your first experiences with makeup?</h1>
                 <p className='featured-paragraph-text'>It started when I found my mum’s old makeup after we moved back to England from New Zealand. She had this box with little drawers, filled with 1960s makeup like Biba and Mary Quant that was really playful and colourful. Makeup from that era was designed for teenagers, so it had this childlike, crayon-like quality that I loved because of the objects and textures and for me, that was the turning point. I was also really inspired by the “vintageness”, because I knew it was old makeup and that was more interesting than modern makeup. I also used to draw on paper with it because it was more interesting than using regular crayons and art supplies. For my 13th birthday, I got a book on stage and theatrical makeup, and it blew my mind. The transformations, the way you could create light and shade, it was like art. I knew that’s what I wanted to do.</p>
               </div>
