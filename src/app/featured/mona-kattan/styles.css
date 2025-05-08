@@ -22,23 +22,27 @@
   margin-bottom: 10px;
 }
 
+#title-box {
+  width: 80%;
+}
+
 .strong-title {
   font-family: 'Playfair';
   font-weight: 300;
   font-size: 2rem;
-  width: 80%;
+  margin-bottom: 10px;
 }
 
 .title-subline {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .featured-title-section-2 h1 {
-  width: 80%;
+  /* width: 80%; */
   text-align: left;
   font-weight: 600;
   /* font-family: 'Playfair'; */
-  font-size: 1rem;
+  /* font-size: 1rem; */
 }
 
 .drop-cap {
@@ -370,6 +374,10 @@ html, body {
     transform: translateX(-500px);
   }
 
+  #title-box {
+    width: 40%;
+  }
+
   #caption-2 {
     font-size: 1.25rem !important;
     width: 40%;
@@ -395,11 +403,8 @@ html, body {
   }
 
   .featured-title-section-2 h1 {
-    width: 40%;
     text-align: left;
     font-weight: 600;
-    /* font-family: 'Playfair'; */
-    font-size: 3rem;
   }
 
   .featured-title-section {
