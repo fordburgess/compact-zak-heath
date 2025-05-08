@@ -9,30 +9,32 @@
 }
 
 .featured-title-section-2 {
+  height: 70vh;
   display: flex;
-  min-width: 90%;
-  min-height: 100vh;
-  padding: 0 100px;
-  justify-content: space-between;
-  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.featured-title-section-2 h1 {
-  width: 40%;
-  text-align: left;
-  font-weight: 600;
-  /* font-family: 'Playfair'; */
-  font-size: 3rem;
 }
 
 .featured-profile-image {
-  height: 700px;
-  width: 50%;
-  object-fit: cover;
-  object-position: center;
+  height: 65%;
+  width: 80%;
+  margin-bottom: 10px;
+}
+
+.strong-title {
+  font-family: 'Playfair';
+  font-weight: 300;
+  font-size: 2rem;
+  width: 80%
+}
+
+.featured-title-section-2 h1 {
+  width: 80%;
+  text-align: left;
+  font-weight: 600;
+  /* font-family: 'Playfair'; */
+  font-size: 1rem;
 }
 
 .drop-cap {
@@ -334,6 +336,40 @@ html, body {
 }
 
 @media (min-width: 1000px) {
+  .featured-title-section-2 {
+    display: flex;
+    flex-direction: row;
+    min-width: 90%;
+    min-height: 100vh;
+    padding: 0 100px;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .featured-profile-image {
+    height: 700px;
+    width: 50%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .strong-title {
+    font-family: 'Playfair';
+    font-weight: 300;
+    font-size: 4rem;
+  }
+
+  .featured-title-section-2 h1 {
+    width: 40%;
+    text-align: left;
+    font-weight: 600;
+    /* font-family: 'Playfair'; */
+    font-size: 3rem;
+  }
+
   .featured-title-section {
     padding: 100px 300px 50px;
     display: flex;
