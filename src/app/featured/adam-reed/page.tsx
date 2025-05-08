@@ -383,9 +383,12 @@ const AdamReed = () => {
       <div style={{ position: 'fixed', top: 0, left: 0, height: '100vh', width: '100vw', backdropFilter: 'blur(3px) brightness(80%)', zIndex: 5 }}></div>
       <div style={{ position: 'absolute', top: 0, left: 0, width: '100vw', zIndex: 10, color: '#fff' }}>
         <div style={{ zIndex: 10 }}>
-          <div className='featured-title-section'>
+          <div className='featured-title-section-2'>
             <Image src={AdamReedProfile} alt='pfp' className='featured-profile-image'/>
-            <h1>In Conversation With Adam Reed:<br/> <strong style={{ fontWeight: '300', fontSize: '2rem' }}>On Becoming A World Class Hairstylist</strong></h1>
+            <div id='title-box'>
+              <h1 className='strong-title'>In Conversation With Adam Reed:</h1>
+              <h1 className='title-subline'>On Becoming A World Class Hairstylist</h1>
+            </div>
           </div>
           <div className="mag-wrapper">
             <div className="mag-covers">
