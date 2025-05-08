@@ -153,7 +153,7 @@ const Featured = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1 }}
             >
-              FEATURED
+              ARTICLES
             </motion.h1>
           </div>
           <div className='subtitle-container'>
@@ -205,7 +205,7 @@ const Featured = () => {
         <div className='svg-overlay-container' id='desktop-overlay'>
           <div className='further-info-container'>
             <h2>CLICK</h2>
-            <p>FEATURED INTERVIEWS</p>
+            <p>YOU CAN READ BUT YOU CAN'T OPEN</p>
           </div>
           <Image id='desktop-svg-bg' src={OverheadImage} alt='featured-desktop-svg-bg' />
           <svg version="1.1" viewBox="0 0 4551 2560" preserveAspectRatio="xMidYmid meet" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">

@@ -157,7 +157,7 @@ const FeaturedInterviews = () => {
           <div className='beauty-icons-title-section'>
             <div>
               {/* <p style={{ fontStyle: 'italic' }}>the</p> */}
-              <h1 className='beauty-icons-index-title'>FEATURED</h1>
+              <h1 className='beauty-icons-index-title'>ARTICLES</h1>
             </div>
           </div>
           {
