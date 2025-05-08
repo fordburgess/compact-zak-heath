@@ -137,7 +137,7 @@ body {
 }
 
 #section-3 {
-  width: 70%;
+  width: 100%;
 }
 
 .pin-container {
@@ -370,5 +370,9 @@ body {
   .lisa-scroll-test {
     height: 200vh;
     width: 100vw;
+  }
+
+  #section-3 {
+    width: 70%;
   }
 }
