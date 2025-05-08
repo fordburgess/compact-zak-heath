@@ -8,7 +8,7 @@ import AdamReedHair1 from '../../../assets/images/adam-reed-hair-1.jpg';
 import AdamReedHair2 from '../../../assets/images/adam-reed-hair-2.jpg';
 import AdamReedHair3 from '../../../assets/images/adam-reed-hair-3.webp';
 import AdamReedHair4 from '../../../assets/images/adam-reed-hair-4.webp';
-import HarpersBazaar from '../../../assets/images/harpers-bazaar.jpg';
+import JulienDys from '../../../assets/images/julien-dys.webp';
 import LisaEldridge2 from '../../../assets/images/lisa-eldridge-2.webp';
 import LisaEldridge4 from '../../../assets/images/lisa-eldridge-4.webp';
 import LisaEldridge8 from '../../../assets/images/lisa-eldridge-8.jpg';
@@ -319,12 +319,13 @@ const LisaEldridge = () => {
           <div className='text-section' id='section-2'>
             <div className='pin-container'>
               <div className='section-2-text'>
-                <h1 className='text-section-title'>What were your first experiences with makeup?</h1>
-                <p className='featured-paragraph-text'>It started when I found my mum’s old makeup after we moved back to England from New Zealand. She had this box with little drawers, filled with 1960s makeup like Biba and Mary Quant that was really playful and colourful. Makeup from that era was designed for teenagers, so it had this childlike, crayon-like quality that I loved because of the objects and textures and for me, that was the turning point. I was also really inspired by the “vintageness”, because I knew it was old makeup and that was more interesting than modern makeup. I also used to draw on paper with it because it was more interesting than using regular crayons and art supplies. For my 13th birthday, I got a book on stage and theatrical makeup, and it blew my mind. The transformations, the way you could create light and shade, it was like art. I knew that’s what I wanted to do.</p>
+                <h1 className='text-section-title'>When you were 21, who did you look up to in the beauty industry?</h1>
+                <p className='featured-paragraph-text'>Julien d’Ys, the French hairdresser. He has always been my ultimate icon. And Estée Lauder, I was obsessed with her brand. My grandmother used Estée Lauder and the heritage of the brand and what they did back then captivated me because it was’t as consumer facing. I also admired François Nars. Meeting Julien d’Ys was surreal; I completely fan-girled and went quiet, which isn’t like me at all! I stood quite in awe of the fact I got to meet him, and as it was early on in my career, I just thought he was amazing!</p>
+                <p className='featured-paragraph-text'>Later, I met hairstylist Guido Palau and makeup artist Dick Page, and every time I was just amazed to be in their presence. There was also Trevor Sorbie, who recently passed, was another one of my idols and he became a really good friend of mine.</p>
               </div>
-              <Image src={LisaEldridge2} alt='lisa-eldridge-2' id='image-1' />
+              <Image src={JulienDys} alt='lisa-eldridge-2' id='image-1' />
               <div className='interactive-image-caption' id='caption-1'>
-                <p>Lisa Eldridge MBE and her mum. “Discovering my mum’s teenage makeup stash at my grandmothers sparked my intense interest/ obsession with makeup and it’s history” (Credit: Lisa Eldridge’s MBE Facebook).</p>
+                <p>Julien d’Ys is a renowned French hairstylist and artist, celebrated for his avant-garde approach resulting in his work being featured in Vogue and Harper’s Bazaar. He has partnered with legendary photographers including Steven Meisel and Annie Leibovitz but notably he has maintained a decades-long collaboration with Comme des Garçons designer Rei Kawakubo, contributing to some of the brand’s iconic runway looks. He has also created multiple sculptures which have been featured in various exhibitions (Image credit: Peter Lindbergh/ 2b Management)</p>
               </div>
             </div>
           </div>
