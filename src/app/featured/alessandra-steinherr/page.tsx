@@ -43,16 +43,16 @@ const AlessandraSteinherr = () => {
     }
 
 
-    gsap.to('.lipstick-container', {
-      y: '-100%',
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '.alessandra-intro',
-        start: 'top 20%',
-        end: 'top top',
-        scrub: true,
-      }
-    })
+    // gsap.to('.lipstick-container', {
+    //   y: '-100%',
+    //   ease: 'power1.inOut',
+    //   scrollTrigger: {
+    //     trigger: '.alessandra-intro',
+    //     start: 'top 20%',
+    //     end: 'top top',
+    //     scrub: true,
+    //   }
+    // })
 
     ScrollTrigger.create({
       trigger: ".lipstick-container",
@@ -223,14 +223,14 @@ const AlessandraSteinherr = () => {
             </div>
           </div>
         </div>
-        <div className='lipstick-container'>
+        {/* <div className='lipstick-container'>
           <Canvas className='lipstick-canvas' style={{ width: '500px', height: '80vh' }}>
             <Environment preset='studio' />
               <Lipstick scrollProgress={scrollProgress} />
           </Canvas>
           <div className='canvas-pointer-line'></div>
           <p className='model-caption'>The MACxAlessandra lipstick from MAC Cosmetic’s collaboration with 10 leading influencers around the world in 2017 (Image credit: <span style={{ fontStyle: 'italic' }}>Pop Sugar</span>)</p>
-        </div>
+        </div> */}
         <div className='alex-scroll-test'></div>
         <div className='text-section' id='section-1'>
           <div style={{ width: '50%' }}>

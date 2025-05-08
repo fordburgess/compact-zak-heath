@@ -278,7 +278,7 @@ body {
 }
 
 .pin-container {
-
+  padding: 20px;
   width: 100vw;
   display: flex;
   justify-content: space-between;
