@@ -18,7 +18,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const LisaEldridge = () => {
-  const mobile = useMediaQuery('(min-width: 1000px)');
+  const mobile = useMediaQuery('(max-width: 1000px)');
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -47,16 +47,18 @@ const LisaEldridge = () => {
       })
 
 
-    gsap.to(['.text-section-title', '.featured-paragraph-text'],  {
-      opacity: 1,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '.text-section',
-        start: 'top 30%',
-        end: 'bottom bottom',
-        scrub: true
-      }
-    })
+    if (!mobile) {
+      gsap.to(['.text-section-title', '.featured-paragraph-text'],  {
+        opacity: 1,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '.text-section',
+          start: 'top 30%',
+          end: 'bottom bottom',
+          scrub: true
+        }
+      })
+    }
 
     gsap.to('#section-1', {
       y: -500,
@@ -70,39 +72,42 @@ const LisaEldridge = () => {
       }
     })
 
-    gsap.to('.section-2-text', {
-      x: -500,
-      opacity: 0,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '.lisa-scroll-test',
-        start: 'top 80%',
-        end: 'top top',
-        scrub: true,
-      }
-    })
+    if (!mobile) {
+      gsap.to('.section-2-text', {
+        x: -500,
+        opacity: 0,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '.lisa-scroll-test',
+          start: 'top 80%',
+          end: 'top top',
+          scrub: true,
+        }
+      })
 
-    gsap.to('#image-1', {
-      x: -700,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '.lisa-scroll-test',
-        start: 'top 80%',
-        end: 'top top',
-        scrub: true
-      }
-    })
+      gsap.to('#image-1', {
+        x: -700,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '.lisa-scroll-test',
+          start: 'top 80%',
+          end: 'top top',
+          scrub: true
+        }
+      })
 
-    gsap.to('#caption-1', {
-      opacity: 1,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '.lisa-scroll-test',
-        start: 'top 80%',
-        end: 'top top',
-        scrub: true
-      }
-    })
+      gsap.to('#caption-1', {
+        opacity: 1,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '.lisa-scroll-test',
+          start: 'top 80%',
+          end: 'top top',
+          scrub: true
+        }
+      })
+    }
+
 
     if (!mobile) {
       ScrollTrigger.create({
@@ -111,6 +116,14 @@ const LisaEldridge = () => {
         end: "bottom top",
         pin: ".pin-container",
         pinSpacing: false,
+        scrub: true,
+      });
+
+      ScrollTrigger.create({
+        trigger: "#image-section-1",
+        start: "top top",
+        end: "+=100%",
+        pin: true,
         scrub: true,
       });
     }
@@ -125,14 +138,6 @@ const LisaEldridge = () => {
         scrub: true
       }
     })
-
-    ScrollTrigger.create({
-      trigger: "#image-section-1",
-      start: "top top",
-      end: "+=100%",
-      pin: true,
-      scrub: true,
-    });
 
     gsap.fromTo("#mary-greenwell-image",
       { x: "-100%", opacity: 0 },
