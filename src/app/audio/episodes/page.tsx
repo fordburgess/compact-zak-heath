@@ -6,7 +6,7 @@ import '../styles/audio.css'
 import ExpandedImage from '../../../assets/images/winter-expanded.webp';
 import PatriciaBright from '../../../assets/images/patricia-bright-profile.webp';
 import ZakHeath from '../../../assets/images/zak-heath-profile.webp';
-import ShakeelMurtaza from '../../../assets/images/shakeel-murtaza-profile.webp';
+import ShakeelMurtaza from '../../../assets/images/shakeel-murtaza-profile.png';
 import Placeholder from '../../../assets/images/placeholder.webp';
 import RaquellBouris from '../../../assets/images/raquell-bouris-profile.png';
 import { Episode } from '@/types';

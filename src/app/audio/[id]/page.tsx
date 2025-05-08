@@ -7,7 +7,7 @@ import Link from "next/link"
 import ExpandedImage from '../../../assets/images/winter-expanded.webp'
 import PatriciaBright from '../../../assets/images/patricia-bright-profile.webp';
 import ZakHeath from '../../../assets/images/zak-heath-profile.webp';
-import ShakeelMurtaza from '../../../assets/images/shakeel-murtaza-profile.webp';
+import ShakeelMurtaza from '../../../assets/images/shakeel-murtaza-profile.png';
 import RaquellBouris from '../../../assets/images/raquell-bouris-profile.png'
 import Placeholder from '../../../assets/images/placeholder.webp';
 import PlayButton from '../../../assets/images/play-button.png';
