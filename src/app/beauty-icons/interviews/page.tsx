@@ -13,7 +13,7 @@ import AdamReed from '../../../assets/images/adam-reed-profile.webp';
 import AlessandraSteinherr from '../../../assets/images/alessandra-steinherr.webp';
 import MonaKattan from '../../../assets/images/mona-kattan.webp';
 import PatriciaBright from '../../../assets/images/patricia-bright-profile.webp';
-import ShakeelMurtaza from '../../../assets/images/shakeel-murtaza-profile.webp';
+import ShakeelMurtaza from '../../../assets/images/shakeel-murtaza-profile.png';
 import ZakHeath from '../../../assets/images/zak-heath-profile.webp';
 import TillySanders from '../../../assets/images/tilly-sanders-profile.webp';
 import Placeholder from '../../../assets/images/placeholder.webp';

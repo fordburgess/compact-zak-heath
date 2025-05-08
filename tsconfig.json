@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["lipstick.glb", "next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/pages/featured/lisa-eldridge.jsx", "lib/send-mail.js", "src/app/featured/alessandra-steinherr/page.tsx", "src/app/test/page.jsx", "src/components/lipstick.jsx"],
+  "include": ["lipstick.glb", "next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/pages/featured/lisa-eldridge.jsx", "lib/send-mail.js", "src/app/articles/alessandra-steinherr/page.tsx", "src/app/test/page.jsx", "src/components/lipstick.jsx"],
   "exclude": ["node_modules"]
 }

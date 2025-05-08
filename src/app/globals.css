@@ -426,6 +426,10 @@ polyline:nth-child(3) {
     font-weight: 300;
   }
 
+  #cover-title {
+    font-size: 5rem !important;
+  }
+
   .subtitle-container {
     top: 20%;
   }
