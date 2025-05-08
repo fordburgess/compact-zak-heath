@@ -231,7 +231,7 @@ const AlessandraSteinherr = () => {
               <Lipstick scrollProgress={scrollProgress} />
           </Canvas>
           <div className='canvas-pointer-line'></div>
-          <p className='model-caption'>The MACxAlessandra lipstick from MAC Cosmetic’s collaboration with 10 leading influencers around the world in 2017 (Image credit: Pop Sugar).</p>
+          <p className='model-caption'>The MACxAlessandra lipstick from MAC Cosmetic’s collaboration with 10 leading influencers around the world in 2017 (Image credit: <span style={{ fontStyle: 'italic' }}>Pop Sugar</span>)</p>
         </div>
         <div className='alex-scroll-test'></div>
         <div className='text-section' id='section-1'>
