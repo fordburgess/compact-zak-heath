@@ -534,7 +534,7 @@ const AdamReed = () => {
               </div>
               <div className='text-section' id='section-5'>
                 <h1 className='text-section-title'>How did you approach networking when you didn’t know anyone?</h1>
-                <p className='featured-paragraph-text'>I’d go up to people, compliment their work, and start conversations. My strategy was also to meet PRs face-to-face who could get me into events and who looked after these big names. The party scene was much bigger back then because social media wasn’t around to let people know what was happening, it was more exclusive, so having the PR’s numbers was a better way. Once there, my motto was kill people with kindness, so I avoided being obnoxious and focused on being helpful and approachable because that is what stood out.</p>
+                <p className='featured-paragraph-text'>I’d go up to people, compliment their work, and start conversations. My strategy was also to meet PRs face-to-face who could get me into events and who looked after these big names. The party scene was much freer back then because social media wasn’t around to let people know what was happening, it was more exclusive, so having the PR’s numbers was a better way. Once there, my motto was kill people with kindness, so I avoided being obnoxious, and focused on being helpful and approachable because that is what stood out.</p>
               </div>
               <div className='text-section' id='section-6'>
                 <h1 className='text-section-title'>Did you face any setbacks in the industry?</h1>
@@ -594,7 +594,7 @@ const AdamReed = () => {
               <div id='image-item-2'>
                 <Image src={CocaineNights} alt='lisa-eldridge-at-work' className='image-column-child' id='image-column-1'/>
                 <div className='interactive-image-caption' id='caption-3'>
-                  <p>Lisa is awarded an MBE</p>
+                  <p style={{ fontSize: '1rem' }}>Andrew Groves’ 1998 Cocaine Nights fashion show was extremely controversial but memorable. A dress was constructed entirely from razor blades and the runway itself was made out of a white powdery substance symbolising cocaine. Adam was the hair stylist for this show (Image credit: Pinterest)</p>
                 </div>
               </div>
               <div id='image-item-3'>
