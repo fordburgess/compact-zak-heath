@@ -10,7 +10,7 @@ const MobileNavbar = () => {
 
   const handleClick = () => {
     const linkContainer: HTMLElement = document.querySelector('.mobile-nav-link-container')!;
-    const links = document.querySelectorAll('.nav-link');
+    const links = document.querySelectorAll('.mobile-nav-link');
     const xButton = document.querySelector('.mobile-nav-x');
 
     linkContainer.style.display = 'block';
@@ -41,7 +41,7 @@ const MobileNavbar = () => {
 
   const handleMenuClose = () => {
     const linkContainer: HTMLElement = document.querySelector('.mobile-nav-link-container')!;
-    const links = document.querySelectorAll('.nav-link');
+    const links = document.querySelectorAll('.mobile-nav-link');
     const xButton = document.querySelector('.mobile-nav-x');
 
     gsap.to(linkContainer, {
@@ -99,12 +99,12 @@ const MobileNavbar = () => {
           <line x1="12" y1="4" x2="4" y2="12" />
         </svg>
         <div className='link-list'>
-          <Link prefetch={true} className={pathname == '/' ? 'mobile-active nav-link' : 'nav-link'} href='/'>Home</Link>
-          <Link prefetch={true} className={pathname.includes('/articles') ? 'mobile-active nav-link' : 'nav-link'} href='/articles'>Articles</Link>
-          <Link prefetch={true} className={pathname.includes('/podcasts') ? 'mobile-active nav-link' : 'nav-link'} href='/podcasts'>Podcasts</Link>
-          <Link prefetch={true} className={pathname.includes('/beauty-icons') ? 'mobile-active nav-link' : 'nav-link'} href='/beauty-icons'>Beauty Icons</Link>
-          <Link prefetch={true} className={pathname.includes('/dream-room') ? 'mobile-active nav-link' : 'nav-link'} href='/dream-room'>Dream Room</Link>
-          <Link prefetch={true} className={pathname.includes('/services') ? 'mobile-active nav-link' : 'nav-link'} href='/services'>Services</Link>
+          <Link prefetch={true} className={pathname == '/' ? 'mobile-active nav-link' : 'mobile-nav-link'} href='/'>Home</Link>
+          <Link prefetch={true} className={pathname.includes('/articles') ? 'mobile-active mobile-nav-link' : 'mobile-nav-link'} href='/articles'>Articles</Link>
+          <Link prefetch={true} className={pathname.includes('/podcasts') ? 'mobile-active mobile-nav-link' : 'mobile-nav-link'} href='/podcasts'>Podcasts</Link>
+          <Link prefetch={true} className={pathname.includes('/beauty-icons') ? 'mobile-active mobile-nav-link' : 'mobile-nav-link'} href='/beauty-icons'>Beauty Icons</Link>
+          <Link prefetch={true} className={pathname.includes('/dream-room') ? 'mobile-active mobile-nav-link' : 'mobile-nav-link'} href='/dream-room'>Dream Room</Link>
+          <Link prefetch={true} className={pathname.includes('/services') ? 'mobile-active mobile-nav-link' : 'mobile-nav-link'} href='/services'>Services</Link>
         </div>
       </div>
     </div>
