@@ -351,6 +351,10 @@ html, body {
     transform: translateX(50px);
   }
 
+  #tilly-line-4 {
+    transform: translateX(150px);
+  }
+
   #zak-lisa-caption {
     position: static;
     transform: translateX(-50px);
