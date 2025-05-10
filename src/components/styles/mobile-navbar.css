@@ -50,13 +50,17 @@
 }
 
 .link-list a {
+  display: inline-block;
   font-family: 'Josefin Sans';
   font-weight: 300;
   font-size: 2rem;
   margin-bottom: 20px;
   opacity: 0;
+  flex-grow: 0;
 }
 
 .active {
-  border-bottom: solid 1px #fff;
+  text-decoration-line: underline;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 1px;
 }
