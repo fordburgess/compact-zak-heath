@@ -24,13 +24,13 @@ import { useMediaQuery } from 'usehooks-ts';
 const interviews = [
   {
     pfp: MillieKendall,
-    name: 'Millie Kendall',
+    name: 'Millie Kendall MBE',
     job: 'Beauty CEO',
     href: '/articles/millie-kendall'
   },
   {
     pfp: LisaEldridge,
-    name: 'Lisa Eldridge',
+    name: 'Lisa Eldridge MBE',
     job: 'Celebrity Makeup Artist',
     href: '/articles/lisa-eldridge'
   },
@@ -72,7 +72,7 @@ const interviews = [
   },
   {
     pfp: Ingeborg,
-    name: 'Ingeborg Van Lotringen',
+    name: 'Ingeborg van Lotringen',
     job: 'Beauty Journalist',
     href: '/audio/ingeborg-van-lotringen'
   },

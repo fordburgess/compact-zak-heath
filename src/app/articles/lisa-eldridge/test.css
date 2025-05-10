@@ -226,6 +226,14 @@ body {
   opacity: 0;
 }
 
+.interactive-image-caption {
+  font-size: 1rem;
+  font-weight: 300;
+  font-style: italic;
+  font-family: 'Playfair' !important;
+  width: 300px;
+}
+
 @media (min-width: 1000px) {
   .featured-title-section-2 {
     display: flex;
@@ -404,5 +412,9 @@ body {
     padding: 0 20px;
     box-sizing: border-box;
     transform: translateY(100%);
+  }
+
+  .interactive-image-caption {
+    font-size: 1.25rem;
   }
 }
