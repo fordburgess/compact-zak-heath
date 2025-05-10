@@ -138,6 +138,33 @@ const CarolynAronson = () => {
       const transitionDirection = mobile ? 'y' : 'x';
       caption2props[transitionDirection] = mobile ? -50 : -1;
       gsap.to('#first-trans-caption', caption2props);
+
+
+      const line4Props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#second-image-trans',
+          start: 'top 60%',
+          end: 'bottom 60%',
+          scrub: true,
+        }
+      };
+      const scaleAxisLine4 = mobile ? 'scaleY' : 'scaleX';
+      line4Props[scaleAxisLine4] = 9
+      gsap.to('.fctc-line-4', line4Props);
+
+      const caption4props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#second-image-trans',
+          start: 'top 60%',
+          end: 'bottom 60%',
+          scrub: true,
+        }
+      }
+      const transitionDirectionCaption4 = mobile ? 'y' : 'x';
+      caption4props[transitionDirectionCaption4] = mobile ? 50 : '10px';
+      gsap.to('#second-trans-caption', caption4props);
     }
 
   }, [])
@@ -190,10 +217,10 @@ const CarolynAronson = () => {
           <p className='featured-article-paragraph'>I went out six nights a week. Everything from alternative clubs to gay bars to Detroit ballroom hip-hop.</p>
           <div className='featured-transition-container' id='first-image-trans'>
             <div className='image-with-caption' style={{ zIndex: -1, }}>
-              <Image src={CarolynAronson1} alt='carolyn-aronson-2'/>
+              <Image src={CarolynAronson1} alt='carolyn-aronson-2' style={{ minHeight: '500px', objectFit: 'cover', objectPosition: 'top' }}/>
             </div>
             <div className='fctc-line-2'></div>
-            <p className='image-caption' id='first-trans-caption'>Inside Mona Kattan’s fragrance library<br/>which has nearly 4000 individual fragrances.<br/>Her goal is to have the largest amount of<br/>fragrances in the world.</p>
+            <p className='image-caption' id='first-trans-caption'>(Image credit: LinkedIn)</p>
           </div>
           <p className='featured-article-subheader'>The Empire Expands</p>
           <p className='featured-article-paragraph'>It's A 10 is sold in over 125 countries, and global growth has opened even more doors for me. I now own 15 companies - including a makeup brand (Be A 10), lifestyle and body care brands, a private jet charter company and even a boat charter company.</p>
@@ -209,6 +236,11 @@ const CarolynAronson = () => {
           </div>
           <p className='featured-article-paragraph'>I also founded and built the first-ever Beauty Centre at a junior achievement facility in Florida. Over 70,000 students pass through that centre every year. It's fully interactive: barber chairs, shampoo stations, mannequins and actual lesson plans. The goal is to help young people envision their careers in beauty - especially those who might not have considered it otherwise.</p>
           <p className='featured-article-paragraph'>The beauty industry needs new energy and perspective, and there's room for everyone.</p>
+          <div className='featured-transition-container' id='second-image-trans'>
+            <p className='image-caption' id="second-trans-caption">Carolyn won the 2023 Gold Stevie for Best Female Entrepreneur in Consumer Products (Image credit: Carolyn Aronson)</p>
+            <div className='fctc-line-4' id='carolyn-line-4'></div>
+            <Image src={CarolynAronson2} id='zak-and-lisa' alt='zak-and-lisa'/>
+          </div>
           <p className='featured-article-subheader'>Movie of Choice?</p>
           <p className='featured-article-paragraph'>"Mrs Doubtfire. Anything with Robin Williams".</p>
           <div className='featured-article-transition-container' id='featured-trans-3'>
