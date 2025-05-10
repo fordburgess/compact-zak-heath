@@ -141,32 +141,35 @@ const TillySanders = () => {
       gsap.to('#first-trans-caption', caption2props);
     }
 
-    const line4Props: any = {
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: '#second-image-trans',
-        start: 'top 60%',
-        end: 'bottom 80%',
-        scrub: true,
-      }
-    };
-    const scaleAxisLine4 = mobile ? 'scaleY' : 'scaleX';
-    line4Props[scaleAxisLine4] = 7
-    gsap.to('.fctc-line-4', line4Props);
+    if (!mobile) {
+
+      const line4Props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#second-image-trans',
+          start: 'top 60%',
+          end: 'bottom 80%',
+          scrub: true,
+        }
+      };
+      const scaleAxisLine4 = mobile ? 'scaleY' : 'scaleX';
+      line4Props[scaleAxisLine4] = 7
+      gsap.to('.fctc-line-4', line4Props);
 
 
-    const caption4props: any = {
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: '#second-image-trans',
-        start: 'top 60%',
-        end: 'bottom 80%',
-        scrub: true,
+      const caption4props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#second-image-trans',
+          start: 'top 60%',
+          end: 'bottom 80%',
+          scrub: true,
+        }
       }
+      const transitionDirectionCaption4 = mobile ? 'y' : 'x';
+      caption4props[transitionDirectionCaption4] = mobile ? 50 : '100px';
+      gsap.to('#second-trans-caption', caption4props);
     }
-    const transitionDirectionCaption4 = mobile ? 'y' : 'x';
-    caption4props[transitionDirectionCaption4] = mobile ? 50 : '100px';
-    gsap.to('#second-trans-caption', caption4props);
 
   }, [])
 
@@ -207,7 +210,7 @@ const TillySanders = () => {
           <p className='featured-article-paragraph'>Trips are fun, but there's a reason behind them, whether that be education around the product launch or photo opportunities for the creators. Let's just say that I was shocked, though, when I first heard how much events and trips can cost. Just the flowers for the events alone can be thousands, but there are also production costs, venue costs, and gifting—it all adds up, but it's an investment for the brand.</p>
           <div className='featured-transition-container' id='first-image-trans'>
             <div className='image-with-caption' style={{ zIndex: -1, }}>
-              <Image src={TillySanders1} alt='tilly-sanders-1'/>
+              <Image src={TillySanders1} alt='tilly-sanders-1' style={{ minHeight: '500px', objectFit: 'cover' }}/>
             </div>
             <div className='fctc-line-2'></div>
             <p className='image-caption' id='first-trans-caption'>(Image credit: Tilly Sanders)</p>

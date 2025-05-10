@@ -247,6 +247,9 @@ html, body {
   text-wrap: nowrap;
 }
 
+#tilly-line-4, #carolyn-line-4 {
+  display: none;
+}
 
 @media (min-width: 1000px) {
   .featured-title-section {
@@ -348,10 +351,12 @@ html, body {
   }
 
   #carolyn-line-4 {
+    display: block;
     transform: translateX(50px);
   }
 
   #tilly-line-4 {
+    display: block;
     transform: translateX(150px);
   }
 
