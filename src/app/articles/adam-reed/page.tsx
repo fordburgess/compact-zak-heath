@@ -548,11 +548,11 @@ const AdamReed = () => {
               <div className='text-section' id='section-8'>
                 <h1 className='text-section-title'>What’s been your biggest “pinch me” moment so far?</h1>
                 <p className='featured-paragraph-text'>You know what, it was doing Madonna’s hair for her Me Against the Music video with Britney Spears. I’ve always been a huge Madonna fan, so stepping into that role was surreal.</p>
-                <p className='featured-paragraph-text'>For £60 in 2002, I bought some black heels from a charity auction on the Old Icon Madonna fan club as I am the biggest Madonna fan. Luigi Murenu used to do her hair but he was in Paris to do the Victor and Rolf show, so he asked me to go instead to Silver Cup Studios in New York. That was insane. Whilst doing her hair, Like A Prayer was being played on the radio, it felt like a everything had come full circle.</p>
+                <p className='featured-paragraph-text'>For £60 in 2002, I bought some black heels from a charity auction on the Old Icon Madonna fan club as I am the biggest Madonna fan. Luigi Murenu used to do her hair but he was in Paris to do the Viktor and Rolf show, so he asked me to go instead to Silver Cup Studios in New York. That was insane. Whilst doing her hair, Like A Prayer was being played on the radio, it felt like a everything had come full circle.</p>
               </div>
               <div className='text-section' id='section-9'>
                 <h1 className='text-section-title'>Did you attend beauty school?</h1>
-                <p className='featured-paragraph-text'>Yes, I worked in a salon and attended beauty school once a week to get my City & Guilds qualification and the school was called SCAT, Somerset College of Arts. Then it was very in- depth, we even learned how to make shampoo and perm solutions from scratch. When I moved to London at the age of twenty-two, I started at Charles Worthington.</p>
+                <p className='featured-paragraph-text'>Yes, I worked in a salon and attended beauty school once a week to get my City & Guilds qualification and the school was called SCAT, Somerset College of Arts. Back then it was very in-depth, we even learned how to make shampoo and perm solutions from scratch. When I moved to London at the age of 22, I started at Charles Worthington.</p>
                 <p className='featured-paragraph-text'>Don’t think you’re silly or something and don’t be afraid to explore, speak your mind, and trust your instincts. There’s good ideas, bad ideas, but actually they’re all good.</p>
               </div>
               <div className='text-section' id='section-10'>
@@ -563,13 +563,9 @@ const AdamReed = () => {
                 <h1 className='text-section-title'>Did you attend beauty school?</h1>
                 <p className='featured-paragraph-text'>Yes, I worked in a salon and attended beauty school once a week to get my City & Guilds qualification and the school was called SCAT, Somerset College of Arts. Then it was very in- depth, we even learned how to make shampoo and perm solutions from scratch. When I moved to London at the age of twenty-two, I started at Charles Worthington.</p>
               </div>
-              <div className='text-section' id='section-11'>
-                <h1 className='text-section-title'>Did you attend beauty school?</h1>
-                <p className='featured-paragraph-text'>Yes, I worked in a salon and attended beauty school once a week to get my City & Guilds qualification and the school was called SCAT, Somerset College of Arts. Then it was very in- depth, we even learned how to make shampoo and perm solutions from scratch. When I moved to London at the age of twenty-two, I started at Charles Worthington.</p>
-              </div>
               <div className='text-section' id='section-12'>
                 <h1 className='text-section-title'>Your go-to restaurant in London?</h1>
-                <p className='featured-paragraph-text'>Som Saa in Spitalfields. It’s a Northern Thai restaurant that started as a pop-up. I love the community spirit of it but the food above anything is the best Thai food outside of Thailand.</p>
+                <p className='featured-paragraph-text'>Som Saa in Spitalfields. It’s a Northern Thai restaurant that started as a pop-up. I love the community spirit of it but the food is the best Thai food outside of Thailand.</p>
               </div>
               <div className='text-section' id='section-13'>
                 <h1 className='text-section-title'>Is there a fashion item you regret buying?</h1>
@@ -580,8 +576,8 @@ const AdamReed = () => {
                 <p className='featured-paragraph-text'>To always be proud of your decisions, because long term, it’s those things that give me the drive to carry on.</p>
               </div>
               <div className='text-section' id='section-15'>
-                <h1 className='text-section-title'>Do you think your 21-year-old you would be like, fucking hell this is crazy?</h1>
-                <p className='featured-paragraph-text'>Without any shadow of a doubt. I was bullied and literally my whole life there have been people saying things; however, I hate confrontation and it’s the neurodiversity of understanding it. People really took the piss, but actually, every time I’ve gone with my gut, they’re the things that I’m proud of and it’s paid off, I did it and I’m still doing it.</p>
+                <h1 className='text-section-title'>Do you think your 21-year-old you would be like, oh my god this is crazy?</h1>
+                <p className='featured-paragraph-text'>Without any shadow of a doubt. I was bullied my whole life there have been people saying things. People really took the piss. But actually, every time I’ve gone with my gut, they’re the things that I’m proud of and it’s paid off. I did it and I'm still doing it.</p>
               </div>
             </div>
             <div className='image-column'>
@@ -594,7 +590,7 @@ const AdamReed = () => {
               <div id='image-item-2'>
                 <Image src={CocaineNights} alt='lisa-eldridge-at-work' className='image-column-child' id='image-column-1'/>
                 <div className='interactive-image-caption' id='caption-3'>
-                  <p style={{ fontSize: '1rem' }}>Andrew Groves’ 1998 Cocaine Nights fashion show was extremely controversial but memorable. A dress was constructed entirely from razor blades and the runway itself was made out of a white powdery substance symbolising cocaine. Adam was the hair stylist for this show (Image credit: Pinterest)</p>
+                  <p style={{ fontSize: '1rem' }}>Andrew Groves’ 1998 <span style={{ fontStyle: 'normal' }}>Cocaine Nights</span> fashion show was extremely controversial but memorable. A dress was constructed entirely from razor blades and the runway itself was made out of a white powdery substance symbolising cocaine. Adam was the hair stylist for this show (Image credit: Pinterest)</p>
                 </div>
               </div>
               <div id='image-item-3'>
