@@ -487,12 +487,12 @@ const AdamReed = () => {
             <Image src={AdamReedProfile} alt='pfp' className='featured-profile-image'/>
             <div id='title-box'>
               <h1 className='strong-title'>In Conversation With Adam Reed:</h1>
-              <h1 className='title-subline'>On Becoming A World Class Hairstylist</h1>
+              <h1 className='title-subline'>On Becoming a World-Class Hairdresser</h1>
             </div>
           </div>
           <div className="mag-wrapper">
             <div className="mag-covers">
-              <h3><span className='drop-cap'>Adam Reed</span> is one of the UK’s most celebrated hair stylists, known for working with fashion magazines like Vogue, Elle and Harper’s Bazaar. Adam has styled an array of celebrities including Madonna and Lady Gaga, earning him the reputation for effortlessly cool, wearable hair. He is the founder of Arkive Headache and the Adam Reed London hair salon. He is an ambassador for L’Oréal Pro and in 2022, the British Beauty Council appointed him as an ambassador for his recognised contribution and advocacy for mental wellbeing in the beauty industry.</h3>
+              <h3><span className='drop-cap'>Adam Reed</span> is one of the UK’s most celebrated hairdressers, known for working with fashion magazines like <span style={{ fontStyle: 'italic' }}>Vogue</span>, <span style={{ fontStyle: 'italic' }}>Elle</span> and <span style={{ fontStyle: 'italic' }}>Harper's Bazaar</span>. Adam has styled an array of celebrities including Madonna and Lady Gaga, earning him the reputation for effortlessly cool, wearable hair. He is the founder of Arkive Headache and the Adam Reed London hair salon. He is an ambassador for L’Oréal Pro and in 2022, the British Beauty Council appointed him as an ambassador for his recognised contribution and advocacy for mental wellbeing in the beauty industry.</h3>
               <div className='grow-line-1'></div>
               <Image src={AdamReedHair1} alt='rihanna' />
               <Image src={AdamReedHair2} alt='vogue-japan' />
@@ -510,7 +510,7 @@ const AdamReed = () => {
               </div>
               <Image src={JulienDys} alt='lisa-eldridge-2' id='image-1' />
               <div className='interactive-image-caption' id='caption-1'>
-                <p>Julien d’Ys is a renowned French hairstylist and artist, celebrated for his avant-garde approach resulting in his work being featured in Vogue and Harper’s Bazaar. He has partnered with legendary photographers including Steven Meisel and Annie Leibovitz but notably he has maintained a decades-long collaboration with Comme des Garçons designer Rei Kawakubo, contributing to some of the brand’s iconic runway looks. He has also created multiple sculptures which have been featured in various exhibitions (Image credit: Peter Lindbergh/ 2b Management)</p>
+                <p>Julien d’Ys is a renowned French hairstylist and artist, celebrated for his avant-garde approach resulting in his work being featured in <span style={{ fontStyle: 'italic' }}>Vogue</span> and <span style={{ fontStyle: 'italic' }}>Harper's Bazaar</span>. He has partnered with legendary photographers including Steven Meisel and Annie Leibovitz but notably he has maintained a decades-long collaboration with Comme des Garçons designer Rei Kawakubo, contributing to some of the brand’s iconic runway looks. He has also created multiple sculptures which have been featured in various exhibitions (Image credit: Peter Lindbergh/ 2b Management)</p>
               </div>
             </div>
           </div>
@@ -523,7 +523,7 @@ const AdamReed = () => {
             <Image src={TrevorSorbie} alt='mary-greenwell' id='mary-greenwell-image' />
             <div className='mary-greenwell-line'></div>
             <div className='interactive-image-caption' id='caption-2'>
-              <p style={{ marginBottom: '10px' }}>Trevor Sorbie was a Scottish Hairdresser who died in 2024 after a long history of working in the beauty industry and renowned for his innovative techniques and transformative hairstyles. His signature “Scrunch” hairstyle (the style in this image) became a hallmark of the late 1970s fashion scenes and were featured regularly in publications like Vogue. Trevor founded the charity My New Hair, providing support and wig customisation for individuals experiencing hair loss. (Image credit: Hairdressers Journal)</p>
+              <p style={{ marginBottom: '10px' }}>Trevor Sorbie was a Scottish Hairdresser who died in 2024 after a long history of working in the beauty industry and renowned for his innovative techniques and transformative hairstyles. His signature “Scrunch” hairstyle (the style in this image) became a hallmark of the late 1970s fashion scenes and were featured regularly in publications like <span style={{ fontStyle: 'italic' }}>Vogue</span>. Trevor founded the charity My New Hair, providing support and wig customisation for individuals experiencing hair loss. (Image credit: Hairdressers Journal)</p>
             </div>
           </div>
           <div className='column-wrapper'>
