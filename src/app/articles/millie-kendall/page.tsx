@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import SpringExpanded from '../../../assets/images/spring-expanded.jpg';
 import MillieKendallProfile from '../../../assets/images/millie-kendall-profile.webp';
+import MillieKendall1 from '../../../assets/images/millie-kendall-1.webp';
 import '../styles/article.css';
 import { useMediaQuery } from 'usehooks-ts';
 import gsap from 'gsap';
@@ -106,6 +107,41 @@ const MillieKendall = () => {
         scrub: true
       }
     })
+
+    if (!mobile) {
+      const line2Props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#first-image-trans',
+          start: 'top 60%',
+          end: 'bottom 60%',
+          scrub: true,
+        }
+      };
+
+      const scaleAxis = mobile ? 'scaleY' : 'scaleX';
+      const opacity = 1;
+      line2Props[scaleAxis] = mobile ? 8 : 10;
+      line2Props[opacity];
+      gsap.to('.fctc-line-2', line2Props);
+
+      const caption2props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#first-image-trans',
+          start: 'top 80%',
+          end: 'bottom bottom',
+          scrub: true,
+        }
+      }
+      const transitionDirection = mobile ? 'y' : 'x';
+      caption2props[transitionDirection] = mobile ? -50 : -1;
+      gsap.to('#first-trans-caption', caption2props);
+
+
+
+    }
+
   }, [])
 
   return (
@@ -139,6 +175,13 @@ const MillieKendall = () => {
             <p className='featured-article-paragraph'>"I used to go to Paradise Garage, a gay club where you had to prove you were gay to get in. My friend was bisexual, and we worked together at Bumble & Bumble. So we'd hold hands and pretend we were dating to get through the door! I'm straight, but back then, things were just more fluid. That word didn't even exist yet. You didn't need a label. If you were weird, punk, queer - whatever, you gravitated to people who also didn't fit the norm."</p>
             <p className='featured-article-paragraph'>She adds that people found each other through "work and clubs." There was no social media. You showed up, and that was enough.</p>
             <p className='featured-article-paragraph'>She laughs when asked what she wore back in her clubbing days. "The shortest denim shorts you've ever seen, Converse, a white t-shirt. I wasn't into fashion. I was into dancing and being comfortable!"</p>
+            <div className='featured-transition-container' id='first-image-trans'>
+              <div className='image-with-caption' style={{ zIndex: -1, }}>
+                <Image src={MillieKendall1} alt='millie-kendall-3'/>
+              </div>
+              <div className='fctc-line-2'></div>
+              <p className='image-caption' id='first-trans-caption'>“I know the blush wasn’t blended! It was a look!” Image credit (Millie Kendall OBE)</p>
+            </div>
             <p className='featured-article-subheader'>Building The Beauty Foundations</p>
             <p className='featured-article-paragraph'>Millie's first introduction to beauty was at her grandmother's dressing table. "She had a Corgi that drank tea out of a saucer. She'd put moisturiser on her face, then let the dog lick her fingers. The dog basically lived off Nivea!"</p>
             <p className='featured-article-paragraph'>She describes her grandmother applying mascara with a flat palette that required saliva to activate. "She'd spit on it and apply. That whole moment, the diamonds, the glamour, the spitting, was iconic. It made a huge impression on me."</p>
