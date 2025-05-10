@@ -9,15 +9,18 @@
 .mobile-nav-button-container {
   display: flex;
   position: absolute;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  width: 35px;
   top: 100%;
-  right: 3%;
+  right: 5%;
 }
 
 .mobile-nav-button-container div {
   height: 5px;
   width: 5px;
   border-radius: 50%;
-  margin-right: 5px;
   background-color: #fff;
 }
 
