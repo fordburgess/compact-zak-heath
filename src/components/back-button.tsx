@@ -13,12 +13,13 @@ const BackButton = () => {
   ]
 
   const handleBack = () => {
-    if (document.referrer) {
-      router.back();
-    }
-    else {
-      router.push('/');
-    }
+    router.back();
+    // if (document.referrer) {
+      // console.log('hello')
+    // }
+    // else {
+      // router.push('/');
+    // }
   }
 
   if (routes.some(route => pathname.includes(route))) {
