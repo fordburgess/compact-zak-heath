@@ -42,6 +42,13 @@
   box-sizing: border-box;
 }
 
+.mobile-nav-x {
+  position: absolute;
+  top: 2%;
+  right: 4%;
+  opacity: 0;
+}
+
 .link-list a {
   font-family: 'Josefin Sans';
   font-weight: 300;
