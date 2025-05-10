@@ -510,7 +510,7 @@ const AdamReed = () => {
               </div>
               <Image src={JulienDys} alt='lisa-eldridge-2' id='image-1' />
               <div className='interactive-image-caption' id='caption-1'>
-                <p>Julien d’Ys is a renowned French hairstylist and artist, celebrated for his avant-garde approach resulting in his work being featured in <span style={{ fontStyle: 'normal' }}>Vogue</span> and <span style={{ fontStyle: 'normal' }}>Harper's Bazaar</span>. He has partnered with legendary photographers including Steven Meisel and Annie Leibovitz but notably he has maintained a decades-long collaboration with Comme des Garçons designer Rei Kawakubo, contributing to some of the brand’s iconic runway looks. He has also created multiple sculptures which have been featured in various exhibitions (Image credit: Peter Lindbergh/ 2b Management)</p>
+                <p>Julien d’Ys is a renowned French hairstylist and artist, celebrated for his avant-garde approach resulting in his work being featured in <span style={{ fontStyle: 'normal' }}>Vogue</span> and <span style={{ fontStyle: 'normal' }}>Harper's Bazaar</span>. He has partnered with legendary photographers including Steven Meisel and Annie Leibovitz but notably he has maintained a decades-long collaboration with Comme des Garçons designer Rei Kawakubo, contributing to some of the brand’s iconic runway looks. He has also created multiple sculptures which have been featured in various exhibitions. (Image credit: Peter Lindbergh/ 2b Management)</p>
               </div>
             </div>
           </div>
@@ -523,13 +523,13 @@ const AdamReed = () => {
             <Image src={TrevorSorbie} alt='mary-greenwell' id='mary-greenwell-image' />
             <div className='mary-greenwell-line'></div>
             <div className='interactive-image-caption' id='caption-2'>
-              <p style={{ marginBottom: '10px' }}>Trevor Sorbie was a Scottish Hairdresser who died in 2024 after a long history of working in the beauty industry and renowned for his innovative techniques and transformative hairstyles. His signature “Scrunch” hairstyle (the style in this image) became a hallmark of the late 1970s fashion scenes and were featured regularly in publications like <span style={{ fontStyle: 'italic' }}>Vogue</span>. Trevor founded the charity My New Hair, providing support and wig customisation for individuals experiencing hair loss. (Image credit: Hairdressers Journal)</p>
+              <p style={{ marginBottom: '10px' }}>Trevor Sorbie was a Scottish Hairdresser who died in 2024 after a long history of working in the beauty industry and renowned for his innovative techniques and transformative hairstyles. His signature “Scrunch” hairstyle (the style in this image) became a hallmark of the late 1970s fashion scenes and were featured regularly in publications like <span style={{ fontStyle: 'normal' }}>Vogue</span>. Trevor founded the charity My New Hair, providing support and wig customisation for individuals experiencing hair loss. (Image credit: Hairdressers Journal)</p>
             </div>
           </div>
           <div className='column-wrapper'>
             <div className='text-column-wrapper'>
               <div className='text-section' id='section-4'>
-                <h1 className='text-section-title'>Where did you go clubbing in London at 21?</h1>
+                <h1 className='text-section-title'>Where did you go clubbing as a student?</h1>
                 <p className='featured-paragraph-text'>I went to Heaven, Velvet Underground, and a bar in Soho called Ricky Ticks, a hub for fashion people. Moving to London at 22, I immersed myself in these places to network and meet people, so I went three to four times a week, I loved it and I felt like I was with my people. I even met Jean Paul Gaultier at Heaven! I was wearing a Jean Paul Gaultier kilt, and so was he. I walked right up to him. Networking then was all face-to-face, and I loved it, so I made sure I was in the right places to meet the right people and you’d meet the most amazing people in Heaven.</p>
               </div>
               <div className='text-section' id='section-5'>
@@ -588,7 +588,7 @@ const AdamReed = () => {
               <div id='image-item-1'>
                 <Image src={LuigiMurenu} alt='lisa-eldridge-at-work' className='image-column-child' id='image-column-1'/>
                 <div className='interactive-image-caption' id='caption-3'>
-                  <p>Lisa at work - From <a style={{ textDecoration: 'underline'}} href='https://lisaeldridge.com' rel="noopener noreferrer" target="_blank">lisaeldridge.com</a></p>
+                  <p style={{ fontSize: '1rem' }}>Italian Luigi Murenu moved to Paris in 1983 to begin his career as a hairstylist and has since worked with leading fashion publications including <span style={{ fontStyle: 'normal' }}>Vogue Italia</span>, <span style={{ fontStyle: 'normal' }}>Vogue UK</span> and <span style={{ fontStyle: 'normal' }}>Vogue US</span> collaborating with photographers like Steven Meisel and Marcus Piggott. (Image credit: Taken by Luigi for Models.com)</p>
                 </div>
               </div>
               <div id='image-item-2'>
