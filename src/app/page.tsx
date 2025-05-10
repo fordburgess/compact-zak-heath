@@ -378,7 +378,6 @@ const Home = () => {
               strokeWidth="5"
               fill="none"
               className='pointer-line'
-              filter="url(#soft-glow)"
             />
             <Link href={currentHref} className='item-link'>
               <path
