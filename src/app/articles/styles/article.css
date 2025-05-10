@@ -1,4 +1,4 @@
-html, body {
+.body-replacement {
   height: auto !important;
   overflow-x: hidden;
 }
