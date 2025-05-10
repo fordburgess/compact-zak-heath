@@ -21,12 +21,6 @@ import { usePathname } from 'next/navigation';
 
 const interviews = [
   {
-    pfp: CarolynAronson,
-    name: 'Carolyn Aronson',
-    job: 'Beauty Entrepreneur',
-    href: '/articles/carolyn-aronson'
-  },
-  {
     pfp: LisaEldridge,
     name: 'Lisa Eldridge MBE',
     job: 'Celebrity Makeup Artist',
@@ -43,6 +37,12 @@ const interviews = [
     name: 'Alessandra Steinherr',
     job: 'Beauty Editor + Influencer',
     href: '/articles/alessandra-steinherr'
+  },
+  {
+    pfp: CarolynAronson,
+    name: 'Carolyn Aronson',
+    job: 'Beauty Entrepreneur',
+    href: '/articles/carolyn-aronson'
   },
   {
     pfp: Ingeborg,

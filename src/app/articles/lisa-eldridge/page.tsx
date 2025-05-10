@@ -39,7 +39,7 @@ const LisaEldridge = () => {
       ScrollTrigger.create({
         trigger:".mag-wrapper",
         start:"top 12%",
-        end: () => `+=${getScrollAmount() * -1}`,
+        end: () => `+=${getScrollAmount() * -1 + 150}`,
         pin:true,
         animation: tween,
         scrub:1,
@@ -301,7 +301,7 @@ const LisaEldridge = () => {
             <Image src={LisaEldrigdeProfile} alt='pfp' className='featured-profile-image'/>
             <div id='title-box'>
               <h1 className='strong-title'>In Conversation With Lisa Eldridge MBE:</h1>
-              <h1 className='title-subline'>Becoming A World Class Makeup Artist</h1>
+              <h1 className='title-subline'>Becoming a World Class Makeup Artist</h1>
             </div>
           </div>
           <div className="mag-wrapper">
@@ -313,6 +313,7 @@ const LisaEldridge = () => {
               <Image src={VogueParis} alt='vogue-paris' />
               <Image src={VogueTurkey} alt='vogue-turkey' />
               <Image src={HarpersBazaar} alt='harpers-bazaar' />
+              <p className='interactive-image-caption'>(Image Credits: Lisa Eldridge MBE)</p>
             </div>
           </div>
           <div className='text-section' id='section-2'>
