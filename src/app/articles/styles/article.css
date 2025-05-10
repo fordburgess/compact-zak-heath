@@ -247,7 +247,7 @@
   text-wrap: nowrap;
 }
 
-#tilly-line-4, #carolyn-line-4 {
+#tilly-line-4, #carolyn-line-4, #millie-line-4 {
   display: none;
 }
 
@@ -358,6 +358,11 @@
   #tilly-line-4 {
     display: block;
     transform: translateX(150px);
+  }
+
+  #millie-line-4 {
+    display: block;
+    transform: translateX(50px);
   }
 
   #zak-lisa-caption {
