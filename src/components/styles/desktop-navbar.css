@@ -1,20 +1,8 @@
-.nav-hover-container {
+.nav-link-container {
   display: none;
 }
 
 @media (min-width: 800px) {
-  .nav-hover-container {
-    display: block;
-    position: fixed;
-    top: 0%;
-    left: 0%;
-    /* width: 1vw; */
-    z-index: 100;
-    display: flex;
-    justify-content: center;
-    align-items: end;
-  }
-
   .nav-link-container {
     display: block;
     position: fixed;

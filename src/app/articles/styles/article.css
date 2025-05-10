@@ -189,6 +189,68 @@ html, body {
   transform: translate(-50%, -50%);
 }
 
+.featured-transition-container {
+  width: 100%;
+  padding: 50px 0 75px;
+  position: relative;
+}
+
+.image-with-caption {
+  width: 100%;
+  text-align: center;
+
+  p {
+    color: #fff;
+  }
+
+  img {
+    max-height: 300px;
+    max-width: 100%;
+  }
+}
+
+.image-caption {
+  font-size: 1.125rem;
+  font-family: 'Playfair';
+  color: #fff;
+  font-style: italic;
+}
+
+#second-image-trans {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#zak-and-lisa {
+  max-height: 400px;
+  width: 100%;
+  z-index: 0;
+}
+
+.fctc-line-4 {
+  position: absolute;
+  left: 50%;
+  top: 65%;
+  height: 10px;
+  width: 1px;
+  background-color: #fff;
+  transform: translate(-50%, -65%);
+  transform-origin: top;
+  z-index: 10;
+}
+
+#zak-lisa-caption {
+  position: absolute;
+  top: 87%;
+  left: 50%;
+  transform: translate(-50%, -87%);
+  text-wrap: nowrap;
+}
+
+#tilly-line-4, #carolyn-line-4 {
+  display: none;
+}
+
 @media (min-width: 1000px) {
   .featured-title-section {
     padding: 100px 300px 50px;
@@ -229,5 +291,78 @@ html, body {
 
   #hide-container-1 {
     width: 500px;
+  }
+
+  #fctc-trans-2 {
+    padding: 50px 0;
+  }
+
+  .image-with-caption {
+    width: 50%;
+  }
+
+  .image-with-caption img {
+    max-height: 500px;
+  }
+
+  .fctc-line-2 {
+    position: absolute;
+    left: 48%;
+    top: 50%;
+    height: 1px;
+    width: 10px;
+    transform-origin: left;
+    background-color: #fff;
+    transform: translate(-48%, -50%);
+    /* transform-origin: top; */
+    z-index: 10;
+  }
+
+  #first-trans-caption {
+    font-size: 1.25rem !important;
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(60%, -50%);
+  }
+
+  #second-image-trans {
+    padding: 50px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #zak-and-lisa {
+    max-height: 500px;
+    width: 50%;
+    z-index: 5;
+  }
+
+  .fctc-line-4 {
+    position: static;
+    height: 1px;
+    width: 20px;
+    background-color: #fff;
+    transform-origin: right;
+    transform: translateX(100px);
+    z-index: 10;
+  }
+
+  #carolyn-line-4 {
+    display: block;
+    transform: translateX(50px);
+  }
+
+  #tilly-line-4 {
+    display: block;
+    transform: translateX(150px);
+  }
+
+  #zak-lisa-caption {
+    position: static;
+    transform: translateX(-50px);
+    width: 200px;
   }
 }

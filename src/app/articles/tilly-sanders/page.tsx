@@ -4,6 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import SpringExpanded from '../../../assets/images/spring-expanded.jpg';
 import TillySandersProfile from '../../../assets/images/tilly-sanders-profile.webp';
+import TillySanders1 from '../../../assets/images/tilly-sanders-1.webp';
+import TillySanders2 from '../../../assets/images/tilly-sanders-2.webp';
 import '../styles/article.css';
 import { useMediaQuery } from 'usehooks-ts';
 import gsap from 'gsap';
@@ -106,6 +108,69 @@ const TillySanders = () => {
         scrub: true
       }
     })
+
+    if (!mobile) {
+
+      const line2Props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#first-image-trans',
+          start: 'top 60%',
+          end: 'bottom bottom',
+          scrub: true,
+        }
+      };
+
+      const scaleAxis = mobile ? 'scaleY' : 'scaleX';
+      const opacity = 1;
+      line2Props[scaleAxis] = mobile ? 8 : 10;
+      line2Props[opacity];
+      gsap.to('.fctc-line-2', line2Props);
+
+      const caption2props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#first-image-trans',
+          start: 'top 80%',
+          end: 'bottom bottom',
+          scrub: true,
+        }
+      }
+      const transitionDirection = mobile ? 'y' : 'x';
+      caption2props[transitionDirection] = mobile ? -50 : -1;
+      gsap.to('#first-trans-caption', caption2props);
+    }
+
+    if (!mobile) {
+
+      const line4Props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#second-image-trans',
+          start: 'top 60%',
+          end: 'bottom 80%',
+          scrub: true,
+        }
+      };
+      const scaleAxisLine4 = mobile ? 'scaleY' : 'scaleX';
+      line4Props[scaleAxisLine4] = 7
+      gsap.to('.fctc-line-4', line4Props);
+
+
+      const caption4props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#second-image-trans',
+          start: 'top 60%',
+          end: 'bottom 80%',
+          scrub: true,
+        }
+      }
+      const transitionDirectionCaption4 = mobile ? 'y' : 'x';
+      caption4props[transitionDirectionCaption4] = mobile ? 50 : '100px';
+      gsap.to('#second-trans-caption', caption4props);
+    }
+
   }, [])
 
   return (
@@ -143,6 +208,13 @@ const TillySanders = () => {
             </div>
           </div>
           <p className='featured-article-paragraph'>Trips are fun, but there's a reason behind them, whether that be education around the product launch or photo opportunities for the creators. Let's just say that I was shocked, though, when I first heard how much events and trips can cost. Just the flowers for the events alone can be thousands, but there are also production costs, venue costs, and gifting—it all adds up, but it's an investment for the brand.</p>
+          <div className='featured-transition-container' id='first-image-trans'>
+            <div className='image-with-caption' style={{ zIndex: -1, }}>
+              <Image src={TillySanders1} alt='tilly-sanders-1' style={{ minHeight: '500px', objectFit: 'cover' }}/>
+            </div>
+            <div className='fctc-line-2'></div>
+            <p className='image-caption' id='first-trans-caption'>(Image credit: Tilly Sanders)</p>
+          </div>
           <p className='featured-article-subheader'>What Really Goes On Behind The Events</p>
           <p className='featured-article-paragraph'>We're constantly shifting between the heritage brands and emerging indie brands. Luxury skincare brands often still work in very traditional ways - they're all about print and press, but this type of media coverage doesn't always translate to the consumer anymore.</p>
           <p className='featured-article-paragraph'>To navigate this, we suggest and create intimate dinners with a brand, so influencers and journalists can attend. Sometimes, we turn these events around in a week, which isn't ideal. The perfect timeframe for an event is two months, but that never actually happens.</p>
@@ -170,6 +242,11 @@ const TillySanders = () => {
           <p className='featured-article-subheader'>Where Beauty PR Is Going</p>
           <p className='featured-article-paragraph'>Beauty PR is definitely shifting, and I've seen a major shift over the past couple of years as creators and influencers play a much bigger role than traditional media. Our trips are now 90% focused on influencers, but I don't want to plan things that make me feel like I'm ticking a box.</p>
           <p className='featured-article-paragraph'>Events and partnerships need to feel authentic because when they don't, they lose their soul, and I want to create experiences which actually mean something. This is a people industry and if you're not building and maintaining relationships, the activation won't work.</p>
+          <div className='featured-transition-container' id='second-image-trans'>
+            <p className='image-caption' id="second-trans-caption">Tilly with Selena Gomez</p>
+            <div className='fctc-line-4' id='tilly-line-4'></div>
+            <Image src={TillySanders2} id='zak-and-lisa' alt='zak-and-lisa'/>
+          </div>
           <p className='featured-article-paragraph'>The beauty industry is full of creative, lovely, and warm people. I think we're really lucky to have that.</p>
           <p className='featured-article-subheader'>Thoughts For Anyone Wanting To Break Into The Industry</p>
           <p className='featured-article-paragraph'>Use your age as an advantage. Bring new and fresh ideas, stay up to date in the industry, network with people who you can learn from and just start. Even if that means starting on the shop floor. It worked for me. Message the people who work for the company you want to work for, and if you're really determined to get into beauty, then you will do it.</p>

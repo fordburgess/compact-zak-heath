@@ -1,16 +1,17 @@
 "use client"
 import React, { useEffect } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import SpringExpanded from '../../../assets/images/spring-expanded.jpg';
 import CarolynAronsonProfile from '../../../assets/images/carolyn-aronson-profile.webp';
+import CarolynAronson1 from '../../../assets/images/carolyn-aronson-1.webp';
+import CarolynAronson2 from '../../../assets/images/carolyn-aronson-2.webp';
 import '../styles/article.css';
 import { useMediaQuery } from 'usehooks-ts';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const CarolynAronson = () => {
-  const mobile = useMediaQuery('(max-width: 800px)');
+  const mobile = useMediaQuery('(max-width: 1000px)');
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -106,6 +107,66 @@ const CarolynAronson = () => {
         scrub: true
       }
     })
+
+    if (!mobile) {
+
+      const line2Props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#first-image-trans',
+          start: 'top 60%',
+          end: 'bottom 60%',
+          scrub: true,
+        }
+      };
+
+      const scaleAxis = mobile ? 'scaleY' : 'scaleX';
+      const opacity = 1;
+      line2Props[scaleAxis] = mobile ? 8 : 10;
+      line2Props[opacity];
+      gsap.to('.fctc-line-2', line2Props);
+
+      const caption2props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#first-image-trans',
+          start: 'top 80%',
+          end: 'bottom bottom',
+          scrub: true,
+        }
+      }
+      const transitionDirection = mobile ? 'y' : 'x';
+      caption2props[transitionDirection] = mobile ? -50 : -1;
+      gsap.to('#first-trans-caption', caption2props);
+
+
+      const line4Props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#second-image-trans',
+          start: 'top 60%',
+          end: 'bottom 60%',
+          scrub: true,
+        }
+      };
+      const scaleAxisLine4 = mobile ? 'scaleY' : 'scaleX';
+      line4Props[scaleAxisLine4] = 9
+      gsap.to('.fctc-line-4', line4Props);
+
+      const caption4props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#second-image-trans',
+          start: 'top 60%',
+          end: 'bottom 60%',
+          scrub: true,
+        }
+      }
+      const transitionDirectionCaption4 = mobile ? 'y' : 'x';
+      caption4props[transitionDirectionCaption4] = mobile ? 50 : '10px';
+      gsap.to('#second-trans-caption', caption4props);
+    }
+
   }, [])
 
   return (
@@ -154,6 +215,13 @@ const CarolynAronson = () => {
           <p className='featured-article-paragraph'>We could only afford one product at the time: The Miracle Leave, which changed everything for us. That product now sells over 11 million bottles a year. We worked together for 10 years; however, in 2017, I bought him out, and since then, I've been the sole owner and doubled the company.</p>
           <p className='featured-article-subheader'>Where Did You Go Clubbing When You Were 21?</p>
           <p className='featured-article-paragraph'>I went out six nights a week. Everything from alternative clubs to gay bars to Detroit ballroom hip-hop.</p>
+          <div className='featured-transition-container' id='first-image-trans'>
+            <div className='image-with-caption' style={{ zIndex: -1, }}>
+              <Image src={CarolynAronson1} alt='carolyn-aronson-2' style={{ minHeight: '500px', objectFit: 'cover', objectPosition: 'top' }}/>
+            </div>
+            <div className='fctc-line-2'></div>
+            <p className='image-caption' id='first-trans-caption'>(Image credit: LinkedIn)</p>
+          </div>
           <p className='featured-article-subheader'>The Empire Expands</p>
           <p className='featured-article-paragraph'>It's A 10 is sold in over 125 countries, and global growth has opened even more doors for me. I now own 15 companies - including a makeup brand (Be A 10), lifestyle and body care brands, a private jet charter company and even a boat charter company.</p>
           <p className='featured-article-paragraph'>These more "random" ones came from necessity. I travel so much that I needed a more efficient way to fly, so I bought a jet - then turned it into a business too. I don't like sitting still; instead, I create and solve problems with a purpose.</p>
@@ -168,6 +236,11 @@ const CarolynAronson = () => {
           </div>
           <p className='featured-article-paragraph'>I also founded and built the first-ever Beauty Centre at a junior achievement facility in Florida. Over 70,000 students pass through that centre every year. It's fully interactive: barber chairs, shampoo stations, mannequins and actual lesson plans. The goal is to help young people envision their careers in beauty - especially those who might not have considered it otherwise.</p>
           <p className='featured-article-paragraph'>The beauty industry needs new energy and perspective, and there's room for everyone.</p>
+          <div className='featured-transition-container' id='second-image-trans'>
+            <p className='image-caption' id="second-trans-caption">Carolyn won the 2023 Gold Stevie for Best Female Entrepreneur in Consumer Products (Image credit: Carolyn Aronson)</p>
+            <div className='fctc-line-4' id='carolyn-line-4'></div>
+            <Image src={CarolynAronson2} id='zak-and-lisa' alt='zak-and-lisa'/>
+          </div>
           <p className='featured-article-subheader'>Movie of Choice?</p>
           <p className='featured-article-paragraph'>"Mrs Doubtfire. Anything with Robin Williams".</p>
           <div className='featured-article-transition-container' id='featured-trans-3'>
