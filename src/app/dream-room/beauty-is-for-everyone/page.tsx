@@ -254,7 +254,6 @@ const FromConcealerToConfidence = () => {
     <div className='dream-room-article-container'>
       <Image priority src={AutumnExpanded} className='dream-room-bg' alt='dream-room-bg'/>
       <div className='dream-room-article-content'>
-        <Link href='/dream-room' className='article-back-button'><p>Back</p></Link>
         <div className='fctc-title-section'>
           <h1 className='fctc-title'>
             From Concealer<br/> to Confidence

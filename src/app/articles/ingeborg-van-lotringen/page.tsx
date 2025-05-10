@@ -113,7 +113,6 @@ const IngeborgVanLotringen = () => {
     <div className='featured-article-container'>
       <Image priority src={SpringExpanded} className='featured-article-bg' alt='featured-article-bg'/>
       <div className='featured-article-content'>
-        <Link href='/articles/interviews' className='article-back-button'><p>Back</p></Link>
         <div className='featured-title-section-2'>
           <Image src={IngeborgProfile} alt='pfp' className='featured-profile-image'/>
           <h1>In Conversation with Ingeborg van Lotringen:<br/> <strong style={{ fontWeight: '300', fontSize: '2rem' }}>on Beauty’s Jet-Setting Years and Writing for Print in Today’s Digital World</strong></h1>

@@ -392,8 +392,8 @@ polyline:nth-child(3) {
 
 .article-back-button {
   display: block;
-  position: sticky;
-  position: -webkit-sticky;
+  position: fixed;
+  /* position: -webkit-sticky; */
   text-align: center;
   width: 100px;
   padding: 0px 0;

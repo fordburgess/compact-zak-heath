@@ -112,7 +112,6 @@ const TillySanders = () => {
     <div className='featured-article-container'>
       <Image priority src={SpringExpanded} className='featured-article-bg' alt='featured-article-bg'/>
       <div className='featured-article-content'>
-        <Link href='/articles/interviews' className='article-back-button'><p>Back</p></Link>
         <div className='featured-title-section'>
           <Image src={TillySandersProfile} className='title-image' alt='tilly-sanders-profile' />
           <div className='featured-title-text'>

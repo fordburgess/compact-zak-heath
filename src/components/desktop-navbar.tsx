@@ -9,15 +9,13 @@ const DesktopNavbar = () => {
   const pathname = usePathname();
 
   return (
-    <div className='nav-hover-container'>
-      <div className='nav-link-container'>
-        <Link prefetch={true} className={pathname == '/' ? 'active nav-link' : 'nav-link'} href='/'>Home</Link>
-        <Link prefetch={true} className={pathname.includes('/articles') ? 'active nav-link' : 'nav-link'} href='/articles'>Articles</Link>
-        <Link prefetch={true} className={pathname.includes('/podcasts') ? 'active nav-link' : 'nav-link'} href='/audio'>Podcasts</Link>
-        <Link prefetch={true} className={pathname.includes('/beauty-icons') ? 'active nav-link' : 'nav-link'} href='/beauty-icons'>Beauty Icons</Link>
-        <Link prefetch={true} className={pathname.includes('/dream-room') ? 'active nav-link' : 'nav-link'} href='/dream-room'>Dream Room</Link>
-        <Link prefetch={true} className={pathname.includes('/services') ? 'active nav-link' : 'nav-link'} href='/services'>Services</Link>
-      </div>
+    <div className='nav-link-container'>
+      <Link prefetch={true} className={pathname == '/' ? 'active nav-link' : 'nav-link'} href='/'>Home</Link>
+      <Link prefetch={true} className={pathname.includes('/articles') ? 'active nav-link' : 'nav-link'} href='/articles'>Articles</Link>
+      <Link prefetch={true} className={pathname.includes('/podcasts') ? 'active nav-link' : 'nav-link'} href='/podcasts'>Podcasts</Link>
+      <Link prefetch={true} className={pathname.includes('/beauty-icons') ? 'active nav-link' : 'nav-link'} href='/beauty-icons'>Beauty Icons</Link>
+      <Link prefetch={true} className={pathname.includes('/dream-room') ? 'active nav-link' : 'nav-link'} href='/dream-room'>Dream Room</Link>
+      <Link prefetch={true} className={pathname.includes('/services') ? 'active nav-link' : 'nav-link'} href='/services'>Services</Link>
     </div>
   )
 }
