@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import TransitionWrapper from "@/components/transition-wrapper";
 import { Geist, Geist_Mono } from "next/font/google";
 import DesktopNavbar from "@/components/desktop-navbar";
+import MobileNavbar from "@/components/mobile-navbar";
 import BackButton from "@/components/back-button";
 import "./globals.css";
 
@@ -35,6 +36,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <DesktopNavbar />
+        <MobileNavbar />
         <BackButton />
         {/* <TransitionWrapper> */}
           {children}
