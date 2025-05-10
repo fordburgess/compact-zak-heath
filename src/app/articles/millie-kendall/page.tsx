@@ -5,6 +5,7 @@ import Link from 'next/link';
 import SpringExpanded from '../../../assets/images/spring-expanded.jpg';
 import MillieKendallProfile from '../../../assets/images/millie-kendall-profile.webp';
 import MillieKendall1 from '../../../assets/images/millie-kendall-1.webp';
+import MillieKendall2 from '../../../assets/images/millie-kendall-2.webp';
 import '../styles/article.css';
 import { useMediaQuery } from 'usehooks-ts';
 import gsap from 'gsap';
@@ -138,8 +139,32 @@ const MillieKendall = () => {
       caption2props[transitionDirection] = mobile ? -50 : -1;
       gsap.to('#first-trans-caption', caption2props);
 
+      const line4Props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#second-image-trans',
+          start: 'top 60%',
+          end: 'bottom 60%',
+          scrub: true,
+        }
+      };
+      const scaleAxisLine4 = mobile ? 'scaleY' : 'scaleX';
+      line4Props[scaleAxisLine4] = 7
+      gsap.to('.fctc-line-4', line4Props);
 
 
+      const caption4props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#second-image-trans',
+          start: 'top 60%',
+          end: 'bottom 60%',
+          scrub: true,
+        }
+      }
+      const transitionDirectionCaption4 = mobile ? 'y' : 'x';
+      caption4props[transitionDirectionCaption4] = mobile ? 50 : '10px';
+      gsap.to('#second-trans-caption', caption4props);
     }
 
   }, [])
@@ -211,6 +236,11 @@ const MillieKendall = () => {
             <p className='featured-article-subheader'>Recognition For Her Work</p>
             <p className='featured-article-paragraph'>"I got the MBE just after having my daughter. A letter came, and I didn't realise I wasn't supposed to tell anyone, so of course, I told everyone! Then I read the letter properly and realised it wasn't official yet. You have to wait until the honours list is published to see if you're actually on it."</p>
             <p className='featured-article-paragraph'>The OBE came during the pandemic. "By then, I knew how it worked. It was less of a shock but still surreal. The Queen gave it to us. Weird, but amazing."</p>
+            <div className='featured-transition-container' id='second-image-trans'>
+              <p className='image-caption' id="second-trans-caption">Honoured with her OBE at the Buckingham Palace ceremony (Image credit: Scratch Magazine)</p>
+              <div className='fctc-line-4' id='millie-line-4'></div>
+              <Image src={MillieKendall2} id='zak-and-lisa' alt='millie-kendall-obe'/>
+            </div>
             <p className='featured-article-subheader'>What's Next When You Have Already Done Everything?</p>
             <p className='featured-article-paragraph'>"I always have something brewing," she says. "Right now, I want to help brands more privately. I used to charge for strategy, but now people come to me through the British Beauty Council and get it for free. Eventually, I want to formalise that again."</p>
             <p className='featured-article-paragraph'>"I try to stay home more now. I've got a puppy! But I love being in the office."</p>
