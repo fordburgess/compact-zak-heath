@@ -1,5 +1,5 @@
 "use client"
-import React from 'react';
+import React, { useEffect } from 'react';
 import './styles/mobile-navbar.css';
 import gsap from 'gsap';
 import Link from 'next/link';
@@ -69,6 +69,10 @@ const MobileNavbar = () => {
       linkContainer.style.display = 'none';
     }, (250));
   }
+
+  useEffect(() => {
+    handleMenuClose()
+  }, [pathname])
 
   return (
     <div className='mobile-nav-container'>
