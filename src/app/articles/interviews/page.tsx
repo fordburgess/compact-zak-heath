@@ -87,11 +87,10 @@ const chunkArray = (array: Array<any>, size: number) =>
     array.slice(i * size, i * size + size)
 );
 
-const chunked = chunkArray(interviews, 6);
-
 const FeaturedInterviews = () => {
   const pathname = usePathname();
   const mobile = useMediaQuery('(max-width: 1000px)');
+  const chunked = chunkArray(interviews, 6);
 
   useEffect(() => {
     const handleScroll = () => {
