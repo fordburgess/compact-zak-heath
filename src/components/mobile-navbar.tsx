@@ -95,12 +95,12 @@ const MobileNavbar = () => {
           <line x1="12" y1="4" x2="4" y2="12" />
         </svg>
         <div className='link-list'>
-          <Link prefetch={true} className={pathname == '/' ? 'active nav-link' : 'nav-link'} href='/'>Home</Link>
-          <Link prefetch={true} className={pathname.includes('/articles') ? 'active nav-link' : 'nav-link'} href='/articles'>Articles</Link>
-          <Link prefetch={true} className={pathname.includes('/podcasts') ? 'active nav-link' : 'nav-link'} href='/podcasts'>Podcasts</Link>
-          <Link prefetch={true} className={pathname.includes('/beauty-icons') ? 'active nav-link' : 'nav-link'} href='/beauty-icons'>Beauty Icons</Link>
-          <Link prefetch={true} className={pathname.includes('/dream-room') ? 'active nav-link' : 'nav-link'} href='/dream-room'>Dream Room</Link>
-          <Link prefetch={true} className={pathname.includes('/services') ? 'active nav-link' : 'nav-link'} href='/services'>Services</Link>
+          <Link prefetch={true} className={pathname == '/' ? 'mobile-active nav-link' : 'nav-link'} href='/'>Home</Link>
+          <Link prefetch={true} className={pathname.includes('/articles') ? 'mobile-active nav-link' : 'nav-link'} href='/articles'>Articles</Link>
+          <Link prefetch={true} className={pathname.includes('/podcasts') ? 'mobile-active nav-link' : 'nav-link'} href='/podcasts'>Podcasts</Link>
+          <Link prefetch={true} className={pathname.includes('/beauty-icons') ? 'mobile-active nav-link' : 'nav-link'} href='/beauty-icons'>Beauty Icons</Link>
+          <Link prefetch={true} className={pathname.includes('/dream-room') ? 'mobile-active nav-link' : 'nav-link'} href='/dream-room'>Dream Room</Link>
+          <Link prefetch={true} className={pathname.includes('/services') ? 'mobile-active nav-link' : 'nav-link'} href='/services'>Services</Link>
         </div>
       </div>
     </div>

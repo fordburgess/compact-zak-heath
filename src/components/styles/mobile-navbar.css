@@ -59,8 +59,14 @@
   flex-grow: 0;
 }
 
-.active {
+.mobile-active {
   text-decoration-line: underline;
   text-underline-offset: 8px;
   text-decoration-thickness: 1px;
+}
+
+@media (min-width: 1000px) {
+  .mobile-nav-container {
+    display: none;
+  }
 }
