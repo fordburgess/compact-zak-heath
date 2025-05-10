@@ -1,0 +1,26 @@
+.article-back-button {
+  display: block;
+  position: fixed;
+  position: -webkit-sticky;
+  text-align: center;
+  width: 100px;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #8a8a8a;
+  top: 10px;
+  left: 20px;
+  z-index: 500;
+  border-radius: 50px;
+  font-family: 'Josefin Sans';
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  p {
+    font-size: 1rem;
+    margin-bottom: -2px;
+    font-weight: 400;
+  }
+}
