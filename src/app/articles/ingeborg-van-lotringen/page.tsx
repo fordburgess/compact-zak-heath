@@ -177,8 +177,8 @@ const IngeborgVanLotringen = () => {
           <div className='featured-title-section-2'>
             <Image src={IngeborgProfile} alt='pfp' className='featured-profile-image'/>
             <div id='title-box'>
-              <h1 className='strong-title'>In Conversation With Lisa Eldridge MBE:</h1>
-              <h1 className='title-subline'>Becoming a World Class Makeup Artist</h1>
+              <h1 className='strong-title'>In Conversation With Ingeborg Van Lotringen:</h1>
+              <h1 className='title-subline'>On Beauty’s Jet-Setting Years and Writing for Print in Today’s Digital World</h1>
             </div>
           </div>
           <div className='featured-article-text-section'>
