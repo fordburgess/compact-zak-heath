@@ -54,7 +54,7 @@ const episodes = [
   },
   {
     index: 4,
-    id: 'raquell-bouris',
+    id: 'raquel-bouris',
     title: 'Raquel Bouris: Scent, Strategy And Creating A Startup',
     job: 'Fragrance Founder',
     profileImage: RaquellBouris,
