@@ -80,7 +80,7 @@ const Home = () => {
 
       const itemValsMobile = {
         'B': { href: '/articles/tilly-sanders', pointer: 'm2250 740 L2000 740', rectX: '1390', rectY: '570', textX: '1690', textY: '710', textVal: 'Beauty PR', linkX: '1690', linkY: '780', comingSoon: false },
-        'D': { href: '/dream-room', pointer: 'm2780 735 L2780 660 L2500 660', rectX: '1900', rectY: '490', textX: '2200', textY: '630', textVal: 'My Journey', linkX: '2200', linkY: '690', comingSoon: false },
+        'D': { href: '/dream-room', pointer: 'm810 1030 L810 900', rectX: '600', rectY: '735', textX: '770', textY: '800', textVal: 'My Journey', linkX: '770', linkY: '840', comingSoon: false },
         'E': { href: '/articles/lisa-eldridge', pointer: 'm2420 1135 L2350 1135 L2350 920', rectX: '2290', rectY: '600', textX: '2590', textY: '740', textVal: 'Celebrity Makeup Artist', linkX: '2590', linkY: '800', comingSoon: false },
         'F': { href: '/articles/millie-kendall', pointer: 'm2750 1130 L2750 1050 L3090 1050', rectX: '3100', rectY: '900', textX: '3400', textY: '1040', textVal: 'Beauty CEO', linkX: '3400', linkY: '1100', comingSoon: false },
         'G': { href: '/articles/adam-reed', pointer: 'm2720 1270 L2640 1350 L2470 1350', rectX: '1860', rectY: '1200', textX: '2170', textY: '1340', textVal: 'Celebrity Hairdresser', linkX: '2170', linkY: '1400', comingSoon: false },
