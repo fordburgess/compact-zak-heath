@@ -130,26 +130,25 @@ const Audio = () => {
       });
     }
 
-    if (!mobile) {
-      ScrollTrigger.create({
-        trigger: ".scroll-container",
-        start: "center top",
-        onEnter: () => {
-          const initialImageContainer: HTMLElement | null = document.querySelector('.initial-image-container');
 
-          if (initialImageContainer) {
-            initialImageContainer.style.zIndex = '0';
-          }
-        },
-        onLeaveBack: () => {
-          const initialImageContainer: HTMLElement | null = document.querySelector('.initial-image-container');
+    ScrollTrigger.create({
+      trigger: mobile ? '.mobile-scroll-test' : '.scroll-container',
+      start: "center top",
+      onEnter: () => {
+        const initialImageContainer: HTMLElement | null = document.querySelector('.initial-image-container');
 
-          if (initialImageContainer) {
-            initialImageContainer.style.zIndex = '2';
-          }
+        if (initialImageContainer) {
+          initialImageContainer.style.zIndex = '0';
         }
-      })
-    }
+      },
+      onLeaveBack: () => {
+        const initialImageContainer: HTMLElement | null = document.querySelector('.initial-image-container');
+
+        if (initialImageContainer) {
+          initialImageContainer.style.zIndex = '2';
+        }
+      }
+    })
 
     if (mobile) {
       gsap.to('.initial-image-container', {
