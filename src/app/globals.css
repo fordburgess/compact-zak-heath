@@ -145,12 +145,16 @@ a {
 }
 
 .scroll-container {
-  height: 1000dvh;
-  width: 100vw;
-  position: relative;
-  box-sizing: border-box;
-  /* overflow-x: hidden; */
-  /* opacity: 0.5; */
+  height: auto;
+}
+
+.mobile-scroll-test {
+  min-height: 300vh;
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  /* background-color: rgba(255, 0, 0, 0.609); */
+  z-index: 10;
 }
 
 .test-scroll {
@@ -166,7 +170,7 @@ a {
   width: 100%;
   object-fit: cover;
   object-position: center;
-  position: sticky;
+  position: fixed;
   top: 0;
   perspective: 1000px;
   overflow: hidden;
@@ -218,6 +222,7 @@ a {
   left: 50%;
   z-index: 100;
   opacity: 0;
+  transform: translateX(-50%);
 }
 
 .scroll-hint {
@@ -237,6 +242,13 @@ a {
   color: #fff;
   text-align: center;
   text-shadow: #fff 2px 0 5px;
+}
+
+#mobile-overlay {
+  position: fixed;
+  top: 0%;
+  height: 100dvh;
+  width: 100dvw;
 }
 
 polyline {
@@ -445,6 +457,25 @@ polyline:nth-child(3) {
 }
 
 @media (min-width: 1000px) {
+  .scroll-container {
+    height: 1000dvh;
+    width: 100vw;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  .initial-image-container {
+    height: 100dvh;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: sticky;
+    top: 0;
+    perspective: 1000px;
+    overflow: hidden;
+    z-index: 2;
+  }
+
   .title-container {
     top: 10%;
   }

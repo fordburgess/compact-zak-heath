@@ -14,7 +14,7 @@ import { useMediaQuery } from 'usehooks-ts';
 
 const Audio = () => {
   const router = useRouter();
-  const mobile = useMediaQuery('(max-width: 800px)');
+  const mobile = useMediaQuery('(max-width: 1000px)');
 
   useEffect(() => {
     const scrollPosition = localStorage.getItem('audio-page-scroll');
@@ -31,16 +31,31 @@ const Audio = () => {
       delay: 1.25,
     })
 
-    gsap.to('.initial-image', {
-      scale: 2,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: ".scroll-container",
-        start: "top top",
-        end: "bottom top",
-        scrub: true
-      }
-    })
+    if (!mobile) {
+      gsap.to('.initial-image', {
+        scale: 2,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: ".scroll-container",
+          start: "top top",
+          end: "bottom top",
+          scrub: true
+        }
+      })
+    }
+
+    if (mobile) {
+      gsap.to('.initial-image', {
+        scale: 3,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: ".mobile-scroll-test",
+          start: "top top",
+          end: "bottom top",
+          scrub: true
+        }
+      })
+    }
 
     gsap.to('.title-container', {
       z: 1500,
@@ -64,16 +79,18 @@ const Audio = () => {
       }
     })
 
-    gsap.to('.initial-image-container', {
-      opacity: 0,
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".scroll-container",
-        start: 'center 110%',
-        end: 'center top',
-        scrub: true
-      }
-    })
+    if (!mobile) {
+      gsap.to('.initial-image-container', {
+        opacity: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".scroll-container",
+          start: 'center 110%',
+          end: 'center top',
+          scrub: true
+        }
+      })
+    }
 
     gsap.to('.chevron-container', {
       y: 50,
@@ -108,25 +125,50 @@ const Audio = () => {
       }
     });
 
-    ScrollTrigger.create({
-      trigger: ".scroll-container",
-      start: "center top",
-      // markers: true,
-      onEnter: () => {
-        const initialImageContainer: HTMLElement | null = document.querySelector('.initial-image-container');
+    if (!mobile) {
+      ScrollTrigger.create({
+        trigger: ".scroll-container",
+        start: "center top",
+        onEnter: () => {
+          const initialImageContainer: HTMLElement | null = document.querySelector('.initial-image-container');
 
-        if (initialImageContainer) {
-          initialImageContainer.style.zIndex = '0';
-        }
-      },
-      onLeaveBack: () => {
-        const initialImageContainer: HTMLElement | null = document.querySelector('.initial-image-container');
+          if (initialImageContainer) {
+            initialImageContainer.style.zIndex = '0';
+          }
+        },
+        onLeaveBack: () => {
+          const initialImageContainer: HTMLElement | null = document.querySelector('.initial-image-container');
 
-        if (initialImageContainer) {
-          initialImageContainer.style.zIndex = '2';
+          if (initialImageContainer) {
+            initialImageContainer.style.zIndex = '2';
+          }
         }
-      }
-    })
+      })
+    }
+
+    if (mobile) {
+      gsap.to('.initial-image-container', {
+        opacity: 0,
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: ".mobile-scroll-test",
+          start: 'center bottom',
+          end: 'center 60%',
+          scrub: true
+        }
+      })
+
+      gsap.to('.svg-overlay-container', {
+        scale: 2,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '.mobile-scroll-test',
+          start: 'center 65%',
+          end: 'bottom bottom',
+          scrub: true
+        }
+      })
+    }
   }, [])
 
   useEffect(() => {
@@ -143,7 +185,8 @@ const Audio = () => {
 
   return (
     <>
-      <div className='scroll-container'>
+      {/* <div className='scroll-container'> */}
+        <div className='mobile-scroll-test'></div>
         <div className='initial-image-container'>
           <div className='title-container'>
             <motion.h1
@@ -221,7 +264,7 @@ const Audio = () => {
             </g>
           </svg>
         </div>
-      </div>
+      {/* </div> */}
     </>
   )
 }
