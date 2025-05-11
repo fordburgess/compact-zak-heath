@@ -59,6 +59,8 @@ const Home = () => {
     if (!activeItem) {
       setActiveItem(true);
 
+      console.log(id);
+
       const itemVals = {
         'B': { href: '/articles/tilly-sanders', pointer: 'm2250 740 L2000 740', rectX: '1390', rectY: '570', textX: '1690', textY: '710', textVal: 'Beauty PR', linkX: '1690', linkY: '780', comingSoon: false },
         'D': { href: '/dream-room', pointer: 'm2780 735 L2780 660 L2500 660', rectX: '1900', rectY: '490', textX: '2200', textY: '630', textVal: 'My Journey', linkX: '2200', linkY: '690', comingSoon: false },
@@ -85,7 +87,7 @@ const Home = () => {
         'H': { href: '/', pointer: 'm2770 1330 L2770 1450 L2900 1600', rectX: '2910', rectY: '1595', textX: '3220', textY: '1735', textVal: 'Test', linkX: '3220', linkY: '1795', comingSoon: true },
         'I': { href: '/', pointer: 'm3050 1280 L3200 1280 L3200 1100', rectX: '2900', rectY: '780', textX: '3200', textY: '920', textVal: 'Test', linkX: '3200', linkY: '980', comingSoon: true },
         'J': { href: '/podcasts/patricia-bright', pointer: 'm3000 1400 L3150 1400 L3150 1650', rectX: '2850', rectY: '1650', textX: '3150', textY: '1790', textVal: 'Content Creator + CEO', linkX: '3150', linkY: '1850', comingSoon: false },
-        'K': { href: '/articles/mona-kattan', pointer: 'm2500 1830 L2700 1750 L3000 1750', rectX: '3005', rectY: '1600', textX: '3310', textY: '1740', textVal: 'Fragrance CEO', linkX: '3310', linkY: '1800', comingSoon: false },
+        'K': { href: '/articles/mona-kattan', pointer: 'm655 1460 L655 1350', rectX: '480', rectY: '1180', textX: '660', textY: '1240', textVal: 'Fragrance CEO', linkX: '660', linkY: '1290', comingSoon: false },
         'L': { href: '/', pointer: 'm2850 1360 L2650 1500 L2520 1500', rectX: '1910', rectY: '1350', textX: '2220', textY: '1500', textVal: 'Beauty Photographer', linkX: '2220', linkY: '1560', comingSoon: true },
         'M': { href: '/podcasts/shakeel-murtaza', pointer: 'm520 1150 L520 1000', rectX: '350', rectY: '830', textX: '525', textY: '890', textVal: "Men's Beauty Influencer", linkX: '525', linkY: '940', comingSoon: false },
         // 'J': { pointer: 'm2320 1700 L2400 1700 L2400 1400', rectX: '2100', rectY: '1080', textX: '2405', textY: '1250', textVal: "Head of Beauty PR", linkX: '', linkY: '' },
