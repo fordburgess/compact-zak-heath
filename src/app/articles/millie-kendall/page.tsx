@@ -180,11 +180,11 @@ const MillieKendall = () => {
               <h1 className='featured-title-quote'>"Why Would I Sit in a Classroom When I Could Be Earning?"</h1>
               <div className='title-divider'></div>
               <h2 className='featured-subtitle'>Millie Kendall: CEO of the British Beauty Council</h2>
-              <p className='featured-blurb'>Millie Kendall OBE is one of the beauty industry's most celebrated figures. She co-founded iconic makeup brands like Ruby & Millie and created the British Beauty Council. Here's a COMPACT conversation about her career.</p>
+              <p className='featured-blurb'>Millie Kendall OBE is one of the beauty industry's most celebrated figures. She co-founded iconic makeup brands including Ruby & Millie and created the British Beauty Council. Here's a COMPACT conversation about her career.</p>
             </div>
           </div>
           <div className='featured-article-text-section'>
-            <p className='featured-article-paragraph'>Millie's story starts not with a business plan but with skipping school. She left school at 15, moved countries multiple times, and partied a lot, but has ended up leading the British Beauty Council. She holds both an MBE and OBE and is helping to shape the future of content creation through the Creator Collective, an initiative that merges beauty and education. In this COMPACT overview, Millie shares what launching a brand feels like and the advice she wishes she'd taken herself.</p>
+            <p className='featured-article-paragraph'>Millie's story starts not with a business plan but with skipping school. She left school at 15, moved countries multiple times, and partied a lot, but has ended up founding and leading the British Beauty Council. She holds both an MBE and OBE and is helping to shape the future of content creation through the Creator Collective, an initiative that merges beauty and education. In this COMPACT overview, Millie shares what launching a brand feels like and the advice she wishes she'd taken herself.</p>
             <p className='featured-article-subheader'>The Girl Who Said No To School But Yes To Parties</p>
             <p className='featured-article-paragraph'>"I was good at maths," Millie says when asked what she wanted to be as a child. "My mum used to give me the Yellow Pages and tell me to add the phone numbers up - I was great at it! I thought I'd be an accountant. Sad, right? But I liked numbers."</p>
             <p className='featured-article-paragraph'>She left school at 15 - not due to hardship, but because she was, in her own words, "manipulative." "I just didn't want to go. I'd been working in a hair salon since I was 13. I wasn't good at the hair part, but I loved the people, the energy, the clients, and most of all, the money. It was independence. Why would I sit in a classroom when I could be earning?"</p>
@@ -217,7 +217,7 @@ const MillieKendall = () => {
                 <h1 className='featured-key-quote'>"Beauty is housed in beautiful things; you open, close, and hold it. I love that experience."</h1>
               </div>
             </div>
-            <p className='featured-article-subheader'>Her First Venture: Ruby & Millie</p>
+            <p className='featured-article-subheader'>Her Role in the British Beauty Council and Starting the Creator Collective</p>
             <p className='featured-article-paragraph'>Millie was already working in PR when she met makeup artist Ruby Hammer. "I was her publicist, and she and her husband spent two years convincing me to form a brand with them. I liked my job, had my own business, was making loads of money - I wasn't interested in being the face of a brand."</p>
             <p className='featured-article-paragraph'>Eventually though, she agreed. Ruby & Millie launched in 1998 and became one of the UK's most recognisable beauty brands in the late 90s and early 2000s.</p>
             <p className='featured-article-paragraph'>"The moment it launched, I freaked out. My face was suddenly in hundreds of stores. People recognised me at bus stops. It was my worst nightmare. I actually moved to LA to get away from it. That's how much I hated being the front person."</p>
