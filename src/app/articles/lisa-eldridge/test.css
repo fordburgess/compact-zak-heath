@@ -359,12 +359,13 @@ body {
 
   .lisa-scroll-test {
     display: block;
-    height: 200vh;
+    height: 120vh;
     width: 100vw;
   }
 
   #section-3 {
     width: 70%;
+    height: 50vh;
     margin-bottom: 0;
   }
 

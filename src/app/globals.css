@@ -101,11 +101,6 @@ html, body {
   padding: 0;
 }
 
-/* body {
-  min-width: 320px;
-  min-height: 100%;
-} */
-
 img {
   object-fit: cover;
   object-position: center;
@@ -145,12 +140,22 @@ a {
 }
 
 .scroll-container {
-  height: 1000dvh;
-  width: 100vw;
-  position: relative;
-  box-sizing: border-box;
-  /* overflow-x: hidden; */
-  /* opacity: 0.5; */
+  height: auto;
+}
+
+.mobile-scroll-test {
+  min-height: 300vh;
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  /* background-color: rgba(255, 0, 0, 0.609); */
+  z-index: 10;
+  pointer-events: none;
+}
+
+#mobile-svg-bg {
+  height: 100dvh;
+  width: 100dvw;
 }
 
 .test-scroll {
@@ -166,7 +171,7 @@ a {
   width: 100%;
   object-fit: cover;
   object-position: center;
-  position: sticky;
+  position: fixed;
   top: 0;
   perspective: 1000px;
   overflow: hidden;
@@ -201,7 +206,7 @@ a {
 }
 
 .svg-overlay-container {
-  position: sticky;
+  position: fixed;
   overflow: hidden;
   top: 0;
   left: 0;
@@ -209,7 +214,6 @@ a {
   width: 100dvw;
   box-sizing: border-box;
   z-index: 1;
-  perspective: 1000px;
 }
 
 .chevron-container {
@@ -218,6 +222,7 @@ a {
   left: 50%;
   z-index: 100;
   opacity: 0;
+  transform: translateX(-50%);
 }
 
 .scroll-hint {
@@ -237,6 +242,24 @@ a {
   color: #fff;
   text-align: center;
   text-shadow: #fff 2px 0 5px;
+}
+
+#mobile-overlay {
+  position: fixed;
+  top: 0%;
+  height: 100dvh;
+  width: 100dvw;
+  z-index: 1;
+}
+
+#mobile-overlay svg {
+  height: 100%;
+  width: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
 }
 
 polyline {
@@ -445,6 +468,41 @@ polyline:nth-child(3) {
 }
 
 @media (min-width: 1000px) {
+  .svg-overlay-container {
+    position: sticky;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    height: 100dvh;
+    width: 100dvw;
+    box-sizing: border-box;
+    z-index: 1;
+    perspective: 1000px;
+  }
+
+  .scroll-container {
+    height: 1000dvh;
+    width: 100vw;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  .initial-image-container {
+    height: 100dvh;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: sticky;
+    top: 0;
+    perspective: 1000px;
+    overflow: hidden;
+    z-index: 2;
+  }
+
+  .mobile-click-circle {
+    display: none;
+  }
+
   .title-container {
     top: 10%;
   }
