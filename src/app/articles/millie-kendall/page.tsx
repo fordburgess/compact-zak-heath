@@ -252,7 +252,7 @@ const MillieKendall = () => {
               </div>
             </div>
             <p className='featured-article-subheader'>What Would 21-year-old Millie Think Of All Of This?</p>
-            <p className='featured-article-paragraph'>"She'd be shocked," she laughs. "Because none of these jobs existed! I've always created roles for myself. I didn't plan them; they just emerged from what I loved doing.</p>
+            <p className='featured-article-paragraph'>"She'd be shocked," she laughs. "Because none of these jobs existed! I've always created roles for myself. I didn't plan them; they just emerged from what I loved doing."</p>
           </div>
         </div>
       </div>
