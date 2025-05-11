@@ -13,6 +13,7 @@ import Placeholder from '../../../assets/images/placeholder.webp';
 import PlayButton from '../../../assets/images/play-button.png';
 import PauseButton from '../../../assets/images/pause-button.png';
 import SkipButton from '../../../assets/images/skip-button.png';
+import YanaKafeli from '../../../assets/images/yana-kafeli.webp';
 import { Episode } from '@/types';
 import '../styles/episode.css'
 import gsap from 'gsap';
@@ -32,7 +33,7 @@ const episodes = [
     id: 'yana-kafeli',
     title: 'Yana Kafeli: From Intern to Agent',
     job: 'Agent',
-    profileImage: null,
+    profileImage: YanaKafeli,
     description: 'In this episode, Zak is joined by the ICON Yana Kafeli, who began her career in fashion at just 17. She now works as a leading agent across fashion, beauty, culture and music. Yana shares her journey through the industry, from managing top-tier talent to collaborating with some of the biggest global brands. Whilst opening up about the importance of personal identity in a fast- paced creative world, Yana highlights the realities of networking and what it really takes to support and elevate influencers.'
   },
   {
