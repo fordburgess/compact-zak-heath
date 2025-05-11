@@ -223,32 +223,34 @@ const FromConcealerToConfidence = () => {
       }
     })
 
-    const line4Props: any = {
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: '#fctc-trans-5',
-        start: 'top 60%',
-        end: 'bottom 60%',
-        scrub: true,
-      }
-    };
-    const scaleAxisLine4 = mobile ? 'scaleY' : 'scaleX';
-    line4Props[scaleAxisLine4] = 8
-    gsap.to('.fctc-line-4', line4Props);
+    if (!mobile) {
+      const line4Props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#second-image-trans',
+          start: 'top 60%',
+          end: 'bottom 60%',
+          scrub: true,
+        }
+      };
+      const scaleAxisLine4 = mobile ? 'scaleY' : 'scaleX';
+      line4Props[scaleAxisLine4] = 8
+      gsap.to('.fctc-line-4', line4Props);
 
 
-    const caption4props: any = {
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: '#fctc-trans-5',
-        start: 'top 60%',
-        end: 'bottom 60%',
-        scrub: true,
+      const caption4props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#second-image-trans',
+          start: 'top 60%',
+          end: 'bottom 60%',
+          scrub: true,
+        }
       }
+      const transitionDirectionCaption4 = mobile ? 'y' : 'x';
+      caption4props[transitionDirectionCaption4] = mobile ? 50 : '10px';
+      gsap.to('#zak-lisa-caption', caption4props);
     }
-    const transitionDirectionCaption4 = mobile ? 'y' : 'x';
-    caption4props[transitionDirectionCaption4] = mobile ? 50 : '10px';
-    gsap.to('#zak-lisa-caption', caption4props);
 
   }, [])
 
@@ -343,8 +345,8 @@ const FromConcealerToConfidence = () => {
           </div>
           <p className='dream-room-paragraph-text'>After having multiple conversations with myself in the mirror and giving my reflection reviews of the products I was using, when lockdown terrorised the world, I needed a creative outlet, so I started to make videos on TikTok. I was by no means a professional makeup artist, but I wanted to share my knowledge, skills, and confidence, and I knew nobody could say anything to me because we were locked inside our rooms. But I soon encountered the harsh reality of online hate and the infamous keyboard warriors. Comments like "this is disgusting," “makeup is for women," and "you're a boy" flooded my content.</p>
           <p className='dream-room-paragraph-text'>Four years later, I've built a community of over 1.5 million followers across TikTok, YouTube, Snapchat, and Instagram after growing from replying to these hate comments. I used this hate to positively create editorial, satisfying and humorous content to reimagine the saying actions speak louder than words. I wasn't being vocal, but instead, I showed that men can wear makeup from my quick and realistic routines. To my surprise, my videos resonated not just with men, but with women as well.</p>
-          <div className='dream-room-transition-container' id='fctc-trans-5'>
-            <p className='image-caption' id="zak-lisa-caption">Lisa Eldridge and I at her brand event</p>
+          <div className='featured-transition-container' id='second-image-trans'>
+            <p className='image-caption' id="second-trans-caption">Lisa Eldridge and I at her brand event</p>
             <div className='fctc-line-4'></div>
             <Image src={ZakAndLisa} id='zak-and-lisa' alt='zak-and-lisa'/>
           </div>

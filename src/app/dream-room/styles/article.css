@@ -313,8 +313,10 @@ html, body {
   padding: 0px 0 100px;
 }
 
-#fctc-trans-5 {
-  height: 500px;
+#second-image-trans {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-bottom: 20px;
 }
 
 #fctc-quote-1 {
@@ -364,7 +366,8 @@ html, body {
 }
 
 .fctc-line-2 {
-  position: absolute;
+  display: none;
+  /* position: absolute;
   left: 50%;
   top: 55%;
   height: 10px;
@@ -372,7 +375,7 @@ html, body {
   background-color: #fff;
   transform: translate(-50%, -55%);
   transform-origin: top;
-  z-index: 10;
+  z-index: 10; */
 }
 
 .fctc-rectangle {
@@ -496,10 +499,10 @@ html, body {
 }
 
 #zak-lisa-caption {
-  position: absolute;
+  /* position: absolute;
   top: 87%;
-  left: 50%;
-  transform: translate(-50%, -87%);
+  left: 50%; */
+  /* transform: translate(-50%, -87%); */
   text-wrap: nowrap;
 }
 
@@ -656,6 +659,7 @@ html, body {
   }
 
   .fctc-line-2 {
+    display: block;
     position: absolute;
     left: 48%;
     top: 50%;
@@ -716,11 +720,19 @@ html, body {
     transform: translate(-50%, -13%);
   }
 
+  #second-image-trans {
+    padding: 50px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   #fctc-trans-5 {
     padding: 50px 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    flex-direction: column-reverse !important;
   }
 
   #zak-and-lisa {
@@ -739,7 +751,8 @@ html, body {
   }
 
   #zak-lisa-caption {
-    position: static;
+    position: absolute;
+    /* position: static; */
     transform: translateX(-50px);
   }
 }
