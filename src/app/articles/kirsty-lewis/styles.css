@@ -500,7 +500,7 @@ html, body {
     width: 20px;
     background-color: #fff;
     transform-origin: right;
-    transform: translateX(100px);
+    transform: translateX(50px);
     z-index: 10;
   }
 
