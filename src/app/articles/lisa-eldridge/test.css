@@ -190,7 +190,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 600vh;
+  height: 800vh;
   position: relative;
 }
 
@@ -397,7 +397,7 @@ body {
     width: 70%;
   }
 
-  #section-4, #section-5, #section-6 {
+  #section-4, #section-5, #section-6, #section-7 {
     width: 100%;
     padding: 5rem 4rem;
     opacity: 0;

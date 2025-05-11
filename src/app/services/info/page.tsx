@@ -46,14 +46,6 @@ const ServicesInfo = () => {
       delay: 0.5
     })
 
-    gsap.to('#services-info-subtitle', {
-      opacity: 1,
-      y: '0%',
-      ease: "power1.inOut",
-      duration: 1,
-      delay: 0.5
-    })
-
     gsap.to('#animate-line-1', {
       width: '100%',
       x: '0%',
@@ -145,7 +137,7 @@ const ServicesInfo = () => {
       scrollTrigger: {
         trigger: '#body-5',
         start: 'top center',
-        end: 'center 40%',
+        end: 'center center',
         scrub: true,
       }
     })
@@ -157,7 +149,7 @@ const ServicesInfo = () => {
       scrollTrigger: {
         trigger: '#body-5',
         start: 'top center',
-        end: 'center 60%',
+        end: 'center center',
         scrub: true,
       }
     })
@@ -188,7 +180,6 @@ const ServicesInfo = () => {
         <div className='services-title-section'>
           <h1 id="services-info-title">My Services</h1>
           <div className='services-animate-line' id="animate-line-1"></div>
-          <h3 id="services-info-subtitle">Lorem Ipsum Sit Dolor Amet Consamatum Est Julia</h3>
         </div>
         <div className='services-info-body' id="body-1">
           <h3 className='body-1-title'>Socials</h3>
@@ -212,17 +203,12 @@ const ServicesInfo = () => {
           <p className='body-2-text' style={{ marginBottom: '10px' }}>As a young voice in the beauty industry with firsthand experience navigating content creation, brand partnerships, and beauty business strategy, I offer consulting services for brands and individuals looking to connect with today’s beauty audience. I can give insight into Gen Z consumer behaviour, influencer marketing and digital storytelling through a beauty and fashion lens.</p>
           <p className='body-2-text'>For consulting opportunities, public speaking, or collaborations, please reach out to me directly at zak.compact@gmail.com</p>
         </div>
-        <div className='services-info-body' id="body-3">
-          <h3 className='body-3-title'>Consulting & Brand Collaboration Inquiries</h3>
-          <p className='body-3-text'>As a young voice in the beauty industry with firsthand experience navigating content creation, brand partnerships, and beauty business strategy, I offer consulting services for brands and individuals looking to connect with today’s beauty audience. I can give insight into Gen Z consumer behaviour, influencer marketing and digital storytelling through a beauty and fashion lens</p>
-          <p className='body-3-text'>For consulting opportunities, public speaking, or collaborations, please reach out to me directly at zak.compact@gmail.com</p>
-        </div>
         <div className='services-info-body' id="body-4">
           <h3 className='body-4-title'>Brand Partnerships & Representation</h3>
           <p className='body-4-text'>For all brand partnerships please get in touch with my agent via zak@thebreakco.com.</p>
         </div>
         <div className='services-info-body' id="body-5">
-          <h3 className='body-5-title'>Contact Me</h3>
+          <h3 className='body-5-title' style={{ marginBottom: '10px' }}>Contact Me</h3>
           <form className='contact-form' onSubmit={sendMessage}>
             <div>
               <label>Name</label>
