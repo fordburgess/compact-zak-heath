@@ -61,6 +61,15 @@
   }
 }
 
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -209,6 +218,25 @@ a {
   left: 50%;
   z-index: 100;
   opacity: 0;
+}
+
+.scroll-hint {
+  position: sticky;
+  bottom: 12%;
+  left: 50%;
+  z-index: 100;
+  text-align: center;
+  opacity: 0;
+  /* -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate; */
+}
+
+.scroll-hint p {
+  font-size: 1.75rem;
+  color: #fff;
+  text-align: center;
+  text-shadow: #fff 2px 0 5px;
 }
 
 polyline {
