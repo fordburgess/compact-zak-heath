@@ -108,8 +108,8 @@ const FromConcealerToConfidence = () => {
       opacity: 0,
       scrollTrigger: {
         trigger: '#fctc-trans-1',
-        start: mobile ? 'top center' : 'top 60%',
-        end: mobile ? 'bottom top' : 'bottom center',
+        start: mobile ? 'top center' : 'top 80%',
+        end: mobile ? 'bottom top' : 'center center',
         scrub: true,
       }
     })
@@ -119,8 +119,8 @@ const FromConcealerToConfidence = () => {
       opacity: 0,
       scrollTrigger: {
         trigger: '#fctc-trans-1',
-        start: mobile ? 'top center' : 'top 60%',
-        end: mobile ? 'bottom top' : 'bottom center',
+        start: mobile ? 'top center' : 'top 80%',
+        end: mobile ? 'bottom top' : 'center center',
         scrub: true,
       }
     })
@@ -130,8 +130,8 @@ const FromConcealerToConfidence = () => {
       opacity: 1,
       scrollTrigger: {
         trigger: '#fctc-trans-1',
-        start: mobile ? 'top center' : 'top 60%',
-        end: mobile ? 'bottom top' : 'bottom center',
+        start: mobile ? 'top center' : 'top 80%',
+        end: mobile ? 'bottom top' : 'center center',
         scrub: true,
       }
     })
@@ -154,7 +154,7 @@ const FromConcealerToConfidence = () => {
       scrollTrigger: {
         trigger: '#fctc-trans-2',
         start: 'top 60%',
-        end: 'bottom 60%',
+        end: 'bottom 80%',
         scrub: true,
       }
     }
