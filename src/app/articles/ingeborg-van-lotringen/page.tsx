@@ -6,6 +6,8 @@ import './styles.css';
 import '../styles/article.css';
 import SpringExpanded from '../../../assets/images/spring-expanded.jpg';
 import IngeborgProfile from '../../../assets/images/ingeborg-profile.png';
+import Ingeborg1 from '../../../assets/images/ingeborg-1.webp';
+import Ingeborg2 from '../../../assets/images/ingeborg-2.webp';
 import { useMediaQuery } from 'usehooks-ts';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -107,6 +109,64 @@ const IngeborgVanLotringen = () => {
         scrub: true
       }
     })
+
+    if (!mobile) {
+      const line2Props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#first-image-trans',
+          start: 'top 60%',
+          end: 'bottom 60%',
+          scrub: true,
+        }
+      };
+
+      const scaleAxis = mobile ? 'scaleY' : 'scaleX';
+      const opacity = 1;
+      line2Props[scaleAxis] = mobile ? 8 : 10;
+      line2Props[opacity];
+      gsap.to('.fctc-line-2', line2Props);
+
+      const caption2props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#first-image-trans',
+          start: 'top 80%',
+          end: 'bottom bottom',
+          scrub: true,
+        }
+      }
+      const transitionDirection = mobile ? 'y' : 'x';
+      caption2props[transitionDirection] = mobile ? -50 : -1;
+      gsap.to('#first-trans-caption', caption2props);
+
+
+      const line4Props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#second-image-trans',
+          start: 'top 60%',
+          end: 'bottom 60%',
+          scrub: true,
+        }
+      };
+      const scaleAxisLine4 = mobile ? 'scaleY' : 'scaleX';
+      line4Props[scaleAxisLine4] = 9
+      gsap.to('.fctc-line-4', line4Props);
+
+      const caption4props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#second-image-trans',
+          start: 'top 60%',
+          end: 'bottom 60%',
+          scrub: true,
+        }
+      }
+      const transitionDirectionCaption4 = mobile ? 'y' : 'x';
+      caption4props[transitionDirectionCaption4] = mobile ? 50 : '10px';
+      gsap.to('#second-trans-caption', caption4props);
+    }
   }, [])
 
   return (
@@ -123,6 +183,13 @@ const IngeborgVanLotringen = () => {
             <p className='featured-article-subheader'>The Early Days</p>
             <p className='featured-article-paragraph'>Ingeborg's path into beauty journalism wasn't exactly traditional. "I came to London to work in television - I was a researcher on Davina McCall's MTV show <span style={{ fontStyle: 'italic' }}>Most Wanted</span>, but after a year, they made redundancies, and I had to do something else. Beauty journalism wasn't a job I'd even heard of - I'm Dutch, and it wasn't exactly a known job back home. But I wanted to write, and beauty was a subject I could write about".</p>
             <p className='featured-article-paragraph'>She started out interning at Hello! before landing her first full-time role at the now- defunct <span style={{ fontStyle: 'italic' }}>Minx Magazine</span>. From there, she bounced across glossy magazines— <span style={{ fontStyle: 'italic' }}>Looks</span>, <span style={{ fontStyle: 'italic' }}>Shape</span>, <span style={{ fontStyle: 'italic' }}>Eve</span>, <span style={{ fontStyle: 'italic' }}>Psychologies</span>— before joining <span style={{ fontStyle: 'italic' }}>Cosmopolitan</span>, where she eventually became beauty director.</p>
+            <div className='featured-transition-container' id='first-image-trans'>
+              <div className='image-with-caption' style={{ zIndex: -1, }}>
+                <Image src={Ingeborg1} alt='ingeborg-van-lotringen-2' style={{ height: '250px', objectFit: 'cover', objectPosition: 'top' }}/>
+              </div>
+              <div className='fctc-line-2'></div>
+              <p className='image-caption' id='first-trans-caption'>When Rihanna endorsed Nivea (Image credit: Ingeborg van Lotringen) </p>
+            </div>
             <p className='featured-article-subheader'>First-Class Perks: The Golden Era of Brand Trips</p>
             <p className='featured-article-paragraph'>Although beauty journalism wasn't her first choice, Ingeborg entered the industry in the peak magazine trip era - a time of glamour, money-can't-buy experiences and unforgettable experiences. "My first trip was in '98 with L'Occitane, and all the beauty directors from other publications were invited. I wasn't even supposed to go - I was the intern. But I asked my boss if she needed help and went instead".</p>
             <div className='featured-article-transition-container' id='featured-trans-1'>
@@ -134,6 +201,11 @@ const IngeborgVanLotringen = () => {
             <p className='featured-article-paragraph'>"Mustique," she says without hesitation. "It's a private Caribbean island - you can't go unless invited. We were there for a John Freida launch. We stayed in private houses - I was in the one William and Kate had just stayed in. The other beauty directors and I looked around, thinking, what the hell?"</p>
             <p className='featured-article-subheader'>The Constant Churn of Products</p>
             <p className='featured-article-paragraph'>With decades of testing the latest beauty launches, Ingeborg has seen, tried, or discarded thousands of products. "It's almost impossible to name all the brands now. I once had a list of 28 brands I used to request new products, like lipstick or moisturiser. Now, there are hundreds of brands. I do still have a few favourites, including Crème de la Mer, Gallinée, The Ordinary, and Medik8. Most of my all-time favourites have been discontinued.</p>
+            <div className='featured-transition-container' id='second-image-trans'>
+              <p className='image-caption' id="second-trans-caption">Carolyn won the 2023 Gold Stevie for Best Female Entrepreneur in Consumer Products<br/> (Image credit: Carolyn Aronson)</p>
+              <div className='fctc-line-4' id='carolyn-line-4'></div>
+              <Image src={Ingeborg2} style={{ minHeight: '500px' }} id='zak-and-lisa' alt='zak-and-lisa'/>
+            </div>
             <p className='featured-article-subheader'>Beauty Journalism: Then vs Now</p>
             <p className='featured-article-paragraph'>"The main difference is editorial independence," says Ingeborg. "We had no commercial pressure. The sales team dealt with the ads, and we just reported honestly. If I went on a trip and I didn't like the product, I'd still mention it somewhere, but not in a glowing feature. If I loved it, I'd give it a big write-up".</p>
             <p className='featured-article-subheader'>This Honesty Has Changed Dramatically.</p>
