@@ -350,8 +350,7 @@ const LisaEldridge = () => {
           <div className='lisa-scroll-test'></div>
           <div className='text-section' id='section-3'>
             <h1 className='text-section-title'>When you were 21, who did you look up to in the beauty industry?</h1>
-            <p className='featured-paragraph-text' style={{ marginBottom: '10px'}}>Oh, absolutely. I didn’t know anyone in the industry, and there wasn’t any internet back then to guide me, so it was tricky to figure out, especially wanting to go into the fashion industry. I’d buy magazines to study credits like "Mary Greenwell for Debbie Walters" and figure out which agency to call and who was repping each other. Networking was painstaking, you had to meet people at clubs or get in touch with agencies directly and say, “I would love to assist, or something”. I did a lot of unpaid work to build my portfolio, working with new models like Kate Moss who were just coming into the industry.</p>
-            <p className='featured-paragraph-text'>At one point, I heard someone say they got a magazine cover because their boyfriend was the editor, and I remember thinking, oh my god, I hope it’s literally not going to come down to who you know. But in the end, hard work and perseverance paid off. By the time I was 23, I was signed by an agency alongside legends like Sam McKnight MBE, Mary Greenwell and major major people - I was kind of the baby. That was huge. At first, I was asked why I wanted to assist, but I had only worked with up-and-coming models and I didn’t know how to react when a big supermodel or celebrity walked into the room; however, I quickly learnt that you just treat everybody the same.</p>
+            <p className='featured-paragraph-text' style={{ marginBottom: '10px'}}>Probably Mary Greenwell. She was the makeup artist doing all the Vogue covers at the time. When I was a teenager, I’d use my pocket money to buy Vogue magazines and dream about having a career like hers. She was doing the makeup for literally every major cover. And then, two years later, I was working with her. It was a dream come true.</p>
           </div>
           <div className='image-section' id='image-section-1'>
             <Image src={LisaEldridge4} alt='mary-greenwell' id='mary-greenwell-image' />
@@ -377,11 +376,11 @@ const LisaEldridge = () => {
                 <h1 className='text-section-title'>What was the first big show you worked on?</h1>
                 <p className='featured-paragraph-text'>It was with Mary, assisting at shows like Rifat Ozbek in London and Romeo Gigli in Paris. I remember rushing through makeup at my first big show, and Mary told me to slow down and take my time. I was like, oh my god, okay!</p>
               </div>
-              {/* <div className='text-section' id='section-7'>
+              <div className='text-section' id='section-7'>
                 <h1 className='text-section-title'>What advice would you give your 21-year-old self?</h1>
                 <p className='featured-paragraph-text' style={{ marginBottom: '10px' }}>I’d tell her to stay confident and not compare herself to others but explore the ideas she had and wanted to share. In a creative industry, it’s fuelled by ideas, there’s no such thing as a bad one. I wish I’d spoken up more on shoots when I had ideas. Now, I’m much more comfortable experimenting. For instance, I recently tried a bold blue eyeshadow look during a Claudia Schiffer shoot for Pop Magazine. It didn’t work, and we took it off, but that’s okay! It’s all part of the creative process.</p>
                 <p className='featured-paragraph-text'>Don’t think you’re silly or something and don’t be afraid to explore, speak your mind, and trust your instincts. There’s good ideas, bad ideas, but actually they’re all good.</p>
-              </div> */}
+              </div>
             </div>
             <div className='image-column'>
               <div id='image-item-1'>

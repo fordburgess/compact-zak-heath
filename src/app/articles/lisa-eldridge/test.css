@@ -190,7 +190,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 600vh;
+  height: 800vh;
   position: relative;
 }
 
