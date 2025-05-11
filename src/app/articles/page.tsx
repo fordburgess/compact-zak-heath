@@ -14,7 +14,7 @@ import { useMediaQuery } from 'usehooks-ts';
 
 const Featured = () => {
   const router = useRouter();
-  const mobile = useMediaQuery('(max-width: 800px)');
+  const mobile = useMediaQuery('(max-width: 1000px)');
 
   useEffect(() => {
     const scrollPosition = localStorage.getItem('featured-page-scroll');
