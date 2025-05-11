@@ -153,11 +153,6 @@ a {
   pointer-events: none;
 }
 
-#mobile-svg-bg {
-  height: 100dvh;
-  width: 100dvw;
-}
-
 .test-scroll {
   width: 100%;
   height: 1000vh;
@@ -226,22 +221,30 @@ a {
 }
 
 .scroll-hint {
-  position: sticky;
+  position: absolute;
   bottom: 12%;
   left: 50%;
   z-index: 100;
   text-align: center;
   opacity: 0;
+  transform: translateX(-50%);
   /* -webkit-animation: glow 1s ease-in-out infinite alternate;
   -moz-animation: glow 1s ease-in-out infinite alternate;
   animation: glow 1s ease-in-out infinite alternate; */
 }
 
 .scroll-hint p {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   color: #fff;
   text-align: center;
   text-shadow: #fff 2px 0 5px;
+}
+
+#mobile-svg-bg {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 #mobile-overlay {
@@ -253,13 +256,12 @@ a {
 }
 
 #mobile-overlay svg {
-  height: 100%;
-  width: auto;
+  height: auto;
+  width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  pointer-events: auto;
 }
 
 polyline {
@@ -283,10 +285,10 @@ polyline:nth-child(3) {
   display: none;
 }
 
-.svg-overlay-container svg {
+/* .svg-overlay-container svg {
   height: 100%;
   width: 100%;
-}
+} */
 
 .object-outline {
   animation: pulseMobile 5s ease-in-out infinite;
@@ -497,10 +499,6 @@ polyline:nth-child(3) {
     perspective: 1000px;
     overflow: hidden;
     z-index: 2;
-  }
-
-  .mobile-click-circle {
-    display: none;
   }
 
   .title-container {
