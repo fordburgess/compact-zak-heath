@@ -305,7 +305,7 @@
     max-height: 500px;
   }
 
-  .fctc-line-2 {
+  .fctc-line-2, .fctc-line-3 {
     position: absolute;
     left: 48%;
     top: 50%;
@@ -318,7 +318,7 @@
     z-index: 10;
   }
 
-  #first-trans-caption {
+  #first-trans-caption, #third-trans-caption {
     font-size: 1.25rem !important;
     position: absolute;
     top: 50%;

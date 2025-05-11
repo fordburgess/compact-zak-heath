@@ -6,6 +6,7 @@ import SpringExpanded from '../../../assets/images/spring-expanded.jpg';
 import MillieKendallProfile from '../../../assets/images/millie-kendall-profile.webp';
 import MillieKendall1 from '../../../assets/images/millie-kendall-1.webp';
 import MillieKendall2 from '../../../assets/images/millie-kendall-2.webp';
+import MillieKendall3 from '../../../assets/images/millie-kendall-3.webp';
 import '../styles/article.css';
 import { useMediaQuery } from 'usehooks-ts';
 import gsap from 'gsap';
@@ -139,6 +140,38 @@ const MillieKendall = () => {
       caption2props[transitionDirection] = mobile ? -50 : -1;
       gsap.to('#first-trans-caption', caption2props);
 
+      ///
+      const line3Props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#third-image-trans',
+          start: 'top 60%',
+          end: 'bottom 60%',
+          scrub: true,
+        }
+      };
+
+      const scaleAxis3 = mobile ? 'scaleY' : 'scaleX';
+      const opacity3 = 1;
+      line3Props[scaleAxis3] = mobile ? 8 : 10;
+      line3Props[opacity3];
+      gsap.to('.fctc-line-3', line3Props);
+
+      const caption3props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#third-image-trans',
+          start: 'top 80%',
+          end: 'bottom bottom',
+          scrub: true,
+        }
+      }
+      const transitionDirection3 = mobile ? 'y' : 'x';
+      caption3props[transitionDirection3] = mobile ? -50 : -1;
+      gsap.to('#third-trans-caption', caption3props);
+
+      ///
+
       const line4Props: any = {
         ease: "power1.inOut",
         scrollTrigger: {
@@ -151,7 +184,6 @@ const MillieKendall = () => {
       const scaleAxisLine4 = mobile ? 'scaleY' : 'scaleX';
       line4Props[scaleAxisLine4] = 7
       gsap.to('.fctc-line-4', line4Props);
-
 
       const caption4props: any = {
         ease: "power1.inOut",
@@ -205,7 +237,7 @@ const MillieKendall = () => {
                 <Image src={MillieKendall1} alt='millie-kendall-3'/>
               </div>
               <div className='fctc-line-2'></div>
-              <p className='image-caption' id='first-trans-caption'>“I know the blush wasn’t blended! It was a look!” Image credit (Millie Kendall OBE)</p>
+              <p className='image-caption' id='first-trans-caption'>“I know the blush wasn't blended! It was a look!” (Image credit: Millie Kendall OBE)</p>
             </div>
             <p className='featured-article-subheader'>Building The Beauty Foundations</p>
             <p className='featured-article-paragraph'>Millie's first introduction to beauty was at her grandmother's dressing table. "She had a Corgi that drank tea out of a saucer. She'd put moisturiser on her face, then let the dog lick her fingers. The dog basically lived off Nivea!"</p>
@@ -219,6 +251,13 @@ const MillieKendall = () => {
             </div>
             <p className='featured-article-subheader'>Her Role in the British Beauty Council and Starting the Creator Collective</p>
             <p className='featured-article-paragraph'>Millie was already working in PR when she met makeup artist Ruby Hammer. "I was her publicist, and she and her husband spent two years convincing me to form a brand with them. I liked my job, had my own business, was making loads of money - I wasn't interested in being the face of a brand."</p>
+            <div className='featured-transition-container' id='third-image-trans'>
+              <div className='image-with-caption' style={{ zIndex: -1, }}>
+                <Image src={MillieKendall3} alt='millie-kendall-3'/>
+              </div>
+              <div className='fctc-line-3'></div>
+              <p className='image-caption' id='third-trans-caption'>An ad for Ruby and Millie (Image credit: Warpaint Magazine) </p>
+            </div>
             <p className='featured-article-paragraph'>Eventually though, she agreed. Ruby & Millie launched in 1998 and became one of the UK's most recognisable beauty brands in the late 90s and early 2000s.</p>
             <p className='featured-article-paragraph'>"The moment it launched, I freaked out. My face was suddenly in hundreds of stores. People recognised me at bus stops. It was my worst nightmare. I actually moved to LA to get away from it. That's how much I hated being the front person."</p>
             <p className='featured-article-paragraph'>"Creating a brand is fun, developing it, the product, the packaging. But once it's on the shelf, the pressure is massive. You've got to sell. You have to pay your team. You're in retailers with gate fees and rules about shelf heights and signage. It's not as simple as looking pretty."</p>
