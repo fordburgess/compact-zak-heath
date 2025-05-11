@@ -86,7 +86,7 @@ const interviews = [
   },
   {
     pfp: YanaKafeli,
-    name: 'Yana Kafeli',
+    name: 'Yana K. afeli',
     job: 'Agent',
     href: '/podcasts/yana-kafeli'
   },
@@ -95,12 +95,6 @@ const interviews = [
     name: 'Tilly Sanders',
     job: 'Beauty PR',
     href: '/articles/tilly-sanders'
-  },
-  {
-    pfp: ZakHeath,
-    name: 'Zak Heath',
-    job: 'Influencer',
-    href: '/dream-room'
   },
   {
     pfp: RaquellBouris,
