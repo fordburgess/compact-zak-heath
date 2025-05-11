@@ -314,7 +314,7 @@ const MonaKattan = () => {
             <Image src={MonaKattanProfile} alt='pfp' className='featured-profile-image'/>
             <div id='title-box'>
               <h1 className='strong-title'>In Conversation With Mona Kattan:</h1>
-              <h1 className='title-subline'>Being a fragrance CEO</h1>
+              <h1 className='title-subline'>Being a Fragrance CEO</h1>
             </div>
           </div>
           <div className='image-section' id='second-intro-container'>
