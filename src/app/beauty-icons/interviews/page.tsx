@@ -19,6 +19,7 @@ import TillySanders from '../../../assets/images/tilly-sanders-profile.webp';
 import Placeholder from '../../../assets/images/placeholder.webp';
 import CarolynAronson from '../../../assets/images/carolyn-aronson-profile.webp';
 import Ingeborg from '../../../assets/images/ingeborg-profile.png';
+import RaquellBouris from '../../../assets/images/raquell-bouris-profile.png';
 import { useMediaQuery } from 'usehooks-ts';
 
 const interviews = [
@@ -44,7 +45,7 @@ const interviews = [
     pfp: PatriciaBright,
     name: 'Patricia Bright',
     job: 'Content Creator & CEO',
-    href: '/audio/patricia-bright'
+    href: '/podcasts/patricia-bright'
   },
   {
     pfp: AdamReed,
@@ -62,7 +63,7 @@ const interviews = [
     pfp: ShakeelMurtaza,
     name: 'Shakeel Murtaza',
     job: "Men's Beauty Influencer",
-    href: '/audio/shakeel-murtaza'
+    href: '/podcasts/shakeel-murtaza'
   },
   {
     pfp: KirstyLewis,
@@ -74,7 +75,7 @@ const interviews = [
     pfp: Ingeborg,
     name: 'Ingeborg van Lotringen',
     job: 'Beauty Journalist',
-    href: '/audio/ingeborg-van-lotringen'
+    href: '/articles/ingeborg-van-lotringen'
   },
   {
     pfp: CarolynAronson,
@@ -86,7 +87,7 @@ const interviews = [
     pfp: Placeholder,
     name: 'Yana Kafeli',
     job: 'Agent',
-    href: '/audio/yana-kafeli'
+    href: '/podcasts/yana-kafeli'
   },
   {
     pfp: TillySanders,
@@ -101,10 +102,10 @@ const interviews = [
     href: '/dream-room'
   },
   {
-    pfp: Placeholder,
+    pfp: RaquellBouris,
     name: 'Raquel Bouris',
     job: 'Fragrance Founder',
-    href: '/audio/raquel-bouris'
+    href: '/podcasts/raquel-bouris'
   },
 ]
 

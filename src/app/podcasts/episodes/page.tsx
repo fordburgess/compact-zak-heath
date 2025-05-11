@@ -92,7 +92,7 @@ const Episodes = () => {
           episodes.map((episode: Episode) => {
             return (
               <Link
-                href={`/audio/${episode.id}`}
+                href={`/podcasts/${episode.id}`}
                 key={episode.id}
               >
                 <div className='profile-container'>

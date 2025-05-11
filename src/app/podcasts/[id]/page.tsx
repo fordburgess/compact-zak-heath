@@ -210,7 +210,7 @@ const AudioEpisode = () => {
         <Image priority src={ExpandedImage} className='episode-bg' alt='background'/>
         {
           episode && episode.index > 0 && (
-            <Link href={`/audio/${episodes[episode.index - 1].id}`}>
+            <Link href={`/podcasts/${episodes[episode.index - 1].id}`}>
               <div className='prev-episode'>
                 <Image className='nav-image' src={episodes[episode.index - 1].profileImage || Placeholder} alt='prev-episode'/>
                 <p>Prev</p>
@@ -310,7 +310,7 @@ const AudioEpisode = () => {
         </div>
         {
           episode && episode.index < episodes.length - 1 && (
-            <Link href={`/audio/${episodes[episode.index + 1].id}`}>
+            <Link href={`/podcasts/${episodes[episode.index + 1].id}`}>
               <div className='next-episode'>
                 <Image className='nav-image' src={episodes[episode.index + 1].profileImage || Placeholder} alt='next-episode'/>
                 <p>Next</p>
