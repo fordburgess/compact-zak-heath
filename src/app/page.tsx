@@ -88,7 +88,7 @@ const Home = () => {
         'I': { href: '/', pointer: 'm3050 1280 L3200 1280 L3200 1100', rectX: '2900', rectY: '780', textX: '3200', textY: '920', textVal: 'Test', linkX: '3200', linkY: '980', comingSoon: true },
         'J': { href: '/articles/adam-reed', pointer: 'm870 1320 L820 1380 L750 1380', rectX: '390', rectY: '1300', textX: '560', textY: '1360', textVal: 'Celebrity Hairdresser', linkX: '560', linkY: '1400', comingSoon: false },
         'K': { href: '/articles/mona-kattan', pointer: 'm655 1460 L655 1350', rectX: '480', rectY: '1180', textX: '660', textY: '1240', textVal: 'Fragrance CEO', linkX: '660', linkY: '1290', comingSoon: false },
-        'L': { href: '/', pointer: 'm850 1310 L810 1400 L720 1400', rectX: '360', rectY: '1310', textX: '530', textY: '1360', textVal: 'Beauty Photographer', linkX: '530', linkY: '1400', comingSoon: true },
+        'L': { href: '/', pointer: 'm850 1310 L810 1400 L720 1400', rectX: '360', rectY: '1310', textX: '540', textY: '1370', textVal: 'Beauty Photographer', linkX: '530', linkY: '1410', comingSoon: true },
         'M': { href: '/podcasts/shakeel-murtaza', pointer: 'm520 1150 L520 1000', rectX: '350', rectY: '830', textX: '525', textY: '890', textVal: "Men's Beauty Influencer", linkX: '525', linkY: '940', comingSoon: false },
         // 'J': { pointer: 'm2320 1700 L2400 1700 L2400 1400', rectX: '2100', rectY: '1080', textX: '2405', textY: '1250', textVal: "Head of Beauty PR", linkX: '', linkY: '' },
         // 'N': { href: '/articles/mona-kattan', pointer: 'm2772 1965 L2772 1900 L3340 1900', rectX: '3350', rectY: '1750', textX: '3650', textY: '1905', textVal: 'Fragrance CEO', linkX: '', linkY: '', comingSoon: false },
