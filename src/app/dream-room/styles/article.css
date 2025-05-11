@@ -470,11 +470,11 @@ html, body {
 }
 
 #zak-uncle-caption {
-  position: absolute;
+  /* position: absolute;
   top: 80%;
   left: 50%;
   transform: translate(-50%, -80%);
-  text-wrap: nowrap;
+  text-wrap: nowrap; */
 }
 
 #zak-and-lisa {
@@ -669,6 +669,7 @@ html, body {
   }
 
   #zak-uncle-caption {
+    position: absolute;
     font-size: 1.25rem !important;
     top: 50%;
     left: 60%;

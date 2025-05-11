@@ -136,31 +136,34 @@ const FromConcealerToConfidence = () => {
       }
     })
 
-    const line2Props: any = {
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: '#fctc-trans-2',
-        start: 'top 60%',
-        end: 'bottom 60%',
-        scrub: true,
-      }
-    };
-    const scaleAxis = mobile ? 'scaleY' : 'scaleX';
-    line2Props[scaleAxis] = mobile ? 8 : 10;
-    gsap.to('.fctc-line-2', line2Props);
 
-    const caption2props: any = {
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: '#fctc-trans-2',
-        start: 'top 60%',
-        end: 'bottom 80%',
-        scrub: true,
+    if (!mobile) {
+      const line2Props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#fctc-trans-2',
+          start: 'top 60%',
+          end: 'bottom 60%',
+          scrub: true,
+        }
+      };
+      const scaleAxis = mobile ? 'scaleY' : 'scaleX';
+      line2Props[scaleAxis] = mobile ? 8 : 10;
+      gsap.to('.fctc-line-2', line2Props);
+
+      const caption2props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#fctc-trans-2',
+          start: 'top 60%',
+          end: 'bottom 80%',
+          scrub: true,
+        }
       }
+      const transitionDirection = mobile ? 'y' : 'x';
+      caption2props[transitionDirection] = mobile ? -50 : -1;
+      gsap.to('#zak-uncle-caption', caption2props);
     }
-    const transitionDirection = mobile ? 'y' : 'x';
-    caption2props[transitionDirection] = mobile ? -50 : -1;
-    gsap.to('#zak-uncle-caption', caption2props);
 
 
     gsap.to('.fctc-rectangle-1', {
