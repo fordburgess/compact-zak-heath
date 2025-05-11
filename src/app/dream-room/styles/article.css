@@ -503,6 +503,11 @@ html, body {
   text-wrap: nowrap;
 }
 
+.video-container {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
 @media (min-width: 800px) and (max-width: 1200px) {
   .dream-room-article-content {
     /* padding: 100px; */
