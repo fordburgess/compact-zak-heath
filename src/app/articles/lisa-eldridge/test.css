@@ -99,7 +99,7 @@ body {
 
 .mag-covers img {
   width: 90vw;
-  height: 50vh;
+  height: 70vh;
   flex-shrink: 0;
   margin-right: 2vw;
   padding-right:0.3em;
@@ -107,8 +107,8 @@ body {
 }
 
 .text-section {
-  min-height: 100vh;
-  max-height: 100vh;
+  /* min-height: 100vh; */
+  /* max-height: 100vh; */
   width: 100vw;
   padding: 50px 20px;
   box-sizing: border-box;
@@ -134,7 +134,7 @@ body {
 
 #section-3 {
   width: 100%;
-  margin-bottom: 500px;
+  /* margin-bottom: 100px; */
 }
 
 .pin-container {
@@ -151,7 +151,8 @@ body {
 }
 
 .lisa-scroll-test {
-  height: 100vh;
+  display: none;
+  height: 70vh;
   width: 100vw;
 }
 
@@ -190,7 +191,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 800vh;
+  /* height: 650vh; */
   position: relative;
 }
 
@@ -201,7 +202,7 @@ body {
 #section-4, #section-5, #section-6 {
   width: 100%;
   opacity: 1;
-  margin-bottom: -350px;
+  /* margin-bottom: -350px; */
 }
 
 .image-column {
@@ -231,7 +232,7 @@ body {
   font-weight: 300;
   font-style: italic;
   font-family: 'Playfair' !important;
-  width: 300px;
+  /* width: 300px; */
 }
 
 @media (min-width: 1000px) {
@@ -316,6 +317,10 @@ body {
 
   .text-section {
     padding: 100px;
+    min-height: 100vh;
+    max-height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
   }
 
   .text-section-title {
@@ -353,6 +358,7 @@ body {
   }
 
   .lisa-scroll-test {
+    display: block;
     height: 200vh;
     width: 100vw;
   }
@@ -391,6 +397,10 @@ body {
     height: 1px;
     width: 100px;
     background-color: #fff;
+  }
+
+  .column-wrapper {
+    height: 650vh;
   }
 
   .text-column-wrapper {

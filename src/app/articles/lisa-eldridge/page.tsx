@@ -260,7 +260,7 @@ const LisaEldridge = () => {
       ScrollTrigger.create({
         trigger: ".image-column",
         start: "top 10%",
-        end: "+=300%",
+        end: "+=500%",
         pin: true,
         scrub: true,
       });
@@ -270,7 +270,7 @@ const LisaEldridge = () => {
         y: -100,
         ease: 'power1.inOut',
         scrollTrigger: {
-          trigger: '#section-4',
+          trigger: '#section-5',
           start: 'top -20%',
           end: 'bottom top',
           scrub: true,
@@ -282,7 +282,7 @@ const LisaEldridge = () => {
         top: '0%',
         ease: 'power1.inOut',
         scrollTrigger: {
-          trigger: '#section-5',
+          trigger: '#section-6',
           start: 'top center',
           end: 'top top',
           scrub: true,
