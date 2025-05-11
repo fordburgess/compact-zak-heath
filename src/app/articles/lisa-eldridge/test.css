@@ -99,7 +99,7 @@ body {
 
 .mag-covers img {
   width: 90vw;
-  height: 50vh;
+  height: 70vh;
   flex-shrink: 0;
   margin-right: 2vw;
   padding-right:0.3em;
@@ -232,7 +232,7 @@ body {
   font-weight: 300;
   font-style: italic;
   font-family: 'Playfair' !important;
-  width: 300px;
+  /* width: 300px; */
 }
 
 @media (min-width: 1000px) {
