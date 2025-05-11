@@ -102,6 +102,11 @@ body {
   align-items: end;
 }
 
+.text-section-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
 .text-section div {
   width: 100%;
 }
@@ -442,6 +447,10 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: end;
+  }
+
+  .text-section-title {
+    font-size: 2.5rem;
   }
 
   .text-section div {
