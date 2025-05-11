@@ -68,6 +68,10 @@
 .beauty-icons-item {
   width: 50%;
   margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .index-page-link {
