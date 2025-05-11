@@ -20,6 +20,7 @@ import Placeholder from '../../../assets/images/placeholder.webp';
 import CarolynAronson from '../../../assets/images/carolyn-aronson-profile.webp';
 import Ingeborg from '../../../assets/images/ingeborg-profile.png';
 import RaquellBouris from '../../../assets/images/raquell-bouris-profile.png';
+import YanaKafeli from '../../../assets/images/yana-kafeli.webp';
 import { useMediaQuery } from 'usehooks-ts';
 
 const interviews = [
@@ -84,7 +85,7 @@ const interviews = [
     href: '/articles/carolyn-aronson'
   },
   {
-    pfp: Placeholder,
+    pfp: YanaKafeli,
     name: 'Yana Kafeli',
     job: 'Agent',
     href: '/podcasts/yana-kafeli'
