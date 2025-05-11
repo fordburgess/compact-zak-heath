@@ -256,7 +256,7 @@ const FromConcealerToConfidence = () => {
       <div className='dream-room-article-content'>
         <div className='fctc-title-section'>
           <h1 className='fctc-title'>
-            From Concealer to Confidence
+            The Concealer That Changed Everything
           </h1>
           <div className='fctc-line-1'></div>
           <h3
