@@ -169,23 +169,21 @@ const FeaturedInterviews = () => {
                   {
                     chunk.map((interview: any, i: number) => {
                       return (
-                        <div className='beauty-icons-item' key={interview.href}>
-                          <Link className='index-page-link' href={interview.href}>
-                            <Image
-                              src={interview.pfp}
-                              alt={`icon-${index}`}
-                              className='beauty-icons-pfp'
-                              id={`icons-pfp-${index}`}
-                              style={{
-                                objectPosition: interview.name == 'Millie Kendall' || 'Carolyn Aronson' ? 'top' : 'center',
-                                backgroundSize: interview.name == 'Kirsty Lewis' ? '200%' : '0'
-                              }}
-                            />
-                            <div className='name-container'>
-                              <h3>{interview.name}</h3>
-                              <p>{interview.job}</p>
-                            </div>
-                          </Link>
+                        <div onClick={() => window.location.href = interview.href} className='beauty-icons-item' key={interview.href}>
+                          <Image
+                            src={interview.pfp}
+                            alt={`icon-${index}`}
+                            className='beauty-icons-pfp'
+                            id={`icons-pfp-${index}`}
+                            style={{
+                              objectPosition: interview.name == 'Millie Kendall' || 'Carolyn Aronson' ? 'top' : 'center',
+                              backgroundSize: interview.name == 'Kirsty Lewis' ? '200%' : '0'
+                            }}
+                          />
+                          <div className='name-container'>
+                            <h3>{interview.name}</h3>
+                            <p>{interview.job}</p>
+                          </div>
                         </div>
                       )
                     })
