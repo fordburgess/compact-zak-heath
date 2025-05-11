@@ -216,7 +216,7 @@ const TillySanders = () => {
               <div className='fctc-line-2'></div>
               <p className='image-caption' id='first-trans-caption'>(Image credit: Tilly Sanders)</p>
             </div>
-            <p className='featured-article-subheader'>What Really Goes On Behind The Events</p>
+            <p className='featured-article-subheader'>What Really Goes On Behind the Events</p>
             <p className='featured-article-paragraph'>We're constantly shifting between the heritage brands and emerging indie brands. Luxury skincare brands often still work in very traditional ways - they're all about print and press, but this type of media coverage doesn't always translate to the consumer anymore.</p>
             <p className='featured-article-paragraph'>To navigate this, we suggest and create intimate dinners with a brand, so influencers and journalists can attend. Sometimes, we turn these events around in a week, which isn't ideal. The perfect timeframe for an event is two months, but that never actually happens.</p>
             <div className='featured-article-transition-container' id='featured-trans-3'>
@@ -249,7 +249,7 @@ const TillySanders = () => {
               <Image src={TillySanders2} id='zak-and-lisa' alt='zak-and-lisa'/>
             </div>
             <p className='featured-article-paragraph'>The beauty industry is full of creative, lovely, and warm people. I think we're really lucky to have that.</p>
-            <p className='featured-article-subheader'>Thoughts For Anyone Wanting To Break Into The Industry</p>
+            <p className='featured-article-subheader'>Thoughts for Anyone Wanting to Break into the Industry</p>
             <p className='featured-article-paragraph'>Use your age as an advantage. Bring new and fresh ideas, stay up to date in the industry, network with people who you can learn from and just start. Even if that means starting on the shop floor. It worked for me. Message the people who work for the company you want to work for, and if you're really determined to get into beauty, then you will do it.</p>
           </div>
         </div>
