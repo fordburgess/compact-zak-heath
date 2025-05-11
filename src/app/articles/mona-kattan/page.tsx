@@ -6,6 +6,8 @@ import MonaKattanProfile from '../../../assets/images/mona-kattan.webp';
 import MonaKattan2 from '../../../assets/images/mona-kattan-2.webp';
 import MonaKattan3 from '../../../assets/images/mona-kattan-3.webp';
 import MonaKattan4 from '../../../assets/images/mona-kattan-4.webp';
+import MonaKattan5 from '../../../assets/images/mona-kattan-5.webp';
+import MonaKattan6 from '../../../assets/images/mona-kattan-6.webp';
 import './styles.css'
 import { useMediaQuery } from 'usehooks-ts';
 import gsap from 'gsap';
@@ -223,6 +225,38 @@ const MonaKattan = () => {
     }
 
     if (!mobile) {
+      //
+
+      const line3Props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#third-image-trans',
+          start: 'top 60%',
+          end: 'bottom 60%',
+          scrub: true,
+        }
+      };
+
+      const scaleAxis3 = mobile ? 'scaleY' : 'scaleX';
+      const opacity3 = 1;
+      line3Props[scaleAxis3] = mobile ? 8 : 10;
+      line3Props[opacity3];
+      gsap.to('.fctc-line-3', line3Props);
+
+      const caption3props: any = {
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '#third-image-trans',
+          start: 'top 80%',
+          end: 'bottom bottom',
+          scrub: true,
+        }
+      }
+      const transitionDirection3 = mobile ? 'y' : 'x';
+      caption3props[transitionDirection3] = mobile ? -50 : -1;
+      gsap.to('#third-trans-caption', caption3props);
+
+      //
 
       const line4Props: any = {
         ease: "power1.inOut",
@@ -295,6 +329,13 @@ const MonaKattan = () => {
             <p className='featured-article-paragraph'>I've been obsessed with fragrances my whole life. But when I moved to the UAE from America, something shifted. The fragrance culture here is on another level; there's so much richness, intention, and respect for scent. People here use perfume to express emotion, status, and identity - it's so layered. That was really what deepened my love for fragrance. It became more than just a beauty product. It became something sacred.</p>
             <p className='featured-article-subheader'>Do you remember your first experience with beauty?</p>
             <p className='featured-article-paragraph'>Oh, 100%! I was in beauty pageants from the age of four until I was about seven. Full glam was just normal for me as a kid. It felt like playing dress-up, which is something I never really grew out of. I've always loved expressing myself through beauty and fashion.</p>
+            <div className='featured-transition-container' id='third-image-trans'>
+              <div className='image-with-caption' style={{ zIndex: -1, }}>
+                <Image src={MonaKattan5} alt='mona-kattan-3'/>
+              </div>
+              <div className='fctc-line-3'></div>
+              <p className='image-caption' id='third-trans-caption'>(Image Credit: Mona Kattan)</p>
+            </div>
             <p className='featured-article-subheader'>What were you doing when you were 21?</p>
             <p className='featured-article-paragraph'>I was studying finance at the American University of Sharjah in UAE. But outside of school, I was modelling and promoting brands at malls and events - any opportunity I could get my hands on. I've always loved working. Even before that, back in the US, I worked non-stop.</p>
             <p className='featured-article-subheader'>What was your very first job?</p>
