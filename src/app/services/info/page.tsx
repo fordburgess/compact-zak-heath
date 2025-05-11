@@ -203,6 +203,10 @@ const ServicesInfo = () => {
           <p className='body-2-text' style={{ marginBottom: '10px' }}>As a young voice in the beauty industry with firsthand experience navigating content creation, brand partnerships, and beauty business strategy, I offer consulting services for brands and individuals looking to connect with today’s beauty audience. I can give insight into Gen Z consumer behaviour, influencer marketing and digital storytelling through a beauty and fashion lens.</p>
           <p className='body-2-text'>For consulting opportunities, public speaking, or collaborations, please reach out to me directly at zak.compact@gmail.com</p>
         </div>
+        <div className='services-info-body' id="body-3">
+          <h3 className='body-3-title'>Career & Industry Coaching</h3>
+          <p className='body-3-text' style={{ marginBottom: '10px' }}>If you're looking to break into the beauty industry or refine your path within it, I offer a paid, curated career coaching service designed to set you up for long-term success. This includes personalised support on manifesting a sustainable career in beauty, creating a strong personal brand, and developing strategic content that aligns with your goals. I’ll help you refine your digital CV, understand how to approach and secure brand collaborations with the largest beauty brands, navigate management and representation, and build meaningful connections within the beauty space. If you're ready to invest in your beauty career then please reach out to me directly at zak.compact@gmail.com</p>
+        </div>
         <div className='services-info-body' id="body-4">
           <h3 className='body-4-title'>Brand Partnerships & Representation</h3>
           <p className='body-4-text'>For all brand partnerships please get in touch with my agent via zak@thebreakco.com.</p>
