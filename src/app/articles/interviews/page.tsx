@@ -29,7 +29,7 @@ const interviews = [
   {
     pfp: AdamReed,
     name: 'Adam Reed',
-    job: 'Hairstylist',
+    job: 'Hairdresser',
     href: '/articles/adam-reed'
   },
   {
@@ -122,7 +122,7 @@ const FeaturedInterviews = () => {
             scale: 1.11,
             ease: 'power1.inOut',
             scrollTrigger: {
-              trigger: `#section-${index + 1}`,
+              trigger: `#chunk-${index + 1}`,
               start: 'top 80%',
               end: 'top center',
               scrub: true,
