@@ -31,17 +31,6 @@ const Featured = () => {
       delay: 1.25,
     })
 
-    gsap.to('.initial-image', {
-      scale: 2,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: ".scroll-container",
-        start: "top top",
-        end: "bottom top",
-        scrub: true
-      }
-    })
-
     gsap.to('.title-container', {
       z: 1500,
       ease: 'none',
@@ -64,17 +53,6 @@ const Featured = () => {
       }
     })
 
-    gsap.to('.initial-image-container', {
-      opacity: 0,
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".scroll-container",
-        start: 'center 110%',
-        end: 'center top',
-        scrub: true
-      }
-    })
-
     gsap.to('.chevron-container', {
       y: 50,
       ease: "none",
@@ -86,30 +64,54 @@ const Featured = () => {
       }
     })
 
-    gsap.to('.svg-overlay-container', {
-      scale: 1.5,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: ".scroll-container",
-        start: "center top",
-        end: "bottom bottom",
-        scrub: true
-      }
-    })
+    if (!mobile) {
+      gsap.to('.initial-image', {
+        scale: 2,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: ".scroll-container",
+          start: "top top",
+          end: "bottom top",
+          scrub: true
+        }
+      })
 
-    gsap.to('.further-info-container', {
-      opacity: 0,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.scroll-container',
-        start: '68% top',
-        end: '85% top',
-        scrub: true
-      }
-    });
+      gsap.to('.initial-image-container', {
+        opacity: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".scroll-container",
+          start: 'center 110%',
+          end: 'center top',
+          scrub: true
+        }
+      })
+
+      gsap.to('.svg-overlay-container', {
+        scale: 1.5,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: ".scroll-container",
+          start: "center top",
+          end: "bottom bottom",
+          scrub: true
+        }
+      })
+
+      gsap.to('.further-info-container', {
+        opacity: 0,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.scroll-container',
+          start: '68% top',
+          end: '85% top',
+          scrub: true
+        }
+      });
+    }
 
     ScrollTrigger.create({
-      trigger: ".scroll-container",
+      trigger: mobile ? '.mobile-scroll-test' : '.scroll-container',
       start: "center top",
       // markers: true,
       onEnter: () => {
@@ -127,6 +129,52 @@ const Featured = () => {
         }
       }
     })
+
+    if (mobile) {
+      gsap.to('.initial-image', {
+        scale: 3,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: ".mobile-scroll-test",
+          start: "top top",
+          end: "bottom top",
+          scrub: true
+        }
+      })
+
+      gsap.to('.initial-image-container', {
+        opacity: 0,
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: ".mobile-scroll-test",
+          start: 'center bottom',
+          end: 'center 70%',
+          scrub: true
+        }
+      })
+
+      gsap.to('.svg-overlay-container', {
+        scale: 1.5,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '.mobile-scroll-test',
+          start: 'center 60%',
+          end: 'bottom bottom',
+          scrub: true
+        }
+      })
+
+      gsap.to('.further-info-container', {
+        opacity: 0,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.mobile-scroll-test',
+          start: 'center 65%',
+          end: 'bottom bottom',
+          scrub: true
+        }
+      });
+    }
   }, [])
 
   useEffect(() => {
@@ -144,6 +192,7 @@ const Featured = () => {
   return (
     <>
       <div className='scroll-container'>
+        <div className='mobile-scroll-test'></div>
         <div className='initial-image-container'>
           <div className='title-container'>
             <motion.h1
@@ -190,15 +239,17 @@ const Featured = () => {
           </svg>
         </div>
         <div className='svg-overlay-container' id='mobile-overlay'>
+          <div className='further-info-container'>
+            <h2>CLICK</h2>
+            <p>YOU CAN READ BUT YOU CAN'T OPEN</p>
+          </div>
+          <Image id='mobile-svg-bg' src={OverheadImageMobile} alt='articles-mobile-svg-bg' />
           <svg version="1.1" viewBox="0 0 1182 2560" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
-            <g id="bg-image">
-              <image width="1182" height="2560" preserveAspectRatio="none" xlinkHref={OverheadImageMobile.src}/>
-            </g>
             <g id="layer-outline">
               <path className='object-outline' name="shelf" fill="none" d="m586 1297c-3.85-3.06-7.13-5.92-7.29-6.36-0.244-0.665 6.76-3.33 37.5-14.3 3.03-1.08 3.54-0.879 9.5 3.73 3.46 2.68 6.48 5.01 6.71 5.18 0.229 0.175 0.157 0.577-0.16 0.894-0.551 0.551-34.6 14.9-37.8 15.9-0.839 0.268-4.58-1.97-8.5-5.09zm-21.7-17.4-7.69-4.93-12.5 4.59c-14 5.11-14.8 5.03-16.5-1.55-0.507-2-3.27-23.1-6.14-47-4.54-37.7-5.03-43.5-3.78-44.8 2.17-2.17 110-33.4 112-32.4 2.01 1.12 11.3 86.6 9.66 89.2-1.73 2.81-7.16 5.22-32.1 14.3-13.2 4.81-24.1 8.87-24.3 9.02s3.65 1.81 8.5 3.69c4.89 1.9 8.94 4.07 9.09 4.89 0.529 2.75-17 9.91-24.2 9.88-3.18-0.014-5.81-1.12-11.8-4.95zm69 0.613c-3.16-1.81-6.07-3.62-6.47-4.02-1.3-1.3 2.09-2.59 6.86-2.61 3.83-0.013 5.23 0.531 7.97 3.09l3.33 3.11-2.33 1.89c-1.28 1.04-2.62 1.88-2.97 1.86-0.352-0.017-3.22-1.51-6.38-3.32z"/>
             </g>
             <g id="layer-interaction">
-              <path onClick={() => router.push('/articles/interviews')} data-outline="shelf" fill='none' data-annotation="Shelf" d="m552 1310-34.4-9.82-11.9-11.9-14.7-95.7 5.64-12.3c5.33-11.6 5.84-12.3 9.22-13.2 1.97-0.53 30.7-7.5 63.9-15.5l60.3-14.5 16.7 10.9 0.64 5.33c0.352 2.93 3.26 31.9 6.45 64.3l5.81 59-3.44 8.23c-1.89 4.53-3.97 8.63-4.62 9.12-1.36 1.03-63.9 26.3-64.7 26.1-0.275-0.067-16-4.54-34.9-9.94z" />
+              <path onClick={() => router.push('/articles/interviews')} data-outline="shelf" fill='transparent' data-annotation="Shelf" d="m552 1310-34.4-9.82-11.9-11.9-14.7-95.7 5.64-12.3c5.33-11.6 5.84-12.3 9.22-13.2 1.97-0.53 30.7-7.5 63.9-15.5l60.3-14.5 16.7 10.9 0.64 5.33c0.352 2.93 3.26 31.9 6.45 64.3l5.81 59-3.44 8.23c-1.89 4.53-3.97 8.63-4.62 9.12-1.36 1.03-63.9 26.3-64.7 26.1-0.275-0.067-16-4.54-34.9-9.94z" />
             </g>
           </svg>
         </div>
