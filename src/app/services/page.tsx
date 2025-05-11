@@ -14,7 +14,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useMediaQuery } from 'usehooks-ts';
 
 const Services = () => {
-  const mobile = useMediaQuery('(max-width: 800px)');
+  const mobile = useMediaQuery('(max-width: 1000px)');
   const router = useRouter();
 
   useEffect(() => {
@@ -30,17 +30,6 @@ const Services = () => {
       opacity: 1,
       duration: 0.5,
       delay: 1.25,
-    })
-
-    gsap.to('.initial-image', {
-      scale: 2,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: ".scroll-container",
-        start: "top top",
-        end: "bottom top",
-        scrub: true
-      }
     })
 
     gsap.to('.title-container', {
@@ -65,17 +54,6 @@ const Services = () => {
       }
     })
 
-    gsap.to('.initial-image-container', {
-      opacity: 0,
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".scroll-container",
-        start: 'center 110%',
-        end: 'center top',
-        scrub: true
-      }
-    })
-
     gsap.to('.chevron-container', {
       y: 50,
       ease: "none",
@@ -87,30 +65,55 @@ const Services = () => {
       }
     })
 
-    gsap.to('.svg-overlay-container', {
-      scale: 1.5,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: ".scroll-container",
-        start: "center top",
-        end: "bottom bottom",
-        scrub: true
-      }
-    })
+    if (!mobile) {
+      gsap.to('.initial-image', {
+        scale: 2,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: ".scroll-container",
+          start: "top top",
+          end: "bottom top",
+          scrub: true
+        }
+      })
 
-    gsap.to('.further-info-container', {
-      opacity: 0,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.scroll-container',
-        start: '68% top',
-        end: '85% top',
-        scrub: true
-      }
-    });
+      gsap.to('.initial-image-container', {
+        opacity: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".scroll-container",
+          start: 'center 110%',
+          end: 'center top',
+          scrub: true
+        }
+      })
+
+      gsap.to('.svg-overlay-container', {
+        scale: 1.5,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: ".scroll-container",
+          start: "center top",
+          end: "bottom bottom",
+          scrub: true
+        }
+      })
+
+      gsap.to('.further-info-container', {
+        opacity: 0,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.scroll-container',
+          start: '68% top',
+          end: '85% top',
+          scrub: true
+        }
+      });
+    }
+
 
     ScrollTrigger.create({
-      trigger: ".scroll-container",
+      trigger: mobile ? '.mobile-scroll-test' : '.scroll-container',
       start: "center top",
       // markers: true,
       onEnter: () => {
@@ -128,6 +131,52 @@ const Services = () => {
         }
       }
     })
+
+    if (mobile) {
+      gsap.to('.initial-image', {
+        scale: 3,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: ".mobile-scroll-test",
+          start: "top top",
+          end: "bottom top",
+          scrub: true
+        }
+      })
+
+      gsap.to('.initial-image-container', {
+        opacity: 0,
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: ".mobile-scroll-test",
+          start: 'center bottom',
+          end: 'center 70%',
+          scrub: true
+        }
+      })
+
+      gsap.to('.svg-overlay-container', {
+        scale: 1.5,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '.mobile-scroll-test',
+          start: 'center 60%',
+          end: 'bottom bottom',
+          scrub: true
+        }
+      })
+
+      gsap.to('.further-info-container', {
+        opacity: 0,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.mobile-scroll-test',
+          start: 'center 65%',
+          end: 'bottom bottom',
+          scrub: true
+        }
+      });
+    }
   }, [])
 
   useEffect(() => {
@@ -145,6 +194,7 @@ const Services = () => {
   return (
     <>
       <div className='scroll-container'>
+        <div className='mobile-scroll-test'></div>
         <div className='initial-image-container'>
           <div className='title-container'>
             <motion.h1
@@ -195,15 +245,13 @@ const Services = () => {
             <h2>CLICK</h2>
             <p>A WAY TO CONTACT ME</p>
           </div>
+          <Image id='mobile-svg-bg' src={OverheadImageMobile} alt='services-mobile-svg-bg' />
           <svg version="1.1" viewBox="0 0 1182 2560" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
-            <g id="bg-image">
-              <image width="1182" height="2560" preserveAspectRatio="none" xlinkHref={OverheadImageMobile.src} />
-            </g>
             <g id="layer-outline">
               <path name="phone" className='object-outline' fill="none" d="m538 1353c-11.2-2.92-18.5-8.72-18.5-14.7 0-5.61 7.03-12.5 15.7-15.4l5.15-1.7 1.7-6.7c0.937-3.69 1.86-7.23 2.04-7.88 0.184-0.648 1.6-1.32 3.14-1.5 2.61-0.3 2.86-0.719 3.52-6.02 0.933-7.51 3.41-11 13.2-18.6 18.2-14.2 39.4-21.9 63.2-22.9l13.1-0.555 3.43 5.74c1.88 3.16 4.23 7.22 5.2 9.03 1.83 3.38 2.58 12.3 1.36 16.1-0.837 2.59-4.62 4.4-9.19 4.4-2.1 0-3.45 0.491-3.45 1.25 2e-3 0.688 1.77 3.9 3.92 7.14 3.26 4.91 5.39 6.75 12.7 11.1l8.83 5.18 0.578 15-25.1 9.79c-13.8 5.39-25.9 10-26.9 10.3-1.12 0.292-8.4-3.86-19.5-11.2-16.7-10.9-21.3-13.2-17.1-8.56 2.73 3.02 1.61 10.5-2.11 14-6.34 6.03-24.2 9.46-34.9 6.69zm22-11.5c5.17-2.29 5.88-3.26 4.12-5.67-1.94-2.65-14.9-3.83-19-1.72-2.03 1.04-4.35 1.3-7.67 0.86-4.2-0.557-4.84-0.393-5.41 1.38-1.06 3.35 0.854 4.87 8.99 7.12 4.39 1.21 14 0.213 19-1.96z" />
             </g>
             <g id="layer-interaction">
-            <path onClick={() => router.push('/services/info')} data-outline="phone" fill="none" data-annotation="Phone" d="m598 1362c-7.92-3-15.2-5.45-16.1-5.45-0.929 0-8.85 1.61-17.6 3.58-15.3 3.43-16.4 3.55-28.4 2.88l-12.5-0.7-17.4-17.3 1.17-22 25.2-21.3 10.3-18.6c5.68-10.2 10.9-19 11.6-19.6 1.66-1.38 34.1-12.8 44.6-15.7 9.08-2.52 19.7-3 37.9-1.71l9.16 0.65 15 23.2 0.097 29 15.8 11 0.031 9.5c0.0171 5.22-0.249 11.8-0.592 14.7l-0.623 5.19-30.9 14.1c-17 7.73-31.2 14-31.6 14-0.386-0.025-7.18-2.5-15.1-5.5z" />
+            <path onClick={() => router.push('/services/info')} data-outline="phone" fill="transparent" data-annotation="Phone" d="m598 1362c-7.92-3-15.2-5.45-16.1-5.45-0.929 0-8.85 1.61-17.6 3.58-15.3 3.43-16.4 3.55-28.4 2.88l-12.5-0.7-17.4-17.3 1.17-22 25.2-21.3 10.3-18.6c5.68-10.2 10.9-19 11.6-19.6 1.66-1.38 34.1-12.8 44.6-15.7 9.08-2.52 19.7-3 37.9-1.71l9.16 0.65 15 23.2 0.097 29 15.8 11 0.031 9.5c0.0171 5.22-0.249 11.8-0.592 14.7l-0.623 5.19-30.9 14.1c-17 7.73-31.2 14-31.6 14-0.386-0.025-7.18-2.5-15.1-5.5z" />
             </g>
           </svg>
         </div>
