@@ -19,6 +19,7 @@ const Home = () => {
   const mobile = useMediaQuery('(max-width: 1000px)');
 
   const handleContainerClick = (e) => {
+    console.log("hello")
     if (activeItem) {
       setActiveItem(false);
 
@@ -343,8 +344,8 @@ const Home = () => {
           <div className='scroll-hint'><p>scroll to continue</p></div>
         </div>
         <div className="svg-overlay-container" id="mobile-overlay">
-          <Image id='mobile-svg-bg' src={OverheadImageMobile} alt='cover-mobile-svg-bg' />
-          <svg version="1.1" viewBox="0 0 1182 2560" preserveAspectRatio="none" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+          <Image className='bg-image' id='mobile-svg-bg' src={OverheadImageMobile} alt='cover-mobile-svg-bg' />
+          <svg version="1.1" onClick={(e) => handleContainerClick(e)} viewBox="0 0 1182 2560" preserveAspectRatio="none" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
             <g id="layer-outline">
               {/* <path className='object-outline' id='A-fill' name="laptop" d="m714 1248c-12.6-0.991-24.4-1.83-26.1-1.87l-3.09-0.067 1.89-11.2c1.04-6.19 2.69-22.4 3.66-36 0.972-13.6 2.09-25.1 2.49-25.5 0.81-0.81 76.5 2.17 77.3 3.04 0.539 0.539-2.08 45.9-3.34 57.9l-0.606 5.77-5.12-0.637c-3.25-0.404-5.67-1.33-6.64-2.54-1.49-1.86-1.6-1.86-5.83 0.18-4.68 2.26-7.49 6.95-6.49 10.8 0.67 2.56 3.24 2.55-28.2 0.094z"/> */}
               <path className='object-outline' id='B-fill' name="palette1" d="m606 1072c-1.81-2.18-2.82-20-1.2-21 0.629-0.388 4.74-0.393 9.13-0.01l7.99 0.697v7.94c0 4.37 0.486 8.85 1.08 9.96 0.595 1.11 0.913 2.19 0.707 2.39-0.206 0.206-3.97 0.673-8.35 1.04-6.73 0.561-8.2 0.408-9.35-0.981z"/>
