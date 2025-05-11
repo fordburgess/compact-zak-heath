@@ -19,16 +19,16 @@ const Home = () => {
   const mobile = useMediaQuery('(max-width: 1000px)');
 
   const handleContainerClick = (e) => {
-    console.log("hello")
     if (activeItem) {
       setActiveItem(false);
 
-      const pointerLine: SVGPathElement = document.querySelector('.pointer-line');
-      const bgImage = document.querySelector('.bg-image');
-      const infoBox: SVGPathElement = document.querySelector('.info-box');
-      const objectOutlines = document.querySelectorAll('.object-outline');
-      const infoText = document.querySelector('.info-box-title-text');
-      const linkText = document.querySelector('.link-text');
+      const pointerLine: SVGPathElement = document.querySelector(`${mobile ? '#mobile-overlay' : '#desktop-overlay'} .pointer-line`);
+      const infoBox: SVGPathElement = document.querySelector(`${mobile ? '#mobile-overlay' : '#desktop-overlay'} .info-box`);
+      const bgImage = document.querySelector(`${mobile ? '#mobile-overlay' : '#desktop-overlay'} .bg-image`);
+      const objectOutlines = document.querySelectorAll(`${mobile ? '#mobile-overlay' : '#desktop-overlay'} .object-outline`);
+      const infoText = document.querySelector(`${mobile ? '#mobile-overlay' : '#desktop-overlay'} .info-box-title-text`);
+      const linkText = document.querySelector(`${mobile ? '#mobile-overlay' : '#desktop-overlay'} .link-text`);
+      const itemLink = document.querySelector(`${mobile ? '#mobile-overlay' : '#desktop-overlay'} .item-link`);
 
       if (pointerLine && bgImage) {
         pointerLine.setAttribute('d', '');
@@ -59,8 +59,6 @@ const Home = () => {
   const handleClick = (id: string) => {
     if (!activeItem) {
       setActiveItem(true);
-
-      console.log(id);
 
       const itemVals = {
         'B': { href: '/articles/tilly-sanders', pointer: 'm2250 740 L2000 740', rectX: '1390', rectY: '570', textX: '1690', textY: '710', textVal: 'Beauty PR', linkX: '1690', linkY: '780', comingSoon: false },
@@ -98,14 +96,14 @@ const Home = () => {
 
       setCurrentHref(itemVals[id].href);
 
-      const pointerLine: SVGPathElement = document.querySelector('.pointer-line');
-      const infoBox: SVGPathElement = document.querySelector('.info-box');
-      const bgImage = document.querySelector('.bg-image');
-      const svgOverlayContainer = document.querySelector('.svg-overlay-container');
-      const objectOutlines = document.querySelectorAll('.object-outline');
-      const infoText = document.querySelector('.info-box-title-text');
-      const linkText = document.querySelector('.link-text');
-      const itemLink = document.querySelector('.item-link');
+      const pointerLine: SVGPathElement = document.querySelector(`${mobile ? '#mobile-overlay' : '#desktop-overlay'} .pointer-line`);
+      const infoBox: SVGPathElement = document.querySelector(`${mobile ? '#mobile-overlay' : '#desktop-overlay'} .info-box`);
+      const bgImage = document.querySelector(`${mobile ? '#mobile-overlay' : '#desktop-overlay'} .bg-image`);
+      const svgOverlayContainer = document.querySelector(`${mobile ? '#mobile-overlay' : '#desktop-overlay'} .svg-overlay-container`);
+      const objectOutlines = document.querySelectorAll(`${mobile ? '#mobile-overlay' : '#desktop-overlay'} .object-outline`);
+      const infoText = document.querySelector(`${mobile ? '#mobile-overlay' : '#desktop-overlay'} .info-box-title-text`);
+      const linkText = document.querySelector(`${mobile ? '#mobile-overlay' : '#desktop-overlay'} .link-text`);
+      const itemLink = document.querySelector(`${mobile ? '#mobile-overlay' : '#desktop-overlay'} .item-link`);
 
       if (pointerLine && bgImage && infoBox && linkText) {
         objectOutlines.forEach((object) => {
@@ -121,9 +119,9 @@ const Home = () => {
         else {
           pointerLine.setAttribute('d', itemVals[id].pointer);
           pointerLine.style.display = 'block';
-        }
 
-        console.log(infoBox)
+          console.log(pointerLine)
+        }
 
         const infoBoxPath = `
           M ${mobile ? itemValsMobile[id].rectX : itemVals[id].rectX} ${mobile ? itemValsMobile[id].rectY : itemVals[id].rectY}
@@ -157,6 +155,10 @@ const Home = () => {
       }
     }
   }
+
+  useEffect(() => {
+    console.log(activeItem)
+  }, [activeItem])
 
   useEffect(() => {
     const scrollPosition = localStorage.getItem('cover-page-scroll');
