@@ -134,7 +134,7 @@
 
 html, body {
   /* height: auto !important; */
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .featured-article-container {

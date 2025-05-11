@@ -163,13 +163,14 @@ const FeaturedInterviews = () => {
           </div>
           {
             chunked.map((chunk: any, index: number) => {
+              console.log(chunk)
               return (
-                <div className='featured-interviews-section' id={`section-${index}`} key={index}>
+                <div className='featured-interviews-section' id={`chunk-${index}`} key={index}>
                   {
                     chunk.map((interview: any, i: number) => {
                       return (
                         <div className='beauty-icons-item' key={interview.href}>
-                          <Link href={interview.href}>
+                          <Link className='index-page-link' href={interview.href}>
                             <Image
                               src={interview.pfp}
                               alt={`icon-${index}`}
