@@ -190,7 +190,6 @@ const DiaryOfInfluencer = () => {
     <div className='dream-room-article-container'>
       <Image priority src={AutumnExpanded} className='dream-room-bg' alt='dream-room-bg'/>
       <div className='dream-room-article-content' ref={verticalScrollRef}>
-        <Link href='/dream-room' className='article-back-button'><p>Back</p></Link>
         <div className='article-title-section'>
           <Image src={ZakHeathProfile} className='article-intro-image' alt='profile' />
           <h1 className='dream-room-title'>
