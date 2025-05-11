@@ -150,6 +150,7 @@ a {
   width: 100%;
   /* background-color: rgba(255, 0, 0, 0.609); */
   z-index: 10;
+  pointer-events: none;
 }
 
 #mobile-svg-bg {
@@ -205,7 +206,7 @@ a {
 }
 
 .svg-overlay-container {
-  position: sticky;
+  position: fixed;
   overflow: hidden;
   top: 0;
   left: 0;
@@ -213,7 +214,6 @@ a {
   width: 100dvw;
   box-sizing: border-box;
   z-index: 1;
-  perspective: 1000px;
 }
 
 .chevron-container {
@@ -249,6 +249,17 @@ a {
   top: 0%;
   height: 100dvh;
   width: 100dvw;
+  z-index: 1;
+}
+
+#mobile-overlay svg {
+  height: 100%;
+  width: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
 }
 
 polyline {
@@ -457,6 +468,18 @@ polyline:nth-child(3) {
 }
 
 @media (min-width: 1000px) {
+  .svg-overlay-container {
+    position: sticky;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    height: 100dvh;
+    width: 100dvw;
+    box-sizing: border-box;
+    z-index: 1;
+    perspective: 1000px;
+  }
+
   .scroll-container {
     height: 1000dvh;
     width: 100vw;
@@ -474,6 +497,10 @@ polyline:nth-child(3) {
     perspective: 1000px;
     overflow: hidden;
     z-index: 2;
+  }
+
+  .mobile-click-circle {
+    display: none;
   }
 
   .title-container {
