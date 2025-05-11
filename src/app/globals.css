@@ -101,11 +101,6 @@ html, body {
   padding: 0;
 }
 
-/* body {
-  min-width: 320px;
-  min-height: 100%;
-} */
-
 img {
   object-fit: cover;
   object-position: center;
@@ -155,6 +150,11 @@ a {
   width: 100%;
   /* background-color: rgba(255, 0, 0, 0.609); */
   z-index: 10;
+}
+
+#mobile-svg-bg {
+  height: 100dvh;
+  width: 100dvw;
 }
 
 .test-scroll {

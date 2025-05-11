@@ -103,27 +103,32 @@ const Audio = () => {
       }
     })
 
-    gsap.to('.svg-overlay-container', {
-      scale: 1.5,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: ".scroll-container",
-        start: "center top",
-        end: "bottom bottom",
-        scrub: true
-      }
-    })
+    if (!mobile) {
+      gsap.to('.svg-overlay-container', {
+        scale: 1.5,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: ".scroll-container",
+          start: "center top",
+          end: "bottom bottom",
+          scrub: true
+        }
+      })
+    }
 
-    gsap.to('.further-info-container', {
-      opacity: 0,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.scroll-container',
-        start: '68% top',
-        end: '85% top',
-        scrub: true
-      }
-    });
+
+    if (!mobile) {
+      gsap.to('.further-info-container', {
+        opacity: 0,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.scroll-container',
+          start: '68% top',
+          end: '85% top',
+          scrub: true
+        }
+      });
+    }
 
     if (!mobile) {
       ScrollTrigger.create({
@@ -153,21 +158,32 @@ const Audio = () => {
         scrollTrigger: {
           trigger: ".mobile-scroll-test",
           start: 'center bottom',
-          end: 'center 60%',
+          end: 'center 70%',
           scrub: true
         }
       })
 
       gsap.to('.svg-overlay-container', {
-        scale: 2,
+        scale: 1.5,
         ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '.mobile-scroll-test',
+          start: 'center 60%',
+          end: 'bottom bottom',
+          scrub: true
+        }
+      })
+
+      gsap.to('.further-info-container', {
+        opacity: 0,
+        ease: 'none',
         scrollTrigger: {
           trigger: '.mobile-scroll-test',
           start: 'center 65%',
           end: 'bottom bottom',
           scrub: true
         }
-      })
+      });
     }
   }, [])
 
@@ -237,10 +253,8 @@ const Audio = () => {
             <h2>HINT</h2>
             <p>YOU CAN READ BUT YOU CAN'T OPEN</p>
           </div>
+          <Image id='mobile-svg-bg' src={OverheadImageMobile} alt='audio-mobile-svg-bg' />
           <svg version="1.1" viewBox="0 0 1182 2560" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
-            <g id="bg-image">
-              <image width="1182" height="2560" preserveAspectRatio="none" xlinkHref={OverheadImageMobile.src}/>
-            </g>
             <g id="layer-outline">
               <path className='object-outline' name="chair" fill="none" d="m442 1466c-0.687-0.828-3.43-12.2-6.09-25.3s-5.25-24.9-5.75-26.2c-0.767-2.01-3.78-3.44-18.3-8.68-19.1-6.9-21.9-7.28-37.7-5.08-7.16 1-8.51 0.951-9.83-0.364-1.37-1.37-0.32-2.28 10.1-8.83 6.37-4.02 11.6-7.72 11.6-8.23 0-0.509-0.834-2.12-1.85-3.58-1.02-1.46-2.13-4.45-2.47-6.65s-8.17-26.6-17.4-54.2c-13.5-40.3-16.6-50.6-15.7-52 1.36-2.18 6.38-2.91 7.51-1.09 1.21 1.94 3.9-0.037 5.27-3.88 1.58-4.43 7.6-9.01 19.7-15 23.8-11.7 66.5-22.9 79.4-20.8 7.87 1.33 10.7 4.18 15.8 15.7 2.54 5.77 5.8 15.4 7.25 21.5l2.63 11 5.89 0.534c4.83 0.438 11.7 3.18 38.2 15.2 17.8 8.09 33.1 15.4 34.1 16.3 2.77 2.44 2.14 5.7-1.68 8.61-4.14 3.16-4.88 3.2-9.2 0.537l-3.37-2.08v2.29c0 1.26 0.719 7.93 1.6 14.8 1.42 11.2 1.87 12.8 4.1 14.6 1.81 1.47 2.65 3.33 3.03 6.75 0.401 3.56 0.948 4.72 2.23 4.72 0.933 0 2.67 1.04 3.87 2.31 1.73 1.84 2.17 3.53 2.17 8.3 0 6.71-1.06 8.39-5.31 8.39-2.73 0-2.88 0.201-2.36 3.25 1.46 8.61 4 29.7 3.61 30.1-0.242 0.224-1.83 0.705-3.53 1.07l-3.09 0.662-1.71-12.8c-0.938-7.04-2.02-13.1-2.41-13.5-0.582-0.569-103 43.1-107 45.4-0.976 0.647 0.536 9.94 5.2 32 0.477 2.25 0.0797 2.94-2.45 4.25-3.75 1.94-4.55 1.95-6.12 0.054zm99.3-126c0.232-0.412-1.66-8.18-4.21-17.2l-4.63-16.5-4.98-2.73c-2.74-1.5-5.27-2.74-5.62-2.75-0.971-0.036-1.8 9.19-2.02 22.4l-0.196 11.9 8.93 2.74c9.55 2.94 12.1 3.37 12.7 2.18zm-30-15c0.351-3.71 0.641-11.8 0.645-18.1l7e-3 -11.3-9.57-4.44c-5.26-2.44-9.74-4.44-9.95-4.44s0.277 2.14 1.08 4.75c6.04 19.6 6.87 27.1 3.41 30.8-3.26 3.47-1.91 5.9 4.31 7.71 9.31 2.71 9.35 2.69 10.1-5z"/>
             </g>
