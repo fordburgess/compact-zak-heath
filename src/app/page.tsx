@@ -59,6 +59,8 @@ const Home = () => {
     if (!activeItem) {
       setActiveItem(true);
 
+      console.log(id);
+
       const itemVals = {
         'B': { href: '/articles/tilly-sanders', pointer: 'm2250 740 L2000 740', rectX: '1390', rectY: '570', textX: '1690', textY: '710', textVal: 'Beauty PR', linkX: '1690', linkY: '780', comingSoon: false },
         'D': { href: '/dream-room', pointer: 'm2780 735 L2780 660 L2500 660', rectX: '1900', rectY: '490', textX: '2200', textY: '630', textVal: 'My Journey', linkX: '2200', linkY: '690', comingSoon: false },
@@ -77,17 +79,17 @@ const Home = () => {
       };
 
       const itemValsMobile = {
-        'B': { href: '/articles/tilly-sanders', pointer: 'm2250 740 L2000 740', rectX: '1390', rectY: '570', textX: '1690', textY: '710', textVal: 'Beauty PR', linkX: '1690', linkY: '780', comingSoon: false },
-        'D': { href: '/dream-room', pointer: 'm2780 735 L2780 660 L2500 660', rectX: '1900', rectY: '490', textX: '2200', textY: '630', textVal: 'My Journey', linkX: '2200', linkY: '690', comingSoon: false },
+        'B': { href: '/articles/tilly-sanders', pointer: 'm610 1030 L610 900', rectX: '430', rectY: '730', textX: '600', textY: '790', textVal: 'Beauty PR', linkX: '600', linkY: '830', comingSoon: false },
+        'D': { href: '/dream-room', pointer: 'm810 1030 L810 900', rectX: '600', rectY: '735', textX: '770', textY: '800', textVal: 'My Journey', linkX: '770', linkY: '840', comingSoon: false },
         'E': { href: '/articles/lisa-eldridge', pointer: 'm2420 1135 L2350 1135 L2350 920', rectX: '2290', rectY: '600', textX: '2590', textY: '740', textVal: 'Celebrity Makeup Artist', linkX: '2590', linkY: '800', comingSoon: false },
         'F': { href: '/articles/millie-kendall', pointer: 'm2750 1130 L2750 1050 L3090 1050', rectX: '3100', rectY: '900', textX: '3400', textY: '1040', textVal: 'Beauty CEO', linkX: '3400', linkY: '1100', comingSoon: false },
         'G': { href: '/articles/adam-reed', pointer: 'm2720 1270 L2640 1350 L2470 1350', rectX: '1860', rectY: '1200', textX: '2170', textY: '1340', textVal: 'Celebrity Hairdresser', linkX: '2170', linkY: '1400', comingSoon: false },
         'H': { href: '/', pointer: 'm2770 1330 L2770 1450 L2900 1600', rectX: '2910', rectY: '1595', textX: '3220', textY: '1735', textVal: 'Test', linkX: '3220', linkY: '1795', comingSoon: true },
         'I': { href: '/', pointer: 'm3050 1280 L3200 1280 L3200 1100', rectX: '2900', rectY: '780', textX: '3200', textY: '920', textVal: 'Test', linkX: '3200', linkY: '980', comingSoon: true },
         'J': { href: '/podcasts/patricia-bright', pointer: 'm3000 1400 L3150 1400 L3150 1650', rectX: '2850', rectY: '1650', textX: '3150', textY: '1790', textVal: 'Content Creator + CEO', linkX: '3150', linkY: '1850', comingSoon: false },
-        'K': { href: '/articles/mona-kattan', pointer: 'm2500 1830 L2700 1750 L3000 1750', rectX: '3005', rectY: '1600', textX: '3310', textY: '1740', textVal: 'Fragrance CEO', linkX: '3310', linkY: '1800', comingSoon: false },
+        'K': { href: '/articles/mona-kattan', pointer: 'm655 1460 L655 1350', rectX: '480', rectY: '1180', textX: '660', textY: '1240', textVal: 'Fragrance CEO', linkX: '660', linkY: '1290', comingSoon: false },
         'L': { href: '/', pointer: 'm2850 1360 L2650 1500 L2520 1500', rectX: '1910', rectY: '1350', textX: '2220', textY: '1500', textVal: 'Beauty Photographer', linkX: '2220', linkY: '1560', comingSoon: true },
-        'M': { href: '/podcasts/shakeel-murtaza', pointer: 'm520 1150 L520 1100', rectX: '1600', rectY: '600', textX: '1910', textY: '740', textVal: "Men's Beauty Influencer", linkX: '1910', linkY: '800', comingSoon: false },
+        'M': { href: '/podcasts/shakeel-murtaza', pointer: 'm520 1150 L520 1000', rectX: '350', rectY: '830', textX: '525', textY: '890', textVal: "Men's Beauty Influencer", linkX: '525', linkY: '940', comingSoon: false },
         // 'J': { pointer: 'm2320 1700 L2400 1700 L2400 1400', rectX: '2100', rectY: '1080', textX: '2405', textY: '1250', textVal: "Head of Beauty PR", linkX: '', linkY: '' },
         // 'N': { href: '/articles/mona-kattan', pointer: 'm2772 1965 L2772 1900 L3340 1900', rectX: '3350', rectY: '1750', textX: '3650', textY: '1905', textVal: 'Fragrance CEO', linkX: '', linkY: '', comingSoon: false },
         'O': { href: '/articles/alessandra-steinherr', pointer: 'm2290 1765 L2290 1870 L1900 1870', rectX: '1290', rectY: '1700', textX: '1590', textY: '1840', textVal: 'Beauty Editor + Influencer', linkX: '1590', linkY: '1900', comingSoon: false },
@@ -120,17 +122,17 @@ const Home = () => {
           pointerLine.style.display = 'block';
         }
 
-        console.log(pointerLine)
+        console.log(infoBox)
 
         const infoBoxPath = `
-          M ${itemVals[id].rectX} ${itemVals[id].rectY}
-          h 600
+          M ${mobile ? itemValsMobile[id].rectX : itemVals[id].rectX} ${mobile ? itemValsMobile[id].rectY : itemVals[id].rectY}
+          h ${mobile ? '350' : '600'}
           a 10 10 0 0 1 10 10
-          v 300
+          v ${mobile ? '150' : '300'}
           a 10 10 0 0 1 -10 10
-          h -600
+          h ${mobile ? '-350' : '-600'}
           a 10 10 0 0 1 -10 -10
-          v -300
+          v ${mobile ? '-150' : '-300'}
           a 10 10 0 0 1 10 -10
           Z
         `;
@@ -140,13 +142,13 @@ const Home = () => {
         infoBox.setAttribute('d', infoBoxPath);
         infoBox.style.opacity = '1';
 
-        infoText.setAttribute('x', itemVals[id].textX);
-        infoText.setAttribute('y', itemVals[id].textY);
+        infoText.setAttribute('x', mobile ? itemValsMobile[id].textX : itemVals[id].textX);
+        infoText.setAttribute('y', mobile ? itemValsMobile[id].textY : itemVals[id].textY);
         infoText.textContent = itemVals[id].textVal;
         infoText.style.opacity = '1';
 
-        linkText.setAttribute('x', itemVals[id].linkX);
-        linkText.setAttribute('y', itemVals[id].linkY);
+        linkText.setAttribute('x', mobile ? itemValsMobile[id].linkX : itemVals[id].linkX);
+        linkText.setAttribute('y', mobile ? itemValsMobile[id].linkY : itemVals[id].linkY);
         linkText.textContent = itemVals[id].comingSoon ? 'Coming Soon...' : 'Click Here'
         linkText.style.opacity = '1';
 
@@ -400,7 +402,7 @@ const Home = () => {
                   y="720"
                   textAnchor="middle"
                   dominantBaseline="middle"
-                  fontSize="50"
+                  fontSize="30"
                   fill="#fff"
                   fontFamily='Josefin Sans'
                   fontWeight="400"
@@ -413,7 +415,7 @@ const Home = () => {
                   textAnchor="middle"
                   dominantBaseline="middle"
                   fontFamily='Josefin Sans'
-                  fontSize="40"
+                  fontSize="25"
                   fontStyle="italic"
                   fill="#fff"
                   fontWeight="300"
