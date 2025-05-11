@@ -337,7 +337,7 @@ const MonaKattan = () => {
                 </div>
               </div>
             </div>
-            <p className='featured-article-subheader'>What would you include if you were to make a fragrance inspired by me?</p>
+            <p className='featured-article-subheader'>If you were to make a fragrance inspired by a young person like me, what would it include?</p>
             <p className='featured-article-paragraph'>Oh my God, you are literally sunshine in human form! I'd definitely start with solar notes for that radiant, happy energy. I'd add vanilla because I'm a Kayali girl through and through. Then I'd layer in your favourite fruits, maybe a soft spice, and we'd have to figure it out together for the dry down. But it would be joyful, bright and warm.</p>
             <div className='featured-transition-container' id='second-image-trans'>
               <p className='image-caption' id="second-trans-caption">Mona Kattan and I in 2023 inside<br/>of her fragrance wardrobe in Dubai!</p>
