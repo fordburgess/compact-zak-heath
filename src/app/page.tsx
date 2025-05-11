@@ -87,7 +87,7 @@ const Home = () => {
         'J': { href: '/podcasts/patricia-bright', pointer: 'm3000 1400 L3150 1400 L3150 1650', rectX: '2850', rectY: '1650', textX: '3150', textY: '1790', textVal: 'Content Creator + CEO', linkX: '3150', linkY: '1850', comingSoon: false },
         'K': { href: '/articles/mona-kattan', pointer: 'm2500 1830 L2700 1750 L3000 1750', rectX: '3005', rectY: '1600', textX: '3310', textY: '1740', textVal: 'Fragrance CEO', linkX: '3310', linkY: '1800', comingSoon: false },
         'L': { href: '/', pointer: 'm2850 1360 L2650 1500 L2520 1500', rectX: '1910', rectY: '1350', textX: '2220', textY: '1500', textVal: 'Beauty Photographer', linkX: '2220', linkY: '1560', comingSoon: true },
-        'M': { href: '/podcasts/shakeel-murtaza', pointer: 'm520 1150 L520 1100', rectX: '1600', rectY: '600', textX: '1910', textY: '740', textVal: "Men's Beauty Influencer", linkX: '1910', linkY: '800', comingSoon: false },
+        'M': { href: '/podcasts/shakeel-murtaza', pointer: 'm520 1150 L520 1000', rectX: '350', rectY: '830', textX: '525', textY: '890', textVal: "Men's Beauty Influencer", linkX: '525', linkY: '940', comingSoon: false },
         // 'J': { pointer: 'm2320 1700 L2400 1700 L2400 1400', rectX: '2100', rectY: '1080', textX: '2405', textY: '1250', textVal: "Head of Beauty PR", linkX: '', linkY: '' },
         // 'N': { href: '/articles/mona-kattan', pointer: 'm2772 1965 L2772 1900 L3340 1900', rectX: '3350', rectY: '1750', textX: '3650', textY: '1905', textVal: 'Fragrance CEO', linkX: '', linkY: '', comingSoon: false },
         'O': { href: '/articles/alessandra-steinherr', pointer: 'm2290 1765 L2290 1870 L1900 1870', rectX: '1290', rectY: '1700', textX: '1590', textY: '1840', textVal: 'Beauty Editor + Influencer', linkX: '1590', linkY: '1900', comingSoon: false },
@@ -120,17 +120,17 @@ const Home = () => {
           pointerLine.style.display = 'block';
         }
 
-        console.log(pointerLine)
+        console.log(infoBox)
 
         const infoBoxPath = `
-          M ${itemVals[id].rectX} ${itemVals[id].rectY}
-          h 600
+          M ${mobile ? itemValsMobile[id].rectX : itemVals[id].rectX} ${mobile ? itemValsMobile[id].rectY : itemVals[id].rectY}
+          h ${mobile ? '350' : '600'}
           a 10 10 0 0 1 10 10
-          v 300
+          v ${mobile ? '150' : '300'}
           a 10 10 0 0 1 -10 10
-          h -600
+          h ${mobile ? '-350' : '-600'}
           a 10 10 0 0 1 -10 -10
-          v -300
+          v ${mobile ? '-150' : '-300'}
           a 10 10 0 0 1 10 -10
           Z
         `;
@@ -140,13 +140,13 @@ const Home = () => {
         infoBox.setAttribute('d', infoBoxPath);
         infoBox.style.opacity = '1';
 
-        infoText.setAttribute('x', itemVals[id].textX);
-        infoText.setAttribute('y', itemVals[id].textY);
+        infoText.setAttribute('x', mobile ? itemValsMobile[id].textX : itemVals[id].textX);
+        infoText.setAttribute('y', mobile ? itemValsMobile[id].textY : itemVals[id].textY);
         infoText.textContent = itemVals[id].textVal;
         infoText.style.opacity = '1';
 
-        linkText.setAttribute('x', itemVals[id].linkX);
-        linkText.setAttribute('y', itemVals[id].linkY);
+        linkText.setAttribute('x', mobile ? itemValsMobile[id].linkX : itemVals[id].linkX);
+        linkText.setAttribute('y', mobile ? itemValsMobile[id].linkY : itemVals[id].linkY);
         linkText.textContent = itemVals[id].comingSoon ? 'Coming Soon...' : 'Click Here'
         linkText.style.opacity = '1';
 
@@ -400,7 +400,7 @@ const Home = () => {
                   y="720"
                   textAnchor="middle"
                   dominantBaseline="middle"
-                  fontSize="50"
+                  fontSize="30"
                   fill="#fff"
                   fontFamily='Josefin Sans'
                   fontWeight="400"
@@ -413,7 +413,7 @@ const Home = () => {
                   textAnchor="middle"
                   dominantBaseline="middle"
                   fontFamily='Josefin Sans'
-                  fontSize="40"
+                  fontSize="25"
                   fontStyle="italic"
                   fill="#fff"
                   fontWeight="300"
