@@ -29,7 +29,7 @@ const interviews = [
   {
     pfp: AdamReed,
     name: 'Adam Reed',
-    job: 'Hairstylist',
+    job: 'Hairdresser',
     href: '/articles/adam-reed'
   },
   {
