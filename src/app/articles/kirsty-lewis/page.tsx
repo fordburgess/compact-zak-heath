@@ -279,7 +279,7 @@ const LisaEldridge = () => {
             <Image src={KirstyLewisProfile} alt='pfp' className='featured-profile-image'/>
             <div id='title-box'>
               <h1 className='strong-title'>In Conversation With Kirsty Lewis:</h1>
-              <h1 className='title-subline'>On PR and Relationships In The Workplace</h1>
+              <h1 className='title-subline'>On PR and Relationships in the Workplace</h1>
             </div>
           </div>
           <div className='image-section' id='second-intro-container'>
