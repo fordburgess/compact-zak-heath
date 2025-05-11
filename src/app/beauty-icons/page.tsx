@@ -32,17 +32,6 @@ const BeautyIcons = () => {
       delay: 1.25,
     })
 
-    gsap.to('.initial-image', {
-      scale: 2,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: ".scroll-container",
-        start: "top top",
-        end: "bottom top",
-        scrub: true
-      }
-    })
-
     gsap.to('.title-container', {
       z: 1500,
       ease: 'none',
@@ -65,17 +54,6 @@ const BeautyIcons = () => {
       }
     })
 
-    gsap.to('.initial-image-container', {
-      opacity: 0,
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".scroll-container",
-        start: 'center 110%',
-        end: 'center top',
-        scrub: true
-      }
-    })
-
     gsap.to('.chevron-container', {
       y: 50,
       ease: "none",
@@ -87,30 +65,100 @@ const BeautyIcons = () => {
       }
     })
 
-    gsap.to('.svg-overlay-container', {
-      scale: 1.5,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: ".scroll-container",
-        start: "center top",
-        end: "bottom bottom",
-        scrub: true
-      }
-    })
+    if (!mobile) {
+      gsap.to('.initial-image', {
+        scale: 2,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: ".scroll-container",
+          start: "top top",
+          end: "bottom top",
+          scrub: true
+        }
+      })
 
-    gsap.to('.further-info-container', {
-      opacity: 0,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.scroll-container',
-        start: '68% top',
-        end: '85% top',
-        scrub: true
-      }
-    });
+      gsap.to('.initial-image-container', {
+        opacity: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".scroll-container",
+          start: 'center 110%',
+          end: 'center top',
+          scrub: true
+        }
+      })
+
+      gsap.to('.svg-overlay-container', {
+        scale: 1.5,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: ".scroll-container",
+          start: "center top",
+          end: "bottom bottom",
+          scrub: true
+        }
+      })
+
+      gsap.to('.further-info-container', {
+        opacity: 0,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.scroll-container',
+          start: '68% top',
+          end: '85% top',
+          scrub: true
+        }
+      });
+    }
+
+    if (mobile) {
+      gsap.to('.initial-image', {
+        scale: 3,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: ".mobile-scroll-test",
+          start: "top top",
+          end: "bottom top",
+          scrub: true
+        }
+      })
+
+      gsap.to('.initial-image-container', {
+        opacity: 0,
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: ".mobile-scroll-test",
+          start: 'center bottom',
+          end: 'center 70%',
+          scrub: true
+        }
+      })
+
+      gsap.to('.svg-overlay-container', {
+        scale: 1.5,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '.mobile-scroll-test',
+          start: 'center 60%',
+          end: 'bottom bottom',
+          scrub: true
+        }
+      })
+
+      gsap.to('.further-info-container', {
+        opacity: 0,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.mobile-scroll-test',
+          start: 'center 65%',
+          end: 'bottom bottom',
+          scrub: true
+        }
+      });
+    }
 
     ScrollTrigger.create({
-      trigger: ".scroll-container",
+      trigger: mobile ? '.mobile-scroll-test' : '.scroll-container',
       start: "center top",
       // markers: true,
       onEnter: () => {
@@ -145,6 +193,7 @@ const BeautyIcons = () => {
   return (
     <>
       <div className='scroll-container'>
+        <div className='mobile-scroll-test'></div>
         <div className='initial-image-container'>
           <div className='title-container' id="beauty-icons-title-container">
             <motion.h1
@@ -195,15 +244,13 @@ const BeautyIcons = () => {
             <h2>CLICK</h2>
             <p>ENTER THE WORLD OF BEAUTY ICONS</p>
           </div>
+          <Image id='mobile-svg-bg' src={OverheadImageMobile} alt='beauty-icons-mobile-svg-bg' />
           <svg version="1.1" viewBox="0 0 1182 2560" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
-            <g id="bg-image">
-              <image width="1182" height="2560" preserveAspectRatio="none" xlinkHref={OverheadImageMobile.src}/>
-            </g>
             <g id="layer-outline">
               <path className='object-outline' name="trophies" fill="none" d="m544 1519c-17.8-14.4-32.7-26.4-32.9-26.6-0.679-0.591-6.02-154-5.74-165l0.227-8.84 39-14.9c21.4-8.21 40.6-15.4 42.5-16 3.38-1.02 4.72-0.411 39 17.6 19.5 10.3 36 19.2 36.6 19.8 0.814 0.823 0.361 22.3-1.7 80.6-1.54 43.7-2.84 83.1-2.87 87.5l-0.0656 8-39.2 21.2c-21.6 11.7-39.9 21.5-40.8 21.8-1.04 0.388-12.4-8.15-34-25.6z"/>
             </g>
             <g id="layer-interaction">
-              <path onClick={() => router.push('/beauty-icons/interviews')} fill='none' data-outline="trophies" data-annotation="Trophies" d="m527 1533-35.6-31.1-0.701-97c-0.386-53.4-0.345-97.4 0.089-97.8 0.434-0.409 19.9-9.56 43.2-20.3l42.4-19.6h21l81.7 45.4v50.1c0 27.6 0.289 73.7 0.642 103l0.642 52.4-87.9 46.5-29.9-0.074-35.6-31.1z" />
+              <path onClick={() => router.push('/beauty-icons/interviews')} fill='transparent' data-outline="trophies" data-annotation="Trophies" d="m527 1533-35.6-31.1-0.701-97c-0.386-53.4-0.345-97.4 0.089-97.8 0.434-0.409 19.9-9.56 43.2-20.3l42.4-19.6h21l81.7 45.4v50.1c0 27.6 0.289 73.7 0.642 103l0.642 52.4-87.9 46.5-29.9-0.074-35.6-31.1z" />
             </g>
           </svg>
         </div>
