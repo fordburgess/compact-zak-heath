@@ -5,7 +5,8 @@ import SpringExpanded from '../../../assets/images/spring-expanded.jpg';
 import KirstyLewisProfile from '../../../assets/images/kirsty-lewis-profile.webp';
 import KirstyLewis2 from '../../../assets/images/kirsty-lewis-2.webp';
 import KirstyLewis3 from '../../../assets/images/kirsty-lewis-3.webp';
-import KirstyLewis4 from '../../../assets/images/kirsty-lewis-4.webp';
+import KirstyLewis5 from '../../../assets/images/kirsty-lewis-5.webp';
+import KirstyLewis7 from '../../../assets/images/kirsty-lewis-7.webp';
 import './styles.css'
 import { useMediaQuery } from 'usehooks-ts';
 import gsap from 'gsap';
@@ -310,10 +311,10 @@ const LisaEldridge = () => {
             <p className='featured-article-paragraph'>She’d be proud. I think it’s ok to say that as people don’t say that enough about themselves. At 21, I didn’t have a clear vision, but I always knew I loved connecting with people. I’ve built my career around that. I love introducing people, helping them, and bringing them together. It’s incredibly rewarding. When I worked at Origins my co-worker said “do you ever go home and be really horrible to Ian - who’s my partner - because you've had to be so nice all day?” I laughed. I thought about it and said, that's a really good question, but no I don’t because that isn’t me.</p>
             <div className='featured-transition-container' id='first-image-trans'>
               <div className='image-with-caption' style={{ zIndex: -1, }}>
-                <Image src={KirstyLewis3} alt='kirsty-lewis-huda'/>
+                <Image src={KirstyLewis7} alt='kirsty-lewis-ig-feed' style={{ minHeight: '600px' }}/>
               </div>
               <div className='fctc-line-2'></div>
-              <p className='image-caption' id='first-trans-caption'>Kirsty with Huda and Mona Kattan<br/> and the rest of the team after a <br/>tour of France with Sephora. Huda Beauty was <br/>founded in 2013, initially as a makeup blog where she shared <br/>beauty tips and tutorials. After selling a collection<br/> of false eyelashes, Huda expanded her brand into<br/> a global beauty empire! Kirsty first<br/> started to work with them in 2019<br/> (Image credit: Kirsty Lewis Pr on Instagram)</p>
+              <p className='image-caption' id='first-trans-caption'>Kirsty’s Instagram whilst working on Huda Beauty and Kayali (Image credit: Kirsty Lewis)</p>
             </div>
             <p className='featured-article-subheader'>Have you experienced setbacks or challenges in the industry?</p>
             <p className='featured-article-paragraph'>The facades people may have is just life. Some people are more genuine than others - you just have to find your tribe who you can trust. The beauty industry all-in-all is very friendly but if somebody has spoken about me behind my back then it’s not to my knowledge. When I first started in beauty PR, I’d make sure to meet up with the other PRs, so I’ve always surrounded myself with people who I like in the industry. Of course, there are other challenges. Early in my career, I had a boss who was incredibly difficult, especially when I got pregnant with my first child. It was a tough situation, and I ended up leaving the role. You’ll encounter difficult people in any industry. Stay true to your values and kill these people with kindness.</p>
@@ -327,9 +328,9 @@ const LisaEldridge = () => {
             <p className='featured-article-subheader'>What’s your take on the beauty industry’s shift toward social media and influencers?</p>
             <p className='featured-article-paragraph'>The landscape has changed so much. When I started, traditional media like magazines were the cornerstone of PR as well as celebrity endorsements. Now, content creators are vital as many celebrities have their own cosmetic brands and they are therefore promoting them. Creators connect with audiences in ways traditional media can’t, helping businesses to thrive and grow. Although we invest less in traditional journalism, print media still holds credibility and authority, so I think the future lies in a balance between the two. Credibility and transparency are key, whether you’re a journalist or a creator because people want to educate themselves through honest resources. On the other hand, I don’t think people realise, but magazines are businesses too and are kept alive through advertisements. In this consumer economy, educating yourself and looking at multiple resources is so important because magazines will sometimes cater to the brand - like a social media advertisement.</p>
             <div className='dream-room-transition-container' id='second-image-trans'>
-              <p className='image-caption' id="second-trans-caption">Kirsty with Mona Kattan <br/>and the rest of the Kayali Team for the<br/> launch of the Vanilla Candy 42 fragrance.</p>
+              <p className='image-caption' id="second-trans-caption">Kirsty with influencers William Grande and Georgia Barratt (Image Credit: Kirsty Lewis)</p>
               <div className='fctc-line-4'></div>
-              <Image src={KirstyLewis4} id='zak-and-lisa' alt='zak-and-lisa'/>
+              <Image src={KirstyLewis5} id='zak-and-lisa' alt='zak-and-lisa'/>
             </div>
             <p className='featured-article-subheader'>What advice would you give your 21-year-old self?</p>
             <p className='featured-article-paragraph'>I’d tell her to stay open to new challenges and not stress too much about having everything figured out. Life will lead you where you’re meant to go, as long as you’re willing to put in the work. Don’t be afraid to ask for help or learn from others. There’s no weakness in seeking guidance, absorb all you can, take advantage of things, be willing to listen.</p>
