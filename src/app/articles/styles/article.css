@@ -108,7 +108,7 @@
 }
 
 #hide-container-1 {
-  height: 0;
+  height: 80%;
   width: 100%;
   border-top: solid 1px #fff;
   border-bottom: solid 1px #fff;
@@ -116,15 +116,15 @@
 
 #hide-container-2 {
   height: 200px;
-  width: 0;
+  width: 100%;
   box-sizing: border-box;
   border-right: solid 1px #fff;
   border-left: solid 1px #fff;
 }
 
 #hide-container-3, #hide-container-4 {
-  height: 0;
-  width: 0;
+  height: 500px;
+  width: 500px;
 }
 
 #corner-frame-1::before,

@@ -32,7 +32,7 @@ const episodes = [
   {
     index: 2,
     id: 'zak-heath',
-    title: 'Zak Heath: How I Built A Career At 17',
+    title: 'Zak Heath: How I Built a Career At 17',
     job: 'Influencer',
     profileImage: ZakHeath,
     description: 'This episode is a little different. I’m talking about the business of influencing from my perspective after this became my full-time job at the age of 17. From working with people who haven’t had my best interests, to juggling a career whilst studying at Central Saint martins it has been an intense journey. If you’re interested in brand deals with commercial and luxury brands, PR, content strategy, the equipment I use and building relationships then here’s an honest conversation about these topics.',
@@ -40,7 +40,7 @@ const episodes = [
   {
     index: 3,
     id: 'shakeel-murtaza',
-    title: 'Shakeel Murtaza: From Criticism To Campaigns',
+    title: 'Shakeel Murtaza: From Criticism to Campaigns',
     job: 'Influencer',
     profileImage: ShakeelMurtaza,
     description: 'In this episode, Zak is joined by Shakeel Murtaza, a leading men’s beauty influencer known for his skincare routines and self-care content. Despite regularly receiving online hate, he has carved out an incredible niche for himself in the beauty world and worked with some of top brands. If you’re interested in how to navigate identity in a female-dominated space, growing a community, breaking down stereotypes, getting invited to events and how to maintain a successful career online then here’s an honest conversation about these topics.'
@@ -48,7 +48,7 @@ const episodes = [
   {
     index: 4,
     id: 'raquel-bouris',
-    title: 'Raquel Bouris: Scent, Strategy And Creating A Startup',
+    title: 'Raquel Bouris: Scent, Strategy and Creating a Startup',
     job: 'Fragrance Founder',
     profileImage: RaquellBouris,
     description: 'In this episode, Zak is joined by the ICON Raquel Bouris, founder of the Australian brand Who Is Elijah. After launching the brand in Sydney, she has now moved to London to expand internationally and she shares how she did it. If you’re interested in what it takes to build a business, the realities of running a team, creating new concepts, investments and issues she has encountered then here’s an honest conversation about these topics.'
