@@ -97,12 +97,6 @@ const interviews = [
     href: '/articles/tilly-sanders'
   },
   {
-    pfp: ZakHeath,
-    name: 'Zak Heath',
-    job: 'Influencer',
-    href: '/dream-room'
-  },
-  {
     pfp: RaquellBouris,
     name: 'Raquel Bouris',
     job: 'Fragrance Founder',
