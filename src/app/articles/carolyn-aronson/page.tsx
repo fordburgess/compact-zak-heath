@@ -109,7 +109,6 @@ const CarolynAronson = () => {
     })
 
     if (!mobile) {
-
       const line2Props: any = {
         ease: "power1.inOut",
         scrollTrigger: {
@@ -138,7 +137,6 @@ const CarolynAronson = () => {
       const transitionDirection = mobile ? 'y' : 'x';
       caption2props[transitionDirection] = mobile ? -50 : -1;
       gsap.to('#first-trans-caption', caption2props);
-
 
       const line4Props: any = {
         ease: "power1.inOut",
