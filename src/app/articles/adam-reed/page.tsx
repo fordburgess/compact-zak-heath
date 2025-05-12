@@ -560,22 +560,18 @@ const AdamReed = () => {
                 <p className='featured-paragraph-text'>Bloody hell, outside of my own line, I would say Diptyque’s 34.</p>
               </div>
               <div className='text-section' id='section-11'>
-                <h1 className='text-section-title'>Did you attend beauty school?</h1>
-                <p className='featured-paragraph-text'>Yes, I worked in a salon and attended beauty school once a week to get my City & Guilds qualification and the school was called SCAT, Somerset College of Arts. Then it was very in- depth, we even learned how to make shampoo and perm solutions from scratch. When I moved to London at the age of twenty-two, I started at Charles Worthington.</p>
-              </div>
-              <div className='text-section' id='section-12'>
                 <h1 className='text-section-title'>Your go-to restaurant in London?</h1>
                 <p className='featured-paragraph-text'>Som Saa in Spitalfields. It’s a Northern Thai restaurant that started as a pop-up. I love the community spirit of it but the food is the best Thai food outside of Thailand.</p>
               </div>
-              <div className='text-section' id='section-13'>
+              <div className='text-section' id='section-12'>
                 <h1 className='text-section-title'>Is there a fashion item you regret buying?</h1>
                 <p className='featured-paragraph-text'>I’ve always used clothes as a bit of armour. I bought an outfit from a Central Saint Martins student because I loved what she made; however, I just felt uncomfortable in it. It wasn’t the outfit, it was me in it. Once, I fell down the escalator at Holborn Station wearing platform Buffalo boots. That was definitely a regret! I’ve always loved wearing skirts, but one I bought was too poofy and it was just so wrong for me.</p>
               </div>
-              <div className='text-section' id='section-14'>
+              <div className='text-section' id='section-13'>
                 <h1 className='text-section-title'>What would you tell your 21-year-old self now?</h1>
                 <p className='featured-paragraph-text'>To always be proud of your decisions, because long term, it’s those things that give me the drive to carry on.</p>
               </div>
-              <div className='text-section' id='section-15'>
+              <div className='text-section' id='section-14'>
                 <h1 className='text-section-title'>Do you think your 21-year-old you would be like, oh my god this is crazy?</h1>
                 <p className='featured-paragraph-text'>Without any shadow of a doubt. I was bullied my whole life there have been people saying things. People really took the piss. But actually, every time I’ve gone with my gut, they’re the things that I’m proud of and it’s paid off. I did it and I'm still doing it.</p>
               </div>
