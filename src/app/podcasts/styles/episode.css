@@ -308,7 +308,6 @@ h1 {
   transform: translate(2%, -48%);
 }
 
-
 .loading-div {
   width: 100%;
   display: flex;
@@ -316,6 +315,16 @@ h1 {
   align-items: center;
   position: absolute;
   bottom: 20%;
+}
+
+.time-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 17%;
+  padding: 0 5px;
+  box-sizing: border-box;
 }
 
 .audio-loader {

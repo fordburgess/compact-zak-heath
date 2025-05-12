@@ -66,19 +66,17 @@ const episodes = [
 const AudioEpisode = () => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [isReady, setIsReady] = useState<boolean>(false);
-  const [currentTime, setCurrentTime] = useState<number>(0);
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
   const [drawer2Open, setDrawer2Open] = useState<boolean>(false);
   const [episode, setEpisode] = useState<Episode | null>(null);
-  // const [wavesurfer, setWavesurfer] = useState<any>(null);
   const [loading, setLoading] = useState<boolean>(true);
+  const [timeElapsed, setTimeElapsed] = useState<number>(0);
+  const [timeRemaining, setTimeRemaining] = useState<number>(0);
   const params = useParams();
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const titleContainerRef = useRef<HTMLDivElement | null>(null);
   const titleRef = useRef<HTMLHeadingElement | null>(null);
   const episodeId = params?.id as string;
-
-  //
   const wavesurferRef = useRef<any>(null);
   const waveformRef = useRef<any>(null);
 
@@ -99,9 +97,8 @@ const AudioEpisode = () => {
       setLoading(false);
       setIsReady(true);
     });
-    // wavesurfer.on('error', hideLoading);
-
     wavesurfer.load(`/audio/${episodeId}-audio.mp3`);
+
 
     return () => {
       wavesurfer.unAll();
@@ -110,10 +107,26 @@ const AudioEpisode = () => {
 
   }, [episodeId])
 
-
   useEffect(() => {
-    console.log({loading})
-  }, [loading])
+    const ws = wavesurferRef.current;
+
+    const updateTimes = () => {
+      const currentTime = ws.getCurrentTime(); // Get current time
+      const duration = ws.getDuration();       // Get total duration of the audio
+      setTimeElapsed(currentTime);             // Set elapsed time
+      setTimeRemaining(duration - currentTime); // Calculate remaining time
+    };
+
+    if (ws) {
+      ws.on('audioprocess', updateTimes);
+    }
+
+    return () => {
+      if (ws) {
+        ws.un('audioprocess', updateTimes); // Clean up the event listener on unmount
+      }
+    };
+  }, [wavesurferRef.current])
 
   useEffect(() => {
     if (params && params.id) {
@@ -204,7 +217,6 @@ const AudioEpisode = () => {
     const ws = wavesurferRef.current;
 
     if (ws && isReady) {
-      console.log(ws)
       ws.playPause();
       setIsPlaying(ws.isPlaying())
     }
@@ -267,6 +279,10 @@ const AudioEpisode = () => {
               </div>
             )
           }
+          <div className='time-info'>
+            <p>{Math.floor(timeElapsed / 60)}:{Math.floor(timeElapsed % 60) < 10 ? `0${Math.floor(timeElapsed % 60)}` : Math.floor(timeElapsed % 60)}</p>
+            <p>{Math.floor(timeRemaining / 60)}:{Math.floor(timeRemaining % 60) < 10 ? `0${Math.floor(timeRemaining % 60)}` : Math.floor(timeRemaining % 60)}</p>
+          </div>
           <div ref={waveformRef}></div>
           <div className='control-panel'>
             <div className='control-buttons'>
@@ -298,28 +314,6 @@ const AudioEpisode = () => {
               }
             </div>
           </div>
-          <div className='bottom-controls'>
-            {/* {
-              episode && episode.index > 0 && (
-                <Link href={`/audio/${episodes[episode.index - 1].id}`}>
-                  <div className=''>
-                    <Image className='nav-image' src={episodes[episode.index - 1].profileImage || Placeholder} alt='prev-episode'/>
-                    <p>Prev</p>
-                  </div>
-                </Link>
-              )
-            }
-            {
-              episode && episode.index < episodes.length - 1 && (
-                <Link href={`/audio/${episodes[episode.index + 1].id}`}>
-                  <div className=''>
-                    <Image className='nav-image' src={episodes[episode.index + 1].profileImage || Placeholder} alt='next-episode'/>
-                    <p>Next</p>
-                  </div>
-                </Link>
-              )
-            } */}
-          </div>
         </div>
         {
           episode && episode.index < episodes.length - 1 && (
@@ -331,35 +325,6 @@ const AudioEpisode = () => {
             </Link>
           )
         }
-        {/* <div className='more-episodes-drawer'>
-          <div className='episode-drawer-content'>
-            <div style={{ padding: '20px' }}>
-              <h1>More Episodes</h1>
-            </div>
-            <div className='more-episodes-column'>
-              {
-                episodes && episode && episodes.map((item: Episode) => {
-                  if (item.id !== episode.id) {
-                    return (
-                      <Link href={`/audio/${item.id}`} key={item.id}>
-                        <div className='more-episodes-item'>
-                          <Image src={item.profileImage ? item.profileImage : Placeholder} alt='pfp'/>
-                          <h3>{item.title.split(':')[1]}</h3>
-                          <p>{item.title.split(':')[0]}</p>
-                        </div>
-                      </Link>
-                    )
-                  }
-                })
-              }
-            </div>
-          </div>
-          <div className='clickable-tab' onClick={() => handleDrawers('clickable-tab')}>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-        </div> */}
         <div className='info-drawer'>
           <div className='drawer-title-section'>
             <h1 className='episode-title'>{episode ? episode.title.split(':')[1] : 'Title Not Found'}</h1>
