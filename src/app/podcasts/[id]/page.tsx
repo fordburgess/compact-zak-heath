@@ -17,7 +17,6 @@ import YanaKafeli from '../../../assets/images/yana-kafeli.webp';
 import { Episode } from '@/types';
 import '../styles/episode.css'
 import gsap from 'gsap';
-import WavesurferPlayer from '@wavesurfer/react'
 import WaveSurfer from 'wavesurfer.js';
 
 const episodes = [
@@ -85,6 +84,20 @@ const AudioEpisode = () => {
   const wavesurferRef = useRef<any>(null);
   const waveformRef = useRef<any>(null);
 
+  const fadeIn = () => {
+    gsap.to('.waveform-ref', {
+      opacity: 1,
+      ease: "power1.inOut",
+      duration: 0.25
+    })
+
+    gsap.to('.control-buttons', {
+      opacity: 0.85,
+      ease: "power1.inOut",
+      duration: 0.25
+    })
+  }
+
   useEffect(() => {
     wavesurferRef.current = WaveSurfer.create({
       container: waveformRef.current,
@@ -99,6 +112,7 @@ const AudioEpisode = () => {
 
     wavesurfer.on('loading',() => setLoading(true));
     wavesurfer.on('ready',() => {
+      fadeIn();
       setLoading(false);
       setIsReady(true);
     });

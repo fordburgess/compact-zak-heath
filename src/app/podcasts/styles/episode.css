@@ -10,6 +10,10 @@
   }
 }
 
+.waveform-ref {
+  opacity: 1;
+}
+
 .audio-body-replacement {
   height: 100%;
   overflow: hidden;
@@ -365,6 +369,10 @@ h1 {
 }
 
 @media (min-width: 900px) {
+  .waveform-ref {
+    opacity: 0;
+  }
+
   .episode-layout-container {
     padding: 100px 0 10px;
   }
@@ -430,7 +438,7 @@ h1 {
 
   .control-buttons {
     margin: 0 auto;
-    opacity: 0.85;
+    opacity: 0;
   }
 
   .episode-title-and-photo-mobile {
