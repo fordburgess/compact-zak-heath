@@ -11,6 +11,7 @@ import Placeholder from '../../../assets/images/placeholder.webp';
 import RaquellBouris from '../../../assets/images/raquell-bouris-profile.png';
 import YanaKafeli from '../../../assets/images/yana-kafeli.webp';
 import { Episode } from '@/types';
+import { useMediaQuery } from 'usehooks-ts';
 
 const episodes = [
   {
@@ -19,7 +20,8 @@ const episodes = [
     title: 'Patricia Bright: From Finance to Fame',
     job: 'Content Creator and CEO',
     profileImage: PatriciaBright,
-    description: 'In this episode, Zak is joined by the ICON Patricia Bright an entrepreneur and one of the UK’s first OG beauty influencers. From being excluded at school to landing a job in finance, she then pursued YouTube full-time despite criticism at work. She shares about launching her palette with a major cosmetics company to the challenges of constantly evolving her personal brand. If you’re interested in juggling finances, investing, property and how she has built long-term success beyond social media then here’s an honest conversation about these topics.'
+    description: 'In this episode, Zak is joined by the ICON Patricia Bright an entrepreneur and one of the UK’s first OG beauty influencers. From being excluded at school to landing a job in finance, she then pursued YouTube full-time despite criticism at work. She shares about launching her palette with a major cosmetics company to the challenges of constantly evolving her personal brand. If you’re interested in juggling finances, investing, property and how she has built long-term success beyond social media then here’s an honest conversation about these topics.',
+    comingSoon: false,
   },
   {
     index: 1,
@@ -27,7 +29,8 @@ const episodes = [
     title: 'Yana K. Afeli: From Intern to Agent',
     job: 'Agent',
     profileImage: YanaKafeli,
-    description: 'In this episode, Zak is joined by the ICON Yana Kafeli, who began her career in fashion at just 17 and now works as a leading agent across fashion, beauty, culture and music. She shares her journey through the industry, from managing top-tier talent and collaborating with some of the biggest global brands. Yana opens up about the importance of personal identity in a fast-paced creative world, the power of networking and what it really takes to support and elevate influencers behind the scenes.'
+    description: 'In this episode, Zak is joined by the ICON Yana Kafeli, who began her career in fashion at just 17 and now works as a leading agent across fashion, beauty, culture and music. She shares her journey through the industry, from managing top-tier talent and collaborating with some of the biggest global brands. Yana opens up about the importance of personal identity in a fast-paced creative world, the power of networking and what it really takes to support and elevate influencers behind the scenes.',
+    comingSoon: false,
   },
   {
     index: 2,
@@ -36,6 +39,7 @@ const episodes = [
     job: 'Influencer',
     profileImage: ZakHeath,
     description: 'This episode is a little different. I’m talking about the business of influencing from my perspective after this became my full-time job at the age of 17. From working with people who haven’t had my best interests, to juggling a career whilst studying at Central Saint martins it has been an intense journey. If you’re interested in brand deals with commercial and luxury brands, PR, content strategy, the equipment I use and building relationships then here’s an honest conversation about these topics.',
+    comingSoon: false,
   },
   {
     index: 3,
@@ -43,7 +47,8 @@ const episodes = [
     title: 'Shakeel Murtaza: From Criticism to Campaigns',
     job: 'Influencer',
     profileImage: ShakeelMurtaza,
-    description: 'In this episode, Zak is joined by Shakeel Murtaza, a leading men’s beauty influencer known for his skincare routines and self-care content. Despite regularly receiving online hate, he has carved out an incredible niche for himself in the beauty world and worked with some of top brands. If you’re interested in how to navigate identity in a female-dominated space, growing a community, breaking down stereotypes, getting invited to events and how to maintain a successful career online then here’s an honest conversation about these topics.'
+    description: 'In this episode, Zak is joined by Shakeel Murtaza, a leading men’s beauty influencer known for his skincare routines and self-care content. Despite regularly receiving online hate, he has carved out an incredible niche for himself in the beauty world and worked with some of top brands. If you’re interested in how to navigate identity in a female-dominated space, growing a community, breaking down stereotypes, getting invited to events and how to maintain a successful career online then here’s an honest conversation about these topics.',
+    comingSoon: false,
   },
   {
     index: 4,
@@ -51,11 +56,13 @@ const episodes = [
     title: 'Raquel Bouris: Scent, Strategy and Creating a Startup',
     job: 'Fragrance Founder',
     profileImage: RaquellBouris,
-    description: 'In this episode, Zak is joined by the ICON Raquel Bouris, founder of the Australian brand Who Is Elijah. After launching the brand in Sydney, she has now moved to London to expand internationally and she shares how she did it. If you’re interested in what it takes to build a business, the realities of running a team, creating new concepts, investments and issues she has encountered then here’s an honest conversation about these topics.'
+    description: 'In this episode, Zak is joined by the ICON Raquel Bouris, founder of the Australian brand Who Is Elijah. After launching the brand in Sydney, she has now moved to London to expand internationally and she shares how she did it. If you’re interested in what it takes to build a business, the realities of running a team, creating new concepts, investments and issues she has encountered then here’s an honest conversation about these topics.',
+    comingSoon: true,
   }
 ]
 
 const Episodes = () => {
+  const mobile = useMediaQuery('(max-width: 1000px)');
   const horizontalScrollRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -67,14 +74,13 @@ const Episodes = () => {
       const backgroundImage: HTMLElement | null = document.querySelector('.content-container-background');
       const chevrons: HTMLElement | null = document.querySelector('.audio-chevrons');
 
-      if (backgroundImage) {
+      if (backgroundImage && !mobile) {
         backgroundImage.style.transform = `translateX(-${scrollLeft * 0.25}px)`;
       }
 
       if (chevrons) {
         const opacity = Math.max(0, 1 - scrollLeft / 500);
         chevrons.style.opacity = opacity.toString();
-
       }
     };
 
@@ -91,20 +97,34 @@ const Episodes = () => {
       <div className='profile-scroll-container' ref={horizontalScrollRef}>
         {
           episodes.map((episode: Episode) => {
-            return (
-              <Link
-                href={`/podcasts/${episode.id}`}
-                key={episode.id}
-              >
-                <div className='profile-container'>
+            if (episode.comingSoon) {
+              return (
+                <div className='profile-container' key={episode.id}>
                   <Image className='profile-image' src={episode.profileImage ? episode.profileImage : Placeholder} alt='pfp'/>
                   <div id='podcast-index-info-container'>
                     <h3>{episode.title.split(':')[0]}</h3>
                     <p>{episode.job}</p>
+                    <p><strong>Coming Soon</strong></p>
                   </div>
                 </div>
-              </Link>
-            )
+              )
+            }
+            else {
+              return (
+                <Link
+                  href={`/podcasts/${episode.id}`}
+                  key={episode.id}
+                >
+                  <div className='profile-container'>
+                    <Image className='profile-image' src={episode.profileImage ? episode.profileImage : Placeholder} alt='pfp'/>
+                    <div id='podcast-index-info-container'>
+                      <h3>{episode.title.split(':')[0]}</h3>
+                      <p>{episode.job}</p>
+                    </div>
+                  </div>
+                </Link>
+              )
+            }
           })
         }
         <svg
