@@ -43,7 +43,7 @@ img {
 .episode-layout-container {
   height: 100%;
   width: 100%;
-  padding: 100px 0 0;
+  padding: 100px 0 60px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -54,11 +54,11 @@ img {
   width: 95%;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   padding: 20px;
   margin-bottom: 20px;
   box-sizing: border-box;
-  background-color: rgba(192, 192, 192, 0.5);
+  background-color: rgba(49, 49, 49, 0.5);
   backdrop-filter: blur(5px);
   margin: 0 auto;
   border-radius: 8px;
@@ -126,6 +126,7 @@ h1 {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-top: 20px;
 }
 
 .control-buttons img:hover {
@@ -322,8 +323,8 @@ h1 {
   display: flex;
   justify-content: space-between;
   position: absolute;
-  bottom: 17%;
-  padding: 0 5px;
+  bottom: 19%;
+  padding: 0 10px;
   box-sizing: border-box;
 }
 
@@ -499,5 +500,10 @@ h1 {
 
   .dot-menu {
     display: none;
+  }
+
+  .time-info {
+    bottom: 17%;
+    padding: 0 5px;
   }
 }

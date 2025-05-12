@@ -274,6 +274,7 @@ const AudioEpisode = () => {
                 <h1 className='episode-title'>{episode ? episode.title.split(':')[1] : 'Title Not Found'}</h1>
               </div>
               <p className='episode-subtitle'>{episode ? episode.title.split(':')[0] : 'Person Not Found'}</p>
+              <p>{episode ? episode.description : 'Description Not Found'}</p>
             </div>
           </div>
           {
@@ -288,7 +289,7 @@ const AudioEpisode = () => {
             <p>{Math.floor(timeElapsed / 60)}:{Math.floor(timeElapsed % 60) < 10 ? `0${Math.floor(timeElapsed % 60)}` : Math.floor(timeElapsed % 60)}</p>
             <p>{Math.floor(timeRemaining / 60)}:{Math.floor(timeRemaining % 60) < 10 ? `0${Math.floor(timeRemaining % 60)}` : Math.floor(timeRemaining % 60)}</p>
           </div>
-          <div ref={waveformRef}></div>
+          <div className='waveform-ref' ref={waveformRef}></div>
           <div className='control-panel'>
             <div className='control-buttons'>
               {
