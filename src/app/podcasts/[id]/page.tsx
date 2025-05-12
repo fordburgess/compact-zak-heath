@@ -83,6 +83,7 @@ const AudioEpisode = () => {
   const episodeId = params?.id as string;
   const wavesurferRef = useRef<any>(null);
   const waveformRef = useRef<any>(null);
+  const mobile = useMediaQuery('(max-width: 1000px)');
 
   const fadeIn = () => {
     gsap.to('.waveform-ref', {
@@ -104,7 +105,7 @@ const AudioEpisode = () => {
       waveColor: 'rgba(255, 255, 255, 0.8)',
       progressColor: '#c6e8fa',
       backend: 'MediaElement',
-      height: 150,
+      height: mobile ? 100 : 150,
       cursorColor: 'transparent'
     });
 
@@ -130,10 +131,10 @@ const AudioEpisode = () => {
     const ws = wavesurferRef.current;
 
     const updateTimes = () => {
-      const currentTime = ws.getCurrentTime(); // Get current time
-      const duration = ws.getDuration();       // Get total duration of the audio
-      setTimeElapsed(currentTime);             // Set elapsed time
-      setTimeRemaining(duration - currentTime); // Calculate remaining time
+      const currentTime = ws.getCurrentTime();
+      const duration = ws.getDuration();
+      setTimeElapsed(currentTime);
+      setTimeRemaining(duration - currentTime);
     };
 
     if (ws) {
@@ -142,7 +143,7 @@ const AudioEpisode = () => {
 
     return () => {
       if (ws) {
-        ws.un('audioprocess', updateTimes); // Clean up the event listener on unmount
+        ws.un('audioprocess', updateTimes);
       }
     };
   }, [wavesurferRef.current])
@@ -288,7 +289,9 @@ const AudioEpisode = () => {
                 <h1 className='episode-title'>{episode ? episode.title.split(':')[1] : 'Title Not Found'}</h1>
               </div>
               <p className='episode-subtitle'>{episode ? episode.title.split(':')[0] : 'Person Not Found'}</p>
-              <p>{episode ? episode.description : 'Description Not Found'}</p>
+              <div className='mobile-description-container'>
+                <p>{episode ? episode.description : 'Description Not Found'}</p>
+              </div>
             </div>
           </div>
           {
