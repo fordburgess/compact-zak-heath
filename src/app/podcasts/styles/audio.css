@@ -6,6 +6,10 @@
   color: #261000;
 }
 
+.profile-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
 #podcast-index-info-container {
   padding: 20px;
   border-radius: 8px;

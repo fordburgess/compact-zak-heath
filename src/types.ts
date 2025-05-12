@@ -6,5 +6,6 @@ export interface Episode {
   title: string,
   job: string,
   profileImage: StaticImageData | null,
-  description: string
+  description: string,
+  comingSoon: boolean
 }
