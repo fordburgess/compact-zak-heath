@@ -27,7 +27,8 @@ const episodes = [
     title: 'Patricia Bright: From Finance to Fame',
     job: 'Content Creator and CEO',
     profileImage: PatriciaBright,
-    description: 'In this episode, Zak is joined by the ICON Patricia Bright an entrepreneur and one of the UK’s first OG beauty influencers. From being excluded at school to landing a job in finance, she then pursued a career in YouTube despite criticism at work. Here, she talks about launching her first makeup collection with a major cosmetics company, as well as the challenges of constantly evolving her personal brand. If you’re interested in how she managed to juggle finance, investment, property and how she built long-term success beyond social media, then here’s an honest conversation.'
+    description: 'In this episode, Zak is joined by the ICON Patricia Bright an entrepreneur and one of the UK’s first OG beauty influencers. From being excluded at school to landing a job in finance, she then pursued a career in YouTube despite criticism at work. Here, she talks about launching her first makeup collection with a major cosmetics company, as well as the challenges of constantly evolving her personal brand. If you’re interested in how she managed to juggle finance, investment, property and how she built long-term success beyond social media, then here’s an honest conversation.',
+    comingSoon: false
   },
   {
     index: 1,
@@ -35,7 +36,8 @@ const episodes = [
     title: 'Yana K. Afeli: From Intern to Agent',
     job: 'Agent',
     profileImage: YanaKafeli,
-    description: 'In this episode, Zak is joined by the ICON Yana Kafeli, who began her career in fashion at just 17. She now works as a leading agent across fashion, beauty, culture and music. Yana shares her journey through the industry, from managing top-tier talent to collaborating with some of the biggest global brands. Whilst opening up about the importance of personal identity in a fast- paced creative world, Yana highlights the realities of networking and what it really takes to support and elevate influencers.'
+    description: 'In this episode, Zak is joined by the ICON Yana Kafeli, who began her career in fashion at just 17. She now works as a leading agent across fashion, beauty, culture and music. Yana shares her journey through the industry, from managing top-tier talent to collaborating with some of the biggest global brands. Whilst opening up about the importance of personal identity in a fast- paced creative world, Yana highlights the realities of networking and what it really takes to support and elevate influencers.',
+    comingSoon: false
   },
   {
     index: 2,
@@ -44,6 +46,7 @@ const episodes = [
     job: 'Influencer',
     profileImage: ZakHeath,
     description: 'This episode is a little different. I’m talking to myself about the business of influencing and how this became my full-time job at 17. Working with people who haven’t always had my best interests, to juggling a career whilst studying at Central Saint Martins, it has been an intense journey. If you’re interested in brand deals with commercial and luxury companies, PR, content strategy, building relationships, as well as the equipment I use, then this episode is for you.',
+    comingSoon: false
   },
   {
     index: 3,
@@ -51,7 +54,8 @@ const episodes = [
     title: 'Shakeel Murtaza: From Criticism to Campaigns ',
     job: 'Influencer',
     profileImage: ShakeelMurtaza,
-    description: 'In this episode, Zak is joined by Shakeel Murtaza, a leading men’s beauty influencer known for his skincare routines and self-care content. Despite regularly receiving online hate, he has carved out an incredible niche for himself in the beauty world. If you’re interested in how to navigate identity in a female-dominated space, growing a community, breaking down stereotypes, getting invited to events and how to maintain a successful career online, then listen to this revealing conversation.'
+    description: 'In this episode, Zak is joined by Shakeel Murtaza, a leading men’s beauty influencer known for his skincare routines and self-care content. Despite regularly receiving online hate, he has carved out an incredible niche for himself in the beauty world. If you’re interested in how to navigate identity in a female-dominated space, growing a community, breaking down stereotypes, getting invited to events and how to maintain a successful career online, then listen to this revealing conversation.',
+    comingSoon: false
   },
   {
     index: 4,
@@ -59,7 +63,8 @@ const episodes = [
     title: 'Raquel Bouris: Scent, Strategy and Creating a Startup',
     job: 'Fragrance Founder',
     profileImage: RaquellBouris,
-    description: 'In this episode, Zak is joined by the ICON Raquel Bouris, founder of the Australian brand Who Is Elijah. After launching the brand in Sydney, Raquel moved to London to expand internationally. If you’re interested in what it takes to build a business, creating new concepts, the realities of running a team, managing investments, and other issues she has encountered, then this conversation will be dropping soon.'
+    description: 'In this episode, Zak is joined by the ICON Raquel Bouris, founder of the Australian brand Who Is Elijah. After launching the brand in Sydney, Raquel moved to London to expand internationally. If you’re interested in what it takes to build a business, creating new concepts, the realities of running a team, managing investments, and other issues she has encountered, then this conversation will be dropping soon.',
+    comingSoon: true
   }
 ]
 
@@ -317,12 +322,19 @@ const AudioEpisode = () => {
         </div>
         {
           episode && episode.index < episodes.length - 1 && (
-            <Link href={`/podcasts/${episodes[episode.index + 1].id}`}>
+            episodes[episode.index + 1].comingSoon ? (
               <div className='next-episode'>
                 <Image className='nav-image' src={episodes[episode.index + 1].profileImage || Placeholder} alt='next-episode'/>
-                <p>Next</p>
+                <p>Coming Soon</p>
               </div>
-            </Link>
+            ) : (
+              <Link href={`/podcasts/${episodes[episode.index + 1].id}`}>
+                <div className='next-episode'>
+                  <Image className='nav-image' src={episodes[episode.index + 1].profileImage || Placeholder} alt='next-episode'/>
+                  <p>Next</p>
+                </div>
+              </Link>
+            )
           )
         }
         <div className='info-drawer'>
