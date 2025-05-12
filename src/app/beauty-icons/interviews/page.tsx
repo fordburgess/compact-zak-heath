@@ -88,7 +88,7 @@ const interviews = [
     pfp: YanaKafeli,
     name: 'Yana K. afeli',
     job: 'Agent',
-    href: '/podcasts/yana-kafeli'
+    href: '/podcasts/yana-k-afeli'
   },
   {
     pfp: TillySanders,
