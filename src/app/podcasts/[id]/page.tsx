@@ -18,6 +18,7 @@ import { Episode } from '@/types';
 import '../styles/episode.css'
 import gsap from 'gsap';
 import WavesurferPlayer from '@wavesurfer/react'
+import WaveSurfer from 'wavesurfer.js';
 
 const episodes = [
   {
@@ -64,17 +65,55 @@ const episodes = [
 
 const AudioEpisode = () => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [isReady, setIsReady] = useState<boolean>(false);
   const [currentTime, setCurrentTime] = useState<number>(0);
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
   const [drawer2Open, setDrawer2Open] = useState<boolean>(false);
   const [episode, setEpisode] = useState<Episode | null>(null);
-  const [wavesurfer, setWavesurfer] = useState<any>(null);
+  // const [wavesurfer, setWavesurfer] = useState<any>(null);
+  const [loading, setLoading] = useState<boolean>(true);
   const params = useParams();
-  const mobile = useMediaQuery('(max-width: 1000px)');
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const titleContainerRef = useRef<HTMLDivElement | null>(null);
   const titleRef = useRef<HTMLHeadingElement | null>(null);
   const episodeId = params?.id as string;
+
+  //
+  const wavesurferRef = useRef<any>(null);
+  const waveformRef = useRef<any>(null);
+
+  useEffect(() => {
+    wavesurferRef.current = WaveSurfer.create({
+      container: waveformRef.current,
+      waveColor: 'rgba(255, 255, 255, 0.8)',
+      progressColor: '#c6e8fa',
+      backend: 'MediaElement',
+      height: 150,
+      cursorColor: 'transparent'
+    });
+
+    const wavesurfer = wavesurferRef.current;
+
+    wavesurfer.on('loading',() => setLoading(true));
+    wavesurfer.on('ready',() => {
+      setLoading(false);
+      setIsReady(true);
+    });
+    // wavesurfer.on('error', hideLoading);
+
+    wavesurfer.load(`/audio/${episodeId}-audio.mp3`);
+
+    return () => {
+      wavesurfer.unAll();
+      wavesurfer.destroy();
+    };
+
+  }, [episodeId])
+
+
+  useEffect(() => {
+    console.log({loading})
+  }, [loading])
 
   useEffect(() => {
     if (params && params.id) {
@@ -87,41 +126,6 @@ const AudioEpisode = () => {
       }
     }
   }, [params])
-
-
-  const handlePlayback = () => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.pause();
-        setIsPlaying(false);
-      }
-      else {
-        audioRef.current.play();
-        setIsPlaying(true);
-      }
-    }
-  }
-
-  const handleTimeUpdate = () => {
-    if (audioRef.current) {
-      setCurrentTime(audioRef.current.currentTime)
-
-      const progressBar: HTMLElement | null = document.querySelector('.progress-bar');
-
-      if (progressBar) {
-        const width = Math.round((currentTime / audioRef.current.duration * 100) * 100) / 100;
-
-        progressBar.style.width = `${width}%`;
-      }
-
-    }
-  }
-
-  const handleSkip = (direction: number) => {
-    if (audioRef.current) {
-      audioRef.current.currentTime = direction == 1 ? audioRef.current.currentTime + 10 : audioRef.current.currentTime - 10
-    }
-  }
 
   useEffect(() => {
 
@@ -196,13 +200,23 @@ const AudioEpisode = () => {
     }
   }
 
-  const onReady = (ws: any) => {
-    setWavesurfer(ws)
-    setIsPlaying(false)
+  const onPlayPause = () => {
+    const ws = wavesurferRef.current;
+
+    if (ws && isReady) {
+      console.log(ws)
+      ws.playPause();
+      setIsPlaying(ws.isPlaying())
+    }
   }
 
-  const onPlayPause = () => {
-    wavesurfer && wavesurfer.playPause()
+  const onSkip = (direction: number) => {
+    const ws = wavesurferRef.current;
+
+    if (ws && isReady) {
+      const media = ws.getMediaElement();
+      media.currentTime = direction == 1 ? media.currentTime + 5 : media.currentTime - 5;
+    }
   }
 
   return (
@@ -245,26 +259,24 @@ const AudioEpisode = () => {
               <p className='episode-subtitle'>{episode ? episode.title.split(':')[0] : 'Person Not Found'}</p>
             </div>
           </div>
-          <WavesurferPlayer
-            height={mobile ? 125 : 150}
-            waveColor="rgba(255, 255, 255, 0.85)"
-            mediaControls={false}
-            progressColor="#c2d6ff"
-            cursorColor='transparent'
-            url={`/audio/${episodeId}-audio.mp3`}
-            onReady={onReady}
-            onPlay={() => setIsPlaying(true)}
-            onPause={() => setIsPlaying(false)}
-          />
+          {
+            loading && (
+              <div className='loading-div'>
+                <span className="audio-loader"></span>
+                <p>Loading</p>
+              </div>
+            )
+          }
+          <div ref={waveformRef}></div>
           <div className='control-panel'>
             <div className='control-buttons'>
               {
-                wavesurfer && (
+                !loading && (
                   <Image
                     src={SkipButton}
                     id="skip-back"
                     alt="rewind"
-                    onClick={() => wavesurfer.skip(-5)}
+                    onClick={() => onSkip(0)}
                   />
                 )
               }
@@ -275,12 +287,12 @@ const AudioEpisode = () => {
                 onClick={() => onPlayPause()}
               />
               {
-                wavesurfer && (
+                !loading && (
                   <Image
                     src={SkipButton}
                     id="skip-forward"
                     alt="forward"
-                    onClick={() => wavesurfer.skip(5)}
+                    onClick={() => onSkip(1)}
                   />
                 )
               }
