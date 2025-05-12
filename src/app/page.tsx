@@ -94,7 +94,7 @@ const Home = () => {
         'O': { href: '/articles/alessandra-steinherr', pointer: 'm2290 1765 L2290 1870 L1900 1870', rectX: '1290', rectY: '1700', textX: '1590', textY: '1840', textVal: 'Beauty Editor + Influencer', linkX: '1590', linkY: '1900', comingSoon: false },
       }
 
-      setCurrentHref(itemVals[id].href);
+      setCurrentHref(mobile ? itemValsMobile[id].href : itemVals[id].href);
 
       const pointerLine: SVGPathElement = document.querySelector(`${mobile ? '#mobile-overlay' : '#desktop-overlay'} .pointer-line`);
       const infoBox: SVGPathElement = document.querySelector(`${mobile ? '#mobile-overlay' : '#desktop-overlay'} .info-box`);
@@ -155,10 +155,6 @@ const Home = () => {
       }
     }
   }
-
-  useEffect(() => {
-    console.log(activeItem)
-  }, [activeItem])
 
   useEffect(() => {
     const scrollPosition = localStorage.getItem('cover-page-scroll');
