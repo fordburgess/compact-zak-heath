@@ -289,7 +289,66 @@ html, body {
   transform: translate(-50%, 0%);
 }
 
+.email-modal {
+  height: 100dvh;
+  width: 100dvw;
+  background-color: rgba(45, 45, 45, 0.1);
+  backdrop-filter: blur(3px);
+  position: fixed;
+  overflow: hidden;
+  top: 0%;
+  left: 0%;
+  box-sizing: border-box;
+}
+
+.email-notif {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #00000057;
+  color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  width: 80dvw;
+  box-sizing: border-box;
+}
+
+.email-notif h1 {
+  font-size: 1.5rem;
+}
+
+.email-notif p {
+  margin-bottom: 50px;
+  font-size: 1.25rem;
+}
+
+.email-notif button {
+  padding: 10px 30px;
+  border-radius: 50px;
+  border: none;
+  font-family: 'Josefin Sans';
+  font-size: 1rem;
+}
+
+.email-notif button:hover {
+  cursor: pointer;
+}
+
 @media (min-width: 800px) and (max-width: 1200px) {
+  .email-notif {
+    padding: 50px;
+    width: 40%;
+  }
+
+  .email-notif h1 {
+    font-size: 2rem;
+  }
+
+  .email-notif p {
+    font-size: 1.5rem;
+  }
+
   .services-info-container {
     box-sizing: border-box;
   }

@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 // import './index.css';
 import { sendMail } from '../../../../lib/send-mail';
 import '../styles/info.css';
@@ -15,12 +15,12 @@ import TikTok from '../../../assets/images/tik-tok.png';
 
 
 const ServicesInfo = () => {
+  const [displayModal, setDisplayModal] = useState(false);
   const verticalScrollRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      console.log(scrollTop)
       const backgroundImage: HTMLElement | null = document.getElementById('services-content-container-background');
 
       if (backgroundImage) {
@@ -165,72 +165,87 @@ const ServicesInfo = () => {
 
     const res = await sendMail(data.name, data.email, data.message);
 
+    console.log(res);
+
     if (res?.messageId) {
-      alert('Application Submitted Successfully.');
+      // alert('Application Submitted Successfully.');
+      setDisplayModal(true);
     } else {
       alert('Failed To send application.');
     }
-
   }
 
   return (
-    <div className='services-info-container'>
-      <Image src={ExpandedImage} priority id='services-content-container-background' alt='content-container-bg'/>
-      <div className='services-info-content' ref={verticalScrollRef}>
-        <div className='services-title-section'>
-          <h1 id="services-info-title">My Services</h1>
-          <div className='services-animate-line' id="animate-line-1"></div>
-        </div>
-        <div className='services-info-body' id="body-1">
-          <h3 className='body-1-title'>Socials</h3>
-          <div className='body-1-text' style={{ opacity: 0, width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <a target="_blank" href='https://www.instagram.com/zak.heath/?hl=en'>
-              <Image src={Instagram} alt='instagram' />
-            </a>
-            <a target="_blank" href='https://www.tiktok.com/@zakheath?lang=en'>
-              <Image src={TikTok} alt='tik-tok' />
-            </a>
-            <a target="_blank" href='https://www.youtube.com/@zakheathx'>
-              <Image src={Youtube} alt='youtube' />
-            </a>
-            <a target="_blank" href='https://www.snapchat.com/add/Zakheathx'>
-              <Image src={Snapchat} alt='snapchat' />
-            </a>
+    <>
+      <div className='services-info-container'>
+        <Image src={ExpandedImage} priority id='services-content-container-background' alt='content-container-bg'/>
+        <div className='services-info-content' ref={verticalScrollRef}>
+          <div className='services-title-section'>
+            <h1 id="services-info-title">My Services</h1>
+            <div className='services-animate-line' id="animate-line-1"></div>
+          </div>
+          <div className='services-info-body' id="body-1">
+            <h3 className='body-1-title'>Socials</h3>
+            <div className='body-1-text' style={{ opacity: 0, width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <a target="_blank" href='https://www.instagram.com/zak.heath/?hl=en'>
+                <Image src={Instagram} alt='instagram' />
+              </a>
+              <a target="_blank" href='https://www.tiktok.com/@zakheath?lang=en'>
+                <Image src={TikTok} alt='tik-tok' />
+              </a>
+              <a target="_blank" href='https://www.youtube.com/@zakheathx'>
+                <Image src={Youtube} alt='youtube' />
+              </a>
+              <a target="_blank" href='https://www.snapchat.com/add/Zakheathx'>
+                <Image src={Snapchat} alt='snapchat' />
+              </a>
+            </div>
+          </div>
+          <div className='services-info-body' id="body-2">
+            <h3 className='body-2-title'>Consulting & Brand Collaboration Inquiries</h3>
+            <p className='body-2-text' style={{ marginBottom: '10px' }}>As a young voice in the beauty industry with firsthand experience navigating content creation, brand partnerships, and beauty business strategy, I offer consulting services for brands and individuals looking to connect with today’s beauty audience. I can give insight into Gen Z consumer behaviour, influencer marketing and digital storytelling through a beauty and fashion lens.</p>
+            <p className='body-2-text'>For consulting opportunities, public speaking, or collaborations, please reach out to me directly at zak.compact@gmail.com</p>
+          </div>
+          <div className='services-info-body' id="body-3">
+            <h3 className='body-3-title'>Career & Industry Coaching</h3>
+            <p className='body-3-text' style={{ marginBottom: '10px' }}>If you're looking to break into the beauty industry or refine your path within it, I offer a paid, curated career coaching service designed to set you up for long-term success. This includes personalised support on manifesting a sustainable career in beauty, creating a strong personal brand, and developing strategic content that aligns with your goals. I’ll help you refine your digital CV, understand how to approach and secure brand collaborations with the largest beauty brands, navigate management and representation, and build meaningful connections within the beauty space. If you're ready to invest in your beauty career then please reach out to me directly at zak.compact@gmail.com</p>
+          </div>
+          <div className='services-info-body' id="body-4">
+            <h3 className='body-4-title'>Brand Partnerships & Representation</h3>
+            <p className='body-4-text'>For all brand partnerships please get in touch with my agent via zak@thebreakco.com.</p>
+          </div>
+          <div className='services-info-body' id="body-5">
+            <h3 className='body-5-title' style={{ marginBottom: '10px' }}>Contact Me</h3>
+            <form className='contact-form' onSubmit={sendMessage}>
+              <div>
+                <label>Name</label>
+                <input name='name' type="text" />
+              </div>
+              <div>
+                <label>Email</label>
+                <input name='email' type="text" />
+              </div>
+              <div style={{ marginBottom: '15px' }}>
+                <label>Message</label>
+                <textarea name='message'/>
+              </div>
+              <button type='submit'>Send</button>
+            </form>
           </div>
         </div>
-        <div className='services-info-body' id="body-2">
-          <h3 className='body-2-title'>Consulting & Brand Collaboration Inquiries</h3>
-          <p className='body-2-text' style={{ marginBottom: '10px' }}>As a young voice in the beauty industry with firsthand experience navigating content creation, brand partnerships, and beauty business strategy, I offer consulting services for brands and individuals looking to connect with today’s beauty audience. I can give insight into Gen Z consumer behaviour, influencer marketing and digital storytelling through a beauty and fashion lens.</p>
-          <p className='body-2-text'>For consulting opportunities, public speaking, or collaborations, please reach out to me directly at zak.compact@gmail.com</p>
-        </div>
-        <div className='services-info-body' id="body-3">
-          <h3 className='body-3-title'>Career & Industry Coaching</h3>
-          <p className='body-3-text' style={{ marginBottom: '10px' }}>If you're looking to break into the beauty industry or refine your path within it, I offer a paid, curated career coaching service designed to set you up for long-term success. This includes personalised support on manifesting a sustainable career in beauty, creating a strong personal brand, and developing strategic content that aligns with your goals. I’ll help you refine your digital CV, understand how to approach and secure brand collaborations with the largest beauty brands, navigate management and representation, and build meaningful connections within the beauty space. If you're ready to invest in your beauty career then please reach out to me directly at zak.compact@gmail.com</p>
-        </div>
-        <div className='services-info-body' id="body-4">
-          <h3 className='body-4-title'>Brand Partnerships & Representation</h3>
-          <p className='body-4-text'>For all brand partnerships please get in touch with my agent via zak@thebreakco.com.</p>
-        </div>
-        <div className='services-info-body' id="body-5">
-          <h3 className='body-5-title' style={{ marginBottom: '10px' }}>Contact Me</h3>
-          <form className='contact-form' onSubmit={sendMessage}>
-            <div>
-              <label>Name</label>
-              <input name='name' type="text" />
-            </div>
-            <div>
-              <label>Email</label>
-              <input name='email' type="text" />
-            </div>
-            <div style={{ marginBottom: '15px' }}>
-              <label>Message</label>
-              <textarea name='message'/>
-            </div>
-            <button type='submit'>Send</button>
-          </form>
-        </div>
       </div>
-    </div>
+      {
+        displayModal && (
+          <div className='email-modal'>
+            <div className='email-notif'>
+              <h1>Email Received</h1>
+              <p>Thank you for your message, I will get back to you soon!</p>
+              <button onClick={() => setDisplayModal(false)}>Close</button>
+            </div>
+          </div>
+        )
+      }
+    </>
   )
 }
 
