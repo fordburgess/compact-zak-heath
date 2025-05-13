@@ -143,7 +143,7 @@ const Home = () => {
 
         infoText.setAttribute('x', mobile ? itemValsMobile[id].textX : itemVals[id].textX);
         infoText.setAttribute('y', mobile ? itemValsMobile[id].textY : itemVals[id].textY);
-        infoText.textContent = mobile ? itemValsMobile[id].textVal : itemValsMobile[id].textVal;
+        infoText.textContent = mobile ? itemValsMobile[id].textVal : itemVals[id].textVal;
         infoText.style.opacity = '1';
 
         linkText.setAttribute('x', mobile ? itemValsMobile[id].linkX : itemVals[id].linkX);
