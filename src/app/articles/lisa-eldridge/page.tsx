@@ -328,7 +328,7 @@ const LisaEldridge = () => {
             <Image src={LisaEldrigdeProfile} alt='pfp' className='featured-profile-image'/>
             <div id='title-box'>
               <h1 className='strong-title'>In Conversation With Lisa Eldridge MBE:</h1>
-              <h1 className='title-subline'>Becoming a World Class Makeup Artist</h1>
+              <h1 className='title-subline'>Becoming a World-Class Makeup Artist</h1>
             </div>
           </div>
           <div className="mag-wrapper">
