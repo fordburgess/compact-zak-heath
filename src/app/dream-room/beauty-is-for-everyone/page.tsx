@@ -216,7 +216,7 @@ const FromConcealerToConfidence = () => {
     })
 
     gsap.to('#fctc-quote-3', {
-      y: -150,
+      y: -300,
       opacity: 1,
       ease: 'power1.inOut',
       scrollTrigger: {

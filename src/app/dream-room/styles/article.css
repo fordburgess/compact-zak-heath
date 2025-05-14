@@ -169,8 +169,6 @@ html, body {
 .key-quote-1 {
   opacity: 1;
   position: absolute;
-  /* top: 15%;
-  right: -15%; */
   font-size: 1.75rem;
 }
 
@@ -305,14 +303,14 @@ html, body {
   background-color: #fff;
 }
 
-#fctc-trans-1, #fctc-trans-3 {
+#fctc-trans-1, #fctc-trans-3, #fctc-trans-4 {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 200px;
 }
 
-#first-image-trans, #fctc-trans-4 {
+#first-image-trans {
   min-height: 400px;
 }
 
@@ -393,24 +391,14 @@ html, body {
 }
 
 .fctc-rectangle-2 {
-  height: 300px;
-  width: 300px;
-  background-color: rgba(255, 255, 255, 0.25);
-  border-radius: 8px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: none;
 }
 
 #fctc-quote-3 {
+  opacity: 1;
   text-align: center;
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
-  transform: translate(-50%, -10%);
-  opacity: 0;
 }
+
 
 #fctc-quote-text-3 {
   font-size: 2rem;
@@ -507,7 +495,7 @@ html, body {
     box-sizing: border-box;
   }
 
-  #fctc-trans-1, #fctc-trans-3 {
+  #fctc-trans-1, #fctc-trans-3, #fctc-trans-4 {
     min-height: 400px;
   }
 
@@ -518,6 +506,18 @@ html, body {
     position: absolute;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .fctc-rectangle-2 {
+    display: block;
+    height: 300px;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .dream-room-article-content {
@@ -716,14 +716,17 @@ html, body {
     transform: translate(-10%, -22%);
   }
 
-  #fctc-quote-text-2 {
-    font-size: 2rem;
-  }
-
   #fctc-quote-3 {
+    text-align: center;
+    position: absolute;
     bottom: 13%;
     left: 50%;
     transform: translate(-50%, -13%);
+    opacity: 0;
+  }
+
+  #fctc-quote-text-2 {
+    font-size: 2rem;
   }
 
   #second-image-trans {
