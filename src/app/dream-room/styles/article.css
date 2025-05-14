@@ -167,10 +167,10 @@ html, body {
 }
 
 .key-quote-1 {
-  opacity: 0;
+  opacity: 1;
   position: absolute;
-  top: 15%;
-  right: -15%;
+  /* top: 15%;
+  right: -15%; */
   font-size: 1.75rem;
 }
 
@@ -284,7 +284,7 @@ html, body {
 .fctc-title {
   color: #fff;
   font-weight: 300;
-  font-size: 3rem;
+  font-size: 2rem;
   margin-bottom: 20px;
   opacity: 0;
   transform: translateY(-20%);
@@ -305,7 +305,14 @@ html, body {
   background-color: #fff;
 }
 
-#fctc-trans-1, #first-image-trans, #fctc-trans-3, #fctc-trans-4 {
+#fctc-trans-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+#first-image-trans, #fctc-trans-3, #fctc-trans-4 {
   min-height: 400px;
 }
 
@@ -320,14 +327,8 @@ html, body {
 }
 
 #fctc-quote-1 {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, -100%);
-  opacity: 0;
-  font-size: 1.5rem;
+  opacity: 1;
   text-align: center;
-  box-sizing: border-box;
 }
 
 #fctc-quote-2 {
@@ -346,11 +347,7 @@ html, body {
 }
 
 .fctc-circle-2, .fctc-circle-3 {
-  height: 200px;
-  width: 200px;
-  position: absolute;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
+  display: none;
 }
 
 .fctc-circle-2 {
@@ -522,12 +519,40 @@ html, body {
 }
 
 @media (min-width: 1101px) {
+  #fctc-quote-1 {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    opacity: 0;
+    font-size: 1.5rem;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  #fctc-trans-1 {
+    min-height: 400px;
+  }
+
+  .fctc-circle-2, .fctc-circle-3 {
+    display: block;
+    height: 400px;
+    width: 400px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
   .dream-room-article-content {
     /* padding: 100px 0; */
   }
 
   .padding-enforcer {
     padding: 0 300px;
+  }
+
+  .fctc-title {
+    font-size: 3rem;
   }
 
   .article-title-section {
@@ -678,11 +703,6 @@ html, body {
     top: 50%;
     left: 60%;
     transform: translate(60%, -50%);
-  }
-
-  .fctc-circle-2, .fctc-circle-3 {
-    height: 400px;
-    width: 400px;
   }
 
   .fctc-line-3 {

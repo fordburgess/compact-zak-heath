@@ -103,38 +103,41 @@ const FromConcealerToConfidence = () => {
       }
     })
 
-    gsap.to('.fctc-circle-2', {
-      x: -500,
-      opacity: 0,
-      scrollTrigger: {
-        trigger: '#fctc-trans-1',
-        start: mobile ? 'top center' : 'top 80%',
-        end: mobile ? 'bottom top' : 'center center',
-        scrub: true,
-      }
-    })
+    if (!mobile) {
+      gsap.to('.fctc-circle-2', {
+        x: -500,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: '#fctc-trans-1',
+          start: mobile ? 'top center' : 'top 80%',
+          end: mobile ? 'bottom top' : 'center center',
+          scrub: true,
+        }
+      })
 
-    gsap.to('.fctc-circle-3', {
-      x: 600,
-      opacity: 0,
-      scrollTrigger: {
-        trigger: '#fctc-trans-1',
-        start: mobile ? 'top center' : 'top 80%',
-        end: mobile ? 'bottom top' : 'center center',
-        scrub: true,
-      }
-    })
+      gsap.to('.fctc-circle-3', {
+        x: 600,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: '#fctc-trans-1',
+          start: mobile ? 'top center' : 'top 80%',
+          end: mobile ? 'bottom top' : 'center center',
+          scrub: true,
+        }
+      })
 
-    gsap.to('.key-quote-1', {
-      y: -400,
-      opacity: 1,
-      scrollTrigger: {
-        trigger: '#fctc-trans-1',
-        start: mobile ? 'top center' : 'top 80%',
-        end: mobile ? 'bottom top' : 'center center',
-        scrub: true,
-      }
-    })
+      gsap.to('.key-quote-1', {
+        y: -400,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: '#fctc-trans-1',
+          start: mobile ? 'top center' : 'top 80%',
+          end: mobile ? 'bottom top' : 'center center',
+          scrub: true,
+        }
+      })
+    }
+
 
 
     if (!mobile) {
