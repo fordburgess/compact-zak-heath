@@ -437,7 +437,7 @@ html, body {
   }
 }
 
-@media (min-width: 1101px) {
+@media (min-width: 1000px) {
   .dream-room-transition-container {
     display: block;
     width: 100%;
@@ -660,7 +660,7 @@ html, body {
   }
 
   #doai-2 {
-    opacity: 0;
+    position: absolute;
     font-size: 2.5rem;
     width: auto;
     left: 50%;
