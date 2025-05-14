@@ -170,6 +170,9 @@ html, body {
   opacity: 1;
   position: absolute;
   font-size: 1.75rem;
+  top: 15%;
+  right: -15%;
+  opacity: 0;
 }
 
 #doai-1 {
