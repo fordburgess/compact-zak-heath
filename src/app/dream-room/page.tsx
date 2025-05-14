@@ -2,10 +2,9 @@
 import { useEffect } from 'react';
 import Image from 'next/image';
 import WideImage from '../../assets/images/autumn-far.webp';
-import WideImageMobile from '../../assets/images/autum-far-mobile.webp';
+import WideImageMobile from '../../assets/images/autumn-far-mobile.webp';
 import OverheadImage from '../../assets/images/autumn-aerial.webp';
 import OverheadImageMobile from '../../assets/images/autumn-aerial-mobile.webp';
-import ExpandedImage from '../../assets/images/autumn-expanded.webp';
 import './styles/index.css';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';

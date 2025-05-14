@@ -5,7 +5,7 @@ import Link from 'next/link';
 import WideImage from '../../assets/images/field-far.png';
 import WideImageMobile from '../../assets/images/field-far-mobile.webp';
 import OverheadImage from '../../assets/images/field-aerial.png';
-import OverheadImageMobile from '../../assets/images/field-aerial-mobile.webp';
+import OverheadImageMobile from '../../assets/images/field-aerial-mobile-2.webp';
 import { useRouter } from 'next/navigation';
 import './styles/index.css';
 import { motion } from 'framer-motion';
