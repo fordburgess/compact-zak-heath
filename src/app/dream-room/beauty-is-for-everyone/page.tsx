@@ -138,8 +138,6 @@ const FromConcealerToConfidence = () => {
       })
     }
 
-
-
     if (!mobile) {
       const line2Props: any = {
         ease: "power1.inOut",
@@ -169,39 +167,42 @@ const FromConcealerToConfidence = () => {
     }
 
 
-    gsap.to('.fctc-rectangle-1', {
-      y: 10,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#fctc-trans-3',
-        start: 'top 80%',
-        end: 'top 20%',
-        scrub: true
-      }
-    })
+    if (!mobile) {
 
-    gsap.to('.fctc-line-3', {
-      scaleX: mobile ? '35' : '85',
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#fctc-trans-3',
-        start: 'top 80%',
-        end: 'top 20%',
-        scrub: true
-      }
-    })
+      gsap.to('.fctc-rectangle-1', {
+        y: 10,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#fctc-trans-3',
+          start: 'top 80%',
+          end: 'top 20%',
+          scrub: true
+        }
+      })
 
-    gsap.to('#fctc-quote-2', {
-      y: 30,
-      opacity: 1,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '#fctc-trans-3',
-        start: 'top 80%',
-        end: 'top 20%',
-        scrub: true
-      }
-    })
+      gsap.to('.fctc-line-3', {
+        scaleX: mobile ? '35' : '85',
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#fctc-trans-3',
+          start: 'top 80%',
+          end: 'top 20%',
+          scrub: true
+        }
+      })
+
+      gsap.to('#fctc-quote-2', {
+        y: 30,
+        opacity: 1,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '#fctc-trans-3',
+          start: 'top 80%',
+          end: 'top 20%',
+          scrub: true
+        }
+      })
+    }
 
     gsap.to('.fctc-rectangle-2', {
       borderRadius: '50%',
@@ -215,7 +216,7 @@ const FromConcealerToConfidence = () => {
     })
 
     gsap.to('#fctc-quote-3', {
-      y: -150,
+      y: -165,
       opacity: 1,
       ease: 'power1.inOut',
       scrollTrigger: {
