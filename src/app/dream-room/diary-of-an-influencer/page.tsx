@@ -151,17 +151,19 @@ const DiaryOfInfluencer = () => {
       }
     })
 
-    gsap.to('.key-quote-1', {
-      opacity: 1,
-      x: '-20%',
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: '.dream-room-transition-container',
-        start: 'top bottom',
-        end: 'center 60%',
-        scrub: true,
-      }
-    })
+    if (!mobile) {
+      gsap.to('.key-quote-1', {
+        opacity: 1,
+        x: '-20%',
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: '.dream-room-transition-container',
+          start: 'top bottom',
+          end: 'center 60%',
+          scrub: true,
+        }
+      })
+    }
 
     gsap.to('.dream-room-line-2', {
       minHeight: '60%',
