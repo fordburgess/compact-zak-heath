@@ -194,16 +194,21 @@ const DiaryOfInfluencer = () => {
       <div className='dream-room-article-content' ref={verticalScrollRef}>
         <div className='article-title-section'>
           <Image src={ZakHeathProfile} className='article-intro-image' alt='profile' />
-          <h1 className='dream-room-title'>
+          <h1 className='dream-room-title' id='desktop-dream-room-title'>
             Diary <br/>Of An<br/>Influencer
+          </h1>
+          <h1 className='dream-room-title' id='mobile-dream-room-title'>
+            Diary Of An Influencer
           </h1>
           <div className='title-line-1'></div>
           <div className='title-line-2'></div>
           <motion.p
             className='dream-room-subtitle'
+            id='desktop-dream-room-subtitle'
           >
             This industry can feel impossible<br/> to break into, especially when<br/> you weren’t born into it. Somehow, I found<br/> my way in, and this is how I did it.
           </motion.p>
+          <p className='dream-room-subtitle' id='mobile-dream-room-subtitle'>This industry can feel impossible to break into, especially when you weren’t born into it. Somehow, I found my way in, and this is how I did it.</p>
           <div className='title-circle-1'></div>
           <div className='title-rectangle-1'></div>
         </div>
