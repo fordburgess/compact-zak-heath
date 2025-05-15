@@ -16,7 +16,9 @@ import TikTok from '../../../assets/images/tik-tok.png';
 
 const ServicesInfo = () => {
   const [displayModal, setDisplayModal] = useState(false);
+  const [loading, setLoading] = useState(false);
   const verticalScrollRef = useRef<HTMLDivElement | null>(null);
+  const formRef = useRef<HTMLFormElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -157,22 +159,23 @@ const ServicesInfo = () => {
 
   const sendMessage = async (e: any) => {
     e.preventDefault();
+    setLoading(true);
 
     const formData = new FormData(e.target);
 
     const data = Object.fromEntries(formData.entries());
-    console.log(data);
 
     const res = await sendMail(data.name, data.email, data.message);
 
-    console.log(res);
-
     if (res?.messageId) {
-      // alert('Application Submitted Successfully.');
       setDisplayModal(true);
     } else {
       alert('Failed To send application.');
     }
+    if (formRef.current) {
+      formRef.current.reset();
+    }
+    setLoading(false);
   }
 
   return (
@@ -216,7 +219,7 @@ const ServicesInfo = () => {
           </div>
           <div className='services-info-body' id="body-5">
             <h3 className='body-5-title' style={{ marginBottom: '10px' }}>Contact Me</h3>
-            <form className='contact-form' onSubmit={sendMessage}>
+            <form ref={formRef} className='contact-form' onSubmit={sendMessage}>
               <div>
                 <label>Name</label>
                 <input name='name' type="text" />
@@ -229,7 +232,15 @@ const ServicesInfo = () => {
                 <label>Message</label>
                 <textarea name='message'/>
               </div>
-              <button type='submit'>Send</button>
+              <button type='submit' disabled={loading}>
+                {
+                  loading ? (
+                    <span className="send-button-loader"></span>
+                  ) : (
+                    <span>Send</span>
+                  )
+                }
+              </button>
             </form>
           </div>
         </div>

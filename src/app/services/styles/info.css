@@ -172,6 +172,10 @@ html, body {
   border: none;
   border-radius: 8px;
   font-family: 'Josefin Sans';
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .services-transition-container {
@@ -335,6 +339,26 @@ html, body {
   cursor: pointer;
 }
 
+.send-button-loader {
+  width: 15px;
+  height: 15px;
+  border: 2px solid #000;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+  @keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
 @media (min-width: 800px) and (max-width: 1200px) {
   .email-notif {
     padding: 50px;
@@ -363,6 +387,11 @@ html, body {
 }
 
 @media (min-width: 1201px) {
+  .email-notif {
+    padding: 50px;
+    width: 40%;
+  }
+
   .services-info-container {
     box-sizing: border-box;
   }
