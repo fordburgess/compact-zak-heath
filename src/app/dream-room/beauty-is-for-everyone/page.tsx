@@ -6,6 +6,7 @@ import '../styles/article.css'
 import AutumnExpanded from '../../../assets/images/autumn-expanded.webp';
 import ZakHeathUncle from '../../../assets/images/zak-heath-uncle.webp';
 import ZakAndLisa from '../../../assets/images/zak-and-lisa.webp';
+import TikTokLogo from '../../../assets/images/tik-tok.png';
 import { useMediaQuery } from 'usehooks-ts';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -302,22 +303,15 @@ const FromConcealerToConfidence = () => {
           </div>
           <p className='dream-room-paragraph-text'>I was soon rummaging through my mum's green Clinique makeup bag. Despite my initial feelings of intrigue, I still cared about what others might think about me, whether that be men weren't supposed to wear makeup unless it was artistic, they're celebrities, or they're gay. However, after discovering my mum's YSL Beauty All Hours Foundation, all fear left me because all I wanted was to try new makeup. "Where have you put my foundation?" or "I have a thief for a son" were soon being shouted up the stairs, followed by an angry woman rampaging my room quite frequently to collect her things.</p>
           <div className='video-container'>
-            <blockquote
-              className="tiktok-embed"
-              cite="https://www.tiktok.com/@zakheath/video/7488064788203834646"
-              data-video-id="7488064788203834646"
-              style={{maxWidth: '330px'}}>
-                <section>
-                  <a target="_blank" title="@zakheath" href="https://www.tiktok.com/@zakheath?refer=embed">@zakheath</a>
-                  Don’t get any ideas (or do lol) 😩 the container I used was a makeup tester I cleaned out which previously had foundation in. I did this with lots of her other makeup too
-                  <a title="howitstarted" target="_blank" href="https://www.tiktok.com/tag/howitstarted?refer=embed">#howitstarted</a>
-                  <a title="firstmakeup" target="_blank" href="https://www.tiktok.com/tag/firstmakeup?refer=embed">#firstmakeup</a>
-                  <a title="makeup" target="_blank" href="https://www.tiktok.com/tag/makeup?refer=embed">#makeup</a>
-                  <a title="beauty" target="_blank" href="https://www.tiktok.com/tag/beauty?refer=embed">#beauty</a>
-                  <a target="_blank" title="♬ growth - Gede Yudis" href="https://www.tiktok.com/music/growth-7380329705533573136?refer=embed">♬ growth - Gede Yudis</a>
-                </section>
-              </blockquote>
-            <script async src="https://www.tiktok.com/embed.js"></script>
+            <div className='video-subcontainer'>
+              <video controls>
+                <source src="/videos/fctc-vid-1.mp4" type="video/mp4" />
+              </video>
+              <p>Don’t get any ideas (or do lol) 😩 the container I used was a makeup tester I cleaned out which previously had foundation in. I did this with lots of her other makeup too <a target="_blank" href="">#howitstarted</a> <a target="_blank" href="https://www.tiktok.com/tag/firstmakeup?refer=embed">#firstmakeup</a> <a target="_blank" href="https://www.tiktok.com/tag/makeup?refer=embed">#makeup</a> <a target="_blank" href="https://www.tiktok.com/tag/beauty?refer=embed">#beauty</a></p>
+              <a target="_blank" href='https://www.tiktok.com/@zakheath/video/7488064788203834646?_r=1&_t=ZN-8wH96vCx5wk'>
+                <button id='tik-tok-link'><p>Watch On Tik Tok</p> <Image src={TikTokLogo} alt='tik-tok'/></button>
+              </a>
+            </div>
           </div>
           <p className='dream-room-paragraph-text'>After having multiple conversations with myself in the mirror and giving my reflection reviews of the products I was using, when lockdown terrorised the world, I needed a creative outlet, so I started to make videos on TikTok. I was by no means a professional makeup artist, but I wanted to share my knowledge, skills, and confidence, and I knew nobody could say anything to me because we were locked inside our rooms. But I soon encountered the harsh reality of online hate and the infamous keyboard warriors. Comments like "this is disgusting," "Makeup is for women," and "You're a boy" flooded my content.</p>
           <div className='dream-room-transition-container' id='fctc-trans-4' style={{ zIndex: -1 }}>
@@ -328,24 +322,19 @@ const FromConcealerToConfidence = () => {
           </div>
           <p className='dream-room-paragraph-text'>Years prior, I'd feel my mum's excitement at the Debenham’s makeup counters or see her eagerness to apply her favourite Baremineral’s lipstick in the mirror at home. I'd become her little helper, exploring the textures and colours on the back of my hand. But after now applying it my face, I understood the ritual, and I, too, began to crave it.</p>
           <p className='dream-room-paragraph-text'>When I was fourteen, I came out as gay, and knowing I could be myself, I experimented more with makeup. I stopped watching from afar and eventually bought an eight-pan highlighter palette from Makeup Revolution from my local Superdrug. My makeup collection grew rapidly, and I bought lipsticks, eyeshadows, mascaras and blushes to follow the 2018 beauty gurus like Manny MUA, James Charles and Tati Westbrook. Yet, the cut creases and matte lipsticks felt performative, a persona I thought I needed as a newly out gay teen. It wasn't until I experimented with natural makeup, taking the tips and tricks I learnt from glam makeup routines that I began to feel truly comfortable. My go-to hack was blending a Nivea moisturiser into my YSL Foundation, creating a skin-tint for a subtle glow. Little did I know that this "clean" makeup style would one day become popularised on social media as the "clean girl" look, which would be one of the reasons I grew on TikTok.</p>
-          <div>
-            <blockquote
-              className="tiktok-embed"
-              cite="https://www.tiktok.com/@zakheath/video/7487338412421172502"
-              data-video-id="7487338412421172502"
-              style={{maxWidth: '305px', minWidth: '325px' }}
-            >
-              <section>
-                <a target="_blank" title="@zakheath" href="https://www.tiktok.com/@zakheath?refer=embed">@zakheath</a>
-                The highlighter was the Soph X Revolution palette and I remember buying it and a fan brush from my local store. I came home and hid it under my bed until a couple of weeks later I left it on my bedside table and my mum saw it. The first thing she said was that these shades don’t match my skin tone and took me into her room to show me what she thinks would look better. I continued to use my palette anyway but once my mum knew, I began to take it into school with me so I could put highlighter on all of my girl friends! I’ll always keep this highlighter but it’s so expired, so I shouldn’t be putting it on my face!! 😩
-                <a title="highlighter" target="_blank" href="https://www.tiktok.com/tag/highlighter?refer=embed">#highlighter</a>
-                <a title="makeup" target="_blank" href="https://www.tiktok.com/tag/makeup?refer=embed">#makeup</a>
-                <a title="howitstarted" target="_blank" href="https://www.tiktok.com/tag/howitstarted?refer=embed">#howitstarted</a>
-                <a title="beauty" target="_blank" href="https://www.tiktok.com/tag/beauty?refer=embed">#beauty</a>
-                <a target="_blank" title="♬ original sound - nuvfr 𓇼" href="https://www.tiktok.com/music/original-sound-7277969790872865569?refer=embed">♬ original sound - nuvfr 𓇼</a>
-                </section>
-              </blockquote>
-              <script async src="https://www.tiktok.com/embed.js"></script>
+          <div className='video-container'>
+            <div className='video-subcontainer'>
+              <video controls>
+                <source src="/videos/fctc-vid-2.mp4" type="video/mp4" />
+              </video>
+              <p>
+                The highlighter was the Soph X Revolution palette and I remember buying it and a fan brush from my local store. I came home and hid it under my bed until a couple of weeks later I left it on my bedside table and my mum saw it. The first thing she said was that these shades don’t match my skin tone and took me into her room to show me what she thinks would look better. I continued to use my palette anyway but once my mum knew, I began to take it into school with me so I could put highlighter on all of my girl friends! I'll always keep this highlighter but it's so expired, so I shouldn't be putting it on my face!! 😩
+                <a title="makeup" target="_blank" href="https://www.tiktok.com/tag/highlighter?refer=embed">#highlighter</a> <a title="makeup" target="_blank" href="https://www.tiktok.com/tag/makeup?refer=embed">#makeup</a> <a title="howitstarted" target="_blank" href="https://www.tiktok.com/tag/howitstarted?refer=embed">#howitstarted</a> <a title="beauty" target="_blank" href="https://www.tiktok.com/tag/beauty?refer=embed">#beauty</a>
+              </p>
+                <a target="_blank" href='https://www.tiktok.com/@zakheath/video/7487338412421172502?_r=1&_t=ZN-8wH98CFiN8c'>
+                  <button id='tik-tok-link'><p>Watch On Tik Tok</p> <Image src={TikTokLogo} alt='tik-tok'/></button>
+                </a>
+            </div>
           </div>
           <p className='dream-room-paragraph-text'>After having multiple conversations with myself in the mirror and giving my reflection reviews of the products I was using, when lockdown terrorised the world, I needed a creative outlet, so I started to make videos on TikTok. I was by no means a professional makeup artist, but I wanted to share my knowledge, skills, and confidence, and I knew nobody could say anything to me because we were locked inside our rooms. But I soon encountered the harsh reality of online hate and the infamous keyboard warriors. Comments like "this is disgusting," “makeup is for women," and "you're a boy" flooded my content.</p>
           <p className='dream-room-paragraph-text'>Four years later, I've built a community of over 1.5 million followers across TikTok, YouTube, Snapchat, and Instagram after growing from replying to these hate comments. I used this hate to positively create editorial, satisfying and humorous content to reimagine the saying actions speak louder than words. I wasn't being vocal, but instead, I showed that men can wear makeup from my quick and realistic routines. To my surprise, my videos resonated not just with men, but with women as well.</p>
