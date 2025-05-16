@@ -428,16 +428,64 @@ html, body {
 }
 
 #zak-lisa-caption {
-  /* position: absolute;
-  top: 87%;
-  left: 50%; */
-  /* transform: translate(-50%, -87%); */
   text-wrap: nowrap;
 }
 
 .video-container {
-  width: 100%;
   margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.video-subcontainer {
+  display: inline-block;
+  padding: 20px;
+  background-color: rgba(65, 65, 65, 0.25);
+  border-radius: 8px;
+  max-width: 300px;
+}
+
+.video-subcontainer a {
+  font-weight: 500;
+}
+
+.video-subcontainer p {
+  margin-bottom: 10px;
+}
+
+#tik-tok-link {
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 12px 0;
+  border-radius: 50px;
+  border: none;
+  font-family: 'Josefin Sans';
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+#tik-tok-link img {
+  height: 20px;
+  width: 20px;
+}
+
+#tik-tok-link p {
+  margin-bottom: -4px;
+  margin-right: 10px;
+  font-weight: 500;
+}
+
+.video-container video {
+  margin-bottom: 10px;
+  border-radius: 8px;
+  height: auto;
+  width: 100%;
 }
 
 @media (min-width: 800px) and (max-width: 1200px) {

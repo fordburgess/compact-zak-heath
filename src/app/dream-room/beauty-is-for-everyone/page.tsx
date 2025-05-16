@@ -6,6 +6,7 @@ import '../styles/article.css'
 import AutumnExpanded from '../../../assets/images/autumn-expanded.webp';
 import ZakHeathUncle from '../../../assets/images/zak-heath-uncle.webp';
 import ZakAndLisa from '../../../assets/images/zak-and-lisa.webp';
+import TikTokLogo from '../../../assets/images/tik-tok.png';
 import { useMediaQuery } from 'usehooks-ts';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -302,22 +303,15 @@ const FromConcealerToConfidence = () => {
           </div>
           <p className='dream-room-paragraph-text'>I was soon rummaging through my mum's green Clinique makeup bag. Despite my initial feelings of intrigue, I still cared about what others might think about me, whether that be men weren't supposed to wear makeup unless it was artistic, they're celebrities, or they're gay. However, after discovering my mum's YSL Beauty All Hours Foundation, all fear left me because all I wanted was to try new makeup. "Where have you put my foundation?" or "I have a thief for a son" were soon being shouted up the stairs, followed by an angry woman rampaging my room quite frequently to collect her things.</p>
           <div className='video-container'>
-            <blockquote
-              className="tiktok-embed"
-              cite="https://www.tiktok.com/@zakheath/video/7488064788203834646"
-              data-video-id="7488064788203834646"
-              style={{maxWidth: '330px'}}>
-                <section>
-                  <a target="_blank" title="@zakheath" href="https://www.tiktok.com/@zakheath?refer=embed">@zakheath</a>
-                  Don’t get any ideas (or do lol) 😩 the container I used was a makeup tester I cleaned out which previously had foundation in. I did this with lots of her other makeup too
-                  <a title="howitstarted" target="_blank" href="https://www.tiktok.com/tag/howitstarted?refer=embed">#howitstarted</a>
-                  <a title="firstmakeup" target="_blank" href="https://www.tiktok.com/tag/firstmakeup?refer=embed">#firstmakeup</a>
-                  <a title="makeup" target="_blank" href="https://www.tiktok.com/tag/makeup?refer=embed">#makeup</a>
-                  <a title="beauty" target="_blank" href="https://www.tiktok.com/tag/beauty?refer=embed">#beauty</a>
-                  <a target="_blank" title="♬ growth - Gede Yudis" href="https://www.tiktok.com/music/growth-7380329705533573136?refer=embed">♬ growth - Gede Yudis</a>
-                </section>
-              </blockquote>
-            <script async src="https://www.tiktok.com/embed.js"></script>
+            <div className='video-subcontainer'>
+              <video controls>
+                <source src="/videos/fctc-vid-1.mp4" type="video/mp4" />
+              </video>
+              <p>Don’t get any ideas (or do lol) 😩 the container I used was a makeup tester I cleaned out which previously had foundation in. I did this with lots of her other makeup too <a target="_blank" href="">#howitstarted</a> <a target="_blank" href="">#firstmakeup</a> <a target="_blank" href="">#makeup</a> <a target="_blank" href="">#beauty</a></p>
+              <a target="_blank" href='https://www.tiktok.com/@zakheath/video/7488064788203834646?_r=1&_t=ZN-8wH96vCx5wk'>
+                <button id='tik-tok-link'><p>Watch On Tik Tok</p> <Image src={TikTokLogo} alt='tik-tok'/></button>
+              </a>
+            </div>
           </div>
           <p className='dream-room-paragraph-text'>After having multiple conversations with myself in the mirror and giving my reflection reviews of the products I was using, when lockdown terrorised the world, I needed a creative outlet, so I started to make videos on TikTok. I was by no means a professional makeup artist, but I wanted to share my knowledge, skills, and confidence, and I knew nobody could say anything to me because we were locked inside our rooms. But I soon encountered the harsh reality of online hate and the infamous keyboard warriors. Comments like "this is disgusting," "Makeup is for women," and "You're a boy" flooded my content.</p>
           <div className='dream-room-transition-container' id='fctc-trans-4' style={{ zIndex: -1 }}>
