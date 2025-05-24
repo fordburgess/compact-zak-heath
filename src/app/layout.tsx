@@ -5,6 +5,7 @@ import DesktopNavbar from "@/components/desktop-navbar";
 import MobileNavbar from "@/components/mobile-navbar";
 import BackButton from "@/components/back-button";
 import "./globals.css";
+import { Analytics } from '@vercel/analytics/next';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,12 +36,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Analytics />
         <DesktopNavbar />
         <MobileNavbar />
         <BackButton />
-        {/* <TransitionWrapper> */}
           {children}
-        {/* </TransitionWrapper> */}
       </body>
     </html>
   );
