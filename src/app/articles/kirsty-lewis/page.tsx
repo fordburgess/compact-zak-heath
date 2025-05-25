@@ -284,7 +284,7 @@ const LisaEldridge = () => {
           </div>
           <div className='image-section' id='second-intro-container'>
             <div className='interactive-image-caption' id='caption-2'>
-              <h3 className='kirsty-lewis-second-intro-text'><span className='drop-cap'>Kirsty Lewis</span> is a public relations professional known for her impactful work in the beauty industry. As the Senior International PR & Influencer Manager at Huda Beauty and Kayali, she has played a pivotal role in shaping the brand’s global presence. She launched Fenty Beauty and Marc Jacobs Beauty in the UK, and in 2018 she co-founded SEEN Group, a creative agency specialising in brand strategy and communications.</h3>
+              <h3 className='kirsty-lewis-second-intro-text'><span className='drop-cap'>Kirsty Lewis</span> is a public relations professional known for her impactful work in the beauty industry. As the Senior International PR & Influencer Manager at Huda Beauty and Kayali, she has played a pivotal role in shaping the brand’s global presence. She launched Fenty Beauty and Marc Jacobs Beauty in the UK. She also launched Fenty Beauty and Marc Jacob's Beauty in the UK.</h3>
             </div>
             <div className='second-intro-divider'></div>
             <Image src={KirstyLewis2} alt='mary-greenwell' id='kirsty-lewis-2' />
