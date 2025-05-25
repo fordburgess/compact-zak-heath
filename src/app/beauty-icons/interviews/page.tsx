@@ -190,8 +190,8 @@ const BeautyIconsInterviews = () => {
                   {
                     chunk.map((interview: any, i: number) => {
                       return (
-                        <div className='beauty-icons-item' key={interview.href}>
-                          <Link href={interview.href}>
+                        // <div className='beauty-icons-item' key={interview.href}>
+                          <div onClick={() => window.location.href = interview.href} className='beauty-icons-item' key={interview.href}>
                             <Image
                               src={interview.pfp}
                               alt={`icon-${index}`}
@@ -203,8 +203,8 @@ const BeautyIconsInterviews = () => {
                               <h3>{interview.name}</h3>
                               <p>{interview.job}</p>
                             </div>
-                          </Link>
-                        </div>
+                          </div>
+                        // </div>
                       )
                     })
                   }
