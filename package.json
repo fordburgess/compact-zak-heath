@@ -18,6 +18,7 @@
     "next": "15.3.1",
     "nodemailer": "^6.10.1",
     "noisejs": "^2.1.0",
+    "postcss": "^8.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "three": "^0.176.0",
@@ -25,13 +26,13 @@
     "wavesurfer.js": "^7.9.4"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
+    "@tailwindcss/postcss": "^4.1.7",
     "@types/node": "^20",
     "@types/noisejs": "^2.1.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/three": "^0.176.0",
-    "tailwindcss": "^4",
+    "tailwindcss": "^4.1.7",
     "typescript": "^5"
   }
 }
