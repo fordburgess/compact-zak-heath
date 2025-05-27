@@ -271,7 +271,7 @@ html, body {
   font-weight: 300;
   font-size: 1.5rem;
   font-style: italic;
-  width: 400px;
+  width: 300px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -441,10 +441,12 @@ html, body {
 
   .featured-key-quote {
     font-size: 2rem;
+    width: auto;
   }
 
   #hide-container-1 {
     width: 500px;
+    height: 0px;
   }
 
   #fctc-trans-2 {
