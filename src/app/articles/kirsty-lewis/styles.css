@@ -308,6 +308,7 @@ html, body {
 #second-image-trans {
   display: flex;
   flex-direction: column-reverse;
+  margin-bottom: 20px;
 }
 
 #zak-and-lisa {
