@@ -291,6 +291,7 @@
 
   #hide-container-1 {
     width: 500px;
+    height: 0px;
   }
 
   #fctc-trans-2 {

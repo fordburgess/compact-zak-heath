@@ -161,7 +161,7 @@ const LisaEldridge = () => {
       })
 
       gsap.to('#hide-container-2', {
-        width: `${mobile ? '100%' : '600px'}`,
+        width: '600px',
         ease: 'power1.inOut',
         scrollTrigger: {
           trigger: '#featured-trans-2',
