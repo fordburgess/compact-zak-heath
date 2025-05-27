@@ -199,7 +199,7 @@ html, body {
 }
 
 #hide-container-1 {
-  height: 0;
+  height: 300px;
   width: 100%;
   border-top: solid 1px #fff;
   border-bottom: solid 1px #fff;
@@ -207,15 +207,15 @@ html, body {
 
 #hide-container-2 {
   height: 200px;
-  width: 0;
+  width: 100%;
   box-sizing: border-box;
   border-right: solid 1px #fff;
   border-left: solid 1px #fff;
 }
 
 #hide-container-3, #hide-container-4 {
-  height: 0;
-  width: 0;
+  height: 300px;
+  width: 100%;
 }
 
 #corner-frame-1::before,
@@ -445,7 +445,17 @@ html, body {
   }
 
   #hide-container-1 {
+    height: 0;
     width: 500px;
+  }
+
+  #hide-container-2 {
+    width: 0;
+  }
+
+  #hide-container-3, #hide-container-4 {
+    height: 0;
+    width: 0;
   }
 
   #fctc-trans-2 {
