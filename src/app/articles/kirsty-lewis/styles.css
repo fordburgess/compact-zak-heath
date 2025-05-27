@@ -212,8 +212,8 @@ html, body {
 }
 
 #hide-container-3, #hide-container-4 {
-  height: 0;
-  width: 0;
+  height: 300px;
+  width: 100%;
 }
 
 #corner-frame-1::before,
@@ -450,6 +450,11 @@ html, body {
   }
 
   #hide-container-2 {
+    width: 0;
+  }
+
+  #hide-container-3, #hide-container-4 {
+    height: 0;
     width: 0;
   }
 
