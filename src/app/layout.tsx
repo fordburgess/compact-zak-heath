@@ -6,6 +6,7 @@ import MobileNavbar from "@/components/mobile-navbar";
 import BackButton from "@/components/back-button";
 import "./globals.css";
 import { Analytics } from '@vercel/analytics/next';
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,6 +42,12 @@ export default function RootLayout({
         <MobileNavbar />
         <BackButton />
           {children}
+        <Script
+          async
+          defer
+          data-website-id='b586141a-e887-443e-ac9a-ed7a42668b58'
+          src='https://cloud.umami.is/script.js'
+        />
       </body>
     </html>
   );
