@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-  const siteId = process.env.UMAMI_SITE_ID;
+  const siteId = 'f3467b84-8fec-4160-b246-e1d7dfa148ba';
   const key = process.env.UMAMI_API_KEY!;
   const endAt = Date.now();
   const startAt = endAt - 30 * 24 * 60 * 60 * 1000;;
