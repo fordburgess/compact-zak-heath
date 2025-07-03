@@ -15,7 +15,7 @@ const Analytics = () => {
       setData(newData);
     }
 
-    // getData();
+    getData();
   }, [])
 
   useEffect(() => {
