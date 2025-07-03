@@ -22,7 +22,7 @@ const Analytics = () => {
     console.log(data);
 
     if (data.referrer) {
-      const total = Object.values(data.referrer).reduce((a, b) => a + b.y, 0);
+      const total = Object.values(data.referrer).reduce((a, b: any) => a + b.y, 0);
       setTotalReferrals(total);
     }
 
@@ -61,7 +61,7 @@ const Analytics = () => {
                 </div>
                 <div>
                   {
-                    Object.values(data.url).map((url) => {
+                    Object.values(data.url).map((url: any) => {
                       return (
                         <div className='graph-bar'>
                           <span>{url.x}</span>
@@ -84,7 +84,7 @@ const Analytics = () => {
                 </div>
                 <div>
                   {
-                    Object.values(data.referrer).map((referrer) => {
+                    Object.values(data.referrer).map((referrer: any) => {
                       return (
                         <div className='graph-bar'>
                           <span>{referrer.x}</span>
@@ -109,7 +109,7 @@ const Analytics = () => {
                 </div>
                 <div>
                   {
-                    Object.values(data.country).map((country) => {
+                    Object.values(data.country).map((country: any) => {
                       return (
                         <div className='graph-bar'>
                           <span>{country.x}</span>
@@ -132,7 +132,7 @@ const Analytics = () => {
                 </div>
                 <div>
                   {
-                    Object.values(data.browser).map((browser) => {
+                    Object.values(data.browser).map((browser: any) => {
                       return (
                         <div className='graph-bar'>
                           <span>{browser.x}</span>
