@@ -19,8 +19,7 @@ const Analytics = () => {
   }, [])
 
   useEffect(() => {
-    console.log(data);
-
+    console.log(data)
     if (data.referrer) {
       const total = Object.values(data.referrer).reduce((a, b: any) => a + b.y, 0);
       setTotalReferrals(total);
@@ -135,11 +134,34 @@ const Analytics = () => {
                     Object.values(data.browser).map((browser: any) => {
                       return (
                         <div className='graph-bar'>
-                          <span>{browser.x}</span>
+                          <span>{browser.x == "ios" ? "safari" : browser.x}</span>
                           <span>{browser.y}</span>
                           <div
                             className='bar-filler'
                             style={{ width: `${(browser.y / data.stats.pageviews.value) * 100}%`}}
+                          >
+                          </div>
+                        </div>
+                      )
+                    })
+                  }
+                </div>
+              </div>
+              <div className='horizontal-graph-box'>
+                <div className='graph-box-header'>
+                  <h6>Operating System</h6>
+                  <p>PAGE VIEWS</p>
+                </div>
+                <div>
+                  {
+                    Object.values(data.os).map((os: any) => {
+                      return (
+                        <div className='graph-bar'>
+                          <span>{os.x == "ios" ? "safari" : os.x}</span>
+                          <span>{os.y}</span>
+                          <div
+                            className='bar-filler'
+                            style={{ width: `${(os.y / data.stats.pageviews.value) * 100}%`}}
                           >
                           </div>
                         </div>
