@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import './styles.css';
+import LineChart from './line_chart';
 
 const Analytics = () => {
   const [data, setData] = useState<any>({});
@@ -9,7 +10,6 @@ const Analytics = () => {
   useEffect(() => {
     const getData = async () => {
       const res = await fetch("api/analytics");
-
       const newData: any = await res.json();
 
       setData(newData);
@@ -19,14 +19,10 @@ const Analytics = () => {
   }, [])
 
   useEffect(() => {
-    console.log(data)
     if (data.referrer) {
       const total = Object.values(data.referrer).reduce((a, b: any) => a + b.y, 0);
       setTotalReferrals(total);
     }
-
-
-
   }, [data])
 
   return (
@@ -49,7 +45,7 @@ const Analytics = () => {
                 <div className='sessions-number-box' id="bounces"><h6>Bounces</h6><h1>{data.stats.bounces.value}</h1></div>
               </div>
               <div className='sessions-graph'>
-                <span>Graph Will Go Here</span>
+                <LineChart data={data.unitData}/>
               </div>
             </div>
             <div className='other-info-container'>
