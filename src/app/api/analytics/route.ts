@@ -8,6 +8,20 @@ export async function GET() {
 
   const types = ["url", "country", "browser", "os", "device", "referrer"]
 
+  var today: number | Date = new Date();
+  var thirtyDaysAgo = new Date().setDate(today.getDate() - 30);
+
+  today = Math.floor(today.getTime() / 1000);
+
+  const unitRes = await fetch(`http://api.umami.is/v1/websites/${siteId}/pageviews?startAt=${startAt}&endAt=${endAt}&unit=day&timezone=UTC`, {
+    headers: {
+      Accept: 'application/json',
+      'x-umami-api-key' : key,
+    }
+  })
+
+  const unitData = await unitRes.json();
+
   const metrics = await Promise.all(
     types.map(async (type: string) => {
     const res = await fetch(`http://api.umami.is/v1/websites/${siteId}/metrics?type=${type}&startAt=${startAt}&endAt=${endAt}`, {
@@ -34,6 +48,7 @@ export async function GET() {
   const statsData = await statsRes.json();
 
   summaryResults['stats'] = statsData;
+  summaryResults['unitData'] = unitData;
 
   return NextResponse.json(summaryResults);
 }

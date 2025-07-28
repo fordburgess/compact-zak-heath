@@ -1,0 +1,27 @@
+.line-chart-container {
+  height: 100%;
+  width: 100%;
+}
+
+.x-axis {
+  display: flex;
+  width: 100%;
+  border-top: solid 1px #cacaca;
+  padding-left: 2%;
+  box-sizing: border-box;
+}
+
+.y-axis {
+  width: 2%;
+  height: 100%;
+  border-right: solid 1px #cacaca;
+}
+
+.y-axis-sub {
+  height: 25%;
+  text-align: center;
+}
+
+.y-axis-sub:not(:first-child) {
+  border-top: solid 1px #cacaca;
+}
